@@ -198,7 +198,6 @@ const AboutLink = styled(({ href, className, children }) => {
 `
 
 const About = () => {
-    const [isMoreShown, setIsMoreShown] = React.useState(false)
 
     return <SectionWrapper>
         <div style={{ 'display': 'flex', 'flexDirection': 'row', justifyContent: 'space-between' }}>
@@ -206,33 +205,9 @@ const About = () => {
                 <img style={{ boxSizing: 'border-box', width: '100%', border: `5px solid ${PRIMARY_COLOR}` }} src={__STATIC__ + 'me.jpg'} />
             </div>
             <div style={{ width: '70%' }}>
-                <WhaleHelloText><strong>Hi!</strong> My name is Travis Bumgarner and I think I finally know what I want to be when I grow up. </WhaleHelloText>
-                <WhaleHelloText>I want to be a <AboutLink href="https://www.linkedin.com/in/travisbumgarner/">Software Engineer</AboutLink>, a <AboutLink href="http://github.com/travisbumgarner/learning">lifelong learner</AboutLink>, an educator(<AboutLink href="https://www.youtube.com/c/TravistheMaker">YouTube</AboutLink>, <AboutLink href="https://www.twitch.tv/travis_the_maker">Twitch</AboutLink>, <AboutLink href="https://blog.travisbumgarner.com/">Blog</AboutLink>), a <AboutLink href="https://painlessprototyping.com/buttonboardv2">maker</AboutLink>, and a <AboutLink href="https://painlessprototyping.com/prototyping">consultant</AboutLink>.</WhaleHelloText>
-                <WhaleHelloText>Below you'll find a collection of activities I am pursuing in hopes of achieving these goals.</WhaleHelloText>
-
-                {isMoreShown ? null : (
-                    < AboutButton
-                        onClick={() => { setIsMoreShown(!isMoreShown) }}
-                    >
-                        How have I gotten here?
-                    </AboutButton >
-                )}
-                {isMoreShown ? (
-                    <>
-                        <Text>For the last seven years, I spent my time trying, failing, and succeeding at various careers, passion projects, and hobbies. I did a mechanical engineering internship with Siemens in China and landed my first patent. I served in Panama with the Peace Corps, teaching water safety and engineering water systems. In my free time I learned photography and software engineering.</Text>
-                        <Text>After Peace Corps ended, I continued my software engineering journey by building websites for non-profits. I joined a makerspace, taught Arduino classes and was elected to the board. Forever curious about startups, I launched one, Painless Prototyping, and ran a successful Kickstarter campaign. With the experience from my startup, I found myself mentoring others with the MIT Sandbox. I also got to lead a student group from MIT to Colombia for three weeks to teach electronics and learn about makerspaces.</Text>
-                        <Text>Two and a half years ago I joined the search engine team for an online education platform doing full stack development and relevance tuning. Outside of my primary role, I've worn the hats of machine learning intern, researcher, and prototyper. I've given many programming talks, organized a book club, beer club, and hosted several social outings.</Text>
-                        <Text>
-                            {!isMoreShown ? null : (
-                                < AboutButton
-                                    onClick={() => { setIsMoreShown(!isMoreShown) }}
-                                >
-                                    Good to know, thanks!
-                                </AboutButton >
-                            )}
-                        </Text>
-                    </>
-                ) : null}
+                <WhaleHelloText><strong>Hi!</strong></WhaleHelloText>
+                <WhaleHelloText>My name is Travis Bumgarner and I am a <AboutLink href="https://www.linkedin.com/in/travisbumgarner/">Software Engineer</AboutLink>, <AboutLink href="https://travisbumgarner.photography/">Photographer</AboutLink>, Lifelong Learner, Educator(<AboutLink href="https://www.youtube.com/c/TravistheMaker">YouTube</AboutLink>, <AboutLink href="https://www.twitch.tv/travis_the_maker">Twitch</AboutLink>, <AboutLink href="https://blog.travisbumgarner.com/">Blog</AboutLink>), <AboutLink href="https://painlessprototyping.com/">Startup Founder</AboutLink>, and Cruise Director.</WhaleHelloText>
+                <WhaleHelloText>Below you'll find a collection of projects I've worked on over the years.</WhaleHelloText>
             </div>
         </div>
     </SectionWrapper >

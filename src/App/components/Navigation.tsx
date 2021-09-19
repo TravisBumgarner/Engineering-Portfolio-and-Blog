@@ -1,6 +1,5 @@
 
 import {
-    FaTwitter as Twitter,
     FaLinkedin as LinkedIn,
     FaInstagram as Instagram,
     FaTwitch as Twitch,
@@ -39,16 +38,8 @@ const NavigationWrapper = styled.div`
 
 const EXTERNAL_LINKS = [
     {
-        href: 'mailto:travis@travisthemaker.com',
-        content: <Email size='1em' />
-    },
-    {
         href: 'https://www.youtube.com/channel/UCFgIg95KzVg97KAeXdWbeXg',
         content: <YouTube size="1em" />
-    },
-    {
-        href: 'https://twitter.com/travis_the_makr',
-        content: <Twitter size="1em" />
     },
     {
         href: 'https://instagram.com/travis_the_maker',
@@ -64,7 +55,7 @@ const EXTERNAL_LINKS = [
     },
     {
         href: 'https://blog.travisbumgarner.com',
-        content: 'Blog'
+        content: <p>Blog</p>
     }
 ]
 
