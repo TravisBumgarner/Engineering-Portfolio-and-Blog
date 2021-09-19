@@ -21,10 +21,6 @@ const Row = styled.div`
 
 const Content = styled.div`
     flex-grow: 1;
-
-    ${media.tablet} {
-        margin: 0 20px;
-    }
 `
 
 const SubContent = styled.div`
@@ -52,7 +48,7 @@ const Sidebar = styled.div`
         min-width: 200px;
     }
 
-    ${media.tablet} {
+    ${media.phone} {
         display: none;
     }
 `
