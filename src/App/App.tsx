@@ -69,19 +69,6 @@ const App = () => {
                     <Route component={NotFound} />
                 </Switch>
                 <Footer />
-                <img
-                    style={{
-                        zIndex: -999,
-                        position: "fixed",
-                        left: 0,
-                        boxSizing: "border-box",
-                        top: 0,
-                        minWidth: "100vw",
-                        minHeight: "100vh",
-                        opacity: "0.1",
-                    }}
-                    src={__STATIC__ + 'background.jpg'}
-                />
             </AppWrapper>
         </>
     )

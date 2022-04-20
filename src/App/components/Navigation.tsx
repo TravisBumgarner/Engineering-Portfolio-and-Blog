@@ -39,24 +39,12 @@ const NavigationWrapper = styled.div`
 
 const EXTERNAL_LINKS = [
     {
-        href: 'https://www.youtube.com/channel/UCFgIg95KzVg97KAeXdWbeXg',
-        content: <YouTube size="1em" />
-    },
-    {
-        href: 'https://instagram.com/travis_the_maker',
-        content: <Instagram size="1em" />
+        href: 'https://travisbumgarner.com',
+        content: 'Blog'
     },
     {
         href: 'https://www.linkedin.com/in/travisbumgarner/',
         content: <LinkedIn size="1em" />
-    },
-    {
-        href: 'https://www.twitch.tv/travis_the_maker',
-        content: <Twitch size="1em" />
-    },
-    {
-        href: 'https://blog.travisbumgarner.com',
-        content: 'Blog'
     }
 ]
 

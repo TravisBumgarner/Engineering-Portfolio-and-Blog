@@ -15,7 +15,7 @@ const LargeTitle = styled.h1`
 
 const MediumTitle = styled.h2`
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin: 0 0 10px 0;
     font-weight: 700;
     font-family: Raleway, sans-serif;

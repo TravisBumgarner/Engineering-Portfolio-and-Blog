@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-const PRIMARY_COLOR = '#FFFFFF'
+const PRIMARY_COLOR = '#000000'
 const SECONDARY_COLOR = '#32394c'
 const TERTIARY_COLOR = '#b9ccff'
 
@@ -33,7 +33,6 @@ const GlobalStyle = createGlobalStyle`
 
         overflow: -moz-scrollbars-vertical; 
         overflow-y: scroll;
-        background-color: ${SECONDARY_COLOR};
         font-size: 16px;
         ${media.tablet} {
             font-size: 14px;

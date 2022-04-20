@@ -7,7 +7,7 @@
         "lib": "lib"
     },
     "scripts": {
-        "start-dev": "webpack-dev-server --env.NODE_ENV=development --mode=development --config webpack.js",
+        "sd:fe": "webpack-dev-server --env.NODE_ENV=development --mode=development --config webpack.js",
         "bundle": "set NODE_ENV=production; rm -rf ./public; mkdir ./public; webpack --env.NODE_ENV=production --mode=production --config webpack.js --verobose",
         "precommit": "tsc --noEmit --skipLibCheck",
         "deploy": "gcloud config set project root-270023 && gcloud builds submit --tag gcr.io/root-270023/eng42 && gcloud run deploy eng42 --image gcr.io/root-270023/eng42 --platform managed --region us-east1",

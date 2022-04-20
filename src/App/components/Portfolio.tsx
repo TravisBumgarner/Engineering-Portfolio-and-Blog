@@ -36,7 +36,7 @@ const GridTextWrapper = styled.div`
 
 const GridText = styled.p`
     width: 100%;
-    background: rgba(50, 57, 76, 0.8);
+    background: ${TERTIARY_COLOR};
     text-align: center;
     padding: 10px 5px;
     line-height: initial;
@@ -92,7 +92,7 @@ const HoverContent = styled.div`
     text-align: center;
     padding: 25px;
 
-    background-color: ${PRIMARY_COLOR};
+    background-color: ${TERTIARY_COLOR};
     > * {
         color: ${SECONDARY_COLOR} !important;
     }
@@ -110,7 +110,7 @@ const Tile = ({ project: { id, preview_img, name, categories, start_date, end_da
         <StyledArticle>
             <GridImageWrapper>
                 <GridImage src={preview_img && __MEDIA__ + preview_img.src} />
-                <GridTextWrapper><GridText>{name}</GridText></GridTextWrapper>
+                {/* <GridTextWrapper><GridText>{name}</GridText></GridTextWrapper> */}
             </GridImageWrapper>
             <StyledLink to={`/project/${id}`}>
                 <HoverContent>
@@ -143,74 +143,11 @@ const SectionWrapper = styled.div`
     margin-top: 20px;
 `
 
-const WhaleHelloText = styled.p`
-    font-size: 1.5em;
-    margin-bottom: 1em;
-    
-    ${media.tablet} {
-        font-size: 1em;
-        margin-bottom: 0.5em;
-    }
-
-    ${media.phone} {
-    }
-`
-
-const AboutButton = styled(({ className, onClick, children }) => {
-    return <button onClick={onClick} className={className}>{children}</button>
-})`
-    cursor: pointer;
-    color: ${SECONDARY_COLOR};
-    font-weight: 700;
-    background-color: ${PRIMARY_COLOR};
-    padding: 0px 5px;
-    border-radius: 5px;
-    font-size: 1.5em;
-    
-    &:hover {
-        background-color: ${TERTIARY_COLOR};
-    }
-    ${media.tablet} {
-        font-size: 1em;
-        margin-bottom: 0.5em;
-    }
-
-    ${media.phone} {
-
-    }
-`
-
-const AboutLink = styled(({ href, className, children }) => {
-    return <a target="_blank" href={href} className={className}>{children}</a>
-})`
-    text-decoration: underline;
-    font-weight: 700;
-    cursor: pointer;
-    color: ${TERTIARY_COLOR};
-
-    &:visited {
-        color: ${TERTIARY_COLOR};
-    }
-    &:hover {
-        color: ${PRIMARY_COLOR};
-    }
-
-`
-
 const About = () => {
     const [isMoreShown, setIsMoreShown] = React.useState(false)
 
     return <SectionWrapper>
-        <div style={{ 'display': 'flex', 'flexDirection': 'row', justifyContent: 'space-between' }}>
-            <div style={{ width: '25%' }}>
-                <img style={{ boxSizing: 'border-box', width: '100%', border: `5px solid ${PRIMARY_COLOR}` }} src={__STATIC__ + 'me.jpg'} />
-            </div>
-            <div style={{ width: '70%' }}>
-                <WhaleHelloText><strong>Hi!</strong></WhaleHelloText>
-                <WhaleHelloText>My name is Travis Bumgarner and I am a <AboutLink href="https://www.linkedin.com/in/travisbumgarner/">Software Engineer</AboutLink>, <AboutLink href="https://travisbumgarner.photography/">Photographer</AboutLink>, Lifelong Learner, Educator(<AboutLink href="https://www.youtube.com/c/TravistheMaker">YouTube</AboutLink>, <AboutLink href="https://www.twitch.tv/travis_the_maker">Twitch</AboutLink>, <AboutLink href="https://blog.travisbumgarner.com/">Blog</AboutLink>), <AboutLink href="https://painlessprototyping.com/">Startup Founder</AboutLink>, and Cruise Director.</WhaleHelloText>
-                <WhaleHelloText>Below you'll find a collection of projects I've worked on over the years.</WhaleHelloText>
-            </div>
-        </div>
+        These are artifacts of my experiences learning, creating, and exploring.
     </SectionWrapper >
 }
 
@@ -225,7 +162,7 @@ const FilterButton = styled(({ className, onClick, children }) => {
     cursor: pointer;
     color: ${SECONDARY_COLOR};
     font-weight: 700;
-    background-color: ${PRIMARY_COLOR};
+    background-color: transparent;
     padding: 0px 5px;
     border-radius: 5px;
     font-size: 1.2em;

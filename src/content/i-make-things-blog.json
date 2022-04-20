@@ -1,6 +1,6 @@
 {
     "id": "i-make-things-blog",
-    "name": "I Make Things Blog",
+    "name": "Blog",
     "categories": [
         6,
         7,
@@ -29,7 +29,7 @@
     "links": [
         {
             "name": "Blog",
-            "src": "https://blog.travisbumgarner.com"
+            "src": "https://travisbumgarner.com"
         },
         {
             "name": "Github",
