@@ -20,7 +20,7 @@ class SentryWrapper extends Component<{}, { error: null | string }> {
         }
     }
 
-    componentDidCatch(error, errorInfo) {
+    componentDidCatch(error: any, errorInfo: any) {
         this.setState({ error })
         Sentry.withScope(scope => {
             Object.keys(errorInfo).forEach(key => {

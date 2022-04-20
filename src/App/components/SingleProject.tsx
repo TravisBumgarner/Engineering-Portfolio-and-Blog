@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import {
     FaArrowCircleRight,
     FaArrowCircleLeft,
@@ -236,8 +236,8 @@ const SingleProject = ({
     if (!Object.keys(projects).length) {
         return null
     }
-    const { id } = useParams()
-    const history = useHistory();
+    const { id } = useParams<{ id: string }>()
+    const navigate = useNavigate();
 
     const projectId = projects.findIndex(project => project.id == id)
     const previousId = projectId > 0 ? projectId - 1 : projects.length - 1
@@ -246,10 +246,10 @@ const SingleProject = ({
     return (
         <>
             <SingleProjectWrapper>
-                <PrevProject size="2em" onClick={() => history.push(`/project/${projects[previousId]['id']}`)} />
+                <PrevProject size="2em" onClick={() => navigate(`/project/${projects[previousId]['id']}`)} />
                 <Details project={projects[projectId]} />
 
-                <NextProject onClick={() => history.push(`/project/${projects[nextId]['id']}`)} size="2em" />
+                <NextProject onClick={() => navigate(`/project/${projects[nextId]['id']}`)} size="2em" />
             </SingleProjectWrapper >
         </>
     )

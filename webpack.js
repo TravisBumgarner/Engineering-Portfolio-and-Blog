@@ -1,49 +1,51 @@
 const path = require('path')
-var webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = env => {
-    return {
-        entry: {
-            app: './src/index.tsx'
-        },
-        module: {
-            rules: [
-                {
-                    test: /\.[jt]s[x]?$/,
-                    exclude: /node_modules/,
-                    loader: 'babel-loader',
-                }
-            ]
-        },
-        output: {
-            filename: '[name]-[hash].bundle.js',
-            path: path.resolve(__dirname, 'public'),
-            publicPath: '/'
-        },
-        resolve: {
-            alias: {
-                SharedComponents: path.resolve(__dirname, 'src/sharedComponents/'),
-                Theme: path.resolve(__dirname, 'src/theme.ts'),
-                Content: path.resolve(__dirname, 'src/content')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+
+module.exports = {
+    entry: {
+        app: './src/index.tsx'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: "ts-loader",
+                exclude: /node_modules/,
             },
-            extensions: ['.ts', '.tsx', '.js']
+        ],
+    },
+    resolve: {
+        alias: {
+            SharedComponents: path.resolve(__dirname, 'src/sharedComponents/'),
+            Theme: path.resolve(__dirname, 'src/theme.ts'),
+            Content: path.resolve(__dirname, 'src/content')
         },
-        devServer: {
-            contentBase: './public',
-            port: 3000,
-            historyApiFallback: true,
-            publicPath: '/'
+        extensions: ['.ts', '.tsx', '.js', '.jsx']
+    },
+    output: {
+        filename: '[name]-[hash].bundle.js',
+        path: path.resolve(__dirname, 'public'),
+        publicPath: '/'
+    },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, "public"),
         },
-        plugins: [
-            new webpack.DefinePlugin({ __MEDIA__: '"https://storage.googleapis.com/eng42-asdsad/media/"' }),
-            new webpack.DefinePlugin({ __STATIC__: '"https://storage.googleapis.com/eng42-asdsad/static/"' }),
-            new webpack.DefinePlugin({ __IS_PRODUCTION__: env.NODE_ENV === 'production' }),
-            new HtmlWebpackPlugin({
-                template: './src/index.template.ejs',
-                favicon: "./src/favicon.png",
-                inject: 'body'
-            })
-        ]
-    }
+        compress: true,
+        port: 3000,
+        hot: true,
+        historyApiFallback: true,
+    },
+    plugins: [
+        new webpack.DefinePlugin({ __MEDIA__: '"https://storage.googleapis.com/eng42-asdsad/media/"' }),
+        new webpack.DefinePlugin({ __STATIC__: '"https://storage.googleapis.com/eng42-asdsad/static/"' }),
+        new webpack.DefinePlugin({ __IS_PRODUCTION__: process.env.NODE_ENV === 'production' }),
+        new HtmlWebpackPlugin({
+            template: './src/index.template.ejs',
+            favicon: "./src/favicon.png",
+            inject: 'body'
+        })
+    ]
 }

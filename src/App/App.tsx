@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import projects, { allCategories, Project } from 'Content'
 
@@ -56,18 +56,17 @@ const App = () => {
             <GlobalStyle />
             <AppWrapper>
                 <Header />
-                <Switch>
+                <Routes>
                     <Route
-                        exact
                         path="/"
-                        render={props => <Portfolio setActiveCategory={setActiveCategory} {...props} filteredProjects={filteredProjects} highlightedProjects={highlightedProjects} />}
+                        element={<Portfolio setActiveCategory={setActiveCategory} filteredProjects={filteredProjects} highlightedProjects={highlightedProjects} />}
                     />
                     <Route
                         path="/project/:id"
-                        render={props => <SingleProject {...props} projects={[...highlightedProjects, ...filteredProjects]} />}
+                        element={<SingleProject projects={[...highlightedProjects, ...filteredProjects]} />}
                     />
-                    <Route component={NotFound} />
-                </Switch>
+                    <Route element={<NotFound />} />
+                </Routes>
                 <Footer />
             </AppWrapper>
         </>

@@ -7,37 +7,32 @@
         "lib": "lib"
     },
     "scripts": {
-        "sd:fe": "webpack-dev-server --env.NODE_ENV=development --mode=development --config webpack.js",
-        "bundle": "set NODE_ENV=production; rm -rf ./public; mkdir ./public; webpack --env.NODE_ENV=production --mode=production --config webpack.js --verobose",
+        "sd:fe": "webpack-dev-server --mode=development --config=webpack.js",
+        "bundle-ui": " rm -rf ./public; mkdir ./public; webpack --mode=production --config=webpack.js",
         "precommit": "tsc --noEmit --skipLibCheck",
-        "deploy": "gcloud config set project root-270023 && gcloud builds submit --tag gcr.io/root-270023/eng42 && gcloud run deploy eng42 --image gcr.io/root-270023/eng42 --platform managed --region us-east1",
-        "typecheck": "tsc --noEmit -p ./tsconfig.json"
+        "deploy": "gcloud config set project root-270023 && gcloud builds submit --tag gcr.io/root-270023/eng42 && gcloud run deploy eng42 --image gcr.io/root-270023/eng42 --platform managed --region us-east1"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
         "@sentry/browser": "^4.1.1",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
         "react-icons": "^3.1.0",
-        "react-router-dom": "^5.2.0",
-        "styled-components": "^5.1.1",
-        "typescript": "^3.9.3"
+        "react-router-dom": "^6.3.0",
+        "styled-components": "^5.3.5",
+        "webpack-dev-server": "^4.6.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.10.2",
-        "@babel/preset-env": "^7.10.2",
-        "@babel/preset-react": "^7.10.1",
-        "@babel/preset-typescript": "^7.10.1",
-        "@types/react": "^16.9.35",
-        "@types/react-dom": "^16.9.8",
-        "@types/react-router-dom": "^5.1.5",
-        "@types/styled-components": "^5.1.0",
-        "babel-loader": "^8.1.0",
-        "html-webpack-plugin": "^3.2.0",
-        "ts-loader": "^7.0.5",
-        "webpack": "^4.17.1",
-        "webpack-cli": "^3.3.11",
-        "webpack-dev-server": "^3.11.0"
+        "@types/react": "^17.0.37",
+        "@types/react-dom": "^18.0.1",
+        "@types/react-router-dom": "^5.3.3",
+        "@types/styled-components": "^5.1.15",
+        "eslint": "^8.3.0",
+        "html-webpack-plugin": "^5.5.0",
+        "ts-loader": "^9.2.6",
+        "typescript": "^4.5.2",
+        "webpack": "^5.64.4",
+        "webpack-cli": "^4.9.1"
     }
 }

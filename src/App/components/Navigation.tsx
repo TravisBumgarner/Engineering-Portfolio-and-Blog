@@ -40,11 +40,11 @@ const NavigationWrapper = styled.div`
 const EXTERNAL_LINKS = [
     {
         href: 'https://travisbumgarner.com',
-        content: 'Blog'
+        content: 'BLOG'
     },
     {
         href: 'https://www.linkedin.com/in/travisbumgarner/',
-        content: <LinkedIn size="1em" />
+        content: 'RESUME'
     }
 ]
 

@@ -27,11 +27,11 @@ const HeaderWrapper = styled.div`
         margin-bottom: 20px;
     }
 
-    ${media.tablet} {
+    /* ${media.tablet} {
         flex-direction: column;
         align-items: center;
         margin-bottom: 30px;
-    }
+    } */
 `
 
 const Header = () => {
