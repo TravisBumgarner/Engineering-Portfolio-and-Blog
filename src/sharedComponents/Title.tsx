@@ -9,7 +9,6 @@ const LargeTitle = styled.h1`
     margin: 10px 0;
     font-weight: 700;
     font-family: Raleway, sans-serif;
-    text-transform: uppercase;
     color: ${PRIMARY_COLOR};
 `
 
