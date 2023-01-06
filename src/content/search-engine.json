@@ -1,29 +1,8 @@
 {
     "id": "search-engine",
     "name": "Search Engine",
-    "categories": [
-        6
-    ],
-    "organizations": [
-        "Pluralsight"
-    ],
-    "locations": [
-        "Massachusetts"
-    ],
-    "headline": "",
     "description": "Search engine powering Pluralsight.",
-    "start_date": "2018-06-01",
     "end_date": "Ongoing",
-    "skills": [
-        11,
-        12,
-        13,
-        35,
-        36,
-        44,
-        45,
-        46
-    ],
     "images": [],
     "links": [
         {

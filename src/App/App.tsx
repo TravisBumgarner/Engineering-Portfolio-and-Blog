@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-import projects, { allCategories, Project } from 'Content'
+import projects, { Project } from 'Content'
 
 import { ScrollToTop, Portfolio, NotFound, Header, SingleProject, Footer } from './components'
 import { GlobalStyle, media } from 'Theme'
@@ -30,17 +30,6 @@ const AppWrapper = styled.div`
 `
 
 const App = () => {
-    const [activeCategory, setActiveCategory] = React.useState(0)
-
-    const highlightedProjectIds = [
-        'diy-keyboard',
-        'search-engine',
-        '2d-plotter-the-final-attempts',
-        'photography-portfolio-v2-0',
-        'youtube-channel',
-        'cribbage-board',
-    ]
-
     return (
         <>
             <ScrollToTop />
@@ -50,7 +39,7 @@ const App = () => {
                 <Routes>
                     <Route
                         path="/"
-                        element={<Portfolio setActiveCategory={setActiveCategory} projects={projects} />}
+                        element={<Portfolio projects={projects} />}
                     />
                     <Route
                         path="/project/:id"

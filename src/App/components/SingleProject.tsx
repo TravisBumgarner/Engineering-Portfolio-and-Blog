@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa'
 
 import { media, PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
-import { allSkills, Project } from 'Content'
+import { Project } from 'Content'
 import { Text, ExternalLink, Title } from 'SharedComponents'
 
 const DetailsWrapper = styled.div``
@@ -99,24 +99,14 @@ type DetailsProps = {
 const Details = ({
     project: {
         description,
-        locations,
-        organizations,
-        skills,
         links,
         preview_img,
         name,
-        start_date,
         end_date,
         images
     }
 }: DetailsProps) => {
     const Description = description.split('\n').map((d, idx) => <Text key={idx}>{d}</Text>)
-    const Locations = locations.join(', ')
-    const Organizations = organizations.join(', ')
-    const Skills = skills
-        .map(s => allSkills[s].name)
-        .sort()
-        .join(', ')
     const Links = links.map(l => {
         return (
             <li key={l.name + l.src}>
@@ -143,27 +133,7 @@ const Details = ({
                     )}
                     <Section title="Description">{Description}</Section>
 
-                    <Section title="Skills">
-                        <Text>{Skills}</Text>
-                    </Section>
-
                     {images.length ? <Section title="Photos">{Images}</Section> : null}
-
-                    <SubContent>
-                        <Section title="When">
-                            <Text>
-                                {' '}
-                                {`${start_date.slice(0, -3)} to ${end_date === 'Ongoing' ? 'Ongoing' : end_date.slice(0, -3)
-                                    }`}
-                            </Text>
-                        </Section>
-                        <Section title="Where">
-                            <Text>{Locations}</Text>
-                        </Section>
-                        <Section title="Who">
-                            <Text>{Organizations}</Text>
-                        </Section>
-                    </SubContent>
                 </Content>
             </Row>
         </DetailsWrapper>

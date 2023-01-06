@@ -2,15 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
-import { allCategories, Project } from 'Content'
-import { Title, Text } from 'SharedComponents'
+import { Project } from 'Content'
+import { Title } from 'SharedComponents'
 import { SECONDARY_COLOR, PRIMARY_COLOR, TERTIARY_COLOR, media } from 'Theme'
-
-const TitleWrapper = styled.div`
-    margin-left: 5px;
-    margin-bottom: 20px;
-    margin-top: 60px;
-`
 
 const GridWrapper = styled.div`
     position: relative;
@@ -18,30 +12,6 @@ const GridWrapper = styled.div`
 
 const GridImage = styled.img`
     width: 100%;
-`
-
-const GridTextWrapper = styled.div`
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    height: 100%;
-
-    &:hover {
-        display: none;
-    }
-`
-
-const GridText = styled.p`
-    width: 100%;
-    background: ${TERTIARY_COLOR};
-    text-align: center;
-    padding: 10px 5px;
-    line-height: initial;
-    font-size: 1em;
-
 `
 
 const GridImageWrapper = styled.div`
@@ -102,10 +72,7 @@ type TileProps = {
     project: Project
 }
 
-const Tile = ({ project: { id, preview_img, name, categories, start_date, end_date } }: TileProps) => {
-    const CategoryList = categories.sort((a, b) => allCategories[a].name > allCategories[b].name ? 1 : -1).map(id => (
-        <li key={id}>{allCategories[id].name}</li>
-    ))
+const Tile = ({ project: { id, preview_img, name, end_date, description } }: TileProps) => {
     return (
         <StyledArticle>
             <GridImageWrapper>
@@ -115,10 +82,8 @@ const Tile = ({ project: { id, preview_img, name, categories, start_date, end_da
             <StyledLink to={`/project/${id}`}>
                 <HoverContent>
                     <Title size="small"> {name}</Title>
-                    <Text> {`${start_date.slice(0, -3)} to ${end_date === 'Ongoing' ? 'Ongoing' : end_date.slice(0, -3)
-                        }`}
-                    </Text>
-                    <ul>{CategoryList}</ul>
+                    <Title size="small"> {description}</Title>
+
                 </HoverContent>
             </StyledLink>
         </StyledArticle>
@@ -127,7 +92,6 @@ const Tile = ({ project: { id, preview_img, name, categories, start_date, end_da
 
 type PortfolioProps = {
     projects: Project[],
-    setActiveCategory: (id: number) => void
 }
 
 const createTiles = (projects: Project[]) => {
@@ -143,59 +107,12 @@ const SectionWrapper = styled.div`
 `
 
 const About = () => {
-    const [isMoreShown, setIsMoreShown] = React.useState(false)
-
     return <SectionWrapper>
         These are artifacts of my experiences learning, creating, and exploring.
     </SectionWrapper >
 }
 
-const FilterButtonsWrapper = styled.div`
-    margin-left: 5px;
-    margin-bottom: 20px;
-`
-
-const FilterButton = styled(({ className, onClick, children }) => {
-    return <button onClick={onClick} className={className}>{children}</button>
-})`
-    cursor: pointer;
-    color: ${SECONDARY_COLOR};
-    font-weight: 700;
-    background-color: transparent;
-    padding: 0px 5px;
-    border-radius: 5px;
-    font-size: 1.2em;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    &:hover {
-        background-color: ${TERTIARY_COLOR};
-    }
-    ${media.tablet} {
-        font-size: 1em;
-        margin-bottom: 0.5em;
-    }
-
-    ${media.phone} {
-
-    }
-`
-
-const CATEGORIES_TO_FILTER_BY = [
-    6,
-    5,
-    2,
-    10
-]
-
-const Portfolio = ({ projects, setActiveCategory }: PortfolioProps) => {
-    // const ActiveProjects = createTiles(Object.values(projects).filter(({ end_date }) => end_date === "Ongoing"))
-    // const InactiveProjects = createTiles(Object.values(projects).filter(({ end_date }) => end_date !== "Ongoing"))
-
-    const FilterButtons = CATEGORIES_TO_FILTER_BY
-        .map(id => {
-            return <FilterButton onClick={() => setActiveCategory(id)}>{allCategories[id].name}</FilterButton>
-        })
-
+const Portfolio = ({ projects }: PortfolioProps) => {
     return (
         <>
             <About />

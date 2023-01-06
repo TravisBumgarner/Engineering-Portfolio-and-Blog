@@ -1,6 +1,5 @@
 import file_53 from './2d-plotter-the-final-attempts.json'
 import file_11 from './automated-film-scanner.json'
-import file_21 from './development-class.json'
 import file_55 from './diy-keyboard.json'
 import file_54 from './engineering-portfolio-v4-2.json'
 import file_38 from './i-make-things-blog.json'
@@ -20,8 +19,6 @@ import file_57 from './youtube-channel.json'
 /* Last file is file_57. This system is bad, I Know. */
 
 
-import skills_json from './skills.json'
-import categories_json from './categories.json'
 
 type Image = {
     name: string,
@@ -36,32 +33,11 @@ type Link = {
 type Project = {
     "id": string,
     "name": string,
-    "categories": number[],
-    "organizations": string[],
-    "locations": string[],
-    "headline": string,
     "description": string,
-    "start_date": string,
     "end_date": string,
-    "skills": number[],
     "images": Image[],
     "links": Link[],
     "preview_img": Image
-}
-
-type Skills = {
-    [key: string]: {
-        id: number,
-        name: string,
-        category: string
-    }
-}
-
-type Categories = {
-    [key: string]: {
-        id: number,
-        name: string,
-    }
 }
 
 const projects: Project[] = [
@@ -69,7 +45,6 @@ const projects: Project[] = [
     file_13,
     file_14,
     file_15,
-    file_21,
     file_22,
     file_23,
     file_37,
@@ -86,8 +61,6 @@ const projects: Project[] = [
     file_57
 ]
 
-const allSkills: Skills = skills_json
-const allCategories: Categories = categories_json
 
-export { allSkills, allCategories, Project, Skills, Categories }
+export { Project }
 export default projects

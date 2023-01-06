@@ -1,32 +1,8 @@
 {
     "id": "security-system",
     "name": "Security System",
-    "categories": [
-        6,
-        7
-    ],
-    "organizations": [
-        "Cambridge Hackspace"
-    ],
-    "locations": [
-        "Massachusetts"
-    ],
-    "headline": "Security System built from scratch with a Raspberry Pi and Flask",
-    "description": "The Cambridge Hackspace was in need of a security system but we were tight on money. I decided to build one from scratch instead. \r\nThis project consisted of two parts. The first was a motion sensing security camera powered by the Raspberry Pi and Python. With multi-threading, it was able to capture photos and upload them at the same time to a remote server.\r\nThe second part of the project was a front end for logging who looked at photos and a way to filter through them.",
-    "start_date": "2017-02-01",
+    "description": "Security System powered by the Raspberry Pi and Flask.",
     "end_date": "2017-05-01",
-    "skills": [
-        11,
-        12,
-        13,
-        14,
-        15,
-        20,
-        30,
-        31,
-        32,
-        41
-    ],
     "images": [
         {
             "name": "IMG_20170319_180759.jpg",

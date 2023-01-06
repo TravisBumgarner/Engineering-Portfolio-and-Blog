@@ -1,32 +1,8 @@
 {
     "name": "Stitch It: Image to CSS Converter",
     "id": "stitch-it-image-to-css-converter",
-    "categories": [
-        6,
-        8
-    ],
-    "organizations": [
-        "Personal"
-    ],
-    "locations": [
-        "Massachusetts"
-    ],
-    "headline": "",
     "description": "Takes in an image and converts it to CSS.",
-    "start_date": "2020-02-25",
     "end_date": "2020-03-16",
-    "skills": [
-        11,
-        12,
-        13,
-        20,
-        22,
-        31,
-        35,
-        37,
-        51,
-        54
-    ],
     "images": [
         {
             "name": "Screenshot of website",

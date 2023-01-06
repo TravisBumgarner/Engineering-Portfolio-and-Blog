@@ -1,31 +1,8 @@
 {
     "name": "YouTube Channel",
     "id": "youtube-channel",
-    "categories": [
-        2,
-        5,
-        6,
-        7,
-        8,
-        9
-    ],
-    "organizations": [
-        "Travis the Maker"
-    ],
-    "locations": [
-        "Massachusetts"
-    ],
-    "headline": "",
     "description": "This is the continued exploration into online education which started with Twitch. I have found that using videos to share my knowledge with others is the best way to do so.",
-    "start_date": "2020-04-30",
     "end_date": "Ongoing",
-    "skills": [
-        15,
-        19,
-        25,
-        22,
-        56
-    ],
     "images": [
         {
             "name": "First video, building a prototype",

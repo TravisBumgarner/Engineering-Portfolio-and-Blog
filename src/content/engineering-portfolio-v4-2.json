@@ -1,34 +1,8 @@
 {
     "name": "Engineering Portfolio V4.2",
     "id": "engineering-portfolio-v4-2",
-    "categories": [
-        6,
-        7,
-        8
-    ],
-    "organizations": [
-        "Personal"
-    ],
-    "locations": [
-        "Massachusetts"
-    ],
-    "headline": "",
     "description": "This page.",
-    "start_date": "2020-03-01",
     "end_date": "2020-06-11",
-    "skills": [
-        13,
-        20,
-        35,
-        37,
-        11,
-        12,
-        44,
-        45,
-        52,
-        54,
-        49
-    ],
     "images": [],
     "links": [
         {

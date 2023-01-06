@@ -1,31 +1,8 @@
 {
     "id": "automated-film-scanner",
     "name": "Automated Film Scanner",
-    "categories": [
-        2,
-        5,
-        6,
-        8
-    ],
-    "organizations": [
-        "Personal"
-    ],
-    "locations": [
-        "Massachusetts"
-    ],
-    "headline": "Homemade analog film scanner",
-    "description": "As an extension of my interest in photography, I started shooting film. The process of getting the negatives was quite easy but I had no space for a darkroom to make full sized prints. The commercial option was to buy a film scanner which was quite expensive. I opted to build my own instead.\r\n\r\nThe setup consists of a holder for the film constructed of K'Nex, a stepper motor that pulls the film along the holder, a servo to take a picture with the camera, a user interface to enter size and quantity of photos, and an Arduino to control it all. The film was back-lit by my monitor.",
-    "start_date": "2016-04-16",
+    "description": "Film Scanner for 35mm negative film.",
     "end_date": "2016-05-01",
-    "skills": [
-        3,
-        8,
-        9,
-        10,
-        19,
-        21,
-        22
-    ],
     "images": [
         {
             "name": "DSC02841.jpg",
