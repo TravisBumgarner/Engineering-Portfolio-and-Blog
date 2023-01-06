@@ -1,7 +1,7 @@
 {
     "id": "intro-to-arduino-workshop",
     "name": "Intro to Arduino Workshop",
-    "description": "In February 2016 I moved to Boston and started checking out some local Meetups. I found a workshop on Intro to Soldering at the Cambridge Hackspace and decided to check it out. Six months later I was helping teach the class and a few months after, I was teaching my own Introduction to Arduino workshop.",
+    "description": "Workshop teaching the basics of Arduino, electronics, and programming.",
     "end_date": "2017-07-01",
     "images": [
         {

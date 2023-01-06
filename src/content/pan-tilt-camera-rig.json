@@ -1,7 +1,7 @@
 {
     "id": "pan-tilt-camera-rig",
-    "name": "Pan & Tilt Camera Rig",
-    "description": "Pan & Tilt Camera Mount for Timelapse Photography",
+    "name": "Pan & Tilt Camera Adapter",
+    "description": "Camera Adapter for creating Timelapse Photography.",
     "end_date": "2016-07-01",
     "images": [
         {

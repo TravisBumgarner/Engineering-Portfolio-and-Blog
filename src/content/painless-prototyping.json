@@ -1,9 +1,21 @@
 {
     "id": "painless-prototyping",
     "name": "Painless Prototyping",
-    "description": "Startup focused on building tools for the maker community.",
-    "end_date": "2017-10-01",
+    "description": "Startup focused providing affordable access to the tools and education for tomorrow's makers.",
+    "end_date": "2021-10-01",
     "images": [
+        {
+            "name": "Components",
+            "src": "painless-prototyping/1.jpg"
+        },
+        {
+            "name": "Assembling board",
+            "src": "painless-prototyping/2.jpg"
+        },
+        {
+            "name": "First working prototype",
+            "src": "painless-prototyping/3.jpg"
+        },
         {
             "name": "IMG_20161202_120253.jpg",
             "src": "painless-prototyping/IMG_20161202_120253.jpg"
@@ -43,12 +55,12 @@
     ],
     "links": [
         {
-            "name": "Kickstarter",
+            "name": "First Kickstarter",
             "src": "https://www.kickstarter.com/projects/267560573/button-board-prototyping-electronics-the-painless"
         },
         {
-            "name": "Advertisement",
-            "src": "https://www.youtube.com/watch?v=bw1qOSUki5w"
+            "name": "Second Kickstarter",
+            "src": "https://www.kickstarter.com/projects/painlessprototyping/byo-build-your-own-mechanical-keyboard"
         }
     ],
     "preview_img": {

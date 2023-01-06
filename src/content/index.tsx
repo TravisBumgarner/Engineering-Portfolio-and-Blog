@@ -1,10 +1,9 @@
 import file_53 from './2d-plotter-the-final-attempts.json'
 import file_11 from './automated-film-scanner.json'
-import file_55 from './diy-keyboard.json'
 import file_54 from './engineering-portfolio-v4-2.json'
 import file_38 from './i-make-things-blog.json'
 import file_22 from './intro-to-arduino-workshop.json'
-import file_37 from './okemo-mountain-puzzle.json'
+import file_37 from './laser-cut-puzzle.json'
 import file_13 from './painless-prototyping.json'
 import file_14 from './pan-tilt-camera-rig.json'
 import file_40 from './photography-portfolio-v2-0.json'
@@ -57,7 +56,6 @@ const projects: Project[] = [
     file_49,
     file_53,
     file_54,
-    file_55,
     file_57
 ]
 

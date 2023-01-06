@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 import { Project } from 'Content'
-import { Title } from 'SharedComponents'
+import { Title, Text } from 'SharedComponents'
 import { SECONDARY_COLOR, PRIMARY_COLOR, TERTIARY_COLOR, media } from 'Theme'
 
 const GridWrapper = styled.div`
@@ -76,14 +76,12 @@ const Tile = ({ project: { id, preview_img, name, end_date, description } }: Til
     return (
         <StyledArticle>
             <GridImageWrapper>
-                <GridImage src={preview_img && __MEDIA__ + preview_img.src} />
-                {/* <GridTextWrapper><GridText>{name}</GridText></GridTextWrapper> */}
+                <GridImage src={preview_img && __STATIC__ + preview_img.src} />
             </GridImageWrapper>
             <StyledLink to={`/project/${id}`}>
                 <HoverContent>
                     <Title size="small"> {name}</Title>
-                    <Title size="small"> {description}</Title>
-
+                    <Text> {description}</Text>
                 </HoverContent>
             </StyledLink>
         </StyledArticle>

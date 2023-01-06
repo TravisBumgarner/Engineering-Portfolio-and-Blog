@@ -2,9 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useParams, useNavigate } from 'react-router-dom'
 import {
-    FaArrowCircleRight,
-    FaArrowCircleLeft,
-    FaArrowAltCircleRight
+    FaArrowCircleRight, FaArrowCircleLeft, FaArrowAltCircleRight
 } from 'react-icons/fa'
 
 import { media, PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
@@ -24,21 +22,6 @@ const Content = styled.div`
 
     ${media.tablet} {
         margin: 0 20px;
-    }
-`
-
-const SubContent = styled.div`
-    display: flex;
-    justify-content: space-between;
-
-    & > div {
-        width: 32%;
-    }
-    ${media.tablet} {
-        flex-direction: column;
-        & div {
-            width: 100%;
-        }
     }
 `
 
@@ -116,27 +99,18 @@ const Details = ({
             </li>
         )
     })
-    const Images = images.map((i, index) => <Image key={index} src={__MEDIA__ + i.src} />)
+    const Images = images.map((i, index) => <Image key={index} src={__STATIC__ + i.src} />)
     return (
         <DetailsWrapper>
-            <Row>
-                <Sidebar>
-                    <SidebarImage src={__MEDIA__ + preview_img.src} />
-                </Sidebar>
-
-                <Content>
-                    <Title size="medium">{name}</Title>
-                    {!!Links.length && (
-                        <Section title="Links">
-                            <ul style={{ listStyle: 'disc', marginLeft: '1em' }}>{Links}</ul>
-                        </Section>
-                    )}
-                    <Section title="Description">{Description}</Section>
-
-                    {images.length ? <Section title="Photos">{Images}</Section> : null}
-                </Content>
-            </Row>
-        </DetailsWrapper>
+            <h1>{name}</h1>
+            {!!Links.length && (
+                <Section title="Links">
+                    <ul style={{ listStyle: 'disc', marginLeft: '1em' }}>{Links}</ul>
+                </Section>
+            )}
+            <Section title="Description">{Description}</Section>
+            {images.length ? <Section title="Photos">{Images}</Section> : null}
+        </DetailsWrapper >
     )
 }
 
@@ -151,18 +125,6 @@ const SingleProjectWrapper = styled.div`
 
     ${media.desktop} {
         margin: 20px 4vw;
-    }
-`
-
-const ChangeProjectButtonWrapper = styled.div`
-    margin: 2em;
-    border: 0;
-    cursor: pointer;
-    position: relative;
-    top: 30vh;
-
-    ${media.desktop} {
-        display: none;
     }
 `
 
@@ -214,14 +176,12 @@ const SingleProject = ({
     const nextId = projectId < projects.length - 1 ? projectId + 1 : 0
 
     return (
-        <>
-            <SingleProjectWrapper>
-                <PrevProject size="2em" onClick={() => navigate(`/project/${projects[previousId]['id']}`)} />
-                <Details project={projects[projectId]} />
+        <SingleProjectWrapper>
+            <PrevProject size="2em" onClick={() => navigate(`/project/${projects[previousId]['id']}`)} />
+            <Details project={projects[projectId]} />
 
-                <NextProject onClick={() => navigate(`/project/${projects[nextId]['id']}`)} size="2em" />
-            </SingleProjectWrapper >
-        </>
+            <NextProject onClick={() => navigate(`/project/${projects[nextId]['id']}`)} size="2em" />
+        </SingleProjectWrapper >
     )
 }
 

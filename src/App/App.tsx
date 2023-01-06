@@ -3,20 +3,10 @@ import { Routes, Route } from 'react-router-dom'
 
 import projects, { Project } from 'Content'
 
-import { ScrollToTop, Portfolio, NotFound, Header, SingleProject, Footer } from './components'
 import { GlobalStyle, media } from 'Theme'
-
 import styled from 'styled-components'
 
-const sortByDate = (a: Project, b: Project) => {
-    if (a.end_date === 'Ongoing') {
-        return -1
-    }
-    if (b.end_date === 'Ongoing') {
-        return 1
-    }
-    return Date.parse(b.end_date) - Date.parse(a.end_date)
-}
+import { ScrollToTop, Portfolio, NotFound, Header, SingleProject } from './components'
 
 const AppWrapper = styled.div`
     max-width: 1200px;
@@ -47,7 +37,6 @@ const App = () => {
                     />
                     <Route element={<NotFound />} />
                 </Routes>
-                <Footer />
             </AppWrapper>
         </>
     )

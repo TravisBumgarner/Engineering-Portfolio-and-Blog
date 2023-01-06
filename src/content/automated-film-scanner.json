@@ -1,7 +1,7 @@
 {
     "id": "automated-film-scanner",
-    "name": "Automated Film Scanner",
-    "description": "Film Scanner for 35mm negative film.",
+    "name": "Film Scanner",
+    "description": "Automated film Scanner for 35mm negative film.",
     "end_date": "2016-05-01",
     "images": [
         {

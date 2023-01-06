@@ -3,6 +3,15 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
+let __IS_PRODUCTION__, __STATIC__
+if (process.env.NODE_ENV === 'production') {
+    __IS_PRODUCTION__ = true
+    __STATIC__ = '"https://storage.googleapis.com/eng42-asdsad/media/"'
+} else {
+    __IS_PRODUCTION__ = false
+    __STATIC__ = '"http://localhost:3000/public/"'
+}
+
 module.exports = {
     entry: {
         app: './src/index.tsx'
@@ -32,6 +41,7 @@ module.exports = {
     devServer: {
         static: {
             directory: path.join(__dirname, "public"),
+            publicPath: '/public'
         },
         compress: true,
         port: 3000,
@@ -39,13 +49,12 @@ module.exports = {
         historyApiFallback: true,
     },
     plugins: [
-        new webpack.DefinePlugin({ __MEDIA__: '"https://storage.googleapis.com/eng42-asdsad/media/"' }),
-        new webpack.DefinePlugin({ __STATIC__: '"https://storage.googleapis.com/eng42-asdsad/static/"' }),
-        new webpack.DefinePlugin({ __IS_PRODUCTION__: process.env.NODE_ENV === 'production' }),
+        new webpack.DefinePlugin({ __STATIC__ }),
+        new webpack.DefinePlugin({ __IS_PRODUCTION__ }),
         new HtmlWebpackPlugin({
             template: './src/index.template.ejs',
             favicon: "./src/favicon.png",
-            inject: 'body'
+            inject: 'body',
         })
     ]
 }
