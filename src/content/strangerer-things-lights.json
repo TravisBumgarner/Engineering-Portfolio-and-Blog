@@ -1,35 +1,8 @@
 {
     "id": "strangerer-things-lights",
     "name": "Strangerer Things Lights",
-    "categories": [
-        5,
-        6,
-        7,
-        10
-    ],
-    "organizations": [
-        "Personal"
-    ],
-    "locations": [
-        "Massachusetts"
-    ],
-    "headline": "",
-    "description": "I decided to do a fun little electronics project with my coworkers in the office. This is what we created.",
-    "start_date": "2018-12-01",
+    "description": "Messaging system, inspired by Stranger Things, to communicate via Slack to series of lights, controlled by a Raspberry Pi.",
     "end_date": "2018-12-23",
-    "skills": [
-        3,
-        13,
-        20,
-        30,
-        47,
-        44,
-        45,
-        41,
-        26,
-        32,
-        48
-    ],
     "images": [
         {
             "name": "strangerer",
@@ -46,11 +19,11 @@
     ],
     "links": [
         {
-            "name": "Video",
+            "name": "YouTube Video",
             "src": "https://www.youtube.com/watch?v=DL1EOHFlQWA"
         },
         {
-            "name": "GitHub",
+            "name": "GitHub Repository",
             "src": "https://github.com/TravisBumgarner/strangerer_things"
         }
     ],

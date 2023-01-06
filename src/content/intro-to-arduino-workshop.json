@@ -1,27 +1,8 @@
 {
     "id": "intro-to-arduino-workshop",
     "name": "Intro to Arduino Workshop",
-    "categories": [
-        4,
-        5,
-        6
-    ],
-    "organizations": [
-        "Cambridge Hackspace"
-    ],
-    "locations": [
-        "Massachusetts"
-    ],
-    "headline": "Class aimed at teaching beginners about electronics",
-    "description": "In February 2016 I moved to Boston and started checking out some local Meetups. I found a workshop on Intro to Soldering at the Cambridge Hackspace and decided to check it out. Six months later I was helping teach the class and a few months after, I was teaching my own Introduction to Arduino workshop.",
-    "start_date": "2017-02-01",
+    "description": "Workshop teaching the basics of Arduino, electronics, and programming.",
     "end_date": "2017-07-01",
-    "skills": [
-        3,
-        6,
-        8,
-        9
-    ],
     "images": [
         {
             "name": "SAM_1920.jpg",
@@ -62,16 +43,8 @@
     ],
     "links": [
         {
-            "name": "Class Description",
-            "src": "https://www.meetup.com/Cambridge-Hackspace/events/240894580/"
-        },
-        {
             "name": "Cambridge Hackspace Website",
             "src": "https://www.cambridgehackspace.com/"
-        },
-        {
-            "name": "Class PowerPoint",
-            "src": "https://github.com/Cambridge-Hackspace/Arduino_Workshop"
         }
     ],
     "preview_img": {

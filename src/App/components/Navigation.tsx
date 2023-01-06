@@ -1,18 +1,9 @@
 
-import {
-    FaTwitter as Twitter,
-    FaLinkedin as LinkedIn,
-    FaInstagram as Instagram,
-    FaTwitch as Twitch,
-    FaYoutube as YouTube,
-    FaEnvelope as Email
-} from 'react-icons/fa'
 import React from 'react'
 import styled from 'styled-components'
 
 import { media } from 'Theme'
 import { ExternalLink } from 'SharedComponents'
-
 
 const List = styled.div`
     display: flex;
@@ -40,21 +31,25 @@ const NavigationWrapper = styled.div`
 const EXTERNAL_LINKS = [
     {
         href: 'https://travisbumgarner.com',
-        content: 'BLOG'
+        content: 'Blog'
     },
     {
         href: 'https://www.linkedin.com/in/travisbumgarner/',
-        content: 'RESUME'
+        content: 'Resume'
+    },
+    {
+        href: 'https://travisbumgarner.photography',
+        content: 'Photography'
     }
 ]
 
-const Navigation = () => {
-    const ExternalLinks = EXTERNAL_LINKS.map(l => (
-        <Item key={l.href}>
-            <ExternalLink href={l.href}>{l.content}</ExternalLink>
-        </Item>
-    ))
+const ExternalLinks = EXTERNAL_LINKS.map(l => (
+    <Item key={l.href}>
+        <ExternalLink href={l.href}>{l.content}</ExternalLink>
+    </Item>
+))
 
+const Navigation = () => {
     return (
         <NavigationWrapper>
             <List>{ExternalLinks}</List>

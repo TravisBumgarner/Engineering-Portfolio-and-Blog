@@ -1,25 +1,8 @@
 {
     "id": "cribbage-board",
     "name": "Cribbage Board",
-    "categories": [
-        10
-    ],
-    "organizations": [
-        "Personal"
-    ],
-    "locations": [
-        "Massachusetts"
-    ],
-    "headline": "Handmade board game",
-    "description": "Handmade Cribbage Board.",
-    "start_date": "2017-02-01",
+    "description": "Designed and woodworked cribbage board.",
     "end_date": "2017-04-01",
-    "skills": [
-        3,
-        15,
-        26,
-        27
-    ],
     "images": [
         {
             "name": "IMG_20170311_132614.jpg",

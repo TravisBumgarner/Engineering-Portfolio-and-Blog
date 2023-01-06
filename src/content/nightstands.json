@@ -1,0 +1,33 @@
+{
+    "name": "Nightstands",
+    "id": "nightstands",
+    "description": "Midcentury modern nightstands created to replace my first nightstand.",
+    "end_date": "2019-11-09",
+    "images": [
+        {
+            "name": "Sketching out my ideas",
+            "src": "nightstand-v2/1.jpg"
+        },
+        {
+            "name": "Gluing it all up",
+            "src": "nightstand-v2/2.jpg"
+        },
+        {
+            "name": "Sanding",
+            "src": "nightstand-v2/3.jpg"
+        },
+        {
+            "name": "First version versus second",
+            "src": "nightstand-v2/4.jpg"
+        },
+        {
+            "name": "Finally home",
+            "src": "nightstand-v2/5.jpg"
+        }
+    ],
+    "links": [],
+    "preview_img": {
+        "name": "Final Design",
+        "src": "nightstand-v2/thumbnail.jpg"
+    }
+}

@@ -1,34 +1,8 @@
 {
     "id": "development-class",
-    "name": "Development Class",
-    "categories": [
-        2,
-        3,
-        4,
-        5,
-        6
-    ],
-    "organizations": [
-        "MIT",
-        "D-Lab"
-    ],
-    "locations": [
-        "Colombia",
-        "Massachusetts"
-    ],
-    "headline": "Project leader for a class project at the D-Lab at MIT",
-    "description": "In August 2016 I was invited to be a mentor for the D-Lab Development Class. I mentored 9 students from the development class in a semester-long research project focused on Colombia. After the course finished, over the winter term, I organized and led 4 of the students on a 3-week assessment trip to Colombia to teach engineering workshops, learn about the culture, and assist in projects with the sister organization, C-Innova.",
-    "start_date": "2016-09-01",
+    "name": "MIT D-Lab Development Class",
+    "description": "Led group of students on a three week trip to Bogota, Colombia to teach engineering workshops with C-Innova.",
     "end_date": "2017-01-30",
-    "skills": [
-        3,
-        4,
-        6,
-        8,
-        9,
-        23,
-        27
-    ],
     "images": [
         {
             "name": "image-20161205_172515.jpg",
@@ -79,10 +53,6 @@
         {
             "name": "C-Innova Website",
             "src": "http://www.c-innova.org/"
-        },
-        {
-            "name": "C-Innova Facebook Page",
-            "src": "https://www.facebook.com/cinnovabog/"
         }
     ],
     "preview_img": {

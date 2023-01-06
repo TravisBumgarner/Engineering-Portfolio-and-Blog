@@ -1,48 +1,21 @@
 {
     "id": "painless-prototyping",
     "name": "Painless Prototyping",
-    "categories": [
-        5,
-        6,
-        7,
-        9
-    ],
-    "organizations": [
-        "Painless Prototyping"
-    ],
-    "locations": [
-        "Massachusetts"
-    ],
-    "headline": "Startup focused on building tools for the maker community",
-    "description": "The logical progression from breadboarding and soldering was to start designing circuit boards. An idea popped into my head one day of a board that could be helpful in the electronics that I prototype. As I was designing the board, it dawned on my that others might find the board useful too. I launched a Kickstarter campaign that was fully funded in less than 24 hours and Painless Prototyping was born.",
-    "start_date": "2016-05-09",
-    "end_date": "2017-10-01",
-    "skills": [
-        3,
-        6,
-        7,
-        8,
-        9,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23,
-        24,
-        25,
-        30,
-        42,
-        56
-    ],
+    "description": "Startup focused providing affordable access to the tools and education for tomorrow's makers.",
+    "end_date": "2021-10-01",
     "images": [
+        {
+            "name": "Components",
+            "src": "painless-prototyping/1.jpg"
+        },
+        {
+            "name": "Assembling board",
+            "src": "painless-prototyping/2.jpg"
+        },
+        {
+            "name": "First working prototype",
+            "src": "painless-prototyping/3.jpg"
+        },
         {
             "name": "IMG_20161202_120253.jpg",
             "src": "painless-prototyping/IMG_20161202_120253.jpg"
@@ -82,12 +55,12 @@
     ],
     "links": [
         {
-            "name": "Kickstarter",
+            "name": "First Kickstarter",
             "src": "https://www.kickstarter.com/projects/267560573/button-board-prototyping-electronics-the-painless"
         },
         {
-            "name": "Advertisement",
-            "src": "https://www.youtube.com/watch?v=bw1qOSUki5w"
+            "name": "Second Kickstarter",
+            "src": "https://www.kickstarter.com/projects/painlessprototyping/byo-build-your-own-mechanical-keyboard"
         }
     ],
     "preview_img": {

@@ -1,22 +1,10 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-import projects, { allCategories, Project } from 'Content'
-
-import { ScrollToTop, Portfolio, NotFound, Header, SingleProject, Footer } from './components'
 import { GlobalStyle, media } from 'Theme'
-
 import styled from 'styled-components'
 
-const sortByDate = (a: Project, b: Project) => {
-    if (a.end_date === 'Ongoing') {
-        return -1
-    }
-    if (b.end_date === 'Ongoing') {
-        return 1
-    }
-    return Date.parse(b.end_date) - Date.parse(a.end_date)
-}
+import { ScrollToTop, Portfolio, NotFound, Header, SingleProject } from './components'
 
 const AppWrapper = styled.div`
     max-width: 1200px;
@@ -30,26 +18,6 @@ const AppWrapper = styled.div`
 `
 
 const App = () => {
-    const [activeCategory, setActiveCategory] = React.useState(0)
-
-    const highlightedProjectIds = [
-        'diy-keyboard',
-        'search-engine',
-        '2d-plotter-the-final-attempts',
-        'photography-portfolio-v2-0',
-        'youtube-channel',
-        'cribbage-board',
-    ]
-
-    const highlightedProjects = projects
-        .filter(p => highlightedProjectIds.includes(p.id))
-        .sort((a, b) => highlightedProjectIds.indexOf(a.id) - highlightedProjectIds.indexOf(b.id))
-
-    const filteredProjects = projects
-        .filter(p => !highlightedProjectIds.includes(p.id))
-        .filter(p => activeCategory === 0 || p.categories.includes(activeCategory))
-        .sort((a, b) => sortByDate(a, b))
-
     return (
         <>
             <ScrollToTop />
@@ -59,15 +27,14 @@ const App = () => {
                 <Routes>
                     <Route
                         path="/"
-                        element={<Portfolio setActiveCategory={setActiveCategory} filteredProjects={filteredProjects} highlightedProjects={highlightedProjects} />}
+                        element={<Portfolio />}
                     />
                     <Route
                         path="/project/:id"
-                        element={<SingleProject projects={[...highlightedProjects, ...filteredProjects]} />}
+                        element={<SingleProject />}
                     />
-                    <Route element={<NotFound />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
-                <Footer />
             </AppWrapper>
         </>
     )

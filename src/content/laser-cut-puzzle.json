@@ -1,0 +1,21 @@
+{
+    "id": "laser-cut-puzzle",
+    "name": "Puzzle",
+    "description": "Map of a ski resort converted into a laser cut puzzle.",
+    "end_date": "2019-03-22",
+    "images": [
+        {
+            "name": "puzzle_1.jpg",
+            "src": "laser-cut-puzzle/puzzle_1.jpg"
+        },
+        {
+            "name": "puzzle_2.jpg",
+            "src": "laser-cut-puzzle/puzzle_2.jpg"
+        }
+    ],
+    "links": [],
+    "preview_img": {
+        "name": "puzzle",
+        "src": "laser-cut-puzzle/puzzle_preview.jpg"
+    }
+}

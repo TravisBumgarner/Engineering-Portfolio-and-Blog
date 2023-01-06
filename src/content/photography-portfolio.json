@@ -1,0 +1,21 @@
+{
+    "id": "photography-portfolio",
+    "name": "Photography Portfolio",
+    "description": "Photography Portfolio powered by React and TypeScript.",
+    "end_date": "2018-10-31",
+    "images": [],
+    "links": [
+        {
+            "name": "Portfolio Website",
+            "src": "https://travisbumgarner.photography"
+        },
+        {
+            "name": "GitHub Repository",
+            "src": "https://github.com/travisbumgarner/photo20"
+        }
+    ],
+    "preview_img": {
+        "name": "photo20",
+        "src": "photography-portfolio/photo20_preview.png"
+    }
+}

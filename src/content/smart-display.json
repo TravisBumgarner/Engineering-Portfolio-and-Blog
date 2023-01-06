@@ -1,36 +1,8 @@
 {
     "name": "Smart Display",
     "id": "smart-display",
-    "categories": [
-        2,
-        6,
-        7,
-        10
-    ],
-    "organizations": [
-        "Personal"
-    ],
-    "locations": [
-        "Massachusetts"
-    ],
-    "headline": "",
-    "description": "A Raspberry Pi display that shows relevant information. Pre-Covid 19 it showed weather and bus times. Now it tracks stats about my life.",
-    "start_date": "2019-12-15",
+    "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather.",
     "end_date": "2020-09-01",
-    "skills": [
-        1,
-        3,
-        10,
-        11,
-        12,
-        13,
-        26,
-        27,
-        30,
-        35,
-        37,
-        49
-    ],
     "images": [
         {
             "name": "HTML preview of the display",
@@ -59,19 +31,11 @@
     ],
     "links": [
         {
-            "name": "GitHub V2.0 (Stats tracker for exercise, coffee drinking etc.)",
-            "src": "https://github.com/TravisBumgarner/stats_tracker"
+            "name": "GitHub Repository",
+            "src": "https://github.com/TravisBumgarner/Smart-Display"
         },
         {
-            "name": "GitHub V1.0 (Originally designed for weather / bus times)",
-            "src": "https://github.com/TravisBumgarner/smart_display"
-        },
-        {
-            "name": "Hackaday Project",
-            "src": "https://hackaday.io/project/172099-raspberry-pi-smart-display"
-        },
-        {
-            "name": "YouTube Project Recordings",
+            "name": "YouTube Playlist",
             "src": "https://www.youtube.com/watch?v=LbvioXXcNqk&list=PL58d_qyxyaOGaACvm6FVX_9Y3hvzr_30M"
         }
     ],

@@ -16,10 +16,10 @@ const GlobalStyle = createGlobalStyle`
 
     a {
         text-decoration: none;
-        &: hover {
+        &:hover {
             color: ${TERTIARY_COLOR};
         }
-        &: visited {
+        &:visited {
             color: ${PRIMARY_COLOR};
         }
     }
