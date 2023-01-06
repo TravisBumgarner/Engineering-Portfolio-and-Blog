@@ -1,0 +1,62 @@
+{
+    "id": "development-class",
+    "name": "MIT D-Lab Development Class",
+    "description": "Led group of students on a three week trip to Bogota, Colombia to teach engineering workshops with C-Innova.",
+    "end_date": "2017-01-30",
+    "images": [
+        {
+            "name": "image-20161205_172515.jpg",
+            "src": "development-class/image-20161205_172515.jpg"
+        },
+        {
+            "name": "DSC09917.jpg",
+            "src": "development-class/DSC09917.jpg"
+        },
+        {
+            "name": "IMG_20170117_162451_472.jpg",
+            "src": "development-class/IMG_20170117_162451_472.jpg"
+        },
+        {
+            "name": "IMG_20170113_163132.jpg",
+            "src": "development-class/IMG_20170113_163132.jpg"
+        },
+        {
+            "name": "DSC09952.jpg",
+            "src": "development-class/DSC09952.jpg"
+        },
+        {
+            "name": "IMG_9931.jpg",
+            "src": "development-class/IMG_9931.jpg"
+        },
+        {
+            "name": "IMG_20161205_174353.jpg",
+            "src": "development-class/IMG_20161205_174353.jpg"
+        },
+        {
+            "name": "IMG_9937.jpg",
+            "src": "development-class/IMG_9937.jpg"
+        },
+        {
+            "name": "DSC00109.jpg",
+            "src": "development-class/DSC00109.jpg"
+        },
+        {
+            "name": "IMG_20170111_120824.jpg",
+            "src": "development-class/IMG_20170111_120824.jpg"
+        }
+    ],
+    "links": [
+        {
+            "name": "Course Description",
+            "src": "https://d-lab.mit.edu/courses/development"
+        },
+        {
+            "name": "C-Innova Website",
+            "src": "http://www.c-innova.org/"
+        }
+    ],
+    "preview_img": {
+        "name": "development class preview",
+        "src": "development-class/cinnova.png"
+    }
+}

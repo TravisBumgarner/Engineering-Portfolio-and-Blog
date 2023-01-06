@@ -12,6 +12,9 @@ import file_41 from './strangerer-things-lights.json'
 import file_15 from './timelapse-camera.json'
 import file_49 from './twitch-stream.json'
 import file_57 from './youtube-channel.json'
+import file_58 from './cribbage-board.json'
+import file_59 from './development-class.json'
+import file_60 from './nightstands.json'
 /* Last file is file_57. This system is bad, I Know. */
 
 
@@ -50,7 +53,10 @@ const projects: Project[] = [
     file_49,
     file_53,
     file_54,
-    file_57
+    file_57,
+    file_58,
+    file_59,
+    file_60
 ]
 
 
