@@ -1,7 +1,7 @@
 {
     "id": "timelapse-camera",
     "name": "Timelapse Camera",
-    "description": "Exploration into turning a collection of electrical components into a camera",
+    "description": "Exploration into turning a collection of electrical components into a camera.",
     "end_date": "2016-09-01",
     "images": [
         {
@@ -43,7 +43,7 @@
             "src": "https://github.com/TravisBumgarner/Time-Lapse-Photo-Stitch"
         },
         {
-            "name": "Writeup Part",
+            "name": "Writeup",
             "src": "https://travisbumgarner.com/post/combining-hobbies/"
         }
     ],
