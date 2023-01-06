@@ -19,11 +19,11 @@
     ],
     "links": [
         {
-            "name": "Video",
+            "name": "YouTube Video",
             "src": "https://www.youtube.com/watch?v=DL1EOHFlQWA"
         },
         {
-            "name": "GitHub",
+            "name": "GitHub Repository",
             "src": "https://github.com/TravisBumgarner/strangerer_things"
         }
     ],

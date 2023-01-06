@@ -31,19 +31,11 @@
     ],
     "links": [
         {
-            "name": "GitHub V2.0 (Stats tracker for exercise, coffee drinking etc.)",
-            "src": "https://github.com/TravisBumgarner/stats_tracker"
+            "name": "GitHub Repository",
+            "src": "https://github.com/TravisBumgarner/Smart-Display"
         },
         {
-            "name": "GitHub V1.0 (Originally designed for weather / bus times)",
-            "src": "https://github.com/TravisBumgarner/smart_display"
-        },
-        {
-            "name": "Hackaday Project",
-            "src": "https://hackaday.io/project/172099-raspberry-pi-smart-display"
-        },
-        {
-            "name": "YouTube Project Recordings",
+            "name": "YouTube Playlist",
             "src": "https://www.youtube.com/watch?v=LbvioXXcNqk&list=PL58d_qyxyaOGaACvm6FVX_9Y3hvzr_30M"
         }
     ],

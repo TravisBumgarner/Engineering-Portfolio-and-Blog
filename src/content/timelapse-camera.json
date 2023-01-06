@@ -39,20 +39,12 @@
     ],
     "links": [
         {
-            "name": "GitHub Repo",
-            "src": "https://github.com/TravisBumgarner/photoStitch"
+            "name": "GitHub Repository",
+            "src": "https://github.com/TravisBumgarner/Time-Lapse-Photo-Stitch"
         },
         {
-            "name": "Writeup Part I",
-            "src": "http://photography.travisbumgarner.com/800/combining-hobbies-programming-electronics-photography-part-i/"
-        },
-        {
-            "name": "Writeup Part II",
-            "src": "http://photography.travisbumgarner.com/838/combining-hobbies-programming-electronics-photography-part-ii/"
-        },
-        {
-            "name": "Writeup Part III",
-            "src": "http://photography.travisbumgarner.com/848/combining-hobbies-programming-electronics-photography-part-iii/"
+            "name": "Writeup Part",
+            "src": "https://travisbumgarner.com/post/combining-hobbies/"
         }
     ],
     "preview_img": {

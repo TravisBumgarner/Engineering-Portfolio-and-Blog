@@ -31,12 +31,8 @@
     ],
     "links": [
         {
-            "name": "GitHub Repo (Raspberry Pi)",
-            "src": "https://github.com/TravisBumgarner/Raspberry-Pi-Webcam"
-        },
-        {
-            "name": "Github Repo (Flask)",
-            "src": "https://github.com/TravisBumgarner/Web-Viewer/"
+            "name": "GitHub Repository",
+            "src": "https://github.com/TravisBumgarner/Raspberry-Pi-Security-System"
         }
     ],
     "preview_img": {
