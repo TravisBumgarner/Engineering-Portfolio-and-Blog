@@ -15,7 +15,6 @@ const Image = styled.img`
     width: 100%;
     box-sizing: border-box;
     align-self: center;
-    border: 5px solid white;
 `
 
 const SectionWrapper = styled.div`
