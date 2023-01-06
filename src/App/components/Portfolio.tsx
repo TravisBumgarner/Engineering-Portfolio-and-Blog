@@ -6,8 +6,48 @@ import { Title, Text } from 'SharedComponents'
 import { SECONDARY_COLOR, PRIMARY_COLOR, TERTIARY_COLOR, media } from 'Theme'
 import projects, { Project } from 'Content'
 
-const GridWrapper = styled.div`
+const SHARED_SIZE = "5px"
+const StyledArticle = styled.article`
+    width: calc(33% - ${SHARED_SIZE});
+    box-sizing: border-box;
+    border: 5px solid white;
+    display: inline-block;
     position: relative;
+
+    ${media.tablet} {
+        width: calc(50% - ${SHARED_SIZE});
+    }
+
+    ${media.phone} {
+        width: calc(100% - ${SHARED_SIZE});
+    }
+    
+    img {
+        line-height: 0;
+    }
+`
+
+
+const GridWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    ${StyledArticle} {
+        margin: ${SHARED_SIZE};
+    }
+
+    ${StyledArticle}:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    ${StyledArticle}:nth-child(3n + 1) {
+        margin-left: 0;
+    }
+    ${StyledArticle}:nth-child(3n + 2) {
+        margin-left: ${SHARED_SIZE};
+        margin-right: ${SHARED_SIZE};
+    }
 `
 
 const GridImage = styled.img`
@@ -18,31 +58,11 @@ const GridImageWrapper = styled.div`
     line-height: 0;
 `
 
-const StyledArticle = styled.article`
-    width: calc(33% - 10px);
-    box-sizing: border-box;
-    margin: 5px;
-    border: 5px solid white;
-    display: inline-block;
-    position: relative;
-
-    ${media.tablet} {
-        width: calc(50% - 10px);
-    }
-
-    ${media.phone} {
-        width: calc(100% - 10px);
-    }
-    
-    img {
-        line-height: 0;
-    }
-`
-
 const StyledLink = styled(NavLink)`
     text-decoration: none;
     color: ${PRIMARY_COLOR};
 `
+
 const HoverContent = styled.div`
     &:hover {
         opacity: 1;
@@ -60,7 +80,7 @@ const HoverContent = styled.div`
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 25px;
+    /* padding: 25px; */
 
     background-color: ${TERTIARY_COLOR};
     > * {

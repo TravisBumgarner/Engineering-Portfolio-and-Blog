@@ -50,7 +50,7 @@ const Details = ({ project: { description, links, name, images } }: { project: P
     const Images = useMemo(() => images.map((i, index) => <Image key={index} src={__STATIC__ + i.src} />), [images])
     return (
         <DetailsWrapper>
-            <h1>{name}</h1>
+            <Title size='large'>{name}</Title>
             {Links.length > 0 && (
                 <Section title="Links">
                     <ul style={{ listStyle: 'disc', marginLeft: '1em' }}>{Links}</ul>

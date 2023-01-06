@@ -19,7 +19,7 @@ const HeaderWrapper = styled.div`
     align-items: baseline;
     justify-content: space-between;
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     margin-left: 5px;
     margin-right: 5px;
     ${media.desktop} {
