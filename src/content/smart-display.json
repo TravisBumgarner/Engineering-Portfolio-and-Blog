@@ -1,7 +1,7 @@
 {
     "name": "Smart Display",
     "id": "smart-display",
-    "description": "A Raspberry Pi display that shows relevant information. Pre-Covid 19 it showed weather and bus times. Now it tracks stats about my life.",
+    "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather.",
     "end_date": "2020-09-01",
     "images": [
         {

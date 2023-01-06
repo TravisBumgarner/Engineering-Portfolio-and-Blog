@@ -1,7 +1,7 @@
 {
-    "id": "photography-portfolio-v2-0",
-    "name": "Photography Portfolio V2.0",
-    "description": "Custom built website to host my photos.",
+    "id": "photography-portfolio",
+    "name": "Photography Portfolio",
+    "description": "Photography Portfolio powered by React and TypeScript.",
     "end_date": "2018-10-31",
     "images": [],
     "links": [
@@ -16,6 +16,6 @@
     ],
     "preview_img": {
         "name": "photo20",
-        "src": "photography-portfolio-v2-0/photo20_preview.png"
+        "src": "photography-portfolio/photo20_preview.png"
     }
 }

@@ -1,7 +1,7 @@
 {
     "id": "strangerer-things-lights",
     "name": "Strangerer Things Lights",
-    "description": "I decided to do a fun little electronics project with my coworkers in the office. This is what we created.",
+    "description": "Messaging system, inspired by Stranger Things, to communicate via Slack to series of lights, controlled by a Raspberry Pi.",
     "end_date": "2018-12-23",
     "images": [
         {
