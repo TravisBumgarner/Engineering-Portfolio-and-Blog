@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { Navigation } from './'
 import { PRIMARY_COLOR, TERTIARY_COLOR, media } from 'Theme'
-import { Title } from 'SharedComponents'
+import { Title, Text } from 'SharedComponents'
 
 const StyledLink = styled(Link)`
     text-decoration: none;
@@ -16,7 +16,7 @@ const StyledLink = styled(Link)`
 `
 
 const HeaderWrapper = styled.div`
-    justify-content: center;
+    align-items: baseline;
     justify-content: space-between;
     display: flex;
     margin-bottom: 40px;
@@ -31,9 +31,12 @@ const HeaderWrapper = styled.div`
 const Header = () => {
     return (
         <HeaderWrapper>
-            <Title size="large">
-                <StyledLink to="/">Travis Bumgarner</StyledLink>
-            </Title>
+            <div>
+                <Title size="large">
+                    <StyledLink to="/">Travis Bumgarner</StyledLink>
+                </Title>
+                <Text>These are artifacts of my experiences learning, creating, and exploring.</Text>
+            </div>
             <Navigation />
         </HeaderWrapper>
     )

@@ -1,8 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-import projects, { Project } from 'Content'
-
 import { GlobalStyle, media } from 'Theme'
 import styled from 'styled-components'
 
@@ -29,13 +27,13 @@ const App = () => {
                 <Routes>
                     <Route
                         path="/"
-                        element={<Portfolio projects={projects} />}
+                        element={<Portfolio />}
                     />
                     <Route
                         path="/project/:id"
-                        element={<SingleProject projects={projects} />}
+                        element={<SingleProject />}
                     />
-                    <Route element={<NotFound />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </AppWrapper>
         </>

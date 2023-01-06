@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
-import { Project } from 'Content'
 import { Title, Text } from 'SharedComponents'
 import { SECONDARY_COLOR, PRIMARY_COLOR, TERTIARY_COLOR, media } from 'Theme'
+import projects, { Project } from 'Content'
 
 const GridWrapper = styled.div`
     position: relative;
@@ -88,34 +88,15 @@ const Tile = ({ project: { id, preview_img, name, end_date, description } }: Til
     )
 }
 
-type PortfolioProps = {
-    projects: Project[],
-}
+const Portfolio = () => {
+    const tiles = useMemo(() => {
+        return projects.map(project => {
+            return <Tile key={project.id} project={project} />
+        })
+    }, [])
 
-const createTiles = (projects: Project[]) => {
-    return projects.map(project => {
-        return <Tile key={project.id} project={project} />
-    })
-}
-
-const SectionWrapper = styled.div`
-    margin-left: 5px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-`
-
-const About = () => {
-    return <SectionWrapper>
-        These are artifacts of my experiences learning, creating, and exploring.
-    </SectionWrapper >
-}
-
-const Portfolio = ({ projects }: PortfolioProps) => {
     return (
-        <>
-            <About />
-            <GridWrapper>{createTiles(projects)}</GridWrapper>
-        </>
+        <GridWrapper>{tiles}</GridWrapper>
     )
 }
 
