@@ -41,15 +41,6 @@ const App = () => {
         'cribbage-board',
     ]
 
-    const highlightedProjects = projects
-        .filter(p => highlightedProjectIds.includes(p.id))
-        .sort((a, b) => highlightedProjectIds.indexOf(a.id) - highlightedProjectIds.indexOf(b.id))
-
-    const filteredProjects = projects
-        .filter(p => !highlightedProjectIds.includes(p.id))
-        .filter(p => activeCategory === 0 || p.categories.includes(activeCategory))
-        .sort((a, b) => sortByDate(a, b))
-
     return (
         <>
             <ScrollToTop />
@@ -59,11 +50,11 @@ const App = () => {
                 <Routes>
                     <Route
                         path="/"
-                        element={<Portfolio setActiveCategory={setActiveCategory} filteredProjects={filteredProjects} highlightedProjects={highlightedProjects} />}
+                        element={<Portfolio setActiveCategory={setActiveCategory} projects={projects} />}
                     />
                     <Route
                         path="/project/:id"
-                        element={<SingleProject projects={[...highlightedProjects, ...filteredProjects]} />}
+                        element={<SingleProject projects={projects} />}
                     />
                     <Route element={<NotFound />} />
                 </Routes>

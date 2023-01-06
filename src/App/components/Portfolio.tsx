@@ -126,8 +126,7 @@ const Tile = ({ project: { id, preview_img, name, categories, start_date, end_da
 }
 
 type PortfolioProps = {
-    highlightedProjects: Project[],
-    filteredProjects: Project[],
+    projects: Project[],
     setActiveCategory: (id: number) => void
 }
 
@@ -188,7 +187,7 @@ const CATEGORIES_TO_FILTER_BY = [
     10
 ]
 
-const Portfolio = ({ highlightedProjects, filteredProjects, setActiveCategory }: PortfolioProps) => {
+const Portfolio = ({ projects, setActiveCategory }: PortfolioProps) => {
     // const ActiveProjects = createTiles(Object.values(projects).filter(({ end_date }) => end_date === "Ongoing"))
     // const InactiveProjects = createTiles(Object.values(projects).filter(({ end_date }) => end_date !== "Ongoing"))
 
@@ -200,12 +199,7 @@ const Portfolio = ({ highlightedProjects, filteredProjects, setActiveCategory }:
     return (
         <>
             <About />
-            <TitleWrapper><Title size="medium">Highlighted Projects</Title></TitleWrapper>
-            <GridWrapper>{createTiles(highlightedProjects)}</GridWrapper>
-            <TitleWrapper><Title size="medium">All Projects</Title></TitleWrapper>
-            <FilterButtonsWrapper><strong>Filter:</strong> <FilterButton onClick={() => setActiveCategory(0)}>See All</FilterButton>{FilterButtons}</FilterButtonsWrapper>
-            {/* <TitleWrapper><Title size="medium">All Projects</Title></TitleWrapper> */}
-            <GridWrapper>{createTiles(filteredProjects)}</GridWrapper>
+            <GridWrapper>{createTiles(projects)}</GridWrapper>
         </>
     )
 }
