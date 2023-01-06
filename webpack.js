@@ -6,7 +6,7 @@ const webpack = require('webpack')
 let __IS_PRODUCTION__, __STATIC__
 if (process.env.NODE_ENV === 'production') {
     __IS_PRODUCTION__ = true
-    __STATIC__ = '"https://storage.googleapis.com/eng42-asdsad/media/"'
+    __STATIC__ = '"https://storage.googleapis.com/eng42-asdsad/public/"'
 } else {
     __IS_PRODUCTION__ = false
     __STATIC__ = '"http://localhost:3000/public/"'
@@ -34,8 +34,8 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
     output: {
-        filename: '[name]-[hash].bundle.js',
-        path: path.resolve(__dirname, 'public'),
+        filename: '[name]-[fullhash].bundle.js',
+        path: path.resolve(__dirname, 'build'),
         publicPath: '/'
     },
     devServer: {
@@ -56,5 +56,7 @@ module.exports = {
             favicon: "./src/favicon.png",
             inject: 'body',
         })
-    ]
+    ],
+    devtool: process.env.NODE_ENV === 'production' ? false : 'inline-source-map',
+    mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 }
