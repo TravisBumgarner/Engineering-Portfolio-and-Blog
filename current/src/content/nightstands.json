@@ -6,28 +6,28 @@
     "images": [
         {
             "name": "Sketching out my ideas",
-            "src": "nightstand-v2/1.jpg"
+            "src": "nightstands/1.jpg"
         },
         {
             "name": "Gluing it all up",
-            "src": "nightstand-v2/2.jpg"
+            "src": "nightstands/2.jpg"
         },
         {
             "name": "Sanding",
-            "src": "nightstand-v2/3.jpg"
+            "src": "nightstands/3.jpg"
         },
         {
             "name": "First version versus second",
-            "src": "nightstand-v2/4.jpg"
+            "src": "nightstands/4.jpg"
         },
         {
             "name": "Finally home",
-            "src": "nightstand-v2/5.jpg"
+            "src": "nightstands/5.jpg"
         }
     ],
     "links": [],
     "preview_img": {
         "name": "Final Design",
-        "src": "nightstand-v2/thumbnail.jpg"
+        "src": "nightstands/thumbnail.jpg"
     }
 }

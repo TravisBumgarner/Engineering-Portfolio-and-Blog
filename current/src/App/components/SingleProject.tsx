@@ -101,7 +101,7 @@ ${SharedButtonCSS};
     right: 10px;
 
     ${media.desktop} {
-        left: 5px;
+        right: 5px;
     }
 `
 

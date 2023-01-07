@@ -15,13 +15,9 @@ const StyledArticle = styled.article`
     position: relative;
 
     ${media.tablet} {
-        width: calc(50% - ${SHARED_SIZE});
+        width: calc(50% - ${SHARED_SIZE} * 2);
     }
 
-    ${media.phone} {
-        width: calc(100% - ${SHARED_SIZE});
-    }
-    
     img {
         line-height: 0;
     }
@@ -47,6 +43,20 @@ const GridWrapper = styled.div`
     ${StyledArticle}:nth-child(3n + 2) {
         margin-left: ${SHARED_SIZE};
         margin-right: ${SHARED_SIZE};
+    }
+
+    ${media.tablet} {
+         ${StyledArticle} {
+            margin: ${SHARED_SIZE};
+        }
+
+        ${StyledArticle}:nth-child(2n) {
+            margin-right: calc(${SHARED_SIZE} / 2);
+        }
+
+        ${StyledArticle}:nth-child(2n + 1) {
+            margin-left:  calc(${SHARED_SIZE} / 2);
+        }
     }
 `
 

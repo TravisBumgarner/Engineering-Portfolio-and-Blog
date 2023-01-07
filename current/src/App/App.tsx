@@ -8,13 +8,9 @@ import { ScrollToTop, Portfolio, NotFound, Header, SingleProject } from './compo
 
 const AppWrapper = styled.div`
     max-width: 1200px;
-    width: 90%;
+    width: 95%;
     margin: 15px auto 30px;
     box-sizing: border-box;
-
-    ${media.tablet}{
-        width: 100%;
-    }
 `
 
 const App = () => {
