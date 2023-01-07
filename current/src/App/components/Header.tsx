@@ -16,15 +16,10 @@ const StyledLink = styled(Link)`
 `
 
 const HeaderWrapper = styled.div`
-    align-items: baseline;
-    justify-content: space-between;
-    display: flex;
-    margin-bottom: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
-    ${media.desktop} {
-        margin-top: 20px;
-        margin-bottom: 20px;
+    > div:first-child {
+        align-items: baseline;
+        justify-content: space-between;
+        display: flex;
     }
 `
 
@@ -35,9 +30,9 @@ const Header = () => {
                 <Title size="large">
                     <StyledLink to="/">Travis Bumgarner</StyledLink>
                 </Title>
-                <Text>These are artifacts of my experiences learning, creating, and exploring.</Text>
+                <Navigation />
             </div>
-            <Navigation />
+            <Text>These are artifacts of my experiences learning, creating, and exploring.</Text>
         </HeaderWrapper>
     )
 }

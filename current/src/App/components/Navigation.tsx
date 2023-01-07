@@ -23,7 +23,7 @@ const NavigationWrapper = styled.div`
     display: flex;
     justify-content: center;
     
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 400;
 
 `
@@ -35,7 +35,11 @@ const EXTERNAL_LINKS = [
     },
     {
         href: 'https://www.linkedin.com/in/travisbumgarner/',
-        content: 'Resume'
+        content: 'Connect'
+    },
+    {
+        href: 'https://github.com/travisBumgarner/',
+        content: 'GitHub'
     },
     {
         href: 'https://travisbumgarner.photography',
