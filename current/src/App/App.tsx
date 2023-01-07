@@ -8,8 +8,8 @@ import { ScrollToTop, Portfolio, NotFound, Header, SingleProject } from './compo
 
 const AppWrapper = styled.div`
     max-width: 1200px;
-    width: 95%;
-    margin: 15px auto 30px;
+    padding: 1rem;
+    margin: 0 auto;
     box-sizing: border-box;
 `
 

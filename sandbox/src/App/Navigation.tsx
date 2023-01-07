@@ -5,15 +5,11 @@ import styled from 'styled-components'
 import designs from './designs'
 
 const Wrapper = styled.div`
-    position: fixed;
-    left: 0;
-    top: 0;
-    
     > a {
         padding: 0px 5px;
     }
-    z-index: 999;
 `
+
 const Navigation = () => {
     return (
         <Wrapper>

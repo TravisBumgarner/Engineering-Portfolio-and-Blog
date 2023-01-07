@@ -16,23 +16,16 @@ const StyledLink = styled(Link)`
 `
 
 const HeaderWrapper = styled.div`
-    > div:first-child {
-        align-items: baseline;
-        justify-content: space-between;
-        display: flex;
-    }
 `
 
 const Header = () => {
     return (
         <HeaderWrapper>
-            <div>
-                <Title size="large">
-                    <StyledLink to="/">Travis Bumgarner</StyledLink>
-                </Title>
-                <Navigation />
-            </div>
+            <Title size="large">
+                <StyledLink to="/">Travis Bumgarner</StyledLink>
+            </Title>
             <Text>These are artifacts of my experiences learning, creating, and exploring.</Text>
+            <Navigation />
         </HeaderWrapper>
     )
 }

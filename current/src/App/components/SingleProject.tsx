@@ -1,13 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { useParams, useNavigate } from 'react-router-dom'
-import { FaArrowCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa'
+import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa'
 
 import projects, { Project } from 'Content'
 import { media, PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
 import { Text, ExternalLink, Title } from 'SharedComponents'
-
-const DetailsWrapper = styled.div``
 
 const Image = styled.img`
     display: block;
@@ -27,81 +25,66 @@ type SectionProps = {
     title: string
 }
 
-const Section = ({ children, title }: SectionProps) => {
-    return (
-        <SectionWrapper>
-            <Title size="small">{title}</Title>
-            {children}
-        </SectionWrapper>
-    )
-}
+const LinkLi = styled.li`
+    display: inline-block;
+    margin-right: 2rem;
+    font-weight: 900;
+`
+
 
 const Details = ({ project: { description, links, name, images } }: { project: Project }) => {
     const Links = useMemo(() => links.map(l => {
         return (
-            <li key={l.name + l.src}>
+            <LinkLi key={l.name + l.src}>
                 <ExternalLink href={l.src}>
                     {l.name}
                 </ExternalLink>
-            </li>
+            </LinkLi>
         )
     }), [links])
     const Images = useMemo(() => images.map((i, index) => <Image key={index} src={__STATIC__ + i.src} />), [images])
     return (
-        <DetailsWrapper>
-            <Title size='large'>{name}</Title>
+        <div>
+            <Title size='medium'>{name}</Title>
             {Links.length > 0 && (
-                <Section title="Links">
-                    <ul style={{ listStyle: 'disc', marginLeft: '1em' }}>{Links}</ul>
-                </Section>
+                <ul style={{ listStyle: 'disc', marginLeft: '0em' }}>{Links}</ul>
             )}
-            <Section title="Description"><Text>{description}</Text></Section>
-            {images.length ? <Section title="Photos">{Images}</Section> : null}
-        </DetailsWrapper >
+            <Text>{description}</Text>
+            {images.length ? Images : null}
+        </div >
     )
 }
 
 const SingleProjectWrapper = styled.div`
-    justify-content: space-between;
-    display: flex;
-    align-items: top;
-
-    ${media.desktop} {
-        margin: 20px 4vw;
-    }
 `
 
-const SharedButtonCSS = css`
-    fill: ${PRIMARY_COLOR};
+const ButtonWrapper = styled.div`
     position: fixed;
-    top: calc(50vh - 1.5em/2);
-    font-size: 1.25em;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    padding: 0.5rem;
+    justify-content: center;
 
-    &:hover{
-        fill: ${TERTIARY_COLOR};
-    }
+    svg {
+        fill: ${PRIMARY_COLOR};
+        top: calc(50vh - 1.5em/2);
+        font-size: 1.25em;
+        cursor: pointer;
 
-    ${media.desktop} {
-        font-size: 1em;
-    }
-`
+        &:hover{
+            fill: ${TERTIARY_COLOR};
+        }
 
-const PrevProject = styled(FaArrowCircleLeft)`
-    ${SharedButtonCSS};
-    left: 10px;
+        &:first-child{
+            margin-right: 1rem;
+        }
 
-    ${media.desktop} {
-        left: 5px;
-    }
-    
-`
-
-const NextProject = styled(FaArrowAltCircleRight)`
-${SharedButtonCSS};
-    right: 10px;
-
-    ${media.desktop} {
-        right: 5px;
+        ${media.desktop} {
+            font-size: 1em;
+        }
     }
 `
 
@@ -127,9 +110,11 @@ const SingleProject = () => {
 
     return (
         <SingleProjectWrapper>
-            <PrevProject size="2em" onClick={() => navigate(`/project/${projects[previousIndex]['id']}`)} />
             <Details project={projects[projectIndex]} />
-            <NextProject onClick={() => navigate(`/project/${projects[nextIndex]['id']}`)} size="2em" />
+            <ButtonWrapper>
+                <FaArrowCircleLeft size="2em" onClick={() => navigate(`/project/${projects[previousIndex]['id']}`)} />
+                <FaArrowCircleRight onClick={() => navigate(`/project/${projects[nextIndex]['id']}`)} size="2em" />
+            </ButtonWrapper>
         </SingleProjectWrapper >
     )
 }

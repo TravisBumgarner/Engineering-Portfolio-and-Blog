@@ -11,20 +11,19 @@ const List = styled.div`
 `
 
 const Item = styled.div`
-    margin-left: 10px;
+    margin-right: 10px;
 
-    ${media.tablet} {
-        margin: 0 10px;
-    }
 `
 
 const NavigationWrapper = styled.div`
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
-    
+    margin: 1.5rem 0;
     font-size: 1rem;
     font-weight: 400;
+    border-top: 1px solid #979797;
+    border-bottom: 1px solid #979797;
+    padding: 1rem 0;
 
 `
 

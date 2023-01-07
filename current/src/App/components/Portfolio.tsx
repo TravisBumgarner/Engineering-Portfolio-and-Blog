@@ -10,7 +10,6 @@ const SHARED_MARGIN = '1rem'
 
 const StyledArticle = styled.article`
     box-sizing: border-box;
-    border: 5px solid white;
     display: block;
     position: relative;
     break-inside: avoid;
