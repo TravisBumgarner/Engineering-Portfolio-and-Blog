@@ -12,6 +12,7 @@ const Wrapper = styled.div`
     > a {
         padding: 0px 5px;
     }
+    z-index: 999;
 `
 const Navigation = () => {
     return (
