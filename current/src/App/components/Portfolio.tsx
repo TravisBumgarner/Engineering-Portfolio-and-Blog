@@ -6,65 +6,26 @@ import { Title, Text } from 'SharedComponents'
 import { SECONDARY_COLOR, PRIMARY_COLOR, TERTIARY_COLOR, media } from 'Theme'
 import projects, { Project } from 'Content'
 
-const SHARED_SIZE = "5px"
+const SHARED_MARGIN = '1rem'
+
 const StyledArticle = styled.article`
-    width: calc(33% - ${SHARED_SIZE});
     box-sizing: border-box;
     border: 5px solid white;
-    display: inline-block;
+    display: block;
     position: relative;
-
-    ${media.tablet} {
-        width: calc(50% - ${SHARED_SIZE} * 2);
-    }
+    break-inside: avoid;
+    margin-bottom: ${SHARED_MARGIN};
 
     img {
         line-height: 0;
     }
 `
 
-
-const GridWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    ${StyledArticle} {
-        margin: ${SHARED_SIZE};
-    }
-
-    ${StyledArticle}:nth-child(3n) {
-        margin-right: 0;
-    }
-
-    ${StyledArticle}:nth-child(3n + 1) {
-        margin-left: 0;
-    }
-    ${StyledArticle}:nth-child(3n + 2) {
-        margin-left: ${SHARED_SIZE};
-        margin-right: ${SHARED_SIZE};
-    }
-
-    ${media.tablet} {
-         ${StyledArticle} {
-            margin: ${SHARED_SIZE};
-        }
-
-        ${StyledArticle}:nth-child(2n) {
-            margin-right: calc(${SHARED_SIZE} / 2);
-        }
-
-        ${StyledArticle}:nth-child(2n + 1) {
-            margin-left:  calc(${SHARED_SIZE} / 2);
-        }
-    }
-`
-
-const GridImage = styled.img`
+const Image = styled.img`
     width: 100%;
 `
 
-const GridImageWrapper = styled.div`
+const ImageWrapper = styled.div`
     line-height: 0;
 `
 
@@ -90,7 +51,6 @@ const HoverContent = styled.div`
     align-items: center;
     flex-direction: column;
     text-align: center;
-    /* padding: 25px; */
 
     background-color: ${TERTIARY_COLOR};
     > * {
@@ -102,12 +62,21 @@ type TileProps = {
     project: Project
 }
 
+const GridWrapper = styled.div`
+    column-gap: ${SHARED_MARGIN};
+    column-count: 3;
+
+    ${media.tablet}{
+        column-count: 2;
+    }
+`
+
 const Tile = ({ project: { id, preview_img, name, end_date, description } }: TileProps) => {
     return (
         <StyledArticle>
-            <GridImageWrapper>
-                <GridImage src={preview_img && __STATIC__ + preview_img.src} />
-            </GridImageWrapper>
+            <ImageWrapper>
+                <Image src={preview_img && __STATIC__ + preview_img.src} />
+            </ImageWrapper>
             <StyledLink to={`/project/${id}`}>
                 <HoverContent>
                     <Title size="small"> {name}</Title>
