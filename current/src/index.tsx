@@ -1,5 +1,3 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { ErrorBoundary, init as sentryInit } from "@sentry/react";
 import { createRoot } from 'react-dom/client';

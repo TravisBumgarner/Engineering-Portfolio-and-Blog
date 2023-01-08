@@ -97,10 +97,10 @@ const Landing = () => {
       <Header />
       <NavWrapper>
         <List>
-          <ListItem><Link href="https://google.com">Writing</Link></ListItem>
-          <ListItem><Link href="https://google.com">Presentations</Link></ListItem>
+          <ListItem><Link href="https://google.com">Blog</Link></ListItem>
+          <ListItem><Link href="https://google.com">Talks</Link></ListItem>
           <ListItem><Link href="https://google.com">Projects</Link></ListItem>
-          <ListItem><Link href="https://google.com">Prototyping</Link></ListItem>
+          <ListItem><Link href="https://google.com">Code</Link></ListItem>
           <ListItem><Link href="https://google.com">Collab</Link></ListItem>
         </List>
       </NavWrapper>

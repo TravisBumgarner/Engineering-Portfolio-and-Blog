@@ -1,9 +1,9 @@
 
-import React from 'react'
 import styled from 'styled-components'
 
 import { media } from 'Theme'
 import { ExternalLink } from 'SharedComponents'
+import { Link } from 'react-router-dom'
 
 const List = styled.div`
     display: flex;
@@ -55,6 +55,7 @@ const ExternalLinks = EXTERNAL_LINKS.map(l => (
 const Navigation = () => {
     return (
         <NavigationWrapper>
+            <Link to="/blog">Blog</Link>
             <List>{ExternalLinks}</List>
         </NavigationWrapper>
     )

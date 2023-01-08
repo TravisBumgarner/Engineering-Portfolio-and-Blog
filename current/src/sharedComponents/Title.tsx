@@ -1,10 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { PRIMARY_COLOR } from 'Theme'
 
-const LargeTitle = styled.h1`
-    display: block;
+const LargeTitleStyles = css`
+     display: block;
     font-size: 1.7rem;
     margin: 0 0;
     font-weight: 700;
@@ -12,7 +11,7 @@ const LargeTitle = styled.h1`
     color: ${PRIMARY_COLOR};
 `
 
-const MediumTitle = styled.h2`
+const MediumTitleStlyes = css`
     display: block;
     font-size: 1.6rem;
     margin: 0 0 10px 0;
@@ -21,7 +20,7 @@ const MediumTitle = styled.h2`
     color: ${PRIMARY_COLOR};
 `
 
-const SmallTitle = styled.h3`
+const SmallTitleStlyes = css`
     display: inline-block;
     font-size: 1.2rem;
     margin: 5px 0;
@@ -29,6 +28,11 @@ const SmallTitle = styled.h3`
     font-family: Raleway, sans-serif;
     color: ${PRIMARY_COLOR};
 `
+
+const LargeTitle = styled.h1`${LargeTitleStyles}`
+const MediumTitle = styled.h2`${MediumTitleStlyes}`
+const SmallTitle = styled.h3`${SmallTitleStlyes}`
+
 
 type TitleProps = {
     size: 'small' | 'large' | 'medium'
@@ -48,3 +52,4 @@ const Title = ({ children, size }: TitleProps) => {
 }
 
 export default Title
+export { SmallTitleStlyes, MediumTitleStlyes, LargeTitleStyles }

@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 import { PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'

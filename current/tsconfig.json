@@ -23,7 +23,7 @@
         "sourceMap": true,
         "strictNullChecks": true,
         "esModuleInterop": true,
-        "jsx": "react",
+        "jsx": "react-jsx",
         "skipLibCheck": true
     },
     "exclude": [

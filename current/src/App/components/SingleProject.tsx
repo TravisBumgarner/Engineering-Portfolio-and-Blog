@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import styled, { css } from 'styled-components'
+import { useMemo, useEffect, useState } from 'react'
+import styled from 'styled-components'
 import { useParams, useNavigate } from 'react-router-dom'
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa'
 
