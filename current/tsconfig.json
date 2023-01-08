@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "resolveJsonModule": true,
+        "target": "ES2020",
         "baseUrl": ".",
         "paths": {
             "*": [
@@ -16,6 +17,9 @@
                 "src/content"
             ]
         },
+        "types": [
+            "mdx"
+        ],
         "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
