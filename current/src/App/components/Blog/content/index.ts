@@ -1,5 +1,18 @@
 import { MDXProps } from 'mdx/types'
-import Post1 from './a-collection-of-tips-to-become-a-software-engineer.mdx'
+import Post1 from './1.mdx'
+import Post2 from './2.mdx'
+import Post3 from './3.mdx'
+import Post4 from './4.mdx'
+import Post5 from './5.mdx'
+import Post6 from './6.mdx'
+import Post7 from './7.mdx'
+import Post8 from './8.mdx'
+import Post9 from './9.mdx'
+import Post10 from './10.mdx'
+import Post11 from './11.mdx'
+import Post12 from './12.mdx'
+import Post13 from './13.mdx'
+
 
 type BlogPost = {
     title: string
