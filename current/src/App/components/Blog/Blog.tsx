@@ -36,6 +36,13 @@ const MarkdownStyles = styled.div`
     ol {
         list-style: decimal;
     }
+    code {
+        border: 5px solid black;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
     
 `
 

@@ -1,7 +1,7 @@
 import { MDXProps } from 'mdx/types'
 import Post1 from './1.mdx'
 import Post2 from './2.mdx'
-// import Post3 from './3.mdx'
+import Post3 from './3.mdx'
 // import Post4 from './4.mdx'
 // import Post5 from './5.mdx'
 // import Post6 from './6.mdx'
@@ -39,14 +39,14 @@ const posts: BlogPost[] = [
         description: "Engineers are pushed to write code quickly and the quality suffers because of it. How can you move quickly while maintaining a high level of quality?",
         preview_image: "/code-to-production/preview_image.jpg"
     },
-    // {
-    //     "renderer": Post3,
-    //     title: "Combining Hobbies: Programming, Electronics & Photography",
-    //     date: "2016-04-04T09:00:00-00:00",
-    //     draft: false,
-    //     preview_image: "/combining-hobbies/preview_image.jpg",
-    //     description: "This is an exploration into learning more about photography by building a camera."
-    // },
+    {
+        "renderer": Post3,
+        title: "Combining Hobbies: Programming, Electronics & Photography",
+        date: "2016-04-04T09:00:00-00:00",
+        draft: false,
+        preview_image: "/combining-hobbies/preview_image.jpg",
+        description: "This is an exploration into learning more about photography by building a camera."
+    },
     // {
     //     renderer: Post4,
     //     title: "What I learned from Failing with Kickstarter",
