@@ -1,5 +1,5 @@
 import { MDXProps } from 'mdx/types'
-// import Post1 from './1.mdx'
+import Post1 from './1.mdx'
 import Post2 from './2.mdx'
 // import Post3 from './3.mdx'
 // import Post4 from './4.mdx'
@@ -23,14 +23,14 @@ type BlogPost = {
 }
 
 const posts: BlogPost[] = [
-    // {
-    //     renderer: Post1,
-    //     title: "A Collection of Tips to Become a Software Engineer",
-    //     date: "2019-04-15T20:52:04-04:00",
-    //     draft: false,
-    //     description: "Over the years I have been on both sides of the interview process. I have learned a wealth of experience, here is my advice.",
-    //     preview_image: "/image/a-collection-of-tips-to-become-a-software-engineer/preview_image.jpg"
-    // },
+    {
+        renderer: Post1,
+        title: "A Collection of Tips to Become a Software Engineer",
+        date: "2019-04-15T20:52:04-04:00",
+        draft: false,
+        description: "Over the years I have been on both sides of the interview process. I have learned a wealth of experience, here is my advice.",
+        preview_image: "/image/a-collection-of-tips-to-become-a-software-engineer/preview_image.jpg"
+    },
     {
         renderer: Post2,
         title: "Software Engineers Rush to Write Bad Code",
