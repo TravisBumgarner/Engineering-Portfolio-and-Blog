@@ -74,7 +74,7 @@ const Tile = ({ project: { id, preview_img, name, end_date, description } }: Til
     return (
         <StyledArticle>
             <ImageWrapper>
-                <Image src={preview_img && __STATIC__ + preview_img.src} />
+                <Image src={preview_img && __STATIC__ + 'projects/' + preview_img.src} />
             </ImageWrapper>
             <StyledLink to={`/project/${id}`}>
                 <HoverContent>

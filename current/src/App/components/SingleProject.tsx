@@ -15,16 +15,6 @@ const Image = styled.img`
     align-self: center;
 `
 
-const SectionWrapper = styled.div`
-    width: 100%;
-    margin-bottom: 20px;
-`
-
-type SectionProps = {
-    children: React.ReactNode
-    title: string
-}
-
 const LinkLi = styled.li`
     display: inline-block;
     margin-right: 2rem;
@@ -42,7 +32,7 @@ const Details = ({ project: { description, links, name, images } }: { project: P
             </LinkLi>
         )
     }), [links])
-    const Images = useMemo(() => images.map((i, index) => <Image key={index} src={__STATIC__ + i.src} />), [images])
+    const Images = useMemo(() => images.map((i, index) => <Image key={index} src={__STATIC__ + 'projects/' + i.src} />), [images])
     return (
         <div>
             <Title size='medium'>{name}</Title>
