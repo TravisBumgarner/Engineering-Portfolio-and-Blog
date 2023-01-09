@@ -1,30 +1,19 @@
 import { useEffect, useState, useCallback, useMemo } from 'react'
-import { Markdown } from 'SharedComponents'
 
 import blogPosts, { BlogPost } from "./content"
 
-// const BlogPost = ({ post }: { post: BlogPost }) => {
-//     return (
-//     )
-// }
-
 const Blog = () => {
-    const [markdownPath, setMarkdownPath] = useState<string | null>(null)
-
-    const handleClick = useCallback((markdownPath: string) => {
-        setMarkdownPath(markdownPath)
-    }, [])
+    const [selectedPost, setSelectedPost] = useState<number | null>(null)
 
     const ListItems = useMemo(() => {
-        return blogPosts.map(post => <p key={post.title}>{post.title}</p>)
+        return blogPosts.map((post, index) => <div key={post.title}>{post.title} <button onClick={() => setSelectedPost(index)}> Pick me</button></div>)
     }, [])
     return (
         <div>
             <ul>
                 {ListItems}
             </ul>
-            {/* <BlogPost post={blogPosts[0]} /> */}
-            {blogPosts[0].renderer()}
+            {selectedPost !== null ? blogPosts[selectedPost].renderer() : 'Select a post'}
         </div>
     )
 }
