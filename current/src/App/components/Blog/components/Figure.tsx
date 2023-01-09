@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
 const FigureWrapper = styled.figure`
+    img {
+        width: 100%;
+    }
 
+    figcaption {
+        text-align: center;
+    }
 `
 
 type FigureProps = {
@@ -11,10 +17,10 @@ type FigureProps = {
 
 const Figure = ({ src, caption }: FigureProps) => {
     return (
-        <figure>
-            <img src={src} alt={caption} />
-            <p>{caption}</p>
-        </figure>
+        <FigureWrapper>
+            <img src={__STATIC__ + 'posts' + src} alt={caption} />
+            <figcaption>{caption}</figcaption>
+        </FigureWrapper>
     )
 }
 
