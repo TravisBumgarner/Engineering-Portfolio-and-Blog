@@ -16,7 +16,7 @@ const BlogListItemWrapper = styled(Link)`
 
 const BlogListItem = ({ post, id }: { post: BlogPost, id: string }) => {
     return (
-        <BlogListItemWrapper to={`/blog/${id}`}>
+        <BlogListItemWrapper to={`/post/${id}`}>
             <h2>{post.title}</h2>
             <time>{post.date}</time>
             <p>{post.description}</p>
