@@ -11,7 +11,7 @@ const LargeTitleStyles = css`
     color: ${PRIMARY_COLOR};
 `
 
-const MediumTitleStlyes = css`
+const MediumTitleStyles = css`
     display: block;
     font-size: 1.6rem;
     margin: 0 0 10px 0;
@@ -20,7 +20,7 @@ const MediumTitleStlyes = css`
     color: ${PRIMARY_COLOR};
 `
 
-const SmallTitleStlyes = css`
+const SmallTitleStyles = css`
     display: inline-block;
     font-size: 1.2rem;
     margin: 5px 0;
@@ -30,8 +30,8 @@ const SmallTitleStlyes = css`
 `
 
 const LargeTitle = styled.h1`${LargeTitleStyles}`
-const MediumTitle = styled.h2`${MediumTitleStlyes}`
-const SmallTitle = styled.h3`${SmallTitleStlyes}`
+const MediumTitle = styled.h2`${MediumTitleStyles}`
+const SmallTitle = styled.h3`${SmallTitleStyles}`
 
 
 type TitleProps = {
@@ -52,4 +52,4 @@ const Title = ({ children, size }: TitleProps) => {
 }
 
 export default Title
-export { SmallTitleStlyes, MediumTitleStlyes, LargeTitleStyles }
+export { SmallTitleStyles, MediumTitleStyles, LargeTitleStyles }

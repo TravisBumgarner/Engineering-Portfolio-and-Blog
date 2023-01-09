@@ -13,7 +13,6 @@ import Post2 from './2.mdx'
 // import Post12 from './12.mdx'
 // import Post13 from './13.mdx'
 
-
 type BlogPost = {
     title: string
     date: string
