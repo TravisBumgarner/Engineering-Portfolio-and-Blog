@@ -43,6 +43,14 @@ const MarkdownStyles = styled.div`
         box-sizing: border-box;
         padding: 1rem;
     }
+
+    blockquote {
+        border: 5px solid green;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
     
 `
 
