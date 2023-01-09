@@ -27,7 +27,10 @@ const BlogListItem = ({ post, id }: { post: BlogPost, id: string }) => {
 
 const Blog = () => {
     const ListItems = useMemo(() => {
-        return Object.keys(posts).map((id) => <BlogListItem key={id} id={id} post={posts[id]} />)
+        return Object
+            .keys(posts)
+            .sort((a, b) => new Date(posts[a].date) < new Date(posts[b].date) ? 1 : -1)
+            .map((id) => <BlogListItem key={id} id={id} post={posts[id]} />)
     }, [])
 
     return (
