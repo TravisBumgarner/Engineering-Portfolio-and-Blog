@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { GlobalStyle, media } from 'Theme'
 import styled from 'styled-components'
 
-import { ScrollToTop, Portfolio, NotFound, Header, SingleProject, Blog, Home } from './components'
+import { ScrollToTop, Portfolio, NotFound, Header, SingleProject, Blog, Home, Post } from './components'
 
 const AppWrapper = styled.div`
     max-width: 1200px;
@@ -34,7 +34,7 @@ const App = () => {
                     />
                     <Route
                         path="/blog/:id"
-                        element={<Blog />}
+                        element={<Post />}
                     />
                     <Route
                         path="/"

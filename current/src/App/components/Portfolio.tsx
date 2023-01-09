@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 import { Title, Text } from 'SharedComponents'
 import { SECONDARY_COLOR, PRIMARY_COLOR, TERTIARY_COLOR, media } from 'Theme'
-import projects, { Project } from 'Content'
+import projects, { Project } from 'Projects'
 
 const SHARED_MARGIN = '1rem'
 

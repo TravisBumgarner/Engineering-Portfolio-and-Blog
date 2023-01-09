@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useParams, useNavigate } from 'react-router-dom'
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa'
 
-import projects, { Project } from 'Content'
+import projects, { Project } from 'Projects'
 import { media, PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
 import { Text, ExternalLink, Title } from 'SharedComponents'
 

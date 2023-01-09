@@ -13,8 +13,11 @@
             "Theme": [
                 "src/theme.ts"
             ],
-            "Content": [
-                "src/content"
+            "Projects": [
+                "src/projects"
+            ],
+            "Posts": [
+                "src/posts"
             ]
         },
         "types": [
