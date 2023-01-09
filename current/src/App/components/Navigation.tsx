@@ -2,20 +2,21 @@
 import styled from 'styled-components'
 
 import { media } from 'Theme'
-import { ExternalLink } from 'SharedComponents'
+import { ExternalLink, InternalLink } from 'SharedComponents'
 import { Link } from 'react-router-dom'
 
-const List = styled.div`
+const List = styled.ul`
     display: flex;
     align-items: center;
 `
 
-const Item = styled.div`
+const Item = styled.li`
     margin-right: 10px;
 
 `
 
 const NavigationWrapper = styled.div`
+    justify-content: space-between;
     box-sizing: border-box;
     display: flex;
     margin: 1.5rem 0;
@@ -28,10 +29,6 @@ const NavigationWrapper = styled.div`
 `
 
 const EXTERNAL_LINKS = [
-    {
-        href: 'https://travisbumgarner.com',
-        content: 'Blog'
-    },
     {
         href: 'https://www.linkedin.com/in/travisbumgarner/',
         content: 'Connect'
@@ -46,16 +43,37 @@ const EXTERNAL_LINKS = [
     }
 ]
 
+const INTERNAL_LINKS = [
+    {
+        to: '/',
+        content: 'Home'
+    },
+    {
+        to: '/blog',
+        content: 'Blog'
+    },
+    {
+        to: '/projects',
+        content: 'Projects'
+    },
+]
+
 const ExternalLinks = EXTERNAL_LINKS.map(l => (
     <Item key={l.href}>
         <ExternalLink href={l.href}>{l.content}</ExternalLink>
     </Item>
 ))
 
+const InternalLinks = INTERNAL_LINKS.map(l => (
+    <Item key={l.to}>
+        <InternalLink to={l.to}>{l.content}</InternalLink>
+    </Item>
+))
+
 const Navigation = () => {
     return (
         <NavigationWrapper>
-            <Link to="/blog">Blog</Link>
+            <List>{InternalLinks}</List>
             <List>{ExternalLinks}</List>
         </NavigationWrapper>
     )

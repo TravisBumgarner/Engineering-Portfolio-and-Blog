@@ -54,12 +54,18 @@ const MarkdownStyles = styled.div`
     
 `
 
+const BlogListItem = ({ post, setSelectedPost }: { post: BlogPost, setSelectedPost: () => void }) => {
+    return (
+        <li key={post.title}>{post.title} <button onClick={setSelectedPost}> Pick me</button></li>
+    )
+}
+
 
 const Blog = () => {
     const [selectedPost, setSelectedPost] = useState<number | null>(null)
 
     const ListItems = useMemo(() => {
-        return blogPosts.map((post, index) => <div key={post.title}>{post.title} <button onClick={() => setSelectedPost(index)}> Pick me</button></div>)
+        return blogPosts.map((post, index) => <BlogListItem post={post} setSelectedPost={() => setSelectedPost(index)} />)
     }, [])
 
     const Post = useMemo(() => {
