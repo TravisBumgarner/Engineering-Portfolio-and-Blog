@@ -35,7 +35,7 @@ const BlogListItemWrapper = styled(Link) <{ src: string }>`
 
 const BlogListItem = ({ post, id }: { post: BlogPost, id: string }) => {
     return (
-        <BlogListItemWrapper src={`/public/posts/${id}/${post.preview_image}`} to={`/post/${id}`}>
+        <BlogListItemWrapper src={`${__STATIC__}posts/${id}/${post.preview_image}`} to={`/post/${id}`}>
             <Title size="medium">{post.title}</Title>
             <Text>{post.description}</Text>
         </BlogListItemWrapper>
