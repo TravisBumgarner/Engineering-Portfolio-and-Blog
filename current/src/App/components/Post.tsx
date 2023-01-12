@@ -168,7 +168,7 @@ const Post = () => {
 
     return (
         <MarkdownStyles>
-            <Header src={`/public/posts/${id}/${post.preview_image}`}>
+            <Header src={`${__STATIC__}posts/${id}/${post.preview_image}`}>
                 <h1>{post.title}</h1>
             </Header>
             <time>{post.date}</time>
