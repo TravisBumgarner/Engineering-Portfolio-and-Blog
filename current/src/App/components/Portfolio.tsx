@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 import { Title, Text } from 'SharedComponents'
 import { SECONDARY_COLOR, PRIMARY_COLOR, TERTIARY_COLOR, media } from 'Theme'
-import projects, { Project } from 'Content'
+import projects, { Project } from 'Projects'
 
 const SHARED_MARGIN = '1rem'
 
@@ -74,9 +74,9 @@ const Tile = ({ project: { id, preview_img, name, end_date, description } }: Til
     return (
         <StyledArticle>
             <ImageWrapper>
-                <Image src={preview_img && __STATIC__ + preview_img.src} />
+                <Image src={preview_img && __STATIC__ + 'projects/' + preview_img.src} />
             </ImageWrapper>
-            <StyledLink to={`/project/${id}`}>
+            <StyledLink to={`/projects/${id}`}>
                 <HoverContent>
                     <Title size="small"> {name}</Title>
                     <Text> {description}</Text>

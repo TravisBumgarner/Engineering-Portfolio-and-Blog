@@ -1,10 +1,9 @@
-import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import { GlobalStyle, media } from 'Theme'
 import styled from 'styled-components'
 
-import { ScrollToTop, Portfolio, NotFound, Header, SingleProject } from './components'
+import { ScrollToTop, Portfolio, NotFound, Header, SingleProject, Blog, Home, Post } from './components'
 
 const AppWrapper = styled.div`
     max-width: 1200px;
@@ -22,13 +21,26 @@ const App = () => {
                 <Header />
                 <Routes>
                     <Route
-                        path="/"
+                        path="/projects"
                         element={<Portfolio />}
                     />
                     <Route
-                        path="/project/:id"
+                        path="/projects/:id"
                         element={<SingleProject />}
                     />
+                    <Route
+                        path="/blog"
+                        element={<Blog />}
+                    />
+                    <Route
+                        path="/post/:id"
+                        element={<Post />}
+                    />
+                    <Route
+                        path="/"
+                        element={<Home />}
+                    />
+
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </AppWrapper>

@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import styled, { css } from 'styled-components'
+import { useMemo, useEffect, useState } from 'react'
+import styled from 'styled-components'
 import { useParams, useNavigate } from 'react-router-dom'
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa'
 
-import projects, { Project } from 'Content'
+import projects, { Project } from 'Projects'
 import { media, PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
 import { Text, ExternalLink, Title } from 'SharedComponents'
 
@@ -14,16 +14,6 @@ const Image = styled.img`
     box-sizing: border-box;
     align-self: center;
 `
-
-const SectionWrapper = styled.div`
-    width: 100%;
-    margin-bottom: 20px;
-`
-
-type SectionProps = {
-    children: React.ReactNode
-    title: string
-}
 
 const LinkLi = styled.li`
     display: inline-block;
@@ -42,7 +32,7 @@ const Details = ({ project: { description, links, name, images } }: { project: P
             </LinkLi>
         )
     }), [links])
-    const Images = useMemo(() => images.map((i, index) => <Image key={index} src={__STATIC__ + i.src} />), [images])
+    const Images = useMemo(() => images.map((i, index) => <Image key={index} src={__STATIC__ + 'projects/' + i.src} />), [images])
     return (
         <div>
             <Title size='medium'>{name}</Title>

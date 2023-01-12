@@ -59,7 +59,6 @@ const Header = () => {
   const [mode, setMode] = useState<'addition' | 'subtraction'>('addition')
   const [length, setLength] = useState(0)
   const BASE_NAME = "Travis Bumgarner"
-  console.log(length)
   useEffect(() => {
     if (mode === 'addition') {
       const intervalId = setInterval(() => {
@@ -97,10 +96,10 @@ const Landing = () => {
       <Header />
       <NavWrapper>
         <List>
-          <ListItem><Link href="https://google.com">Writing</Link></ListItem>
-          <ListItem><Link href="https://google.com">Presentations</Link></ListItem>
+          <ListItem><Link href="https://google.com">Blog</Link></ListItem>
+          <ListItem><Link href="https://google.com">Talks</Link></ListItem>
           <ListItem><Link href="https://google.com">Projects</Link></ListItem>
-          <ListItem><Link href="https://google.com">Prototyping</Link></ListItem>
+          <ListItem><Link href="https://google.com">Code</Link></ListItem>
           <ListItem><Link href="https://google.com">Collab</Link></ListItem>
         </List>
       </NavWrapper>

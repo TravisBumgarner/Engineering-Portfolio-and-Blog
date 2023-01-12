@@ -23,13 +23,28 @@ module.exports = {
                 use: "ts-loader",
                 exclude: /node_modules/,
             },
+            {
+                test: /\.md$/,
+                use: 'raw-loader'
+            },
+            {
+                test: /\.mdx?$/,
+                use: [
+                    {
+                        loader: '@mdx-js/loader',
+                        /** @type {import('@mdx-js/loader').Options} */
+                        options: {}
+                    }
+                ]
+            }
         ],
     },
     resolve: {
         alias: {
             SharedComponents: path.resolve(__dirname, 'src/sharedComponents/'),
             Theme: path.resolve(__dirname, 'src/theme.ts'),
-            Content: path.resolve(__dirname, 'src/content')
+            Projects: path.resolve(__dirname, 'src/projects'),
+            Posts: path.resolve(__dirname, 'src/posts')
         },
         extensions: ['.ts', '.tsx', '.js', '.jsx']
     },

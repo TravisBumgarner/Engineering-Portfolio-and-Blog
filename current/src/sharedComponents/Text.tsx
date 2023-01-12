@@ -1,11 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-import { PRIMARY_COLOR } from 'Theme'
-
-const TextWrapper = styled.p`
+const TextStyles = css`
     margin: 15px 0;
 `
+
+const TextWrapper = styled.p`${TextStyles};`
 
 type TextProps = {
     children: React.ReactNode
@@ -16,3 +15,4 @@ const Text = ({ children }: TextProps) => {
 }
 
 export default Text
+export {TextStyles}

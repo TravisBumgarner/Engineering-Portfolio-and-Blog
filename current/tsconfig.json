@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "resolveJsonModule": true,
+        "target": "ES2020",
         "baseUrl": ".",
         "paths": {
             "*": [
@@ -12,10 +13,16 @@
             "Theme": [
                 "src/theme.ts"
             ],
-            "Content": [
-                "src/content"
+            "Projects": [
+                "src/projects"
+            ],
+            "Posts": [
+                "src/posts"
             ]
         },
+        "types": [
+            "mdx"
+        ],
         "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
@@ -23,7 +30,7 @@
         "sourceMap": true,
         "strictNullChecks": true,
         "esModuleInterop": true,
-        "jsx": "react",
+        "jsx": "react-jsx",
         "skipLibCheck": true
     },
     "exclude": [
