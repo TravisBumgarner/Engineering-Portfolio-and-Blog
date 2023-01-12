@@ -59,7 +59,6 @@ const Header = () => {
   const [mode, setMode] = useState<'addition' | 'subtraction'>('addition')
   const [length, setLength] = useState(0)
   const BASE_NAME = "Travis Bumgarner"
-  console.log(length)
   useEffect(() => {
     if (mode === 'addition') {
       const intervalId = setInterval(() => {

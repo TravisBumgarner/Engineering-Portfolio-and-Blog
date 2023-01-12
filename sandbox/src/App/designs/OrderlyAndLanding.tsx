@@ -112,7 +112,6 @@ const Header = () => {
 
 const Landing = () => {
   const [isNavigationVisible, setIsNavigationVisible] = useState(true)
-  console.log(isNavigationVisible)
   const handleNavigationAway = useCallback(() => (setIsNavigationVisible(prev => !prev)), [])
   return (
     <NavWrapper isNavigationVisible={isNavigationVisible}>
