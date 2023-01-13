@@ -3,8 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { GlobalStyle, media } from 'Theme'
 import styled from 'styled-components'
 
-import { ScrollToTop, Portfolio, NotFound, Header, SingleProject, Blog, Snapshots, Post } from './components'
-import { useEffect, useState } from 'react'
+import { ScrollToTop, Portfolio, NotFound, Header, Project, Blog, Snapshots, Post } from './components'
 
 const AppWrapper = styled.div`
     max-width: 1200px;
@@ -27,7 +26,7 @@ const App = () => {
                     />
                     <Route
                         path="/project/:id"
-                        element={<SingleProject />}
+                        element={<Project />}
                     />
                     <Route
                         path="/blog"
