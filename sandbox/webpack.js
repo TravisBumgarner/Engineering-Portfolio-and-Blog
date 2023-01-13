@@ -33,7 +33,7 @@ module.exports = {
       publicPath: '/public'
     },
     compress: true,
-    port: 3000,
+    port: 3003,
     hot: true,
     historyApiFallback: true,
   },

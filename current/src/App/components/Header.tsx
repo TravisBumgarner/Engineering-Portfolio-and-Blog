@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { Link, useLocation } from 'react-router-dom'
 
-import { Navigation } from './'
-import { PRIMARY_COLOR, TERTIARY_COLOR, media } from 'Theme'
+import { NavigationBase, NavigationHome } from './'
+import { PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
 import { Title, Text } from 'SharedComponents'
 import { useEffect, useMemo, useState } from 'react'
 
@@ -84,7 +84,8 @@ const Header = () => {
                 <StyledLink to="/">{title.slice(0, length)}</StyledLink>
             </Title>
             <Text>These are artifacts of my experiences learning, creating, and exploring.</Text>
-            <Navigation />
+            <NavigationBase />
+            <NavigationHome />
         </HeaderWrapper>
     )
 }
