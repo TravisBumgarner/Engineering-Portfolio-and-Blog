@@ -18,32 +18,28 @@ ${({ top, left, rotation }) => css`
 
 > img {
   height: auto;
-  padding: 5px;
+  padding: 0.5rem;
   width: 100%;
   box-sizing: border-box;
 }
 
-> p {
-  color: black;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+> div {
+  padding: 5px;
 }
 `
 const randomIntFromInterval = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-const Snapshot = ({ label, src }: { label: string, src: string }) => {
+const Snapshot = ({ children, src }: { children?: JSX.Element, src: string }) => {
   const left = useMemo(() => randomIntFromInterval(-10, 10), [])
   const top = useMemo(() => randomIntFromInterval(-10, 10), [])
   const rotation = useMemo(() => randomIntFromInterval(-5, 5), [])
 
   return (
     <SnapshotWrapper top={top} left={left} rotation={rotation}>
-      <img alt={label} src={src}></img>
-      <p>{label}</p>
+      <img src={src}></img>
+      <div>{children}</div>
     </SnapshotWrapper>
   )
 }
