@@ -41,8 +41,9 @@ const makeNewSiteTitle = () => {
     ];
 
     const VALID_FILE_BASE = [
-        'tbumgarner',
-        'travis_bumgarner'
+        // 'tbumgarner',
+        // 'travis_bumgarner'
+        "tb"
     ]
 
     const RANDOM_FILE_TYPE = VALID_FILE_TYPES[Math.floor(Math.random() * VALID_FILE_TYPES.length)];
@@ -84,7 +85,6 @@ const Header = () => {
                 <StyledLink to="/">{title.slice(0, length)}</StyledLink>
             </Title>
             <Text>These are artifacts of my experiences learning, creating, and exploring.</Text>
-            <Navigation />
         </HeaderWrapper>
     )
 }

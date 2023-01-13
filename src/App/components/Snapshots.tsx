@@ -9,6 +9,8 @@ const SnapshotsWrapper = styled.div`
     justify-content: space-around;
     width: 80vw;
     margin-left: 20vw;
+    position: relative;
+    top: -20vh;
     > * {
         width: 48%;
     }
