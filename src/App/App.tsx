@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { GlobalStyle, media } from 'Theme'
 import styled from 'styled-components'
 
-import { ScrollToTop, Portfolio, NotFound, Header, SingleProject, Blog, Home, Post } from './components'
+import { ScrollToTop, Portfolio, NotFound, Header, SingleProject, Blog, Snapshots, Post } from './components'
 import { useEffect, useState } from 'react'
 
 const AppWrapper = styled.div`
@@ -39,7 +39,7 @@ const App = () => {
                     />
                     <Route
                         path="/"
-                        element={<Home />}
+                        element={<Snapshots />}
                     />
 
                     <Route path="*" element={<NotFound />} />

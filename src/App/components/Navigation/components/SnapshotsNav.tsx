@@ -29,26 +29,26 @@ const Link = styled(ReactRouterDomLink)`
     border-color: #3e8eff;
   }
 `
-const HomeNavWrapper = styled.nav<{ isHomeNavigationVisible: boolean }>`
+const SnapshotsNavWrapper = styled.nav<{ isSnapshotsNavigationVisible: boolean }>`
     display: flex;
     align-items: end;
     transition: left 1s;
     position: fixed;
-    left: ${({ isHomeNavigationVisible }) => isHomeNavigationVisible ? "0" : `-100vw`};
+    left: ${({ isSnapshotsNavigationVisible }) => isSnapshotsNavigationVisible ? "0" : `-100vw`};
     bottom: 0;
     z-index: 999;
 `
 
-const HomeNav = ({ isHomeNavVisible }: { isHomeNavVisible: boolean }) => {
-    return (
-        <HomeNavWrapper isHomeNavigationVisible={isHomeNavVisible}>
-            <List>
-                <ListItem><Link to="/blog">Blog</Link></ListItem>
-                <ListItem><Link to="/projects">Portfolio</Link></ListItem>
-                <ListItem><Link to="https://github.com">Code</Link></ListItem>
-            </List>
-        </HomeNavWrapper>
-    )
+const SnapshotsNav = ({ isSnapshotsNavVisible }: { isSnapshotsNavVisible: boolean }) => {
+  return (
+    <SnapshotsNavWrapper isSnapshotsNavigationVisible={isSnapshotsNavVisible}>
+      <List>
+        <ListItem><Link to="/blog">Blog</Link></ListItem>
+        <ListItem><Link to="/projects">Portfolio</Link></ListItem>
+        <ListItem><Link to="https://github.com">Code</Link></ListItem>
+      </List>
+    </SnapshotsNavWrapper>
+  )
 }
 
-export default HomeNav
+export default SnapshotsNav

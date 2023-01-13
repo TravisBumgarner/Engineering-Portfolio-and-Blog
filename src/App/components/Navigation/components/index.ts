@@ -1,7 +1,7 @@
-import HomeNav from './HomeNav'
+import SnapshotsNav from './SnapshotsNav'
 import BaseNav from './BaseNav'
 
 export {
-    HomeNav,
+    SnapshotsNav,
     BaseNav
 }

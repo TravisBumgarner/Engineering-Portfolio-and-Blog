@@ -3,5 +3,6 @@ import Title, { LargeTitleStyles, MediumTitleStyles, SmallTitleStyles } from './
 import ExternalLink from './ExternalLink'
 import InternalLink from './InternalLink'
 import Error from './Error'
+import Snapshot from './Snapshot'
 
-export { ExternalLink, InternalLink, Text, Error, Title, TextStyles, LargeTitleStyles, MediumTitleStyles, SmallTitleStyles }
+export { ExternalLink, InternalLink, Text, Error, Title, Snapshot, TextStyles, LargeTitleStyles, MediumTitleStyles, SmallTitleStyles }

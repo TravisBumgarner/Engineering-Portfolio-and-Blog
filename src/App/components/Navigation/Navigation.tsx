@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { HomeNav, BaseNav } from "./components";
+import { SnapshotsNav, BaseNav } from "./components";
 
 const Navigation = () => {
-    const [isHomeNavVisible, setIsHomeNavVisible] = useState(false)
     const { pathname } = useLocation()
+    const [isSnapshotsNavVisible, setIsSnapshotsNavVisible] = useState(pathname === '/')
 
     useEffect(() => {
-        setIsHomeNavVisible(pathname === '/')
+        setIsSnapshotsNavVisible(pathname === '/')
     }, [pathname])
 
     return (
         <>
-            <HomeNav isHomeNavVisible={isHomeNavVisible} />
-            <BaseNav isBaseNavVisible={!isHomeNavVisible} />
+            <SnapshotsNav isSnapshotsNavVisible={isSnapshotsNavVisible} />
+            <BaseNav isBaseNavVisible={!isSnapshotsNavVisible} />
         </>
     )
 }

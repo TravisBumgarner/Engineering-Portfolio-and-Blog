@@ -23,61 +23,30 @@ const BaseNavWrapper = styled.div<{ isBaseNavVisible: boolean }>`
 
         li {
             margin-right: 10px;
+            :last-child{
+                margin-right: 0;
+            }
         }
     }
 
 `
 
-const EXTERNAL_LINKS = [
-    {
-        href: 'https://www.linkedin.com/in/travisbumgarner/',
-        content: 'Connect'
-    },
-    {
-        href: 'https://github.com/travisBumgarner/',
-        content: 'GitHub'
-    },
-    {
-        href: 'https://travisbumgarner.photography',
-        content: 'Photography'
-    }
-]
-
-const INTERNAL_LINKS = [
-    {
-        to: '/',
-        content: 'Home'
-    },
-    {
-        to: '/blog',
-        content: 'Blog'
-    },
-    {
-        to: '/projects',
-        content: 'Projects'
-    },
-]
-
-
-const ExternalLinks = EXTERNAL_LINKS.map(l => (
-    <li key={l.href}>
-        <ExternalLink href={l.href}>{l.content}</ExternalLink>
-    </li>
-))
-
-const InternalLinks = INTERNAL_LINKS.map(l => (
-    <li key={l.to}>
-        <InternalLink to={l.to}>{l.content}</InternalLink>
-    </li>
-))
-
 const BaseNav = ({ isBaseNavVisible }: { isBaseNavVisible: boolean }) => {
     return (
         <BaseNavWrapper isBaseNavVisible={isBaseNavVisible}>
-            <ul>{InternalLinks}</ul>
-            <ul>{ExternalLinks}</ul>
+            <ul>
+                <li><InternalLink to="/">Snapshots</InternalLink></li>
+                <li><InternalLink to="/blog">Blog</InternalLink></li>
+                <li><InternalLink to="/projects">Projects</InternalLink></li>
+            </ul>
+            <ul>
+                <li><ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">Connect</ExternalLink></li>
+                <li><ExternalLink href="https://github.com/travisBumgarner/">Github</ExternalLink></li>
+                <li><ExternalLink href="https://travisbumgarner.photography">Photography</ExternalLink></li>
+            </ul>
         </BaseNavWrapper>
     )
 }
+
 
 export default BaseNav
