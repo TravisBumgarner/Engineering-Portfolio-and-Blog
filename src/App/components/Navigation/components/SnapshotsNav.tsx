@@ -44,7 +44,7 @@ const SnapshotsNav = ({ isSnapshotsNavVisible }: { isSnapshotsNavVisible: boolea
     <SnapshotsNavWrapper isSnapshotsNavigationVisible={isSnapshotsNavVisible}>
       <List>
         <ListItem><Link to="/blog">Blog</Link></ListItem>
-        <ListItem><Link to="/projects">Portfolio</Link></ListItem>
+        <ListItem><Link to="/portfolio">Portfolio</Link></ListItem>
         <ListItem><Link to="https://github.com">Code</Link></ListItem>
       </List>
     </SnapshotsNavWrapper>

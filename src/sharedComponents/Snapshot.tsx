@@ -14,6 +14,7 @@ ${({ top, left, rotation }) => css`
   left: ${top}px;
   top: ${left}px;
   transform: rotate(${rotation}deg);
+  position: relative;
 `}
 
 > img {

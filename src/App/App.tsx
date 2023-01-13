@@ -22,11 +22,11 @@ const App = () => {
                 <Header />
                 <Routes>
                     <Route
-                        path="/projects"
+                        path="/portfolio"
                         element={<Portfolio />}
                     />
                     <Route
-                        path="/projects/:id"
+                        path="/project/:id"
                         element={<SingleProject />}
                     />
                     <Route

@@ -37,7 +37,7 @@ const BaseNav = ({ isBaseNavVisible }: { isBaseNavVisible: boolean }) => {
             <ul>
                 <li><InternalLink to="/">Snapshots</InternalLink></li>
                 <li><InternalLink to="/blog">Blog</InternalLink></li>
-                <li><InternalLink to="/projects">Projects</InternalLink></li>
+                <li><InternalLink to="/portfolio">Portfolio</InternalLink></li>
             </ul>
             <ul>
                 <li><ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">Connect</ExternalLink></li>

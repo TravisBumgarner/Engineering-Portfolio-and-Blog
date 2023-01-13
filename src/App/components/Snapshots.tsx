@@ -4,10 +4,14 @@ import { useMemo, useState, useCallback, useEffect } from 'react'
 import { Snapshot } from "SharedComponents"
 
 const SnapshotsWrapper = styled.div`
-  column-count: 2;
-  column-gap: 1rem;
-  width: 80vw;
-  margin-left:20vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80vw;
+    margin-left: 20vw;
+    > * {
+        width: 48%;
+    }
 `
 
 const shuffledArray = (array: any[]) => array.sort((a, b) => 0.5 - Math.random());

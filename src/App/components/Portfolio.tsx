@@ -1,100 +1,46 @@
 import { useMemo } from 'react'
 import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
-import { Title, Text } from 'SharedComponents'
-import { SECONDARY_COLOR, PRIMARY_COLOR, TERTIARY_COLOR, media } from 'Theme'
-import projects, { Project } from 'Projects'
+import { Title, Text, Snapshot } from 'SharedComponents'
+import projects from 'Projects'
 
-const SHARED_MARGIN = '1rem'
-
-const StyledArticle = styled.article`
-    box-sizing: border-box;
-    display: block;
-    position: relative;
-    break-inside: avoid;
-    margin-bottom: ${SHARED_MARGIN};
-
-    img {
-        line-height: 0;
-    }
-`
-
-const Image = styled.img`
-    width: 100%;
-`
-
-const ImageWrapper = styled.div`
-    line-height: 0;
-`
-
-const StyledLink = styled(NavLink)`
-    text-decoration: none;
-    color: ${PRIMARY_COLOR};
-`
-
-const HoverContent = styled.div`
-    &:hover {
-        opacity: 1;
-    }
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-
+const PortfolioWrapper = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
-    background-color: ${TERTIARY_COLOR};
     > * {
-        color: ${SECONDARY_COLOR} !important;
+        width: 48%;
     }
 `
 
-type TileProps = {
-    project: Project
-}
-
-const GridWrapper = styled.div`
-    column-gap: ${SHARED_MARGIN};
-    column-count: 3;
-
-    ${media.tablet}{
-        column-count: 2;
-    }
+const ReadNow = styled.strong`
+  &:hover {
+    background-color: #3e8eff;
+    color: white;
+    border-color: #3e8eff;
+  }
 `
-
-const Tile = ({ project: { id, preview_img, name, end_date, description } }: TileProps) => {
-    return (
-        <StyledArticle>
-            <ImageWrapper>
-                <Image src={preview_img && __STATIC__ + 'projects/' + preview_img.src} />
-            </ImageWrapper>
-            <StyledLink to={`/projects/${id}`}>
-                <HoverContent>
-                    <Title size="small"> {name}</Title>
-                    <Text> {description}</Text>
-                </HoverContent>
-            </StyledLink>
-        </StyledArticle>
-    )
-}
 
 const Portfolio = () => {
     const tiles = useMemo(() => {
-        return projects.map(project => {
-            return <Tile key={project.id} project={project} />
+        return projects.map(({ id, name, description, preview_img }) => {
+            return (
+                <Link key={id} to={`/project/${id}`}>
+                    <Snapshot src={preview_img && __STATIC__ + 'projects/' + preview_img.src} key={id}>
+                        <>
+                            <Title size="medium">{name}</Title>
+                            <Text>{description} <ReadNow>Read Now</ReadNow></Text>
+                        </>
+                    </Snapshot>
+                </Link>
+            )
         })
     }, [])
 
     return (
-        <GridWrapper>{tiles}</GridWrapper>
+        <PortfolioWrapper>{tiles}</PortfolioWrapper>
     )
 }
 
