@@ -18,13 +18,14 @@ ${({ top, left, rotation }) => css`
 
 > img {
   height: auto;
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 0 0.5rem;
   width: 100%;
   box-sizing: border-box;
 }
 
 > div {
-  padding: 5px;
+  padding: 0rem 0.5rem 0.5rem 0.5rem;
+  min-height: 2rem;
 }
 `
 const randomIntFromInterval = (min: number, max: number) => {
