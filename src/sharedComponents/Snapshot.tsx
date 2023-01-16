@@ -3,31 +3,31 @@ import styled, { css } from 'styled-components'
 import { useMemo } from 'react'
 
 const SnapshotWrapper = styled.div<{ top: number, left: number, rotation: number }>`
-box-sizing: border-box;
-background-color: white;
-margin-bottom: 1rem;
-border-radius: 0.25rem;
-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-break-inside: avoid;
-
-${({ top, left, rotation }) => css`
-  left: ${top}px;
-  top: ${left}px;
-  transform: rotate(${rotation}deg);
-  position: relative;
-`}
-
-> img {
-  height: auto;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  width: 100%;
   box-sizing: border-box;
-}
+  background-color: white;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  break-inside: avoid;
 
-> div {
-  padding: 0rem 0.5rem 0.5rem 0.5rem;
-  min-height: 2rem;
-}
+  ${({ top, left, rotation }) => css`
+    left: ${top}px;
+    top: ${left}px;
+    transform: rotate(${rotation}deg);
+    position: relative;
+  `}
+
+  > img {
+    height: auto;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  > div {
+    padding: 0rem 0.5rem 0.5rem 0.5rem;
+    min-height: 2rem;
+  }
 `
 const randomIntFromInterval = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1) + min)

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { ExternalLink, InternalLink } from 'SharedComponents'
 import Header from '../../Header'
+import { PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
 
 const Wrapper = styled.div<{ isBaseNavVisible: boolean }>`
     position: relative;
@@ -17,8 +18,8 @@ const BaseNavWrapper = styled.div`
     margin: 1.5rem 0;
     font-size: 1rem;
     font-weight: 400;
-    border-top: 1px solid #979797;
-    border-bottom: 1px solid #979797;
+    border-top: 2px solid ${PRIMARY_COLOR};
+    border-bottom: 2px solid ${PRIMARY_COLOR};
     padding: 1rem 0;
 
     ul {

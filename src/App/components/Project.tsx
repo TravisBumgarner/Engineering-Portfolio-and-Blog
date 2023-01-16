@@ -4,32 +4,35 @@ import { useParams, useNavigate } from 'react-router-dom'
 
 import projects, { Project } from 'Projects'
 import { Text, ExternalLink, Title, Snapshot } from 'SharedComponents'
+import { TERTIARY_COLOR, CSSHover } from 'Theme'
 
 const LinkLi = styled.li`
-    display: inline-block;
-    margin-right: 2rem;
-    font-weight: 900;
+    display: block;
+    text-decoration: underline;
+
+    a {
+        color: ${TERTIARY_COLOR};
+        ${CSSHover};
+    }
 `
 
 const SnapshotsWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 50vw;
-    margin-left: 36vw;
-    > * {
-        width: 100%;
-    }
+    width: 50%;
 `
 
 const DetailsWrapper = styled.div`
     display: flex;
-    flex-direction: column;
-    transition: left 1s;
-    position: fixed;
-    /* left: 0; */
-    padding: 1rem;
-    /* bottom: 0; */
+    flex-direction: row;
+    justify-content: space-between;
+`
+
+const MetadataWrapper = styled.div`
+    width: 35%;
+`
+
+const NoScrollWrapper = styled.div`
+    position: sticky;
+    top: 1rem;
 `
 
 const Details = ({ project: { description, links, name, images } }: { project: Project }) => {
@@ -45,18 +48,22 @@ const Details = ({ project: { description, links, name, images } }: { project: P
 
     const Images = useMemo(() => images.map((i, index) => <Snapshot key={index} src={__STATIC__ + 'projects/' + i.src} />), [images])
     return (
-        <div>
-            <DetailsWrapper>
-                <Title size='medium'>{name}</Title>
-                {Links.length > 0 && (
-                    <ul style={{ listStyle: 'disc', marginLeft: '0em' }}>{Links}</ul>
-                )}
-                <Text>{description}</Text>
-            </DetailsWrapper>
+        <DetailsWrapper>
+            <MetadataWrapper>
+                <NoScrollWrapper>
+                    <Title size='medium'>{name}</Title>
+                    <Title size='small'>Links</Title>
+                    {Links.length > 0 && (
+                        <ul>{Links}</ul>
+                    )}
+                    <Title size='small'>Details</Title>
+                    <Text>{description}</Text>
+                </NoScrollWrapper>
+            </MetadataWrapper>
             <SnapshotsWrapper>
                 {images.length ? Images : null}
             </SnapshotsWrapper>
-        </div >
+        </DetailsWrapper >
     )
 }
 
