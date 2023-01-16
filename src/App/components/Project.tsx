@@ -52,9 +52,11 @@ const Details = ({ project: { description, links, name, images } }: { project: P
             <MetadataWrapper>
                 <NoScrollWrapper>
                     <Title size='medium'>{name}</Title>
-                    <Title size='small'>Links</Title>
                     {Links.length > 0 && (
-                        <ul>{Links}</ul>
+                        <>
+                            <Title size='small'>Links</Title>
+                            <ul>{Links}</ul>
+                        </>
                     )}
                     <Title size='small'>Details</Title>
                     <Text>{description}</Text>
