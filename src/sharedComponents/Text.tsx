@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 const TextStyles = css`
-    margin: 15px 0;
+    margin: 1rem 0;
 `
 
 const TextWrapper = styled.p`${TextStyles};`
@@ -15,4 +15,4 @@ const Text = ({ children }: TextProps) => {
 }
 
 export default Text
-export {TextStyles}
+export { TextStyles }

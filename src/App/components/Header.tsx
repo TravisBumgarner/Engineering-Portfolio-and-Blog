@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 import { Link, useLocation } from 'react-router-dom'
 
-import Navigation from './Navigation'
-import { PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
+import { CSSHover, PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
 import { Title, Text } from 'SharedComponents'
 import { useEffect, useMemo, useState } from 'react'
 
@@ -57,9 +56,7 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     color: ${PRIMARY_COLOR};
 
-    &:hover {
-        color: ${TERTIARY_COLOR};
-    }
+    ${CSSHover};
 `
 
 const HeaderWrapper = styled.div`

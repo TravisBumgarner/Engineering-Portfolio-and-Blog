@@ -1,8 +1,8 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
-const PRIMARY_COLOR = '#000000'
+const PRIMARY_COLOR = 'rgb(51, 51, 51)'
 const SECONDARY_COLOR = '#32394c'
-const TERTIARY_COLOR = '#b9ccff'
+const TERTIARY_COLOR = '#3e8eff'
 
 const customMediaQuery = (maxWidth: number) => `@media (max-width: ${maxWidth}px)`
 
@@ -27,13 +27,12 @@ const GlobalStyle = createGlobalStyle`
     html {
         font-family: Montserrat, sans-serif;
         line-height: 1.5;
-        font-weight: 300;
-        font-size: 1rem;
+        font-weight: 400;
+        font-size: 20px;
         color: ${PRIMARY_COLOR};
 
         overflow: -moz-scrollbars-vertical; 
         overflow-y: scroll;
-        font-size: 16px;
         ${media.tablet} {
             font-size: 14px;
         }
@@ -44,4 +43,12 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-export { media, PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR, GlobalStyle }
+const CSSHover = css`
+    &:hover {
+        background-color: ${TERTIARY_COLOR};
+        color: white;
+        border-color: ${TERTIARY_COLOR};
+    }
+`
+
+export { media, PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR, GlobalStyle, CSSHover }

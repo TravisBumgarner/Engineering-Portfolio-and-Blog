@@ -2,15 +2,12 @@ import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 
-import { PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
+import { CSSHover, PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
 
 const ExternalLinkWrapper = styled(Link)`
     color: ${PRIMARY_COLOR};
     text-decoration: none;
-    &:hover {
-        color: ${TERTIARY_COLOR};
-        cursor: pointer;
-    }
+    ${CSSHover};
     font-family: Raleway, sans-serif;
 `
 

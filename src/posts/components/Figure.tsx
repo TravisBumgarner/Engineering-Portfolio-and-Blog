@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 const FigureWrapper = styled.figure`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     img {
-        width: 100%;
+        max-width: 100%;
+        width: max-content;
     }
 
     figcaption {

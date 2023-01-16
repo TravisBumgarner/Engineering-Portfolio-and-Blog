@@ -1,6 +1,8 @@
 import {Figure, Youtube} from './components'
+import {Weak} from 'SharedComponents'
 
-(*Note*: This article was originally published in three parts to my Photography Portfolio Blog in 2016.)
+
+<p><Weak>(Originally published in three parts to my Photography Portfolio)</Weak></p>
 
 ## Part 1
 
@@ -15,25 +17,23 @@ while True {
 }
 ```
 
-I like to use the [Arduino](http://arduino.cc) for electronics because it's really easy to use. The computer code to make a LED blink is as simple as the code to the left.
+I like to use the [Arduino](http://arduino.cc) for electronics because it's really easy to use. The computer code to make a LED blink is as simple as the code above.
 
 <Figure src="/combining-hobbies/arducam.jpg" caption="Arducam" />
 
-I then set about trying to find a camera that would plug into the Arduino and found the [Arducam](http://arducam.com]). A $30, 2 megapixel camera that, along with an SD card reader, could offer the basic features of a camera, shoot and save, along with some settings adjustments such as image size and white balance.
+I then set about trying to find a camera that would plug into the Arduino and found the [Arducam](https://arducam.com). A $30, 2 megapixel camera that, along with an SD card reader, could offer the basic features of a camera, shoot and save, along with some settings adjustments such as image size and white balance.
 
 So now that I had a camera to play with, what to do with it? With some more brainstorming I decided I'd create time lapse images of single scenes. Not a video, but a single image to demonstrate the passing of time. The left side of the image represents the start of the photo capturing period and the right side the end.
 
-This would be achieved with the camera set in a location and set to run for a given period of time. The images would then be taken off the SD card and loaded into a Python programming script. To easily demonstrate this I'll explain by stitching three images. A cut of the left third of the first image, a cut from the middle third of the second image, and a cut from the right third of the last image, are then stitched together into a final image. I've written a script, which can be viewed on [Github](https://github.com/TravisBumgarner/PhotoStitch), that can take any number of images and stitch them together. Below is a test with fake input images of solid colors representing a sunrise over time, the script running, and the output.
+This would be achieved with the camera set in a location and set to run for a given period of time. The images would then be taken off the SD card and loaded into a Python script. I've written a script, which can be viewed on [Github](https://github.com/TravisBumgarner/PhotoStitch), that can take any number of images and stitch them together. Below is a test with fake input images of solid colors representing a sunrise over time, the script running, and the output.
 
 <Figure src="/combining-hobbies/example.png" caption="Example Output" />
 
-Next time, I'll share more about the electronics, Arduino programming, test results, and quality improvements.
-
 ## Part 2
 
-While I waited for the Arducam camera to arrive I set about designing the user display/inputs. After a bunch of sketching, I narrowed my setup to include an 16x2 LCD screen and 4 input buttons. I also brainstormed the settings I wanted to control. You can see the setup in action below.
+While I waited for the Arducam camera to arrive I set about designing the user display/inputs. After a bunch of sketching, I narrowed my setup to include a 16x2 LCD screen and 4 input buttons. I also brainstormed the settings I wanted to control. You can see the setup in action below.
 
-I ran into a flash memory issue where I ran out of space on the Arduino chip. I have two implementations of this project, one to control the little Arducam camera, and another to control a DSLR. Once I create the design for the DSLR, I can remove the SD card reader and Arducam which will free up a bunch of flash memory which will allow me to add more custom settings. Until then, I've had to keep it simple.
+I ran into a flash memory issue where I ran out of space on the Arduino chip. I have two implementations of this project, one to control the little Arducam camera, and another to control a DSLR. Once I create the design for the DSLR, I can remove Arducam and its SD card reader which will free up a bunch of flash memory which will allow me to add more custom settings. Until then, I've had to keep it simple.
 
 <Youtube embedId="TFMe69kptv0" />
 

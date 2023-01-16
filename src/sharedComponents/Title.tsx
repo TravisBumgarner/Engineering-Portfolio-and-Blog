@@ -3,25 +3,22 @@ import styled, { css } from 'styled-components'
 import { PRIMARY_COLOR } from 'Theme'
 
 const LargeTitleStyles = css`
-    display: block;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     margin: 0 0;
     font-weight: 700;
     font-family: Raleway, sans-serif;
 `
 
 const MediumTitleStyles = css`
-    display: block;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin: 1rem 0;
     font-weight: 700;
     font-family: Raleway, sans-serif;
 `
 
 const SmallTitleStyles = css`
-    display: inline-block;
     font-size: 1.2rem;
-    margin: 0.5rem 0;
+    margin: 1rem 0;
     font-weight: 700;
     font-family: Raleway, sans-serif;
 `

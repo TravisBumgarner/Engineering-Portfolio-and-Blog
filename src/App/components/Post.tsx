@@ -4,37 +4,38 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 import { LargeTitleStyles, MediumTitleStyles, SmallTitleStyles, TextStyles } from "SharedComponents"
 import posts from "Posts"
+import { CSSHover, TERTIARY_COLOR } from 'Theme'
 
 const MarkdownStyles = styled.div`
     h1 {
         ${LargeTitleStyles}
     };
     h2 {
-        ${MediumTitleStyles}
+        ${MediumTitleStyles};
     };
     h3 {
-        ${SmallTitleStyles}
+        ${SmallTitleStyles};
     };
     strong {
-        font-weight: 400;
+        font-weight: 700;
+        font-size: 1rem;
     }
 
-    p, time {
+    a {
+            color: ${TERTIARY_COLOR};
+            ${CSSHover};
+            text-decoration: underline;
+            text-decoration-thickness: from-font;
+
+        }
+
+    p {
         display: block;
         ${TextStyles}
-        a {
-            text-decoration: underline;
-            font-weight: 100;
-            color: black;
-
-            &:hover {
-                border-bottom: 1px solid #979797;
-            }
-        }
     };
     ul, ol {
         li {
-            margin-left: 1rem;
+            margin: 0.25rem 0rem 0.25rem 1rem;
         }
     }
     ul {
@@ -83,6 +84,7 @@ const MarkdownStyles = styled.div`
         display: inline;
         border: 0;
         padding: 0;
+        border-radius: 0;
         background-color: #e2e2e2;
         
         &:before, &:after {
@@ -125,12 +127,17 @@ const MarkdownStyles = styled.div`
             justify-content: end;
         }
     }
+
+    figure {
+        margin: 1rem 0;
+    }
     
 `
 
 const Header = styled.div < { src: string }>`
     position: relative;
     height: 300px;
+    margin-bottom: 2rem;
 
     &:before {
         opacity: 0.2;
@@ -147,12 +154,11 @@ const Header = styled.div < { src: string }>`
 
     }
 
-    h1 {
+    div {
         position: absolute;
         left: 0;
         bottom: 0;
         padding: 1rem;
-        font-size: 3rem;
     }
 `
 
@@ -166,13 +172,18 @@ const Post = () => {
         return null
     }
 
+    const postDate = useMemo(() => new Date(post.date).toDateString(), [post.date])
+
     return (
         <MarkdownStyles>
             <Header src={`${__STATIC__}posts/${id}/${post.preview_image}`}>
-                <h1>{post.title}</h1>
+                <div>
+                    <h1>{post.title}</h1>
+                    <time>{postDate}</time>
+                </div>
             </Header>
-            <time>{post.date}</time>
             {post.renderer()}
+
         </MarkdownStyles>
     )
 }

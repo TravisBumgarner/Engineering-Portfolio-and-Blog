@@ -5,6 +5,7 @@ const YoutubeWrapper = styled.figure`
     padding-bottom: 56.25%;
     position: relative;
     height: 0;
+    margin: 1rem 0;
 
     iframe {
         left: 0;

@@ -5,6 +5,7 @@ import posts, { BlogPost } from "Posts"
 
 import { Link } from 'react-router-dom'
 import { Text, Title, Snapshot } from 'SharedComponents'
+import { CSSHover, TERTIARY_COLOR } from 'Theme'
 
 const BlogWrapper = styled.div`
     display: flex;
@@ -17,11 +18,7 @@ const BlogWrapper = styled.div`
 `
 
 const ReadNow = styled.strong`
-  &:hover {
-    background-color: #3e8eff;
-    color: white;
-    border-color: #3e8eff;
-  }
+    ${CSSHover};
 `
 
 const Blog = () => {
