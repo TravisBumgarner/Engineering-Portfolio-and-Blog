@@ -15,7 +15,7 @@
             },
             {
                 "src": "IMG_20200428_185509.jpg",
-                "label": "Third exploration into 3D modeling and printing a custom adapter to convert 3D printer to 2D."
+                "label": "Third exploration into 3D modeling and printing a custom adapter to convert 3D printer to 2D"
             },
             {
                 "src": "IMG_20200502_191205.jpg",
@@ -56,7 +56,7 @@
     {
         "title": "Automated Film Scanner",
         "id": "automated-film-scanner",
-        "description": "Automated film Scanner for 35mm negative film.",
+        "description": "Automated film Scanner for 35mm negative film",
         "endDate": "2016-05-01",
         "images": [
             {
@@ -98,7 +98,7 @@
     {
         "title": "Camera From Scratch",
         "id": "camera-from-scratch",
-        "description": "Exploration into turning a collection of electrical components into a camera.",
+        "description": "Exploration into turning a collection of electrical components into a camera",
         "endDate": "2016-09-01",
         "images": [
             {
@@ -144,7 +144,7 @@
     {
         "title": "MIT D-Lab Development Class",
         "id": "development-class",
-        "description": "Led group of students on a three week trip to Bogota, Colombia to teach engineering workshops with C-Innova.",
+        "description": "Led group of students on a three week trip to Bogota, Colombia to teach engineering workshops with C-Innova",
         "endDate": "2017-01-30",
         "images": [
             {
@@ -186,7 +186,7 @@
     {
         "title": "Educational Content Creator",
         "id": "educational-content-creator",
-        "description": "An exploration into ways to share what I've learned with others. I've created YouTube videos and led a Twitch stream for a period of time.",
+        "description": "An exploration into ways to share what I've learned with others. I've created YouTube videos and led a Twitch stream for a period of time",
         "endDate": "Ongoing",
         "images": [
             {
@@ -195,7 +195,7 @@
             },
             {
                 "src": "DSC_2633.jpg",
-                "label": "First YouTube tutorial explaining how to design, 3D model, 3D print, solder, and code a nightlight with Arduino."
+                "label": "First YouTube tutorial explaining how to design, 3D model, 3D print, solder, and code a nightlight with Arduino"
             },
             {
                 "src": "youtube_thumbnails.jpg",
@@ -211,7 +211,7 @@
             },
             {
                 "src": "instagram (1).jpg",
-                "label": "Announcement for free class taught on Twitch teaching the basics of CAD, Code, & Circuits."
+                "label": "Announcement for free class taught on Twitch teaching the basics of CAD, Code, & Circuits"
             }
         ],
         "links": [
@@ -236,7 +236,7 @@
     {
         "title": "Intro to Arduino Workshop",
         "id": "intro-to-arduino-workshop",
-        "description": "Workshop teaching the basics of Arduino, electronics, and programming.",
+        "description": "Workshop teaching the basics of Arduino, electronics, and programming",
         "endDate": "2017-07-01",
         "images": [
             {
@@ -274,7 +274,7 @@
     {
         "title": "Painless Prototyping: First Attempt",
         "id": "painless-prototyping-first-attempt",
-        "description": "I'd never tried to launch a startup before. I set out to learn as much as possible about creating a company and product from nothing.",
+        "description": "I'd never tried to launch a startup before. I set out to learn as much as possible about creating a company and product from nothing",
         "endDate": "2017-07-01",
         "images": [
             {
@@ -308,40 +308,40 @@
     {
         "title": "Painless Prototyping: Second Attempt",
         "id": "painless-prototyping-second-attempt",
-        "description": "After suceeding with my first startup attempt, I wanted to try again and continue to learn and bring a better product into the world. I recommend watching the Kickstarter video as it offers a much better explanation.",
+        "description": "After suceeding with my first startup attempt, I wanted to try again and continue to learn and bring a better product into the world. I recommend watching the Kickstarter video as it offers a much better explanation",
         "endDate": "2021-10-01",
         "images": [
             {
+                "src": "IMG_20200516_190109.jpg",
+                "label": "Using what I created with my first startup attempt to create to protype ideas for my second attempt"
+            },
+            {
                 "src": "DSC_2611.jpg",
-                "label": ""
+                "label": "Exploring a proof of concept to see how feasable my startup idea was"
             },
             {
                 "src": "DSC_3528.jpg",
-                "label": ""
+                "label": "Assembling the first prototype"
             },
             {
                 "src": "DSC_3535.jpg",
-                "label": ""
+                "label": "Glamour shot of fully working first prototype"
             },
             {
                 "src": "DSC_5663.jpg",
-                "label": ""
-            },
-            {
-                "src": "IMG_20200516_190109.jpg",
-                "label": ""
-            },
-            {
-                "src": "IMG_4221.jpg",
-                "label": ""
+                "label": "Final version shipped to customers"
             },
             {
                 "src": "PXL_20210603_002702358.jpg",
-                "label": ""
+                "label": "Delivering over 500 keyboards to Kickstarter backers"
+            },
+            {
+                "src": "IMG_4221.jpg",
+                "label": "Donated kits and teaching time to the Dottie Rose Foundation"
             },
             {
                 "src": "PXL_20211206_012755312.jpg",
-                "label": ""
+                "label": "Thank you cards from the summer camp"
             }
         ],
         "links": [
@@ -358,20 +358,20 @@
     {
         "title": "Pan & Tilt Camera Adapter",
         "id": "pan-and-tilt-camera-adapter",
-        "description": "Camera Adapter for creating Timelapse Photography.",
+        "description": "Camera Adapter for creating Timelapse Photography",
         "endDate": "2016-07-01",
         "images": [
             {
                 "src": "0610162138b.jpg",
-                "label": ""
+                "label": "Fully assembled circuit with functioning code"
             },
             {
                 "src": "DSC08264.jpg",
-                "label": ""
+                "label": "Assembling the electrical components and housing together"
             },
             {
                 "src": "DSC08273.jpg",
-                "label": ""
+                "label": "Fully assembled proof of concept"
             }
         ],
         "links": [
@@ -392,7 +392,7 @@
     {
         "title": "Portfolios",
         "id": "portfolios",
-        "description": "Over the years, I have tried to keep my portfolios as a rough proxy for my skills as a software engineer and designer. Previous codebases included Django, WordPress, Vanilla HTML and JavaScript with designs in Photoshop. Currently they are both written in React and TypScript, without backends, and designed in Sketch.",
+        "description": "Over the years, I have tried to keep my portfolios as a rough proxy for my skills as a software engineer and designer. Previous codebases included Django, WordPress, Vanilla HTML and JavaScript with designs in Photoshop. Currently they are both written in React and TypScript, without backends, and designed in Sketch",
         "endDate": "2020-06-11",
         "images": [
             {
@@ -463,35 +463,35 @@
         "images": [
             {
                 "src": "IMG_20161103_180829.jpg",
-                "label": ""
+                "label": "Todler Gym"
             },
             {
                 "src": "IMG_20170502_194545_028.jpg",
-                "label": ""
+                "label": "Cribbage Board"
             },
             {
                 "src": "IMG_20190313_091112.jpg",
-                "label": ""
+                "label": "Laser Cut Puzzle"
             },
             {
                 "src": "IMG_20190322_164034.jpg",
-                "label": ""
+                "label": "Laser Cut Puzzle"
             },
             {
                 "src": "IMG_20191109_153857.jpg",
-                "label": ""
+                "label": "Midcentury Modern Nightstands"
             },
             {
                 "src": "PXL_20211215_044741924.jpg",
-                "label": ""
+                "label": "Settler's of Catan"
             },
             {
                 "src": "image-20161220_203034.jpg",
-                "label": ""
+                "label": "Jewelry Box"
             },
             {
                 "src": "image-20161220_215911.jpg",
-                "label": ""
+                "label": "Jewelry Box"
             }
         ],
         "links": [],
@@ -503,28 +503,24 @@
     {
         "title": "Security System",
         "id": "security-system",
-        "description": "Security System powered by the Raspberry Pi and Flask. This project holds a special place in my heart for two reasons. First it strongly exapanded my understanding of backend programming. Second, it's what I demoed for the interview that landed me my first full time job in software engineering.",
+        "description": "Security System powered by the Raspberry Pi and Flask. This project holds a special place in my heart for two reasons. First it strongly exapanded my understanding of backend programming. Second, it's what I demoed for the interview that landed me my first full time job in software engineering",
         "endDate": "2017-05-01",
         "images": [
             {
+                "src": "IMG_20170319_191530_356.jpg",
+                "label": "Diagraming the System"
+            },
+            {
                 "src": "IMG-20170316-WA0005.jpg",
-                "label": ""
+                "label": "Login Screen"
             },
             {
                 "src": "IMG-20170316-WA0007.jpg",
-                "label": ""
-            },
-            {
-                "src": "IMG-20170317-WA0000.jpg",
-                "label": ""
+                "label": "Web App"
             },
             {
                 "src": "IMG_20170209_193557.jpg",
-                "label": ""
-            },
-            {
-                "src": "IMG_20170319_191530_356.jpg",
-                "label": ""
+                "label": "Physical Hardware"
             }
         ],
         "links": [
@@ -541,28 +537,28 @@
     {
         "title": "Smart Display",
         "id": "smart-display",
-        "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather.",
+        "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather",
         "endDate": "2020-09-01",
         "images": [
             {
-                "src": "DSC_2337.jpg",
-                "label": ""
-            },
-            {
-                "src": "DSC_2338.jpg",
-                "label": ""
-            },
-            {
                 "src": "IMG_20200107_193631.jpg",
-                "label": ""
+                "label": "Measuring and sketching case"
             },
             {
                 "src": "IMG_20200126_123042.jpg",
-                "label": ""
+                "label": "Exploring various aspects of case design"
             },
             {
                 "src": "model.jpg",
-                "label": ""
+                "label": "Final case"
+            },
+            {
+                "src": "DSC_2338.jpg",
+                "label": "Fully assembled back"
+            },
+            {
+                "src": "DSC_2337.jpg",
+                "label": "Fully assembled front"
             }
         ],
         "links": [
@@ -583,24 +579,24 @@
     {
         "title": "Strangerer Things",
         "id": "strangerer-things",
-        "description": "Messaging system, inspired by Stranger Things, to communicate via Slack to series of lights, controlled by a Raspberry Pi.",
+        "description": "Messaging system, inspired by Stranger Things, to communicate via Slack to series of lights, controlled by a Raspberry Pi",
         "endDate": "2018-12-23",
         "images": [
             {
                 "src": "IMG_20181211_204613.jpg",
-                "label": ""
+                "label": "Experimenting with letter sizing"
             },
             {
                 "src": "IMG_20181212_234624.jpg",
-                "label": ""
+                "label": "Slack app ready to send a message"
             },
             {
                 "src": "IMG_20181212_234746.jpg",
-                "label": ""
+                "label": "Assembling lights"
             },
             {
                 "src": "IMG_20181218_123142.jpg",
-                "label": ""
+                "label": "Fully assembled and ready to receive messages"
             }
         ],
         "links": [
