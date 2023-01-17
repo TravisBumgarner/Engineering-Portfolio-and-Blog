@@ -46,7 +46,7 @@ const Details = ({ project: { description, links, title, images, id } }: { proje
         )
     }), [links])
 
-    const Images = useMemo(() => images.map((i, index) => <Snapshot key={index} src={`${__STATIC__}/projects/${id}/${i.src}`} />), [images])
+    const Images = useMemo(() => images.map((i, index) => <Snapshot key={index} src={`${__STATIC__}/projects/${id}/${i.src}`}><span>{i.label}</span></Snapshot>), [images])
     return (
         <DetailsWrapper>
             <MetadataWrapper>

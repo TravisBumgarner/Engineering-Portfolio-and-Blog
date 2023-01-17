@@ -7,27 +7,27 @@
         "images": [
             {
                 "src": "20130409_202136.jpg",
-                "label": ""
-            },
-            {
-                "src": "DSC_2538.jpg",
-                "label": ""
+                "label": "First exploration with Knex and Arduino"
             },
             {
                 "src": "IMG_20161219_190837.jpg",
-                "label": ""
+                "label": "Second exploration with scrap wood and 3D printed parts"
             },
             {
                 "src": "IMG_20200428_185509.jpg",
-                "label": ""
+                "label": "Third exploration into 3D modeling and printing a custom adapter to convert 3D printer to 2D."
             },
             {
                 "src": "IMG_20200502_191205.jpg",
-                "label": ""
+                "label": "Test print of part designed in Third Exploration"
             },
             {
                 "src": "manyprogressmuchwow.jpg",
-                "label": ""
+                "label": "Fourth exploration with all parts custom 3D modeled and printed"
+            },
+            {
+                "src": "DSC_2538.jpg",
+                "label": "Fourth exploration fully assembled"
             }
         ],
         "links": [
@@ -60,28 +60,24 @@
         "endDate": "2016-05-01",
         "images": [
             {
-                "src": "0424160039.jpg",
-                "label": ""
-            },
-            {
                 "src": "12912789_1056153591143656_868781673_n_17846525158123243.jpg",
-                "label": ""
-            },
-            {
-                "src": "12976234_1707944616142402_7807819_n_17855875561053492.jpg",
-                "label": ""
+                "label": "Exploring basic clamping idea with K'nex"
             },
             {
                 "src": "DSC02609.jpg",
-                "label": ""
+                "label": "Designing and modeling a spool to hold film"
             },
             {
                 "src": "DSC02763.jpg",
-                "label": ""
+                "label": "Fully assembled electronics and hardware"
             },
             {
                 "src": "DSC02841.jpg",
-                "label": ""
+                "label": "Test run of scanner with newspaper"
+            },
+            {
+                "src": "0424160039.jpg",
+                "label": "Bird's eye view of scanner in action"
             }
         ],
         "links": [

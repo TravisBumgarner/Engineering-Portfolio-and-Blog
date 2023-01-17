@@ -27,6 +27,7 @@ const SnapshotWrapper = styled.div<{ top: number, left: number, rotation: number
   > div {
     padding: 0rem 0.5rem 0.5rem 0.5rem;
     min-height: 2rem;
+    text-align: center;
   }
 `
 const randomIntFromInterval = (min: number, max: number) => {
