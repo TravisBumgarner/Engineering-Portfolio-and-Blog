@@ -35,7 +35,7 @@ const NoScrollWrapper = styled.div`
     top: 1rem;
 `
 
-const Details = ({ project: { description, links, name, images } }: { project: Project }) => {
+const Details = ({ project: { description, links, name, images, id } }: { project: Project }) => {
     const Links = useMemo(() => links.map(l => {
         return (
             <LinkLi key={l.name + l.src}>
@@ -46,7 +46,7 @@ const Details = ({ project: { description, links, name, images } }: { project: P
         )
     }), [links])
 
-    const Images = useMemo(() => images.map((i, index) => <Snapshot key={index} src={__STATIC__ + 'projects/' + i.src} />), [images])
+    const Images = useMemo(() => images.map((i, index) => <Snapshot key={index} src={`${__STATIC__}/projects/${id}/${i.src}`} />), [images])
     return (
         <DetailsWrapper>
             <MetadataWrapper>

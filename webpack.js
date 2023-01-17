@@ -6,10 +6,10 @@ const webpack = require('webpack')
 let __IS_PRODUCTION__, __STATIC__
 if (process.env.NODE_ENV === 'production') {
     __IS_PRODUCTION__ = true
-    __STATIC__ = '"https://storage.googleapis.com/eng42-asdsad/public/"'
+    __STATIC__ = '"https://storage.googleapis.com/eng42-asdsad/public"'
 } else {
     __IS_PRODUCTION__ = false
-    __STATIC__ = '"http://localhost:3000/public/"'
+    __STATIC__ = '"http://localhost:3000/public"'
 }
 
 module.exports = {

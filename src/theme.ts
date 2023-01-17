@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
         }
         &:visited {
             color: ${PRIMARY_COLOR};
+            border: 2px solid red;
         }
     }
 

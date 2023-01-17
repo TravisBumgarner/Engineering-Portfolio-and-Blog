@@ -23,7 +23,7 @@ type FigureProps = {
 const Figure = ({ src, caption }: FigureProps) => {
     return (
         <FigureWrapper>
-            <img src={__STATIC__ + 'posts' + src} alt={caption} />
+            <img src={`${__STATIC__}/posts/${src}`} alt={caption} />
             <figcaption>{caption}</figcaption>
         </FigureWrapper>
     )

@@ -1,8 +1,7 @@
 import { useMemo } from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
-import { Title, Text, Snapshot } from 'SharedComponents'
+import { Title, Text, Snapshot, InternalLink } from 'SharedComponents'
 import projects from 'Projects'
 
 const PortfolioWrapper = styled.div`
@@ -27,14 +26,14 @@ const Portfolio = () => {
     const tiles = useMemo(() => {
         return projects.map(({ id, name, description, preview_img }) => {
             return (
-                <Link key={id} to={`/project/${id}`}>
-                    <Snapshot src={preview_img && __STATIC__ + 'projects/' + preview_img.src} key={id}>
-                        <>
-                            <Title size="medium">{name}</Title>
-                            <Text>{description} <ReadNow>Read Now</ReadNow></Text>
-                        </>
-                    </Snapshot>
-                </Link>
+
+                <Snapshot src={preview_img && __STATIC__ + 'projects/' + preview_img.src} key={id}>
+                    <>
+                        <Title size="medium">{name}</Title>
+                        <Text>{description} <InternalLink key={id} to={`/project/${id}`}><ReadNow>Read Now</ReadNow></InternalLink></Text>
+                    </>
+                </Snapshot>
+
             )
         })
     }, [])
