@@ -1,23 +1,23 @@
 import content from './content.json'
 
 type Image = {
-    name: string,
+    label: string,
     src: string
 }
 
 type Link = {
-    name: string,
+    label: string,
     src: string
 }
 
 type Project = {
     "id": string,
-    "name": string,
+    "title": string,
     "description": string,
-    "end_date": string,
+    "endDate": string,
     "images": Image[],
     "links": Link[],
-    "preview_img": Image
+    "previewImage": Image
 }
 
 const projects: Project[] = [...content]

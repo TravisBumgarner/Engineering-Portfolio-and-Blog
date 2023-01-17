@@ -2,7 +2,7 @@
     "name": "Human Friendly",
     "id": "human-friendly",
     "description": "Some nice words",
-    "end_date": "YYYY-MM-DD",
+    "endDate": "YYYY-MM-DD",
     "images": [
         {
             "name": "Human readable",
@@ -15,7 +15,7 @@
             "src": "https://github.com/TravisBumgarner/Plotter-Explorations"
         }
     ],
-    "preview_img": {
+    "previewImage": {
         "name": "Description",
         "src": "id/image_name.jpg"
     }

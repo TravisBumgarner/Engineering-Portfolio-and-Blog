@@ -1,287 +1,649 @@
 [
     {
-        "name": "2D Plotter Explorations",
+        "title": "2D Plotter Explorations",
         "id": "2d-plotter-explorations",
         "description": "Explorations of various aspects of 2D plotting. This culminated in the creation of a 2D plotter from scratch. A basic paint program was created in Python that could output the artwork to custom G-Code. This G-Code was then sent over from Python to an Arduino Microcontroller. The Arduino controlled a circuit attached to the hardware with custom 3d modeled and printed parts. ",
-        "end_date": "2020-07-29",
-        "images": [],
+        "endDate": "2020-07-29",
+        "images": [
+            {
+                "src": "20130409_202136.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC_2538.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20161219_190837.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20200428_185509.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20200502_191205.jpg",
+                "label": ""
+            },
+            {
+                "src": "manyprogressmuchwow.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "YouTube Video - 2D Plotter First Movement",
+                "label": "YouTube Video - 2D Plotter First Movement",
                 "src": "https://www.youtube.com/watch?v=Y7Nzjou3Buw"
             },
             {
-                "name": "GitHub Repository",
+                "label": "GitHub Repository",
                 "src": "https://github.com/TravisBumgarner/Plotter-Explorations"
             },
             {
-                "name": "YouTube Playlist - 3D Printer to 2D Plotter",
+                "label": "YouTube Playlist - 3D Printer to 2D Plotter",
                 "src": "https://www.youtube.com/watch?v=eNIFybCENtE&list=PL58d_qyxyaOF-66-4kabZ9wtJEJlURT8i"
             },
             {
-                "name": "YouTube Playlist - 2D Plotter From Scratch",
+                "label": "YouTube Playlist - 2D Plotter From Scratch",
                 "src": "https://www.youtube.com/watch?v=lJApWtDMxLM&list=PL58d_qyxyaOGu1aUYKD9BjNBRsrKP4v3W"
             }
         ],
-        "preview_img": {
-            "name": "2D Plotter result",
-            "src": "thumbnail.jpg"
+        "previewImage": {
+            "label": "2D Plotter result",
+            "src": "DSC_2538.jpg"
         }
     },
     {
+        "title": "Automated Film Scanner",
         "id": "automated-film-scanner",
-        "name": "Automated Film Scanner",
         "description": "Automated film Scanner for 35mm negative film.",
-        "end_date": "2016-05-01",
-        "images": [],
+        "endDate": "2016-05-01",
+        "images": [
+            {
+                "src": "0424160039.jpg",
+                "label": ""
+            },
+            {
+                "src": "12912789_1056153591143656_868781673_n_17846525158123243.jpg",
+                "label": ""
+            },
+            {
+                "src": "12976234_1707944616142402_7807819_n_17855875561053492.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC02609.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC02763.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC02841.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "GitHub Repository",
+                "label": "GitHub Repository",
                 "src": "https://github.com/TravisBumgarner/Automatic-Film-Scanner/tree/master/film_scanner_arduino"
             },
             {
-                "name": "YouTube Video",
+                "label": "YouTube Video",
                 "src": "https://www.youtube.com/watch?v=vDLHhMvcVL0"
             }
         ],
-        "preview_img": {
-            "name": "Automated film scanner preview",
-            "src": "scanner.jpg"
+        "previewImage": {
+            "label": "Automated film scanner preview",
+            "src": "0424160039.jpg"
         }
     },
     {
+        "title": "Camera From Scratch",
         "id": "camera-from-scratch",
-        "name": "Camera From Scratch",
         "description": "Exploration into turning a collection of electrical components into a camera.",
-        "end_date": "2016-09-01",
-        "images": [],
+        "endDate": "2016-09-01",
+        "images": [
+            {
+                "src": "0302161639.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC02411.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC02514.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC02544.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20190729_191410.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20190730_203313.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20190901_150150.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "GitHub Repository",
+                "label": "GitHub Repository",
                 "src": "https://github.com/TravisBumgarner/Time-Lapse-Photo-Stitch"
             },
             {
-                "name": "Writeup",
+                "label": "Writeup",
                 "src": "https://travisbumgarner.com/post/combining-hobbies/"
             }
         ],
-        "preview_img": {
-            "name": "timelapse camera preview",
-            "src": "camera.jpg"
+        "previewImage": {
+            "label": "timelapse camera preview",
+            "src": "DSC02544.jpg"
         }
     },
     {
-        "id": "mit-d-lab-development-class",
-        "name": "MIT D-Lab Development Class",
+        "title": "MIT D-Lab Development Class",
+        "id": "development-class",
         "description": "Led group of students on a three week trip to Bogota, Colombia to teach engineering workshops with C-Innova.",
-        "end_date": "2017-01-30",
-        "images": [],
+        "endDate": "2017-01-30",
+        "images": [
+            {
+                "src": "16107519_10156042158208018_143016716065454977_o.jpg",
+                "label": ""
+            },
+            {
+                "src": "17434897_1657246607625359_4142016014936483845_o.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC00118.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20170117_162451_472.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_9967.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "Course Description",
+                "label": "Course Description",
                 "src": "https://d-lab.mit.edu/courses/development"
             },
             {
-                "name": "C-Innova Website",
+                "label": "C-Innova Website",
                 "src": "http://www.c-innova.org/"
             }
         ],
-        "preview_img": {
-            "name": "development class preview",
-            "src": "cinnova.png"
+        "previewImage": {
+            "label": "development class preview",
+            "src": "17434897_1657246607625359_4142016014936483845_o.jpg"
         }
     },
     {
-        "name": "Educational Content Creator",
+        "title": "Educational Content Creator",
         "id": "educational-content-creator",
         "description": "An exploration into ways to share what I've learned with others. I've created YouTube videos and led a Twitch stream for a period of time.",
-        "end_date": "Ongoing",
-        "images": [],
+        "endDate": "Ongoing",
+        "images": [
+            {
+                "src": "DSC_2513.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC_2549.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC_2633.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC_9672.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC_9693.jpg",
+                "label": ""
+            },
+            {
+                "src": "instagram (1).jpg",
+                "label": ""
+            },
+            {
+                "src": "youtube_thumbnails.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "YouTube Channel",
+                "label": "YouTube Channel",
                 "src": "https://www.youtube.com/channel/UCFgIg95KzVg97KAeXdWbeXg"
             },
             {
-                "name": "First YouTube Video",
+                "label": "First YouTube Video",
                 "src": "https://www.youtube.com/watch?v=RjBEjiBoUyk"
             },
             {
-                "name": "Twitch Stream",
+                "label": "Twitch Stream",
                 "src": "https://www.twitch.tv/travis_the_maker"
             }
         ],
-        "preview_img": {
-            "name": "First video, building a prototype",
-            "src": "thumbnail.jpg"
+        "previewImage": {
+            "label": "First video, building a prototype",
+            "src": "DSC_9693.jpg"
         }
     },
     {
+        "title": "Intro to Arduino Workshop",
         "id": "intro-to-arduino-workshop",
-        "name": "Intro to Arduino Workshop",
         "description": "Workshop teaching the basics of Arduino, electronics, and programming.",
-        "end_date": "2017-07-01",
-        "images": [],
+        "endDate": "2017-07-01",
+        "images": [
+            {
+                "src": "IMG_20170223_180839.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20170530_205251_825.jpg",
+                "label": ""
+            },
+            {
+                "src": "SAM_1920.jpg",
+                "label": ""
+            },
+            {
+                "src": "SAM_1932.jpg",
+                "label": ""
+            },
+            {
+                "src": "SAM_2043.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "Cambridge Hackspace Website",
+                "label": "Cambridge Hackspace Website",
                 "src": "https://www.cambridgehackspace.com/"
             }
         ],
-        "preview_img": {
-            "name": "intro to arduino workshop preview",
-            "src": "IMG_20170223_180839.jpg"
+        "previewImage": {
+            "label": "intro to arduino workshop preview",
+            "src": "IMG_20170530_205251_825.jpg"
         }
     },
     {
+        "title": "Painless Prototyping: First Attempt",
         "id": "painless-prototyping-first-attempt",
-        "name": "Painless Prototyping: First Attempt",
         "description": "Startup focused on providing affordable access to the tools and education for tomorrow's makers.",
-        "end_date": "2017-07-01",
-        "images": [],
+        "endDate": "2017-07-01",
+        "images": [
+            {
+                "src": "DSC08834.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC09243.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20160915_203226.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20161004_180020.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20170329_184330.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20170401_210917_675.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20170406_143907_046.jpg",
+                "label": ""
+            },
+            {
+                "src": "image-20161128_194422.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "Kickstarter",
+                "label": "Kickstarter",
                 "src": "https://www.kickstarter.com/projects/267560573/button-board-prototyping-electronics-the-painless"
             }
         ],
-        "preview_img": {
-            "name": "painless prototyping preview",
-            "src": "pp.jpg"
+        "previewImage": {
+            "label": "painless prototyping preview",
+            "src": "DSC09243.jpg"
         }
     },
     {
+        "title": "Painless Prototyping: Second Attempt",
         "id": "painless-prototyping-second-attempt",
-        "name": "Painless Prototyping: Second Attempt",
         "description": "Startup focused providing affordable access to the tools and education for tomorrow's makers.",
-        "end_date": "2021-10-01",
-        "images": [],
+        "endDate": "2021-10-01",
+        "images": [
+            {
+                "src": "DSC_2611.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC_3528.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC_3535.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC_5663.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20200516_190109.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_4221.jpg",
+                "label": ""
+            },
+            {
+                "src": "PXL_20210603_002702358.jpg",
+                "label": ""
+            },
+            {
+                "src": "PXL_20211206_012755312.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "Kickstarter",
+                "label": "Kickstarter",
                 "src": "https://www.kickstarter.com/projects/painlessprototyping/byo-build-your-own-mechanical-keyboard"
             }
         ],
-        "preview_img": {
-            "name": "painless prototyping preview",
-            "src": "pp.jpg"
+        "previewImage": {
+            "label": "painless prototyping preview",
+            "src": "DSC_5663.jpg"
         }
     },
     {
+        "title": "Pan & Tilt Camera Adapter",
         "id": "pan-and-tilt-camera-adapter",
-        "name": "Pan & Tilt Camera Adapter",
         "description": "Camera Adapter for creating Timelapse Photography.",
-        "end_date": "2016-07-01",
-        "images": [],
+        "endDate": "2016-07-01",
+        "images": [
+            {
+                "src": "0610162138b.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC08264.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC08273.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "GitHub Repository",
+                "label": "GitHub Repository",
                 "src": "https://github.com/TravisBumgarner/PanTilt/"
             },
             {
-                "name": "YouTube Video",
+                "label": "YouTube Video",
                 "src": "https://www.youtube.com/watch?v=E8Qu_i_7nHc"
             }
         ],
-        "preview_img": {
-            "name": "pan & tilt preview image",
-            "src": "pantilt.jpg"
+        "previewImage": {
+            "label": "pan & tilt preview image",
+            "src": "DSC08273.jpg"
         }
     },
     {
-        "name": "Portfolios",
+        "title": "Portfolios",
         "id": "portfolios",
         "description": "Over the years, I have tried to keep my portfolios as a rough proxy for my skills as a software engineer and designer. Previous codebases included Django, WordPress, Vanilla HTML and JavaScript with designs in Photoshop. Currently they are both written in React and TypScript, without backends, and designed in Sketch.",
-        "end_date": "2020-06-11",
-        "images": [],
+        "endDate": "2020-06-11",
+        "images": [
+            {
+                "src": "Engineering_Portfolio_V3.0.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG-20161011-WA0007.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG-20170323-WA0001.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20170321_202457_953.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20180206_194816138.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20180904_133724389.jpg",
+                "label": ""
+            },
+            {
+                "src": "Screen Shot 2023-01-05 at 6.05.23 PM.jpg",
+                "label": ""
+            },
+            {
+                "src": "Screen Shot 2023-01-05 at 6.05.43 PM.jpg",
+                "label": ""
+            },
+            {
+                "src": "Screenshot_20180325-145347.jpg",
+                "label": ""
+            },
+            {
+                "src": "Screenshot_20191119-203356.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "Engineering GitHub Repository",
+                "label": "Engineering GitHub Repository",
                 "src": "https://github.com/TravisBumgarner/Engineering-Portfolio"
             },
             {
-                "name": "Photography GitHub Repository",
+                "label": "Photography GitHub Repository",
                 "src": "https://github.com/TravisBumgarner/Photography-Portfolio"
             },
             {
-                "name": "Previous Portfolios GitHub Repository",
+                "label": "Previous Portfolios GitHub Repository",
                 "src": "https://github.com/TravisBumgarner/Old-Portfolios"
             }
         ],
-        "preview_img": {
-            "name": "New Site Screenshot",
-            "src": "thumbnail.jpg"
+        "previewImage": {
+            "label": "New Site Screenshot",
+            "src": "Engineering_Portfolio_V3.0.jpg"
         }
     },
     {
-        "name": "Selected Woodworking",
+        "title": "Selected Woodworking",
         "id": "selected-woodworking",
         "description": "Some nice words",
-        "end_date": "2019-01-01",
-        "images": [],
+        "endDate": "2019-01-01",
+        "images": [
+            {
+                "src": "IMG_20161103_180829.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20170502_194545_028.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20190313_091112.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20190322_164034.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20191109_153857.jpg",
+                "label": ""
+            },
+            {
+                "src": "PXL_20211215_044741924.jpg",
+                "label": ""
+            },
+            {
+                "src": "image-20161220_203034.jpg",
+                "label": ""
+            },
+            {
+                "src": "image-20161220_215911.jpg",
+                "label": ""
+            }
+        ],
         "links": [],
-        "preview_img": {
-            "name": "Description",
-            "src": "image_name.jpg"
+        "previewImage": {
+            "label": "",
+            "src": "IMG_20170502_194545_028.jpg"
         }
     },
     {
+        "title": "Security System",
         "id": "security-system",
-        "name": "Security System",
         "description": "Security System powered by the Raspberry Pi and Flask. This project holds a special place in my heart for two reasons. First it strongly exapanded my understanding of backend programming. Second, it's what I demoed for the interview that landed me my first full time job in software engineering.",
-        "end_date": "2017-05-01",
-        "images": [],
+        "endDate": "2017-05-01",
+        "images": [
+            {
+                "src": "IMG-20170316-WA0005.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG-20170316-WA0007.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG-20170317-WA0000.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20170209_193557.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20170319_191530_356.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "GitHub Repository",
+                "label": "GitHub Repository",
                 "src": "https://github.com/TravisBumgarner/Raspberry-Pi-Security-System"
             }
         ],
-        "preview_img": {
-            "name": "security camera preview",
+        "previewImage": {
+            "label": "security camera preview",
             "src": "IMG_20170209_193557.jpg"
         }
     },
     {
-        "name": "Smart Display",
+        "title": "Smart Display",
         "id": "smart-display",
         "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather.",
-        "end_date": "2020-09-01",
-        "images": [],
+        "endDate": "2020-09-01",
+        "images": [
+            {
+                "src": "DSC_2337.jpg",
+                "label": ""
+            },
+            {
+                "src": "DSC_2338.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20200107_193631.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20200126_123042.jpg",
+                "label": ""
+            },
+            {
+                "src": "model.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "GitHub Repository",
+                "label": "GitHub Repository",
                 "src": "https://github.com/TravisBumgarner/Smart-Display"
             },
             {
-                "name": "YouTube Playlist",
+                "label": "YouTube Playlist",
                 "src": "https://www.youtube.com/watch?v=LbvioXXcNqk&list=PL58d_qyxyaOGaACvm6FVX_9Y3hvzr_30M"
             }
         ],
-        "preview_img": {
-            "name": "smart display",
-            "src": "thumbnail.jpg"
+        "previewImage": {
+            "label": "smart display",
+            "src": "model.jpg"
         }
     },
     {
+        "title": "Strangerer Things",
         "id": "strangerer-things",
-        "name": "Strangerer Things",
         "description": "Messaging system, inspired by Stranger Things, to communicate via Slack to series of lights, controlled by a Raspberry Pi.",
-        "end_date": "2018-12-23",
-        "images": [],
+        "endDate": "2018-12-23",
+        "images": [
+            {
+                "src": "IMG_20181211_204613.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20181212_234624.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20181212_234746.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20181218_123142.jpg",
+                "label": ""
+            }
+        ],
         "links": [
             {
-                "name": "YouTube Video",
+                "label": "YouTube Video",
                 "src": "https://www.youtube.com/watch?v=DL1EOHFlQWA"
             },
             {
-                "name": "GitHub Repository",
+                "label": "GitHub Repository",
                 "src": "https://github.com/TravisBumgarner/strangerer_things"
             }
         ],
-        "preview_img": {
-            "name": "strangerer",
-            "src": "strangerer_preview.jpg"
+        "previewImage": {
+            "label": "strangerer",
+            "src": "IMG_20181218_123142.jpg"
         }
     }
 ]

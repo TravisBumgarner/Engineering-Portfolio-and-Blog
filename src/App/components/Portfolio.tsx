@@ -24,12 +24,12 @@ const ReadNow = styled.strong`
 
 const Portfolio = () => {
     const tiles = useMemo(() => {
-        return projects.map(({ id, name, description, preview_img }) => {
+        return projects.map(({ id, title, description, previewImage }) => {
             return (
 
-                <Snapshot src={preview_img && __STATIC__ + 'projects/' + preview_img.src} key={id}>
+                <Snapshot src={previewImage && `${__STATIC__}/projects/${id}/${previewImage.src}`} key={id}>
                     <>
-                        <Title size="medium">{name}</Title>
+                        <Title size="medium">{title}</Title>
                         <Text>{description} <InternalLink key={id} to={`/project/${id}`}><ReadNow>Read Now</ReadNow></InternalLink></Text>
                     </>
                 </Snapshot>

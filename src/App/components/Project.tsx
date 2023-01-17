@@ -35,12 +35,12 @@ const NoScrollWrapper = styled.div`
     top: 1rem;
 `
 
-const Details = ({ project: { description, links, name, images, id } }: { project: Project }) => {
+const Details = ({ project: { description, links, title, images, id } }: { project: Project }) => {
     const Links = useMemo(() => links.map(l => {
         return (
-            <LinkLi key={l.name + l.src}>
+            <LinkLi key={l.label + l.src}>
                 <ExternalLink href={l.src}>
-                    {l.name}
+                    {l.label}
                 </ExternalLink>
             </LinkLi>
         )
@@ -51,7 +51,7 @@ const Details = ({ project: { description, links, name, images, id } }: { projec
         <DetailsWrapper>
             <MetadataWrapper>
                 <NoScrollWrapper>
-                    <Title size='medium'>{name}</Title>
+                    <Title size='medium'>{title}</Title>
                     {Links.length > 0 && (
                         <>
                             <Title size='small'>Links</Title>
