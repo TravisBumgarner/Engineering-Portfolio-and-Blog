@@ -56,7 +56,7 @@ const List = styled.ul`
   margin: 1rem 0;
 `
 
-const ListItem = styled.li`
+const ListItem = styled.li<{ isActive?: boolean }>`
   > a {
     display: inline-block;
     font-weight: 700;
@@ -64,6 +64,7 @@ const ListItem = styled.li`
     font-size: 1.5rem;
     color: black;
     text-decoration: underline;
+    ${({ isActive }) => isActive ? 'font-weight: 900;' : 'font-weight: 100;'}
 
     ${CSSHover}
   }
@@ -73,21 +74,26 @@ const SidebarLinkCSS = css`
 
 `
 
-const SidebarInternalLink = styled(InternalLink)`
-  ${SidebarLinkCSS};
-`
 const SidebarWrapper = styled.div`
 `
 
 const Sidebar = () => {
+  const { pathname } = useLocation()
+
+  const inBlog = useMemo(() => pathname.includes('/blog') || pathname.includes('/post'), [pathname])
+  const inPortfolio = useMemo(() => pathname.includes('/portfolio') || pathname.includes('/project'), [pathname])
+  const inSnapshots = useMemo(() => pathname === '/', [pathname])
+
   return (
     <SidebarWrapper>
       <Header />
+      <Title size="small">Here</Title>
       <List>
-        <ListItem><SidebarInternalLink to="/">Snapshots</SidebarInternalLink></ListItem>
-        <ListItem><SidebarInternalLink to="/blog">Blog</SidebarInternalLink></ListItem>
-        <ListItem><SidebarInternalLink to="/portfolio">Portfolio</SidebarInternalLink></ListItem>
+        <ListItem isActive={inSnapshots}><InternalLink to="/">Snapshots</InternalLink></ListItem>
+        <ListItem isActive={inBlog}><InternalLink to="/blog">Blog</InternalLink></ListItem>
+        <ListItem isActive={inPortfolio}><InternalLink to="/portfolio">Portfolio</InternalLink></ListItem>
       </List>
+      <Title size="small">There</Title>
       <List>
         <ListItem><ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">Colab</ExternalLink></ListItem>
         <ListItem><ExternalLink href="https://github.com/travisBumgarner/">Github</ExternalLink></ListItem>
