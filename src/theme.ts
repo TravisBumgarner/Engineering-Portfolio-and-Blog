@@ -12,8 +12,11 @@ const media = {
     phone: customMediaQuery(376)
 }
 
-const GlobalStyle = createGlobalStyle`
+const CSSTransition = css`
+    transition: all 0.75s;
+`
 
+const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
         &:hover {
@@ -23,9 +26,9 @@ const GlobalStyle = createGlobalStyle`
             color: ${PRIMARY_COLOR};
         }
     }
-
+    
     html {
-        transition: all 0.75s;
+        ${CSSTransition};
         font-family: Montserrat, sans-serif;
         line-height: 1.5;
         font-weight: 400;
@@ -50,6 +53,7 @@ const CSSHover = css`
         color: white;
         border-color: ${TERTIARY_COLOR};
     }
+    ${CSSTransition};
 `
 
-export { media, PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR, GlobalStyle, CSSHover }
+export { media, PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR, GlobalStyle, CSSHover, CSSTransition }
