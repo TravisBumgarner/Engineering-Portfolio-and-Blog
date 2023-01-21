@@ -1,21 +1,11 @@
-import { useEffect, useState, useCallback, useMemo } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components'
-
-import posts, { BlogPost } from "Posts"
-
 import { Link } from 'react-router-dom'
-import { Text, Title, Snapshot } from 'SharedComponents'
-import { CSSHover, TERTIARY_COLOR } from 'Theme'
 
-const BlogWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+import posts from "Posts"
 
-    > * {
-        width: 48%;
-    }
-`
+import { Title, Snapshot } from 'SharedComponents'
+import { CSSHover } from 'Theme'
 
 const ReadNow = styled.strong`
     ${CSSHover};
@@ -31,10 +21,7 @@ const Blog = () => {
                 return (
                     <Link key={id} to={`/post/${id}`}>
                         <Snapshot src={`${__STATIC__}/posts/${id}/${posts[id].preview_image}`}>
-                            <>
-                                <Title size="medium">{title}</Title>
-                                <Text>{description} <ReadNow>Read Now</ReadNow></Text>
-                            </>
+                            <Title size="medium"><ReadNow>{title}</ReadNow></Title>
                         </Snapshot >
                     </Link>
                 )
@@ -42,9 +29,9 @@ const Blog = () => {
     }, [])
 
     return (
-        <BlogWrapper>
+        <div>
             {ListItems}
-        </BlogWrapper>
+        </div>
     )
 }
 

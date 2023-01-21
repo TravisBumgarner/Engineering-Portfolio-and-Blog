@@ -17,18 +17,18 @@ const LinkLi = styled.li`
 `
 
 const SnapshotsWrapper = styled.div`
-    width: 40%;
+    /* width: 40%; */
 `
 
 const DetailsWrapper = styled.div`
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between; */
 `
 
 const MetadataWrapper = styled.div`
-    width: 60%;
-    padding-right: 1rem;
+    /* width: 60%; */
+    /* padding-right: 1rem; */
 `
 
 const NoScrollWrapper = styled.div`
@@ -53,14 +53,14 @@ const Details = ({ project: { description, links, title, images, id } }: { proje
         <DetailsWrapper>
             <MetadataWrapper>
                 <NoScrollWrapper>
-                    <Title size='medium'>{title}</Title>
+                    <Title size='large'>{title}</Title>
                     {Links.length > 0 && (
                         <>
-                            <Title size='small'>Links</Title>
+                            <Title size='medium'>Links</Title>
                             <ul>{Links}</ul>
                         </>
                     )}
-                    <Title size='small'>Details</Title>
+                    <Title size='medium'>Details</Title>
                     {Description}
                 </NoScrollWrapper>
             </MetadataWrapper>

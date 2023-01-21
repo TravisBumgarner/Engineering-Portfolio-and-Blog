@@ -3,7 +3,7 @@
         "title": "2D Plotter Explorations",
         "id": "2d-plotter-explorations",
         "description": "Over the years, I have explored many aspects of how 2D plotters work. As my skills broadened and deepened, so too did my explorations. This culminated in the creation of a 2D plotter from scratch.\nOn the hardware side, I modeled parts in SolidWorks and either 3D printed them or had them machined. From there, I wired up a circuit to control the various motors and switches, powered by an Arduino running C++.\nOn the software side, I created a basic paint application with Python. A script took the painting and converted it into instructions for the 2D plotter. These instructions arrived to the Arduino via a Serial connection and were used to control the motors.\nThe project concluded with a simple computer painting being printed on the 2D plotter.",
-        "endDate": "2020-07-29",
+        "endDate": "2020-08-29",
         "images": [
             {
                 "src": "20130409_202136.jpg",
@@ -187,7 +187,7 @@
         "title": "Educational Content Creator",
         "id": "educational-content-creator",
         "description": "An exploration into ways to share what I've learned with others. I've created YouTube videos and led a Twitch stream for a period of time",
-        "endDate": "Ongoing",
+        "endDate": "2022-01-01",
         "images": [
             {
                 "src": "DSC_2549.jpg",
@@ -538,7 +538,7 @@
         "title": "Smart Display",
         "id": "smart-display",
         "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather.",
-        "endDate": "2020-09-01",
+        "endDate": "2020-08-01",
         "images": [
             {
                 "src": "IMG_20200107_193631.jpg",

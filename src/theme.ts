@@ -21,11 +21,11 @@ const GlobalStyle = createGlobalStyle`
         }
         &:visited {
             color: ${PRIMARY_COLOR};
-            border: 2px solid red;
         }
     }
 
     html {
+        transition: all 0.75s;
         font-family: Montserrat, sans-serif;
         line-height: 1.5;
         font-weight: 400;

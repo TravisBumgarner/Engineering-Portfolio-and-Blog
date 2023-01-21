@@ -80,6 +80,10 @@ const MarkdownStyles = styled.div`
         }
     }
 
+    time {
+        font-size: 0.8rem;
+    }
+
     p > code {
         display: inline;
         border: 0;
@@ -176,12 +180,12 @@ const Post = () => {
 
     return (
         <MarkdownStyles>
-            <Header src={`${__STATIC__}/posts/${id}/${post.preview_image}`}>
-                <div>
-                    <h1>{post.title}</h1>
-                    <time>{postDate}</time>
-                </div>
-            </Header>
+            {/* <Header src={`${__STATIC__}/posts/${id}/${post.preview_image}`}> */}
+            {/* <div> */}
+            <h1>{post.title}</h1>
+            <time>{postDate}</time>
+            {/* </div> */}
+            {/* </Header> */}
             {post.renderer()}
 
         </MarkdownStyles>

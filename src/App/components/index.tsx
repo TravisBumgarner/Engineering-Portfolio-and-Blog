@@ -6,6 +6,6 @@ import ScrollToTop from './ScrollToTop'
 import Blog from './Blog'
 import Snapshots from './Snapshots'
 import Post from './Post'
-import Navigation from './Navigation'
+import Sidebar from './Sidebar'
 
-export { Header, Snapshots, NotFound, Portfolio, Project, ScrollToTop, Blog, Post, Navigation }
+export { Header, Snapshots, NotFound, Portfolio, Project, ScrollToTop, Blog, Post, Sidebar }
