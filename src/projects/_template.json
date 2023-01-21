@@ -1,0 +1,22 @@
+{
+    "name": "Human Friendly",
+    "id": "human-friendly",
+    "description": "Some nice words",
+    "endDate": "YYYY-MM-DD",
+    "images": [
+        {
+            "name": "Human readable",
+            "src": "id/image_name.jpg"
+        }
+    ],
+    "links": [
+        {
+            "name": "GitHub Repository",
+            "src": "https://github.com/TravisBumgarner/Plotter-Explorations"
+        }
+    ],
+    "previewImage": {
+        "name": "Description",
+        "src": "id/image_name.jpg"
+    }
+}

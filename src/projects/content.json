@@ -1,0 +1,617 @@
+[
+    {
+        "title": "2D Plotter Explorations",
+        "id": "2d-plotter-explorations",
+        "description": "Over the years, I have explored many aspects of how 2D plotters work. As my skills broadened and deepened, so too did my explorations. This culminated in the creation of a 2D plotter from scratch.\nOn the hardware side, I modeled parts in SolidWorks and either 3D printed them or had them machined. From there, I wired up a circuit to control the various motors and switches, powered by an Arduino running C++.\nOn the software side, I created a basic paint application with Python. A script took the painting and converted it into instructions for the 2D plotter. These instructions arrived to the Arduino via a Serial connection and were used to control the motors.\nThe project concluded with a simple computer painting being printed on the 2D plotter.",
+        "endDate": "2020-08-29",
+        "images": [
+            {
+                "src": "20130409_202136.jpg",
+                "label": "First exploration with Knex and Arduino"
+            },
+            {
+                "src": "IMG_20161219_190837.jpg",
+                "label": "Second exploration with scrap wood and 3D printed parts"
+            },
+            {
+                "src": "IMG_20200428_185509.jpg",
+                "label": "Third exploration into 3D modeling and printing a custom adapter to convert 3D printer to 2D"
+            },
+            {
+                "src": "IMG_20200502_191205.jpg",
+                "label": "Test print of part designed in Third Exploration"
+            },
+            {
+                "src": "manyprogressmuchwow.jpg",
+                "label": "Fourth exploration with all parts custom 3D modeled and printed"
+            },
+            {
+                "src": "DSC_2538.jpg",
+                "label": "Fourth exploration fully assembled"
+            }
+        ],
+        "links": [
+            {
+                "label": "YouTube Video - 2D Plotter First Movement",
+                "src": "https://www.youtube.com/watch?v=Y7Nzjou3Buw"
+            },
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/Plotter-Explorations"
+            },
+            {
+                "label": "YouTube Playlist - 3D Printer to 2D Plotter",
+                "src": "https://www.youtube.com/watch?v=eNIFybCENtE&list=PL58d_qyxyaOF-66-4kabZ9wtJEJlURT8i"
+            },
+            {
+                "label": "YouTube Playlist - 2D Plotter From Scratch",
+                "src": "https://www.youtube.com/watch?v=lJApWtDMxLM&list=PL58d_qyxyaOGu1aUYKD9BjNBRsrKP4v3W"
+            }
+        ],
+        "previewImage": {
+            "label": "2D Plotter result",
+            "src": "DSC_2538.jpg"
+        }
+    },
+    {
+        "title": "Automated Film Scanner",
+        "id": "automated-film-scanner",
+        "description": "Automated film Scanner for 35mm negative film",
+        "endDate": "2016-05-01",
+        "images": [
+            {
+                "src": "12912789_1056153591143656_868781673_n_17846525158123243.jpg",
+                "label": "Exploring basic clamping idea with K'nex"
+            },
+            {
+                "src": "DSC02609.jpg",
+                "label": "Designing and modeling a spool to hold film"
+            },
+            {
+                "src": "DSC02763.jpg",
+                "label": "Fully assembled electronics and hardware"
+            },
+            {
+                "src": "DSC02841.jpg",
+                "label": "Test run of scanner with newspaper"
+            },
+            {
+                "src": "0424160039.jpg",
+                "label": "Bird's eye view of scanner in action"
+            }
+        ],
+        "links": [
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/Automatic-Film-Scanner/tree/master/film_scanner_arduino"
+            },
+            {
+                "label": "YouTube Video",
+                "src": "https://www.youtube.com/watch?v=vDLHhMvcVL0"
+            }
+        ],
+        "previewImage": {
+            "label": "Automated film scanner preview",
+            "src": "0424160039.jpg"
+        }
+    },
+    {
+        "title": "Camera From Scratch",
+        "id": "camera-from-scratch",
+        "description": "Exploration into turning a collection of electrical components into a camera",
+        "endDate": "2016-09-01",
+        "images": [
+            {
+                "src": "0302161639.jpg",
+                "label": "First test run of camera"
+            },
+            {
+                "src": "DSC02514.jpg",
+                "label": "Selecting layout before soldering"
+            },
+            {
+                "src": "DSC02544.jpg",
+                "label": "Fully soldered working prototype"
+            },
+            {
+                "src": "IMG_20190729_191410.jpg",
+                "label": "Circuit moved to PCB"
+            },
+            {
+                "src": "IMG_20190730_203313.jpg",
+                "label": "Fully assembled camera on PCB"
+            },
+            {
+                "src": "IMG_20190901_150150.jpg",
+                "label": "Second test run of camera"
+            }
+        ],
+        "links": [
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/Time-Lapse-Photo-Stitch"
+            },
+            {
+                "label": "Writeup",
+                "src": "https://travisbumgarner.com/post/combining-hobbies/"
+            }
+        ],
+        "previewImage": {
+            "label": "timelapse camera preview",
+            "src": "DSC02544.jpg"
+        }
+    },
+    {
+        "title": "MIT D-Lab Development Class",
+        "id": "development-class",
+        "description": "Led group of students on a three week trip to Bogota, Colombia to teach engineering workshops with C-Innova",
+        "endDate": "2017-01-30",
+        "images": [
+            {
+                "src": "IMG_20170117_162451_472.jpg",
+                "label": "Gathering supplies for workshops"
+            },
+            {
+                "src": "16107519_10156042158208018_143016716065454977_o.jpg",
+                "label": "Leading an Intro to Arduino worskhop in Spanish"
+            },
+            {
+                "src": "17434897_1657246607625359_4142016014936483845_o.jpg",
+                "label": "Teaching teammembers some basics of Arduino"
+            },
+            {
+                "src": "DSC00118.jpg",
+                "label": "Launching water rockets that students built"
+            },
+            {
+                "src": "IMG_9967.jpg",
+                "label": "Students working on their projects"
+            }
+        ],
+        "links": [
+            {
+                "label": "Course Description",
+                "src": "https://d-lab.mit.edu/courses/development"
+            },
+            {
+                "label": "C-Innova Website",
+                "src": "http://www.c-innova.org/"
+            }
+        ],
+        "previewImage": {
+            "label": "development class preview",
+            "src": "17434897_1657246607625359_4142016014936483845_o.jpg"
+        }
+    },
+    {
+        "title": "Educational Content Creator",
+        "id": "educational-content-creator",
+        "description": "An exploration into ways to share what I've learned with others. I've created YouTube videos and led a Twitch stream for a period of time",
+        "endDate": "2022-01-01",
+        "images": [
+            {
+                "src": "DSC_2549.jpg",
+                "label": "Preparing to stream on Twitch"
+            },
+            {
+                "src": "DSC_2633.jpg",
+                "label": "First YouTube tutorial explaining how to design, 3D model, 3D print, solder, and code a nightlight with Arduino"
+            },
+            {
+                "src": "youtube_thumbnails.jpg",
+                "label": "Thumbnail for first YouTube Video"
+            },
+            {
+                "src": "DSC_9672.jpg",
+                "label": "Fun graphic for Twitch Stream"
+            },
+            {
+                "src": "DSC_9693.jpg",
+                "label": "Fun graphic for Twitch Stream"
+            },
+            {
+                "src": "instagram (1).jpg",
+                "label": "Announcement for free class taught on Twitch teaching the basics of CAD, Code, & Circuits"
+            }
+        ],
+        "links": [
+            {
+                "label": "YouTube Channel",
+                "src": "https://www.youtube.com/channel/UCFgIg95KzVg97KAeXdWbeXg"
+            },
+            {
+                "label": "First YouTube Video",
+                "src": "https://www.youtube.com/watch?v=RjBEjiBoUyk"
+            },
+            {
+                "label": "Twitch Stream",
+                "src": "https://www.twitch.tv/travis_the_maker"
+            }
+        ],
+        "previewImage": {
+            "label": "First video, building a prototype",
+            "src": "DSC_9693.jpg"
+        }
+    },
+    {
+        "title": "Intro to Arduino Workshop",
+        "id": "intro-to-arduino-workshop",
+        "description": "Workshop teaching the basics of Arduino, electronics, and programming",
+        "endDate": "2017-07-01",
+        "images": [
+            {
+                "src": "SAM_2043.jpg",
+                "label": "Unassembled Kit"
+            },
+            {
+                "src": "IMG_20170223_180839.jpg",
+                "label": "Preparing kits for my Intro to Arduino Class"
+            },
+            {
+                "src": "IMG_20170530_205251_825.jpg",
+                "label": "Preparing kits for my Intro to Arduino Class"
+            },
+            {
+                "src": "SAM_1920.jpg",
+                "label": "Students working on their kits"
+            },
+            {
+                "src": "SAM_1932.jpg",
+                "label": "First student finished!"
+            }
+        ],
+        "links": [
+            {
+                "label": "Cambridge Hackspace Website",
+                "src": "https://www.cambridgehackspace.com/"
+            }
+        ],
+        "previewImage": {
+            "label": "intro to arduino workshop preview",
+            "src": "IMG_20170530_205251_825.jpg"
+        }
+    },
+    {
+        "title": "Painless Prototyping: First Attempt",
+        "id": "painless-prototyping-first-attempt",
+        "description": "I'd never tried to launch a startup before. I set out to learn as much as possible about creating a company and product from nothing",
+        "endDate": "2017-07-01",
+        "images": [
+            {
+                "src": "DSC09243.jpg",
+                "label": "Product photos for Kickstarter"
+            },
+            {
+                "src": "IMG_20160915_203226.jpg",
+                "label": "Successful Kickstarter campaign"
+            },
+            {
+                "src": "IMG_20161004_180020.jpg",
+                "label": "Preparing kits to be shipped to backers"
+            },
+            {
+                "src": "IMG_20170401_210917_675.jpg",
+                "label": "Kits ready for store shelves"
+            }
+        ],
+        "links": [
+            {
+                "label": "Kickstarter",
+                "src": "https://www.kickstarter.com/projects/267560573/button-board-prototyping-electronics-the-painless"
+            }
+        ],
+        "previewImage": {
+            "label": "painless prototyping preview",
+            "src": "DSC09243.jpg"
+        }
+    },
+    {
+        "title": "Painless Prototyping: Second Attempt",
+        "id": "painless-prototyping-second-attempt",
+        "description": "After suceeding with my first startup attempt, I wanted to try again and continue to learn and bring a better product into the world. I recommend watching the Kickstarter video as it offers a much better explanation",
+        "endDate": "2021-10-01",
+        "images": [
+            {
+                "src": "IMG_20200516_190109.jpg",
+                "label": "Using what I created with my first startup attempt to create to protype ideas for my second attempt"
+            },
+            {
+                "src": "DSC_2611.jpg",
+                "label": "Exploring a proof of concept to see how feasable my startup idea was"
+            },
+            {
+                "src": "DSC_3528.jpg",
+                "label": "Assembling the first prototype"
+            },
+            {
+                "src": "DSC_3535.jpg",
+                "label": "Glamour shot of fully working first prototype"
+            },
+            {
+                "src": "DSC_5663.jpg",
+                "label": "Final version shipped to customers"
+            },
+            {
+                "src": "PXL_20210603_002702358.jpg",
+                "label": "Delivering over 500 keyboards to Kickstarter backers"
+            },
+            {
+                "src": "IMG_4221.jpg",
+                "label": "Donated kits and teaching time to the Dottie Rose Foundation"
+            },
+            {
+                "src": "PXL_20211206_012755312.jpg",
+                "label": "Thank you cards from the summer camp"
+            }
+        ],
+        "links": [
+            {
+                "label": "Kickstarter",
+                "src": "https://www.kickstarter.com/projects/painlessprototyping/byo-build-your-own-mechanical-keyboard"
+            }
+        ],
+        "previewImage": {
+            "label": "painless prototyping preview",
+            "src": "DSC_5663.jpg"
+        }
+    },
+    {
+        "title": "Pan & Tilt Camera Adapter",
+        "id": "pan-and-tilt-camera-adapter",
+        "description": "I wanted a camera adapter for doing timelapse photography. However, I couldn't afford one at the time so I decided to build it instead.",
+        "endDate": "2016-07-01",
+        "images": [
+            {
+                "src": "0610162138b.jpg",
+                "label": "Fully assembled circuit with functioning code"
+            },
+            {
+                "src": "DSC08264.jpg",
+                "label": "Assembling the electrical components and housing together"
+            },
+            {
+                "src": "DSC08273.jpg",
+                "label": "Fully assembled proof of concept"
+            }
+        ],
+        "links": [
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/PanTilt/"
+            },
+            {
+                "label": "YouTube Video",
+                "src": "https://www.youtube.com/watch?v=E8Qu_i_7nHc"
+            }
+        ],
+        "previewImage": {
+            "label": "pan & tilt preview image",
+            "src": "DSC08273.jpg"
+        }
+    },
+    {
+        "title": "Portfolios",
+        "id": "portfolios",
+        "description": "I have tried to keep my portfolios as a rough proxy for my skills as a software engineer and designer. Over the years, I have used a variety of design and programming tools to complete my portfolios. The links above showcase a collection of versions. ",
+        "endDate": "2020-06-11",
+        "images": [
+            {
+                "src": "Engineering_Portfolio_V3.0.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG-20161011-WA0007.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG-20170323-WA0001.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20170321_202457_953.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20180206_194816138.jpg",
+                "label": ""
+            },
+            {
+                "src": "IMG_20180904_133724389.jpg",
+                "label": ""
+            },
+            {
+                "src": "Screen Shot 2023-01-05 at 6.05.23 PM.jpg",
+                "label": ""
+            },
+            {
+                "src": "Screen Shot 2023-01-05 at 6.05.43 PM.jpg",
+                "label": ""
+            },
+            {
+                "src": "Screenshot_20180325-145347.jpg",
+                "label": ""
+            },
+            {
+                "src": "Screenshot_20191119-203356.jpg",
+                "label": ""
+            }
+        ],
+        "links": [
+            {
+                "label": "Engineering GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/Engineering-Portfolio"
+            },
+            {
+                "label": "Photography GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/Photography-Portfolio"
+            },
+            {
+                "label": "Previous Portfolios GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/Old-Portfolios"
+            }
+        ],
+        "previewImage": {
+            "label": "New Site Screenshot",
+            "src": "Engineering_Portfolio_V3.0.jpg"
+        }
+    },
+    {
+        "title": "Selected Woodworking",
+        "id": "selected-woodworking",
+        "description": "These are a collection of woodworking projects that I am most proud of.",
+        "endDate": "2019-01-01",
+        "images": [
+            {
+                "src": "IMG_20161103_180829.jpg",
+                "label": "Todler Gym"
+            },
+            {
+                "src": "IMG_20170502_194545_028.jpg",
+                "label": "Cribbage Board"
+            },
+            {
+                "src": "IMG_20190313_091112.jpg",
+                "label": "Laser Cut Puzzle"
+            },
+            {
+                "src": "IMG_20190322_164034.jpg",
+                "label": "Laser Cut Puzzle"
+            },
+            {
+                "src": "IMG_20191109_153857.jpg",
+                "label": "Midcentury Modern Nightstands"
+            },
+            {
+                "src": "PXL_20211215_044741924.jpg",
+                "label": "Settlers of Catan"
+            },
+            {
+                "src": "image-20161220_203034.jpg",
+                "label": "Jewelry Box"
+            },
+            {
+                "src": "image-20161220_215911.jpg",
+                "label": "Jewelry Box"
+            }
+        ],
+        "links": [],
+        "previewImage": {
+            "label": "",
+            "src": "IMG_20170502_194545_028.jpg"
+        }
+    },
+    {
+        "title": "Security System",
+        "id": "security-system",
+        "description": "This project holds a special place in my heart for two reasons. First, it expanded my understanding of backend programming. Second, it's what I demoed for the interview that landed me my first full time job in software engineering.\nThe Raspberry Pi is responsible for capturing photos every time motion is detected. Those photos are then uploaded to the cloud. Any time a security issue arises, admins can sign in and review the photos.",
+        "endDate": "2017-05-01",
+        "images": [
+            {
+                "src": "IMG_20170319_191530_356.jpg",
+                "label": "Diagraming the System"
+            },
+            {
+                "src": "IMG-20170316-WA0005.jpg",
+                "label": "Login Screen"
+            },
+            {
+                "src": "IMG-20170316-WA0007.jpg",
+                "label": "Web App"
+            },
+            {
+                "src": "IMG_20170209_193557.jpg",
+                "label": "Physical Hardware"
+            }
+        ],
+        "links": [
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/Raspberry-Pi-Security-System"
+            }
+        ],
+        "previewImage": {
+            "label": "security camera preview",
+            "src": "IMG_20170209_193557.jpg"
+        }
+    },
+    {
+        "title": "Smart Display",
+        "id": "smart-display",
+        "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather.",
+        "endDate": "2020-08-01",
+        "images": [
+            {
+                "src": "IMG_20200107_193631.jpg",
+                "label": "Measuring and sketching case"
+            },
+            {
+                "src": "IMG_20200126_123042.jpg",
+                "label": "Exploring various aspects of case design"
+            },
+            {
+                "src": "model.jpg",
+                "label": "Final case"
+            },
+            {
+                "src": "DSC_2338.jpg",
+                "label": "Fully assembled back"
+            },
+            {
+                "src": "DSC_2337.jpg",
+                "label": "Fully assembled front"
+            }
+        ],
+        "links": [
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/Smart-Display"
+            },
+            {
+                "label": "YouTube Playlist",
+                "src": "https://www.youtube.com/watch?v=LbvioXXcNqk&list=PL58d_qyxyaOGaACvm6FVX_9Y3hvzr_30M"
+            }
+        ],
+        "previewImage": {
+            "label": "smart display",
+            "src": "model.jpg"
+        }
+    },
+    {
+        "title": "Strangerer Things",
+        "id": "strangerer-things",
+        "description": "As the holidays approached one year, I wanted a fun project to work on with coworkers. We decided to integrate the lights from the show Stranger Things with Slack messages.\nEmployees could write messages to a Slack bot called \"What's up Will?\". Those messages passed through AWS until they arrived to a Raspberry Pi. A python script was responsible for decoding each message. Once decoded, the message was shown on a custom display.\nCheck out the YouTube video for a demo.",
+        "endDate": "2018-12-23",
+        "images": [
+            {
+                "src": "IMG_20181211_204613.jpg",
+                "label": "Experimenting with letter sizing"
+            },
+            {
+                "src": "IMG_20181212_234624.jpg",
+                "label": "Slack app ready to send a message"
+            },
+            {
+                "src": "IMG_20181212_234746.jpg",
+                "label": "Assembling lights"
+            },
+            {
+                "src": "IMG_20181218_123142.jpg",
+                "label": "Fully assembled and ready to receive messages"
+            }
+        ],
+        "links": [
+            {
+                "label": "YouTube Video",
+                "src": "https://www.youtube.com/watch?v=DL1EOHFlQWA"
+            },
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/strangerer_things"
+            }
+        ],
+        "previewImage": {
+            "label": "strangerer",
+            "src": "IMG_20181218_123142.jpg"
+        }
+    }
+]
