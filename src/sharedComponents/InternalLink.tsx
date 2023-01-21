@@ -4,24 +4,24 @@ import { Link } from 'react-router-dom'
 
 import { CSSHover, PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
 
-const ExternalLinkWrapper = styled(Link)`
+const InternalLinkWrapper = styled(Link)`
     color: ${PRIMARY_COLOR};
     text-decoration: none;
     ${CSSHover};
     font-family: Raleway, sans-serif;
 `
 
-type ExternalLinkProps = {
+type InternalLinkProps = {
     children: React.ReactNode
     to: string
 }
 
-const ExternalLink = ({ children, to }: ExternalLinkProps) => {
+const InternalLink = ({ children, to }: InternalLinkProps) => {
     return (
-        <ExternalLinkWrapper to={to}>
+        <InternalLinkWrapper to={to}>
             {children}
-        </ExternalLinkWrapper>
+        </InternalLinkWrapper>
     )
 }
 
-export default ExternalLink
+export default InternalLink

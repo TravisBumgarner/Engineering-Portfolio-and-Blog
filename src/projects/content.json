@@ -2,7 +2,7 @@
     {
         "title": "2D Plotter Explorations",
         "id": "2d-plotter-explorations",
-        "description": "Explorations of various aspects of 2D plotting. This culminated in the creation of a 2D plotter from scratch. A basic paint program was created in Python that could output the artwork to custom G-Code. This G-Code was then sent over from Python to an Arduino Microcontroller. The Arduino controlled a circuit attached to the hardware with custom 3d modeled and printed parts. ",
+        "description": "Over the years, I have explored many aspects of how 2D plotters work. As my skills broadened and deepened, so too did my explorations. This culminated in the creation of a 2D plotter from scratch.\nOn the hardware side, I modeled parts in SolidWorks and either 3D printed them or had them machined. From there, I wired up a circuit to control the various motors and switches, powered by an Arduino running C++.\nOn the software side, I created a basic paint application with Python. A script took the painting and converted it into instructions for the 2D plotter. These instructions arrived to the Arduino via a Serial connection and were used to control the motors.\nThe project concluded with a simple computer painting being printed on the 2D plotter.",
         "endDate": "2020-07-29",
         "images": [
             {
@@ -358,7 +358,7 @@
     {
         "title": "Pan & Tilt Camera Adapter",
         "id": "pan-and-tilt-camera-adapter",
-        "description": "Camera Adapter for creating Timelapse Photography",
+        "description": "I wanted a camera adapter for doing timelapse photography. However, I couldn't afford one at the time so I decided to build it instead.",
         "endDate": "2016-07-01",
         "images": [
             {
@@ -392,7 +392,7 @@
     {
         "title": "Portfolios",
         "id": "portfolios",
-        "description": "Over the years, I have tried to keep my portfolios as a rough proxy for my skills as a software engineer and designer. Previous codebases included Django, WordPress, Vanilla HTML and JavaScript with designs in Photoshop. Currently they are both written in React and TypScript, without backends, and designed in Sketch",
+        "description": "I have tried to keep my portfolios as a rough proxy for my skills as a software engineer and designer. Over the years, I have used a variety of design and programming tools to complete my portfolios. The links above showcase a collection of versions. ",
         "endDate": "2020-06-11",
         "images": [
             {
@@ -458,7 +458,7 @@
     {
         "title": "Selected Woodworking",
         "id": "selected-woodworking",
-        "description": "Some nice words",
+        "description": "These are a collection of woodworking projects that I am most proud of.",
         "endDate": "2019-01-01",
         "images": [
             {
@@ -483,7 +483,7 @@
             },
             {
                 "src": "PXL_20211215_044741924.jpg",
-                "label": "Settler's of Catan"
+                "label": "Settlers of Catan"
             },
             {
                 "src": "image-20161220_203034.jpg",
@@ -503,7 +503,7 @@
     {
         "title": "Security System",
         "id": "security-system",
-        "description": "Security System powered by the Raspberry Pi and Flask. This project holds a special place in my heart for two reasons. First it strongly exapanded my understanding of backend programming. Second, it's what I demoed for the interview that landed me my first full time job in software engineering",
+        "description": "This project holds a special place in my heart for two reasons. First, it expanded my understanding of backend programming. Second, it's what I demoed for the interview that landed me my first full time job in software engineering.\nThe Raspberry Pi is responsible for capturing photos every time motion is detected. Those photos are then uploaded to the cloud. Any time a security issue arises, admins can sign in and review the photos.",
         "endDate": "2017-05-01",
         "images": [
             {
@@ -537,7 +537,7 @@
     {
         "title": "Smart Display",
         "id": "smart-display",
-        "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather",
+        "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather.",
         "endDate": "2020-09-01",
         "images": [
             {
@@ -579,7 +579,7 @@
     {
         "title": "Strangerer Things",
         "id": "strangerer-things",
-        "description": "Messaging system, inspired by Stranger Things, to communicate via Slack to series of lights, controlled by a Raspberry Pi",
+        "description": "As the holidays approached one year, I wanted a fun project to work on with coworkers. We decided to integrate the lights from the show Stranger Things with Slack messages.\nEmployees could write messages to a Slack bot called \"What's up Will?\". Those messages passed through AWS until they arrived to a Raspberry Pi. A python script was responsible for decoding each message. Once decoded, the message was shown on a custom display.\nCheck out the YouTube video for a demo.",
         "endDate": "2018-12-23",
         "images": [
             {

@@ -81,7 +81,7 @@ const Header = () => {
             <Title size="large">
                 <StyledLink to="/">{title.slice(0, length)}</StyledLink>
             </Title>
-            <Text>These are artifacts of my experiences learning, creating, and exploring. They're not always polished or completed, but they've shaped who I am today.</Text>
+            <Text>These are artifacts of my experiences learning, creating, and exploring.<br />They're not always polished or completed, but they've shaped who I am today.</Text>
         </HeaderWrapper>
     )
 }

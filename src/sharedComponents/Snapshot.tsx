@@ -9,6 +9,7 @@ const SnapshotWrapper = styled.div<{ top: number, left: number, rotation: number
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   break-inside: avoid;
+  max-height: 100%;
 
   ${({ top, left, rotation }) => css`
     left: ${top}px;

@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { ScrollToTop, Portfolio, NotFound, Header, Project, Blog, Snapshots, Post, Navigation } from './components'
 
 const AppWrapper = styled.div`
-    max-width: 1200px;
+    max-width: 1300px;
     padding: 1rem;
     margin: 0 auto;
     box-sizing: border-box;

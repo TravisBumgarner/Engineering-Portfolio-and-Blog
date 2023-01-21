@@ -14,28 +14,18 @@ const PortfolioWrapper = styled.div`
     }
 `
 
-const ReadNow = styled.strong`
-  &:hover {
-    background-color: #3e8eff;
-    color: white;
-    border-color: #3e8eff;
-  }
-`
-
 const Portfolio = () => {
     const tiles = useMemo(() => {
-        return projects.map(({ id, title, description, previewImage }) => {
-            return (
+        return projects
+            .sort((a, b) => a.title > b.title ? -1 : 1)
+            .map(({ id, title, previewImage }) => {
+                return (
+                    <Snapshot src={previewImage && `${__STATIC__}/projects/${id}/${previewImage.src}`} key={id}>
+                        <Title size="medium"><InternalLink to={`/project/${id}`}>{title}</InternalLink></Title>
+                    </Snapshot>
 
-                <Snapshot src={previewImage && `${__STATIC__}/projects/${id}/${previewImage.src}`} key={id}>
-                    <>
-                        <Title size="medium">{title}</Title>
-                        <Text>{description} <InternalLink key={id} to={`/project/${id}`}><ReadNow>Read Now</ReadNow></InternalLink></Text>
-                    </>
-                </Snapshot>
-
-            )
-        })
+                )
+            })
     }, [])
 
     return (

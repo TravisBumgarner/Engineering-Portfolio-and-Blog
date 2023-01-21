@@ -17,7 +17,7 @@ const LinkLi = styled.li`
 `
 
 const SnapshotsWrapper = styled.div`
-    width: 50%;
+    width: 40%;
 `
 
 const DetailsWrapper = styled.div`
@@ -27,7 +27,8 @@ const DetailsWrapper = styled.div`
 `
 
 const MetadataWrapper = styled.div`
-    width: 35%;
+    width: 60%;
+    padding-right: 1rem;
 `
 
 const NoScrollWrapper = styled.div`
@@ -47,6 +48,7 @@ const Details = ({ project: { description, links, title, images, id } }: { proje
     }), [links])
 
     const Images = useMemo(() => images.map((i, index) => <Snapshot key={index} src={`${__STATIC__}/projects/${id}/${i.src}`}><span>{i.label}</span></Snapshot>), [images])
+    const Description = useMemo(() => description.split('\n').map((paragraph, index) => <Text key={index}>{paragraph}</Text>), [description])
     return (
         <DetailsWrapper>
             <MetadataWrapper>
@@ -59,7 +61,7 @@ const Details = ({ project: { description, links, title, images, id } }: { proje
                         </>
                     )}
                     <Title size='small'>Details</Title>
-                    <Text>{description}</Text>
+                    {Description}
                 </NoScrollWrapper>
             </MetadataWrapper>
             <SnapshotsWrapper>

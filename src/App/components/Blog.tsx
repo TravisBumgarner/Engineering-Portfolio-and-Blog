@@ -30,7 +30,7 @@ const Blog = () => {
                 const { title, description } = posts[id]
                 return (
                     <Link key={id} to={`/post/${id}`}>
-                        <Snapshot src={`${__STATIC__}posts/${id}/${posts[id].preview_image}`}>
+                        <Snapshot src={`${__STATIC__}/posts/${id}/${posts[id].preview_image}`}>
                             <>
                                 <Title size="medium">{title}</Title>
                                 <Text>{description} <ReadNow>Read Now</ReadNow></Text>
