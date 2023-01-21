@@ -1,4 +1,5 @@
-import { useEffect, useState, useCallback, useMemo } from 'react'
+import { useMemo } from 'react'
+import { transparentize } from 'polished'
 import styled from 'styled-components'
 import { useNavigate, useParams } from 'react-router-dom'
 
@@ -89,7 +90,7 @@ const MarkdownStyles = styled.div`
         border: 0;
         padding: 0;
         border-radius: 0;
-        background-color: #e2e2e2;
+        background-color: ${transparentize(0.6, TERTIARY_COLOR)};
         
         &:before, &:after {
             content: '';

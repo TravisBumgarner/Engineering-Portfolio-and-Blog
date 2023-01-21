@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom'
 import { CSSHover, CSSTransition, PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
 
 const InternalLinkWrapper = styled(Link)`
-    color: ${PRIMARY_COLOR};
     text-decoration: none;
     ${CSSHover};
     font-family: Raleway, sans-serif;
     ${CSSTransition};
     &:visited {
-        color: ${PRIMARY_COLOR};
+        color: ${TERTIARY_COLOR};
     }
 `
 

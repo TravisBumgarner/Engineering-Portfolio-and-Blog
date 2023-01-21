@@ -1,7 +1,7 @@
 
 import styled, { css } from 'styled-components'
 import { useMemo } from 'react'
-import { CSSTransition, PRIMARY_COLOR } from 'Theme'
+import { PRIMARY_COLOR } from 'Theme'
 
 const SnapshotWrapper = styled.div<{ top: number, left: number, rotation: number }>`
   box-sizing: border-box;
@@ -9,9 +9,7 @@ const SnapshotWrapper = styled.div<{ top: number, left: number, rotation: number
   margin-bottom: 1rem;
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  break-inside: avoid;
   max-height: 100%;
-  ${CSSTransition};
 
   ${({ top, left, rotation }) => css`
     left: ${top}px;
@@ -35,12 +33,6 @@ const SnapshotWrapper = styled.div<{ top: number, left: number, rotation: number
 
   > * {
     color: ${PRIMARY_COLOR};
-  }
-
-  &:hover {
-    left: 0;
-    top: 0;
-    transform: rotate(0);
   }
 `
 const randomIntFromInterval = (min: number, max: number) => {

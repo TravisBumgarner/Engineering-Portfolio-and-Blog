@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link, useLocation } from 'react-router-dom'
 
 import { CSSHover, PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
-import { Title, Text } from 'SharedComponents'
+import { Title, Text, InternalLink } from 'SharedComponents'
 import { useEffect, useMemo, useState } from 'react'
 
 const makeNewSiteTitle = () => {
@@ -52,13 +52,6 @@ const makeNewSiteTitle = () => {
     return `${RANDOM_FILE_BASE}_${RANDOM_FILE_SUFIX}.${RANDOM_FILE_TYPE}`;
 };
 
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    color: ${PRIMARY_COLOR};
-
-    ${CSSHover};
-`
-
 const HeaderWrapper = styled.div`
 `
 
@@ -79,7 +72,7 @@ const Header = () => {
     return (
         <HeaderWrapper>
             <Title size="large">
-                <StyledLink to="/">{title.slice(0, length)}</StyledLink>
+                <InternalLink to="/">{title.slice(0, length)}</InternalLink>
             </Title>
             <Text>These are artifacts of my experiences learning, creating, and exploring.<br />They're not always polished or completed, but they've shaped who I am today.</Text>
         </HeaderWrapper>

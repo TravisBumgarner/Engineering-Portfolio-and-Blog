@@ -28,7 +28,7 @@ const AppWrapper = styled.div`
         flex-grow: 1;
         padding: 1rem;
         box-sizing: border-box;
-        max-width: 800px;
+        max-width: 600px;
         margin: 0px auto;
     }
 `

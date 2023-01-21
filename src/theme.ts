@@ -13,7 +13,8 @@ const media = {
 }
 
 const CSSTransition = css`
-    transition: all 0.75s;
+    transition: color 0.75s;
+    transition: background-color 0.75s;
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -48,6 +49,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const CSSHover = css`
+    color: ${TERTIARY_COLOR};
     &:hover {
         background-color: ${TERTIARY_COLOR};
         color: white;
