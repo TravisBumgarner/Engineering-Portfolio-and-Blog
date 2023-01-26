@@ -56,7 +56,7 @@
     {
         "title": "Automated Film Scanner",
         "id": "automated-film-scanner",
-        "description": "Automated film Scanner for 35mm negative film",
+        "description": "Automated film Scanner for 35mm negative film.",
         "endDate": "2016-05-01",
         "images": [
             {
@@ -98,7 +98,7 @@
     {
         "title": "Camera From Scratch",
         "id": "camera-from-scratch",
-        "description": "Exploration into turning a collection of electrical components into a camera",
+        "description": "I knew nothing about cameras, so I decided to build one.",
         "endDate": "2016-09-01",
         "images": [
             {
@@ -144,7 +144,7 @@
     {
         "title": "MIT D-Lab Development Class",
         "id": "development-class",
-        "description": "Led group of students on a three week trip to Bogota, Colombia to teach engineering workshops with C-Innova",
+        "description": "I was invited to lead a group of MIT students on a three week trip to Bogota, Colombia. We worked on engineering projects and taught workshops around Arduino, soldering, basic electronics, and other related topics.",
         "endDate": "2017-01-30",
         "images": [
             {
@@ -186,7 +186,7 @@
     {
         "title": "Educational Content Creator",
         "id": "educational-content-creator",
-        "description": "An exploration into ways to share what I've learned with others. I've created YouTube videos and led a Twitch stream for a period of time",
+        "description": "An exploration into ways to share what I've learned with others. I've created YouTube videos and led a Twitch stream for a period of time.",
         "endDate": "2022-01-01",
         "images": [
             {
@@ -236,7 +236,7 @@
     {
         "title": "Intro to Arduino Workshop",
         "id": "intro-to-arduino-workshop",
-        "description": "Workshop teaching the basics of Arduino, electronics, and programming",
+        "description": "I love sharing what I've learned with others so I decided to create and teach an introductory Arduino workshop.",
         "endDate": "2017-07-01",
         "images": [
             {
@@ -274,7 +274,7 @@
     {
         "title": "Painless Prototyping: First Attempt",
         "id": "painless-prototyping-first-attempt",
-        "description": "I'd never tried to launch a startup before. I set out to learn as much as possible about creating a company and product from nothing",
+        "description": "I'd never tried to launch a startup before, this was my first attempt.",
         "endDate": "2017-07-01",
         "images": [
             {
@@ -308,7 +308,7 @@
     {
         "title": "Painless Prototyping: Second Attempt",
         "id": "painless-prototyping-second-attempt",
-        "description": "After suceeding with my first startup attempt, I wanted to try again and continue to learn and bring a better product into the world. I recommend watching the Kickstarter video as it offers a much better explanation",
+        "description": "After suceeding with my first startup attempt, I wanted to try again and continue to learn and bring a better product into the world. Check out the Kickstarter project and the video recorded within it.",
         "endDate": "2021-10-01",
         "images": [
             {
@@ -503,7 +503,7 @@
     {
         "title": "Security System",
         "id": "security-system",
-        "description": "This project holds a special place in my heart for two reasons. First, it expanded my understanding of backend programming. Second, it's what I demoed for the interview that landed me my first full time job in software engineering.\nThe Raspberry Pi is responsible for capturing photos every time motion is detected. Those photos are then uploaded to the cloud. Any time a security issue arises, admins can sign in and review the photos.",
+        "description": "This project holds a special place in my heart for two reasons. First, it expanded my understanding of backend programming. Second, it's what I demoed for the interview that landed me my first full time job in software engineering.\nThe system consists of a Raspberry Pi with a camera, connected to a server for viewing photos.",
         "endDate": "2017-05-01",
         "images": [
             {
@@ -579,7 +579,7 @@
     {
         "title": "Strangerer Things",
         "id": "strangerer-things",
-        "description": "As the holidays approached one year, I wanted a fun project to work on with coworkers. We decided to integrate the lights from the show Stranger Things with Slack messages.\nEmployees could write messages to a Slack bot called \"What's up Will?\". Those messages passed through AWS until they arrived to a Raspberry Pi. A python script was responsible for decoding each message. Once decoded, the message was shown on a custom display.\nCheck out the YouTube video for a demo.",
+        "description": "Stranger Things lights, overly engineered with AWS, Slack, a Raspberry Pi, and a laser cutter. Check out the YouTube video to see it in action.",
         "endDate": "2018-12-23",
         "images": [
             {

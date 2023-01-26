@@ -16,24 +16,8 @@ const LinkLi = styled.li`
     }
 `
 
-const SnapshotsWrapper = styled.div`
-    /* width: 40%; */
-`
-
-const DetailsWrapper = styled.div`
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-between; */
-`
-
 const MetadataWrapper = styled.div`
-    /* width: 60%; */
-    /* padding-right: 1rem; */
-`
-
-const NoScrollWrapper = styled.div`
-    position: sticky;
-    top: 1rem;
+    margin-bottom: 3rem;
 `
 
 const Details = ({ project: { description, links, title, images, id } }: { project: Project }) => {
@@ -50,24 +34,22 @@ const Details = ({ project: { description, links, title, images, id } }: { proje
     const Images = useMemo(() => images.map((i, index) => <Snapshot key={index} src={`${__STATIC__}/projects/${id}/${i.src}`}><span>{i.label}</span></Snapshot>), [images])
     const Description = useMemo(() => description.split('\n').map((paragraph, index) => <Text key={index}>{paragraph}</Text>), [description])
     return (
-        <DetailsWrapper>
+        <div>
             <MetadataWrapper>
-                <NoScrollWrapper>
-                    <Title size='large'>{title}</Title>
-                    {Links.length > 0 && (
-                        <>
-                            <Title size='medium'>Links</Title>
-                            <ul>{Links}</ul>
-                        </>
-                    )}
-                    <Title size='medium'>Details</Title>
-                    {Description}
-                </NoScrollWrapper>
+                <Title size='large'>{title}</Title>
+                {Links.length > 0 && (
+                    <>
+                        <Title size='medium'>Links</Title>
+                        <ul>{Links}</ul>
+                    </>
+                )}
+                <Title size='medium'>Details</Title>
+                {Description}
             </MetadataWrapper>
-            <SnapshotsWrapper>
+            <div>
                 {images.length ? Images : null}
-            </SnapshotsWrapper>
-        </DetailsWrapper >
+            </div>
+        </div >
     )
 }
 
