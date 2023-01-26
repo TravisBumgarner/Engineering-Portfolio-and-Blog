@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { GlobalStyle, media } from 'Theme'
 import styled from 'styled-components'
 
-import { ScrollToTop, Portfolio, NotFound, Header, Project, Blog, Snapshots, Post, Sidebar } from './components'
+import { ScrollToTop, Portfolio, NotFound, Project, Blog, Snapshots, Post, Sidebar } from './components'
 
 const AppWrapper = styled.div`
     max-width: 1600px;

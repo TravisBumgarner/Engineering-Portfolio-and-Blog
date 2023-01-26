@@ -20,36 +20,27 @@ const makeNewSiteTitle = () => {
         "cpp",
         "css",
         "dxf",
+        "dng",
         "html",
+        "jpg",
         "json",
         "js",
-        "pde",
-        "psd",
-        "py",
-        "scss",
-        "sketch",
-        "sldprt",
-        "sh",
-        "dng",
-        "tsx",
         "nef",
-        "jpeg",
+        "pde",
+        "py",
+        "psd",
+        "scss",
+        "sh",
         "tiff",
         "pdf",
-        "nef"
+        "ts",
+        "tsx",
     ];
-
-    const VALID_FILE_BASE = [
-        // 'tbumgarner',
-        // 'travis_bumgarner'
-        "tb"
-    ]
 
     const RANDOM_FILE_TYPE = VALID_FILE_TYPES[Math.floor(Math.random() * VALID_FILE_TYPES.length)];
     const RANDOM_FILE_SUFIX = VALID_FILE_SUFFIX[Math.floor(Math.random() * VALID_FILE_SUFFIX.length)];
-    const RANDOM_FILE_BASE = VALID_FILE_BASE[Math.floor(Math.random() * VALID_FILE_BASE.length)];
 
-    return `${RANDOM_FILE_BASE}_${RANDOM_FILE_SUFIX}.${RANDOM_FILE_TYPE}`;
+    return `tb_${RANDOM_FILE_SUFIX}.${RANDOM_FILE_TYPE}`;
 };
 
 const HeaderWrapper = styled.div`
