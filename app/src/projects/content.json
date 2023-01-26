@@ -7,7 +7,7 @@
         "images": [
             {
                 "src": "20130409_202136.jpg",
-                "label": "First exploration with Knex and Arduino"
+                "label": "First exploration with K'nex and Arduino"
             },
             {
                 "src": "IMG_20161219_190837.jpg",
@@ -137,7 +137,7 @@
             }
         ],
         "previewImage": {
-            "label": "timelapse camera preview",
+            "label": "time lapse camera preview",
             "src": "DSC02544.jpg"
         }
     },
@@ -153,11 +153,11 @@
             },
             {
                 "src": "16107519_10156042158208018_143016716065454977_o.jpg",
-                "label": "Leading an Intro to Arduino worskhop in Spanish"
+                "label": "Leading an Intro to Arduino workshop in Spanish"
             },
             {
                 "src": "17434897_1657246607625359_4142016014936483845_o.jpg",
-                "label": "Teaching teammembers some basics of Arduino"
+                "label": "Teaching team members some basics of Arduino"
             },
             {
                 "src": "DSC00118.jpg",
@@ -308,7 +308,7 @@
     {
         "title": "Painless Prototyping: Second Attempt",
         "id": "painless-prototyping-second-attempt",
-        "description": "After suceeding with my first startup attempt, I wanted to try again and continue to learn and bring a better product into the world. Check out the Kickstarter project and the video recorded within it.",
+        "description": "After succeeding with my first startup attempt, I wanted to try again and continue to learn and bring a better product into the world. Check out the Kickstarter project and the video recorded within it.",
         "endDate": "2021-10-01",
         "images": [
             {
@@ -317,7 +317,7 @@
             },
             {
                 "src": "DSC_2611.jpg",
-                "label": "Exploring a proof of concept to see how feasable my startup idea was"
+                "label": "Exploring a proof of concept to see how feasible my startup idea was"
             },
             {
                 "src": "DSC_3528.jpg",
@@ -358,7 +358,7 @@
     {
         "title": "Pan & Tilt Camera Adapter",
         "id": "pan-and-tilt-camera-adapter",
-        "description": "I wanted a camera adapter for doing timelapse photography. However, I couldn't afford one at the time so I decided to build it instead.",
+        "description": "I wanted a camera adapter for doing time lapse photography. However, I couldn't afford one at the time so I decided to build it instead.",
         "endDate": "2016-07-01",
         "images": [
             {
@@ -463,7 +463,7 @@
         "images": [
             {
                 "src": "IMG_20161103_180829.jpg",
-                "label": "Todler Gym"
+                "label": "Toddler Gym"
             },
             {
                 "src": "IMG_20170502_194545_028.jpg",
@@ -479,7 +479,7 @@
             },
             {
                 "src": "IMG_20191109_153857.jpg",
-                "label": "Midcentury Modern Nightstands"
+                "label": "Mid Century Modern Nightstands"
             },
             {
                 "src": "PXL_20211215_044741924.jpg",
@@ -508,7 +508,7 @@
         "images": [
             {
                 "src": "IMG_20170319_191530_356.jpg",
-                "label": "Diagraming the System"
+                "label": "Diagramming the System"
             },
             {
                 "src": "IMG-20170316-WA0005.jpg",
