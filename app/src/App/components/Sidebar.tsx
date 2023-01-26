@@ -7,8 +7,8 @@ import { CSSHover, PRIMARY_COLOR, } from 'Theme'
 import { Title, Text, ExternalLink, InternalLink } from 'SharedComponents'
 
 const makeNewSiteTitle = () => {
-  const VALID_FILE_SUFFIX = ["prototype", "test", "sample", "mockup", "demo", "final", "draft",];
-  const VALID_FILE_TYPES = ["cpp", "css", "dxf", "html", "json", "js", "pde", "psd", "py", "scss", "sketch", "sldprt", "sh", "dng", "tsx", "nef", "jpeg", "tiff", "pdf", "nef"];
+  const VALID_FILE_SUFFIX = ["proto", "test", "sample", "mockup", "demo", "final", "draft",];
+  const VALID_FILE_TYPES = ["cpp", "css", "dxf", "html", "json", "js", "pde", "psd", "py", "scss", "sh", "dng", "tsx", "nef", "jpeg", "tiff", "pdf", "nef"];
   const VALID_FILE_BASE = ["tb"]
 
   const RANDOM_FILE_TYPE = VALID_FILE_TYPES[Math.floor(Math.random() * VALID_FILE_TYPES.length)];

@@ -11,12 +11,13 @@ const AppWrapper = styled.div`
     box-sizing: border-box;
     display: flex;
     height: 100%;
+    padding: 1rem;
 
     > div:first-child {
         width: 30%;
         min-width: 400px;
         height: 100%;
-        padding: 1rem;
+        padding-right: 1rem;
         box-sizing: border-box;
 
         ${media.tablet}{
@@ -26,7 +27,6 @@ const AppWrapper = styled.div`
 
     > div:last-child {
         flex-grow: 1;
-        padding: 1rem;
         box-sizing: border-box;
         max-width: 600px;
         margin: 0px auto;
