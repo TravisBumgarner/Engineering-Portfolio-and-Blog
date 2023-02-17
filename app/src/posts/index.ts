@@ -12,6 +12,7 @@ import Post10 from './10.mdx'
 import Post11 from './11.mdx'
 import Post12 from './12.mdx'
 import Post13 from './13.mdx'
+import Post14 from './14.mdx'
 
 type BlogPost = {
     title: string
@@ -34,7 +35,7 @@ const posts: Record<string, BlogPost> = {
     'code-to-production': {
         renderer: Post2,
         title: "Software Engineers Rush to Write Bad Code",
-        date: "2022-04-18",
+        date: "2021-04-18",
         draft: false,
         description: "Engineers are pushed to write code quickly and the quality suffers because of it. How can you move quickly while maintaining a high level of quality?",
         preview_image: "preview_image.jpg"
@@ -126,6 +127,14 @@ const posts: Record<string, BlogPost> = {
         draft: false,
         description: "I have gotten very good at managing my time over the years, here is how I do it.",
         preview_image: "preview_image.jpg"
+    },
+    'virtual-team-building-event': {
+        renderer: Post14,
+        title: "How to organize a virtual team building event",
+        date: "2022-02-15",
+        draft: false,
+        description: "So you want to organize a virtual team outing? We put together a quick guide to help with research, planning, and the actual event.",
+        preview_image: "preview.png"
     }
 }
 
