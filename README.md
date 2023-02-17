@@ -6,7 +6,12 @@
 
 # Add New Post
 
-1. Images go in public
+1. Create new incremented [number].mdx file. 
+2. Add medatadata to posts/index.ts
+3. Create new folder in public/posts
+4. Create post.
+5. Deploy code
+6. Copy images to Bucket
 
 # Add New Project
 
