@@ -14,7 +14,7 @@ const MediumTitleStyles = css`
     color: ${SECONDARY_COLOR};
     font-size: 1.4rem;
     margin: 1rem 0;
-    font-weight: 700;
+    font-weight: 400;
     font-family: Raleway, sans-serif;
 `
 
@@ -22,7 +22,7 @@ const SmallTitleStyles = css`
     color: ${SECONDARY_COLOR};
     font-size: 1.2rem;
     margin: 1rem 0;
-    font-weight: 700;
+    font-weight: 400;
     font-family: Raleway, sans-serif;
 `
 

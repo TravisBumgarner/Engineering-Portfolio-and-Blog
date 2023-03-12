@@ -13,6 +13,7 @@ import Post11 from './11.mdx'
 import Post12 from './12.mdx'
 import Post13 from './13.mdx'
 import Post14 from './14.mdx'
+import Post15 from './15.mdx'
 
 type BlogPost = {
     title: string
@@ -135,6 +136,14 @@ const posts: Record<string, BlogPost> = {
         draft: false,
         description: "So you want to organize a virtual team outing? We put together a quick guide to help with research, planning, and the actual event.",
         preview_image: "preview.png"
+    },
+    'what-we-lost-when-we-went-remote': {
+        renderer: Post15,
+        title: "What we Lost When We Went Remote",
+        date: "2023-03-13",
+        draft: false,
+        description: "These are my observations as the world went remote and team dynamics went online.",
+        preview_image: "preview.jpg"
     }
 }
 

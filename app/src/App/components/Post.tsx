@@ -41,6 +41,7 @@ const MarkdownStyles = styled.div`
     }
     ul {
         list-style: circle;
+        margin-bottom: 1rem;
     }
     ol {
         list-style: decimal;
