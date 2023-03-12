@@ -3,21 +3,21 @@ import styled, { css } from 'styled-components'
 import { PRIMARY_COLOR } from 'Theme'
 
 const LargeTitleStyles = css`
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin: 0 0;
     font-weight: 700;
     font-family: Raleway, sans-serif;
 `
 
 const MediumTitleStyles = css`
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin: 1rem 0;
     font-weight: 700;
     font-family: Raleway, sans-serif;
 `
 
 const SmallTitleStyles = css`
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 1rem 0;
     font-weight: 700;
     font-family: Raleway, sans-serif;

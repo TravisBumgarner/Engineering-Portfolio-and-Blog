@@ -1,49 +1,33 @@
+import { useEffect, useState, useMemo } from 'react'
 import styled from 'styled-components'
-import { Link, useLocation } from 'react-router-dom'
+import { Link as ReactRouterDomLink, useLocation } from 'react-router-dom'
 
-import { CSSHover, PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
-import { Title, Text, InternalLink } from 'SharedComponents'
-import { useEffect, useMemo, useState } from 'react'
+import { CSSHover, PRIMARY_COLOR, } from 'Theme'
+import { Title, Text } from 'SharedComponents'
 
 const makeNewSiteTitle = () => {
-    const VALID_FILE_SUFFIX = [
-        "prototype",
-        "test",
-        "sample",
-        "mockup",
-        "demo",
-        "final",
-        "draft",
-    ];
-
-    const VALID_FILE_TYPES = [
-        "cpp",
-        "css",
-        "dxf",
-        "dng",
-        "html",
-        "jpg",
-        "json",
-        "js",
-        "nef",
-        "pde",
-        "py",
-        "psd",
-        "scss",
-        "sh",
-        "tiff",
-        "pdf",
-        "ts",
-        "tsx",
-    ];
+    const VALID_FILE_SUFFIX = ["proto", "test", "sample", "mockup", "demo", "final", "draft",];
+    const VALID_FILE_TYPES = ["cpp", "css", "dxf", "html", "json", "js", "pde", "psd", "py", "scss", "sh", "dng", "tsx", "nef", "jpeg", "tiff", "pdf", "nef"];
+    const VALID_FILE_BASE = ["tb"]
 
     const RANDOM_FILE_TYPE = VALID_FILE_TYPES[Math.floor(Math.random() * VALID_FILE_TYPES.length)];
     const RANDOM_FILE_SUFIX = VALID_FILE_SUFFIX[Math.floor(Math.random() * VALID_FILE_SUFFIX.length)];
+    const RANDOM_FILE_BASE = VALID_FILE_BASE[Math.floor(Math.random() * VALID_FILE_BASE.length)];
 
-    return `tb_${RANDOM_FILE_SUFIX}.${RANDOM_FILE_TYPE}`;
+    return `${RANDOM_FILE_BASE}_${RANDOM_FILE_SUFIX}.${RANDOM_FILE_TYPE}`;
 };
 
+const StyledLink = styled(ReactRouterDomLink)`
+    text-decoration: none;
+    color: ${PRIMARY_COLOR};
+
+    ${CSSHover};
+`
+
 const HeaderWrapper = styled.div`
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 1rem;
 `
 
 const Header = () => {
@@ -63,9 +47,8 @@ const Header = () => {
     return (
         <HeaderWrapper>
             <Title size="large">
-                <InternalLink to="/">{title.slice(0, length)}</InternalLink>
+                <StyledLink to="/">{title.slice(0, length)}</StyledLink>
             </Title>
-            <Text>These are artifacts of my experiences learning, creating, and exploring.<br />They're not always polished or completed, but they've shaped who I am today.</Text>
         </HeaderWrapper>
     )
 }
