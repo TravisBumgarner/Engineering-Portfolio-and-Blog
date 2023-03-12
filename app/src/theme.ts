@@ -1,7 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components'
 
 const PRIMARY_COLOR = 'rgb(51, 51, 51)'
-const SECONDARY_COLOR = '#32394c'
+const SECONDARY_COLOR = '#ff3e9c'
 const TERTIARY_COLOR = '#3e8eff'
 
 const customMediaQuery = (maxWidth: number) => `@media (max-width: ${maxWidth}px)`

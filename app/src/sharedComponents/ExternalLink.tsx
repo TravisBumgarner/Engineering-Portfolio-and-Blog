@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import { CSSHover, CSSTransition, PRIMARY_COLOR, TERTIARY_COLOR } from 'Theme'
 
 const ExternalLinkWrapper = styled.a`
-    text-decoration: none;
+    text-decoration-color: ${TERTIARY_COLOR};
+    text-decoration: underline;
     ${CSSHover};
     ${CSSTransition};
     font-family: Raleway, sans-serif;
