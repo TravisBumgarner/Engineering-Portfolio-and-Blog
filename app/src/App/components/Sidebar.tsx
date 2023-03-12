@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
 
-import { CSSHover, } from 'Theme'
+import { CSSHover, media, } from 'Theme'
 import { Title, ExternalLink, InternalLink, Text } from 'SharedComponents'
 
 const List = styled.ul`
@@ -25,6 +25,12 @@ const ListItem = styled.li<{ isActive?: boolean }>`
 `
 
 const SidebarWrapper = styled.div`
+  ${media.tablet}{
+    > :first-child {
+      display: none;
+    }
+  }
+
 `
 
 const Sidebar = () => {

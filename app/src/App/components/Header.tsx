@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo } from 'react'
 import styled from 'styled-components'
 import { Link as ReactRouterDomLink, useLocation } from 'react-router-dom'
 
-import { CSSHover, PRIMARY_COLOR, } from 'Theme'
+import { CSSHover, PRIMARY_COLOR, SECONDARY_COLOR, } from 'Theme'
 import { Title, Text } from 'SharedComponents'
 
 const makeNewSiteTitle = () => {

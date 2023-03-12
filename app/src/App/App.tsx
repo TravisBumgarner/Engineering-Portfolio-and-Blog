@@ -14,9 +14,7 @@ const BodyWrapper = styled.div`
     padding: 0 1rem;
 
     > div:first-child {
-        min-width: 200px;
         width: 200px;
-        max-width: 200px;
         height: 100%;
         padding-right: 1rem;
         box-sizing: border-box;
@@ -25,8 +23,9 @@ const BodyWrapper = styled.div`
     > div:last-child {
         flex-grow: 1;
         box-sizing: border-box;
-        max-width: 600px;
-        margin: 0px auto;
+        max-width: calc(600px + 2rem);
+        margin: 0 auto;
+        padding: 0rem 1rem;
     }
 `
 
@@ -40,11 +39,9 @@ const App = () => {
         <>
             <ScrollToTop />
             <GlobalStyle />
-            <NoScrollWrapper top={0}>
-                <Header />
-            </NoScrollWrapper>
+            <Header />
             <BodyWrapper>
-                <NoScrollWrapper top={94}> {/* Yay magic numbers */}
+                <NoScrollWrapper top={16}> {/* Yay magic numbers */}
                     <Sidebar />
                 </NoScrollWrapper>
                 <Routes>
