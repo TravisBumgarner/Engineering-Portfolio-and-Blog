@@ -53,6 +53,7 @@ const Sidebar = () => {
       <List>
         <ListItem><ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">Colab</ExternalLink></ListItem>
         <ListItem><ExternalLink href="https://github.com/travisBumgarner/">Github</ExternalLink></ListItem>
+        <ListItem><ExternalLink href="https://sillysideprojects.com">Silly Side Projects</ExternalLink></ListItem>
         <ListItem><ExternalLink href="https://travisbumgarner.photography">Photography</ExternalLink></ListItem>
       </List>
     </SidebarWrapper>
