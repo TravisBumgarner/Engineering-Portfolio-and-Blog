@@ -70,7 +70,7 @@ const StyledImage = styled.img<{
   $blurUrl: string | null;
 }>`
   background-size: 100% 100%;
-  background-repeat: -no-repeat;
+  background-repeat: no-repeat;
   ${(props) =>
     props.$blurUrl &&
     `
