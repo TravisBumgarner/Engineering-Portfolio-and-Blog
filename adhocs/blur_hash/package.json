@@ -1,0 +1,19 @@
+{
+    "name": "algorithm_explorations",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+        "blurhash": "^2.0.5",
+        "canvas": "^2.11.2"
+    },
+    "devDependencies": {
+        "@types/node": "^22.10.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.4.5"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "ts-node src/index.ts"
+    }
+}

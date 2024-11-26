@@ -4,6 +4,10 @@
 2. Navigate to console.cloud.google.com -> buckets -> eng42-asdsad
 3. Clear Contents and upload `public/`
 
+# New Photos
+
+1. Generate a new blurhash and add it to blurHashLookup.ts
+
 # Add New Post
 
 1. Create new incremented [number].mdx file. 
