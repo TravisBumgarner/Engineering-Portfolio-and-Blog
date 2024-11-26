@@ -17,7 +17,7 @@ interface Props {
 const getBlurHash = (src: string) => {
   // This works because __STATIC__ always includes a public in the url.
   const relativePath = src.split("/public")[1];
-  console.log(relativePath);
+
   const result = blurHashLookup[relativePath as keyof typeof blurHashLookup];
 
   if (!result) {
