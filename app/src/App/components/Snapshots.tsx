@@ -1,23 +1,20 @@
-import { useMemo } from 'react'
+import { useMemo } from "react";
 
-import { Snapshot } from "SharedComponents"
+import { Snapshot } from "SharedComponents";
 
-const shuffledArray = (array: any[]) => array.sort((a, b) => 0.5 - Math.random());
-
-const TOTAL_PHOTOS = 74
+const TOTAL_PHOTOS = 74;
 
 const Snapshots = () => {
   const photos = useMemo(() => {
-    const output = []
-    for (let i = 1; i <= TOTAL_PHOTOS; i++) output.push(<Snapshot key={i} src={`${__STATIC__}/snapshots/snapshot-${i}.jpg`} />)
-    return shuffledArray(output)
-  }, [])
+    const output = [];
+    for (let i = 1; i <= TOTAL_PHOTOS; i++)
+      output.push(
+        <Snapshot key={i} src={`${__STATIC__}/snapshots/snapshot-${i}.jpg`} />
+      );
+    return output.reverse();
+  }, []);
 
-  return (
-    <div>
-      {photos}
-    </div>
-  )
-}
+  return <div>{photos}</div>;
+};
 
-export default Snapshots
+export default Snapshots;
