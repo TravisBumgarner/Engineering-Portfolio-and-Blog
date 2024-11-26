@@ -41,6 +41,7 @@ export function useBlurhash(
     });
 
     return function cleanupBlurhash() {
+      console.log("canceling");
       isCancelled = true;
       setUrl((oldUrl) => {
         if (oldUrl) {
