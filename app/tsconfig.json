@@ -2,22 +2,25 @@
     "compilerOptions": {
         "resolveJsonModule": true,
         "target": "ES2020",
-        "baseUrl": ".",
+        "baseUrl": "src",
         "paths": {
             "*": [
                 "src/types/*"
             ],
-            "SharedComponents": [
-                "src/sharedComponents"
+            "SharedComponents/*": [
+                "SharedComponents/*"
             ],
             "Theme": [
-                "src/theme.ts"
+                "theme.ts"
             ],
             "Projects": [
-                "src/projects"
+                "projects"
             ],
             "Posts": [
-                "src/posts"
+                "posts"
+            ],
+            "Pages": [
+                "pages/*"
             ]
         },
         "types": [

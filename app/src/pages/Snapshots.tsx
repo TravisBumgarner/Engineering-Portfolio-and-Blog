@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { Snapshot } from 'SharedComponents'
+import Snapshot from 'SharedComponents/Snapshot'
 
 const TOTAL_PHOTOS = 74
 

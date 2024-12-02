@@ -44,7 +44,8 @@ module.exports = {
             SharedComponents: path.resolve(__dirname, 'src/sharedComponents/'),
             Theme: path.resolve(__dirname, 'src/theme.ts'),
             Projects: path.resolve(__dirname, 'src/projects'),
-            Posts: path.resolve(__dirname, 'src/posts')
+            Posts: path.resolve(__dirname, 'src/posts'),
+            Pages: path.resolve(__dirname, 'src/pages')
         },
         extensions: ['.ts', '.tsx', '.js', '.jsx']
     },

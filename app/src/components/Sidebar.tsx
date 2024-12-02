@@ -2,7 +2,10 @@ import { useMemo } from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { ExternalLink, Header, InternalLink, Text } from 'SharedComponents'
+import ExternalLink from 'SharedComponents/ExternalLink'
+import Header from 'SharedComponents/Header'
+import InternalLink from 'SharedComponents/InternalLink'
+import Text from 'SharedComponents/Text'
 import { CSSHover, media } from 'Theme'
 
 const List = styled.ul`

@@ -58,10 +58,11 @@ const BlurHashImage = ({ src }: Props) => {
     <StyledImage
       width={width}
       height={height}
-      $blurUrl={blurUrl}
+      $blurUrl={''}
       ref={imgRef}
+      src={src}
       // Fixes brief flickering of a broken image if using '' here.
-      {...(startLoadingImage || imgLoaded ? { src } : {})}
+      // {...(startLoadingImage || imgLoaded ? { src } : {})}
       // src={src}
       // Above is lazy loading so don't use this.
       // loading="lazy"
@@ -84,6 +85,5 @@ const StyledImage = styled.img<{
   background-color: #f0f0f0; /* Fallback color */
   background-image: url(${props => props.$blurUrl});
 `
-
 
 export default BlurHashImage
