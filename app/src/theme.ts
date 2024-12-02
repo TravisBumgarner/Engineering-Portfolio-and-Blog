@@ -4,17 +4,18 @@ const PRIMARY_COLOR = 'rgb(51, 51, 51)'
 const SECONDARY_COLOR = '#ff3e9c'
 const TERTIARY_COLOR = '#3e8eff'
 
-const customMediaQuery = (maxWidth: number) => `@media (max-width: ${maxWidth}px)`
+const customMediaQuery = (maxWidth: number) =>
+  `@media (max-width: ${maxWidth}px)`
 
 const media = {
-    desktop: customMediaQuery(1200),
-    tablet: customMediaQuery(768),
-    phone: customMediaQuery(376)
+  desktop: customMediaQuery(1200),
+  tablet: customMediaQuery(768),
+  phone: customMediaQuery(376)
 }
 
 const CSSTransition = css`
-    transition: color 0.75s;
-    transition: background-color 0.75s;
+  transition: color 0.75s;
+  transition: background-color 0.75s;
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -49,13 +50,21 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const CSSHover = css`
-    color: ${TERTIARY_COLOR};
-    &:hover {
-        background-color: ${TERTIARY_COLOR};
-        color: white;
-        border-color: ${TERTIARY_COLOR};
-    }
-    ${CSSTransition};
+  color: ${TERTIARY_COLOR};
+  &:hover {
+    background-color: ${TERTIARY_COLOR};
+    color: white;
+    border-color: ${TERTIARY_COLOR};
+  }
+  ${CSSTransition};
 `
 
-export { media, PRIMARY_COLOR, SECONDARY_COLOR, TERTIARY_COLOR, GlobalStyle, CSSHover, CSSTransition }
+export {
+  CSSHover,
+  CSSTransition,
+  GlobalStyle,
+  media,
+  PRIMARY_COLOR,
+  SECONDARY_COLOR,
+  TERTIARY_COLOR
+}

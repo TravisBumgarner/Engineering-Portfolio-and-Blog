@@ -1,10 +1,9 @@
-
 import { useMemo } from 'react'
-import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
+import styled from 'styled-components'
 
-import { CSSHover, media, } from 'Theme'
-import { Title, ExternalLink, InternalLink, Text } from 'SharedComponents'
+import { ExternalLink, InternalLink, Text, Title } from 'SharedComponents'
+import { CSSHover, media } from 'Theme'
 
 const List = styled.ul`
   margin: 1rem 0;
@@ -18,43 +17,75 @@ const ListItem = styled.li<{ isActive?: boolean }>`
     font-size: 1rem;
     color: black;
     text-decoration: underline;
-    ${({ isActive }) => isActive ? 'font-weight: 900;' : 'font-weight: 100;'}
+    ${({ isActive }) => (isActive ? 'font-weight: 900;' : 'font-weight: 100;')}
 
     ${CSSHover}
   }
 `
 
 const SidebarWrapper = styled.div`
-  ${media.tablet}{
+  ${media.tablet} {
     > :first-child {
       display: none;
     }
   }
-
 `
 
 const Sidebar = () => {
   const { pathname } = useLocation()
 
-  const inBlog = useMemo(() => pathname.includes('/blog') || pathname.includes('/post'), [pathname])
-  const inPortfolio = useMemo(() => pathname.includes('/portfolio') || pathname.includes('/project'), [pathname])
+  const inBlog = useMemo(
+    () => pathname.includes('/blog') || pathname.includes('/post'),
+    [pathname]
+  )
+  const inPortfolio = useMemo(
+    () => pathname.includes('/portfolio') || pathname.includes('/project'),
+    [pathname]
+  )
   const inSnapshots = useMemo(() => pathname === '/', [pathname])
 
   return (
     <SidebarWrapper>
-      <Text size="small">These are artifacts of my experiences learning, creating, and exploring.<br />They're not always polished or completed, but they've shaped who I am today.</Text>
+      <Text size="small">
+        These are artifacts of my experiences learning, creating, and exploring.
+        <br />
+        They're not always polished or completed, but they've shaped who I am
+        today.
+      </Text>
       <Title size="small">Here</Title>
       <List>
-        <ListItem isActive={inSnapshots}><InternalLink to="/">Snapshots</InternalLink></ListItem>
-        <ListItem isActive={inBlog}><InternalLink to="/blog">Blog</InternalLink></ListItem>
-        <ListItem isActive={inPortfolio}><InternalLink to="/portfolio">Portfolio</InternalLink></ListItem>
+        <ListItem isActive={inSnapshots}>
+          <InternalLink to="/">Snapshots</InternalLink>
+        </ListItem>
+        <ListItem isActive={inBlog}>
+          <InternalLink to="/blog">Blog</InternalLink>
+        </ListItem>
+        <ListItem isActive={inPortfolio}>
+          <InternalLink to="/portfolio">Portfolio</InternalLink>
+        </ListItem>
       </List>
       <Title size="small">There</Title>
       <List>
-        <ListItem><ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">Colab</ExternalLink></ListItem>
-        <ListItem><ExternalLink href="https://github.com/travisBumgarner/">Github</ExternalLink></ListItem>
-        <ListItem><ExternalLink href="https://sillysideprojects.com">Silly Side Projects</ExternalLink></ListItem>
-        <ListItem><ExternalLink href="https://travisbumgarner.photography">Photography</ExternalLink></ListItem>
+        <ListItem>
+          <ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">
+            Colab
+          </ExternalLink>
+        </ListItem>
+        <ListItem>
+          <ExternalLink href="https://github.com/travisBumgarner/">
+            Github
+          </ExternalLink>
+        </ListItem>
+        <ListItem>
+          <ExternalLink href="https://sillysideprojects.com">
+            Silly Side Projects
+          </ExternalLink>
+        </ListItem>
+        <ListItem>
+          <ExternalLink href="https://travisbumgarner.photography">
+            Photography
+          </ExternalLink>
+        </ListItem>
       </List>
     </SidebarWrapper>
   )

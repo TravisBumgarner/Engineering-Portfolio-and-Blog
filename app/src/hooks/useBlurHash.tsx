@@ -1,5 +1,5 @@
-import { decode } from "blurhash";
-import { useEffect, useState } from "react";
+import { decode } from 'blurhash'
+import { useEffect, useState } from 'react'
 
 // modified from https://gist.github.com/WorldMaker/a3cbe0059acd827edee568198376b95a
 // https://github.com/woltapp/react-blurhash/issues/3
@@ -9,48 +9,48 @@ export function useBlurhash(
   height: number = 32,
   punch: number = 1
 ) {
-  punch = punch || 1;
+  punch = punch || 1
 
-  const [url, setUrl] = useState(null as string | null);
+  const [url, setUrl] = useState(null as string | null)
 
   useEffect(() => {
-    let isCancelled = false;
+    let isCancelled = false
 
-    if (!blurhash) return;
+    if (!blurhash) return
 
     // decode hash
-    const pixels = decode(blurhash, width, height, punch);
+    const pixels = decode(blurhash, width, height, punch)
 
     // temporary canvas to create a blob from decoded ImageData
-    const canvas = document.createElement("canvas");
-    canvas.width = width;
-    canvas.height = height;
-    const context = canvas.getContext("2d");
-    const imageData = context!.createImageData(width, height);
-    imageData.data.set(pixels);
-    context!.putImageData(imageData, 0, 0);
-    canvas.toBlob((blob) => {
+    const canvas = document.createElement('canvas')
+    canvas.width = width
+    canvas.height = height
+    const context = canvas.getContext('2d')
+    const imageData = context!.createImageData(width, height)
+    imageData.data.set(pixels)
+    context!.putImageData(imageData, 0, 0)
+    canvas.toBlob(blob => {
       if (!isCancelled) {
-        setUrl((oldUrl) => {
+        setUrl(oldUrl => {
           if (oldUrl) {
-            URL.revokeObjectURL(oldUrl);
+            URL.revokeObjectURL(oldUrl)
           }
-          return URL.createObjectURL(blob!);
-        });
+          return URL.createObjectURL(blob!)
+        })
       }
-    });
+    })
 
     return function cleanupBlurhash() {
-      console.log("canceling");
-      isCancelled = true;
-      setUrl((oldUrl) => {
+      console.log('canceling')
+      isCancelled = true
+      setUrl(oldUrl => {
         if (oldUrl) {
-          URL.revokeObjectURL(oldUrl);
+          URL.revokeObjectURL(oldUrl)
         }
-        return null;
-      });
-    };
-  }, [blurhash, height, width, punch]);
+        return null
+      })
+    }
+  }, [blurhash, height, width, punch])
 
-  return url;
+  return url
 }

@@ -1,5 +1,5 @@
 import Figure from './Figure'
-import Youtube from './Youtube'
 import Instagram from './Instagram'
+import Youtube from './Youtube'
 
-export { Figure, Youtube, Instagram }
+export { Figure, Instagram, Youtube }

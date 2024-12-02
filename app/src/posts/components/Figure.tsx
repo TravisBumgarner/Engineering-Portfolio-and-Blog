@@ -1,32 +1,32 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const FigureWrapper = styled.figure`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    img {
-        max-width: 100%;
-        width: max-content;
-    }
+  img {
+    max-width: 100%;
+    width: max-content;
+  }
 
-    figcaption {
-        text-align: center;
-    }
+  figcaption {
+    text-align: center;
+  }
 `
 
 type FigureProps = {
-    src: string,
-    caption: string
+  src: string
+  caption: string
 }
 
 const Figure = ({ src, caption }: FigureProps) => {
-    return (
-        <FigureWrapper>
-            <img src={`${__STATIC__}/posts/${src}`} alt={caption} />
-            <figcaption>{caption}</figcaption>
-        </FigureWrapper>
-    )
+  return (
+    <FigureWrapper>
+      <img src={`${__STATIC__}/posts/${src}`} alt={caption} />
+      <figcaption>{caption}</figcaption>
+    </FigureWrapper>
+  )
 }
 
 export default Figure
