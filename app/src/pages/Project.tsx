@@ -3,7 +3,10 @@ import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
 import projects, { Project } from 'Projects'
-import { ExternalLink, Header, Snapshot, Text } from 'SharedComponents'
+import ExternalLink from 'SharedComponents/ExternalLink'
+import Header from 'SharedComponents/Header'
+import Snapshot from 'SharedComponents/Snapshot'
+import Text from 'SharedComponents/Text'
 import { CSSHover, TERTIARY_COLOR } from 'Theme'
 
 const LinkLi = styled.li`

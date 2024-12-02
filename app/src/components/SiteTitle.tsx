@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link as ReactRouterDomLink } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { Header } from 'SharedComponents'
+import Header from 'SharedComponents/Header'
 import { CSSHover, PRIMARY_COLOR } from 'Theme'
 
 const makeNewSiteTitle = () => {

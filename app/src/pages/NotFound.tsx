@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-import { Header, Text } from 'SharedComponents'
+import Header from 'SharedComponents/Header'
+import Text from 'SharedComponents/Text'
 
 const NotFoundWrapper = styled.div`
   display: flex;

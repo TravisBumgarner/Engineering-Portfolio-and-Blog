@@ -2,8 +2,8 @@ import { ErrorBoundary, init as sentryInit } from '@sentry/react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 
+import Error from 'SharedComponents/Error'
 import App from './App'
-import { Error } from './sharedComponents'
 
 if (__IS_PRODUCTION__) {
   sentryInit({

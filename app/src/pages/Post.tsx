@@ -7,9 +7,9 @@ import posts from 'Posts'
 import {
   LargeHeaderStyles,
   MediumHeaderStyles,
-  SmallHeaderStyles,
-  TextStyles
-} from 'SharedComponents'
+  SmallHeaderStyles
+} from 'SharedComponents/Header'
+import { TextStyles } from 'SharedComponents/Text'
 import { CSSHover, TERTIARY_COLOR } from 'Theme'
 
 const MarkdownStyles = styled.div`

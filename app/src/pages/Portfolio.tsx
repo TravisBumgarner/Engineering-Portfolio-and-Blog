@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import projects from 'Projects'
-import { Header, Snapshot } from 'SharedComponents'
+import Header from 'SharedComponents/Header'
+import Snapshot from 'SharedComponents/Snapshot'
 import { CSSHover } from 'Theme'
 
 const ReadNow = styled.strong`

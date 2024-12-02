@@ -4,7 +4,8 @@ import styled from 'styled-components'
 
 import posts from 'Posts'
 
-import { Header, Snapshot } from 'SharedComponents'
+import Header from 'SharedComponents/Header'
+import Snapshot from 'SharedComponents/Snapshot'
 import { CSSHover } from 'Theme'
 
 const ReadNow = styled.strong`
