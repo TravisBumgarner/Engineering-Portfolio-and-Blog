@@ -1,9 +1,9 @@
 import { transparentize } from 'polished'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
-import posts from 'Posts'
+import posts, { postMappings } from 'Posts'
 import {
   LargeHeaderStyles,
   MediumHeaderStyles,
@@ -145,57 +145,37 @@ const MarkdownStyles = styled.div`
   }
 `
 
-const Header = styled.div<{ src: string }>`
-  position: relative;
-  height: 300px;
-  margin-bottom: 2rem;
-
-  &:before {
-    opacity: 0.2;
-    position: absolute;
-    left: 0;
-    content: '';
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-image: ${({ src }) => `url("${src}");`};
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-  }
-
-  div {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 1rem;
-  }
-`
+const loadPost = async (fileName: keyof typeof postMappings) => {
+  const postModule = await postMappings[fileName]()
+  return postModule.default // Assuming the default export is the MDX component
+}
 
 const Post = () => {
   const { id } = useParams()
   const post = useMemo(() => (id ? posts[id] : null), [id])
   const navigate = useNavigate()
+  const [PostComponent, setPostComponent] = useState<React.FC | null>(null)
+
+  useEffect(() => {
+    if (!post) return
+
+    const load = async () => {
+      const component = await loadPost(post.postMapping)
+      setPostComponent(() => component)
+    }
+    load()
+  }, [post])
 
   if (!post) {
     navigate('/blog')
     return null
   }
 
-  const postDate = useMemo(
-    () => new Date(post.date).toDateString(),
-    [post.date]
-  )
-
   return (
     <MarkdownStyles>
-      {/* <Header src={`${__STATIC__}/posts/${id}/${post.preview_image}`}> */}
-      {/* <div> */}
       <h1>{post.title}</h1>
-      <time>{postDate}</time>
-      {/* </div> */}
-      {/* </Header> */}
-      {post.renderer()}
+      <time>{new Date(post.date).toDateString()}</time>
+      {PostComponent ? <PostComponent /> : <div>Loading...</div>}
     </MarkdownStyles>
   )
 }
