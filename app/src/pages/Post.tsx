@@ -145,33 +145,6 @@ const MarkdownStyles = styled.div`
   }
 `
 
-const Header = styled.div<{ src: string }>`
-  position: relative;
-  height: 300px;
-  margin-bottom: 2rem;
-
-  &:before {
-    opacity: 0.2;
-    position: absolute;
-    left: 0;
-    content: '';
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-image: ${({ src }) => `url("${src}");`};
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-  }
-
-  div {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 1rem;
-  }
-`
-
 const Post = () => {
   const { id } = useParams()
   const post = useMemo(() => (id ? posts[id] : null), [id])
@@ -189,12 +162,8 @@ const Post = () => {
 
   return (
     <MarkdownStyles>
-      {/* <Header src={`${__STATIC__}/posts/${id}/${post.preview_image}`}> */}
-      {/* <div> */}
       <h1>{post.title}</h1>
       <time>{postDate}</time>
-      {/* </div> */}
-      {/* </Header> */}
       {post.renderer()}
     </MarkdownStyles>
   )
