@@ -1,8 +1,8 @@
-import styled, { css } from "styled-components";
-import { useMemo } from "react";
+import { useMemo } from 'react'
+import styled, { css } from 'styled-components'
 
-import { PRIMARY_COLOR } from "Theme";
-import BlurHashImage from "./BlurHashImage";
+import { PRIMARY_COLOR } from 'Theme'
+import BlurHashImage from './BlurHashImage'
 
 const SnapshotWrapper = styled.div<{ rotation: number }>`
   box-sizing: border-box;
@@ -34,42 +34,42 @@ const SnapshotWrapper = styled.div<{ rotation: number }>`
   > * {
     color: ${PRIMARY_COLOR};
   }
-`;
+`
 
 const hashString = (str: string): number => {
-  let hash = 0;
+  let hash = 0
   for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash |= 0; // Convert to 32bit integer
+    const char = str.charCodeAt(i)
+    hash = (hash << 5) - hash + char
+    hash |= 0 // Convert to 32bit integer
   }
-  return hash;
-};
+  return hash
+}
 
 const randomIntFromInterval = (min: number, max: number, seed: number) => {
-  const random = (Math.sin(seed) + 1) / 2; // Generate a pseudo-random number based on the seed
-  return Math.floor(random * (max - min + 1) + min);
-};
+  const random = (Math.sin(seed) + 1) / 2 // Generate a pseudo-random number based on the seed
+  return Math.floor(random * (max - min + 1) + min)
+}
 
 const Snapshot = ({
   children,
-  src,
+  src
 }: {
-  children?: JSX.Element;
-  src: string;
+  children?: JSX.Element
+  src: string
 }) => {
   const rotation = useMemo(() => {
     // Hash the rotation to be consistent based on filename.
-    const seed = hashString(src);
-    return randomIntFromInterval(-5, 5, seed);
-  }, []);
+    const seed = hashString(src)
+    return randomIntFromInterval(-5, 5, seed)
+  }, [])
 
   return (
     <SnapshotWrapper rotation={rotation}>
       <BlurHashImage src={src} />
       <div>{children}</div>
     </SnapshotWrapper>
-  );
-};
+  )
+}
 
-export default Snapshot;
+export default Snapshot

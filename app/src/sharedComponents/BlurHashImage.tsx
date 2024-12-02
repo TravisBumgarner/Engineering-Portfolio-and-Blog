@@ -1,17 +1,11 @@
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
-import styled from "styled-components";
-import { useBlurhash } from "../hooks/useBlurHash";
-import { useInView } from "framer-motion";
-import { blurHashLookup } from "../blurHashLookup";
+import { useInView } from 'framer-motion'
+import { useCallback, useMemo, useRef, useState } from 'react'
+import styled from 'styled-components'
+import { blurHashLookup } from '../blurHashLookup'
+import { useBlurhash } from '../hooks/useBlurHash'
 
 interface Props {
-  src: string;
+  src: string
 }
 
 // NOTE -
@@ -20,45 +14,45 @@ interface Props {
 
 const getBlurHash = (src: string) => {
   // This works because __STATIC__ always includes a public in the url.
-  const relativePath = src.split("/public")[1];
+  const relativePath = src.split('/public')[1]
 
-  const result = blurHashLookup[relativePath as keyof typeof blurHashLookup];
+  const result = blurHashLookup[relativePath as keyof typeof blurHashLookup]
 
   if (!result) {
     // Shame me for this code!
-    throw new Error("missing blurhash");
+    throw new Error('missing blurhash')
   }
 
-  return result;
-};
+  return result
+}
 
 const BlurHashImage = ({ src }: Props) => {
   //   const [isVisible, setIsVisible] = useState(false);
 
-  const imgRef = useRef<HTMLImageElement>(null);
-  const [imgLoaded, setImgLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null)
+  const [imgLoaded, setImgLoaded] = useState(false)
   const startLoadingBlurHash = useInView(imgRef, {
-    margin: "0px 0px 3000px 0px",
-  });
+    margin: '0px 0px 3000px 0px'
+  })
 
   const startLoadingImage = useInView(imgRef, {
-    margin: "0px 0px 500px 0px",
-  });
-  console.log("startLoadingImage", startLoadingImage);
+    margin: '0px 0px 500px 0px'
+  })
+  console.log('startLoadingImage', startLoadingImage)
 
   const { width, height, blurHash } = useMemo(() => {
-    return getBlurHash(src);
-  }, [src]);
+    return getBlurHash(src)
+  }, [src])
 
   const blurUrl = useBlurhash(
     !imgLoaded && startLoadingBlurHash ? blurHash : null,
     width,
     height
-  );
+  )
 
   const handleOnLoad = useCallback(() => {
-    setImgLoaded(true);
-  }, []);
+    setImgLoaded(true)
+  }, [])
 
   return (
     <StyledImage
@@ -72,15 +66,15 @@ const BlurHashImage = ({ src }: Props) => {
       // Above is lazy loading so don't use this.
       // loading="lazy"
       onLoad={handleOnLoad}
-      onError={(error) => {
-        console.log("error loading image", error);
+      onError={error => {
+        console.log('error loading image', error)
       }}
     />
-  );
-};
+  )
+}
 
 const StyledImage = styled.img<{
-  $blurUrl: string | null;
+  $blurUrl: string | null
 }>`
   width: 100%;
   height: 100%;
@@ -88,8 +82,8 @@ const StyledImage = styled.img<{
   object-fit: cover;
   background-repeat: no-repeat;
   background-color: #f0f0f0; /* Fallback color */
-  background-image: url(${(props) => props.$blurUrl});
-`;
+  background-image: url(${props => props.$blurUrl});
+`
 
 // ${(props) =>
 //     props.$useSquareImage
@@ -101,4 +95,4 @@ const StyledImage = styled.img<{
 //       : `
 //     `}
 
-export default BlurHashImage;
+export default BlurHashImage
