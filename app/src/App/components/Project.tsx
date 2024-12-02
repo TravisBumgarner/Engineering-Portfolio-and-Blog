@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
 import projects, { Project } from 'Projects'
-import { ExternalLink, Snapshot, Text, Title } from 'SharedComponents'
+import { ExternalLink, Header, Snapshot, Text } from 'SharedComponents'
 import { CSSHover, TERTIARY_COLOR } from 'Theme'
 
 const LinkLi = styled.li`
@@ -56,14 +56,14 @@ const Details = ({
   return (
     <div>
       <MetadataWrapper>
-        <Title size="large">{title}</Title>
+        <Header size="large">{title}</Header>
         {Links.length > 0 && (
           <>
-            <Title size="medium">Links</Title>
+            <Header size="medium">Links</Header>
             <ul>{Links}</ul>
           </>
         )}
-        <Title size="medium">Details</Title>
+        <Header size="medium">Details</Header>
         {Description}
       </MetadataWrapper>
       <div>{images.length ? Images : null}</div>

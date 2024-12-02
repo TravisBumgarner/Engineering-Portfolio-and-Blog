@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 import { SECONDARY_COLOR } from 'Theme'
 
-const LargeTitleStyles = css`
+const LargeHeaderStyles = css`
   font-size: 1.6rem;
   color: ${SECONDARY_COLOR};
   margin: 0 0;
@@ -10,7 +10,7 @@ const LargeTitleStyles = css`
   font-family: Raleway, sans-serif;
 `
 
-const MediumTitleStyles = css`
+const MediumHeaderStyles = css`
   color: ${SECONDARY_COLOR};
   font-size: 1.4rem;
   margin: 1rem 0;
@@ -18,7 +18,7 @@ const MediumTitleStyles = css`
   font-family: Raleway, sans-serif;
 `
 
-const SmallTitleStyles = css`
+const SmallHeaderStyles = css`
   color: ${SECONDARY_COLOR};
   font-size: 1.2rem;
   margin: 1rem 0;
@@ -26,31 +26,31 @@ const SmallTitleStyles = css`
   font-family: Raleway, sans-serif;
 `
 
-const LargeTitle = styled.h1`
-  ${LargeTitleStyles}
+const LargeHeader = styled.h1`
+  ${LargeHeaderStyles}
 `
-const MediumTitle = styled.h2`
-  ${MediumTitleStyles}
+const MediumHeader = styled.h2`
+  ${MediumHeaderStyles}
 `
-const SmallTitle = styled.h3`
-  ${SmallTitleStyles}
+const SmallHeader = styled.h3`
+  ${SmallHeaderStyles}
 `
 
-type TitleProps = {
+type HeaderProps = {
   size: 'small' | 'large' | 'medium'
   children: React.ReactNode
 }
 
-const Title = ({ children, size }: TitleProps) => {
+const Header = ({ children, size }: HeaderProps) => {
   switch (size) {
     case 'large':
-      return <LargeTitle>{children}</LargeTitle>
+      return <LargeHeader>{children}</LargeHeader>
     case 'medium':
-      return <MediumTitle>{children}</MediumTitle>
+      return <MediumHeader>{children}</MediumHeader>
     case 'small':
-      return <SmallTitle>{children}</SmallTitle>
+      return <SmallHeader>{children}</SmallHeader>
   }
 }
 
-export default Title
-export { LargeTitleStyles, MediumTitleStyles, SmallTitleStyles }
+export default Header
+export { LargeHeaderStyles, MediumHeaderStyles, SmallHeaderStyles }

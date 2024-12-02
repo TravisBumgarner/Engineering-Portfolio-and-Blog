@@ -1,25 +1,25 @@
 import Error from './Error'
 import ExternalLink from './ExternalLink'
+import Header, {
+  LargeHeaderStyles,
+  MediumHeaderStyles,
+  SmallHeaderStyles
+} from './Header'
 import InternalLink from './InternalLink'
 import Snapshot from './Snapshot'
 import Text, { TextStyles } from './Text'
-import Title, {
-  LargeTitleStyles,
-  MediumTitleStyles,
-  SmallTitleStyles
-} from './Title'
 import Weak from './Weak'
 
 export {
   Error,
   ExternalLink,
+  Header,
   InternalLink,
-  LargeTitleStyles,
-  MediumTitleStyles,
-  SmallTitleStyles,
+  LargeHeaderStyles,
+  MediumHeaderStyles,
+  SmallHeaderStyles,
   Snapshot,
   Text,
   TextStyles,
-  Title,
   Weak
 }

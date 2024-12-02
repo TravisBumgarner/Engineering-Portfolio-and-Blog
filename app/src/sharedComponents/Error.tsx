@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Text, Title } from 'SharedComponents'
+import { Header, Text } from 'SharedComponents'
 
 const ErrorWrapper = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ const ErrorWrapper = styled.div`
 const Error = () => {
   return (
     <ErrorWrapper>
-      <Title size="medium">Whoops!</Title>
+      <Header size="medium">Whoops!</Header>
       <Text>Sorry, there was an error, please try again later.</Text>
     </ErrorWrapper>
   )

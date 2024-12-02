@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link as ReactRouterDomLink } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { Title } from 'SharedComponents'
+import { Header } from 'SharedComponents'
 import { CSSHover, PRIMARY_COLOR } from 'Theme'
 
 const makeNewSiteTitle = () => {
@@ -60,7 +60,7 @@ const HeaderWrapper = styled.div`
   padding: 1rem;
 `
 
-const Header = () => {
+const SiteTitle = () => {
   const [length, setLength] = useState(0)
   const title = useMemo(makeNewSiteTitle, [])
   useEffect(() => {
@@ -76,11 +76,11 @@ const Header = () => {
 
   return (
     <HeaderWrapper>
-      <Title size="large">
+      <Header size="large">
         <StyledLink to="/">{title.slice(0, length)}</StyledLink>
-      </Title>
+      </Header>
     </HeaderWrapper>
   )
 }
 
-export default Header
+export default SiteTitle

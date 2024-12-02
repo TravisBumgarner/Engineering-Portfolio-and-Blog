@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import {
   Blog,
-  Header,
+  SiteTitle,
   NotFound,
   Portfolio,
   Project,
@@ -48,7 +48,7 @@ const App = () => {
     <>
       <ScrollToTop />
       <GlobalStyle />
-      <Header />
+      <SiteTitle />
       <BodyWrapper>
         <NoScrollWrapper top={16}>
           {' '}

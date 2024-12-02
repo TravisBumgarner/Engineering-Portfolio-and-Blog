@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Text, Title } from 'SharedComponents'
+import { Header, Text } from 'SharedComponents'
 
 const NotFoundWrapper = styled.div`
   display: flex;
@@ -20,7 +20,7 @@ export { NotFoundWrapper }
 const NotFound = () => {
   return (
     <NotFoundWrapper>
-      <Title size="medium">Whoops!</Title>
+      <Header size="medium">Whoops!</Header>
       <Text>Sorry, the page you were looking for was not found.</Text>
     </NotFoundWrapper>
   )
