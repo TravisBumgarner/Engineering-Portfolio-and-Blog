@@ -85,14 +85,5 @@ const StyledImage = styled.img<{
   background-image: url(${props => props.$blurUrl});
 `
 
-// ${(props) =>
-//     props.$useSquareImage
-//       ? `
-//       object-fit: cover;
-//       width: 100%;
-//       aspect-ratio: 1 / 1; /* This maintains a 1:1 aspect ratio */
-//     `
-//       : `
-//     `}
 
 export default BlurHashImage

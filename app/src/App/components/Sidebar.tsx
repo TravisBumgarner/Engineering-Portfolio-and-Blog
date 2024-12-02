@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { ExternalLink, InternalLink, Text, Title } from 'SharedComponents'
+import { ExternalLink, Header, InternalLink, Text } from 'SharedComponents'
 import { CSSHover, media } from 'Theme'
 
 const List = styled.ul`
@@ -52,7 +52,7 @@ const Sidebar = () => {
         They're not always polished or completed, but they've shaped who I am
         today.
       </Text>
-      <Title size="small">Here</Title>
+      <Header size="small">Here</Header>
       <List>
         <ListItem isActive={inSnapshots}>
           <InternalLink to="/">Snapshots</InternalLink>
@@ -64,7 +64,7 @@ const Sidebar = () => {
           <InternalLink to="/portfolio">Portfolio</InternalLink>
         </ListItem>
       </List>
-      <Title size="small">There</Title>
+      <Header size="small">There</Header>
       <List>
         <ListItem>
           <ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">

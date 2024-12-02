@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import posts from 'Posts'
 
-import { Snapshot, Title } from 'SharedComponents'
+import { Header, Snapshot } from 'SharedComponents'
 import { CSSHover } from 'Theme'
 
 const ReadNow = styled.strong`
@@ -24,9 +24,9 @@ const Blog = () => {
             <Snapshot
               src={`${__STATIC__}/posts/${id}/${posts[id].preview_image}`}
             >
-              <Title size="medium">
+              <Header size="medium">
                 <ReadNow>{title}</ReadNow>
-              </Title>
+              </Header>
             </Snapshot>
           </Link>
         )

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import projects from 'Projects'
-import { Snapshot, Title } from 'SharedComponents'
+import { Header, Snapshot } from 'SharedComponents'
 import { CSSHover } from 'Theme'
 
 const ReadNow = styled.strong`
@@ -23,9 +23,9 @@ const Portfolio = () => {
                 `${__STATIC__}/projects/${id}/${previewImage.src}`
               }
             >
-              <Title size="medium">
+              <Header size="medium">
                 <ReadNow>{title}</ReadNow>
-              </Title>
+              </Header>
             </Snapshot>
           </Link>
         )
