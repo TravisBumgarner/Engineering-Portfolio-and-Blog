@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useState } from 'react'
 import { Link as ReactRouterDomLink } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -62,22 +62,11 @@ const HeaderWrapper = styled.div`
 
 const SiteTitle = () => {
   const [length, setLength] = useState(0)
-  const title = useMemo(makeNewSiteTitle, [])
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setLength(prev => {
-        if (prev + 1 === title.length) {
-          clearInterval(intervalId)
-        }
-        return prev + 1
-      })
-    }, 50)
-  }, [])
 
   return (
     <HeaderWrapper>
       <Header size="large">
-        <StyledLink to="/">{title.slice(0, length)}</StyledLink>
+        <StyledLink to="/">{makeNewSiteTitle()}</StyledLink>
       </Header>
     </HeaderWrapper>
   )
