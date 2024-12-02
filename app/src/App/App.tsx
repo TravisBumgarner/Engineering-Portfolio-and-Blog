@@ -5,12 +5,13 @@ import styled from 'styled-components'
 
 import {
   Blog,
-  SiteTitle,
   NotFound,
   Portfolio,
+  Post,
   Project,
   ScrollToTop,
   Sidebar,
+  SiteTitle,
   Snapshots
 } from './components'
 
@@ -60,7 +61,7 @@ const App = () => {
           <Route path="/project/:id" element={<Project />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/" element={<Snapshots />} />
-
+          <Route path="/post/:id" element={<Post />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BodyWrapper>
