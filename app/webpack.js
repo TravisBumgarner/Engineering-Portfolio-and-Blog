@@ -45,7 +45,8 @@ module.exports = {
             Theme: path.resolve(__dirname, 'src/theme.ts'),
             Projects: path.resolve(__dirname, 'src/projects'),
             Posts: path.resolve(__dirname, 'src/posts'),
-            Pages: path.resolve(__dirname, 'src/pages')
+            Pages: path.resolve(__dirname, 'src/pages'),
+            hooks: path.resolve(__dirname, 'src/hooks')
         },
         extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
