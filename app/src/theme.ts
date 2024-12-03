@@ -1,41 +1,40 @@
 import { createGlobalStyle, css } from 'styled-components'
 
-const PRIMARY_COLOR = 'rgb(51, 51, 51)'
-const SECONDARY_COLOR = '#ff3e9c'
-const TERTIARY_COLOR = '#3e8eff'
+export const FOREGROUND_COLOR = '#f5f5f5'
+export const BACKGROUND_COLOR = '#363636'
+export const SECONDARY_COLOR = '#00eaff'
+export const PRIMARY_COLOR = '#ffce05'
 
 const customMediaQuery = (maxWidth: number) =>
   `@media (max-width: ${maxWidth}px)`
 
-const media = {
+export const media = {
   desktop: customMediaQuery(1200),
   tablet: customMediaQuery(768),
   phone: customMediaQuery(376)
 }
 
-const CSSTransition = css`
+export const CSSTransition = css`
   transition: color 0.75s;
   transition: background-color 0.75s;
 `
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
         &:hover {
-            color: ${TERTIARY_COLOR};
-        }
-        &:visited {
             color: ${PRIMARY_COLOR};
         }
     }
     
     html {
+        background-color: ${BACKGROUND_COLOR};
         ${CSSTransition};
         font-family: Montserrat, sans-serif;
         line-height: 1.5;
         font-weight: 400;
         font-size: 20px;
-        color: ${PRIMARY_COLOR};
+        color: ${FOREGROUND_COLOR};
 
         overflow: -moz-scrollbars-vertical; 
         overflow-y: scroll;
@@ -49,22 +48,12 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-const CSSHover = css`
-  color: ${TERTIARY_COLOR};
+export const CSSHover = css`
+  color: ${PRIMARY_COLOR};
   &:hover {
-    background-color: ${TERTIARY_COLOR};
-    color: white;
-    border-color: ${TERTIARY_COLOR};
+    background-color: ${PRIMARY_COLOR};
+    color: ${BACKGROUND_COLOR};
+    border-color: ${PRIMARY_COLOR};
   }
   ${CSSTransition};
 `
-
-export {
-  CSSHover,
-  CSSTransition,
-  GlobalStyle,
-  media,
-  PRIMARY_COLOR,
-  SECONDARY_COLOR,
-  TERTIARY_COLOR
-}

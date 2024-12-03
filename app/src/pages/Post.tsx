@@ -10,7 +10,7 @@ import {
   SmallHeaderStyles
 } from 'SharedComponents/Header'
 import { TextStyles } from 'SharedComponents/Text'
-import { CSSHover, TERTIARY_COLOR } from 'Theme'
+import { CSSHover, PRIMARY_COLOR } from 'Theme'
 
 const MarkdownStyles = styled.div`
   h1 {
@@ -28,7 +28,7 @@ const MarkdownStyles = styled.div`
   }
 
   a {
-    color: ${TERTIARY_COLOR};
+    color: ${PRIMARY_COLOR};
     ${CSSHover};
     text-decoration: underline;
     text-decoration-thickness: from-font;
@@ -96,7 +96,7 @@ const MarkdownStyles = styled.div`
     border: 0;
     padding: 0;
     border-radius: 0;
-    background-color: ${transparentize(0.6, TERTIARY_COLOR)};
+    background-color: ${transparentize(0.6, PRIMARY_COLOR)};
 
     &:before,
     &:after {

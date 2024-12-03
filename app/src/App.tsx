@@ -39,9 +39,9 @@ const BodyWrapper = styled.div`
 const App = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <GlobalStyle />
+      <Suspense>
         <ScrollToTop />
-        <GlobalStyle />
         <SiteTitle />
         <BodyWrapper>
           <Sidebar />

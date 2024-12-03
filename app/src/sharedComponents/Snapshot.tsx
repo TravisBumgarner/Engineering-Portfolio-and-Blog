@@ -1,10 +1,11 @@
 import React, { useMemo } from 'react'
 import styled, { css } from 'styled-components'
 
-import { PRIMARY_COLOR } from 'Theme'
+import { Link } from 'react-router-dom'
+import { BACKGROUND_COLOR, CSSTransition } from 'Theme'
 import BlurHashImage from './BlurHashImage'
 
-const SnapshotWrapper = styled.div<{ rotation: number }>`
+const SnapshotWrapper = styled.div<{ $rotation: number; $isLink?: boolean }>`
   box-sizing: border-box;
   background-color: white;
   margin-bottom: 1rem;
@@ -13,8 +14,8 @@ const SnapshotWrapper = styled.div<{ rotation: number }>`
   max-height: 100%;
   padding: 0.5rem 0.5rem 0 0.5rem;
 
-  ${({ rotation }) => css`
-    transform: rotate(${rotation}deg);
+  ${({ $rotation }) => css`
+    transform: rotate(${$rotation}deg);
     position: relative;
   `}
 
@@ -26,13 +27,19 @@ const SnapshotWrapper = styled.div<{ rotation: number }>`
   }
 
   > div {
-    padding: 0rem 0.5rem 0.5rem 0.5rem;
+    padding: 0.5rem;
     min-height: 2rem;
     text-align: center;
   }
 
-  > * {
-    color: ${PRIMARY_COLOR};
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    ${({ $isLink }) =>
+      $isLink &&
+      `
+      transform: rotate(0deg);
+    `}
   }
 `
 
@@ -52,11 +59,13 @@ const randomIntFromInterval = (min: number, max: number, seed: number) => {
 }
 
 const Snapshot = ({
-  children,
-  src
+  src,
+  link,
+  text
 }: {
-  children?: JSX.Element
   src: string
+  link?: string
+  text?: string
 }) => {
   const rotation = useMemo(() => {
     // Hash the rotation to be consistent based on filename.
@@ -64,12 +73,32 @@ const Snapshot = ({
     return randomIntFromInterval(-5, 5, seed)
   }, [])
 
+  if (!link) {
+    return (
+      <SnapshotWrapper $rotation={rotation}>
+        <BlurHashImage src={src} />
+        <div>{text}</div>
+      </SnapshotWrapper>
+    )
+  }
+
   return (
-    <SnapshotWrapper rotation={rotation}>
-      <BlurHashImage src={src} />
-      <div>{children}</div>
-    </SnapshotWrapper>
+    <StyledLink to={link}>
+      <SnapshotWrapper $isLink $rotation={rotation}>
+        <BlurHashImage src={src} />
+        <div>{text}</div>
+      </SnapshotWrapper>
+    </StyledLink>
   )
 }
+
+const StyledLink = styled(Link)`
+  ${CSSTransition}
+  color: ${BACKGROUND_COLOR};
+
+  &:hover {
+    color: ${BACKGROUND_COLOR};
+  }
+`
 
 export default Snapshot

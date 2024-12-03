@@ -7,14 +7,14 @@ import ExternalLink from 'SharedComponents/ExternalLink'
 import Header from 'SharedComponents/Header'
 import Snapshot from 'SharedComponents/Snapshot'
 import Text from 'SharedComponents/Text'
-import { CSSHover, TERTIARY_COLOR } from 'Theme'
+import { CSSHover, PRIMARY_COLOR } from 'Theme'
 
 const LinkLi = styled.li`
   display: block;
   text-decoration: underline;
 
   a {
-    color: ${TERTIARY_COLOR};
+    color: ${PRIMARY_COLOR};
     ${CSSHover};
   }
 `
@@ -43,9 +43,11 @@ const Details = ({
   const Images = useMemo(
     () =>
       images.map((i, index) => (
-        <Snapshot key={index} src={`${__STATIC__}/projects/${id}/${i.src}`}>
-          <span>{i.label}</span>
-        </Snapshot>
+        <Snapshot
+          text={i.label}
+          key={index}
+          src={`${__STATIC__}/projects/${id}/${i.src}`}
+        ></Snapshot>
       )),
     [images]
   )
