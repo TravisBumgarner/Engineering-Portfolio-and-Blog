@@ -18,7 +18,6 @@ const ListItem = styled.li<{ isActive?: boolean }>`
     font-weight: 700;
     font-style: italic;
     font-size: 1rem;
-    color: black;
     text-decoration: underline;
     ${({ isActive }) => (isActive ? 'font-weight: 900;' : 'font-weight: 100;')}
 

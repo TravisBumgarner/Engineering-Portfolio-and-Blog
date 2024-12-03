@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { CSSHover, CSSTransition, TERTIARY_COLOR } from 'Theme'
+import { CSSHover, CSSTransition, PRIMARY_COLOR } from 'Theme'
 
 const ExternalLinkWrapper = styled.a`
-  text-decoration-color: ${TERTIARY_COLOR};
+  text-decoration-color: ${PRIMARY_COLOR};
   text-decoration: underline;
   ${CSSHover};
   ${CSSTransition};
   font-family: Raleway, sans-serif;
   &:visited {
-    color: ${TERTIARY_COLOR};
+    color: ${PRIMARY_COLOR};
   }
 `
 

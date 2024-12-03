@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 
-import { CSSHover, CSSTransition, TERTIARY_COLOR } from 'Theme'
+import { CSSHover, CSSTransition, PRIMARY_COLOR } from 'Theme'
 
 const InternalLinkWrapper = styled(Link)`
   text-decoration: none;
@@ -11,7 +11,7 @@ const InternalLinkWrapper = styled(Link)`
   font-family: Raleway, sans-serif;
   ${CSSTransition};
   &:visited {
-    color: ${TERTIARY_COLOR};
+    color: ${PRIMARY_COLOR};
   }
 `
 

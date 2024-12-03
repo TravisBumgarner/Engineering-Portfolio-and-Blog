@@ -14,7 +14,7 @@ const Snapshots = lazy(() => import('./pages/Snapshots'))
 
 const BodyWrapper = styled.div`
   max-width: 1600px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   box-sizing: border-box;
   display: flex;
   height: 100%;
@@ -39,9 +39,9 @@ const BodyWrapper = styled.div`
 const App = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <GlobalStyle />
+      <Suspense>
         <ScrollToTop />
-        <GlobalStyle />
         <SiteTitle />
         <BodyWrapper>
           <Sidebar />
