@@ -2,7 +2,6 @@ import { useInView } from 'framer-motion'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { blurHashLookup } from '../blurHashLookup'
-import { useBlurhash } from '../hooks/useBlurHash'
 
 interface Props {
   src: string
@@ -44,11 +43,11 @@ const BlurHashImage = ({ src }: Props) => {
     return getBlurHash(src)
   }, [src])
 
-  const blurUrl = useBlurhash(
-    !imgLoaded && startLoadingBlurHash ? blurHash : null,
-    width,
-    height
-  )
+  // const blurUrl = useBlurhash(
+  //   !imgLoaded && startLoadingBlurHash ? blurHash : null,
+  //   width,
+  //   height
+  // )
 
   const handleOnLoad = useCallback(() => {
     setImgLoaded(true)
