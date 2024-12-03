@@ -40,11 +40,11 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Suspense>
-        <ScrollToTop />
-        <SiteTitle />
-        <BodyWrapper>
-          <Sidebar />
+      <ScrollToTop />
+      <SiteTitle />
+      <BodyWrapper>
+        <Sidebar />
+        <Suspense>
           <Routes>
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/project/:id" element={<Project />} />
@@ -53,8 +53,8 @@ const App = () => {
             <Route path="/post/:id" element={<Post />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BodyWrapper>
-      </Suspense>
+        </Suspense>
+      </BodyWrapper>
     </>
   )
 }
