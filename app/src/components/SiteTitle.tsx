@@ -15,36 +15,51 @@ const makeNewSiteTitle = () => {
     'final',
     'draft'
   ]
-  const VALID_FILE_TYPES = [
-    'cpp',
-    'css',
-    'dxf',
-    'html',
-    'json',
-    'js',
-    'pde',
-    'psd',
-    'py',
-    'scss',
-    'sh',
-    'dng',
-    'tsx',
-    'nef',
-    'jpeg',
-    'tiff',
-    'pdf',
-    'nef'
-  ]
-  const VALID_FILE_BASE = ['tb']
 
+  const VALID_FILE_SUFFIX_2 = [
+    '',
+    '(1)',
+    '(2)',
+    '3',
+    '4',
+    '(5)',
+    '_final',
+    '_v2',
+    'v4'
+  ]
+
+  const VALID_FILE_TYPES = [
+    'cpp', // c++
+    'css', // css
+    'dxf', // dxf
+    'html', // html
+    'json', // json
+    'js', // javascript
+    'pde', // processing
+    'fig', // figure
+    'psd', // photoshop
+    'py', // python
+    'scss', // scss
+    'sh', // shell
+    'dng', // dng
+    'tsx', // typescript
+    'nef', // nef
+    'jpeg', // jpeg
+    'tiff', // tiff
+    'pdf', // pdf,
+    'aseprite',
+    'sketch',
+    'md',
+    'mp4'
+  ]
   const RANDOM_FILE_TYPE =
     VALID_FILE_TYPES[Math.floor(Math.random() * VALID_FILE_TYPES.length)]
   const RANDOM_FILE_SUFIX =
     VALID_FILE_SUFFIX[Math.floor(Math.random() * VALID_FILE_SUFFIX.length)]
-  const RANDOM_FILE_BASE =
-    VALID_FILE_BASE[Math.floor(Math.random() * VALID_FILE_BASE.length)]
+  const RANDOM_FILE_SUFFIX_2 =
+    VALID_FILE_SUFFIX_2[Math.floor(Math.random() * VALID_FILE_SUFFIX_2.length)]
 
-  return `${RANDOM_FILE_BASE}_${RANDOM_FILE_SUFIX}.${RANDOM_FILE_TYPE}`
+  return `travis_bumgarner_${RANDOM_FILE_SUFIX}${RANDOM_FILE_SUFFIX_2}.${RANDOM_FILE_TYPE}`
 }
 
 const StyledLink = styled(ReactRouterDomLink)`

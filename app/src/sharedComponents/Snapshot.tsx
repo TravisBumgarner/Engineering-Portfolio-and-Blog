@@ -26,10 +26,12 @@ const SnapshotWrapper = styled.div<{ $rotation: number; $isLink?: boolean }>`
     border-radius: 0.25rem;
   }
 
-  > div {
-    padding: 0.5rem;
+  > p {
+    padding: 1rem;
     min-height: 2rem;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   transition: transform 0.2s ease-in-out;
@@ -77,7 +79,9 @@ const Snapshot = ({
     return (
       <SnapshotWrapper $rotation={rotation}>
         <BlurHashImage src={src} />
-        <div>{text}</div>
+        <p>
+          <PhotoText>{text}</PhotoText>
+        </p>
       </SnapshotWrapper>
     )
   }
@@ -86,11 +90,15 @@ const Snapshot = ({
     <StyledLink to={link}>
       <SnapshotWrapper $isLink $rotation={rotation}>
         <BlurHashImage src={src} />
-        <div>{text}</div>
+        <p>{text}</p>
       </SnapshotWrapper>
     </StyledLink>
   )
 }
+
+const PhotoText = styled.span`
+  color: ${BACKGROUND_COLOR};
+`
 
 const StyledLink = styled(Link)`
   ${CSSTransition}
