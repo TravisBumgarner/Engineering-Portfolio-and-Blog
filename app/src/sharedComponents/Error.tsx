@@ -1,6 +1,7 @@
+import React from 'react'
 import styled from 'styled-components'
 
-import Header from 'SharedComponents/Header' // {{ edit_1 }}
+import Header from 'SharedComponents/Header'
 import Text from 'SharedComponents/Text'
 
 const ErrorWrapper = styled.div`

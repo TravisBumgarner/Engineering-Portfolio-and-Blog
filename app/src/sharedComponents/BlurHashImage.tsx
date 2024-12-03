@@ -1,15 +1,12 @@
 import { useInView } from 'framer-motion'
-import { useCallback, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useMemo, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { blurHashLookup } from '../blurHashLookup'
+import useBlurhash from '../hooks/useBlurHash'
 
 interface Props {
   src: string
 }
-
-// NOTE -
-// This is like 95% of the way there but there's still some weird loading with extra white space.
-// Something is off with my understanding here.
 
 const getBlurHash = (src: string) => {
   // This works because __STATIC__ always includes a public in the url.
@@ -26,28 +23,28 @@ const getBlurHash = (src: string) => {
 }
 
 const BlurHashImage = ({ src }: Props) => {
-  //   const [isVisible, setIsVisible] = useState(false);
-
   const imgRef = useRef<HTMLImageElement>(null)
   const [imgLoaded, setImgLoaded] = useState(false)
   const startLoadingBlurHash = useInView(imgRef, {
-    margin: '0px 0px 3000px 0px'
+    margin: '0px 0px 500px 0px',
+    once: true
   })
 
   const startLoadingImage = useInView(imgRef, {
-    margin: '0px 0px 500px 0px'
+    margin: '0px 0px 100px 0px',
+    once: true
   })
-  console.log('startLoadingImage', startLoadingImage)
 
   const { width, height, blurHash } = useMemo(() => {
     return getBlurHash(src)
   }, [src])
 
-  // const blurUrl = useBlurhash(
-  //   !imgLoaded && startLoadingBlurHash ? blurHash : null,
-  //   width,
-  //   height
-  // )
+  const blurUrl = useBlurhash(
+    !imgLoaded && startLoadingBlurHash ? blurHash : null,
+    // Large sizes will kill performance.
+    32,
+    Math.round(32 * (height / width))
+  )
 
   const handleOnLoad = useCallback(() => {
     setImgLoaded(true)
@@ -55,34 +52,34 @@ const BlurHashImage = ({ src }: Props) => {
 
   return (
     <StyledImage
-      width={width}
-      height={height}
-      $blurUrl={''}
+      $width={width}
+      $height={height}
+      $blurUrl={blurUrl}
       ref={imgRef}
-      src={src}
-      // Fixes brief flickering of a broken image if using '' here.
-      // {...(startLoadingImage || imgLoaded ? { src } : {})}
-      // src={src}
-      // Above is lazy loading so don't use this.
-      // loading="lazy"
+      {...(startLoadingImage || imgLoaded ? { src } : {})}
+      loading={startLoadingImage ? 'eager' : 'lazy'}
       onLoad={handleOnLoad}
-      onError={error => {
-        console.log('error loading image', error)
-      }}
     />
   )
 }
 
 const StyledImage = styled.img<{
   $blurUrl: string | null
+  $width: number
+  $height: number
 }>`
   width: 100%;
-  height: 100%;
-  background-size: cover;
-  object-fit: cover;
-  background-repeat: no-repeat;
-  background-color: #f0f0f0; /* Fallback color */
-  background-image: url(${props => props.$blurUrl});
+  aspect-ratio: ${props => props.$width / props.$height};
+  display: block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  ${props =>
+    props.$blurUrl &&
+    `
+      background-image: url(${props.$blurUrl});
+      background-size: contain;
+      background-repeat-no-repeat;
+  `}
 `
 
 export default BlurHashImage

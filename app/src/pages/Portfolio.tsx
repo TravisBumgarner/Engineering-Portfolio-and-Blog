@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -17,7 +17,7 @@ const Portfolio = () => {
       .sort((a, b) => (a.endDate > b.endDate ? -1 : 1))
       .map(({ id, title, previewImage }) => {
         return (
-          <Link to={`/project/${id}`}>
+          <Link to={`/project/${id}`} key={id}>
             <Snapshot
               src={
                 previewImage &&
