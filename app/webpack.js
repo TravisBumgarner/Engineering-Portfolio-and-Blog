@@ -41,7 +41,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            SharedComponents: path.resolve(__dirname, 'src/sharedComponents/'),
+            SharedComponents: path.resolve(__dirname, 'src/SharedComponents/'),
             Theme: path.resolve(__dirname, 'src/theme.ts'),
             Projects: path.resolve(__dirname, 'src/projects'),
             Posts: path.resolve(__dirname, 'src/posts'),
