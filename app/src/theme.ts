@@ -4,6 +4,7 @@ export const FOREGROUND_COLOR = '#f5f5f5'
 export const BACKGROUND_COLOR = '#363636'
 export const SECONDARY_COLOR = '#00eaff'
 export const PRIMARY_COLOR = '#ffce05'
+export const DISABLED_COLOR = '#ccc'
 
 const customMediaQuery = (maxWidth: number) =>
   `@media (max-width: ${maxWidth}px)`

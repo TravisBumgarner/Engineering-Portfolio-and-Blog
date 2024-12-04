@@ -68,18 +68,16 @@ const Sidebar = () => {
       <Header size="small">There</Header>
       <List>
         <ListItem>
+          <InternalLink to="/contact">Contact</InternalLink>
+        </ListItem>
+        <ListItem>
           <ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">
-            Colab
+            LinkedIn
           </ExternalLink>
         </ListItem>
         <ListItem>
           <ExternalLink href="https://github.com/travisBumgarner/">
             Github
-          </ExternalLink>
-        </ListItem>
-        <ListItem>
-          <ExternalLink href="https://sillysideprojects.com">
-            Silly Side Projects
           </ExternalLink>
         </ListItem>
         <ListItem>

@@ -7,6 +7,7 @@ import Error from 'SharedComponents/Error'
 import { Me, ScrollToTop, Sidebar, SiteTitle } from './components'
 
 const Blog = lazy(() => import('./pages/Blog'))
+const Contact = lazy(() => import('./pages/Contact'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 const Portfolio = lazy(() => import('./pages/Portfolio'))
 const Post = lazy(() => import('./pages/Post'))
@@ -49,6 +50,7 @@ const App = () => {
         <Sidebar />
         <Suspense>
           <Routes>
+            <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/project/:id" element={<Project />} />
             <Route path="/blog" element={<Blog />} />
