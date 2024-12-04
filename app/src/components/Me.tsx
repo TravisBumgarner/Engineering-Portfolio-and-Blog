@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const StyledWrapper = styled.div`
+const Wrapper = styled.div`
   position: fixed;
   left: 0;
   top: 0;
@@ -31,7 +31,7 @@ const StyledWrapper = styled.div`
 
 const Me = () => {
   return (
-    <StyledWrapper>
+    <Wrapper>
       <div id="image">
         <div className="row">
           <div
@@ -20551,7 +20551,7 @@ const Me = () => {
           ></div>
         </div>
       </div>
-    </StyledWrapper>
+    </Wrapper>
   )
 }
 
