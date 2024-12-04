@@ -774,11 +774,18 @@
     "title": "Manifest Playlists",
     "id": "manifest-playlists",
     "description": "Generate Spotify playlists with interesting parameters",
-    "lastMeaningfulUpdate": "2023-12",
+    "lastMeaningfulUpdate": "2023-08",
     "images": [
       {
-        "src": "manifest-playlists/favicon.png",
-        "label": "App Preview"
+        "src": "1.png",
+        "label": "Create Playlist"
+      }, {
+        "src": "2.png",
+        "label": "View Playlist & Save"
+      },
+      {
+        "src": "3.png",
+        "label": "Homepage"
       }
     ],
     "links": [
@@ -793,17 +800,17 @@
     ],
     "previewImage": {
       "label": "App Preview",
-      "src": "manifest-playlists/favicon.png"
+      "src": "1.png"
     }
   },
   {
     "title": "Stitch It",
     "id": "stitch-it",
     "description": "Generate CSS cross stitches from photos",
-    "lastMeaningfulUpdate": "2023-12",
+    "lastMeaningfulUpdate": "2020-03",
     "images": [
       {
-        "src": "stitch-it/favicon.png",
+        "src": "1.png",
         "label": "App Preview"
       }
     ],
@@ -811,22 +818,38 @@
       {
         "label": "View App",
         "src": "https://stitch.sillysideprojects.com"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/Silly-Apps/tree/main/stitch_it"
       }
     ],
     "previewImage": {
-      "label": "App Preview",
-      "src": "stitch-it/favicon.png"
+      "label": "Example Output",
+      "src": "1.png"
     }
   },
   {
     "title": "Bananarama Voting",
     "id": "bananarama-voting",
     "description": "Quickly spin up a poll where people can submit entries and everyone can vote on them",
-    "lastMeaningfulUpdate": "2023-12",
+    "lastMeaningfulUpdate": "2023-03",
     "images": [
       {
-        "src": "bananarama/favicon.png",
-        "label": "App Preview"
+        "src": "1.png",
+        "label": "Lobby"
+      },
+      {
+        "src": "2.png",
+        "label": "Admin View"
+      },
+      {
+        "src": "3.png",
+        "label": "Voting"
+      },
+      {
+        "src": "4.png",
+        "label": "Results"
       }
     ],
     "links": [
@@ -841,33 +864,41 @@
     ],
     "previewImage": {
       "label": "App Preview",
-      "src": "bananarama/favicon.png"
+      "src": "3.png"
     }
   },
   {
     "title": "Candlelight",
     "id": "candlelight",
-    "description": "Puzzle game being live Streamed on Twitch",
-    "lastMeaningfulUpdate": "2023-12",
+    "description": "Puzzle game originally created for the Pirate Software Game Jam",
+    "lastMeaningfulUpdate": "2024-11",
     "images": [
       {
-        "src": "candlelight/favicon.png",
-        "label": "Game Preview"
+        "src": "1.png",
+        "label": "Gameplay"
+      },
+      {
+        "src": "3.png",
+        "label": "Main menu"
+      },
+      {
+        "src": "2.png",
+        "label": "Game saves"
       }
     ],
     "links": [
       {
-        "label": "Twitch Stream",
-        "src": "https://twitch.tv/sillysideprojects"
+        "label": "Game Demo",
+        "src": "https://sillysideprojects.itch.io/candlight"
       },
       {
-        "label": "Project Website",
-        "src": "https://candlelight.sillysideprojects.com"
+        "label": "Steam Store Page",
+        "src": "https://store.steampowered.com/app/3157820?beta=0"
       }
     ],
     "previewImage": {
       "label": "Game Preview",
-      "src": "candlelight/favicon.png"
+      "src": "1.png"
     }
   }
 ]

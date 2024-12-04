@@ -1,0 +1,6 @@
+- [ ] Audit all dates
+- [ ] Audit all descriptions
+- [ ] titles
+- [ ] Audit all links
+- [ ] Look at Google Drive for more photos
+- [ ] Ideas Down Figma
