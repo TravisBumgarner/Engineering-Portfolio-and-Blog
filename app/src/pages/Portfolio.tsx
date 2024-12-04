@@ -6,7 +6,7 @@ import Snapshot from 'SharedComponents/Snapshot'
 const Portfolio = () => {
   const tiles = useMemo(() => {
     return projects
-      .sort((a, b) => (a.endDate > b.endDate ? -1 : 1))
+      .sort((a, b) => (a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1))
       .map(({ id, title, previewImage }) => {
         return (
           <Snapshot

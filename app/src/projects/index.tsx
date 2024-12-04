@@ -14,7 +14,7 @@ type Project = {
   id: string
   title: string
   description: string
-  endDate: string
+  lastMeaningfulUpdate: string
   images: Image[]
   links: Link[]
   previewImage: Image
