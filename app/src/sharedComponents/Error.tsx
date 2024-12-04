@@ -1,24 +1,35 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import Header from 'SharedComponents/Header'
 import Text from 'SharedComponents/Text'
+import styled from 'styled-components'
+import { BACKGROUND_COLOR, FOREGROUND_COLOR } from 'Theme'
 
-const ErrorWrapper = styled.div`
+const Wrapper = styled.div`
+  background-color: ${BACKGROUND_COLOR};
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
   flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  color: ${FOREGROUND_COLOR};
+`
+
+const Button = styled.button`
+  background-color: ${BACKGROUND_COLOR};
+  color: ${FOREGROUND_COLOR};
+  border: 1px solid ${FOREGROUND_COLOR};
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 `
 
 const Error = () => {
   return (
-    <ErrorWrapper>
-      <Header size="medium">Whoops!</Header>
-      <Text>Sorry, there was an error, please try again later.</Text>
-    </ErrorWrapper>
+    <Wrapper>
+      <Header size="large">Whoops!</Header>
+      <Text>Sorry, there was an error, please refresh the page.</Text>
+      <Button onClick={() => (window.location.href = '/')}>Refresh</Button>
+    </Wrapper>
   )
 }
 

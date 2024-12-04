@@ -50,7 +50,6 @@ const Sidebar = () => {
     <SidebarWrapper>
       <Text size="small">
         These are artifacts of my experiences learning, creating, and exploring.
-        <br />
         They're not always polished or completed, but they've shaped who I am
         today.
       </Text>
