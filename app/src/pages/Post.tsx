@@ -87,10 +87,6 @@ const MarkdownStyles = styled.div`
     }
   }
 
-  time {
-    font-size: 0.8rem;
-  }
-
   p > code {
     display: inline;
     border: 0;

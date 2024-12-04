@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
+  /* transform: scaleX(-1); */
   position: fixed;
   left: 0;
   top: 0;
@@ -23,8 +24,8 @@ const Wrapper = styled.div`
     margin: 0;
     border-radius: 50%;
     padding: 2px;
-    width: 10px;
-    height: 10px;
+    width: 5px;
+    height: 5px;
     display: inline-block;
   }
 `

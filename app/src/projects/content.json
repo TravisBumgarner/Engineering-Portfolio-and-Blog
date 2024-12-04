@@ -61,11 +61,11 @@
     "images": [
       {
         "src": "12912789_1056153591143656_868781673_n_17846525158123243.jpg",
-        "label": "Exploring basic clamping idea with K'nex"
+        "label": "Prototype of K'nex clamping mechanism"
       },
       {
         "src": "DSC02609.jpg",
-        "label": "Designing and modeling a spool to hold film"
+        "label": "Dimensions for CAD Model"
       },
       {
         "src": "DSC02763.jpg",
@@ -73,11 +73,11 @@
       },
       {
         "src": "DSC02841.jpg",
-        "label": "Test run of scanner with newspaper"
+        "label": "Scanner test run with newspaper"
       },
       {
         "src": "0424160039.jpg",
-        "label": "Bird's eye view of scanner in action"
+        "label": "Sscanner in action"
       }
     ],
     "links": [
@@ -133,7 +133,7 @@
       },
       {
         "label": "Writeup",
-        "src": "https://travisbumgarner.com/post/combining-hobbies/"
+        "src": "/post/combining-hobbies/"
       }
     ],
     "previewImage": {
@@ -225,7 +225,7 @@
       },
       {
         "label": "Twitch Stream",
-        "src": "https://www.twitch.tv/travis_the_maker"
+        "src": "https://www.twitch.tv/sillysideprojects"
       }
     ],
     "previewImage": {
@@ -358,12 +358,12 @@
   {
     "title": "Pan & Tilt Camera Adapter",
     "id": "pan-and-tilt-camera-adapter",
-    "description": "I wanted a camera adapter for doing time lapse photography. However, I couldn't afford one at the time so I decided to build it instead.",
+    "description": "",
     "lastMeaningfulUpdate": "2016-07",
     "images": [
       {
         "src": "0610162138b.jpg",
-        "label": "Fully assembled circuit with functioning code"
+        "label": "Circuit with functioning code"
       },
       {
         "src": "DSC08264.jpg",
@@ -387,72 +387,6 @@
     "previewImage": {
       "label": "pan & tilt preview image",
       "src": "DSC08273.jpg"
-    }
-  },
-  {
-    "title": "Portfolios",
-    "id": "portfolios",
-    "description": "I have tried to keep my portfolios as a rough proxy for my skills as a software engineer and designer. Over the years, I have used a variety of design and programming tools to complete my portfolios. The links above showcase a collection of versions. ",
-    "lastMeaningfulUpdate": "2020-06",
-    "images": [
-      {
-        "src": "Engineering_Portfolio_V3.0.jpg",
-        "label": ""
-      },
-      {
-        "src": "IMG-20161011-WA0007.jpg",
-        "label": ""
-      },
-      {
-        "src": "IMG-20170323-WA0001.jpg",
-        "label": ""
-      },
-      {
-        "src": "IMG_20170321_202457_953.jpg",
-        "label": ""
-      },
-      {
-        "src": "IMG_20180206_194816138.jpg",
-        "label": ""
-      },
-      {
-        "src": "IMG_20180904_133724389.jpg",
-        "label": ""
-      },
-      {
-        "src": "Screen Shot 2023-01-05 at 6.05.23 PM.jpg",
-        "label": ""
-      },
-      {
-        "src": "Screen Shot 2023-01-05 at 6.05.43 PM.jpg",
-        "label": ""
-      },
-      {
-        "src": "Screenshot_20180325-145347.jpg",
-        "label": ""
-      },
-      {
-        "src": "Screenshot_20191119-203356.jpg",
-        "label": ""
-      }
-    ],
-    "links": [
-      {
-        "label": "Engineering GitHub",
-        "src": "https://github.com/TravisBumgarner/Engineering-Portfolio"
-      },
-      {
-        "label": "Photography GitHub",
-        "src": "https://github.com/TravisBumgarner/Photography-Portfolio"
-      },
-      {
-        "label": "Previous Portfolios GitHub",
-        "src": "https://github.com/TravisBumgarner/Old-Portfolios"
-      }
-    ],
-    "previewImage": {
-      "label": "New Site Screenshot",
-      "src": "Engineering_Portfolio_V3.0.jpg"
     }
   },
   {

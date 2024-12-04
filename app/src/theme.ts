@@ -44,6 +44,10 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 
+    time {
+      font-size: 0.8rem;
+    }
+
     strong {
         font-weight: 700;
     }
