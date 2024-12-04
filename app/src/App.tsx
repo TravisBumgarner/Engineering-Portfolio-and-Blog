@@ -61,7 +61,7 @@ const App = () => {
           </Routes>
         </Suspense>
       </BodyWrapper>
-      <Me />
+      {/* <Me /> */}
     </>
   )
 }
