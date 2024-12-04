@@ -62,14 +62,8 @@ const Details = ({
     <div>
       <MetadataWrapper>
         <Header size="large">{title}</Header>
-        {Links.length > 0 && (
-          <>
-            <Header size="medium">Links</Header>
-            <ul>{Links}</ul>
-          </>
-        )}
-        <Header size="medium">Details</Header>
         {Description}
+        {Links.length > 0 && <ul>{Links}</ul>}
       </MetadataWrapper>
       <div>{images.length ? Images : null}</div>
     </div>
