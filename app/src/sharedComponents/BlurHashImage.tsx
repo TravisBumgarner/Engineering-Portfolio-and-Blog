@@ -16,7 +16,12 @@ const getBlurHash = (src: string) => {
 
   if (!result) {
     // Shame me for this code!
-    throw new Error('missing blurhash')
+    console.error('missing blurhash', relativePath)
+    return {
+      blurHash: '',
+      width: 0,
+      height: 0
+    }
   }
 
   return result

@@ -613,5 +613,230 @@
             "label": "strangerer",
             "src": "IMG_20181218_123142.jpg"
         }
+    },
+    {
+        "title": "gcode2dplotterart",
+        "id": "gcode2dplotterart",
+        "description": "Easily generate plotter art with your 2D plotter or 3D printer. This library abstracts away G-Code so you can focus on making art.",
+        "endDate": "2023-12-03",
+        "images": [
+            {
+                "src": "gcode2dplotterart/favicon.png",
+                "label": "Project Preview"
+            }
+        ],
+        "links": [
+            {
+                "label": "Documentation Website",
+                "src": "https://travisbumgarner.github.io/gcode2dplotterart/"
+            },
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/gcode2dplotterart"
+            }
+        ],
+        "previewImage": {
+            "label": "Project Preview",
+            "src": "gcode2dplotterart/favicon.png"
+        }
+    },
+    {
+        "title": "Photography Portfolio",
+        "id": "photography-portfolio",
+        "description": "Photography portfolio showcasing various works",
+        "endDate": "2024-12-03",
+        "images": [
+            {
+                "src": "photography/favicon.png",
+                "label": "Portfolio Preview"
+            }
+        ],
+        "links": [
+            {
+                "label": "View Portfolio",
+                "src": "https://travisbumgarner.photography"
+            },
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/Photography-Portfolio"
+            }
+        ],
+        "previewImage": {
+            "label": "Portfolio Preview",
+            "src": "photography/favicon.png"
+        }
+    },
+    {
+        "title": "Engineering Portfolio & Blog",
+        "id": "engineering-portfolio",
+        "description": "Personal engineering portfolio and blog",
+        "endDate": "2023-12-03",
+        "images": [
+            {
+                "src": "engineering/favicon.png",
+                "label": "Portfolio Preview"
+            }
+        ],
+        "links": [
+            {
+                "label": "View Site",
+                "src": "https://travisbumgarner.dev"
+            },
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/Engineering-Portfolio-and-Blog"
+            }
+        ],
+        "previewImage": {
+            "label": "Portfolio Preview",
+            "src": "engineering/favicon.png"
+        }
+    },
+    {
+        "title": "Todo Today",
+        "id": "todo-today",
+        "description": "The todo List for the easily distracted",
+        "endDate": "2023-12-03",
+        "images": [],
+        "links": [
+            {
+                "label": "View App",
+                "src": "https://todo.sillysideprojects.com"
+            },
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/todo-today"
+            }
+        ],
+        "previewImage": {
+            "label": "App Preview",
+            "src": "todo-today/favicon.png"
+        }
+    },
+    {
+        "title": "Ideas Down",
+        "id": "ideas-down",
+        "description": "Capture Ideas Quickly & Easily",
+        "endDate": "2023-12-03",
+        "images": [
+            {
+                "src": "ideas-down/favicon.png",
+                "label": "App Preview"
+            }
+        ],
+        "links": [
+            {
+                "label": "View App",
+                "src": "https://ideas.sillysideprojects.com"
+            },
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/ideas-down-quickly"
+            }
+        ],
+        "previewImage": {
+            "label": "App Preview",
+            "src": "ideas-down/favicon.png"
+        }
+    },
+    {
+        "title": "Manifest Playlists",
+        "id": "manifest-playlists",
+        "description": "Generate Spotify playlists with interesting parameters",
+        "endDate": "2023-12-03",
+        "images": [
+            {
+                "src": "manifest-playlists/favicon.png",
+                "label": "App Preview"
+            }
+        ],
+        "links": [
+            {
+                "label": "View App",
+                "src": "https://playlists.sillysideprojects.com"
+            },
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/playlist-generator"
+            }
+        ],
+        "previewImage": {
+            "label": "App Preview",
+            "src": "manifest-playlists/favicon.png"
+        }
+    },
+    {
+        "title": "Stitch It",
+        "id": "stitch-it",
+        "description": "Generate CSS cross stitches from photos",
+        "endDate": "2023-12-03",
+        "images": [
+            {
+                "src": "stitch-it/favicon.png",
+                "label": "App Preview"
+            }
+        ],
+        "links": [
+            {
+                "label": "View App",
+                "src": "https://stitch.sillysideprojects.com"
+            }
+        ],
+        "previewImage": {
+            "label": "App Preview",
+            "src": "stitch-it/favicon.png"
+        }
+    },
+    {
+        "title": "Bananarama Voting",
+        "id": "bananarama-voting",
+        "description": "Quickly spin up a poll where people can submit entries and everyone can vote on them",
+        "endDate": "2023-12-03",
+        "images": [
+            {
+                "src": "bananarama/favicon.png",
+                "label": "App Preview"
+            }
+        ],
+        "links": [
+            {
+                "label": "View App",
+                "src": "https://voting.sillysideprojects.com"
+            },
+            {
+                "label": "GitHub Repository",
+                "src": "https://github.com/TravisBumgarner/Bananarama-Voting-Bananza"
+            }
+        ],
+        "previewImage": {
+            "label": "App Preview",
+            "src": "bananarama/favicon.png"
+        }
+    },
+    {
+        "title": "Candlelight",
+        "id": "candlelight",
+        "description": "Puzzle game being live Streamed on Twitch",
+        "endDate": "2023-12-03",
+        "images": [
+            {
+                "src": "candlelight/favicon.png",
+                "label": "Game Preview"
+            }
+        ],
+        "links": [
+            {
+                "label": "Twitch Stream",
+                "src": "https://twitch.tv/sillysideprojects"
+            },
+            {
+                "label": "Project Website",
+                "src": "https://candlelight.sillysideprojects.com"
+            }
+        ],
+        "previewImage": {
+            "label": "Game Preview",
+            "src": "candlelight/favicon.png"
+        }
     }
 ]
