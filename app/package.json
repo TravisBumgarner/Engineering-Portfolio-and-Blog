@@ -8,6 +8,7 @@
     },
     "scripts": {
         "start": "webpack-dev-server --mode=development --config=webpack.js",
+        "serve": "serve -s build",
         "bundle": "export NODE_ENV=production && rm -rf ./build && mkdir ./build && webpack --mode=production --config=webpack.js",
         "precommit": "tsc --noEmit --skipLibCheck",
         "deploy:prod": "gcloud config set project root-270023 && gcloud builds submit --tag gcr.io/root-270023/eng42 && gcloud run deploy eng42 --image gcr.io/root-270023/eng42 --platform managed --region us-east1",

@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 
 import Snapshot from 'SharedComponents/Snapshot'
 
-const TOTAL_PHOTOS = 74
+const TOTAL_PHOTOS = 81
 
 const Snapshots = () => {
   const photos = useMemo(() => {
