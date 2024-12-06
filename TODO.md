@@ -6,6 +6,6 @@
 - [ ] More links?
 - [ ] Ideas Down Figma
 - [ ] Move to snapshots or delete the folder for portfolios under projects.
-
+- [ ] Generate snapshots file from `public/snapshots/`
 
 - [ ] Sunset SSP with redirect to .dev
