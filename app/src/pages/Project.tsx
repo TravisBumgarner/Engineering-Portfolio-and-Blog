@@ -24,7 +24,7 @@ const MetadataWrapper = styled.div`
 `
 
 const Details = ({
-  project: { description, links, title, images, id }
+  project: { description, links, title, images, id, lastMeaningfulUpdate }
 }: {
   project: Project
 }) => {
@@ -62,14 +62,9 @@ const Details = ({
     <div>
       <MetadataWrapper>
         <Header size="large">{title}</Header>
-        {Links.length > 0 && (
-          <>
-            <Header size="medium">Links</Header>
-            <ul>{Links}</ul>
-          </>
-        )}
-        <Header size="medium">Details</Header>
+        <time>{new Date(`${lastMeaningfulUpdate}-01`).toLocaleString('default', { month: 'long', year: 'numeric' })}</time>
         {Description}
+        {Links.length > 0 && <ul>{Links}</ul>}
       </MetadataWrapper>
       <div>{images.length ? Images : null}</div>
     </div>

@@ -46,7 +46,8 @@ module.exports = {
             Projects: path.resolve(__dirname, 'src/projects'),
             Posts: path.resolve(__dirname, 'src/posts'),
             Pages: path.resolve(__dirname, 'src/pages'),
-            hooks: path.resolve(__dirname, 'src/hooks')
+            hooks: path.resolve(__dirname, 'src/hooks'),
+            services: path.resolve(__dirname, 'src/services')
         },
         extensions: ['.ts', '.tsx', '.js', '.jsx']
     },

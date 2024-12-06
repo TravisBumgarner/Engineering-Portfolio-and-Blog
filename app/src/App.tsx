@@ -3,9 +3,11 @@ import { Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
 import { GlobalStyle } from 'Theme'
 
-import { ScrollToTop, Sidebar, SiteTitle } from './components'
+import Error from 'SharedComponents/Error'
+import { Me, ScrollToTop, Sidebar, SiteTitle } from './components'
 
 const Blog = lazy(() => import('./pages/Blog'))
+const Contact = lazy(() => import('./pages/Contact'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 const Portfolio = lazy(() => import('./pages/Portfolio'))
 const Post = lazy(() => import('./pages/Post'))
@@ -14,13 +16,15 @@ const Snapshots = lazy(() => import('./pages/Snapshots'))
 
 const BodyWrapper = styled.div`
   max-width: 1600px;
-  margin: 2rem auto 0;
+  margin: 0 auto;
   box-sizing: border-box;
   display: flex;
   height: 100%;
   padding: 0 1rem;
 
   > div:first-child {
+    top: 0;
+    position: sticky;
     width: 200px;
     height: 100%;
     padding-right: 1rem;
@@ -31,7 +35,7 @@ const BodyWrapper = styled.div`
     flex-grow: 1;
     box-sizing: border-box;
     max-width: calc(600px + 2rem);
-    margin: 0 auto;
+    margin: 2rem auto 0;
     padding: 0rem 1rem;
   }
 `
@@ -40,21 +44,24 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Suspense>
-        <ScrollToTop />
-        <SiteTitle />
-        <BodyWrapper>
-          <Sidebar />
+      <ScrollToTop />
+      <SiteTitle />
+      <BodyWrapper>
+        <Sidebar />
+        <Suspense>
           <Routes>
+            <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/project/:id" element={<Project />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/" element={<Snapshots />} />
             <Route path="/post/:id" element={<Post />} />
+            <Route path="/error" element={<Error />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BodyWrapper>
-      </Suspense>
+        </Suspense>
+      </BodyWrapper>
+      {/* <Me /> */}
     </>
   )
 }

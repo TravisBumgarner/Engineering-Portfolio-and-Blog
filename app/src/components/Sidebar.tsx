@@ -50,7 +50,6 @@ const Sidebar = () => {
     <SidebarWrapper>
       <Text size="small">
         These are artifacts of my experiences learning, creating, and exploring.
-        <br />
         They're not always polished or completed, but they've shaped who I am
         today.
       </Text>
@@ -69,18 +68,16 @@ const Sidebar = () => {
       <Header size="small">There</Header>
       <List>
         <ListItem>
+          <InternalLink to="/contact">Contact</InternalLink>
+        </ListItem>
+        <ListItem>
           <ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">
-            Colab
+            LinkedIn
           </ExternalLink>
         </ListItem>
         <ListItem>
           <ExternalLink href="https://github.com/travisBumgarner/">
             Github
-          </ExternalLink>
-        </ListItem>
-        <ListItem>
-          <ExternalLink href="https://sillysideprojects.com">
-            Silly Side Projects
           </ExternalLink>
         </ListItem>
         <ListItem>
