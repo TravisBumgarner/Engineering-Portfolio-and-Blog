@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import { GlobalStyle, SPACING } from 'Theme'
 
 import Error from 'SharedComponents/Error'
-import { Me, ScrollToTop, Sidebar, SiteTitle } from './components'
+import {  ScrollToTop, Sidebar, SiteTitle } from './components'
+import Loading from 'SharedComponents/Loading'
 
 const Blog = lazy(() => import('./pages/Blog'))
 const Contact = lazy(() => import('./pages/Contact'))
@@ -47,7 +48,7 @@ const App = () => {
       <SiteTitle />
       <BodyWrapper>
         <Sidebar />
-        <Suspense>
+        <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio" element={<Portfolio />} />
