@@ -76,7 +76,7 @@ const StyledImage = styled.img<{
   width: 100%;
   aspect-ratio: ${props => props.$width / props.$height};
   display: block;
-  transition: all 0.3s ease;
+
   ${props =>
     props.$blurUrl &&
     `

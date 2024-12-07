@@ -69,21 +69,18 @@ const StyledLink = styled(ReactRouterDomLink)`
   ${CSSHover};
 `
 
-const HeaderWrapper = styled.div`
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 1rem;
+const SiteTitleWrapper = styled.div`
 `
 
 const SiteTitle = () => {
   const [length, setLength] = useState(0)
 
   return (
-    <HeaderWrapper>
+    <SiteTitleWrapper>
       <Header size="large">
         <StyledLink to="/">{makeNewSiteTitle()}</StyledLink>
       </Header>
-    </HeaderWrapper>
+    </SiteTitleWrapper>
   )
 }
 

@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
-import { GlobalStyle } from 'Theme'
+import { GlobalStyle, SPACING } from 'Theme'
 
 import Error from 'SharedComponents/Error'
 import { Me, ScrollToTop, Sidebar, SiteTitle } from './components'
@@ -15,34 +15,33 @@ const Project = lazy(() => import('./pages/Project'))
 const Snapshots = lazy(() => import('./pages/Snapshots'))
 
 const BodyWrapper = styled.div`
-  max-width: 1600px;
-  margin: 0 auto;
-  box-sizing: border-box;
+  padding-top: ${SPACING.XLARGE}px;
   display: flex;
-  height: 100%;
-  padding: 0 1rem;
 
   > div:first-child {
-    top: 0;
+    top: ${SPACING.XLARGE}px;
     position: sticky;
     width: 200px;
     height: 100%;
-    padding-right: 1rem;
+    padding-right: ${SPACING.XLARGE}px;
     box-sizing: border-box;
+    flex-shrink: 0;
   }
 
   > div:last-child {
     flex-grow: 1;
-    box-sizing: border-box;
-    max-width: calc(600px + 2rem);
-    margin: 2rem auto 0;
-    padding: 0rem 1rem;
   }
+`
+
+const AppWrapper = styled.div`
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: ${SPACING.XLARGE}px;
 `
 
 const App = () => {
   return (
-    <>
+    <AppWrapper>
       <GlobalStyle />
       <ScrollToTop />
       <SiteTitle />
@@ -62,7 +61,7 @@ const App = () => {
         </Suspense>
       </BodyWrapper>
       {/* <Me /> */}
-    </>
+    </AppWrapper>
   )
 }
 
