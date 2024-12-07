@@ -1,50 +1,28 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
-import styled from 'styled-components'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import styled, { css } from 'styled-components'
 import { blurHashLookup } from '../blurHashLookup'
 import { motion, useAnimationControls, useInView } from 'framer-motion'
-import { SPACING } from 'Theme'
+import { media, SPACING } from 'Theme'
 import BlurHashImage from 'SharedComponents/BlurHashImage'
 
 const TOTAL_PHOTOS = 81
-const TOTAL_COLUMNS = 2
 
 const PHOTO_SPACING = SPACING.MEDIUM
+const PHOTO_SPACING_MOBILE = SPACING.XSMALL
 
 const Cell = ({ src }: {src: string}) => {
   const ref = useRef<HTMLDivElement>(null)
   const controls = useAnimationControls()
   const isInView = useInView(ref, { amount: 0.5 })
+  const isInPartialView = useInView(ref, { amount: 0.15 })
 
   const wasInView = useRef(false)
-
-  useEffect(() => {
-    const movedOntoScreen = !wasInView.current && isInView
-    const movedOffOfScreen = wasInView.current && !isInView
-
-    if (movedOntoScreen) {
-      void controls.start('fadeIn')
-    }
-
-    if (movedOffOfScreen) {
-      void controls.start('fadeOut')
-    }
-
-    wasInView.current = isInView
-  }, [controls, isInView])
 
   return (
     <StyledCell
       ref={ref}
-      animate={controls}
-      initial={{ opacity: 0 }}
-      variants={{
-        fadeIn: {
-          opacity: [0, 1],
-        },
-        fadeOut: {
-          opacity: [1, 0],
-        }
-      }}
+      $isInView={isInView}
+      $isInPartialView={isInPartialView}
     >
       <BlurHashImage
         src={`${__STATIC__}${src}`}
@@ -53,15 +31,42 @@ const Cell = ({ src }: {src: string}) => {
   )
 }
 
-const StyledCell = styled(motion.div)`
+const StyledCell = styled.div<{ $isInView: boolean, $isInPartialView: boolean }>`
+  transition: opacity 0.5s ease-in-out;
+
+  ${({ $isInPartialView, $isInView }) => {
+    if($isInView) {
+      return css`
+        opacity: 1;
+      `
+    }
+    if($isInPartialView) {
+      return css`
+        opacity: 0.2;
+      `
+    }
+    return css`
+      opacity: 0;
+    `
+  }}
+  
+
   border: 10px solid #fff;
   // *2 for vertical margin collapsing.
   margin-bottom: ${PHOTO_SPACING * 2}px;
+
+  ${media.tablet}{
+    margin-bottom: ${PHOTO_SPACING_MOBILE * 2}px;
+  }
 `
 
 const StyledColumn = styled.div<{ $columnCount: number }>`
   padding: 0 ${PHOTO_SPACING}px;
   flex-basis: calc(100% / ${props => props.$columnCount});
+
+  ${media.tablet}{
+    padding: 0 ${PHOTO_SPACING_MOBILE}px;
+  }
 `
 
 const Column = ({
@@ -81,6 +86,21 @@ const Column = ({
 }
 
 const PhotoMasonry = () => {
+  const [totalColumns, setTotalColumns] = useState<number>(Math.max(1, Math.floor(window.innerWidth / 500)))
+
+  const handleResize = useCallback(() => {
+    // Magic Number.
+    setTotalColumns(Math.max(1, Math.floor(window.innerWidth / 500)))
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [handleResize])
+
   const photos = useMemo(() => {
     const output: string[] = []
     for (let i = 1; i <= TOTAL_PHOTOS; i++)
@@ -93,9 +113,9 @@ const PhotoMasonry = () => {
     // Grab photos one at a time.
     // Use photos hardcoded widths and heights to calculate things. Makes it easier for resize
 
-    const columnHeights = Array<number>(TOTAL_COLUMNS).fill(0)
+    const columnHeights = Array<number>(totalColumns).fill(0)
     // Ensure that each `[]` passed to `Array.from` is a new array. Reference issue with fill.
-    const output = Array.from({ length: TOTAL_COLUMNS }, () => [] as string[])
+    const output = Array.from({ length: totalColumns }, () => [] as string[])
 
     Object.values(photos)
       .forEach(photo => {
@@ -118,14 +138,14 @@ const PhotoMasonry = () => {
       })
 
     return output
-  }, [photos])
+  }, [photos, totalColumns])
 
   console.log(imagesByColumn)
 
   return (
       <Table>
         {imagesByColumn.map((photos, index) => (
-          <Column columnCount={TOTAL_COLUMNS} key={index} photos={photos} />
+          <Column columnCount={totalColumns} key={index} photos={photos} />
         ))}
       </Table>
   )

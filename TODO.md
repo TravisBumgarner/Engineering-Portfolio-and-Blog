@@ -9,3 +9,6 @@
 - [ ] Generate snapshots file from `public/snapshots/`
 
 - [ ] Sunset SSP with redirect to .dev
+- [ ] Audit Snapshpts
+
+- [ ] Post to linkedin

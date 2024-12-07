@@ -1,11 +1,12 @@
 import React, { Suspense, lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
-import { GlobalStyle, SPACING } from 'Theme'
+import { GlobalStyle, media, SPACING } from 'Theme'
 
 import Error from 'SharedComponents/Error'
 import {  ScrollToTop, Sidebar, SiteTitle } from './components'
 import Loading from 'SharedComponents/Loading'
+import Header from 'SharedComponents/Header'
 
 const Blog = lazy(() => import('./pages/Blog'))
 const Contact = lazy(() => import('./pages/Contact'))
@@ -26,7 +27,14 @@ const BodyWrapper = styled.div`
     height: 100%;
     padding-right: ${SPACING.XLARGE}px;
     box-sizing: border-box;
-    flex-shrink: 0;
+
+    ${media.tablet}{
+      padding-right: ${SPACING.MEDIUM}px;
+
+      h3 {
+        margin-top: 0;
+      }
+    }
   }
 
   > div:last-child {
@@ -38,6 +46,10 @@ const AppWrapper = styled.div`
   max-width: 1600px;
   margin: 0 auto;
   padding: ${SPACING.XLARGE}px;
+
+  ${media.tablet}{
+    padding: ${SPACING.MEDIUM}px;
+  }
 `
 
 const App = () => {
