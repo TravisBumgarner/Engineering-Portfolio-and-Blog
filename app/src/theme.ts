@@ -15,6 +15,16 @@ export const media = {
   phone: customMediaQuery(376)
 }
 
+export const SPACING = {
+  XXSMALL: 4,
+  XSMALL: 8,
+  SMALL: 12,
+  MEDIUM: 16,
+  LARGE: 24,
+  XLARGE: 32,
+  XXLARGE: 48,
+} as const
+
 export const CSSTransition = css`
   transition: color 0.75s;
   transition: background-color 0.75s;
