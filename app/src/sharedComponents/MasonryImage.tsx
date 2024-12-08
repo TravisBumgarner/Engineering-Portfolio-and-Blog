@@ -57,7 +57,7 @@ const StyledLink = styled(Link)`
 const SnapshotWrapper = styled.div<{ $isLink?: boolean }>`
   box-sizing: border-box;
   background-color: ${FOREGROUND_COLOR};
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: 5px solid ${FOREGROUND_COLOR};
 
   > img {
     height: auto;

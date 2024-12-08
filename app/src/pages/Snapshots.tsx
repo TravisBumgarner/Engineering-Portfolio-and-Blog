@@ -2,7 +2,7 @@ import { useInView } from 'framer-motion'
 import React, { useMemo, useRef } from 'react'
 import BlurHashImage from 'SharedComponents/BlurHashImage'
 import styled, { css } from 'styled-components'
-import { media, SPACING } from 'Theme'
+import { FOREGROUND_COLOR, media, SPACING } from 'Theme'
 import { blurHashLookup } from '../blurHashLookup'
 import snapshots from '../snapshots/index.json'
 
@@ -56,7 +56,7 @@ const StyledCell = styled.div<{
   $isJustInView: boolean
   $isHalfView: boolean
 }>`
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 
   ${({ $isJustInView, $isHalfView, $isMostlyInView }) => {
     if ($isMostlyInView) {
@@ -79,7 +79,8 @@ const StyledCell = styled.div<{
     `
   }}
 
-  border: 10px solid #cbcbcb;
+  border: 5px solid ${FOREGROUND_COLOR};
+  border-bottom-width: 50px;
   // *2 for vertical margin collapsing.
   margin-bottom: ${PHOTO_SPACING * 2}px;
 
