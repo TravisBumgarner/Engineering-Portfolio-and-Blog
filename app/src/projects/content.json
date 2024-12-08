@@ -98,7 +98,7 @@
   {
     "title": "Camera From Scratch",
     "id": "camera-from-scratch",
-    "description": "I knew nothing about cameras, so I decided to build one.",
+    "description": "Camera built and coded from scratch.\nTools & Technologies: Arduino, PCB, Soldering Iron, Eagle CAD, ArduCAM",
     "lastMeaningfulUpdate": "2016-09",
     "images": [
       {
@@ -111,7 +111,7 @@
       },
       {
         "src": "DSC02544.jpg",
-        "label": "Fully soldered working prototype"
+        "label": "Fully working prototype"
       },
       {
         "src": "IMG_20190729_191410.jpg",
