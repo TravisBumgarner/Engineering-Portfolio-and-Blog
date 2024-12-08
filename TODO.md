@@ -5,8 +5,8 @@
 - [x] Audit all links
 - [x] Projects -> Explorations
 - [x] Fix grid size for photos and blog posts and things.
-- [ ] Audit all descriptions
-- [ ] titles
+- [x] Audit all descriptions
+- [x] titles
 - [ ] Look at Google Drive for more photos
 - [ ] More links?
 - [ ] Ideas Down Figma

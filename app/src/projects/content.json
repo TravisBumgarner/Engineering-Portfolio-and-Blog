@@ -32,12 +32,12 @@
     ],
     "links": [
       {
-        "label": "YouTube Video - 2D Plotter First Movement",
-        "src": "https://www.youtube.com/watch?v=Y7Nzjou3Buw"
-      },
-      {
         "label": "GitHub",
         "src": "https://github.com/TravisBumgarner/Plotter-Explorations"
+      },
+      {
+        "label": "YouTube Video - 2D Plotter First Movement",
+        "src": "https://www.youtube.com/watch?v=Y7Nzjou3Buw"
       },
       {
         "label": "YouTube Playlist - 3D Printer to 2D Plotter",
