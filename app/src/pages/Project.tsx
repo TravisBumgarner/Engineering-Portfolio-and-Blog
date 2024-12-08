@@ -72,7 +72,7 @@ const Details = ({
           <InternalLink to="/artifacts">Artifacts://</InternalLink> {title}
         </Header>
         <Time>
-          {new Date(`${lastMeaningfulUpdate}-01`).toLocaleString('default', {
+          {new Date(`${lastMeaningfulUpdate}-05`).toLocaleString('default', {
             month: 'long',
             year: 'numeric'
           })}

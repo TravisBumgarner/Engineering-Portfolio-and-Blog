@@ -18,7 +18,7 @@ const Portfolio = () => {
               key={id}
               link={`/artifact/${id}`}
               text={title}
-              date={new Date(`${lastMeaningfulUpdate}-01`).toLocaleString(
+              date={new Date(`${lastMeaningfulUpdate}-05`).toLocaleString(
                 'default',
                 { month: 'long', year: 'numeric' }
               )}
