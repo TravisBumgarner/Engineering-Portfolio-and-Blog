@@ -1,5 +1,5 @@
 import { useInView } from 'framer-motion'
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, { useMemo, useRef } from 'react'
 import BlurHashImage from 'SharedComponents/BlurHashImage'
 import styled, { css } from 'styled-components'
 import { media, SPACING } from 'Theme'
@@ -108,28 +108,9 @@ const Column = ({ photos, columnCount }: { photos: string[]; columnCount }) => {
   )
 }
 
-const WIDTH_THRESHOLD = 800
+const TOTAL_COLUMNS = 2
 
 const PhotoMasonry = () => {
-  const [totalColumns, setTotalColumns] = useState<number>(
-    Math.max(1, Math.floor(window.innerWidth / WIDTH_THRESHOLD))
-  )
-
-  const handleResize = useCallback(() => {
-    // Magic Number.
-    setTotalColumns(
-      Math.max(1, Math.floor(window.innerWidth / WIDTH_THRESHOLD))
-    )
-  }, [])
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [handleResize])
-
   const photos = useMemo(() => {
     const output: string[] = []
     for (let i = 1; i <= TOTAL_PHOTOS; i++)
@@ -141,9 +122,9 @@ const PhotoMasonry = () => {
     // Grab photos one at a time.
     // Use photos hardcoded widths and heights to calculate things. Makes it easier for resize
 
-    const columnHeights = Array<number>(totalColumns).fill(0)
+    const columnHeights = Array<number>(TOTAL_COLUMNS).fill(0)
     // Ensure that each `[]` passed to `Array.from` is a new array. Reference issue with fill.
-    const output = Array.from({ length: totalColumns }, () => [] as string[])
+    const output = Array.from({ length: TOTAL_COLUMNS }, () => [] as string[])
 
     // Present random items each day.
     shuffle(Object.values(photos)).forEach(photo => {
@@ -166,12 +147,12 @@ const PhotoMasonry = () => {
     })
 
     return output
-  }, [photos, totalColumns])
+  }, [photos, TOTAL_COLUMNS])
 
   return (
     <Table>
       {imagesByColumn.map((photos, index) => (
-        <Column columnCount={totalColumns} key={index} photos={photos} />
+        <Column columnCount={TOTAL_COLUMNS} key={index} photos={photos} />
       ))}
     </Table>
   )

@@ -1,5 +1,5 @@
 import { useInView } from 'framer-motion'
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, { useMemo, useRef } from 'react'
 import styled, { css } from 'styled-components'
 import { media, SPACING } from 'Theme'
 
@@ -104,37 +104,21 @@ const Column = ({
   )
 }
 
-const COLUMN_WIDTH = 700
+const TOTAL_COLUMNS = 2
 
 const MasonryGrid = ({
   elementsWithKeys
 }: {
   elementsWithKeys: { key: string; element: JSX.Element }[]
 }) => {
-  const [totalColumns, setTotalColumns] = useState<number>(
-    Math.max(1, Math.floor(window.innerWidth / COLUMN_WIDTH))
-  )
-
-  const handleResize = useCallback(() => {
-    setTotalColumns(Math.max(1, Math.floor(window.innerWidth / COLUMN_WIDTH)))
-  }, [])
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [handleResize])
-
   const elementsByColumn = useMemo(() => {
     // Grab elements one at a time.
     // Use element's width and height to calculate which column to put it in.
 
-    const columnHeights = Array<number>(totalColumns).fill(0)
+    const columnHeights = Array<number>(TOTAL_COLUMNS).fill(0)
     // Ensure that each `[]` passed to `Array.from` is a new array. Reference issue with fill.
     const columns = Array.from(
-      { length: totalColumns },
+      { length: TOTAL_COLUMNS },
       () => [] as { key: string; element: JSX.Element }[]
     )
 
@@ -161,14 +145,14 @@ const MasonryGrid = ({
     })
 
     return columns
-  }, [elementsWithKeys, totalColumns])
+  }, [elementsWithKeys, TOTAL_COLUMNS])
 
   return (
     <Table>
       {elementsByColumn.map((elements, index) => (
         <Column
-          position={getColumnPosition(index, totalColumns)}
-          columnCount={totalColumns}
+          position={getColumnPosition(index, TOTAL_COLUMNS)}
+          columnCount={TOTAL_COLUMNS}
           key={index}
           elements={elements}
         />
@@ -177,12 +161,12 @@ const MasonryGrid = ({
   )
 }
 
-const getColumnPosition = (index: number, totalColumns: number) => {
+const getColumnPosition = (index: number, TOTAL_COLUMNS: number) => {
   if (index === 0) {
     return 'left'
   }
 
-  if (index === totalColumns - 1) {
+  if (index === TOTAL_COLUMNS - 1) {
     return 'right'
   }
 

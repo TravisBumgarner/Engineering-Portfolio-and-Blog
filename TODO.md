@@ -10,6 +10,6 @@
 - [ ] Write content for new projects and images. 
 - [ ] Audit Snapshpts
 - [ ] Sunset SSP with redirect to .dev
-- [ ] Projects -> Explorations
-- [ ] Fix grid size for photos and blog posts and things.
+- [x] Projects -> Explorations
+- [x] Fix grid size for photos and blog posts and things.
 - [ ] Post to linkedin
