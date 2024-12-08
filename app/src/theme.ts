@@ -64,6 +64,7 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const CSSHover = css`
+  font-weight: 300;
   color: ${PRIMARY_COLOR};
   &:hover {
     background-color: ${PRIMARY_COLOR};

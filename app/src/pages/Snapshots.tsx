@@ -105,12 +105,14 @@ const Column = ({
   )
 }
 
+const WIDTH_THRESHOLD = 800
+
 const PhotoMasonry = () => {
-  const [totalColumns, setTotalColumns] = useState<number>(Math.max(1, Math.floor(window.innerWidth / 500)))
+  const [totalColumns, setTotalColumns] = useState<number>(Math.max(1, Math.floor(window.innerWidth / WIDTH_THRESHOLD)))
 
   const handleResize = useCallback(() => {
     // Magic Number.
-    setTotalColumns(Math.max(1, Math.floor(window.innerWidth / 500)))
+    setTotalColumns(Math.max(1, Math.floor(window.innerWidth / WIDTH_THRESHOLD)))
   }, [])
 
   useEffect(() => {

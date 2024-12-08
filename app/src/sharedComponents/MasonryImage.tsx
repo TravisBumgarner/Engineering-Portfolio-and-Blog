@@ -8,11 +8,13 @@ import BlurHashImage from './BlurHashImage'
 const MasonryImage = ({
   src,
   link,
-  text
+  text,
+  date
 }: {
   src: string
   link?: string
   text?: string
+  date?: string
 }) => {
   if (!link) {
     return (
@@ -27,7 +29,10 @@ const MasonryImage = ({
     <StyledLink to={link}>
       <SnapshotWrapper $isLink>
         <BlurHashImage src={src} />
-        <p>{text}</p>
+        <div>
+          <p>{text}</p>
+          {date && <time>{date}</time>}
+        </div>
       </SnapshotWrapper>
     </StyledLink>
   )
@@ -65,9 +70,14 @@ const SnapshotWrapper = styled.div<{ $isLink?: boolean }>`
     object-position: top;
   }
 
-  > p {
+  div {
     color: ${BACKGROUND_COLOR};
     padding: ${SPACING.MEDIUM}px;
+  }
+
+  time {
+    font-size: 0.8em;
+    color: color-mix(in srgb, ${BACKGROUND_COLOR} 80%, transparent);
   }
 `
 

@@ -8,7 +8,7 @@ const Portfolio = () => {
   const tiles = useMemo(() => {
     return projects
       .sort((a, b) => (a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1))
-      .map(({ id, title, previewImage }) => {
+      .map(({ id, title, previewImage, lastMeaningfulUpdate}) => {
         return {
           key: id,
           element: (
@@ -16,6 +16,7 @@ const Portfolio = () => {
             key={id}
             link={`/project/${id}`}
             text={title}
+            date={new Date(`${lastMeaningfulUpdate}-01`).toLocaleString('default', { month: 'long', year: 'numeric' })}
             src={
               previewImage && `${__STATIC__}/projects/${id}/${previewImage.src}`
             }
