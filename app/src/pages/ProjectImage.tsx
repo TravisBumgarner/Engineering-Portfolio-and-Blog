@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react'
-import styled, { css } from 'styled-components'
+import React from 'react'
+import styled from 'styled-components'
 
-import { Link } from 'react-router-dom'
 import { BACKGROUND_COLOR, CSSTransition, SPACING } from 'Theme'
 import BlurHashImage from 'SharedComponents/BlurHashImage'
 
@@ -23,7 +22,7 @@ const ProjectImage = ({
 
 const SnapshotWrapper = styled.div`
   box-sizing: border-box;
-  background-color: white;
+  background-color: #636363;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   > img {
@@ -31,9 +30,12 @@ const SnapshotWrapper = styled.div`
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+    max-height: 70vh;
+    object-fit: contain;
   }
 
   > p {
+    background-color: #fff;
     color: ${BACKGROUND_COLOR};
     padding: ${SPACING.MEDIUM}px;
   }

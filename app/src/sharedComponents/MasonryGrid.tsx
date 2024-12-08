@@ -11,37 +11,37 @@ const CHILD_PADDING_MOBILE = SPACING.XSMALL
 const Cell = ({ element }: {element: JSX.Element}) => {
   const ref = useRef<HTMLDivElement>(null)
   
-  const isIn75View = useInView(ref, { amount: 0.75 })
-  const isIn50View = useInView(ref, { amount: 0.50 })
-  const isIn25View = useInView(ref, { amount: 0.25 })
+  const isMostlyInView = useInView(ref, { amount: 0.75 })
+  const isHalfView = useInView(ref, { amount: 0.35 })
+  const isJustInView = useInView(ref, { amount: 0.05 })
 
   return (
     <StyledCell
       ref={ref}
-      $isIn75View={isIn75View}
-      $isIn25View={isIn25View}
-      $isIn50View={isIn50View}
+      $isMostlyInView={isMostlyInView}
+      $isJustInView={isJustInView}
+      $isHalfView={isHalfView}
     >
      {element}
     </StyledCell>
   )
 }
 
-const StyledCell = styled.div<{ $isIn75View: boolean, $isIn25View: boolean, $isIn50View: boolean }>`
+const StyledCell = styled.div<{ $isMostlyInView: boolean, $isJustInView: boolean, $isHalfView: boolean }>`
   transition: opacity 0.5s ease-in-out;
 
-  ${({ $isIn25View, $isIn50View, $isIn75View }) => {
-    if($isIn75View) {
+  ${({ $isJustInView, $isHalfView, $isMostlyInView }) => {
+    if($isMostlyInView) {
       return css`
         opacity: 1;
       `
     }
-    if($isIn50View) {
+    if($isHalfView) {
       return css`
         opacity: 0.66;
       `
     }
-    if($isIn25View) {
+    if($isJustInView) {
       return css`
         opacity: 0.33;
       `

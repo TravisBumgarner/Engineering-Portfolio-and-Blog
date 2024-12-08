@@ -34,15 +34,17 @@ function shuffle(array) {
 
 const Cell = ({ src }: {src: string}) => {
   const ref = useRef<HTMLDivElement>(null)
-  const controls = useAnimationControls()
-  const isInView = useInView(ref, { amount: 0.5 })
-  const isInPartialView = useInView(ref, { amount: 0.15 })
+
+  const isMostlyInView = useInView(ref, { amount: 0.75 })
+  const isHalfView = useInView(ref, { amount: 0.35 })
+  const isJustInView = useInView(ref, { amount: 0.05 })
 
   return (
     <StyledCell
       ref={ref}
-      $isInView={isInView}
-      $isInPartialView={isInPartialView}
+      $isMostlyInView={isMostlyInView}
+      $isJustInView={isJustInView}
+      $isHalfView={isHalfView}
     >
       <BlurHashImage
         src={`${__STATIC__}${src}`}
@@ -51,25 +53,29 @@ const Cell = ({ src }: {src: string}) => {
   )
 }
 
-const StyledCell = styled.div<{ $isInView: boolean, $isInPartialView: boolean }>`
+const StyledCell = styled.div<{ $isMostlyInView: boolean, $isJustInView: boolean, $isHalfView: boolean }>`
   transition: opacity 0.5s ease-in-out;
 
-  ${({ $isInPartialView, $isInView }) => {
-    if($isInView) {
+  ${({ $isJustInView, $isHalfView, $isMostlyInView }) => {
+    if($isMostlyInView) {
       return css`
         opacity: 1;
       `
     }
-    if($isInPartialView) {
+    if($isHalfView) {
       return css`
-        opacity: 0.2;
+        opacity: 0.66;
+      `
+    }
+    if($isJustInView) {
+      return css`
+        opacity: 0.33;
       `
     }
     return css`
       opacity: 0;
     `
   }}
-  
 
   border: 10px solid #cbcbcb;
   // *2 for vertical margin collapsing.
