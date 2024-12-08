@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react'
-import styled, { css } from 'styled-components'
+import React from 'react'
+import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 import { BACKGROUND_COLOR, CSSTransition, SPACING } from 'Theme'
@@ -80,6 +80,5 @@ const SnapshotWrapper = styled.div<{ $isLink?: boolean }>`
     color: color-mix(in srgb, ${BACKGROUND_COLOR} 80%, transparent);
   }
 `
-
 
 export default MasonryImage

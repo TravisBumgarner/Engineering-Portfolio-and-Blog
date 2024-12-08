@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { BACKGROUND_COLOR, CSSTransition, SPACING } from 'Theme'
 import BlurHashImage from 'SharedComponents/BlurHashImage'
+import { BACKGROUND_COLOR, SPACING } from 'Theme'
 
 const ProjectImage = ({
   src,
@@ -12,12 +12,12 @@ const ProjectImage = ({
   link?: string
   text?: string
 }) => {
-    return (
-      <SnapshotWrapper>
-        <BlurHashImage src={src} />
-        <p>{text}</p>
-      </SnapshotWrapper>
-    )
+  return (
+    <SnapshotWrapper>
+      <BlurHashImage src={src} />
+      <p>{text}</p>
+    </SnapshotWrapper>
+  )
 }
 
 const SnapshotWrapper = styled.div`
@@ -40,6 +40,5 @@ const SnapshotWrapper = styled.div`
     padding: ${SPACING.MEDIUM}px;
   }
 `
-
 
 export default ProjectImage

@@ -5,10 +5,10 @@ import styled from 'styled-components'
 import projects, { Project } from 'Projects'
 import ExternalLink from 'SharedComponents/ExternalLink'
 import Header from 'SharedComponents/Header'
-import ProjectImage from './ProjectImage'
+import MasonryGrid from 'SharedComponents/MasonryGrid'
 import Text from 'SharedComponents/Text'
 import { CSSHover, PRIMARY_COLOR, SPACING } from 'Theme'
-import MasonryGrid from 'SharedComponents/MasonryGrid'
+import ProjectImage from './ProjectImage'
 
 const LinkLi = styled.li`
   display: block;
@@ -47,11 +47,11 @@ const Details = ({
         key: i.src,
         element: (
           <SnapshotWrapper key={i.src}>
-        <ProjectImage
-          text={i.label}
-          key={index}
-          src={`${__STATIC__}/projects/${id}/${i.src}`}
-        />
+            <ProjectImage
+              text={i.label}
+              key={index}
+              src={`${__STATIC__}/projects/${id}/${i.src}`}
+            />
           </SnapshotWrapper>
         )
       })),
@@ -68,7 +68,12 @@ const Details = ({
     <div>
       <MetadataWrapper>
         <Header size="large">{title}</Header>
-        <time>{new Date(`${lastMeaningfulUpdate}-01`).toLocaleString('default', { month: 'long', year: 'numeric' })}</time>
+        <time>
+          {new Date(`${lastMeaningfulUpdate}-01`).toLocaleString('default', {
+            month: 'long',
+            year: 'numeric'
+          })}
+        </time>
         {Description}
         {Links.length > 0 && <ul>{Links}</ul>}
       </MetadataWrapper>
@@ -99,7 +104,6 @@ const Project = () => {
 
 const SnapshotWrapper = styled.div`
   margin: ${SPACING.LARGE}px 0;
- `
+`
 
 export default Project
-

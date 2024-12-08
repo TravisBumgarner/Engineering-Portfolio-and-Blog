@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react'
 import { submitContactForm } from 'services/firebase'
 import Header from 'SharedComponents/Header'
 import styled from 'styled-components'
-import { CSSHover, CSSTransition, DISABLED_COLOR, PRIMARY_COLOR } from 'Theme'
+import { CSSHover, CSSTransition } from 'Theme'
 
 const Wrapper = styled.div`
   padding: 2rem;
@@ -37,7 +37,7 @@ const SubmitButton = styled.button<{ $disabled?: boolean }>`
   font-size: 1rem;
   text-decoration: underline;
   opacity: ${props => (props.$disabled ? 0.5 : 1)};
-  
+
   ${CSSHover}
 `
 

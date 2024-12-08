@@ -30,7 +30,7 @@ const Favicon = () => {
 const FaviconLeft = styled.div`
   width: 50%;
   height: 100%;
-  background-color: #FFF;
+  background-color: #fff;
   box-sizing: border-box;
 `
 
@@ -45,7 +45,7 @@ const FaviconWrapper = styled(motion.div)`
   width: 100px;
   height: 100px;
   fill: ${PRIMARY_COLOR};
-  border: 12px solid #FFF;
+  border: 12px solid #fff;
   display: flex;
   flex-direction: row;
   border: 10px solid white;

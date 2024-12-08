@@ -12,19 +12,20 @@ const Blog = () => {
       )
       .map(id => {
         const { title } = posts[id]
-        return ({
+        return {
           key: id,
           element: (
             <MasonryImage
-            date={new Date(posts[id].date).toLocaleString('default', { month: 'long', year: 'numeric' })}
-            link={`/post/${id}`}
-            text={title}
-            src={`${__STATIC__}/posts/${id}/${posts[id].preview_image}`}
-          />
+              date={new Date(posts[id].date).toLocaleString('default', {
+                month: 'long',
+                year: 'numeric'
+              })}
+              link={`/post/${id}`}
+              text={title}
+              src={`${__STATIC__}/posts/${id}/${posts[id].preview_image}`}
+            />
           )
         }
-          
-        )
       })
   }, [])
 
