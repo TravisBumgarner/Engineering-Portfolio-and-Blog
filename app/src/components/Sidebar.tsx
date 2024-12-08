@@ -25,12 +25,8 @@ const Sidebar = () => {
   return (
     <SidebarWrapper>
       <Text size="small">
-        These are a collection of my experiences learning, creating, and
-        exploring.
-      </Text>
-      <Text size="small">
-        They're not always polished or completed, but they've shaped who I am
-        today and I am excited to share them!
+        I am a lifelong learner, creator, explorer, and tinkerer. This is a
+        collection of my experiences.
       </Text>
       <Header size="small">Here</Header>
       <List>
@@ -43,12 +39,12 @@ const Sidebar = () => {
         <ListItem>
           <InternalLink to="/blog">Blog Posts</InternalLink>
         </ListItem>
-      </List>
-      <Header size="small">There</Header>
-      <List>
         <ListItem>
           <InternalLink to="/contact">Contact</InternalLink>
         </ListItem>
+      </List>
+      <Header size="small">Elsewhere</Header>
+      <List>
         <ListItem>
           <ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">
             LinkedIn
