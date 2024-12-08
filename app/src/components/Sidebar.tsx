@@ -5,7 +5,7 @@ import ExternalLink from 'SharedComponents/ExternalLink'
 import Header from 'SharedComponents/Header'
 import InternalLink from 'SharedComponents/InternalLink'
 import Text from 'SharedComponents/Text'
-import { FOREGROUND_COLOR, media } from 'Theme'
+import { FOREGROUND_COLOR } from 'Theme'
 
 const List = styled.ul`
   margin: 1rem 0;
@@ -19,13 +19,7 @@ const ListItem = styled.li`
   }
 `
 
-const SidebarWrapper = styled.div`
-  ${media.tablet} {
-    > :first-child {
-      display: none;
-    }
-  }
-`
+const SidebarWrapper = styled.div``
 
 const Sidebar = () => {
   return (

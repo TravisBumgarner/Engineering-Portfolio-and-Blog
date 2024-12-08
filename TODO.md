@@ -8,8 +8,11 @@
 - [x] Audit all descriptions
 - [x] titles
 - [ ] Look at Google Drive for more photos
-- [ ] More links?
+- [x] More links?
 - [ ] Ideas Down Figma
-- [ ] Audit Snapshpts
+- [x] Audit Snapshpts
+- [ ] typography needs a rework. new font?
+- [ ] Perf improvements
 - [ ] Sunset SSP with redirect to .dev
+- [ ] Accessiblility improvements
 - [ ] Post to linkedin

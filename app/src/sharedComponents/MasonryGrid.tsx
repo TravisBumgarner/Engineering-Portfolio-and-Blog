@@ -1,5 +1,5 @@
 import { useInView } from 'framer-motion'
-import React, { useMemo, useRef } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { media, SPACING } from 'Theme'
 
@@ -117,21 +117,35 @@ const Column = ({
   )
 }
 
-const TOTAL_COLUMNS = 2
-
 const MasonryGrid = ({
   elementsWithKeys
 }: {
   elementsWithKeys: { key: string; element: JSX.Element }[]
 }) => {
+  const [totalColumns, setTotalColumns] = useState<number>(2)
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth
+      setTotalColumns(width < 600 ? 1 : 2)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   const elementsByColumn = useMemo(() => {
     // Grab elements one at a time.
     // Use element's width and height to calculate which column to put it in.
 
-    const columnHeights = Array<number>(TOTAL_COLUMNS).fill(0)
+    const columnHeights = Array<number>(totalColumns).fill(0)
     // Ensure that each `[]` passed to `Array.from` is a new array. Reference issue with fill.
     const columns = Array.from(
-      { length: TOTAL_COLUMNS },
+      { length: totalColumns },
       () => [] as { key: string; element: JSX.Element }[]
     )
 
@@ -158,14 +172,14 @@ const MasonryGrid = ({
     })
 
     return columns
-  }, [elementsWithKeys, TOTAL_COLUMNS])
+  }, [elementsWithKeys, totalColumns])
 
   return (
     <Table>
       {elementsByColumn.map((elements, index) => (
         <Column
-          position={getColumnPosition(index, TOTAL_COLUMNS)}
-          columnCount={TOTAL_COLUMNS}
+          position={getColumnPosition(index, totalColumns)}
+          columnCount={totalColumns}
           key={index}
           elements={elements}
         />
@@ -174,12 +188,12 @@ const MasonryGrid = ({
   )
 }
 
-const getColumnPosition = (index: number, TOTAL_COLUMNS: number) => {
+const getColumnPosition = (index: number, totalColumns: number) => {
   if (index === 0) {
     return 'left'
   }
 
-  if (index === TOTAL_COLUMNS - 1) {
+  if (index === totalColumns - 1) {
     return 'right'
   }
 

@@ -3,7 +3,7 @@ import React from 'react'
 import Header from 'SharedComponents/Header'
 import Text from 'SharedComponents/Text'
 import styled from 'styled-components'
-import { BACKGROUND_COLOR, FOREGROUND_COLOR } from 'Theme'
+import { BACKGROUND_COLOR, CSSHover, FOREGROUND_COLOR } from 'Theme'
 
 const Wrapper = styled.div`
   background-color: ${BACKGROUND_COLOR};
@@ -16,11 +16,14 @@ const Wrapper = styled.div`
 `
 
 const Button = styled.button`
-  background-color: ${BACKGROUND_COLOR};
-  color: ${FOREGROUND_COLOR};
-  border: 1px solid ${FOREGROUND_COLOR};
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: underline;
+  ${CSSHover}
 `
 
 const Error = () => {
