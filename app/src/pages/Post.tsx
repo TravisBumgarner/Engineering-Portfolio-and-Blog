@@ -1,18 +1,21 @@
-import { transparentize } from 'polished'
 import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
 import posts, { postMappings } from 'Posts'
-import {
+import Header, {
   LargeHeaderStyles,
   MediumHeaderStyles,
   SmallHeaderStyles
 } from 'SharedComponents/Header'
+import InternalLink from 'SharedComponents/InternalLink'
 import { TextStyles } from 'SharedComponents/Text'
-import { CSSHover, PRIMARY_COLOR } from 'Theme'
+import { BORDER_COLOR, CSSHover, PRIMARY_COLOR, SPACING } from 'Theme'
 
 const MarkdownStyles = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+
   h1 {
     ${LargeHeaderStyles}
   }
@@ -28,12 +31,14 @@ const MarkdownStyles = styled.div`
   }
 
   a {
+    font-weight: 100;
     color: ${PRIMARY_COLOR};
     ${CSSHover};
     text-decoration: underline;
     text-decoration-thickness: from-font;
   }
 
+  li,
   p {
     display: block;
     ${TextStyles}
@@ -53,38 +58,15 @@ const MarkdownStyles = styled.div`
   }
 
   code {
-    margin: calc(3 * 18px) 0;
     position: relative;
-    border: 1px solid #979797;
-    border-radius: 18px;
+    font-size: 1rem;
+    border: 1px solid ${BORDER_COLOR};
     font-family: 'Roboto Mono', monospace;
-    font-weight: 300;
-    padding: 2rem;
+    font-weight: 100;
     display: block;
     box-sizing: border-box;
-
-    &:before {
-      padding-bottom: 2rem;
-      content: '<code>';
-      color: #979797;
-      font-size: calc(1rem);
-      font-weight: 100;
-      line-height: 0;
-      display: flex;
-      justify-content: start;
-    }
-
-    &:after {
-      padding-top: 2rem;
-      padding: 1rem 0;
-      content: '</code>';
-      color: #979797;
-      font-size: calc(1rem);
-      font-weight: 100;
-      line-height: 0;
-      display: flex;
-      justify-content: end;
-    }
+    padding: ${SPACING.MEDIUM}px;
+    margin: ${SPACING.MEDIUM}px 0;
   }
 
   p > code {
@@ -92,7 +74,7 @@ const MarkdownStyles = styled.div`
     border: 0;
     padding: 0;
     border-radius: 0;
-    background-color: ${transparentize(0.6, PRIMARY_COLOR)};
+    background-color: color-mix(in srgb, ${BORDER_COLOR} 25%, transparent);
 
     &:before,
     &:after {
@@ -102,42 +84,24 @@ const MarkdownStyles = styled.div`
   }
 
   blockquote {
-    margin: calc(3 * 18px) 0;
     position: relative;
-    border: 1px solid #979797;
-    border-radius: 18px;
+    font-size: 1rem;
+    border: 1px solid ${BORDER_COLOR};
     font-family: 'Roboto Mono', monospace;
-    font-weight: 300;
-    padding: 2rem;
+    font-weight: 100;
     display: block;
     box-sizing: border-box;
-
-    &:before {
-      padding-bottom: 2rem;
-      content: '<quote>';
-      color: #979797;
-      font-size: calc(1rem);
-      font-weight: 100;
-      line-height: 0;
-      display: flex;
-      justify-content: start;
-    }
-
-    &:after {
-      padding-top: 2rem;
-      padding: 1rem 0;
-      content: '</quote>';
-      color: #979797;
-      font-size: calc(1rem);
-      font-weight: 100;
-      line-height: 0;
-      display: flex;
-      justify-content: end;
-    }
+    padding: ${SPACING.MEDIUM}px;
+    margin: ${SPACING.MEDIUM}px 0;
   }
 
   figure {
-    margin: 1rem 0;
+    margin: ${SPACING.MEDIUM}px 0;
+
+    figcaption {
+      ${TextStyles};
+      font-size: 0.8rem;
+    }
   }
 `
 
@@ -169,7 +133,9 @@ const Post = () => {
 
   return (
     <MarkdownStyles>
-      <h1>{post.title}</h1>
+      <Header size="large">
+        <InternalLink to="/artifacts">Posts://</InternalLink> {post.title}
+      </Header>
       <time>{new Date(post.date).toDateString()}</time>
       {PostComponent ? <PostComponent /> : <div>Loading...</div>}
     </MarkdownStyles>

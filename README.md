@@ -13,6 +13,11 @@
 1. Make new folder in `public/projects/${id}`
 1. Duplicate `_template.json` and fill in
 
+# Add New Snapshot
+
+1. Add image to src/public/snapshots
+1. Run script `app/scripts/snapshotsToJSON.ts
+
 # Deploy
 
 1. `cd adhocs/blur_hash && yarn run start`

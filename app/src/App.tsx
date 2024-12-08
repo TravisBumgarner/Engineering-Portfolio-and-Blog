@@ -1,10 +1,11 @@
-import React, { Suspense, lazy } from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
-import { GlobalStyle } from 'Theme'
+import { GlobalStyle, media, SPACING } from 'Theme'
 
 import Error from 'SharedComponents/Error'
-import { Me, ScrollToTop, Sidebar, SiteTitle } from './components'
+import Loading from 'SharedComponents/Loading'
+import { ScrollToTop, Sidebar, SiteTitle } from './components'
 
 const Blog = lazy(() => import('./pages/Blog'))
 const Contact = lazy(() => import('./pages/Contact'))
@@ -15,44 +16,60 @@ const Project = lazy(() => import('./pages/Project'))
 const Snapshots = lazy(() => import('./pages/Snapshots'))
 
 const BodyWrapper = styled.div`
-  max-width: 1600px;
-  margin: 0 auto;
-  box-sizing: border-box;
+  padding-top: ${SPACING.XXLARGE}px;
   display: flex;
-  height: 100%;
-  padding: 0 1rem;
+
+  ${media.tablet} {
+    padding-top: ${SPACING.MEDIUM}px;
+  }
 
   > div:first-child {
-    top: 0;
+    flex-shrink: 0;
+    top: ${SPACING.XLARGE}px;
     position: sticky;
     width: 200px;
     height: 100%;
-    padding-right: 1rem;
+    padding-right: ${SPACING.XXLARGE}px;
     box-sizing: border-box;
+
+    ${media.tablet} {
+      padding-right: ${SPACING.MEDIUM}px;
+      width: 100px;
+
+      h3 {
+        margin-top: 0;
+      }
+    }
   }
 
   > div:last-child {
     flex-grow: 1;
-    box-sizing: border-box;
-    max-width: calc(600px + 2rem);
-    margin: 2rem auto 0;
-    padding: 0rem 1rem;
+  }
+`
+
+const AppWrapper = styled.div`
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: ${SPACING.XXLARGE}px;
+
+  ${media.tablet} {
+    padding: ${SPACING.MEDIUM}px;
   }
 `
 
 const App = () => {
   return (
-    <>
+    <AppWrapper>
       <GlobalStyle />
       <ScrollToTop />
       <SiteTitle />
       <BodyWrapper>
         <Sidebar />
-        <Suspense>
+        <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/contact" element={<Contact />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/project/:id" element={<Project />} />
+            <Route path="/artifacts" element={<Portfolio />} />
+            <Route path="/artifact/:id" element={<Project />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/" element={<Snapshots />} />
             <Route path="/post/:id" element={<Post />} />
@@ -62,7 +79,7 @@ const App = () => {
         </Suspense>
       </BodyWrapper>
       {/* <Me /> */}
-    </>
+    </AppWrapper>
   )
 }
 

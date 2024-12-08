@@ -2,32 +2,33 @@ import React, { useCallback, useMemo, useState } from 'react'
 import { submitContactForm } from 'services/firebase'
 import Header from 'SharedComponents/Header'
 import styled from 'styled-components'
-import { CSSHover, CSSTransition, DISABLED_COLOR, PRIMARY_COLOR } from 'Theme'
+import { BORDER_COLOR, CSSHover } from 'Theme'
 
 const Wrapper = styled.div`
-  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 `
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 500px;
 `
 
 const Input = styled.input`
+  background-color: ${BORDER_COLOR};
   padding: 0.5rem;
   border: 0;
 `
 
 const TextArea = styled.textarea`
+  background-color: ${BORDER_COLOR};
   padding: 0.5rem;
   border: 0;
   min-height: 100px;
 `
 
 const SubmitButton = styled.button<{ $disabled?: boolean }>`
-  ${CSSTransition};
   padding: 0.5rem 1rem;
   background-color: transparent;
   border: none;
@@ -37,7 +38,7 @@ const SubmitButton = styled.button<{ $disabled?: boolean }>`
   font-size: 1rem;
   text-decoration: underline;
   opacity: ${props => (props.$disabled ? 0.5 : 1)};
-  
+
   ${CSSHover}
 `
 
@@ -49,7 +50,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: 'd',
+    message: '',
     website: 'silly-side-projects-landing-page'
   })
 

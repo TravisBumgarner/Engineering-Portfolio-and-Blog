@@ -1,75 +1,50 @@
-import React, { useMemo } from 'react'
-import { useLocation } from 'react-router-dom'
+import React from 'react'
 import styled from 'styled-components'
 
 import ExternalLink from 'SharedComponents/ExternalLink'
 import Header from 'SharedComponents/Header'
 import InternalLink from 'SharedComponents/InternalLink'
 import Text from 'SharedComponents/Text'
-import { CSSHover, media } from 'Theme'
+import { FOREGROUND_COLOR } from 'Theme'
 
 const List = styled.ul`
   margin: 1rem 0;
 `
 
-const ListItem = styled.li<{ isActive?: boolean }>`
+const ListItem = styled.li`
   > a {
     display: inline-block;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 1rem;
-    text-decoration: underline;
-    ${({ isActive }) => (isActive ? 'font-weight: 900;' : 'font-weight: 100;')}
-
-    ${CSSHover}
+    text-decoration: none;
+    color: ${FOREGROUND_COLOR};
   }
 `
 
-const SidebarWrapper = styled.div`
-  ${media.tablet} {
-    > :first-child {
-      display: none;
-    }
-  }
-`
+const SidebarWrapper = styled.div``
 
 const Sidebar = () => {
-  const { pathname } = useLocation()
-
-  const inBlog = useMemo(
-    () => pathname.includes('/blog') || pathname.includes('/post'),
-    [pathname]
-  )
-  const inPortfolio = useMemo(
-    () => pathname.includes('/portfolio') || pathname.includes('/project'),
-    [pathname]
-  )
-  const inSnapshots = useMemo(() => pathname === '/', [pathname])
-
   return (
     <SidebarWrapper>
       <Text size="small">
-        These are artifacts of my experiences learning, creating, and exploring.
-        They're not always polished or completed, but they've shaped who I am
-        today.
+        I am a lifelong learner, creator, explorer, and tinkerer. This is a
+        collection of my experiences.
       </Text>
       <Header size="small">Here</Header>
       <List>
-        <ListItem isActive={inSnapshots}>
+        <ListItem>
           <InternalLink to="/">Snapshots</InternalLink>
         </ListItem>
-        <ListItem isActive={inBlog}>
-          <InternalLink to="/blog">Blog</InternalLink>
+        <ListItem>
+          <InternalLink to="/artifacts">Artifacts</InternalLink>
         </ListItem>
-        <ListItem isActive={inPortfolio}>
-          <InternalLink to="/portfolio">Portfolio</InternalLink>
+        <ListItem>
+          <InternalLink to="/blog">Blog Posts</InternalLink>
         </ListItem>
-      </List>
-      <Header size="small">There</Header>
-      <List>
         <ListItem>
           <InternalLink to="/contact">Contact</InternalLink>
         </ListItem>
+      </List>
+      <Header size="small">Elsewhere</Header>
+      <List>
         <ListItem>
           <ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">
             LinkedIn

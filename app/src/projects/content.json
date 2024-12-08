@@ -2,7 +2,7 @@
   {
     "title": "2D Plotter Explorations",
     "id": "2d-plotter-explorations",
-    "description": "Over the years, I have explored many aspects of how 2D plotters work. As my skills broadened and deepened, so too did my explorations. This culminated in the creation of a 2D plotter from scratch.\nOn the hardware side, I modeled parts in SolidWorks and either 3D printed them or had them machined. From there, I wired up a circuit to control the various motors and switches, powered by an Arduino running C++.\nOn the software side, I created a basic paint application with Python. A script took the painting and converted it into instructions for the 2D plotter. These instructions arrived to the Arduino via a Serial connection and were used to control the motors.\nThe project concluded with a simple computer painting being printed on the 2D plotter.",
+    "description": "Many explorations over many years into how 2D plotters function and can be made.",
     "lastMeaningfulUpdate": "2020-08",
     "images": [
       {
@@ -11,19 +11,19 @@
       },
       {
         "src": "IMG_20161219_190837.jpg",
-        "label": "Second exploration with scrap wood and 3D printed parts"
+        "label": "Second exploration with scrap wood and 3D-printed parts"
       },
       {
         "src": "IMG_20200428_185509.jpg",
-        "label": "Third exploration into 3D modeling and printing a custom adapter to convert 3D printer to 2D"
+        "label": "Third exploration into 3D modeling and printing a custom adapter to convert a 3D printer to a 2D plotter"
       },
       {
         "src": "IMG_20200502_191205.jpg",
-        "label": "Test print of part designed in Third Exploration"
+        "label": "Test print of part designed in the third exploration"
       },
       {
         "src": "manyprogressmuchwow.jpg",
-        "label": "Fourth exploration with all parts custom 3D modeled and printed"
+        "label": "Fourth exploration with all parts custom 3D-modeled and printed"
       },
       {
         "src": "DSC_2538.jpg",
@@ -32,12 +32,12 @@
     ],
     "links": [
       {
-        "label": "YouTube Video - 2D Plotter First Movement",
-        "src": "https://www.youtube.com/watch?v=Y7Nzjou3Buw"
-      },
-      {
         "label": "GitHub",
         "src": "https://github.com/TravisBumgarner/Plotter-Explorations"
+      },
+      {
+        "label": "YouTube Video - 2D Plotter First Movement",
+        "src": "https://www.youtube.com/watch?v=Y7Nzjou3Buw"
       },
       {
         "label": "YouTube Playlist - 3D Printer to 2D Plotter",
@@ -49,14 +49,14 @@
       }
     ],
     "previewImage": {
-      "label": "2D Plotter result",
+      "label": "2D plotter result",
       "src": "DSC_2538.jpg"
     }
   },
   {
     "title": "Automated Film Scanner",
     "id": "automated-film-scanner",
-    "description": "Automated film Scanner for 35mm negative film.",
+    "description": "Automated film scanner for 35mm negative film.",
     "lastMeaningfulUpdate": "2016-05",
     "images": [
       {
@@ -65,7 +65,7 @@
       },
       {
         "src": "DSC02609.jpg",
-        "label": "Dimensions for CAD Model"
+        "label": "Dimensions for CAD model"
       },
       {
         "src": "DSC02763.jpg",
@@ -77,7 +77,7 @@
       },
       {
         "src": "0424160039.jpg",
-        "label": "Sscanner in action"
+        "label": "Scanner in action"
       }
     ],
     "links": [
@@ -98,12 +98,12 @@
   {
     "title": "Camera From Scratch",
     "id": "camera-from-scratch",
-    "description": "I knew nothing about cameras, so I decided to build one.",
+    "description": "Camera built and coded from scratch.\nTools & Technologies: Arduino, PCB, Soldering Iron, Eagle CAD, ArduCAM",
     "lastMeaningfulUpdate": "2016-09",
     "images": [
       {
         "src": "0302161639.jpg",
-        "label": "First test run of camera"
+        "label": "First test run of the camera"
       },
       {
         "src": "DSC02514.jpg",
@@ -111,7 +111,7 @@
       },
       {
         "src": "DSC02544.jpg",
-        "label": "Fully soldered working prototype"
+        "label": "Fully working prototype"
       },
       {
         "src": "IMG_20190729_191410.jpg",
@@ -123,7 +123,7 @@
       },
       {
         "src": "IMG_20190901_150150.jpg",
-        "label": "Second test run of camera"
+        "label": "Second test run of the camera"
       }
     ],
     "links": [
@@ -137,14 +137,14 @@
       }
     ],
     "previewImage": {
-      "label": "time lapse camera preview",
+      "label": "Time-lapse camera preview",
       "src": "DSC02544.jpg"
     }
   },
   {
     "title": "MIT D-Lab Development Class",
     "id": "development-class",
-    "description": "I was invited to lead a group of MIT students on a three week trip to Bogota, Colombia. We worked on engineering projects and taught workshops around Arduino, soldering, basic electronics, and other related topics.",
+    "description": "Led a group of MIT students on a three-week trip to Bogota, Colombia. We worked on engineering projects and taught workshops around Arduino, soldering, basic electronics, and other related topics.",
     "lastMeaningfulUpdate": "2017-01",
     "images": [
       {
@@ -179,15 +179,15 @@
       }
     ],
     "previewImage": {
-      "label": "development class preview",
+      "label": "Development class preview",
       "src": "17434897_1657246607625359_4142016014936483845_o.jpg"
     }
   },
   {
     "title": "Educational Content Creator",
     "id": "educational-content-creator",
-    "description": "An exploration into ways to share what I've learned with others. I've created YouTube videos and led a Twitch stream for a period of time.",
-    "lastMeaningfulUpdate": "2022-01",
+    "description": "An exploration into ways to share what I've learned with others.",
+    "lastMeaningfulUpdate": "2024-09",
     "images": [
       {
         "src": "DSC_2549.jpg",
@@ -199,19 +199,19 @@
       },
       {
         "src": "youtube_thumbnails.jpg",
-        "label": "Thumbnail for first YouTube Video"
+        "label": "Thumbnail for first YouTube video"
       },
       {
         "src": "DSC_9672.jpg",
-        "label": "Fun graphic for Twitch Stream"
+        "label": "Twitch stream BRB graphic"
       },
       {
         "src": "DSC_9693.jpg",
-        "label": "Fun graphic for Twitch Stream"
+        "label": "Twitch stream starting soon graphic"
       },
       {
         "src": "instagram (1).jpg",
-        "label": "Announcement for free class taught on Twitch teaching the basics of CAD, Code, & Circuits"
+        "label": "Announcement for a free class taught on Twitch teaching the basics of CAD, code, & circuits"
       }
     ],
     "links": [
@@ -229,27 +229,27 @@
       }
     ],
     "previewImage": {
-      "label": "First video, building a prototype",
+      "label": "First video: building a prototype",
       "src": "DSC_9693.jpg"
     }
   },
   {
     "title": "Intro to Arduino Workshop",
     "id": "intro-to-arduino-workshop",
-    "description": "I love sharing what I've learned with others so I decided to create and teach an introductory Arduino workshop.",
+    "description": "Designed, developed, and taught an introductory Arduino workshop focusing on the basics of circuits, soldering, safety, and coding.",
     "lastMeaningfulUpdate": "2017-07",
     "images": [
       {
         "src": "SAM_2043.jpg",
-        "label": "Unassembled Kit"
+        "label": "Unassembled kit"
       },
       {
         "src": "IMG_20170223_180839.jpg",
-        "label": "Preparing kits for my Intro to Arduino Class"
+        "label": "Preparing kits"
       },
       {
         "src": "IMG_20170530_205251_825.jpg",
-        "label": "Preparing kits for my Intro to Arduino Class"
+        "label": "Packaged kits ready for students"
       },
       {
         "src": "SAM_1920.jpg",
@@ -267,14 +267,14 @@
       }
     ],
     "previewImage": {
-      "label": "intro to arduino workshop preview",
+      "label": "Intro to Arduino workshop preview",
       "src": "IMG_20170530_205251_825.jpg"
     }
   },
   {
-    "title": "Painless Prototyping: First Attempt",
+    "title": "Painless Prototyping Startup First Attempt",
     "id": "painless-prototyping-first-attempt",
-    "description": "I'd never tried to launch a startup before, this was my first attempt.",
+    "description": "The Button Board makes adding push buttons to electronics projects a breeze by eliminating headaches and adding useful functionality.",
     "lastMeaningfulUpdate": "2017-07",
     "images": [
       {
@@ -301,31 +301,31 @@
       }
     ],
     "previewImage": {
-      "label": "painless prototyping preview",
+      "label": "Painless prototyping preview",
       "src": "DSC09243.jpg"
     }
   },
   {
-    "title": "Painless Prototyping: Second Attempt",
+    "title": "Painless Prototyping Startup",
     "id": "painless-prototyping-second-attempt",
-    "description": "After succeeding with my first startup attempt, I wanted to try again and continue to learn and bring a better product into the world. Check out the Kickstarter project and the video recorded within it.",
+    "description": "Customize what your keyboard does and how it works! Classes on the topics of soldering, circuits and coding are included!",
     "lastMeaningfulUpdate": "2021-10",
     "images": [
       {
         "src": "IMG_20200516_190109.jpg",
-        "label": "Using what I created with my first startup attempt to create to protype ideas for my second attempt"
+        "label": "Exploring initial proof of concept"
       },
       {
         "src": "DSC_2611.jpg",
-        "label": "Exploring a proof of concept to see how feasible my startup idea was"
+        "label": "Playing around with mechanical switches"
       },
       {
         "src": "DSC_3528.jpg",
-        "label": "Assembling the first prototype"
+        "label": "Assembly of the first prototype"
       },
       {
         "src": "DSC_3535.jpg",
-        "label": "Glamour shot of fully working first prototype"
+        "label": "First fully functioning prototype"
       },
       {
         "src": "DSC_5663.jpg",
@@ -333,7 +333,7 @@
       },
       {
         "src": "PXL_20210603_002702358.jpg",
-        "label": "Delivering over 500 keyboards to Kickstarter backers"
+        "label": "Mailing out kits to Kickstarter backers"
       },
       {
         "src": "IMG_4221.jpg",
@@ -341,13 +341,21 @@
       },
       {
         "src": "PXL_20211206_012755312.jpg",
-        "label": "Thank you cards from the summer camp"
+        "label": "Thank you cards from the Dottie Rose summer camp"
       }
     ],
     "links": [
       {
         "label": "Kickstarter",
         "src": "https://www.kickstarter.com/projects/painlessprototyping/byo-build-your-own-mechanical-keyboard"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/painlessprototyping"
+      },
+      {
+        "label": "YouTube Channel",
+        "src": "https://www.youtube.com/@painlessprototyping7852"
       }
     ],
     "previewImage": {
@@ -358,7 +366,7 @@
   {
     "title": "Pan & Tilt Camera Adapter",
     "id": "pan-and-tilt-camera-adapter",
-    "description": "",
+    "description": "A camera adapter that allows for pan and tilt functionality.",
     "lastMeaningfulUpdate": "2016-07",
     "images": [
       {
@@ -392,7 +400,7 @@
   {
     "title": "Selected Woodworking",
     "id": "selected-woodworking",
-    "description": "These are a collection of woodworking projects that I am most proud of.",
+    "description": "An assortment of woodworking projects.",
     "lastMeaningfulUpdate": "2019-01",
     "images": [
       {
@@ -437,7 +445,7 @@
   {
     "title": "Security System",
     "id": "security-system",
-    "description": "This project holds a special place in my heart for two reasons. First, it expanded my understanding of backend programming. Second, it's what I demoed for the interview that landed me my first full time job in software engineering.\nThe system consists of a Raspberry Pi with a camera, connected to a server for viewing photos.",
+    "description": "Cambridge Hackspace security system.\nTools & Technologies: Raspberry Pi, Python, Flask, Dropbox API",
     "lastMeaningfulUpdate": "2017-05",
     "images": [
       {
@@ -469,9 +477,9 @@
     }
   },
   {
-    "title": "Smart Display",
+    "title": "Raspberry Pi Smart Display",
     "id": "smart-display",
-    "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather.",
+    "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather.\nTools & Technologies: Raspberry Pi, SolidWorks, 3D Printer, Node, Google Cloud Platform, Soldering Iron",
     "lastMeaningfulUpdate": "2020-08",
     "images": [
       {
@@ -484,7 +492,7 @@
       },
       {
         "src": "model.jpg",
-        "label": "Final case"
+        "label": "Final case design"
       },
       {
         "src": "DSC_2338.jpg",
@@ -511,9 +519,9 @@
     }
   },
   {
-    "title": "Strangerer Things",
+    "title": "Strangerer Things Lights Display",
     "id": "strangerer-things",
-    "description": "Stranger Things lights, overly engineered with AWS, Slack, a Raspberry Pi, and a laser cutter. Check out the YouTube video to see it in action.",
+    "description": "Overly engineered Stranger Things lights.\nTools & Technologies: Raspberry Pi, AWS, Slack API, Express, Laser Cutter",
     "lastMeaningfulUpdate": "2018-12",
     "images": [
       {
@@ -549,26 +557,26 @@
     }
   },
   {
-    "title": "gcode2dplotterart",
+    "title": "gcode2dplotterart Python Library",
     "id": "gcode2dplotterart",
-    "description": "Easily generate plotter art with your 2D plotter or 3D printer. This library abstracts away G-Code so you can focus on making art.",
+    "description": "Easily generate plotter art with your 2D plotter or 3D printer.\nThis library abstracts away G-Code so you can focus on making art.\nTools & Technologies: Python, Docusaurus, G-Code",
     "lastMeaningfulUpdate": "2023-12",
     "images": [
       {
         "src": "1.jpeg",
-        "label": "Selfie"
-      }, 
+        "label": "Example: Selfie"
+      },
       {
         "src": "2.jpeg",
-        "label": "Roaming Rectangles"
-      }, 
+        "label": "Example: Roaming Rectangles"
+      },
       {
         "src": "3.jpg",
-        "label": "Concentric Circles"
+        "label": "Example: Concentric Circles"
       },
       {
         "src": "4.jpg",
-        "label": "Josef Albers Homage"
+        "label": "Example: Josef Albers Homage"
       }
     ],
     "links": [
@@ -597,7 +605,7 @@
   {
     "title": "Photography Portfolio",
     "id": "photography-portfolio",
-    "description": "",
+    "description": "Portfolio highlighting my photography.\nFeatures advanced browser performance optimizations, including modern file formats, lazy rendering, TTL enhancements, and the blurhash algorithm.\nTools & Technologies: React, TypeScript, Adobe Lightroom, Google Cloud Platform",
     "lastMeaningfulUpdate": "2024-12",
     "images": [
       {
@@ -631,16 +639,16 @@
   {
     "title": "Todo Today Desktop App",
     "id": "todo-today",
-    "description": "The todo List for the easily distracted",
+    "description": "The todo List for the easily distracted.\nTools & Technologies: React, TypeScript, Electron, IndexedDB, Dexie",
     "lastMeaningfulUpdate": "2024-09",
     "images": [
       {
         "src": "todo-today1.png",
-        "label": "App Preview"
+        "label": "Home View"
       },
       {
         "src": "todo-today2.png",
-        "label": "Multiple Workspaces"
+        "label": "Support for Multiple Workspaces"
       },
       {
         "src": "todo-today3.png",
@@ -648,12 +656,12 @@
       },
       {
         "src": "todo-today4.png",
-        "label": "Multiple Themes"
+        "label": "High Contrast Mode"
       }
     ],
     "links": [
       {
-        "label": "Marketing Website",
+        "label": "Website",
         "src": "https://todo.sillysideprojects.com"
       },
       {
@@ -669,7 +677,7 @@
   {
     "title": "Ideas Down iPhone App",
     "id": "ideas-down",
-    "description": "Clear your mind and make room for your next big idea.\nDo you find it hard to keep track of your creative ideas? Do they slip away or consume your focus? Ideas Down lets you capture them instantly—no logins, no complicated setup, and no internet needed. Data stays on your device and the app is fully open source.",
+    "description": "Clear your mind and make room for your next big idea.\nTools & Technologies: React Native, TypeScript, Figma, Expo, Drizzle",
     "lastMeaningfulUpdate": "2024-12",
     "images": [
       {
@@ -691,7 +699,7 @@
         "src": "https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone"
       },
       {
-        "label": "Marketing Website",
+        "label": "Website",
         "src": "https://ideas.sillysideprojects.com"
       },
       {
@@ -705,17 +713,18 @@
     }
   },
   {
-    "title": "Manifest Playlists",
+    "title": "Spotify Playlist Generator",
     "id": "manifest-playlists",
-    "description": "Generate Spotify playlists with interesting parameters",
+    "description": "Generate Spotify playlists with interesting parameters.\n Tools & Technologies: React, TypeScript, Express, GraphQL, Spotify API, Google Cloud Platform",
     "lastMeaningfulUpdate": "2023-08",
     "images": [
       {
         "src": "1.png",
         "label": "Create Playlist"
-      }, {
+      },
+      {
         "src": "2.png",
-        "label": "View Playlist & Save"
+        "label": "View playlist and save to Spotify"
       },
       {
         "src": "3.png",
@@ -738,14 +747,14 @@
     }
   },
   {
-    "title": "Stitch It",
+    "title": "CSS Cross Stitch Generator",
     "id": "stitch-it",
-    "description": "Generate CSS cross stitches from photos",
+    "description": "Generate CSS cross stitches from photos\nTools & Technologies: Python, Flask, Google Cloud Platform",
     "lastMeaningfulUpdate": "2020-03",
     "images": [
       {
         "src": "1.png",
-        "label": "App Preview"
+        "label": "Example Output"
       }
     ],
     "links": [
@@ -764,9 +773,9 @@
     }
   },
   {
-    "title": "Bananarama Voting",
+    "title": "Bananarama Voting App",
     "id": "bananarama-voting",
-    "description": "Quickly spin up a poll where people can submit entries and everyone can vote on them",
+    "description": "Quickly spin up a poll where people can submit entries and everyone can vote on them.\nTools & Technologies: React, TypeScript, GraphQL, Express, Google Cloud Platform",
     "lastMeaningfulUpdate": "2023-03",
     "images": [
       {
@@ -802,9 +811,9 @@
     }
   },
   {
-    "title": "Candlelight",
+    "title": "Candlelight Game",
     "id": "candlelight",
-    "description": "Puzzle game originally created for the Pirate Software Game Jam",
+    "description": "Puzzle game originally created for the Pirate Software Game Jam.\nTools & Technologies: Godot, Aseprite, Figma, Steam API",
     "lastMeaningfulUpdate": "2024-11",
     "images": [
       {

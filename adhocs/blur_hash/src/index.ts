@@ -2,6 +2,8 @@ import { readdir, stat, writeFile } from 'fs/promises'
 import { join } from 'path'
 import { encodeImageToBlurHash } from './blur-hash'
 
+const cache = require('../input.json')
+
 const PHOTO_PATH =
   '/Users/travisbumgarner/Programming/Engineering-Portfolio-and-Blog/app/public'
 const OUTPUT_FILE = './output.json'
@@ -16,8 +18,16 @@ const processImages = async (dir: string, output: Record<string, any>) => {
       await processImages(filePath, output)
     } else if (fileStat.isFile() && isValidPhoto) {
       console.log('\tProcessing:', filePath)
-      const { blurHash, width, height } = await encodeImageToBlurHash(filePath)
       const relativePath = filePath.replace(PHOTO_PATH, '')
+      
+      // Check if the image is in the cache
+      if (cache[relativePath]) {
+        console.log('Using cached blur hash for:', relativePath)
+        output[relativePath] = cache[relativePath]
+        continue
+      }
+
+      const { blurHash, width, height } = await encodeImageToBlurHash(filePath)
       console.log(relativePath)
       if (output[relativePath]) {
         console.error('Duplicate file path:', relativePath)

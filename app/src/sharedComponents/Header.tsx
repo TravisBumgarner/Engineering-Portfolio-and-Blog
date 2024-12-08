@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import { SECONDARY_COLOR } from 'Theme'
+import { SECONDARY_COLOR, SPACING } from 'Theme'
 
 const LargeHeaderStyles = css`
   font-size: 1.6rem;
@@ -14,7 +14,7 @@ const LargeHeaderStyles = css`
 const MediumHeaderStyles = css`
   color: ${SECONDARY_COLOR};
   font-size: 1.4rem;
-  margin: 1rem 0;
+  margin: ${SPACING.MEDIUM}px 0;
   font-weight: 400;
   font-family: Raleway, sans-serif;
 `
@@ -22,7 +22,7 @@ const MediumHeaderStyles = css`
 const SmallHeaderStyles = css`
   color: ${SECONDARY_COLOR};
   font-size: 1.2rem;
-  margin: 1rem 0;
+  margin: ${SPACING.MEDIUM}px 0;
   font-weight: 400;
   font-family: Raleway, sans-serif;
 `

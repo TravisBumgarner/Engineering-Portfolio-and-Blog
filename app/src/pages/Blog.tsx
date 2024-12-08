@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
 
 import posts from 'Posts'
-
-import Snapshot from 'SharedComponents/Snapshot'
+import MasonryGrid from 'SharedComponents/MasonryGrid'
+import MasonryImage from 'SharedComponents/MasonryImage'
 
 const Blog = () => {
   const ListItems = useMemo(() => {
@@ -12,18 +12,24 @@ const Blog = () => {
       )
       .map(id => {
         const { title } = posts[id]
-        return (
-          <Snapshot
-            key={id}
-            link={`/post/${id}`}
-            text={title}
-            src={`${__STATIC__}/posts/${id}/${posts[id].preview_image}`}
-          />
-        )
+        return {
+          key: id,
+          element: (
+            <MasonryImage
+              date={new Date(posts[id].date).toLocaleString('default', {
+                month: 'long',
+                year: 'numeric'
+              })}
+              link={`/post/${id}`}
+              text={title}
+              src={`${__STATIC__}/posts/${id}/${posts[id].preview_image}`}
+            />
+          )
+        }
       })
   }, [])
 
-  return <div>{ListItems}</div>
+  return <MasonryGrid elementsWithKeys={ListItems} />
 }
 
 export default Blog

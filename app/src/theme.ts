@@ -1,7 +1,8 @@
 import { createGlobalStyle, css } from 'styled-components'
 
-export const FOREGROUND_COLOR = '#f5f5f5'
+export const FOREGROUND_COLOR = '#EEE'
 export const BACKGROUND_COLOR = '#363636'
+export const BORDER_COLOR = '#DDD'
 export const SECONDARY_COLOR = '#00eaff'
 export const PRIMARY_COLOR = '#ffce05'
 export const DISABLED_COLOR = '#ccc'
@@ -15,22 +16,19 @@ export const media = {
   phone: customMediaQuery(376)
 }
 
-export const CSSTransition = css`
-  transition: color 0.75s;
-  transition: background-color 0.75s;
-`
+export const SPACING = {
+  XXSMALL: 4,
+  XSMALL: 8,
+  SMALL: 12,
+  MEDIUM: 16,
+  LARGE: 24,
+  XLARGE: 32,
+  XXLARGE: 48
+} as const
 
-export const GlobalStyle = createGlobalStyle`
-    a {
-        text-decoration: none;
-        &:hover {
-            color: ${PRIMARY_COLOR};
-        }
-    }
-    
+export const GlobalStyle = createGlobalStyle`   
     html {
         background-color: ${BACKGROUND_COLOR};
-        ${CSSTransition};
         font-family: Montserrat, sans-serif;
         line-height: 1.5;
         font-weight: 400;
@@ -43,22 +41,17 @@ export const GlobalStyle = createGlobalStyle`
             font-size: 14px;
         }
     }
-
-    time {
-      font-size: 0.8rem;
-    }
-
-    strong {
-        font-weight: 700;
-    }
 `
 
 export const CSSHover = css`
+  transition: color 0.3s;
+  transition: background-color 0.3s;
   color: ${PRIMARY_COLOR};
+  text-decoration-color: ${PRIMARY_COLOR};
   &:hover {
     background-color: ${PRIMARY_COLOR};
     color: ${BACKGROUND_COLOR};
     border-color: ${PRIMARY_COLOR};
+    text-decoration-color: ${BACKGROUND_COLOR};
   }
-  ${CSSTransition};
 `

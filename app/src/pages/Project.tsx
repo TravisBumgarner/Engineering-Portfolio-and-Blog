@@ -5,22 +5,14 @@ import styled from 'styled-components'
 import projects, { Project } from 'Projects'
 import ExternalLink from 'SharedComponents/ExternalLink'
 import Header from 'SharedComponents/Header'
-import Snapshot from 'SharedComponents/Snapshot'
+import InternalLink from 'SharedComponents/InternalLink'
+import MasonryGrid from 'SharedComponents/MasonryGrid'
 import Text from 'SharedComponents/Text'
-import { CSSHover, PRIMARY_COLOR } from 'Theme'
-
-const LinkLi = styled.li`
-  display: block;
-  text-decoration: underline;
-
-  a {
-    color: ${PRIMARY_COLOR};
-    ${CSSHover};
-  }
-`
+import { SPACING } from 'Theme'
+import ProjectImage from './ProjectImage'
 
 const MetadataWrapper = styled.div`
-  margin-bottom: 3rem;
+  margin-bottom: ${SPACING.MEDIUM}px;
 `
 
 const Details = ({
@@ -32,9 +24,9 @@ const Details = ({
     () =>
       links.map(l => {
         return (
-          <LinkLi key={l.label + l.src}>
+          <li key={l.label + l.src}>
             <ExternalLink href={l.src}>{l.label}</ExternalLink>
-          </LinkLi>
+          </li>
         )
       }),
     [links]
@@ -42,13 +34,18 @@ const Details = ({
 
   const Images = useMemo(
     () =>
-      images.map((i, index) => (
-        <Snapshot
-          text={i.label}
-          key={index}
-          src={`${__STATIC__}/projects/${id}/${i.src}`}
-        ></Snapshot>
-      )),
+      images.map((i, index) => ({
+        key: i.src,
+        element: (
+          <SnapshotWrapper key={i.src}>
+            <ProjectImage
+              text={i.label}
+              key={index}
+              src={`${__STATIC__}/projects/${id}/${i.src}`}
+            />
+          </SnapshotWrapper>
+        )
+      })),
     [images]
   )
   const Description = useMemo(
@@ -59,15 +56,22 @@ const Details = ({
     [description]
   )
   return (
-    <div>
+    <DetailsWrapper>
       <MetadataWrapper>
-        <Header size="large">{title}</Header>
-        <time>{new Date(`${lastMeaningfulUpdate}-01`).toLocaleString('default', { month: 'long', year: 'numeric' })}</time>
-        {Description}
-        {Links.length > 0 && <ul>{Links}</ul>}
+        <Header size="large">
+          <InternalLink to="/artifacts">Artifacts://</InternalLink> {title}
+        </Header>
+        <Time>
+          {new Date(`${lastMeaningfulUpdate}-05`).toLocaleString('default', {
+            month: 'long',
+            year: 'numeric'
+          })}
+        </Time>
+        <DescriptionWrapper>{Description}</DescriptionWrapper>
+        {Links.length > 0 && <LinksWrapper>{Links}</LinksWrapper>}
       </MetadataWrapper>
-      <div>{images.length ? Images : null}</div>
-    </div>
+      <MasonryGrid elementsWithKeys={Images} />
+    </DetailsWrapper>
   )
 }
 
@@ -90,5 +94,29 @@ const Project = () => {
 
   return <Details project={projects[projectIndex]} />
 }
+
+const DescriptionWrapper = styled.div`
+  margin: ${SPACING.XLARGE}px 0;
+`
+
+const LinksWrapper = styled.ul`
+  margin: ${SPACING.XLARGE}px 0;
+`
+
+const Time = styled.time`
+  display: block;
+  font-size: 0.8rem;
+  margin-top: ${SPACING.SMALL}px;
+  margin-bottom: ${SPACING.MEDIUM}px;
+`
+
+const SnapshotWrapper = styled.div`
+  margin-bottom: ${SPACING.MEDIUM}px;
+`
+
+const DetailsWrapper = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+`
 
 export default Project

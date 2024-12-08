@@ -1,17 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { CSSHover, CSSTransition, PRIMARY_COLOR } from 'Theme'
+import { CSSHover } from 'Theme'
 
 const ExternalLinkWrapper = styled.a`
-  text-decoration-color: ${PRIMARY_COLOR};
-  text-decoration: underline;
   ${CSSHover};
-  ${CSSTransition};
   font-family: Raleway, sans-serif;
-  &:visited {
-    color: ${PRIMARY_COLOR};
-  }
+  font-weight: 100;
 `
 
 type ExternalLinkProps = {
