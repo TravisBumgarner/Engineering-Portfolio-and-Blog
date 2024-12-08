@@ -3,6 +3,7 @@ import React, { useMemo } from 'react'
 import posts from 'Posts'
 
 import Snapshot from 'SharedComponents/Snapshot'
+import MasonryGrid from 'SharedComponents/MasonryGrid'
 
 const Blog = () => {
   const ListItems = useMemo(() => {
@@ -12,18 +13,22 @@ const Blog = () => {
       )
       .map(id => {
         const { title } = posts[id]
-        return (
-          <Snapshot
-            key={id}
+        return ({
+          key: id,
+          element: (
+            <Snapshot
             link={`/post/${id}`}
             text={title}
             src={`${__STATIC__}/posts/${id}/${posts[id].preview_image}`}
           />
+          )
+        }
+          
         )
       })
   }, [])
 
-  return <div>{ListItems}</div>
+  return <MasonryGrid elementsWithKeys={ListItems} />
 }
 
 export default Blog

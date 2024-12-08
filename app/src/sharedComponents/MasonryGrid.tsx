@@ -5,40 +5,13 @@ import { motion, useAnimationControls, useInView } from 'framer-motion'
 import { media, SPACING } from 'Theme'
 import BlurHashImage from 'SharedComponents/BlurHashImage'
 
-const TOTAL_PHOTOS = 81
+const CHILD_PADDING = SPACING.MEDIUM
+const CHILD_PADDING_MOBILE = SPACING.XSMALL
 
-const PHOTO_SPACING = SPACING.MEDIUM
-const PHOTO_SPACING_MOBILE = SPACING.XSMALL
-
-function random(seed) {
-  var x = Math.sin(seed++) * 10000; 
-  return x - Math.floor(x);
-}
-
-function shuffle(array) {                
-  let seed = new Date().getDate()
-
-  var m = array.length, t, i;
-
-  while (m) {
-    i = Math.floor(random(seed) * m--);        
-    t = array[m];
-    array[m] = array[i];
-    array[i] = t;
-    ++seed                                     
-  }
-
-  return array;
-}
-
-
-const Cell = ({ src }: {src: string}) => {
+const Cell = ({ element }: {element: JSX.Element}) => {
   const ref = useRef<HTMLDivElement>(null)
-  const controls = useAnimationControls()
   const isInView = useInView(ref, { amount: 0.5 })
   const isInPartialView = useInView(ref, { amount: 0.15 })
-
-  const wasInView = useRef(false)
 
   return (
     <StyledCell
@@ -46,9 +19,7 @@ const Cell = ({ src }: {src: string}) => {
       $isInView={isInView}
       $isInPartialView={isInPartialView}
     >
-      <BlurHashImage
-        src={`${__STATIC__}${src}`}
-      />
+     {element}
     </StyledCell>
   )
 }
@@ -72,42 +43,40 @@ const StyledCell = styled.div<{ $isInView: boolean, $isInPartialView: boolean }>
     `
   }}
   
-
-  border: 10px solid #cbcbcb;
   // *2 for vertical margin collapsing.
-  margin-bottom: ${PHOTO_SPACING * 2}px;
+  margin-bottom: ${CHILD_PADDING * 2}px;
 
   ${media.tablet}{
-    margin-bottom: ${PHOTO_SPACING_MOBILE * 2}px;
+    margin-bottom: ${CHILD_PADDING_MOBILE * 2}px;
   }
 `
 
 const StyledColumn = styled.div<{ $columnCount: number }>`
-  padding: 0 ${PHOTO_SPACING}px;
+  padding: 0 ${CHILD_PADDING}px;
   flex-basis: calc(100% / ${props => props.$columnCount});
 
   ${media.tablet}{
-    padding: 0 ${PHOTO_SPACING_MOBILE}px;
+    padding: 0 ${CHILD_PADDING_MOBILE}px;
   }
 `
 
 const Column = ({
-  photos,
+  elements,
   columnCount
 }: {
-  photos: string[]
+  elements: {key: string, element: JSX.Element}[]
   columnCount
 }) => {
   return (
     <StyledColumn $columnCount={columnCount}>
-      {photos.map(src => (
-        <Cell key={src} src={src} />
+      {elements.map(element => (
+        <Cell key={element.key} element={element.element} />
       ))}
     </StyledColumn>
   )
 }
 
-const PhotoMasonry = () => {
+const MasonryGrid = ({elementsWithKeys}: {elementsWithKeys: {key: string, element: JSX.Element}[]}) => {
   const [totalColumns, setTotalColumns] = useState<number>(Math.max(1, Math.floor(window.innerWidth / 500)))
 
   const handleResize = useCallback(() => {
@@ -123,32 +92,26 @@ const PhotoMasonry = () => {
     }
   }, [handleResize])
 
-  const photos = useMemo(() => {
-    const output: string[] = []
-    for (let i = 1; i <= TOTAL_PHOTOS; i++)
-      output.push(`/snapshots/snapshot-${i}.jpg`)
-    return output.reverse()
-  }, [])
-
-
-  const imagesByColumn = useMemo(() => {
-    // Grab photos one at a time.
-    // Use photos hardcoded widths and heights to calculate things. Makes it easier for resize
+  const elementsByColumn = useMemo(() => {
+    // Grab elements one at a time.
+    // Use element's width and height to calculate which column to put it in.
 
     const columnHeights = Array<number>(totalColumns).fill(0)
     // Ensure that each `[]` passed to `Array.from` is a new array. Reference issue with fill.
-    const output = Array.from({ length: totalColumns }, () => [] as string[])
+    const columns = Array.from({ length: totalColumns }, () => [] as {key: string, element: JSX.Element}[])
 
-    // Present random items each day.
-    shuffle(Object.values(photos))
-      .forEach(photo => {
+    elementsWithKeys
+      .forEach(elementsWithKey => {
         // All photos will have a width of 1 unit.
         // Calculate height based on aspect ratio and we'll use that to determine
         // which column to put it in.
-        const { height, width } = blurHashLookup[photo]
+        
+        // Note - These values make the algorithm work for now. They should be based on the actual element's hight.
+        const width = 500
+        const height = 500
         const unitHeight = height / width
 
-        const columnforCurrentPhoto = columnHeights.indexOf(
+        const columnforCurrentElement = columnHeights.indexOf(
           Math.min(...columnHeights)
         )
         // This algorithm does not account for the vertical spacing between photos.
@@ -156,17 +119,17 @@ const PhotoMasonry = () => {
         // padding that this algorithm doesn't account for. This is a small factor of safety.
 
         const FACTOR_OF_SAFETY = height > width ? 0.9 : 1.1
-        columnHeights[columnforCurrentPhoto] += unitHeight * FACTOR_OF_SAFETY
-        output[columnforCurrentPhoto].push(photo)
+        columnHeights[columnforCurrentElement] += unitHeight * FACTOR_OF_SAFETY
+        columns[columnforCurrentElement].push(elementsWithKey)
       })
 
-    return output
-  }, [photos, totalColumns])
+    return columns
+  }, [elementsWithKeys, totalColumns])
 
   return (
       <Table>
-        {imagesByColumn.map((photos, index) => (
-          <Column columnCount={totalColumns} key={index} photos={photos} />
+        {elementsByColumn.map((elements, index) => (
+          <Column columnCount={totalColumns} key={index} elements={elements} />
         ))}
       </Table>
   )
@@ -177,4 +140,4 @@ const Table = styled.div`
   flex-direction: row;
 `
 
-export default PhotoMasonry
+export default MasonryGrid
