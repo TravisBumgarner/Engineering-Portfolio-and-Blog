@@ -2,6 +2,7 @@ import { createGlobalStyle, css } from 'styled-components'
 
 export const FOREGROUND_COLOR = '#EEE'
 export const BACKGROUND_COLOR = '#363636'
+export const BORDER_COLOR = '#979797'
 export const SECONDARY_COLOR = '#00eaff'
 export const PRIMARY_COLOR = '#ffce05'
 export const DISABLED_COLOR = '#ccc'

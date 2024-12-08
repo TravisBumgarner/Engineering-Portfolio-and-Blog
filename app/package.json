@@ -21,7 +21,6 @@
         "blurhash": "^2.0.5",
         "firebase": "^11.0.2",
         "framer-motion": "^11.11.17",
-        "polished": "^4.2.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.3.0",
