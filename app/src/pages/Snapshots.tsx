@@ -4,8 +4,7 @@ import BlurHashImage from 'SharedComponents/BlurHashImage'
 import styled, { css } from 'styled-components'
 import { media, SPACING } from 'Theme'
 import { blurHashLookup } from '../blurHashLookup'
-
-const TOTAL_PHOTOS = 81
+import snapshots from '../snapshots/index.json'
 
 const PHOTO_SPACING = SPACING.MEDIUM
 const PHOTO_SPACING_MOBILE = SPACING.XSMALL
@@ -111,13 +110,6 @@ const Column = ({ photos, columnCount }: { photos: string[]; columnCount }) => {
 const TOTAL_COLUMNS = 2
 
 const PhotoMasonry = () => {
-  const photos = useMemo(() => {
-    const output: string[] = []
-    for (let i = 1; i <= TOTAL_PHOTOS; i++)
-      output.push(`/snapshots/snapshot-${i}.jpg`)
-    return output.reverse()
-  }, [])
-
   const imagesByColumn = useMemo(() => {
     // Grab photos one at a time.
     // Use photos hardcoded widths and heights to calculate things. Makes it easier for resize
@@ -127,11 +119,11 @@ const PhotoMasonry = () => {
     const output = Array.from({ length: TOTAL_COLUMNS }, () => [] as string[])
 
     // Present random items each day.
-    shuffle(Object.values(photos)).forEach(photo => {
+    shuffle(Object.values(snapshots)).forEach(({ src }) => {
       // All photos will have a width of 1 unit.
       // Calculate height based on aspect ratio and we'll use that to determine
       // which column to put it in.
-      const { height, width } = blurHashLookup[photo]
+      const { height, width } = blurHashLookup[src]
       const unitHeight = height / width
 
       const columnforCurrentPhoto = columnHeights.indexOf(
@@ -143,11 +135,11 @@ const PhotoMasonry = () => {
 
       const FACTOR_OF_SAFETY = height > width ? 0.9 : 1.1
       columnHeights[columnforCurrentPhoto] += unitHeight * FACTOR_OF_SAFETY
-      output[columnforCurrentPhoto].push(photo)
+      output[columnforCurrentPhoto].push(src)
     })
 
     return output
-  }, [photos, TOTAL_COLUMNS])
+  }, [TOTAL_COLUMNS])
 
   return (
     <Table>

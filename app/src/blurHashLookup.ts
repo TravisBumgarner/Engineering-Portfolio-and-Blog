@@ -609,56 +609,6 @@ export const blurHashLookup = {
     "width": 1502,
     "height": 1628
   },
-  "/projects/portfolios/Engineering_Portfolio_V3.0.jpg": {
-    "blurHash": "U1QJJ[0056_300_N9[4n00~q~q%MUaRPxu-;",
-    "width": 400,
-    "height": 400
-  },
-  "/projects/portfolios/IMG-20161011-WA0007.jpg": {
-    "blurHash": "UVN,;[bv_NnNSHjYIAbcN;WBMxoy4mkC%MjF",
-    "width": 879,
-    "height": 447
-  },
-  "/projects/portfolios/IMG-20170323-WA0001.jpg": {
-    "blurHash": "U58XII~qRjx[IUfQt7xuD%Rjt7t7xu%MxuRj",
-    "width": 1231,
-    "height": 689
-  },
-  "/projects/portfolios/IMG_20170321_202457_953.jpg": {
-    "blurHash": "UDB|88xtMwxaIoRiX8kW00t7%MM{_N.8RiIU",
-    "width": 1944,
-    "height": 1944
-  },
-  "/projects/portfolios/IMG_20180206_194816138.jpg": {
-    "blurHash": "UAG[NB~W0LD*D%4.kC?H00%L%2RjNGWBNGWX",
-    "width": 2000,
-    "height": 1500
-  },
-  "/projects/portfolios/IMG_20180904_133724389.jpg": {
-    "blurHash": "U7G8=q004T~A0MIUJDXT00_MPW0LF$o~rV,-",
-    "width": 2000,
-    "height": 1500
-  },
-  "/projects/portfolios/Screen Shot 2023-01-05 at 6.05.23 PM.jpg": {
-    "blurHash": "UoMtK%S3%Ls:_Ns.WCae?bRkIVWX-;n*oLoJ",
-    "width": 1243,
-    "height": 945
-  },
-  "/projects/portfolios/Screen Shot 2023-01-05 at 6.05.43 PM.jpg": {
-    "blurHash": "UORMYsV@~qt8?b9FD%_3D%%M%MD%?bt8M{M{",
-    "width": 1904,
-    "height": 957
-  },
-  "/projects/portfolios/Screenshot_20180325-145347.jpg": {
-    "blurHash": "UiK_B?R*xut7~pozV@jE%NnhWBWrRkV@ofkC",
-    "width": 1080,
-    "height": 1920
-  },
-  "/projects/portfolios/Screenshot_20191119-203356.jpg": {
-    "blurHash": "UmLg@OoytRf8?vjFjFWV~qR*W.j[V[aekCs:",
-    "width": 1000,
-    "height": 2000
-  },
   "/projects/security-system/IMG-20170316-WA0005.jpg": {
     "blurHash": "UCDC]pwz3eR%DiayyCj[3lWV;8of_Nj[Diay",
     "width": 891,
@@ -789,6 +739,16 @@ export const blurHashLookup = {
     "width": 1674,
     "height": 1370
   },
+  "/snapshots/Screenshot_20180325-145347.jpg": {
+    "blurHash": "UiK_B?R*xut7~pozV@jE%NnhWBWrRkV@ofkC",
+    "width": 1080,
+    "height": 1920
+  },
+  "/snapshots/Screenshot_20191119-203356.jpg": {
+    "blurHash": "UmLg@OoytRf8?vjFjFWV~qR*W.j[V[aekCs:",
+    "width": 1000,
+    "height": 2000
+  },
   "/snapshots/snapshot-1.jpg": {
     "blurHash": "UNEoSV=yMf$_}@,[-UxFQ=$N-nVw-Us9RQRj",
     "width": 800,
@@ -809,20 +769,10 @@ export const blurHashLookup = {
     "width": 900,
     "height": 600
   },
-  "/snapshots/snapshot-13.jpg": {
-    "blurHash": "U9JHK|0:NYX9{aE2SiWX8^RhWCjux_R*t6oL",
-    "width": 600,
-    "height": 900
-  },
   "/snapshots/snapshot-14.jpg": {
     "blurHash": "UFKAQJ=r}=EMozR+NG$$^hNH9uxaX9oKV@R*",
     "width": 900,
     "height": 600
-  },
-  "/snapshots/snapshot-15.jpg": {
-    "blurHash": "U6Gbk*M^Dh%L~U%Mj?t700RjW;WCnMIVWERj",
-    "width": 600,
-    "height": 900
   },
   "/snapshots/snapshot-16.jpg": {
     "blurHash": "UQIW[p~AEgX901RkI;kBxtI;t6RQWCxtbFt7",
@@ -1154,11 +1104,6 @@ export const blurHashLookup = {
     "width": 800,
     "height": 600
   },
-  "/snapshots/snapshot-76.jpg": {
-    "blurHash": "U3HC1N~qxuxa~pofRjx[IAxZxuRkkCaeayay",
-    "width": 900,
-    "height": 600
-  },
   "/snapshots/snapshot-77.jpg": {
     "blurHash": "UDC~;o-=?aog~Uoft7of^*WVjYRj$zWBayWB",
     "width": 800,
@@ -1174,11 +1119,6 @@ export const blurHashLookup = {
     "width": 800,
     "height": 600
   },
-  "/snapshots/snapshot-8.jpg": {
-    "blurHash": "UBEyb,-oxGxa_NogayRj%NV[j?WBWYkBa#ax",
-    "width": 1101,
-    "height": 600
-  },
   "/snapshots/snapshot-80.jpg": {
     "blurHash": "U9H-xt~W9cx^%hI[R.S%0MNKS5M|%Ls,%Lae",
     "width": 600,
@@ -1188,10 +1128,5 @@ export const blurHashLookup = {
     "blurHash": "U6Du=5}j010oBX9aa0=[^*xtbv9}4onPNGJ6",
     "width": 900,
     "height": 600
-  },
-  "/snapshots/snapshot-9.jpg": {
-    "blurHash": "UEEV.@9EoLWB~qofRjj[MyxukCayoMWBj[j[",
-    "width": 600,
-    "height": 900
   }
 }
