@@ -16,7 +16,7 @@ const Portfolio = () => {
           element: (
             <MasonryImage
               key={id}
-              link={`/project/${id}`}
+              link={`/artifact/${id}`}
               text={title}
               date={new Date(`${lastMeaningfulUpdate}-01`).toLocaleString(
                 'default',

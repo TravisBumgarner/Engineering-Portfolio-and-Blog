@@ -1,12 +1,11 @@
-import React, { Suspense, lazy } from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
 import { GlobalStyle, media, SPACING } from 'Theme'
 
 import Error from 'SharedComponents/Error'
-import {  ScrollToTop, Sidebar, SiteTitle } from './components'
 import Loading from 'SharedComponents/Loading'
-import Header from 'SharedComponents/Header'
+import { ScrollToTop, Sidebar, SiteTitle } from './components'
 
 const Blog = lazy(() => import('./pages/Blog'))
 const Contact = lazy(() => import('./pages/Contact'))
@@ -20,7 +19,7 @@ const BodyWrapper = styled.div`
   padding-top: ${SPACING.XXLARGE}px;
   display: flex;
 
-  ${media.tablet}{
+  ${media.tablet} {
     padding-top: ${SPACING.MEDIUM}px;
   }
 
@@ -33,7 +32,7 @@ const BodyWrapper = styled.div`
     padding-right: ${SPACING.XXLARGE}px;
     box-sizing: border-box;
 
-    ${media.tablet}{
+    ${media.tablet} {
       padding-right: ${SPACING.MEDIUM}px;
       width: 100px;
 
@@ -53,7 +52,7 @@ const AppWrapper = styled.div`
   margin: 0 auto;
   padding: ${SPACING.XXLARGE}px;
 
-  ${media.tablet}{
+  ${media.tablet} {
     padding: ${SPACING.MEDIUM}px;
   }
 `
@@ -69,8 +68,8 @@ const App = () => {
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/contact" element={<Contact />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/project/:id" element={<Project />} />
+            <Route path="/artifacts" element={<Portfolio />} />
+            <Route path="/artifact/:id" element={<Project />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/" element={<Snapshots />} />
             <Route path="/post/:id" element={<Post />} />

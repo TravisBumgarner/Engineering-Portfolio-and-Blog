@@ -40,8 +40,8 @@ const Sidebar = () => {
     () => pathname.includes('/blog') || pathname.includes('/post'),
     [pathname]
   )
-  const inPortfolio = useMemo(
-    () => pathname.includes('/portfolio') || pathname.includes('/project'),
+  const inArtifacts = useMemo(
+    () => pathname.includes('/artifacts') || pathname.includes('/artifact'),
     [pathname]
   )
   const inSnapshots = useMemo(() => pathname === '/', [pathname])
@@ -49,20 +49,23 @@ const Sidebar = () => {
   return (
     <SidebarWrapper>
       <Text size="small">
-        These are artifacts of my experiences learning, creating, and exploring.
+        These are a collection of my experiences learning, creating, and
+        exploring.
+      </Text>
+      <Text size="small">
         They're not always polished or completed, but they've shaped who I am
-        today.
+        today and I am excited to share them!
       </Text>
       <Header size="small">Here</Header>
       <List>
         <ListItem isActive={inSnapshots}>
           <InternalLink to="/">Snapshots</InternalLink>
         </ListItem>
-        <ListItem isActive={inBlog}>
-          <InternalLink to="/blog">Blog</InternalLink>
+        <ListItem isActive={inArtifacts}>
+          <InternalLink to="/artifacts">Artifacts</InternalLink>
         </ListItem>
-        <ListItem isActive={inPortfolio}>
-          <InternalLink to="/portfolio">Portfolio</InternalLink>
+        <ListItem isActive={inBlog}>
+          <InternalLink to="/blog">Blog Posts</InternalLink>
         </ListItem>
       </List>
       <Header size="small">There</Header>
