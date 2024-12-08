@@ -144,7 +144,7 @@
   {
     "title": "MIT D-Lab Development Class",
     "id": "development-class",
-    "description": "I was invited to lead a group of MIT students on a three week trip to Bogota, Colombia. We worked on engineering projects and taught workshops around Arduino, soldering, basic electronics, and other related topics.",
+    "description": "Led a group of MIT students on a three week trip to Bogota, Colombia. We worked on engineering projects and taught workshops around Arduino, soldering, basic electronics, and other related topics.",
     "lastMeaningfulUpdate": "2017-01",
     "images": [
       {
@@ -236,20 +236,20 @@
   {
     "title": "Intro to Arduino Workshop",
     "id": "intro-to-arduino-workshop",
-    "description": "I love sharing what I've learned with others so I decided to create and teach an introductory Arduino workshop.",
+    "description": "Designed, developed, and taught an introductory Arduino workshop focusing on the basics of circuits, soldering, safety, and coding.",
     "lastMeaningfulUpdate": "2017-07",
     "images": [
       {
         "src": "SAM_2043.jpg",
-        "label": "Unassembled Kit"
+        "label": "Unassembled kit"
       },
       {
         "src": "IMG_20170223_180839.jpg",
-        "label": "Preparing kits for my Intro to Arduino Class"
+        "label": "Preparing kits"
       },
       {
         "src": "IMG_20170530_205251_825.jpg",
-        "label": "Preparing kits for my Intro to Arduino Class"
+        "label": "Packaged kits ready for students"
       },
       {
         "src": "SAM_1920.jpg",
@@ -272,9 +272,9 @@
     }
   },
   {
-    "title": "Painless Prototyping: First Attempt",
+    "title": "Painless Prototyping Startup First Attempt",
     "id": "painless-prototyping-first-attempt",
-    "description": "I'd never tried to launch a startup before, this was my first attempt.",
+    "description": "The Button Board makes adding push buttons to electronics projects a breeze by eliminating headaches and adding useful functionality.",
     "lastMeaningfulUpdate": "2017-07",
     "images": [
       {
@@ -366,7 +366,7 @@
   {
     "title": "Pan & Tilt Camera Adapter",
     "id": "pan-and-tilt-camera-adapter",
-    "description": "",
+    "description": "A camera adapter that allows for pan and tilt functionality.",
     "lastMeaningfulUpdate": "2016-07",
     "images": [
       {
@@ -445,7 +445,7 @@
   {
     "title": "Security System",
     "id": "security-system",
-    "description": "This project holds a special place in my heart for two reasons. First, it expanded my understanding of backend programming. Second, it's what I demoed for the interview that landed me my first full time job in software engineering.\nThe system consists of a Raspberry Pi with a camera, connected to a server for viewing photos.",
+    "description": "Cambridge Hackspace security system.\nTools & Technologies: Raspberry Pi, Python, Flask, Dropbox API",
     "lastMeaningfulUpdate": "2017-05",
     "images": [
       {
