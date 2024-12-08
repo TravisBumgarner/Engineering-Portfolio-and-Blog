@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import { Link as ReactRouterDomLink } from 'react-router-dom'
-import styled from 'styled-components'
+import React from 'react'
 
-import Header from 'SharedComponents/Header'
-import { CSSHover, FOREGROUND_COLOR, SPACING } from 'Theme'
+import InternalLink from 'SharedComponents/InternalLink'
+import styled from 'styled-components'
+import { FOREGROUND_COLOR } from 'Theme'
 
 const makeNewSiteTitle = () => {
   const VALID_FILE_SUFFIX = [
@@ -62,26 +61,19 @@ const makeNewSiteTitle = () => {
   return `travis_bumgarner_${RANDOM_FILE_SUFIX}${RANDOM_FILE_SUFFIX_2}.${RANDOM_FILE_TYPE}`
 }
 
-const StyledLink = styled(ReactRouterDomLink)`
-  text-decoration: none;
-  color: ${FOREGROUND_COLOR};
-
-  ${CSSHover};
-`
-
-const SiteTitleWrapper = styled.div`
-`
-
 const SiteTitle = () => {
-  const [length, setLength] = useState(0)
-
   return (
     <SiteTitleWrapper>
-      <Header size="large">
-        <StyledLink to="/">{makeNewSiteTitle()}</StyledLink>
-      </Header>
+      <InternalLink to="/">{makeNewSiteTitle()}</InternalLink>
     </SiteTitleWrapper>
   )
 }
+
+const SiteTitleWrapper = styled.h1`
+  a {
+    font-size: 1.6rem;
+    color: ${FOREGROUND_COLOR};
+  }
+`
 
 export default SiteTitle

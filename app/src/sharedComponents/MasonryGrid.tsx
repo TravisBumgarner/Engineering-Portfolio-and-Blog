@@ -70,6 +70,19 @@ const StyledColumn = styled.div<{
 
   ${media.tablet} {
     padding: 0 ${CHILD_PADDING_MOBILE}px;
+
+    ${({ $position }) => {
+      if ($position === 'left') {
+        return css`
+          padding-left: 0;
+        `
+      }
+      if ($position === 'right') {
+        return css`
+          padding-right: 0;
+        `
+      }
+    }}
   }
 
   ${({ $position }) => {

@@ -1,6 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components'
 
-export const FOREGROUND_COLOR = '#f5f5f5'
+export const FOREGROUND_COLOR = '#EEE'
 export const BACKGROUND_COLOR = '#363636'
 export const SECONDARY_COLOR = '#00eaff'
 export const PRIMARY_COLOR = '#ffce05'
@@ -22,12 +22,12 @@ export const SPACING = {
   MEDIUM: 16,
   LARGE: 24,
   XLARGE: 32,
-  XXLARGE: 48,
+  XXLARGE: 48
 } as const
 
 export const CSSTransition = css`
-  transition: color 0.75s;
-  transition: background-color 0.75s;
+  transition: color 0.3s;
+  transition: background-color 0.3s;
 `
 
 export const GlobalStyle = createGlobalStyle`

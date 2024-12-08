@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import projects, { Project } from 'Projects'
 import ExternalLink from 'SharedComponents/ExternalLink'
 import Header from 'SharedComponents/Header'
+import InternalLink from 'SharedComponents/InternalLink'
 import MasonryGrid from 'SharedComponents/MasonryGrid'
 import Text from 'SharedComponents/Text'
 import { CSSHover, PRIMARY_COLOR, SPACING } from 'Theme'
@@ -67,13 +68,15 @@ const Details = ({
   return (
     <div>
       <MetadataWrapper>
-        <Header size="large">{title}</Header>
-        <time>
+        <Header size="large">
+          <InternalLink to="/artifacts">Artifacts://</InternalLink> {title}
+        </Header>
+        <Time>
           {new Date(`${lastMeaningfulUpdate}-01`).toLocaleString('default', {
             month: 'long',
             year: 'numeric'
           })}
-        </time>
+        </Time>
         {Description}
         {Links.length > 0 && <ul>{Links}</ul>}
       </MetadataWrapper>
@@ -102,8 +105,15 @@ const Project = () => {
   return <Details project={projects[projectIndex]} />
 }
 
+const Time = styled.time`
+  display: block;
+  font-size: 0.8rem;
+  margin-top: ${SPACING.SMALL}px;
+  margin-bottom: ${SPACING.MEDIUM}px;
+`
+
 const SnapshotWrapper = styled.div`
-  margin: ${SPACING.LARGE}px 0;
+  margin-bottom: ${SPACING.MEDIUM}px;
 `
 
 export default Project

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { SPACING } from 'Theme'
 
 type TextProps = {
   children: React.ReactNode
@@ -7,7 +8,7 @@ type TextProps = {
 }
 
 const TextStyles = css<{ size?: TextProps['size'] }>`
-  margin: 0 0 1rem 0;
+  margin: ${SPACING.MEDIUM}px 0;
   font-weight: 300;
   ${({ size }) => {
     if (size && size === 'small') return 'font-size: 0.8rem;'

@@ -1,15 +1,15 @@
 - [x] Audit all dates
+- [x] Move to snapshots or delete the folder for `portfolios` under projects.
+- [x] Generate snapshots file from `public/snapshots/`
+- [x] Write content for new projects and images. 
+- [x] Audit all links
+- [x] Projects -> Explorations
+- [x] Fix grid size for photos and blog posts and things.
 - [ ] Audit all descriptions
 - [ ] titles
-- [x] Audit all links
 - [ ] Look at Google Drive for more photos
 - [ ] More links?
 - [ ] Ideas Down Figma
-- [ ] Move to snapshots or delete the folder for `portfolios` under projects.
-- [ ] Generate snapshots file from `public/snapshots/`
-- [ ] Write content for new projects and images. 
 - [ ] Audit Snapshpts
 - [ ] Sunset SSP with redirect to .dev
-- [x] Projects -> Explorations
-- [x] Fix grid size for photos and blog posts and things.
 - [ ] Post to linkedin

@@ -306,48 +306,56 @@
     }
   },
   {
-    "title": "Painless Prototyping: Second Attempt",
+    "title": "Painless Prototyping Startup",
     "id": "painless-prototyping-second-attempt",
-    "description": "After succeeding with my first startup attempt, I wanted to try again and continue to learn and bring a better product into the world. Check out the Kickstarter project and the video recorded within it.",
+    "description": "Customize what your keyboard does and how it works! Classes on the topics of soldering, circuits and coding are included!",
     "lastMeaningfulUpdate": "2021-10",
     "images": [
       {
         "src": "IMG_20200516_190109.jpg",
-        "label": "Using what I created with my first startup attempt to create to protype ideas for my second attempt"
+        "label": "Exploring initial proof of concept."
       },
       {
         "src": "DSC_2611.jpg",
-        "label": "Exploring a proof of concept to see how feasible my startup idea was"
+        "label": "Playing around with mechanical switches."
       },
       {
         "src": "DSC_3528.jpg",
-        "label": "Assembling the first prototype"
+        "label": "Assembly of the first prototype."
       },
       {
         "src": "DSC_3535.jpg",
-        "label": "Glamour shot of fully working first prototype"
+        "label": "First fully functioning prototype."
       },
       {
         "src": "DSC_5663.jpg",
-        "label": "Final version shipped to customers"
+        "label": "Final version shipped to customers."
       },
       {
         "src": "PXL_20210603_002702358.jpg",
-        "label": "Delivering over 500 keyboards to Kickstarter backers"
+        "label": "Mailing out kits to Kickstarter backers."
       },
       {
         "src": "IMG_4221.jpg",
-        "label": "Donated kits and teaching time to the Dottie Rose Foundation"
+        "label": "Donated kits and teaching time to the Dottie Rose Foundation."
       },
       {
         "src": "PXL_20211206_012755312.jpg",
-        "label": "Thank you cards from the summer camp"
+        "label": "Thank you cards from the Dottie Rose summer camp."
       }
     ],
     "links": [
       {
         "label": "Kickstarter",
         "src": "https://www.kickstarter.com/projects/painlessprototyping/byo-build-your-own-mechanical-keyboard"
+      },
+      {
+        "label": "Github",
+        "src": "https://github.com/painlessprototyping"
+      },
+      {
+        "label": "YouTube Channel",
+        "src": "https://www.youtube.com/@painlessprototyping7852"
       }
     ],
     "previewImage": {
@@ -549,26 +557,26 @@
     }
   },
   {
-    "title": "gcode2dplotterart",
+    "title": "gcode2dplotterart Python Library",
     "id": "gcode2dplotterart",
-    "description": "Easily generate plotter art with your 2D plotter or 3D printer. This library abstracts away G-Code so you can focus on making art.",
+    "description": "Easily generate plotter art with your 2D plotter or 3D printer. This library abstracts away G-Code so you can focus on making art.\nBuilt with Python and documented with Docusaurus.",
     "lastMeaningfulUpdate": "2023-12",
     "images": [
       {
         "src": "1.jpeg",
-        "label": "Selfie"
-      }, 
+        "label": "Example: Selfie"
+      },
       {
         "src": "2.jpeg",
-        "label": "Roaming Rectangles"
-      }, 
+        "label": "Example: Roaming Rectangles"
+      },
       {
         "src": "3.jpg",
-        "label": "Concentric Circles"
+        "label": "Example: Concentric Circles"
       },
       {
         "src": "4.jpg",
-        "label": "Josef Albers Homage"
+        "label": "Example: Josef Albers Homage"
       }
     ],
     "links": [
@@ -597,7 +605,7 @@
   {
     "title": "Photography Portfolio",
     "id": "photography-portfolio",
-    "description": "",
+    "description": "Portfolio highlighting my photography.\nBuilt with React and TypeScript, backed by Adobe Lightroom, and hosted on Google Cloud Platform. Features advanced browser performance optimizations, including modern file formats, lazy rendering, TTL enhancements, and the blurhash algorithm.",
     "lastMeaningfulUpdate": "2024-12",
     "images": [
       {
@@ -631,16 +639,16 @@
   {
     "title": "Todo Today Desktop App",
     "id": "todo-today",
-    "description": "The todo List for the easily distracted",
+    "description": "The todo List for the easily distracted.\nBuilt with React, TypeScript, and Electron.",
     "lastMeaningfulUpdate": "2024-09",
     "images": [
       {
         "src": "todo-today1.png",
-        "label": "App Preview"
+        "label": "Home View"
       },
       {
         "src": "todo-today2.png",
-        "label": "Multiple Workspaces"
+        "label": "Support for Multiple Workspaces"
       },
       {
         "src": "todo-today3.png",
@@ -648,12 +656,12 @@
       },
       {
         "src": "todo-today4.png",
-        "label": "Multiple Themes"
+        "label": "High Contrast Mode"
       }
     ],
     "links": [
       {
-        "label": "Marketing Website",
+        "label": "Website",
         "src": "https://todo.sillysideprojects.com"
       },
       {
@@ -691,7 +699,7 @@
         "src": "https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone"
       },
       {
-        "label": "Marketing Website",
+        "label": "Website",
         "src": "https://ideas.sillysideprojects.com"
       },
       {
@@ -707,13 +715,14 @@
   {
     "title": "Manifest Playlists",
     "id": "manifest-playlists",
-    "description": "Generate Spotify playlists with interesting parameters",
+    "description": "Generate Spotify playlists with interesting parameters.\n Built with React, TypeScript, Express, GraphQL, and the Spotify API. Hosted on Google Cloud Platform.",
     "lastMeaningfulUpdate": "2023-08",
     "images": [
       {
         "src": "1.png",
         "label": "Create Playlist"
-      }, {
+      },
+      {
         "src": "2.png",
         "label": "View Playlist & Save"
       },
@@ -766,7 +775,7 @@
   {
     "title": "Bananarama Voting",
     "id": "bananarama-voting",
-    "description": "Quickly spin up a poll where people can submit entries and everyone can vote on them",
+    "description": "Quickly spin up a poll where people can submit entries and everyone can vote on them.\nBuilt with React, TypeScript, GraphQL, and Express. Hosted on Google Cloud Platform.",
     "lastMeaningfulUpdate": "2023-03",
     "images": [
       {
@@ -802,9 +811,9 @@
     }
   },
   {
-    "title": "Candlelight",
+    "title": "Candlelight Game",
     "id": "candlelight",
-    "description": "Puzzle game originally created for the Pirate Software Game Jam",
+    "description": "Puzzle game originally created for the Pirate Software Game Jam.\nBuilt with Godot and Aseprite.",
     "lastMeaningfulUpdate": "2024-11",
     "images": [
       {

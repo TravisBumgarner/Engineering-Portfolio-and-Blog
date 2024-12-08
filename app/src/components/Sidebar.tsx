@@ -1,27 +1,21 @@
-import React, { useMemo } from 'react'
-import { useLocation } from 'react-router-dom'
+import React from 'react'
 import styled from 'styled-components'
 
 import ExternalLink from 'SharedComponents/ExternalLink'
 import Header from 'SharedComponents/Header'
 import InternalLink from 'SharedComponents/InternalLink'
 import Text from 'SharedComponents/Text'
-import { CSSHover, media } from 'Theme'
+import { FOREGROUND_COLOR, media } from 'Theme'
 
 const List = styled.ul`
   margin: 1rem 0;
 `
 
-const ListItem = styled.li<{ isActive?: boolean }>`
+const ListItem = styled.li`
   > a {
     display: inline-block;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 1rem;
-    text-decoration: underline;
-    ${({ isActive }) => (isActive ? 'font-weight: 900;' : 'font-weight: 100;')}
-
-    ${CSSHover}
+    text-decoration: none;
+    color: ${FOREGROUND_COLOR};
   }
 `
 
@@ -34,18 +28,6 @@ const SidebarWrapper = styled.div`
 `
 
 const Sidebar = () => {
-  const { pathname } = useLocation()
-
-  const inBlog = useMemo(
-    () => pathname.includes('/blog') || pathname.includes('/post'),
-    [pathname]
-  )
-  const inArtifacts = useMemo(
-    () => pathname.includes('/artifacts') || pathname.includes('/artifact'),
-    [pathname]
-  )
-  const inSnapshots = useMemo(() => pathname === '/', [pathname])
-
   return (
     <SidebarWrapper>
       <Text size="small">
@@ -58,13 +40,13 @@ const Sidebar = () => {
       </Text>
       <Header size="small">Here</Header>
       <List>
-        <ListItem isActive={inSnapshots}>
+        <ListItem>
           <InternalLink to="/">Snapshots</InternalLink>
         </ListItem>
-        <ListItem isActive={inArtifacts}>
+        <ListItem>
           <InternalLink to="/artifacts">Artifacts</InternalLink>
         </ListItem>
-        <ListItem isActive={inBlog}>
+        <ListItem>
           <InternalLink to="/blog">Blog Posts</InternalLink>
         </ListItem>
       </List>

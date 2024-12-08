@@ -4,11 +4,12 @@ import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
 import posts, { postMappings } from 'Posts'
-import {
+import Header, {
   LargeHeaderStyles,
   MediumHeaderStyles,
   SmallHeaderStyles
 } from 'SharedComponents/Header'
+import InternalLink from 'SharedComponents/InternalLink'
 import { TextStyles } from 'SharedComponents/Text'
 import { CSSHover, PRIMARY_COLOR } from 'Theme'
 
@@ -169,7 +170,9 @@ const Post = () => {
 
   return (
     <MarkdownStyles>
-      <h1>{post.title}</h1>
+      <Header size="large">
+        <InternalLink to="/artifacts">Posts://</InternalLink> {post.title}
+      </Header>
       <time>{new Date(post.date).toDateString()}</time>
       {PostComponent ? <PostComponent /> : <div>Loading...</div>}
     </MarkdownStyles>

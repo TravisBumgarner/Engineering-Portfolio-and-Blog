@@ -9,9 +9,6 @@ const ExternalLinkWrapper = styled.a`
   ${CSSHover};
   ${CSSTransition};
   font-family: Raleway, sans-serif;
-  &:visited {
-    color: ${PRIMARY_COLOR};
-  }
 `
 
 type ExternalLinkProps = {
