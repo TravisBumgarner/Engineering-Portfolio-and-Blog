@@ -5,10 +5,10 @@
 - [ ] Look at Google Drive for more photos
 - [ ] More links?
 - [ ] Ideas Down Figma
-- [ ] Move to snapshots or delete the folder for portfolios under projects.
+- [ ] Move to snapshots or delete the folder for `portfolios` under projects.
 - [ ] Generate snapshots file from `public/snapshots/`
-
-- [ ] Sunset SSP with redirect to .dev
+- [ ] Write content for new projects and images. 
 - [ ] Audit Snapshpts
+- [ ] Sunset SSP with redirect to .dev
 
 - [ ] Post to linkedin
