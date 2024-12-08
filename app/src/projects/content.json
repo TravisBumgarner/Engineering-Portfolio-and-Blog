@@ -11,7 +11,7 @@
       },
       {
         "src": "IMG_20161219_190837.jpg",
-        "label": "Second exploration with scrap wood and 3D printed parts"
+        "label": "Second exploration with scrap wood and 3D-printed parts"
       },
       {
         "src": "IMG_20200428_185509.jpg",
@@ -19,11 +19,11 @@
       },
       {
         "src": "IMG_20200502_191205.jpg",
-        "label": "Test print of part designed in Third Exploration"
+        "label": "Test print of part designed in the third exploration"
       },
       {
         "src": "manyprogressmuchwow.jpg",
-        "label": "Fourth exploration with all parts custom 3D modeled and printed"
+        "label": "Fourth exploration with all parts custom 3D-modeled and printed"
       },
       {
         "src": "DSC_2538.jpg",
@@ -49,14 +49,14 @@
       }
     ],
     "previewImage": {
-      "label": "2D Plotter result",
+      "label": "2D plotter result",
       "src": "DSC_2538.jpg"
     }
   },
   {
     "title": "Automated Film Scanner",
     "id": "automated-film-scanner",
-    "description": "Automated film Scanner for 35mm negative film.",
+    "description": "Automated film scanner for 35mm negative film.",
     "lastMeaningfulUpdate": "2016-05",
     "images": [
       {
@@ -65,7 +65,7 @@
       },
       {
         "src": "DSC02609.jpg",
-        "label": "Dimensions for CAD Model"
+        "label": "Dimensions for CAD model"
       },
       {
         "src": "DSC02763.jpg",
@@ -77,7 +77,7 @@
       },
       {
         "src": "0424160039.jpg",
-        "label": "Sscanner in action"
+        "label": "Scanner in action"
       }
     ],
     "links": [
@@ -91,7 +91,7 @@
       }
     ],
     "previewImage": {
-      "label": "Automated film scanner preview",
+      "label": "Automated film scanner preview.",
       "src": "0424160039.jpg"
     }
   },
@@ -103,7 +103,7 @@
     "images": [
       {
         "src": "0302161639.jpg",
-        "label": "First test run of camera"
+        "label": "First test run of the camera"
       },
       {
         "src": "DSC02514.jpg",
@@ -123,7 +123,7 @@
       },
       {
         "src": "IMG_20190901_150150.jpg",
-        "label": "Second test run of camera"
+        "label": "Second test run of the camera"
       }
     ],
     "links": [
@@ -137,14 +137,14 @@
       }
     ],
     "previewImage": {
-      "label": "time lapse camera preview",
+      "label": "Time-lapse camera preview",
       "src": "DSC02544.jpg"
     }
   },
   {
     "title": "MIT D-Lab Development Class",
     "id": "development-class",
-    "description": "Led a group of MIT students on a three week trip to Bogota, Colombia. We worked on engineering projects and taught workshops around Arduino, soldering, basic electronics, and other related topics.",
+    "description": "Led a group of MIT students on a three-week trip to Bogota, Colombia. We worked on engineering projects and taught workshops around Arduino, soldering, basic electronics, and other related topics.",
     "lastMeaningfulUpdate": "2017-01",
     "images": [
       {
@@ -179,7 +179,7 @@
       }
     ],
     "previewImage": {
-      "label": "development class preview",
+      "label": "Development class preview.",
       "src": "17434897_1657246607625359_4142016014936483845_o.jpg"
     }
   },
@@ -199,7 +199,7 @@
       },
       {
         "src": "youtube_thumbnails.jpg",
-        "label": "Thumbnail for first YouTube Video"
+        "label": "Thumbnail for first YouTube video"
       },
       {
         "src": "DSC_9672.jpg",
@@ -211,7 +211,7 @@
       },
       {
         "src": "instagram (1).jpg",
-        "label": "Announcement for free class taught on Twitch teaching the basics of CAD, Code, & Circuits"
+        "label": "Announcement for a free class taught on Twitch teaching the basics of CAD, code, & circuits"
       }
     ],
     "links": [
@@ -229,7 +229,7 @@
       }
     ],
     "previewImage": {
-      "label": "First video, building a prototype",
+      "label": "First video: building a prototype",
       "src": "DSC_9693.jpg"
     }
   },
@@ -267,7 +267,7 @@
       }
     ],
     "previewImage": {
-      "label": "intro to arduino workshop preview",
+      "label": "Intro to Arduino workshop preview",
       "src": "IMG_20170530_205251_825.jpg"
     }
   },
@@ -301,7 +301,7 @@
       }
     ],
     "previewImage": {
-      "label": "painless prototyping preview",
+      "label": "Painless prototyping preview",
       "src": "DSC09243.jpg"
     }
   },
@@ -350,7 +350,7 @@
         "src": "https://www.kickstarter.com/projects/painlessprototyping/byo-build-your-own-mechanical-keyboard"
       },
       {
-        "label": "Github",
+        "label": "GitHub",
         "src": "https://github.com/painlessprototyping"
       },
       {
@@ -600,248 +600,6 @@
     "previewImage": {
       "label": "Project Preview",
       "src": "1.jpeg"
-    }
-  },
-  {
-    "title": "Photography Portfolio",
-    "id": "photography-portfolio",
-    "description": "Portfolio highlighting my photography.\nFeatures advanced browser performance optimizations, including modern file formats, lazy rendering, TTL enhancements, and the blurhash algorithm.\nTools & Technologies: React, TypeScript, Adobe Lightroom, Google Cloud Platform",
-    "lastMeaningfulUpdate": "2024-12",
-    "images": [
-      {
-        "src": "1.png",
-        "label": "Homepage View"
-      },
-      {
-        "src": "2.png",
-        "label": "Gallery View"
-      },
-      {
-        "src": "3.png",
-        "label": "Menu View"
-      }
-    ],
-    "links": [
-      {
-        "label": "Portfolio",
-        "src": "https://travisbumgarner.photography"
-      },
-      {
-        "label": "GitHub",
-        "src": "https://github.com/TravisBumgarner/Photography-Portfolio"
-      }
-    ],
-    "previewImage": {
-      "label": "Portfolio Preview",
-      "src": "1.png"
-    }
-  },
-  {
-    "title": "Todo Today Desktop App",
-    "id": "todo-today",
-    "description": "The todo List for the easily distracted.\nTools & Technologies: React, TypeScript, Electron, IndexedDB, Dexie",
-    "lastMeaningfulUpdate": "2024-09",
-    "images": [
-      {
-        "src": "todo-today1.png",
-        "label": "Home View"
-      },
-      {
-        "src": "todo-today2.png",
-        "label": "Support for Multiple Workspaces"
-      },
-      {
-        "src": "todo-today3.png",
-        "label": "Backups and Themes"
-      },
-      {
-        "src": "todo-today4.png",
-        "label": "High Contrast Mode"
-      }
-    ],
-    "links": [
-      {
-        "label": "Website",
-        "src": "https://todo.sillysideprojects.com"
-      },
-      {
-        "label": "GitHub",
-        "src": "https://github.com/TravisBumgarner/todo-today"
-      }
-    ],
-    "previewImage": {
-      "label": "App Preview",
-      "src": "todo-today1.png"
-    }
-  },
-  {
-    "title": "Ideas Down iPhone App",
-    "id": "ideas-down",
-    "description": "Clear your mind and make room for your next big idea.\nTools & Technologies: React Native, TypeScript, Figma, Expo, Drizzle",
-    "lastMeaningfulUpdate": "2024-12",
-    "images": [
-      {
-        "src": "1.png",
-        "label": "Reflect"
-      },
-      {
-        "src": "2.png",
-        "label": "Review"
-      },
-      {
-        "src": "3.png",
-        "label": "Settings & Privacy"
-      }
-    ],
-    "links": [
-      {
-        "label": "Apple App Store Listing",
-        "src": "https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone"
-      },
-      {
-        "label": "Website",
-        "src": "https://ideas.sillysideprojects.com"
-      },
-      {
-        "label": "GitHub",
-        "src": "https://github.com/TravisBumgarner/ideas-down-quickly"
-      }
-    ],
-    "previewImage": {
-      "label": "App Preview",
-      "src": "1.png"
-    }
-  },
-  {
-    "title": "Spotify Playlist Generator",
-    "id": "manifest-playlists",
-    "description": "Generate Spotify playlists with interesting parameters.\n Tools & Technologies: React, TypeScript, Express, GraphQL, Spotify API, Google Cloud Platform",
-    "lastMeaningfulUpdate": "2023-08",
-    "images": [
-      {
-        "src": "1.png",
-        "label": "Create Playlist"
-      },
-      {
-        "src": "2.png",
-        "label": "View playlist and save to Spotify"
-      },
-      {
-        "src": "3.png",
-        "label": "Homepage"
-      }
-    ],
-    "links": [
-      {
-        "label": "View App",
-        "src": "https://playlists.sillysideprojects.com"
-      },
-      {
-        "label": "GitHub",
-        "src": "https://github.com/TravisBumgarner/playlist-generator"
-      }
-    ],
-    "previewImage": {
-      "label": "App Preview",
-      "src": "1.png"
-    }
-  },
-  {
-    "title": "CSS Cross Stitch Generator",
-    "id": "stitch-it",
-    "description": "Generate CSS cross stitches from photos\nTools & Technologies: Python, Flask, Google Cloud Platform",
-    "lastMeaningfulUpdate": "2020-03",
-    "images": [
-      {
-        "src": "1.png",
-        "label": "Example Output"
-      }
-    ],
-    "links": [
-      {
-        "label": "View App",
-        "src": "https://stitch.sillysideprojects.com"
-      },
-      {
-        "label": "GitHub",
-        "src": "https://github.com/TravisBumgarner/Silly-Apps/tree/main/stitch_it"
-      }
-    ],
-    "previewImage": {
-      "label": "Example Output",
-      "src": "1.png"
-    }
-  },
-  {
-    "title": "Bananarama Voting App",
-    "id": "bananarama-voting",
-    "description": "Quickly spin up a poll where people can submit entries and everyone can vote on them.\nTools & Technologies: React, TypeScript, GraphQL, Express, Google Cloud Platform",
-    "lastMeaningfulUpdate": "2023-03",
-    "images": [
-      {
-        "src": "1.png",
-        "label": "Lobby"
-      },
-      {
-        "src": "2.png",
-        "label": "Admin View"
-      },
-      {
-        "src": "3.png",
-        "label": "Voting"
-      },
-      {
-        "src": "4.png",
-        "label": "Results"
-      }
-    ],
-    "links": [
-      {
-        "label": "View App",
-        "src": "https://voting.sillysideprojects.com"
-      },
-      {
-        "label": "GitHub",
-        "src": "https://github.com/TravisBumgarner/Bananarama-Voting-Bananza"
-      }
-    ],
-    "previewImage": {
-      "label": "App Preview",
-      "src": "3.png"
-    }
-  },
-  {
-    "title": "Candlelight Game",
-    "id": "candlelight",
-    "description": "Puzzle game originally created for the Pirate Software Game Jam.\nTools & Technologies: Godot, Aseprite, Figma, Steam API",
-    "lastMeaningfulUpdate": "2024-11",
-    "images": [
-      {
-        "src": "1.png",
-        "label": "Gameplay"
-      },
-      {
-        "src": "3.png",
-        "label": "Main menu"
-      },
-      {
-        "src": "2.png",
-        "label": "Game saves"
-      }
-    ],
-    "links": [
-      {
-        "label": "Game Demo",
-        "src": "https://sillysideprojects.itch.io/candlight"
-      },
-      {
-        "label": "Steam Store Page",
-        "src": "https://store.steampowered.com/app/3157820?beta=0"
-      }
-    ],
-    "previewImage": {
-      "label": "Game Preview",
-      "src": "1.png"
     }
   }
 ]
