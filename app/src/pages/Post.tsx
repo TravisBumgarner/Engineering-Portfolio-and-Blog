@@ -13,6 +13,9 @@ import { TextStyles } from 'SharedComponents/Text'
 import { BORDER_COLOR, CSSHover, PRIMARY_COLOR, SPACING } from 'Theme'
 
 const MarkdownStyles = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+
   h1 {
     ${LargeHeaderStyles}
   }

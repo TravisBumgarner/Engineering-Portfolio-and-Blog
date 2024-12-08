@@ -26,22 +26,9 @@ export const SPACING = {
   XXLARGE: 48
 } as const
 
-export const CSSTransition = css`
-  transition: color 0.3s;
-  transition: background-color 0.3s;
-`
-
-export const GlobalStyle = createGlobalStyle`
-    a {
-        text-decoration: none;
-        &:hover {
-            color: ${PRIMARY_COLOR};
-        }
-    }
-    
+export const GlobalStyle = createGlobalStyle`   
     html {
         background-color: ${BACKGROUND_COLOR};
-        ${CSSTransition};
         font-family: Montserrat, sans-serif;
         line-height: 1.5;
         font-weight: 400;
@@ -54,23 +41,17 @@ export const GlobalStyle = createGlobalStyle`
             font-size: 14px;
         }
     }
-
-    time {
-      font-size: 0.8rem;
-    }
-
-    strong {
-        font-weight: 700;
-    }
 `
 
 export const CSSHover = css`
-  font-weight: 300;
+  transition: color 0.3s;
+  transition: background-color 0.3s;
   color: ${PRIMARY_COLOR};
+  text-decoration-color: ${PRIMARY_COLOR};
   &:hover {
     background-color: ${PRIMARY_COLOR};
     color: ${BACKGROUND_COLOR};
     border-color: ${PRIMARY_COLOR};
+    text-decoration-color: ${BACKGROUND_COLOR};
   }
-  ${CSSTransition};
 `

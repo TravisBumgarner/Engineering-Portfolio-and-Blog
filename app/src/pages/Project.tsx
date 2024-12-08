@@ -8,18 +8,8 @@ import Header from 'SharedComponents/Header'
 import InternalLink from 'SharedComponents/InternalLink'
 import MasonryGrid from 'SharedComponents/MasonryGrid'
 import Text from 'SharedComponents/Text'
-import { CSSHover, PRIMARY_COLOR, SPACING } from 'Theme'
+import { SPACING } from 'Theme'
 import ProjectImage from './ProjectImage'
-
-const LinkLi = styled.li`
-  display: block;
-  text-decoration: underline;
-
-  a {
-    color: ${PRIMARY_COLOR};
-    ${CSSHover};
-  }
-`
 
 const MetadataWrapper = styled.div`
   margin-bottom: ${SPACING.MEDIUM}px;
@@ -34,9 +24,9 @@ const Details = ({
     () =>
       links.map(l => {
         return (
-          <LinkLi key={l.label + l.src}>
+          <li key={l.label + l.src}>
             <ExternalLink href={l.src}>{l.label}</ExternalLink>
-          </LinkLi>
+          </li>
         )
       }),
     [links]
@@ -66,7 +56,7 @@ const Details = ({
     [description]
   )
   return (
-    <div>
+    <DetailsWrapper>
       <MetadataWrapper>
         <Header size="large">
           <InternalLink to="/artifacts">Artifacts://</InternalLink> {title}
@@ -77,11 +67,11 @@ const Details = ({
             year: 'numeric'
           })}
         </Time>
-        {Description}
-        {Links.length > 0 && <ul>{Links}</ul>}
+        <DescriptionWrapper>{Description}</DescriptionWrapper>
+        {Links.length > 0 && <LinksWrapper>{Links}</LinksWrapper>}
       </MetadataWrapper>
       <MasonryGrid elementsWithKeys={Images} />
-    </div>
+    </DetailsWrapper>
   )
 }
 
@@ -105,6 +95,14 @@ const Project = () => {
   return <Details project={projects[projectIndex]} />
 }
 
+const DescriptionWrapper = styled.div`
+  margin: ${SPACING.XLARGE}px 0;
+`
+
+const LinksWrapper = styled.ul`
+  margin: ${SPACING.XLARGE}px 0;
+`
+
 const Time = styled.time`
   display: block;
   font-size: 0.8rem;
@@ -114,6 +112,11 @@ const Time = styled.time`
 
 const SnapshotWrapper = styled.div`
   margin-bottom: ${SPACING.MEDIUM}px;
+`
+
+const DetailsWrapper = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
 `
 
 export default Project

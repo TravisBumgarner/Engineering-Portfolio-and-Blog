@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
-import { BACKGROUND_COLOR, CSSTransition, SPACING } from 'Theme'
+import { BACKGROUND_COLOR, FOREGROUND_COLOR, SPACING } from 'Theme'
 import BlurHashImage from './BlurHashImage'
 
 const MasonryImage = ({
@@ -39,13 +39,12 @@ const MasonryImage = ({
 }
 
 const StyledLink = styled(Link)`
-  ${CSSTransition}
   color: ${BACKGROUND_COLOR};
   img {
     transition: filter 0.3s ease-in-out;
-    filter: contrast(40%) grayscale(100%);
+    filter: contrast(80%) grayscale(100%);
   }
-
+  text-decoration: none;
   &:hover {
     color: ${BACKGROUND_COLOR};
     img {
@@ -57,7 +56,7 @@ const StyledLink = styled(Link)`
 
 const SnapshotWrapper = styled.div<{ $isLink?: boolean }>`
   box-sizing: border-box;
-  background-color: white;
+  background-color: ${FOREGROUND_COLOR};
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   > img {

@@ -601,5 +601,247 @@
       "label": "Project Preview",
       "src": "1.jpeg"
     }
+  },
+  {
+    "title": "Photography Portfolio",
+    "id": "photography-portfolio",
+    "description": "Portfolio highlighting my photography.\nFeatures advanced browser performance optimizations, including modern file formats, lazy rendering, TTL enhancements, and the blurhash algorithm.\nTools & Technologies: React, TypeScript, Adobe Lightroom, Google Cloud Platform",
+    "lastMeaningfulUpdate": "2024-12",
+    "images": [
+      {
+        "src": "1.png",
+        "label": "Homepage View"
+      },
+      {
+        "src": "2.png",
+        "label": "Gallery View"
+      },
+      {
+        "src": "3.png",
+        "label": "Menu View"
+      }
+    ],
+    "links": [
+      {
+        "label": "Portfolio",
+        "src": "https://travisbumgarner.photography"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/Photography-Portfolio"
+      }
+    ],
+    "previewImage": {
+      "label": "Portfolio Preview",
+      "src": "1.png"
+    }
+  },
+  {
+    "title": "Todo Today Desktop App",
+    "id": "todo-today",
+    "description": "The todo List for the easily distracted.\nTools & Technologies: React, TypeScript, Electron, IndexedDB, Dexie",
+    "lastMeaningfulUpdate": "2024-09",
+    "images": [
+      {
+        "src": "todo-today1.png",
+        "label": "Home View"
+      },
+      {
+        "src": "todo-today2.png",
+        "label": "Support for Multiple Workspaces"
+      },
+      {
+        "src": "todo-today3.png",
+        "label": "Backups and Themes"
+      },
+      {
+        "src": "todo-today4.png",
+        "label": "High Contrast Mode"
+      }
+    ],
+    "links": [
+      {
+        "label": "Website",
+        "src": "https://todo.sillysideprojects.com"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/todo-today"
+      }
+    ],
+    "previewImage": {
+      "label": "App Preview",
+      "src": "todo-today1.png"
+    }
+  },
+  {
+    "title": "Ideas Down iPhone App",
+    "id": "ideas-down",
+    "description": "Clear your mind and make room for your next big idea.\nTools & Technologies: React Native, TypeScript, Figma, Expo, Drizzle",
+    "lastMeaningfulUpdate": "2024-12",
+    "images": [
+      {
+        "src": "1.png",
+        "label": "Reflect"
+      },
+      {
+        "src": "2.png",
+        "label": "Review"
+      },
+      {
+        "src": "3.png",
+        "label": "Settings & Privacy"
+      }
+    ],
+    "links": [
+      {
+        "label": "Apple App Store Listing",
+        "src": "https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone"
+      },
+      {
+        "label": "Website",
+        "src": "https://ideas.sillysideprojects.com"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/ideas-down-quickly"
+      }
+    ],
+    "previewImage": {
+      "label": "App Preview",
+      "src": "1.png"
+    }
+  },
+  {
+    "title": "Spotify Playlist Generator",
+    "id": "manifest-playlists",
+    "description": "Generate Spotify playlists with interesting parameters.\n Tools & Technologies: React, TypeScript, Express, GraphQL, Spotify API, Google Cloud Platform",
+    "lastMeaningfulUpdate": "2023-08",
+    "images": [
+      {
+        "src": "1.png",
+        "label": "Create Playlist"
+      },
+      {
+        "src": "2.png",
+        "label": "View playlist and save to Spotify"
+      },
+      {
+        "src": "3.png",
+        "label": "Homepage"
+      }
+    ],
+    "links": [
+      {
+        "label": "View App",
+        "src": "https://playlists.sillysideprojects.com"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/playlist-generator"
+      }
+    ],
+    "previewImage": {
+      "label": "App Preview",
+      "src": "1.png"
+    }
+  },
+  {
+    "title": "CSS Cross Stitch Generator",
+    "id": "stitch-it",
+    "description": "Generate CSS cross stitches from photos\nTools & Technologies: Python, Flask, Google Cloud Platform",
+    "lastMeaningfulUpdate": "2020-03",
+    "images": [
+      {
+        "src": "1.png",
+        "label": "Example Output"
+      }
+    ],
+    "links": [
+      {
+        "label": "View App",
+        "src": "https://stitch.sillysideprojects.com"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/Silly-Apps/tree/main/stitch_it"
+      }
+    ],
+    "previewImage": {
+      "label": "Example Output",
+      "src": "1.png"
+    }
+  },
+  {
+    "title": "Bananarama Voting App",
+    "id": "bananarama-voting",
+    "description": "Quickly spin up a poll where people can submit entries and everyone can vote on them.\nTools & Technologies: React, TypeScript, GraphQL, Express, Google Cloud Platform",
+    "lastMeaningfulUpdate": "2023-03",
+    "images": [
+      {
+        "src": "1.png",
+        "label": "Lobby"
+      },
+      {
+        "src": "2.png",
+        "label": "Admin View"
+      },
+      {
+        "src": "3.png",
+        "label": "Voting"
+      },
+      {
+        "src": "4.png",
+        "label": "Results"
+      }
+    ],
+    "links": [
+      {
+        "label": "View App",
+        "src": "https://voting.sillysideprojects.com"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/Bananarama-Voting-Bananza"
+      }
+    ],
+    "previewImage": {
+      "label": "App Preview",
+      "src": "3.png"
+    }
+  },
+  {
+    "title": "Candlelight Game",
+    "id": "candlelight",
+    "description": "Puzzle game originally created for the Pirate Software Game Jam.\nTools & Technologies: Godot, Aseprite, Figma, Steam API",
+    "lastMeaningfulUpdate": "2024-11",
+    "images": [
+      {
+        "src": "1.png",
+        "label": "Gameplay"
+      },
+      {
+        "src": "3.png",
+        "label": "Main menu"
+      },
+      {
+        "src": "2.png",
+        "label": "Game saves"
+      }
+    ],
+    "links": [
+      {
+        "label": "Game Demo",
+        "src": "https://sillysideprojects.itch.io/candlight"
+      },
+      {
+        "label": "Steam Store Page",
+        "src": "https://store.steampowered.com/app/3157820?beta=0"
+      }
+    ],
+    "previewImage": {
+      "label": "Game Preview",
+      "src": "1.png"
+    }
   }
 ]

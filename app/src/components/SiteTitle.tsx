@@ -73,6 +73,7 @@ const SiteTitleWrapper = styled.h1`
   a {
     font-size: 1.6rem;
     color: ${FOREGROUND_COLOR};
+    text-decoration: none;
   }
 `
 

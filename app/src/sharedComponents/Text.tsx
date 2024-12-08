@@ -8,7 +8,7 @@ type TextProps = {
 }
 
 const TextStyles = css<{ size?: TextProps['size'] }>`
-  margin: ${SPACING.MEDIUM}px 0;
+  margin: ${SPACING.SMALL}px 0;
   font-weight: 100;
   ${({ size }) => {
     if (size && size === 'small') return 'font-size: 0.8rem;'

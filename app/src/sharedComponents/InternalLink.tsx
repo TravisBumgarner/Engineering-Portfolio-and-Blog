@@ -3,16 +3,12 @@ import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 
-import { CSSHover, CSSTransition } from 'Theme'
+import { CSSHover, PRIMARY_COLOR } from 'Theme'
 
 const InternalLinkWrapper = styled(Link)`
-  text-decoration: none;
   ${CSSHover};
   font-family: Raleway, sans-serif;
-  ${CSSTransition};
-  &:hover {
-    text-decoration: underline;
-  }
+  font-weight: 100;
 `
 
 type InternalLinkProps = {

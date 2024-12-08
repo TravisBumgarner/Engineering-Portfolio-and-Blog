@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react'
 import { submitContactForm } from 'services/firebase'
 import Header from 'SharedComponents/Header'
 import styled from 'styled-components'
-import { CSSHover, CSSTransition } from 'Theme'
+import { CSSHover } from 'Theme'
 
 const Wrapper = styled.div`
   padding: 2rem;
@@ -27,7 +27,6 @@ const TextArea = styled.textarea`
 `
 
 const SubmitButton = styled.button<{ $disabled?: boolean }>`
-  ${CSSTransition};
   padding: 0.5rem 1rem;
   background-color: transparent;
   border: none;
