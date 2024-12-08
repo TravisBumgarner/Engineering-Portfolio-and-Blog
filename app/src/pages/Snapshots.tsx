@@ -10,6 +10,28 @@ const TOTAL_PHOTOS = 81
 const PHOTO_SPACING = SPACING.MEDIUM
 const PHOTO_SPACING_MOBILE = SPACING.XSMALL
 
+function random(seed) {
+  var x = Math.sin(seed++) * 10000; 
+  return x - Math.floor(x);
+}
+
+function shuffle(array) {                
+  let seed = new Date().getDate()
+
+  var m = array.length, t, i;
+
+  while (m) {
+    i = Math.floor(random(seed) * m--);        
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
+    ++seed                                     
+  }
+
+  return array;
+}
+
+
 const Cell = ({ src }: {src: string}) => {
   const ref = useRef<HTMLDivElement>(null)
   const controls = useAnimationControls()
@@ -51,7 +73,7 @@ const StyledCell = styled.div<{ $isInView: boolean, $isInPartialView: boolean }>
   }}
   
 
-  border: 10px solid #fff;
+  border: 10px solid #cbcbcb;
   // *2 for vertical margin collapsing.
   margin-bottom: ${PHOTO_SPACING * 2}px;
 
@@ -117,7 +139,8 @@ const PhotoMasonry = () => {
     // Ensure that each `[]` passed to `Array.from` is a new array. Reference issue with fill.
     const output = Array.from({ length: totalColumns }, () => [] as string[])
 
-    Object.values(photos)
+    // Present random items each day.
+    shuffle(Object.values(photos))
       .forEach(photo => {
         // All photos will have a width of 1 unit.
         // Calculate height based on aspect ratio and we'll use that to determine
