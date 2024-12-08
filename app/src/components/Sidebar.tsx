@@ -46,6 +46,11 @@ const Sidebar = () => {
       <Header size="small">Elsewhere</Header>
       <List>
         <ListItem>
+          <ExternalLink href="https://storage.googleapis.com/eng42-asdsad/public/travis_bumgarner_2024_12_05_resume.pdf">
+            Resume
+          </ExternalLink>
+        </ListItem>
+        <ListItem>
           <ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">
             LinkedIn
           </ExternalLink>
