@@ -5,9 +5,10 @@ import styled from 'styled-components'
 import projects, { Project } from 'Projects'
 import ExternalLink from 'SharedComponents/ExternalLink'
 import Header from 'SharedComponents/Header'
-import Snapshot from 'SharedComponents/Snapshot'
+import ProjectImage from './ProjectImage'
 import Text from 'SharedComponents/Text'
-import { CSSHover, PRIMARY_COLOR } from 'Theme'
+import { CSSHover, PRIMARY_COLOR, SPACING } from 'Theme'
+import MasonryGrid from 'SharedComponents/MasonryGrid'
 
 const LinkLi = styled.li`
   display: block;
@@ -20,7 +21,7 @@ const LinkLi = styled.li`
 `
 
 const MetadataWrapper = styled.div`
-  margin-bottom: 3rem;
+  margin-bottom: ${SPACING.MEDIUM}px;
 `
 
 const Details = ({
@@ -42,13 +43,18 @@ const Details = ({
 
   const Images = useMemo(
     () =>
-      images.map((i, index) => (
-        <Snapshot
+      images.map((i, index) => ({
+        key: i.src,
+        element: (
+          <SnapshotWrapper key={i.src}>
+        <ProjectImage
           text={i.label}
           key={index}
           src={`${__STATIC__}/projects/${id}/${i.src}`}
-        ></Snapshot>
-      )),
+        />
+          </SnapshotWrapper>
+        )
+      })),
     [images]
   )
   const Description = useMemo(
@@ -66,7 +72,7 @@ const Details = ({
         {Description}
         {Links.length > 0 && <ul>{Links}</ul>}
       </MetadataWrapper>
-      <div>{images.length ? Images : null}</div>
+      <MasonryGrid elementsWithKeys={Images} />
     </div>
   )
 }
@@ -91,4 +97,9 @@ const Project = () => {
   return <Details project={projects[projectIndex]} />
 }
 
+const SnapshotWrapper = styled.div`
+  margin: ${SPACING.LARGE}px 0;
+ `
+
 export default Project
+

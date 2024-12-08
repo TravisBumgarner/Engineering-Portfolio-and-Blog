@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { BACKGROUND_COLOR, CSSTransition, SPACING } from 'Theme'
 import BlurHashImage from './BlurHashImage'
 
-const Snapshot = ({
+const MasonryImage = ({
   src,
   link,
   text
@@ -18,6 +18,7 @@ const Snapshot = ({
     return (
       <SnapshotWrapper>
         <BlurHashImage src={src} />
+        <p>{text}</p>
       </SnapshotWrapper>
     )
   }
@@ -65,9 +66,10 @@ const SnapshotWrapper = styled.div<{ $isLink?: boolean }>`
   }
 
   > p {
+    color: ${BACKGROUND_COLOR};
     padding: ${SPACING.MEDIUM}px;
   }
 `
 
 
-export default Snapshot
+export default MasonryImage

@@ -17,19 +17,25 @@ const Project = lazy(() => import('./pages/Project'))
 const Snapshots = lazy(() => import('./pages/Snapshots'))
 
 const BodyWrapper = styled.div`
-  padding-top: ${SPACING.XLARGE}px;
+  padding-top: ${SPACING.XXLARGE}px;
   display: flex;
 
+  ${media.tablet}{
+    padding-top: ${SPACING.MEDIUM}px;
+  }
+
   > div:first-child {
+    flex-shrink: 0;
     top: ${SPACING.XLARGE}px;
     position: sticky;
     width: 200px;
     height: 100%;
-    padding-right: ${SPACING.XLARGE}px;
+    padding-right: ${SPACING.XXLARGE}px;
     box-sizing: border-box;
 
     ${media.tablet}{
       padding-right: ${SPACING.MEDIUM}px;
+      width: 100px;
 
       h3 {
         margin-top: 0;
@@ -45,7 +51,7 @@ const BodyWrapper = styled.div`
 const AppWrapper = styled.div`
   max-width: 1600px;
   margin: 0 auto;
-  padding: ${SPACING.XLARGE}px;
+  padding: ${SPACING.XXLARGE}px;
 
   ${media.tablet}{
     padding: ${SPACING.MEDIUM}px;

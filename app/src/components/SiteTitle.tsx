@@ -3,7 +3,7 @@ import { Link as ReactRouterDomLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 import Header from 'SharedComponents/Header'
-import { CSSHover, FOREGROUND_COLOR } from 'Theme'
+import { CSSHover, FOREGROUND_COLOR, SPACING } from 'Theme'
 
 const makeNewSiteTitle = () => {
   const VALID_FILE_SUFFIX = [

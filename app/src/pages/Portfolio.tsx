@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
 
 import projects from 'Projects'
-import Snapshot from 'SharedComponents/Snapshot'
 import MasonryGrid from 'SharedComponents/MasonryGrid'
+import MasonryImage from 'SharedComponents/MasonryImage'
 
 const Portfolio = () => {
   const tiles = useMemo(() => {
@@ -12,7 +12,7 @@ const Portfolio = () => {
         return {
           key: id,
           element: (
-          <Snapshot
+          <MasonryImage
             key={id}
             link={`/project/${id}`}
             text={title}

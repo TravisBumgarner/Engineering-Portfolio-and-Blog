@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { blurHashLookup } from '../blurHashLookup'
-import { motion, useAnimationControls, useInView } from 'framer-motion'
+import {  useAnimationControls, useInView } from 'framer-motion'
 import { media, SPACING } from 'Theme'
 import BlurHashImage from 'SharedComponents/BlurHashImage'
 
@@ -37,8 +37,6 @@ const Cell = ({ src }: {src: string}) => {
   const controls = useAnimationControls()
   const isInView = useInView(ref, { amount: 0.5 })
   const isInPartialView = useInView(ref, { amount: 0.15 })
-
-  const wasInView = useRef(false)
 
   return (
     <StyledCell
