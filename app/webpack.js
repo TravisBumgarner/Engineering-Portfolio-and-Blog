@@ -47,7 +47,9 @@ module.exports = {
             Posts: path.resolve(__dirname, 'src/posts'),
             Pages: path.resolve(__dirname, 'src/pages'),
             hooks: path.resolve(__dirname, 'src/hooks'),
-            services: path.resolve(__dirname, 'src/services')
+            services: path.resolve(__dirname, 'src/services'),
+            content: path.resolve(__dirname, 'src/content'),
+            SharedTypes: path.resolve(__dirname, 'src/SharedTypes'),
         },
         extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
@@ -70,8 +72,8 @@ module.exports = {
         new webpack.DefinePlugin({ __STATIC__ }),
         new webpack.DefinePlugin({ __IS_PRODUCTION__ }),
         new HtmlWebpackPlugin({
-            template: './src/index.template.ejs',
-            favicon: "./src/favicon.png",
+            template: './static/index.template.ejs',
+            favicon: "./static/favicon.png",
             inject: 'body',
         })
     ],

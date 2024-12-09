@@ -35,6 +35,9 @@
             ],
             "services/*": [
                 "services/*"
+            ],
+            "content/*": [
+                "content/*"
             ]
         },
         "types": [

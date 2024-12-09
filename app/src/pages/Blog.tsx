@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react'
 
-import posts from 'Posts'
+import posts from 'content/posts'
 import MasonryGrid from 'SharedComponents/MasonryGrid'
 import MasonryImage from 'SharedComponents/MasonryImage'
+import ROUTES from 'SharedComponents/routes'
 
 const Blog = () => {
   const ListItems = useMemo(() => {
@@ -20,7 +21,7 @@ const Blog = () => {
                 month: 'long',
                 year: 'numeric'
               })}
-              link={`/post/${id}`}
+              link={`${ROUTES.BLOG.path}/${id}`}
               text={title}
               src={`${__STATIC__}/posts/${id}/${posts[id].preview_image}`}
             />

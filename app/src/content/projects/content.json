@@ -133,7 +133,7 @@
       },
       {
         "label": "Writeup",
-        "src": "/post/combining-hobbies/"
+        "src": "/blog/combining-hobbies/"
       }
     ],
     "previewImage": {
@@ -682,15 +682,27 @@
     "images": [
       {
         "src": "1.png",
-        "label": "Reflect"
+        "label": "App Screenshot: Reflect"
       },
       {
         "src": "2.png",
-        "label": "Review"
+        "label": "App Screenshot: Review"
       },
       {
         "src": "3.png",
-        "label": "Settings & Privacy"
+        "label": "App Screenshot: Settings & Privacy"
+      },
+      {
+        "src": "4.png",
+        "label": "Figma Screenshot: Dark and light color themes"
+      },
+      {
+        "src": "5.png",
+        "label": "Figma Screenshot: System components"
+      },
+      {
+        "src": "6.png",
+        "label": "Figma Screenshot: User goals defined as app screens"
       }
     ],
     "links": [

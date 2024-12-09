@@ -7,12 +7,17 @@
 - [x] Fix grid size for photos and blog posts and things.
 - [x] Audit all descriptions
 - [x] titles
-- [ ] Look at Google Drive for more photos
+- [x] Look at Google Drive for more photos
 - [x] More links?
-- [ ] Ideas Down Figma
+- [x] ~~Ideas Down Figma~~
 - [x] Audit Snapshpts
-- [ ] typography needs a rework. new font?
+- [x] Sunset SSP with redirect to .dev
+- [x] refactor content to folder
+- [x] ~~typography needs a rework. new font?~~
+- [x] ~~Can we delete the multiple link types~~
+
 - [ ] Perf improvements
-- [ ] Sunset SSP with redirect to .dev
+- [ ] Make sure SSP isn't continuing to throw cert error.
 - [ ] Accessiblility improvements
 - [ ] Post to linkedin
+

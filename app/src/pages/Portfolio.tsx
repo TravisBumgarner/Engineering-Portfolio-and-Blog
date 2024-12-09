@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react'
 
-import projects from 'Projects'
+import projects from 'content/projects'
 import MasonryGrid from 'SharedComponents/MasonryGrid'
 import MasonryImage from 'SharedComponents/MasonryImage'
-
+import ROUTES from 'SharedComponents/routes'
 const Portfolio = () => {
   const tiles = useMemo(() => {
     return projects
@@ -16,7 +16,7 @@ const Portfolio = () => {
           element: (
             <MasonryImage
               key={id}
-              link={`/artifact/${id}`}
+              link={`${ROUTES.CREATIONS.path}/${id}`}
               text={title}
               date={new Date(`${lastMeaningfulUpdate}-05`).toLocaleString(
                 'default',

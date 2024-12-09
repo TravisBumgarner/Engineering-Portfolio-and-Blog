@@ -3,8 +3,9 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import BlurHashImage from 'SharedComponents/BlurHashImage'
 import styled, { css } from 'styled-components'
 import { FOREGROUND_COLOR, media, SPACING } from 'Theme'
-import { blurHashLookup } from '../blurHashLookup'
-import snapshots from '../snapshots/index.json'
+import blurhashes from 'content/blurhashes/index.json'
+import snapshots from 'content/snapshots/index.json'
+import { BlurHash } from '../sharedTypes/index'
 
 const PHOTO_SPACING = SPACING.MEDIUM
 const PHOTO_SPACING_MOBILE = SPACING.XSMALL
@@ -137,7 +138,7 @@ const PhotoMasonry = () => {
       // All photos will have a width of 1 unit.
       // Calculate height based on aspect ratio and we'll use that to determine
       // which column to put it in.
-      const { height, width } = blurHashLookup[src]
+      const { height, width } = blurhashes[src] as BlurHash
       const unitHeight = height / width
 
       const columnforCurrentPhoto = columnHeights.indexOf(

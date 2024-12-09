@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
-import posts, { postMappings } from 'Posts'
+import posts, { postMappings } from 'content/posts'
 import Header, {
   LargeHeaderStyles,
   MediumHeaderStyles,
@@ -11,6 +11,7 @@ import Header, {
 import InternalLink from 'SharedComponents/InternalLink'
 import { TextStyles } from 'SharedComponents/Text'
 import { BORDER_COLOR, CSSHover, PRIMARY_COLOR, SPACING } from 'Theme'
+import ROUTES from 'SharedComponents/routes'
 
 const MarkdownStyles = styled.div`
   max-width: 800px;
@@ -134,7 +135,7 @@ const Post = () => {
   return (
     <MarkdownStyles>
       <Header size="large">
-        <InternalLink to="/artifacts">Posts://</InternalLink> {post.title}
+        <InternalLink to={ROUTES.BLOG.path}>Blog://</InternalLink> {post.title}
       </Header>
       <time>{new Date(post.date).toDateString()}</time>
       {PostComponent ? <PostComponent /> : <div>Loading...</div>}

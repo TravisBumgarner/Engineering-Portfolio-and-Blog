@@ -159,6 +159,11 @@
     "width": 330,
     "height": 772
   },
+  "/posts/learning-to-learn/arducam3-1-5.jpeg": {
+    "blurHash": "UJJ@aQ^e~7E2s;NHIp%0^hNH9bxaS5oLWBR*",
+    "width": 1600,
+    "height": 1067
+  },
   "/posts/learning-to-learn/github.png": {
     "blurHash": "UCR{[JS2j]%3xsj=t7WB~Es=RjR%%MWAoeaz",
     "width": 602,
@@ -263,6 +268,11 @@
     "blurHash": "U3SijZD%IBM{-:ayWVof~Wt7kCt7t7RjRjWB",
     "width": 1172,
     "height": 932
+  },
+  "/posts/virtual-team-building-event/woodburning.jpeg": {
+    "blurHash": "U6INT^9~00OY~WtRR.ay8{og-;WB-ps:Ioay",
+    "width": 1600,
+    "height": 720
   },
   "/posts/what-we-lost-when-we-went-remote/preview.jpg": {
     "blurHash": "UYI#78M{9FE3~VD*-UbI%1V@WBofIVbHWBt6",
@@ -454,6 +464,16 @@
     "width": 1280,
     "height": 720
   },
+  "/projects/gcode2dplotterart/1.jpeg": {
+    "blurHash": "U8KTGJ3M{HF$DwP7ORgGAS+Ko|#*ISXR:,RU",
+    "width": 1600,
+    "height": 1410
+  },
+  "/projects/gcode2dplotterart/2.jpeg": {
+    "blurHash": "UHKdrR00o}%f?HoJt8ba_4oyIVRj%MbcV?xG",
+    "width": 1600,
+    "height": 1147
+  },
   "/projects/gcode2dplotterart/3.jpg": {
     "blurHash": "ULP6,G=ozm{-w[afj[jswbWEbcWn#VjZa{o1",
     "width": 1589,
@@ -478,6 +498,21 @@
     "blurHash": "U76[~:oefkj[cbkCj@j[XTj?ofj[Q,a}kCj[",
     "width": 1290,
     "height": 2796
+  },
+  "/projects/ideas-down/4.png": {
+    "blurHash": "UIFF,7Di00%M_NS200x]00?cn$t8%MMwxuV@",
+    "width": 3154,
+    "height": 2050
+  },
+  "/projects/ideas-down/5.png": {
+    "blurHash": "U36H[p_N8^?b$yt8tS%LI9DiRjxu$etSXTaJ",
+    "width": 1925,
+    "height": 2187
+  },
+  "/projects/ideas-down/6.png": {
+    "blurHash": "UA8}Po?wROsk_3-;bFROxtMwRjWB4:M{RPM|",
+    "width": 2800,
+    "height": 3016
   },
   "/projects/intro-to-arduino-workshop/IMG_20170223_180839.jpg": {
     "blurHash": "UIM?n|-3]g9H~U$xE-M~?vEO58o$TzNf?b$x",

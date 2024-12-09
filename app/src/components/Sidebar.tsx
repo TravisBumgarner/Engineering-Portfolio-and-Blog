@@ -6,6 +6,7 @@ import Header from 'SharedComponents/Header'
 import InternalLink from 'SharedComponents/InternalLink'
 import Text from 'SharedComponents/Text'
 import { FOREGROUND_COLOR } from 'Theme'
+import ROUTES from 'SharedComponents/routes'
 
 const List = styled.ul`
   margin: 1rem 0;
@@ -31,16 +32,22 @@ const Sidebar = () => {
       <Header size="small">Here</Header>
       <List>
         <ListItem>
-          <InternalLink to="/">Snapshots</InternalLink>
+          <InternalLink to={ROUTES.SNAPSHOTS.path}>
+            {ROUTES.SNAPSHOTS.title}
+          </InternalLink>
         </ListItem>
         <ListItem>
-          <InternalLink to="/artifacts">Artifacts</InternalLink>
+          <InternalLink to={ROUTES.CREATIONS.path}>
+            {ROUTES.CREATIONS.title}
+          </InternalLink>
         </ListItem>
         <ListItem>
-          <InternalLink to="/blog">Blog Posts</InternalLink>
+          <InternalLink to={ROUTES.BLOG.path}>{ROUTES.BLOG.title}</InternalLink>
         </ListItem>
         <ListItem>
-          <InternalLink to="/contact">Contact</InternalLink>
+          <InternalLink to={ROUTES.CONTACT.path}>
+            {ROUTES.CONTACT.title}
+          </InternalLink>
         </ListItem>
       </List>
       <Header size="small">Elsewhere</Header>
