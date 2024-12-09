@@ -10,6 +10,7 @@ import MasonryGrid from 'SharedComponents/MasonryGrid'
 import Text from 'SharedComponents/Text'
 import { SPACING } from 'Theme'
 import ProjectImage from './ProjectImage'
+import ROUTES from 'SharedComponents/routes'
 
 const MetadataWrapper = styled.div`
   margin-bottom: ${SPACING.MEDIUM}px;
@@ -59,7 +60,7 @@ const Details = ({
     <DetailsWrapper>
       <MetadataWrapper>
         <Header size="large">
-          <InternalLink to="/artifacts">Artifacts://</InternalLink> {title}
+          <InternalLink to={ROUTES.CREATIONS.path}>{ROUTES.CREATIONS.title}://</InternalLink> {title}
         </Header>
         <Time>
           {new Date(`${lastMeaningfulUpdate}-05`).toLocaleString('default', {

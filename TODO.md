@@ -12,10 +12,11 @@
 - [ ] ~~Ideas Down Figma~~
 - [x] Audit Snapshpts
 - [ ] typography needs a rework. new font?
-- [ ] fefactor content to folder
+- [ ] refactor content to folder
 - [ ] Perf improvements
 - [x] Sunset SSP with redirect to .dev
 - [ ] Make sure SSP isn't continuing to throw cert error.
 - [ ] Accessiblility improvements
+- [ ] Can we delete the multiple link types
 - [ ] Post to linkedin
 
