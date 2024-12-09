@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 
-import projects from 'Projects'
+import projects from 'content/projects'
 import MasonryGrid from 'SharedComponents/MasonryGrid'
 import MasonryImage from 'SharedComponents/MasonryImage'
 import ROUTES from 'SharedComponents/routes'

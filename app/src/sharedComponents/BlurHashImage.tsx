@@ -1,8 +1,10 @@
 import { useInView } from 'framer-motion'
 import React, { useCallback, useMemo, useRef, useState } from 'react'
 import styled from 'styled-components'
-import { blurHashLookup } from '../blurHashLookup'
+import blurhashes from 'content/blurhashes/index.json'
 import useBlurhash from '../hooks/useBlurHash'
+import { BlurHash } from '../sharedTypes/index'
+
 
 interface Props {
   src: string
@@ -12,7 +14,7 @@ const getBlurHash = (src: string) => {
   // This works because __STATIC__ always includes a public in the url.
   const relativePath = src.split('/public')[1]
 
-  const result = blurHashLookup[relativePath as keyof typeof blurHashLookup]
+  const result = blurhashes[relativePath] as BlurHash
 
   if (!result) {
     // Shame me for this code!

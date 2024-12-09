@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
-import posts, { postMappings } from 'Posts'
+import posts, { postMappings } from 'content/posts'
 import Header, {
   LargeHeaderStyles,
   MediumHeaderStyles,

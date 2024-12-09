@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
-import projects, { Project } from 'Projects'
+import projects, { Project } from 'content/projects'
 import ExternalLink from 'SharedComponents/ExternalLink'
 import Header from 'SharedComponents/Header'
 import InternalLink from 'SharedComponents/InternalLink'
