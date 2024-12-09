@@ -13,6 +13,7 @@
 - [x] Audit Snapshpts
 - [ ] typography needs a rework. new font?
 - [ ] Perf improvements
-- [ ] Sunset SSP with redirect to .dev
+- [x] Sunset SSP with redirect to .dev
+- [ ] Make sure SSP isn't continuing to throw cert error.
 - [ ] Accessiblility improvements
 - [ ] Post to linkedin

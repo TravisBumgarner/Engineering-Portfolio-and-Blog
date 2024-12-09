@@ -5,7 +5,7 @@ import { GlobalStyle, media, SPACING } from 'Theme'
 
 import Error from 'SharedComponents/Error'
 import Loading from 'SharedComponents/Loading'
-import { ScrollToTop, Sidebar, SiteTitle } from './components'
+import { ROUTES, ScrollToTop, Sidebar, SiteTitle } from './components'
 
 const Blog = lazy(() => import('./pages/Blog'))
 const Contact = lazy(() => import('./pages/Contact'))
@@ -67,12 +67,12 @@ const App = () => {
         <Sidebar />
         <Suspense fallback={<Loading />}>
           <Routes>
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/artifacts" element={<Portfolio />} />
-            <Route path="/artifact/:id" element={<Project />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/" element={<Snapshots />} />
-            <Route path="/post/:id" element={<Post />} />
+            <Route path={ROUTES.CONTACT.path} element={<Contact />} />
+            <Route path={ROUTES.CREATIONS.path} element={<Portfolio />} />
+            <Route path={`${ROUTES.CREATIONS.path}/:id`} element={<Project />} />
+            <Route path={ROUTES.BLOG.path} element={<Blog />} />
+            <Route path={ROUTES.SNAPSHOTS.path} element={<Snapshots />} />
+            <Route path={`${ROUTES.BLOG.path}/:id`} element={<Post />} />
             <Route path="/error" element={<Error />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
