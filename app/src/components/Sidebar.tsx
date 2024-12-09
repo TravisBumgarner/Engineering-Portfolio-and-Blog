@@ -1,28 +1,51 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import ExternalLink from 'SharedComponents/ExternalLink'
 import Header from 'SharedComponents/Header'
 import InternalLink from 'SharedComponents/InternalLink'
 import Text from 'SharedComponents/Text'
-import { FOREGROUND_COLOR } from 'Theme'
+import { FOREGROUND_COLOR, PRIMARY_COLOR } from 'Theme'
 import ROUTES from 'SharedComponents/routes'
+import { useLocation } from 'react-router-dom'
 
 const List = styled.ul`
   margin: 1rem 0;
 `
 
-const ListItem = styled.li`
+const ListItem = styled.li<{ $active?: boolean }>`
   > a {
+    transition: color 0.3s;
     display: inline-block;
     text-decoration: none;
     color: ${FOREGROUND_COLOR};
   }
+
+  ${({ $active }) => $active && css`
+    > a {
+      color: ${PRIMARY_COLOR};
+      font-weight: 400;
+    }
+  `}
 `
 
 const SidebarWrapper = styled.div``
 
 const Sidebar = () => {
+  const {pathname} = useLocation()
+
+  const isActive = (route: string, exact?: boolean) => {
+    if (exact) {
+      return pathname === route
+    }
+    return pathname.includes(route)
+  }
+
+  const isSnapshotsActive = isActive(ROUTES.SNAPSHOTS.path, true)
+  const isCreationsActive = isActive(ROUTES.CREATIONS.path)
+  const isBlogActive = isActive(ROUTES.BLOG.path)
+  const isContactActive = isActive(ROUTES.CONTACT.path)
+
   return (
     <SidebarWrapper>
       <Text size="small">
@@ -31,20 +54,20 @@ const Sidebar = () => {
       </Text>
       <Header size="small">Here</Header>
       <List>
-        <ListItem>
+        <ListItem $active={isSnapshotsActive}>
           <InternalLink to={ROUTES.SNAPSHOTS.path}>
             {ROUTES.SNAPSHOTS.title}
           </InternalLink>
         </ListItem>
-        <ListItem>
+        <ListItem $active={isCreationsActive}>
           <InternalLink to={ROUTES.CREATIONS.path}>
             {ROUTES.CREATIONS.title}
           </InternalLink>
         </ListItem>
-        <ListItem>
+        <ListItem $active={isBlogActive}>
           <InternalLink to={ROUTES.BLOG.path}>{ROUTES.BLOG.title}</InternalLink>
         </ListItem>
-        <ListItem>
+        <ListItem $active={isContactActive}  >
           <InternalLink to={ROUTES.CONTACT.path}>
             {ROUTES.CONTACT.title}
           </InternalLink>
