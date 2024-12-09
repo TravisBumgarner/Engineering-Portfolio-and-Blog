@@ -72,8 +72,8 @@ module.exports = {
         new webpack.DefinePlugin({ __STATIC__ }),
         new webpack.DefinePlugin({ __IS_PRODUCTION__ }),
         new HtmlWebpackPlugin({
-            template: './static/index.template.ejs',
-            favicon: "./static/favicon.png",
+            template: './src/static/index.template.ejs',
+            favicon: "./src/static/favicon.png",
             inject: 'body',
         })
     ],
