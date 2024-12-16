@@ -1,8 +1,11 @@
+"use client"
+
 import blurhashes from '@/app/_content/blurhashes/index.json'
 import snapshots from '@/app/_content/snapshots/index.json'
 import BlurHashImage from '@/app/_sharedComponents/BlurHashImage'
 import { FOREGROUND_COLOR, media, SPACING } from '@/lib/theme'
 import { BlurHash } from '@/lib/types'
+import { shuffle } from '@/lib/utilities'
 import { useInView } from 'framer-motion'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
@@ -10,28 +13,6 @@ import styled, { css } from 'styled-components'
 const PHOTO_SPACING = SPACING.MEDIUM
 const PHOTO_SPACING_MOBILE = SPACING.XSMALL
 
-function random(seed: number) {
-  var x = Math.sin(seed++) * 10000
-  return x - Math.floor(x)
-}
-
-function shuffle<T>(array: T[], seed: number): T[] {
-  var m = array.length,
-    t,
-    i
-    
-  const arrayCopy = [...array] // Create copy to avoid mutating original
-
-  while (m) {
-    i = Math.floor(random(seed) * m--)
-    t = arrayCopy[m]
-    arrayCopy[m] = arrayCopy[i]
-    arrayCopy[i] = t
-    ++seed
-  }
-
-  return arrayCopy
-}
 
 const Cell = ({ src }: { src: string }) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -47,7 +28,7 @@ const Cell = ({ src }: { src: string }) => {
       $isJustInView={isJustInView}
       $isHalfView={isHalfView}
     >
-      <BlurHashImage src={`${process.env.NEXT_PUBLIC_STATIC_URL}${src}`} />
+      <BlurHashImage src={`${process.env.NEXT_PUBLIC_STATIC_PATH}${src}`} />
     </StyledCell>
   )
 }
@@ -110,7 +91,6 @@ const Column = ({ photos, columnCount }: { photos: string[]; columnCount: number
 
 const PhotoMasonry = () => {
   const [totalColumns, setTotalColumns] = useState<number>(2)
-  const [seed] = useState(() => new Date().getDate())
 
   useEffect(() => {
     const handleResize = () => {
@@ -135,7 +115,7 @@ const PhotoMasonry = () => {
     const output = Array.from({ length: totalColumns }, () => [] as string[])
 
     // Present random items each day.
-    shuffle(Object.values(snapshots), seed).forEach(({ src }) => {
+    shuffle(Object.values(snapshots)).forEach(({ src }) => {
       // All photos will have a width of 1 unit.
       // Calculate height based on aspect ratio and we'll use that to determine
       // which column to put it in.
@@ -155,7 +135,7 @@ const PhotoMasonry = () => {
     })
 
     return output
-  }, [totalColumns, seed])
+  }, [totalColumns])
 
   return (
     <Table>

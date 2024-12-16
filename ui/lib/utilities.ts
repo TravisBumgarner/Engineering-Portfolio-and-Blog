@@ -55,3 +55,26 @@ export const makeNewSiteTitle = () => {
     return `travis_bumgarner_${RANDOM_FILE_SUFIX}${RANDOM_FILE_SUFFIX_2}.${RANDOM_FILE_TYPE}`
   }
   
+
+function random(seed: number) {
+  var x = Math.sin(seed++) * 10000
+  return x - Math.floor(x)
+}
+
+export function shuffle(array: any[]) {
+  let seed = new Date().getDate()
+
+  var m = array.length,
+    t,
+    i
+
+  while (m) {
+    i = Math.floor(random(seed) * m--)
+    t = array[m]
+    array[m] = array[i]
+    array[i] = t
+    ++seed
+  }
+
+  return array
+}
