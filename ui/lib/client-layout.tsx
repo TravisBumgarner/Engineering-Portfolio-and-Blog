@@ -1,21 +1,21 @@
 "use client";
 
 import { ReactNode } from "react";
-import { ThemeProvider, type DefaultTheme } from "styled-components";
-import GlobalStyle from "@/app/_components/globalstyles";
+import { GlobalReset, GlobalStyle } from "./theme";
 
-const theme: DefaultTheme = {
-  colors: {
-    primary: "#111",
-    secondary: "#0070f3",
-  },
-};
+// const theme: DefaultTheme = {
+//   colors: {
+//     primary: "#111",
+//     secondary: "#0070f3",
+//   },
+// };
 
 export default function ClientLayout({ children }: { children: ReactNode }) {
   return (
-    <ThemeProvider theme={theme}>
+    <>
+      <GlobalReset />
       <GlobalStyle />
       {children}
-    </ThemeProvider>
+    </>
   );
 }

@@ -1,3 +1,5 @@
+'use client'
+
 import ExternalLink from '@/app/_sharedComponents/ExternalLink'
 import Header from '@/app/_sharedComponents/Header'
 import InternalLink from '@/app/_sharedComponents/InternalLink'

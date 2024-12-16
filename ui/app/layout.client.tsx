@@ -1,5 +1,7 @@
-import { media, SPACING } from '@/lib/theme'
-import styled from 'styled-components'
+"use client"
+
+import { SPACING, media } from "@/lib/theme";
+import styled from "styled-components";
 
 export const BodyWrapper = styled.div`
   padding-top: ${SPACING.XXLARGE}px;
