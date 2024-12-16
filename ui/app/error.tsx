@@ -14,6 +14,7 @@ const Error = () => {
     <Wrapper>
       <Header size="large">Whoops!</Header>
       <Text>Sorry, there was an error, please refresh the page.</Text>
+      <Button onClick={handleRefresh}>Refresh</Button>
     </Wrapper>
   )
 }
