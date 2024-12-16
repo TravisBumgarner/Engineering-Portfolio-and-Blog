@@ -1,0 +1,8 @@
+- [ ] Error Boundary
+- [ ] Not Found
+- [] Link components
+- [ ] Ensure analytics works
+- [ ] Ensure Sentry Works
+- [ ] Read about optimizing
+- [ ] What's the point of app vs lib?
+- [] What to do with weak.tsx?
