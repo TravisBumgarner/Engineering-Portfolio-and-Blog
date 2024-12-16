@@ -8,3 +8,4 @@
 - [] What to do with weak.tsx?
 - [] Why is error.tsx forced to be use client.
 - [ ] Audit gitignore and PR for unnecessary tracked files
+- [ ] Figure out site title.
