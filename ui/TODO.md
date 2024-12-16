@@ -6,3 +6,4 @@
 - [ ] Read about optimizing
 - [ ] What's the point of app vs lib?
 - [] What to do with weak.tsx?
+- [] Why is error.tsx forced to be use client.
