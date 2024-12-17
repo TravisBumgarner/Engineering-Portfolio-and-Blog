@@ -1,37 +1,19 @@
 'use client'
 
-import blurhashes from '@/content/blurhashes/index.json'
 import useBlurhash from '@/lib/hooks/useBlurHash'
-import { BlurHash } from '@/lib/types'
 import { useInView } from 'framer-motion'
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import styled from 'styled-components'
 
 
 interface Props {
   src: string
+  width: number
+  height: number
+  blurHash: string
 }
 
-const getBlurHash = (src: string) => {
-  // This works because __STATIC__ always includes a public in the url.
-  // const relativePath = src.split('/public')[1]
-
-  const result = blurhashes[src as keyof typeof blurhashes] as BlurHash
-
-  if (!result) {
-    // Shame me for this code!
-    console.error('missing blurhash', src)
-    return {
-      blurHash: '',
-      width: 0,
-      height: 0
-    }
-  }
-
-  return result
-}
-
-const BlurHashImage = ({ src }: Props) => {
+const BlurHashImage = ({ src, width, height, blurHash }: Props) => {
   const imgRef = useRef<HTMLImageElement>(null)
   const [imgLoaded, setImgLoaded] = useState(false)
   const startLoadingBlurHash = useInView(imgRef, {
@@ -43,10 +25,6 @@ const BlurHashImage = ({ src }: Props) => {
     margin: '0px 0px 100px 0px',
     once: true
   })
-
-  const { width, height, blurHash } = useMemo(() => {
-    return getBlurHash(src)
-  }, [src])
 
   const blurUrl = useBlurhash(
     !imgLoaded && startLoadingBlurHash ? blurHash : null,

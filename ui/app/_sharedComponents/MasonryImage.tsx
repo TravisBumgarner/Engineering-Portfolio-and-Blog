@@ -1,6 +1,6 @@
 
 import BlurHashImage from './BlurHashImage'
-import { SnapshotWrapper, StyledLink } from './MasonryImage.client'
+import { SnapshotWrapper, StyledLink, StyledText } from './MasonryImage.client'
 
 const MasonryImage = ({
   src,
@@ -13,11 +13,12 @@ const MasonryImage = ({
   text?: string
   date?: string
 }) => {
+  
   if (!link) {
     return (
       <SnapshotWrapper>
         <BlurHashImage src={src} />
-        <p>{text}</p>
+        <StyledText>{text}</StyledText>
       </SnapshotWrapper>
     )
   }
@@ -27,14 +28,13 @@ const MasonryImage = ({
       <SnapshotWrapper $isLink>
         <BlurHashImage src={src} />
         <div>
-          <p>{text}</p>
+          <StyledText>{text}</StyledText>
           {date && <time>{date}</time>}
         </div>
       </SnapshotWrapper>
     </StyledLink>
   )
 }
-
 
 
 export default MasonryImage

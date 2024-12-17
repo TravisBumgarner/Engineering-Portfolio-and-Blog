@@ -1,7 +1,6 @@
 - [x] Error Boundary
 - [x] Not Found
 - [x] Link components
-- [ ] Ensure analytics works
 - [x] Ensure Sentry Works
 - [x] What to do with weak.tsx?
 - [x] Figure out site title.
@@ -11,18 +10,20 @@
 - [x] favicon
 - [x] Why is error.tsx forced to be use client.
 - [x] What's the point of app vs lib?
-- [ ] Blog styling. 
-- [ ] Read about optimizing
+- [x] Can we get rid of header and text components
+- [x] Blog styling. 
+- [ ] Ensure analytics works
+- [ ] Fix the global P tag messing things up
+- [ ] Performance
+    - [ ] Read documentation (Optimizations, etc.)
+    - [ ] Better way to load MDX files?
+    - [ ] Generate blurhashes server side?
+    - [x] Audit uses of `useMemo`, `useCallback`, `useEffect`, etc.
+        - [x] useEffect
+        - [x] useMemo
+    - [ ] NextJS Image Component
 - [ ] Audit gitignore and PR for unnecessary tracked files
-- [ ] better handling of mdx files instead of lazy load?
-- [ ] Audit uses of useMemo, useState, etc.
-- [ ] Learn about perf improvements of nextjs.
-- [ ] Next Image Component
 - [ ] Linkedin post
 - [ ] Look at deploying images with cloudrun??
 - [ ] getting correct .env to prod. (or does it matter if I resolve the previous bullet point)
-
-- [ ] Can we get rid of header and text components
-
-- [ ] Performance 
 - [ ] Add styled components linting

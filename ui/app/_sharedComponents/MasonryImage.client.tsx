@@ -20,6 +20,11 @@ export const StyledLink = styled(Link)`
   }
 `
 
+export const StyledText = styled.p`
+  margin: 0;
+  padding: 0;
+`
+
 export const SnapshotWrapper = styled.div<{ $isLink?: boolean }>`
   box-sizing: border-box;
   background-color: ${FOREGROUND_COLOR};
