@@ -1,9 +1,7 @@
-import Header from '@/app/_sharedComponents/Header'
 import Link from '@/app/_sharedComponents/Link'
 import posts, { postMappings } from '@/content/posts'
 import ROUTES from '@/lib/routes'
 import { notFound } from 'next/navigation'
-import './page.css'
 
 const loadPost = async (fileName: keyof typeof postMappings) => {
   const postModule = await postMappings[fileName]()
@@ -21,9 +19,9 @@ const Post = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <div>
-      <Header size="large">
+      <h1>
         <Link to={ROUTES.BLOG.path}>Blog://</Link> {post.title}
-      </Header>
+      </h1>
       <time>{new Date(post.date).toDateString()}</time>
       <Component />
     </div>

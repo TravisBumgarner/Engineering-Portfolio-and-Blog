@@ -1,8 +1,6 @@
 'use client'
 
-import Header from '@/app/_sharedComponents/Header'
 import Link from '@/app/_sharedComponents/Link'
-import Text from '@/app/_sharedComponents/Text'
 import ROUTES from '@/lib/routes'
 import { FOREGROUND_COLOR, PRIMARY_COLOR } from '@/lib/theme'
 import { usePathname } from 'next/navigation'
@@ -10,6 +8,7 @@ import styled, { css } from 'styled-components'
 
 const List = styled.ul`
   margin: 1rem 0;
+  padding: 0;
 `
 
 const ListItem = styled.li<{ $active?: boolean }>`
@@ -47,11 +46,11 @@ const SidebarClient = () => {
 
   return (
     <SidebarWrapper>
-      <Text>
+      <p>
         I am a lifelong learner, creator, explorer, and tinkerer. This is a
         collection of my experiences.
-      </Text>
-      <Header size="small">Here</Header>
+      </p>
+      <h3>Here</h3>
       <List>
         <ListItem $active={isSnapshotsActive}>
           <Link to={ROUTES.SNAPSHOTS.path}>
@@ -72,7 +71,7 @@ const SidebarClient = () => {
           </Link>
         </ListItem>
       </List>
-      <Header size="small">Elsewhere</Header>
+      <h3>Elsewhere</h3>
       <List>
         <ListItem>
           <Link target="_blank" to="https://storage.googleapis.com/eng42-asdsad/public/travis_bumgarner_2024_12_05_resume.pdf">

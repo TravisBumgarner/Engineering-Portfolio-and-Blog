@@ -1,8 +1,6 @@
 "use client"
 
 import { Button, Wrapper } from '@/app/_not-found.client'
-import Header from '@/app/_sharedComponents/Header'
-import Text from '@/app/_sharedComponents/Text'
 import { useCallback } from 'react'
 
 const Error = () => {
@@ -12,8 +10,8 @@ const Error = () => {
 
   return (
     <Wrapper>
-      <Header size="large">Whoops!</Header>
-      <Text>Sorry, the page you were looking for was not found.</Text>
+      <h1>Whoops!</h1>
+      <p>Sorry, the page you were looking for was not found.</p>
       <Button onClick={handleRefresh}>Return home</Button>
     </Wrapper>
   )

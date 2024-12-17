@@ -1,8 +1,6 @@
 import BlurHashImage from '@/app/_sharedComponents/BlurHashImage'
-import Header from '@/app/_sharedComponents/Header'
 import Link from '@/app/_sharedComponents/Link'
 import MasonryGrid from '@/app/_sharedComponents/MasonryGrid'
-import Text from '@/app/_sharedComponents/Text'
 import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
 import { notFound } from 'next/navigation'
@@ -62,17 +60,17 @@ const Creation = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   const Description = project.description
     .split('\n')
-    .map((paragraph, index) => <Text key={index}>{paragraph}</Text>)
+    .map((paragraph, index) => <p key={index}>{paragraph}</p>)
 
   return (
     <DetailsWrapper>
       <MetadataWrapper>
-        <Header size="large">
+        <h1>
           <Link to={ROUTES.CREATIONS.path}>
             {ROUTES.CREATIONS.title}://
           </Link>{' '}
           {project.title}
-        </Header>
+        </h1>
         <Time>
           {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString(
             'default',

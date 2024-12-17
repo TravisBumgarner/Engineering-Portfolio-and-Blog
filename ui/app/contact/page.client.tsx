@@ -1,6 +1,5 @@
 'use client'
 
-import Header from '@/app/_sharedComponents/Header'
 import { submitContactForm } from '@/lib/firebase'
 import { BORDER_COLOR, CSSHover } from '@/lib/theme'
 import React, { useCallback, useMemo, useState } from 'react'
@@ -109,7 +108,7 @@ const Contact = () => {
 
   return (
     <Wrapper>
-      <Header size="large">Contact</Header>
+      <h1>Contact</h1>
       <Form onSubmit={handleSubmit}>
         <Input
           placeholder="Name (Optional)"

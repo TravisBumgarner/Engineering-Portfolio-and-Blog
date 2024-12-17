@@ -8,9 +8,11 @@
 - [x] Handle not found of sdjasoidj id for blog and portfolio
 - [x] Figure out .envs
 - [x] Remove externallink component
+- [x] favicon
+- [x] Why is error.tsx forced to be use client.
+- [x] What's the point of app vs lib?
+- [ ] Blog styling. 
 - [ ] Read about optimizing
-- [ ] What's the point of app vs lib?
-- [ ] Why is error.tsx forced to be use client.
 - [ ] Audit gitignore and PR for unnecessary tracked files
 - [ ] better handling of mdx files instead of lazy load?
 - [ ] Audit uses of useMemo, useState, etc.
@@ -19,4 +21,7 @@
 - [ ] Linkedin post
 - [ ] Look at deploying images with cloudrun??
 - [ ] getting correct .env to prod. (or does it matter if I resolve the previous bullet point)
-- [ ] favicon
+
+- [ ] Can we get rid of header and text components
+
+- [ ] Performance 
