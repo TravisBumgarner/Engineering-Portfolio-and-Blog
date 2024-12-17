@@ -13,6 +13,7 @@ import {
   SnapshotWrapper,
   Time
 } from './_page.client'
+import { notFound } from 'next/navigation'
 
 const ProjectImage = ({
   src,
@@ -34,6 +35,9 @@ const Creation = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params
   const projectIndex = projects.findIndex(project => project.id == id)
   const project = projects[projectIndex]
+  if(!project){
+    return notFound()
+  }
 
   const Links = project.links.map(l => {
     return (

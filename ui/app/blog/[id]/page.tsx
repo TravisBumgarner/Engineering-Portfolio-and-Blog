@@ -2,6 +2,7 @@ import posts, { postMappings } from '@/app/_content/posts'
 import Header from '@/app/_sharedComponents/Header'
 import Link from '@/app/_sharedComponents/Link'
 import ROUTES from '@/lib/routes'
+import { notFound } from 'next/navigation'
 import './page.css'
 
 const loadPost = async (fileName: keyof typeof postMappings) => {
@@ -12,7 +13,11 @@ const loadPost = async (fileName: keyof typeof postMappings) => {
 const Post = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params
   const post = posts[id]
+  if(!post){
+    return notFound()
+  }
   const Component = await loadPost(post.postMapping as keyof typeof postMappings)
+
 
   return (
     <div>

@@ -2,13 +2,13 @@
 - [x] Not Found
 - [x] Link components
 - [ ] Ensure analytics works
-- [ ] Ensure Sentry Works
+- [x] Ensure Sentry Works
 - [ ] Read about optimizing
 - [ ] What's the point of app vs lib?
-- [] What to do with weak.tsx?
+- [x] What to do with weak.tsx?
 - [] Why is error.tsx forced to be use client.
 - [ ] Audit gitignore and PR for unnecessary tracked files
-- [ ] Figure out site title.
+- [x] Figure out site title.
 - [ ] better handling of mdx files instead of lazy load?
 - [ ] Handle not found of sdjasoidj id for blog and portfolio
 - [ ] Audit uses of useMemo, useState, etc.
