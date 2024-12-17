@@ -1,5 +1,6 @@
 import Link from '@/app/_sharedComponents/Link'
 import posts, { postMappings } from '@/content/posts'
+import { MAX_CONTENT_WIDTH } from '@/lib/consts'
 import ROUTES from '@/lib/routes'
 import { notFound } from 'next/navigation'
 
@@ -18,7 +19,7 @@ const Post = async ({ params }: { params: Promise<{ id: string }> }) => {
 
 
   return (
-    <div>
+    <div style={{maxWidth: MAX_CONTENT_WIDTH, margin: '0px auto'}}>
       <h1>
         <Link to={ROUTES.BLOG.path}>Blog://</Link> {post.title}
       </h1>

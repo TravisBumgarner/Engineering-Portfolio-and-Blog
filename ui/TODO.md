@@ -25,3 +25,4 @@
 - [ ] Can we get rid of header and text components
 
 - [ ] Performance 
+- [ ] Add styled components linting

@@ -8,10 +8,13 @@ import styled, { css } from 'styled-components'
 
 const List = styled.ul`
   margin: 1rem 0;
+  list-style: none;
   padding: 0;
 `
 
 const ListItem = styled.li<{ $active?: boolean }>`
+  margin: 0;
+  
   > a {
     transition: color 0.3s;
     display: inline-block;

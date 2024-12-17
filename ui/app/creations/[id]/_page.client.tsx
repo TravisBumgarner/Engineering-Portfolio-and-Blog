@@ -3,6 +3,7 @@
 import styled from 'styled-components'
 
 import { BACKGROUND_COLOR, FOREGROUND_COLOR, SPACING } from '@/lib/theme'
+import { MAX_CONTENT_WIDTH } from '@/lib/consts'
 
 export const MetadataWrapper = styled.div`
   margin-bottom: ${SPACING.MEDIUM}px;
@@ -24,7 +25,7 @@ export const Time = styled.time`
 `
 
 export const DetailsWrapper = styled.div`
-  max-width: 800px;
+  max-width: ${MAX_CONTENT_WIDTH};
   margin: 0 auto;
 `
 

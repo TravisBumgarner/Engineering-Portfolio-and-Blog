@@ -19,7 +19,6 @@ export const SPACING = {
   XXLARGE: 48
 } as const
 
-
 export const CSSHover = css`
   transition: color 0.3s;
   transition: background-color 0.3s;
@@ -217,16 +216,23 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration-thickness: from-font;
   }
 
-  li,
   p {
-    display: block;
+    margin: ${SPACING.MEDIUM}px 0;
+    font-weight: 300;
+  }
+
+  li {
     margin: ${SPACING.SMALL}px 0;
     font-weight: 300;
   }
 
+  ul, ol {
+    margin-bottom: ${SPACING.MEDIUM}px;
+    padding-left: ${SPACING.MEDIUM}px;
+  }
+
   ul {
     list-style: circle;
-    margin-bottom: 1rem;
   }
   
   ol {
