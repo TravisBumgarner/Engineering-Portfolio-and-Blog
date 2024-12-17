@@ -15,4 +15,5 @@
 - [ ] Figure out .envs
 - [ ] Learn about perf improvements of nextjs.
 - [ ] Next Image Component
+- [x] Remove externallink component
 - [ ] Linkedin post

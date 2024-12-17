@@ -31,6 +31,6 @@
     "**/*.tsx",
     "styled.d.ts",
     ".next/types/**/*.ts"
-  ],
+, "app/_error.client.tsx"  ],
   "exclude": ["node_modules"]
 }
