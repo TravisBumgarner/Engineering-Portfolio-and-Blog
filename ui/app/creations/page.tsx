@@ -1,6 +1,6 @@
-import projects from '@/app/_content/projects'
 import MasonryGrid from '@/app/_sharedComponents/MasonryGrid'
 import MasonryImage from '@/app/_sharedComponents/MasonryImage'
+import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
 
 const Portfolio = () => {

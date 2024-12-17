@@ -1,8 +1,8 @@
 "use client"
 
-import blurhashes from '@/app/_content/blurhashes/index.json'
-import snapshots from '@/app/_content/snapshots/index.json'
 import BlurHashImage from '@/app/_sharedComponents/BlurHashImage'
+import blurhashes from '@/content/blurhashes/index.json'
+import snapshots from '@/content/snapshots/index.json'
 import { FOREGROUND_COLOR, media, SPACING } from '@/lib/theme'
 import { BlurHash } from '@/lib/types'
 import { shuffle } from '@/lib/utilities'

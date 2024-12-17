@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 
-import posts from '@/app/_content/posts'
 import MasonryGrid from '@/app/_sharedComponents/MasonryGrid'
 import MasonryImage from '@/app/_sharedComponents/MasonryImage'
+import posts from '@/content/posts'
 import ROUTES from '@/lib/routes'
 
 const Blog = () => {

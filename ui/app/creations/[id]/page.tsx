@@ -1,10 +1,11 @@
-import projects from '@/app/_content/projects'
 import BlurHashImage from '@/app/_sharedComponents/BlurHashImage'
 import Header from '@/app/_sharedComponents/Header'
 import Link from '@/app/_sharedComponents/Link'
 import MasonryGrid from '@/app/_sharedComponents/MasonryGrid'
 import Text from '@/app/_sharedComponents/Text'
+import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
+import { notFound } from 'next/navigation'
 import {
   DescriptionWrapper,
   DetailsWrapper,
@@ -13,7 +14,6 @@ import {
   SnapshotWrapper,
   Time
 } from './_page.client'
-import { notFound } from 'next/navigation'
 
 const ProjectImage = ({
   src,

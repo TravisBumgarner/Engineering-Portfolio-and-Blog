@@ -1,7 +1,7 @@
 'use client'
 
-import blurhashes from '@/app/_content/blurhashes/index.json'
-import useBlurhash from '@/app/_hooks/useBlurHash'
+import blurhashes from '@/content/blurhashes/index.json'
+import useBlurhash from '@/lib/hooks/useBlurHash'
 import { BlurHash } from '@/lib/types'
 import { useInView } from 'framer-motion'
 import { useCallback, useMemo, useRef, useState } from 'react'
@@ -14,13 +14,13 @@ interface Props {
 
 const getBlurHash = (src: string) => {
   // This works because __STATIC__ always includes a public in the url.
-  const relativePath = src.split('/public')[1]
+  // const relativePath = src.split('/public')[1]
 
-  const result = blurhashes[relativePath as keyof typeof blurhashes] as BlurHash
+  const result = blurhashes[src as keyof typeof blurhashes] as BlurHash
 
   if (!result) {
     // Shame me for this code!
-    console.error('missing blurhash', relativePath)
+    console.error('missing blurhash', src)
     return {
       blurHash: '',
       width: 0,

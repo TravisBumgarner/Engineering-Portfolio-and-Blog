@@ -1,6 +1,6 @@
-import posts, { postMappings } from '@/app/_content/posts'
 import Header from '@/app/_sharedComponents/Header'
 import Link from '@/app/_sharedComponents/Link'
+import posts, { postMappings } from '@/content/posts'
 import ROUTES from '@/lib/routes'
 import { notFound } from 'next/navigation'
 import './page.css'

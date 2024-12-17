@@ -3,17 +3,19 @@
 - [x] Link components
 - [ ] Ensure analytics works
 - [x] Ensure Sentry Works
+- [x] What to do with weak.tsx?
+- [x] Figure out site title.
+- [x] Handle not found of sdjasoidj id for blog and portfolio
+- [x] Figure out .envs
+- [x] Remove externallink component
 - [ ] Read about optimizing
 - [ ] What's the point of app vs lib?
-- [x] What to do with weak.tsx?
-- [] Why is error.tsx forced to be use client.
+- [ ] Why is error.tsx forced to be use client.
 - [ ] Audit gitignore and PR for unnecessary tracked files
-- [x] Figure out site title.
 - [ ] better handling of mdx files instead of lazy load?
-- [ ] Handle not found of sdjasoidj id for blog and portfolio
 - [ ] Audit uses of useMemo, useState, etc.
-- [ ] Figure out .envs
 - [ ] Learn about perf improvements of nextjs.
 - [ ] Next Image Component
-- [x] Remove externallink component
 - [ ] Linkedin post
+- [ ] Look at deploying images with cloudrun??
+- [ ] getting correct .env to prod. (or does it matter if I resolve the previous bullet point)
