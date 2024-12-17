@@ -1,7 +1,28 @@
-"use client"
 
-import Test from './_hello.mdx'
+import posts, { postMappings } from '@/app/_content/posts'
+import Header from '@/app/_sharedComponents/Header'
+import InternalLink from '@/app/_sharedComponents/InternalLink'
+import ROUTES from '@/lib/routes'
 
-export default function Page() {
-  return <Test />
+const loadPost = async (fileName: keyof typeof postMappings) => {
+  const postModule = await postMappings[fileName]()
+  return postModule.default // Assuming the default export is the MDX component
 }
+
+const Post = async ({ params }: { params: { id: string } }) => {
+  const { id } = await params
+  const post = posts[id]
+  const Component = await loadPost(post.postMapping)
+
+  return (
+    <div>
+      <Header size="large">
+        <InternalLink to={ROUTES.BLOG.path}>Blog://</InternalLink> {post.title}
+      </Header>
+      <time>{new Date(post.date).toDateString()}</time>
+      <Component />
+    </div>
+  )
+}
+
+export default Post
