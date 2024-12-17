@@ -1,7 +1,9 @@
-"use client"
-
-import Test from './_hello.mdx'
+import MDXClient from './mdx-client'
  
 export default function Page() {
-  return <Test />
+  return (
+    <div className="prose max-w-3xl mx-auto px-4 py-8">
+      <MDXClient />
+    </div>
+  )
 }
