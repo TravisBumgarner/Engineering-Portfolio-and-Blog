@@ -1,6 +1,6 @@
 - [ ] Error Boundary
 - [ ] Not Found
-- [] Link components
+- [ ] Link components
 - [ ] Ensure analytics works
 - [ ] Ensure Sentry Works
 - [ ] Read about optimizing
@@ -12,3 +12,5 @@
 - [ ] better handling of mdx files instead of lazy load?
 - [ ] Handle not found of sdjasoidj id for blog and portfolio
 - [ ] Audit uses of useMemo, useState, etc.
+- [ ] Figure out .envs
+- [ ] Learn about perf improvements of nextjs.
