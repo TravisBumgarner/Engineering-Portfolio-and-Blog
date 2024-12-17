@@ -10,3 +10,5 @@
 - [ ] Audit gitignore and PR for unnecessary tracked files
 - [ ] Figure out site title.
 - [ ] better handling of mdx files instead of lazy load?
+- [ ] Handle not found of sdjasoidj id for blog and portfolio
+- [ ] Audit uses of useMemo, useState, etc.

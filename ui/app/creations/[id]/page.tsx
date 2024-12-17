@@ -32,7 +32,8 @@ const ProjectImage = ({
   }
   
 
-const Creation = ({ params: { id } }: { params: { id: string } }) => {
+const Creation = async ({ params }: { params: { id: string } }) => {
+    const { id } = await params
   const projectIndex = projects.findIndex(project => project.id == id)
   const project = projects[projectIndex]
 

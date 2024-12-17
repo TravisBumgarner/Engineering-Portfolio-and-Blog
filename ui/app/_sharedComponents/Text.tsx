@@ -1,8 +1,7 @@
 import { TextWrapper } from './Text.client'
-import { TextProps } from './Text.types'
 
-const Text = ({ children, size }: TextProps) => {
-  return <TextWrapper size={size}>{children}</TextWrapper>
+const Text = ({ children }: { children: React.ReactNode }) => {
+  return <TextWrapper>{children}</TextWrapper>
 }
 
 export default Text

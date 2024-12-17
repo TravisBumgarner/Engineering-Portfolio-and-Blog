@@ -48,7 +48,7 @@ const SidebarClient = () => {
 
   return (
     <SidebarWrapper>
-      <Text size="small">
+      <Text>
         I am a lifelong learner, creator, explorer, and tinkerer. This is a
         collection of my experiences.
       </Text>
