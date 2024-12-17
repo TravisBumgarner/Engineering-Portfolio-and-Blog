@@ -1,8 +1,8 @@
-
 import posts, { postMappings } from '@/app/_content/posts'
 import Header from '@/app/_sharedComponents/Header'
 import InternalLink from '@/app/_sharedComponents/InternalLink'
 import ROUTES from '@/lib/routes'
+import './page.css'
 
 const loadPost = async (fileName: keyof typeof postMappings) => {
   const postModule = await postMappings[fileName]()
