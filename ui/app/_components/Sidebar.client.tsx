@@ -1,8 +1,7 @@
 'use client'
 
-import ExternalLink from '@/app/_sharedComponents/ExternalLink'
 import Header from '@/app/_sharedComponents/Header'
-import InternalLink from '@/app/_sharedComponents/InternalLink'
+import Link from '@/app/_sharedComponents/Link'
 import Text from '@/app/_sharedComponents/Text'
 import ROUTES from '@/lib/routes'
 import { FOREGROUND_COLOR, PRIMARY_COLOR } from '@/lib/theme'
@@ -55,45 +54,45 @@ const SidebarClient = () => {
       <Header size="small">Here</Header>
       <List>
         <ListItem $active={isSnapshotsActive}>
-          <InternalLink to={ROUTES.SNAPSHOTS.path}>
+          <Link to={ROUTES.SNAPSHOTS.path}>
             {ROUTES.SNAPSHOTS.title}
-          </InternalLink>
+          </Link>
         </ListItem>
         <ListItem $active={isCreationsActive}>
-          <InternalLink to={ROUTES.CREATIONS.path}>
+          <Link to={ROUTES.CREATIONS.path}>
             {ROUTES.CREATIONS.title}
-          </InternalLink>
+          </Link>
         </ListItem>
         <ListItem $active={isBlogActive}>
-          <InternalLink to={ROUTES.BLOG.path}>{ROUTES.BLOG.title}</InternalLink>
+          <Link to={ROUTES.BLOG.path}>{ROUTES.BLOG.title}</Link>
         </ListItem>
         <ListItem $active={isContactActive}  >
-          <InternalLink to={ROUTES.CONTACT.path}>
+          <Link to={ROUTES.CONTACT.path}>
             {ROUTES.CONTACT.title}
-          </InternalLink>
+          </Link>
         </ListItem>
       </List>
       <Header size="small">Elsewhere</Header>
       <List>
         <ListItem>
-          <ExternalLink href="https://storage.googleapis.com/eng42-asdsad/public/travis_bumgarner_2024_12_05_resume.pdf">
+          <Link target="_blank" to="https://storage.googleapis.com/eng42-asdsad/public/travis_bumgarner_2024_12_05_resume.pdf">
             Resume
-          </ExternalLink>
+          </Link>
         </ListItem>
         <ListItem>
-          <ExternalLink href="https://www.linkedin.com/in/travisbumgarner/">
+          <Link target="_blank" to="https://www.linkedin.com/in/travisbumgarner/">
             LinkedIn
-          </ExternalLink>
+          </Link>
         </ListItem>
         <ListItem>
-          <ExternalLink href="https://github.com/travisBumgarner/">
+          <Link target="_blank" to="https://github.com/travisBumgarner/">
             Github
-          </ExternalLink>
+          </Link>
         </ListItem>
         <ListItem>
-          <ExternalLink href="https://travisbumgarner.photography">
+          <Link target="_blank" to="https://travisbumgarner.photography">
             Photography
-          </ExternalLink>
+          </Link>
         </ListItem>
       </List>
     </SidebarWrapper>

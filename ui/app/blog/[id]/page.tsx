@@ -1,6 +1,6 @@
 import posts, { postMappings } from '@/app/_content/posts'
 import Header from '@/app/_sharedComponents/Header'
-import InternalLink from '@/app/_sharedComponents/InternalLink'
+import Link from '@/app/_sharedComponents/Link'
 import ROUTES from '@/lib/routes'
 import './page.css'
 
@@ -17,7 +17,7 @@ const Post = async ({ params }: { params: Promise<{ id: string }> }) => {
   return (
     <div>
       <Header size="large">
-        <InternalLink to={ROUTES.BLOG.path}>Blog://</InternalLink> {post.title}
+        <Link to={ROUTES.BLOG.path}>Blog://</Link> {post.title}
       </Header>
       <time>{new Date(post.date).toDateString()}</time>
       <Component />

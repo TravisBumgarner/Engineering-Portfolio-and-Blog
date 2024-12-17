@@ -14,3 +14,5 @@
 - [ ] Audit uses of useMemo, useState, etc.
 - [ ] Figure out .envs
 - [ ] Learn about perf improvements of nextjs.
+- [ ] Next Image Component
+- [ ] Linkedin post

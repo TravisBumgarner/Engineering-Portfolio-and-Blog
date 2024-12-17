@@ -1,10 +1,10 @@
-import InternalLink from '@/app/_sharedComponents/InternalLink'
+import Link from '@/app/_sharedComponents/Link'
 import { SiteTitleWrapper } from './SiteTitle.client'
 
 const SiteTitle = ({title}: {title: string}) => {
   return (
     <SiteTitleWrapper>
-      <InternalLink to="/">{title}</InternalLink>
+      <Link to="/">{title}</Link>
     </SiteTitleWrapper>
   )
 }

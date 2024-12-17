@@ -1,8 +1,7 @@
 import projects from '@/app/_content/projects'
 import BlurHashImage from '@/app/_sharedComponents/BlurHashImage'
-import ExternalLink from '@/app/_sharedComponents/ExternalLink'
 import Header from '@/app/_sharedComponents/Header'
-import InternalLink from '@/app/_sharedComponents/InternalLink'
+import Link from '@/app/_sharedComponents/Link'
 import MasonryGrid from '@/app/_sharedComponents/MasonryGrid'
 import Text from '@/app/_sharedComponents/Text'
 import ROUTES from '@/lib/routes'
@@ -39,7 +38,7 @@ const Creation = async ({ params }: { params: Promise<{ id: string }> }) => {
   const Links = project.links.map(l => {
     return (
       <li key={l.label + l.src}>
-        <ExternalLink href={l.src}>{l.label}</ExternalLink>
+        <Link target="_blank" to={l.src}>{l.label}</Link>
       </li>
     )
   })
@@ -65,9 +64,9 @@ const Creation = async ({ params }: { params: Promise<{ id: string }> }) => {
     <DetailsWrapper>
       <MetadataWrapper>
         <Header size="large">
-          <InternalLink to={ROUTES.CREATIONS.path}>
+          <Link to={ROUTES.CREATIONS.path}>
             {ROUTES.CREATIONS.title}://
-          </InternalLink>{' '}
+          </Link>{' '}
           {project.title}
         </Header>
         <Time>
