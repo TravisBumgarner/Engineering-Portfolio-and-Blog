@@ -1,21 +1,7 @@
-"use client"
+import BlurHashImage from "./BlurHashImage"
 
-import styled from 'styled-components'
+const BlurHashImageClient = ({ src }: { src: string }) => {
+  return <BlurHashImage src={src} />
+}
 
-export const StyledImage = styled.img<{
-    $blurUrl: string | null
-    $width: number
-    $height: number
-  }>`
-    width: 100%;
-    aspect-ratio: ${props => props.$width / props.$height};
-    display: block;
-  
-    ${props =>
-      props.$blurUrl &&
-      `
-        background-image: url(${props.$blurUrl});
-        background-size: contain;
-        background-repeat-no-repeat;
-    `}
-  `
+export default BlurHashImageClient

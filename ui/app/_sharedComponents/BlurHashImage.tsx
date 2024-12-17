@@ -1,9 +1,12 @@
+'use client'
+
 import blurhashes from '@/app/_content/blurhashes/index.json'
 import useBlurhash from '@/app/_hooks/useBlurHash'
 import { BlurHash } from '@/lib/types'
-import { useInView } from 'motion/react'
+import { useInView } from 'framer-motion'
 import { useCallback, useMemo, useRef, useState } from 'react'
-import { StyledImage } from './BlurHashImage.client'
+import styled from 'styled-components'
+
 
 interface Props {
   src: string
@@ -13,7 +16,7 @@ const getBlurHash = (src: string) => {
   // This works because __STATIC__ always includes a public in the url.
   const relativePath = src.split('/public')[1]
 
-  const result = blurhashes[relativePath as keyof typeof blurhashes] as BlurHash
+  const result = blurhashes[relativePath] as BlurHash
 
   if (!result) {
     // Shame me for this code!
@@ -69,6 +72,22 @@ const BlurHashImage = ({ src }: Props) => {
   )
 }
 
+const StyledImage = styled.img<{
+  $blurUrl: string | null
+  $width: number
+  $height: number
+}>`
+  width: 100%;
+  aspect-ratio: ${props => props.$width / props.$height};
+  display: block;
 
+  ${props =>
+    props.$blurUrl &&
+    `
+      background-image: url(${props.$blurUrl});
+      background-size: contain;
+      background-repeat-no-repeat;
+  `}
+`
 
 export default BlurHashImage
