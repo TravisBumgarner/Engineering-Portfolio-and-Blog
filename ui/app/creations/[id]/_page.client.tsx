@@ -23,10 +23,6 @@ export const Time = styled.time`
   margin-bottom: ${SPACING.MEDIUM}px;
 `
 
-// export const SnapshotWrapper = styled.div`
-//   margin-bottom: ${SPACING.MEDIUM}px;
-// `
-
 export const DetailsWrapper = styled.div`
   max-width: 800px;
   margin: 0 auto;

@@ -16,7 +16,7 @@ const getBlurHash = (src: string) => {
   // This works because __STATIC__ always includes a public in the url.
   const relativePath = src.split('/public')[1]
 
-  const result = blurhashes[relativePath] as BlurHash
+  const result = blurhashes[relativePath as keyof typeof blurhashes] as BlurHash
 
   if (!result) {
     // Shame me for this code!

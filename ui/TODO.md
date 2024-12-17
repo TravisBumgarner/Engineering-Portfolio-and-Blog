@@ -9,3 +9,4 @@
 - [] Why is error.tsx forced to be use client.
 - [ ] Audit gitignore and PR for unnecessary tracked files
 - [ ] Figure out site title.
+- [ ] better handling of mdx files instead of lazy load?
