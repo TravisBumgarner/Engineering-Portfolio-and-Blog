@@ -22,6 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+      <link rel="icon" href="/favicon.png" />
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-67RM7JF6TY"

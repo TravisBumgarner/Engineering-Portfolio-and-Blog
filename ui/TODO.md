@@ -19,3 +19,4 @@
 - [ ] Linkedin post
 - [ ] Look at deploying images with cloudrun??
 - [ ] getting correct .env to prod. (or does it matter if I resolve the previous bullet point)
+- [ ] favicon
