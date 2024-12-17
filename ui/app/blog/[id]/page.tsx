@@ -9,10 +9,10 @@ const loadPost = async (fileName: keyof typeof postMappings) => {
   return postModule.default // Assuming the default export is the MDX component
 }
 
-const Post = async ({ params }: { params: { id: string } }) => {
+const Post = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params
   const post = posts[id]
-  const Component = await loadPost(post.postMapping)
+  const Component = await loadPost(post.postMapping as keyof typeof postMappings)
 
   return (
     <div>

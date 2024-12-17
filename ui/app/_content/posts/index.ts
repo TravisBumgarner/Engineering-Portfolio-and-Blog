@@ -1,11 +1,4 @@
-type BlogPost = {
-  title: string
-  date: string
-  draft: boolean
-  postMapping: keyof typeof postMappings
-  description: string
-  preview_image: string
-}
+import { BlogPost } from '@/lib/types'
 
 // src/posts/postMappings.ts
 export const postMappings = {
@@ -165,4 +158,3 @@ const posts: Record<string, BlogPost> = {
 }
 
 export default posts
-export { BlogPost }

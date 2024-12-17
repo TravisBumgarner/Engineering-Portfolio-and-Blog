@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy:dev": "gcloud config set project root-270023 && gcloud builds submit --tag gcr.io/root-270023/eng-42-next-js && gcloud run deploy eng-42-next-js --image gcr.io/root-270023/eng-42-next-js --platform managed --region us-east1"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

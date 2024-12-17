@@ -7,33 +7,32 @@ import MasonryGrid from '@/app/_sharedComponents/MasonryGrid'
 import Text from '@/app/_sharedComponents/Text'
 import ROUTES from '@/lib/routes'
 import {
-    DescriptionWrapper,
-    DetailsWrapper,
-    LinksWrapper,
-    MetadataWrapper,
-    SnapshotWrapper,
-    Time
+  DescriptionWrapper,
+  DetailsWrapper,
+  LinksWrapper,
+  MetadataWrapper,
+  SnapshotWrapper,
+  Time
 } from './_page.client'
 
 const ProjectImage = ({
-    src,
-    text
-  }: {
-    src: string
-    link?: string
-    text?: string
-  }) => {
-    return (
-      <SnapshotWrapper>
-        <BlurHashImage src={src} />
-        <p>{text}</p>
-      </SnapshotWrapper>
-    )
-  }
-  
+  src,
+  text
+}: {
+  src: string
+  link?: string
+  text?: string
+}) => {
+  return (
+    <SnapshotWrapper>
+      <BlurHashImage src={src} />
+      <p>{text}</p>
+    </SnapshotWrapper>
+  )
+}
 
-const Creation = async ({ params }: { params: { id: string } }) => {
-    const { id } = await params
+const Creation = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params
   const projectIndex = projects.findIndex(project => project.id == id)
   const project = projects[projectIndex]
 

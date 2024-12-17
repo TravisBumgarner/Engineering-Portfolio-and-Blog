@@ -23,3 +23,12 @@ export type TCreation = {
   links: Link[]
   previewImage: Image
 }
+
+export type BlogPost = {
+  title: string
+  date: string
+  draft: boolean
+  postMapping: string
+  description: string
+  preview_image: string
+}
