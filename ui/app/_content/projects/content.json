@@ -1,0 +1,859 @@
+[
+  {
+    "title": "2D Plotter Explorations",
+    "id": "2d-plotter-explorations",
+    "description": "Many explorations over many years into how 2D plotters function and can be made.",
+    "lastMeaningfulUpdate": "2020-08",
+    "images": [
+      {
+        "src": "20130409_202136.jpg",
+        "label": "First exploration with K'nex and Arduino"
+      },
+      {
+        "src": "IMG_20161219_190837.jpg",
+        "label": "Second exploration with scrap wood and 3D-printed parts"
+      },
+      {
+        "src": "IMG_20200428_185509.jpg",
+        "label": "Third exploration into 3D modeling and printing a custom adapter to convert a 3D printer to a 2D plotter"
+      },
+      {
+        "src": "IMG_20200502_191205.jpg",
+        "label": "Test print of part designed in the third exploration"
+      },
+      {
+        "src": "manyprogressmuchwow.jpg",
+        "label": "Fourth exploration with all parts custom 3D-modeled and printed"
+      },
+      {
+        "src": "DSC_2538.jpg",
+        "label": "Fourth exploration fully assembled"
+      }
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/Plotter-Explorations"
+      },
+      {
+        "label": "YouTube Video - 2D Plotter First Movement",
+        "src": "https://www.youtube.com/watch?v=Y7Nzjou3Buw"
+      },
+      {
+        "label": "YouTube Playlist - 3D Printer to 2D Plotter",
+        "src": "https://www.youtube.com/watch?v=eNIFybCENtE&list=PL58d_qyxyaOF-66-4kabZ9wtJEJlURT8i"
+      },
+      {
+        "label": "YouTube Playlist - 2D Plotter From Scratch",
+        "src": "https://www.youtube.com/watch?v=lJApWtDMxLM&list=PL58d_qyxyaOGu1aUYKD9BjNBRsrKP4v3W"
+      }
+    ],
+    "previewImage": {
+      "label": "2D plotter result",
+      "src": "DSC_2538.jpg"
+    }
+  },
+  {
+    "title": "Automated Film Scanner",
+    "id": "automated-film-scanner",
+    "description": "Automated film scanner for 35mm negative film.",
+    "lastMeaningfulUpdate": "2016-05",
+    "images": [
+      {
+        "src": "12912789_1056153591143656_868781673_n_17846525158123243.jpg",
+        "label": "Prototype of K'nex clamping mechanism"
+      },
+      {
+        "src": "DSC02609.jpg",
+        "label": "Dimensions for CAD model"
+      },
+      {
+        "src": "DSC02763.jpg",
+        "label": "Fully assembled electronics and hardware"
+      },
+      {
+        "src": "DSC02841.jpg",
+        "label": "Scanner test run with newspaper"
+      },
+      {
+        "src": "0424160039.jpg",
+        "label": "Scanner in action"
+      }
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/Automatic-Film-Scanner/tree/master/film_scanner_arduino"
+      },
+      {
+        "label": "YouTube Video",
+        "src": "https://www.youtube.com/watch?v=vDLHhMvcVL0"
+      }
+    ],
+    "previewImage": {
+      "label": "Automated film scanner preview",
+      "src": "0424160039.jpg"
+    }
+  },
+  {
+    "title": "Camera From Scratch",
+    "id": "camera-from-scratch",
+    "description": "Camera built and coded from scratch.\nTools & Technologies: Arduino, PCB, Soldering Iron, Eagle CAD, ArduCAM",
+    "lastMeaningfulUpdate": "2016-09",
+    "images": [
+      {
+        "src": "0302161639.jpg",
+        "label": "First test run of the camera"
+      },
+      {
+        "src": "DSC02514.jpg",
+        "label": "Selecting layout before soldering"
+      },
+      {
+        "src": "DSC02544.jpg",
+        "label": "Fully working prototype"
+      },
+      {
+        "src": "IMG_20190729_191410.jpg",
+        "label": "Circuit moved to PCB"
+      },
+      {
+        "src": "IMG_20190730_203313.jpg",
+        "label": "Fully assembled camera on PCB"
+      },
+      {
+        "src": "IMG_20190901_150150.jpg",
+        "label": "Second test run of the camera"
+      }
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/Time-Lapse-Photo-Stitch"
+      },
+      {
+        "label": "Writeup",
+        "src": "/blog/combining-hobbies/"
+      }
+    ],
+    "previewImage": {
+      "label": "Time-lapse camera preview",
+      "src": "DSC02544.jpg"
+    }
+  },
+  {
+    "title": "MIT D-Lab Development Class",
+    "id": "development-class",
+    "description": "Led a group of MIT students on a three-week trip to Bogota, Colombia. We worked on engineering projects and taught workshops around Arduino, soldering, basic electronics, and other related topics.",
+    "lastMeaningfulUpdate": "2017-01",
+    "images": [
+      {
+        "src": "IMG_20170117_162451_472.jpg",
+        "label": "Gathering supplies for workshops"
+      },
+      {
+        "src": "16107519_10156042158208018_143016716065454977_o.jpg",
+        "label": "Leading an Intro to Arduino workshop in Spanish"
+      },
+      {
+        "src": "17434897_1657246607625359_4142016014936483845_o.jpg",
+        "label": "Teaching team members some basics of Arduino"
+      },
+      {
+        "src": "DSC00118.jpg",
+        "label": "Launching water rockets that students built"
+      },
+      {
+        "src": "IMG_9967.jpg",
+        "label": "Students working on their projects"
+      }
+    ],
+    "links": [
+      {
+        "label": "Course Description",
+        "src": "https://d-lab.mit.edu/courses/development"
+      },
+      {
+        "label": "C-Innova Website",
+        "src": "http://www.c-innova.org/"
+      }
+    ],
+    "previewImage": {
+      "label": "Development class preview",
+      "src": "17434897_1657246607625359_4142016014936483845_o.jpg"
+    }
+  },
+  {
+    "title": "Educational Content Creator",
+    "id": "educational-content-creator",
+    "description": "An exploration into ways to share what I've learned with others.",
+    "lastMeaningfulUpdate": "2024-09",
+    "images": [
+      {
+        "src": "DSC_2549.jpg",
+        "label": "Preparing to stream on Twitch"
+      },
+      {
+        "src": "DSC_2633.jpg",
+        "label": "First YouTube tutorial explaining how to design, 3D model, 3D print, solder, and code a nightlight with Arduino"
+      },
+      {
+        "src": "youtube_thumbnails.jpg",
+        "label": "Thumbnail for first YouTube video"
+      },
+      {
+        "src": "DSC_9672.jpg",
+        "label": "Twitch stream BRB graphic"
+      },
+      {
+        "src": "DSC_9693.jpg",
+        "label": "Twitch stream starting soon graphic"
+      },
+      {
+        "src": "instagram (1).jpg",
+        "label": "Announcement for a free class taught on Twitch teaching the basics of CAD, code, & circuits"
+      }
+    ],
+    "links": [
+      {
+        "label": "YouTube Channel",
+        "src": "https://www.youtube.com/channel/UCFgIg95KzVg97KAeXdWbeXg"
+      },
+      {
+        "label": "First YouTube Video",
+        "src": "https://www.youtube.com/watch?v=RjBEjiBoUyk"
+      },
+      {
+        "label": "Twitch Stream",
+        "src": "https://www.twitch.tv/sillysideprojects"
+      }
+    ],
+    "previewImage": {
+      "label": "First video: building a prototype",
+      "src": "DSC_9693.jpg"
+    }
+  },
+  {
+    "title": "Intro to Arduino Workshop",
+    "id": "intro-to-arduino-workshop",
+    "description": "Designed, developed, and taught an introductory Arduino workshop focusing on the basics of circuits, soldering, safety, and coding.",
+    "lastMeaningfulUpdate": "2017-07",
+    "images": [
+      {
+        "src": "SAM_2043.jpg",
+        "label": "Unassembled kit"
+      },
+      {
+        "src": "IMG_20170223_180839.jpg",
+        "label": "Preparing kits"
+      },
+      {
+        "src": "IMG_20170530_205251_825.jpg",
+        "label": "Packaged kits ready for students"
+      },
+      {
+        "src": "SAM_1920.jpg",
+        "label": "Students working on their kits"
+      },
+      {
+        "src": "SAM_1932.jpg",
+        "label": "First student finished!"
+      }
+    ],
+    "links": [
+      {
+        "label": "Cambridge Hackspace Website",
+        "src": "https://www.cambridgehackspace.com/"
+      }
+    ],
+    "previewImage": {
+      "label": "Intro to Arduino workshop preview",
+      "src": "IMG_20170530_205251_825.jpg"
+    }
+  },
+  {
+    "title": "Painless Prototyping Startup First Attempt",
+    "id": "painless-prototyping-first-attempt",
+    "description": "The Button Board makes adding push buttons to electronics projects a breeze by eliminating headaches and adding useful functionality.",
+    "lastMeaningfulUpdate": "2017-07",
+    "images": [
+      {
+        "src": "DSC09243.jpg",
+        "label": "Product photos for Kickstarter"
+      },
+      {
+        "src": "IMG_20160915_203226.jpg",
+        "label": "Successful Kickstarter campaign"
+      },
+      {
+        "src": "IMG_20161004_180020.jpg",
+        "label": "Preparing kits to be shipped to backers"
+      },
+      {
+        "src": "IMG_20170401_210917_675.jpg",
+        "label": "Kits ready for store shelves"
+      }
+    ],
+    "links": [
+      {
+        "label": "Kickstarter",
+        "src": "https://www.kickstarter.com/projects/267560573/button-board-prototyping-electronics-the-painless"
+      }
+    ],
+    "previewImage": {
+      "label": "Painless prototyping preview",
+      "src": "DSC09243.jpg"
+    }
+  },
+  {
+    "title": "Painless Prototyping Startup",
+    "id": "painless-prototyping-second-attempt",
+    "description": "Customize what your keyboard does and how it works! Classes on the topics of soldering, circuits and coding are included!",
+    "lastMeaningfulUpdate": "2021-10",
+    "images": [
+      {
+        "src": "IMG_20200516_190109.jpg",
+        "label": "Exploring initial proof of concept"
+      },
+      {
+        "src": "DSC_2611.jpg",
+        "label": "Playing around with mechanical switches"
+      },
+      {
+        "src": "DSC_3528.jpg",
+        "label": "Assembly of the first prototype"
+      },
+      {
+        "src": "DSC_3535.jpg",
+        "label": "First fully functioning prototype"
+      },
+      {
+        "src": "DSC_5663.jpg",
+        "label": "Final version shipped to customers"
+      },
+      {
+        "src": "PXL_20210603_002702358.jpg",
+        "label": "Mailing out kits to Kickstarter backers"
+      },
+      {
+        "src": "IMG_4221.jpg",
+        "label": "Donated kits and teaching time to the Dottie Rose Foundation"
+      },
+      {
+        "src": "PXL_20211206_012755312.jpg",
+        "label": "Thank you cards from the Dottie Rose summer camp"
+      }
+    ],
+    "links": [
+      {
+        "label": "Kickstarter",
+        "src": "https://www.kickstarter.com/projects/painlessprototyping/byo-build-your-own-mechanical-keyboard"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/painlessprototyping"
+      },
+      {
+        "label": "YouTube Channel",
+        "src": "https://www.youtube.com/@painlessprototyping7852"
+      }
+    ],
+    "previewImage": {
+      "label": "painless prototyping preview",
+      "src": "DSC_5663.jpg"
+    }
+  },
+  {
+    "title": "Pan & Tilt Camera Adapter",
+    "id": "pan-and-tilt-camera-adapter",
+    "description": "A camera adapter that allows for pan and tilt functionality.",
+    "lastMeaningfulUpdate": "2016-07",
+    "images": [
+      {
+        "src": "0610162138b.jpg",
+        "label": "Circuit with functioning code"
+      },
+      {
+        "src": "DSC08264.jpg",
+        "label": "Assembling the electrical components and housing together"
+      },
+      {
+        "src": "DSC08273.jpg",
+        "label": "Fully assembled proof of concept"
+      }
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/PanTilt/"
+      },
+      {
+        "label": "YouTube Video",
+        "src": "https://www.youtube.com/watch?v=E8Qu_i_7nHc"
+      }
+    ],
+    "previewImage": {
+      "label": "pan & tilt preview image",
+      "src": "DSC08273.jpg"
+    }
+  },
+  {
+    "title": "Selected Woodworking",
+    "id": "selected-woodworking",
+    "description": "An assortment of woodworking projects.",
+    "lastMeaningfulUpdate": "2019-01",
+    "images": [
+      {
+        "src": "IMG_20161103_180829.jpg",
+        "label": "Toddler Gym"
+      },
+      {
+        "src": "IMG_20170502_194545_028.jpg",
+        "label": "Cribbage Board"
+      },
+      {
+        "src": "IMG_20190313_091112.jpg",
+        "label": "Laser Cut Puzzle"
+      },
+      {
+        "src": "IMG_20190322_164034.jpg",
+        "label": "Laser Cut Puzzle"
+      },
+      {
+        "src": "IMG_20191109_153857.jpg",
+        "label": "Mid Century Modern Nightstands"
+      },
+      {
+        "src": "PXL_20211215_044741924.jpg",
+        "label": "Settlers of Catan"
+      },
+      {
+        "src": "image-20161220_203034.jpg",
+        "label": "Jewelry Box"
+      },
+      {
+        "src": "image-20161220_215911.jpg",
+        "label": "Jewelry Box"
+      }
+    ],
+    "links": [],
+    "previewImage": {
+      "label": "",
+      "src": "IMG_20170502_194545_028.jpg"
+    }
+  },
+  {
+    "title": "Security System",
+    "id": "security-system",
+    "description": "Cambridge Hackspace security system.\nTools & Technologies: Raspberry Pi, Python, Flask, Dropbox API",
+    "lastMeaningfulUpdate": "2017-05",
+    "images": [
+      {
+        "src": "IMG_20170319_191530_356.jpg",
+        "label": "Diagramming the System"
+      },
+      {
+        "src": "IMG-20170316-WA0005.jpg",
+        "label": "Login Screen"
+      },
+      {
+        "src": "IMG-20170316-WA0007.jpg",
+        "label": "Web App"
+      },
+      {
+        "src": "IMG_20170209_193557.jpg",
+        "label": "Physical Hardware"
+      }
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/Raspberry-Pi-Security-System"
+      }
+    ],
+    "previewImage": {
+      "label": "security camera preview",
+      "src": "IMG_20170209_193557.jpg"
+    }
+  },
+  {
+    "title": "Raspberry Pi Smart Display",
+    "id": "smart-display",
+    "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather.\nTools & Technologies: Raspberry Pi, SolidWorks, 3D Printer, Node, Google Cloud Platform, Soldering Iron",
+    "lastMeaningfulUpdate": "2020-08",
+    "images": [
+      {
+        "src": "IMG_20200107_193631.jpg",
+        "label": "Measuring and sketching case"
+      },
+      {
+        "src": "IMG_20200126_123042.jpg",
+        "label": "Exploring various aspects of case design"
+      },
+      {
+        "src": "model.jpg",
+        "label": "Final case design"
+      },
+      {
+        "src": "DSC_2338.jpg",
+        "label": "Fully assembled back"
+      },
+      {
+        "src": "DSC_2337.jpg",
+        "label": "Fully assembled front"
+      }
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/Smart-Display"
+      },
+      {
+        "label": "YouTube Playlist",
+        "src": "https://www.youtube.com/watch?v=LbvioXXcNqk&list=PL58d_qyxyaOGaACvm6FVX_9Y3hvzr_30M"
+      }
+    ],
+    "previewImage": {
+      "label": "smart display",
+      "src": "model.jpg"
+    }
+  },
+  {
+    "title": "Strangerer Things Lights Display",
+    "id": "strangerer-things",
+    "description": "Overly engineered Stranger Things lights.\nTools & Technologies: Raspberry Pi, AWS, Slack API, Express, Laser Cutter",
+    "lastMeaningfulUpdate": "2018-12",
+    "images": [
+      {
+        "src": "IMG_20181211_204613.jpg",
+        "label": "Experimenting with letter sizing"
+      },
+      {
+        "src": "IMG_20181212_234624.jpg",
+        "label": "Slack app ready to send a message"
+      },
+      {
+        "src": "IMG_20181212_234746.jpg",
+        "label": "Assembling lights"
+      },
+      {
+        "src": "IMG_20181218_123142.jpg",
+        "label": "Fully assembled and ready to receive messages"
+      }
+    ],
+    "links": [
+      {
+        "label": "YouTube Video",
+        "src": "https://www.youtube.com/watch?v=DL1EOHFlQWA"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/strangerer_things"
+      }
+    ],
+    "previewImage": {
+      "label": "strangerer",
+      "src": "IMG_20181218_123142.jpg"
+    }
+  },
+  {
+    "title": "gcode2dplotterart Python Library",
+    "id": "gcode2dplotterart",
+    "description": "Easily generate plotter art with your 2D plotter or 3D printer.\nThis library abstracts away G-Code so you can focus on making art.\nTools & Technologies: Python, Docusaurus, G-Code",
+    "lastMeaningfulUpdate": "2023-12",
+    "images": [
+      {
+        "src": "1.jpeg",
+        "label": "Example: Selfie"
+      },
+      {
+        "src": "2.jpeg",
+        "label": "Example: Roaming Rectangles"
+      },
+      {
+        "src": "3.jpg",
+        "label": "Example: Concentric Circles"
+      },
+      {
+        "src": "4.jpg",
+        "label": "Example: Josef Albers Homage"
+      }
+    ],
+    "links": [
+      {
+        "label": "Documentation",
+        "src": "https://travisbumgarner.github.io/gcode2dplotterart/"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/gcode2dplotterart"
+      },
+      {
+        "label": "Instagram",
+        "src": "https://www.instagram.com/sillysideprojects"
+      },
+      {
+        "label": "pypi",
+        "src": "https://pypi.org/project/gcode2dplotterart/"
+      }
+    ],
+    "previewImage": {
+      "label": "Project Preview",
+      "src": "1.jpeg"
+    }
+  },
+  {
+    "title": "Photography Portfolio",
+    "id": "photography-portfolio",
+    "description": "Portfolio highlighting my photography.\nFeatures advanced browser performance optimizations, including modern file formats, lazy rendering, TTL enhancements, and the blurhash algorithm.\nTools & Technologies: React, TypeScript, Adobe Lightroom, Google Cloud Platform",
+    "lastMeaningfulUpdate": "2024-12",
+    "images": [
+      {
+        "src": "1.png",
+        "label": "Homepage View"
+      },
+      {
+        "src": "2.png",
+        "label": "Gallery View"
+      },
+      {
+        "src": "3.png",
+        "label": "Menu View"
+      }
+    ],
+    "links": [
+      {
+        "label": "Portfolio",
+        "src": "https://travisbumgarner.photography"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/Photography-Portfolio"
+      }
+    ],
+    "previewImage": {
+      "label": "Portfolio Preview",
+      "src": "1.png"
+    }
+  },
+  {
+    "title": "Todo Today Desktop App",
+    "id": "todo-today",
+    "description": "The todo List for the easily distracted.\nTools & Technologies: React, TypeScript, Electron, IndexedDB, Dexie",
+    "lastMeaningfulUpdate": "2024-09",
+    "images": [
+      {
+        "src": "todo-today1.png",
+        "label": "Home View"
+      },
+      {
+        "src": "todo-today2.png",
+        "label": "Support for Multiple Workspaces"
+      },
+      {
+        "src": "todo-today3.png",
+        "label": "Backups and Themes"
+      },
+      {
+        "src": "todo-today4.png",
+        "label": "High Contrast Mode"
+      }
+    ],
+    "links": [
+      {
+        "label": "Website",
+        "src": "https://todo.sillysideprojects.com"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/todo-today"
+      }
+    ],
+    "previewImage": {
+      "label": "App Preview",
+      "src": "todo-today1.png"
+    }
+  },
+  {
+    "title": "Ideas Down iPhone App",
+    "id": "ideas-down",
+    "description": "Clear your mind and make room for your next big idea.\nTools & Technologies: React Native, TypeScript, Figma, Expo, Drizzle",
+    "lastMeaningfulUpdate": "2024-12",
+    "images": [
+      {
+        "src": "1.png",
+        "label": "App Screenshot: Reflect"
+      },
+      {
+        "src": "2.png",
+        "label": "App Screenshot: Review"
+      },
+      {
+        "src": "3.png",
+        "label": "App Screenshot: Settings & Privacy"
+      },
+      {
+        "src": "4.png",
+        "label": "Figma Screenshot: Dark and light color themes"
+      },
+      {
+        "src": "5.png",
+        "label": "Figma Screenshot: System components"
+      },
+      {
+        "src": "6.png",
+        "label": "Figma Screenshot: User goals defined as app screens"
+      }
+    ],
+    "links": [
+      {
+        "label": "Apple App Store Listing",
+        "src": "https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone"
+      },
+      {
+        "label": "Website",
+        "src": "https://ideas.sillysideprojects.com"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/ideas-down-quickly"
+      }
+    ],
+    "previewImage": {
+      "label": "App Preview",
+      "src": "1.png"
+    }
+  },
+  {
+    "title": "Spotify Playlist Generator",
+    "id": "manifest-playlists",
+    "description": "Generate Spotify playlists with interesting parameters.\n Tools & Technologies: React, TypeScript, Express, GraphQL, Spotify API, Google Cloud Platform",
+    "lastMeaningfulUpdate": "2023-08",
+    "images": [
+      {
+        "src": "1.png",
+        "label": "Create Playlist"
+      },
+      {
+        "src": "2.png",
+        "label": "View playlist and save to Spotify"
+      },
+      {
+        "src": "3.png",
+        "label": "Homepage"
+      }
+    ],
+    "links": [
+      {
+        "label": "View App",
+        "src": "https://playlists.sillysideprojects.com"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/playlist-generator"
+      }
+    ],
+    "previewImage": {
+      "label": "App Preview",
+      "src": "1.png"
+    }
+  },
+  {
+    "title": "CSS Cross Stitch Generator",
+    "id": "stitch-it",
+    "description": "Generate CSS cross stitches from photos\nTools & Technologies: Python, Flask, Google Cloud Platform",
+    "lastMeaningfulUpdate": "2020-03",
+    "images": [
+      {
+        "src": "1.png",
+        "label": "Example Output"
+      }
+    ],
+    "links": [
+      {
+        "label": "View App",
+        "src": "https://stitch.sillysideprojects.com"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/Silly-Apps/tree/main/stitch_it"
+      }
+    ],
+    "previewImage": {
+      "label": "Example Output",
+      "src": "1.png"
+    }
+  },
+  {
+    "title": "Bananarama Voting App",
+    "id": "bananarama-voting",
+    "description": "Quickly spin up a poll where people can submit entries and everyone can vote on them.\nTools & Technologies: React, TypeScript, GraphQL, Express, Google Cloud Platform",
+    "lastMeaningfulUpdate": "2023-03",
+    "images": [
+      {
+        "src": "1.png",
+        "label": "Lobby"
+      },
+      {
+        "src": "2.png",
+        "label": "Admin View"
+      },
+      {
+        "src": "3.png",
+        "label": "Voting"
+      },
+      {
+        "src": "4.png",
+        "label": "Results"
+      }
+    ],
+    "links": [
+      {
+        "label": "View App",
+        "src": "https://voting.sillysideprojects.com"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/Bananarama-Voting-Bananza"
+      }
+    ],
+    "previewImage": {
+      "label": "App Preview",
+      "src": "3.png"
+    }
+  },
+  {
+    "title": "Candlelight Game",
+    "id": "candlelight",
+    "description": "Puzzle game originally created for the Pirate Software Game Jam.\nTools & Technologies: Godot, Aseprite, Figma, Steam API",
+    "lastMeaningfulUpdate": "2024-11",
+    "images": [
+      {
+        "src": "1.png",
+        "label": "Gameplay"
+      },
+      {
+        "src": "3.png",
+        "label": "Main menu"
+      },
+      {
+        "src": "2.png",
+        "label": "Game saves"
+      }
+    ],
+    "links": [
+      {
+        "label": "Game Demo",
+        "src": "https://sillysideprojects.itch.io/candlight"
+      },
+      {
+        "label": "Steam Store Page",
+        "src": "https://store.steampowered.com/app/3157820?beta=0"
+      }
+    ],
+    "previewImage": {
+      "label": "Game Preview",
+      "src": "1.png"
+    }
+  }
+]
