@@ -6,6 +6,9 @@ import MasonryImage from '@/app/_sharedComponents/MasonryImage'
 import ROUTES from '@/lib/routes'
 
 const Blog = () => {
+
+  myUndefinedFunction();
+
   const ListItems = useMemo(() => {
     return Object.keys(posts)
       .sort((a, b) =>

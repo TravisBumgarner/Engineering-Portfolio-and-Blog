@@ -1,6 +1,6 @@
-- [ ] Error Boundary
-- [ ] Not Found
-- [ ] Link components
+- [x] Error Boundary
+- [x] Not Found
+- [x] Link components
 - [ ] Ensure analytics works
 - [ ] Ensure Sentry Works
 - [ ] Read about optimizing
