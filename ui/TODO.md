@@ -17,7 +17,8 @@
 - [ ] Performance
     - [ ] Read documentation (Optimizations, etc.)
     - [ ] Better way to load MDX files?
-    - [ ] Generate blurhashes server side?
+    - [ ] Image Compoent
+        - [ ] Generate blurhashes server side?
     - [x] Audit uses of `useMemo`, `useCallback`, `useEffect`, etc.
         - [x] useEffect
         - [x] useMemo
@@ -27,3 +28,6 @@
 - [ ] Look at deploying images with cloudrun??
 - [ ] getting correct .env to prod. (or does it matter if I resolve the previous bullet point)
 - [ ] Add styled components linting
+- [ ] Move favicon - https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons#favicon
+    - [ ] And any related files
+- [ ] Use G-TAg and other things correctly (https://nextjs.org/docs/app/building-your-application/optimizing/third-party-libraries)
