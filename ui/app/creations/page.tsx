@@ -14,10 +14,10 @@ const Portfolio = () => {
             key={id}
             link={`${ROUTES.CREATIONS.path}/${id}`}
             text={title}
-            date={new Date(`${lastMeaningfulUpdate}-05`).toLocaleString(
+            date={`Last Update: ${new Date(`${lastMeaningfulUpdate}-05`).toLocaleString(
               'default',
               { month: 'long', year: 'numeric' }
-            )}
+            )}`}
             src={
               previewImage &&
               `${process.env.NEXT_PUBLIC_STATIC_PATH}/projects/${id}/${previewImage.src}`

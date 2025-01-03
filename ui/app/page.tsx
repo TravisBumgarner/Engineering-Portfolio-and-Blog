@@ -5,7 +5,6 @@ import blurhashes from '@/content/blurhashes/index.json'
 import snapshots from '@/content/snapshots/index.json'
 import { FOREGROUND_COLOR, media, SPACING } from '@/lib/theme'
 import { BlurHash } from '@/lib/types'
-import { shuffle } from '@/lib/utilities'
 import { useInView } from 'framer-motion'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
@@ -14,7 +13,7 @@ const PHOTO_SPACING = SPACING.MEDIUM
 const PHOTO_SPACING_MOBILE = SPACING.XSMALL
 
 
-const Cell = ({ src }: { src: string }) => {
+const Cell = ({ src, index }: { src: string, index: number }) => {
   const ref = useRef<HTMLDivElement>(null)
 
   const isMostlyInView = useInView(ref, { amount: 0.75 })
@@ -28,7 +27,7 @@ const Cell = ({ src }: { src: string }) => {
       $isJustInView={isJustInView}
       $isHalfView={isHalfView}
     >
-      <BlurHashImage src={`${process.env.NEXT_PUBLIC_STATIC_PATH}${src}`} />
+      <BlurHashImage priority={index <= 4} src={`${process.env.NEXT_PUBLIC_STATIC_PATH}${src}`} />
     </StyledCell>
   )
 }
@@ -82,8 +81,8 @@ const StyledColumn = styled.div<{ $columnCount: number }>`
 const Column = ({ photos, columnCount }: { photos: string[]; columnCount: number }) => {
   return (
     <StyledColumn $columnCount={columnCount}>
-      {photos.map(src => (
-        <Cell key={src} src={src} />
+      {photos.map((src, index) => (
+        <Cell key={src} src={src} index={index} />
       ))}
     </StyledColumn>
   )
@@ -114,8 +113,7 @@ const PhotoMasonry = () => {
     // Ensure that each `[]` passed to `Array.from` is a new array. Reference issue with fill.
     const output = Array.from({ length: totalColumns }, () => [] as string[])
 
-    // Present random items each day.
-    shuffle(Object.values(snapshots)).forEach(({ src }) => {
+    Object.values(snapshots).forEach(({ src }) => {
       // All photos will have a width of 1 unit.
       // Calculate height based on aspect ratio and we'll use that to determine
       // which column to put it in.

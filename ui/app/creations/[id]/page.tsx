@@ -72,7 +72,7 @@ const Creation = async ({ params }: { params: Promise<{ id: string }> }) => {
           {project.title}
         </h1>
         <Time>
-          {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString(
+          Last Update: {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString(
             'default',
             {
               month: 'long',

@@ -17,8 +17,8 @@ const MasonryImage = ({
   if (!link) {
     return (
       <SnapshotWrapper>
-        <BlurHashImage src={src} />
         <StyledText>{text}</StyledText>
+        <BlurHashImage src={src} />
       </SnapshotWrapper>
     )
   }
@@ -26,11 +26,11 @@ const MasonryImage = ({
   return (
     <StyledLink href={link}>
       <SnapshotWrapper $isLink>
-        <BlurHashImage src={src} />
         <div>
           <StyledText>{text}</StyledText>
           {date && <time>{date}</time>}
         </div>
+        <BlurHashImage src={src} />
       </SnapshotWrapper>
     </StyledLink>
   )

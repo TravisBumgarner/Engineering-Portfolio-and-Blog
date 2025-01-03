@@ -22,18 +22,21 @@ const getBlurHash = (src: string) => {
   return result
 }
 
-const BlurHashImage = ({ src }: { src: string }) => {
+const BlurHashImage = ({ src, priority }: { src: string, priority?: boolean }) => {
   const { width, height, blurHash } = getBlurHash(src)
   const blurDataURL = blurHashToDataURL(blurHash)
+
   return (
     <Image
       placeholder="blur"
       blurDataURL={blurDataURL}
+      priority={priority}
       src={src}
       alt={src}
       width={width}
       height={height}
       style={{
+        display: 'block',
         width: '100%',
         height: 'auto'
       }}
