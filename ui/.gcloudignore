@@ -17,5 +17,4 @@ docs/**
 *.log
 .DS_Store
 README.md
-.env*
 jest.config.* 
