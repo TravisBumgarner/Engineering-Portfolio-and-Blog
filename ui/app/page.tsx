@@ -27,7 +27,8 @@ const Cell = ({ src, index }: { src: string, index: number }) => {
       $isJustInView={isJustInView}
       $isHalfView={isHalfView}
     >
-      <BlurHashImage priority={index <= 4} src={`${process.env.NEXT_PUBLIC_STATIC_PATH}${src}`} />
+      {/* Priority load the first image in each column.  */}
+      <BlurHashImage priority={index === 0} src={src} />
     </StyledCell>
   )
 }

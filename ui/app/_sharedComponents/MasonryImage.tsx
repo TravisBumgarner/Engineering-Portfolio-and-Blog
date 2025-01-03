@@ -6,19 +6,20 @@ const MasonryImage = ({
   src,
   link,
   text,
-  date
+  date,
+  priority
 }: {
   src: string
   link?: string
   text?: string
   date?: string
+  priority: boolean
 }) => {
-  
   if (!link) {
     return (
       <SnapshotWrapper>
         <StyledText>{text}</StyledText>
-        <BlurHashImage src={src} />
+        <BlurHashImage priority={priority} src={src} />
       </SnapshotWrapper>
     )
   }
@@ -30,7 +31,7 @@ const MasonryImage = ({
           <StyledText>{text}</StyledText>
           {date && <time>{date}</time>}
         </div>
-        <BlurHashImage src={src} />
+        <BlurHashImage priority={priority} src={src} />
       </SnapshotWrapper>
     </StyledLink>
   )

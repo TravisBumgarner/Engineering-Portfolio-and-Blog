@@ -6,11 +6,13 @@ import ROUTES from '@/lib/routes'
 const Portfolio = () => {
   const tiles = projects
     .sort((a, b) => (a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1))
-    .map(({ id, title, previewImage, lastMeaningfulUpdate }) => {
+    .map(({ id, title, previewImage, lastMeaningfulUpdate }, index) => {
       return {
         key: id,
         element: (
           <MasonryImage
+            // Prioritize the first two projects
+            priority={index <= 1}
             key={id}
             link={`${ROUTES.CREATIONS.path}/${id}`}
             text={title}
@@ -19,8 +21,7 @@ const Portfolio = () => {
               { month: 'long', year: 'numeric' }
             )}`}
             src={
-              previewImage &&
-              `${process.env.NEXT_PUBLIC_STATIC_PATH}/projects/${id}/${previewImage.src}`
+              previewImage && `/projects/${id}/${previewImage.src}`
             }
           />
         )

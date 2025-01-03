@@ -23,7 +23,7 @@ const ProjectImage = ({
 }) => {
   return (
     <SnapshotWrapper>
-      <BlurHashImage src={src} />
+      <BlurHashImage priority={true} src={src} />
       <p>{text}</p>
     </SnapshotWrapper>
   )
@@ -52,7 +52,7 @@ const Creation = async ({ params }: { params: Promise<{ id: string }> }) => {
         <ProjectImage
           text={i.label}
           key={index}
-          src={`${process.env.NEXT_PUBLIC_STATIC_PATH}/projects/${id}/${i.src}`}
+          src={`/projects/${id}/${i.src}`}
         />
       </SnapshotWrapper>
     )

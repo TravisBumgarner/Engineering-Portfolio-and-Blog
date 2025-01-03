@@ -22,7 +22,7 @@ const getBlurHash = (src: string) => {
   return result
 }
 
-const BlurHashImage = ({ src, priority }: { src: string, priority?: boolean }) => {
+const BlurHashImage = ({ src, priority }: { src: string, priority: boolean }) => {
   const { width, height, blurHash } = getBlurHash(src)
   const blurDataURL = blurHashToDataURL(blurHash)
 
@@ -31,8 +31,11 @@ const BlurHashImage = ({ src, priority }: { src: string, priority?: boolean }) =
       placeholder="blur"
       blurDataURL={blurDataURL}
       priority={priority}
-      src={src}
+      // Loading lazy is ignored if priority is true
+      {...(priority ? {} : {loading: 'lazy'})}
+      src={`${process.env.NEXT_PUBLIC_STATIC_PATH}${src}`}
       alt={src}
+      quality={100}
       width={width}
       height={height}
       style={{
