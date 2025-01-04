@@ -54,7 +54,7 @@ const BlurHashImage = ({ src, priority, maxWidth }: { src: string, priority: boo
       alt={src}
       quality={70}
       width={width}
-      height={0}
+      height={height}
       style={{
         display: 'block',
         width: '100%',

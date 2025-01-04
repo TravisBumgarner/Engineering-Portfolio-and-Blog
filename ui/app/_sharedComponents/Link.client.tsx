@@ -7,6 +7,5 @@ import { CSSHover } from '@/lib/theme'
 
 export const LinkWrapper = styled(Link)`
   ${CSSHover};
-  font-family: Raleway, sans-serif;
   font-weight: 100;
 `

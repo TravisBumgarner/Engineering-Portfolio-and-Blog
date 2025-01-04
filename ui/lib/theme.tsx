@@ -169,7 +169,7 @@ export const GlobalReset = createGlobalStyle`
 export const GlobalStyle = createGlobalStyle`
    html {
         background-color: ${BACKGROUND_COLOR};
-        font-family: Montserrat, sans-serif;
+        font-family: "Ubuntu Mono", serif;
         line-height: 1.5;
         font-weight: 400;
         font-size: 20px;
@@ -187,21 +187,18 @@ export const GlobalStyle = createGlobalStyle`
     color: ${SECONDARY_COLOR};
     margin: 0 0;
     font-weight: 700;
-    font-family: Raleway, sans-serif;
   }
   h2 {
     color: ${SECONDARY_COLOR};
     font-size: 1.4rem;
     margin: ${SPACING.MEDIUM}px 0;
     font-weight: 400;
-    font-family: Raleway, sans-serif;
   }
   h3 {
     color: ${SECONDARY_COLOR};
   font-size: 1.2rem;
   margin: ${SPACING.MEDIUM}px 0;
   font-weight: 400;
-  font-family: Raleway, sans-serif;
   }
   strong {
     font-weight: 700;
@@ -243,7 +240,6 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
     font-size: 1rem;
     border: 1px solid ${BORDER_COLOR};
-    font-family: 'Roboto Mono', monospace;
     font-weight: 100;
     display: block;
     box-sizing: border-box;
@@ -269,7 +265,6 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
     font-size: 1rem;
     border: 1px solid ${BORDER_COLOR};
-    font-family: 'Roboto Mono', monospace;
     font-weight: 100;
     display: block;
     box-sizing: border-box;
