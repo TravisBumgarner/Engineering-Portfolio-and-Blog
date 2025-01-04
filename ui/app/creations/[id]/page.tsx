@@ -83,7 +83,7 @@ const Creation = async ({ params }: { params: Promise<{ id: string }> }) => {
         <DescriptionWrapper>{Description}</DescriptionWrapper>
         {Links.length > 0 && <LinksWrapper>{Links}</LinksWrapper>}
       </MetadataWrapper>
-      <MasonryGrid elementsWithKeys={Images} />
+      <MasonryGrid elementsWithKeys={Images} totalColumns={1} />
     </DetailsWrapper>
   )
 }

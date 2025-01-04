@@ -67,7 +67,7 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    const response = (await submitContactForm(formData)) as any
+    const response = await submitContactForm(formData)
     if (response.data) {
       setSuccess(true)
       setFormData(prev => ({

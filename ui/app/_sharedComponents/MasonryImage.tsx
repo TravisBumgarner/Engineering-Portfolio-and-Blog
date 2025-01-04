@@ -8,20 +8,20 @@ const MasonryImage = ({
   text,
   date,
   priority,
-  columnCount,
+  totalColumns,
 }: {
   src: string
   link?: string
   text?: string
   date?: string
   priority: boolean
-  columnCount: number
+  totalColumns: number
 }) => {
   if (!link) {
     return (
       <SnapshotWrapper>
         <StyledText>{text}</StyledText>
-        <BlurHashImage maxWidthPercent={columnCount === 1 ? '100' : '50'} priority={priority} src={src} />
+        <BlurHashImage maxWidthPercent={totalColumns === 1 ? '100' : '50'} priority={priority} src={src} />
       </SnapshotWrapper>
     )
   }
@@ -33,7 +33,7 @@ const MasonryImage = ({
           <StyledText>{text}</StyledText>
           {date && <time>{date}</time>}
         </div>
-        <BlurHashImage maxWidthPercent={columnCount === 1 ? '100' : '50'} priority={priority} src={src} />
+        <BlurHashImage maxWidthPercent={totalColumns === 1 ? '100' : '50'} priority={priority} src={src} />
       </SnapshotWrapper>
     </StyledLink>
   )

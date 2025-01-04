@@ -1,7 +1,7 @@
 "use client"
 
 import { useInView } from 'framer-motion'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useRef } from 'react'
 import styled, { css } from 'styled-components'
 
 import { media, SPACING } from '@/lib/theme'
@@ -121,26 +121,12 @@ const Column = ({
 }
 
 const MasonryGridClient = ({
-  elementsWithKeys
+  elementsWithKeys,
+  totalColumns
 }: {
   elementsWithKeys: { key: string; element: JSX.Element }[]
+  totalColumns: number
 }) => {
-  const [totalColumns, setTotalColumns] = useState<number>(2)
-
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth
-      setTotalColumns(width < 600 ? 1 : 2)
-    }
-
-    handleResize()
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
   const elementsByColumn = useMemo(() => {
     // Grab elements one at a time.
     // Use element's width and height to calculate which column to put it in.

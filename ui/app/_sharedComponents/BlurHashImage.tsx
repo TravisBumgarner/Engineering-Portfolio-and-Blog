@@ -32,17 +32,8 @@ const getBlurHash = (src: string) => {
 }
 
 const BlurHashImage = ({ src, priority, maxWidthPercent, alt }: { src: string, priority: boolean, maxWidthPercent: '33' | '50' | '100', alt?: string }) => {
-  let { width: originalWidth, height: originalHeight, blurHash } = getBlurHash(src)
+  const { width, height, blurHash } = getBlurHash(src)
   const blurDataURL = blurHashToDataURL(blurHash)
-
-  let width = originalWidth
-  let height = originalHeight
-
-  // if (maxWidth && maxWidth < originalWidth) {
-  //   const {scaledWidth, scaledHeight} = scaleToMaxWidth({ originalWidth, originalHeight, maxWidth })
-  //   width = scaledWidth
-  //   height = scaledHeight
-  // }
 
   const sizes = useMemo(() => {
     if(maxWidthPercent === '33') {
