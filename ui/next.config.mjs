@@ -13,6 +13,7 @@ const nextConfig = {
     styledComponents: true
   },
   images: {
+    deviceSizes: [700],
     remotePatterns: [
       {
         protocol: 'https',

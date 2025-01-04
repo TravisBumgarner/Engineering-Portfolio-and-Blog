@@ -1,5 +1,6 @@
 "use client"
 
+import { MAX_APP_WIDTH } from "@/lib/consts";
 import { SPACING, media } from "@/lib/theme";
 import styled from "styled-components";
 
@@ -36,7 +37,7 @@ export const BodyWrapper = styled.div`
 `
 
 export const AppWrapper = styled.div`
-  max-width: 1600px;
+  max-width: ${MAX_APP_WIDTH}px;
   margin: 0 auto;
   padding: ${SPACING.XXLARGE}px;
 

@@ -1,4 +1,5 @@
 
+import { MAX_GRID_IMAGE_WIDTH } from '@/lib/consts'
 import BlurHashImage from './BlurHashImage'
 import { SnapshotWrapper, StyledLink, StyledText } from './MasonryImage.client'
 
@@ -19,7 +20,7 @@ const MasonryImage = ({
     return (
       <SnapshotWrapper>
         <StyledText>{text}</StyledText>
-        <BlurHashImage priority={priority} src={src} />
+        <BlurHashImage maxWidth={MAX_GRID_IMAGE_WIDTH} priority={priority} src={src} />
       </SnapshotWrapper>
     )
   }
@@ -31,7 +32,7 @@ const MasonryImage = ({
           <StyledText>{text}</StyledText>
           {date && <time>{date}</time>}
         </div>
-        <BlurHashImage priority={priority} src={src} />
+        <BlurHashImage maxWidth={MAX_GRID_IMAGE_WIDTH} priority={priority} src={src} />
       </SnapshotWrapper>
     </StyledLink>
   )
