@@ -9,6 +9,9 @@ export const SECONDARY_COLOR = '#00eaff'
 export const PRIMARY_COLOR = '#ffce05'
 export const DISABLED_COLOR = '#ccc'
 
+const MONOSPACE_FONT = 'Ubuntu Mono, serif'
+const SANS_SERIF_FONT = 'Quicksand, sans-serif'
+
 export const SPACING = {
   XXSMALL: 4,
   XSMALL: 8,
@@ -169,7 +172,7 @@ export const GlobalReset = createGlobalStyle`
 export const GlobalStyle = createGlobalStyle`
    html {
         background-color: ${BACKGROUND_COLOR};
-        font-family: "Ubuntu Mono", serif;
+        font-family: ${SANS_SERIF_FONT};
         line-height: 1.5;
         font-weight: 400;
         font-size: 20px;
@@ -237,6 +240,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   code {
+    font-family: ${MONOSPACE_FONT};
     position: relative;
     font-size: 1rem;
     border: 1px solid ${BORDER_COLOR};
@@ -248,6 +252,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   p > code {
+    font-family: ${MONOSPACE_FONT};
     display: inline;
     border: 0;
     padding: 0;

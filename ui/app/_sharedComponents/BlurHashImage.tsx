@@ -2,14 +2,15 @@ import blurhashes from '@/content/blurhashes/index.json'
 import { blurHashToDataURL } from '@/lib/blurhashDataURL'
 import { BlurHash } from '@/lib/types'
 import Image from 'next/image'
+import { useMemo } from 'react'
 
-const scaleToMaxWidth = ({originalWidth, originalHeight, maxWidth}: {originalWidth: number, originalHeight: number, maxWidth: number}) => {
-  const scale = maxWidth / originalWidth
-  return {
-    scaledWidth: originalWidth * scale,
-    scaledHeight: originalHeight * scale
-  }
-}
+// const scaleToMaxWidth = ({originalWidth, originalHeight, maxWidth}: {originalWidth: number, originalHeight: number, maxWidth: number}) => {
+//   const scale = maxWidth / originalWidth
+//   return {
+//     scaledWidth: originalWidth * scale,
+//     scaledHeight: originalHeight * scale
+//   }
+// }
 
 const getBlurHash = (src: string) => {
   // This works because __STATIC__ always includes a public in the url.
@@ -30,18 +31,28 @@ const getBlurHash = (src: string) => {
   return result
 }
 
-const BlurHashImage = ({ src, priority, maxWidth }: { src: string, priority: boolean, maxWidth?: number }) => {
+const BlurHashImage = ({ src, priority, maxWidthPercent }: { src: string, priority: boolean, maxWidthPercent: '33' | '50' | '100'}) => {
   let { width: originalWidth, height: originalHeight, blurHash } = getBlurHash(src)
   const blurDataURL = blurHashToDataURL(blurHash)
 
   let width = originalWidth
   let height = originalHeight
 
-  if (maxWidth && maxWidth < originalWidth) {
-    const {scaledWidth, scaledHeight} = scaleToMaxWidth({ originalWidth, originalHeight, maxWidth })
-    width = scaledWidth
-    height = scaledHeight
-  }
+  // if (maxWidth && maxWidth < originalWidth) {
+  //   const {scaledWidth, scaledHeight} = scaleToMaxWidth({ originalWidth, originalHeight, maxWidth })
+  //   width = scaledWidth
+  //   height = scaledHeight
+  // }
+
+  const sizes = useMemo(() => {
+    if(maxWidthPercent === '33') {
+      return '(max-width: 750px) 100vw, 33vw'
+    }
+    if(maxWidthPercent === '50') {
+      return '(max-width: 750px) 100vw, 50vw'
+    }
+    return '(max-width: 750px) 100vw, 100vw'
+  }, [maxWidthPercent])
 
   return (
     <Image
@@ -55,6 +66,7 @@ const BlurHashImage = ({ src, priority, maxWidth }: { src: string, priority: boo
       quality={70}
       width={width}
       height={height}
+      sizes={sizes}
       style={{
         display: 'block',
         width: '100%',

@@ -23,7 +23,7 @@ const ProjectImage = ({
 }) => {
   return (
     <SnapshotWrapper>
-      <BlurHashImage priority={true} src={src} />
+      <BlurHashImage priority={true} maxWidthPercent="100" src={src} />
       <p>{text}</p>
     </SnapshotWrapper>
   )

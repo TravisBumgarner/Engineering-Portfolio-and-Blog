@@ -3,7 +3,6 @@
 import BlurHashImage from '@/app/_sharedComponents/BlurHashImage'
 import blurhashes from '@/content/blurhashes/index.json'
 import snapshots from '@/content/snapshots/index.json'
-import { MAX_GRID_IMAGE_WIDTH } from '@/lib/consts'
 import { FOREGROUND_COLOR, media, SPACING } from '@/lib/theme'
 import { BlurHash } from '@/lib/types'
 import { useInView } from 'framer-motion'
@@ -29,7 +28,7 @@ const Cell = ({ src, index }: { src: string, index: number }) => {
       $isHalfView={isHalfView}
     >
       {/* Priority load the first image in each column.  */}
-      <BlurHashImage priority={index === 0} src={src} maxWidth={MAX_GRID_IMAGE_WIDTH}  />
+      <BlurHashImage priority={index === 0} src={src} maxWidthPercent="50"  />
     </StyledCell>
   )
 }
