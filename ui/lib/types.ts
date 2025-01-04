@@ -1,0 +1,34 @@
+export type BlurHash = {
+  blurHash: string
+  width: number
+  height: number
+}
+
+type Image = {
+  label: string
+  src: string
+}
+
+type Link = {
+  label: string
+  src: string
+}
+
+export type TCreation = {
+  id: string
+  title: string
+  description: string
+  lastMeaningfulUpdate: string
+  images: Image[]
+  links: Link[]
+  previewImage: Image
+}
+
+export type BlogPost = {
+  title: string
+  date: string
+  draft: boolean
+  postMapping: string
+  description: string
+  preview_image: string
+}
