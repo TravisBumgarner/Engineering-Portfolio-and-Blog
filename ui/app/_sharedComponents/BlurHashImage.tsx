@@ -31,7 +31,7 @@ const getBlurHash = (src: string) => {
   return result
 }
 
-const BlurHashImage = ({ src, priority, maxWidthPercent }: { src: string, priority: boolean, maxWidthPercent: '33' | '50' | '100'}) => {
+const BlurHashImage = ({ src, priority, maxWidthPercent, alt }: { src: string, priority: boolean, maxWidthPercent: '33' | '50' | '100', alt?: string }) => {
   let { width: originalWidth, height: originalHeight, blurHash } = getBlurHash(src)
   const blurDataURL = blurHashToDataURL(blurHash)
 
@@ -62,7 +62,7 @@ const BlurHashImage = ({ src, priority, maxWidthPercent }: { src: string, priori
       // Loading lazy is ignored if priority is true
       {...(priority ? {} : {loading: 'lazy'})}
       src={`${process.env.NEXT_PUBLIC_STATIC_PATH}${src}`}
-      alt={src}
+      alt={alt || ''}
       quality={70}
       width={width}
       height={height}

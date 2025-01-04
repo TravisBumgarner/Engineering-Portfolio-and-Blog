@@ -1,4 +1,5 @@
 
+import BlurHashImage from './BlurHashImage'
 import { FigureWrapper } from './Figure.client'
 
 type FigureProps = {
@@ -9,7 +10,7 @@ type FigureProps = {
 const Figure = ({ src, caption }: FigureProps) => {
   return (
     <FigureWrapper>
-      <img src={`/posts/${src}`} alt={caption} />
+      <BlurHashImage src={`/posts/${src}`} alt={caption} />
       <figcaption>{caption}</figcaption>
     </FigureWrapper>
   )
