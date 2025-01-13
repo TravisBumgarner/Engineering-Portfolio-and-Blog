@@ -16,7 +16,8 @@ export const postMappings = {
   Post12: () => import('./12.mdx'),
   Post13: () => import('./13.mdx'),
   Post14: () => import('./14.mdx'),
-  Post15: () => import('./15.mdx')
+  Post15: () => import('./15.mdx'),
+  Post16: () => import('./16.mdx')
 }
 
 const posts: Record<string, BlogPost> = {
@@ -154,6 +155,15 @@ const posts: Record<string, BlogPost> = {
     description:
       'These are my observations as the world went remote and team dynamics went online.',
     preview_image: 'preview.jpg'
+  },
+  'resume-as-code': {
+    postMapping: 'Post16',
+    title: 'Resume as Code',
+    date: '2025-01-14',
+    draft: false,
+    description:
+      'Text editors are great for writing code. But what if we used them to write our resume?',
+    preview_image: 'preview.png'
   }
 }
 
