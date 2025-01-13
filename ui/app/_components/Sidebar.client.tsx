@@ -77,7 +77,7 @@ const SidebarClient = () => {
       <h3>Elsewhere</h3>
       <List>
         <ListItem>
-          <Link target="_blank" to="https://storage.googleapis.com/eng42-asdsad/public/travis_bumgarner_2024_12_05_resume.pdf">
+          <Link target="_blank" to="https://storage.googleapis.com/eng42-asdsad/public/travis_bumgarner_resume.pdf">
             Resume
           </Link>
         </ListItem>

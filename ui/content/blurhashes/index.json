@@ -1,4 +1,9 @@
 {
+  "/favicon.png": {
+    "blurHash": "U%TR=mlCf,iZj[fPfQfRg5e,f6f,j[fPfQfR",
+    "width": 357,
+    "height": 357
+  },
   "/me.png": {
     "blurHash": "UEAd7f~q9F9FIUt7?b-;t7ofayofIUWBxuWB",
     "width": 795,
@@ -193,6 +198,11 @@
     "blurHash": "UACi{,WA4njE?^n%D%RiOZM_MxM|_4jvRORP",
     "width": 1200,
     "height": 800
+  },
+  "/posts/resume-as-code/preview.png": {
+    "blurHash": "U2SPX_-;_39FD%IUxuxuxu4noft7ofRjWBt7",
+    "width": 1180,
+    "height": 1170
   },
   "/posts/storytelling-in-presentation/old_preview_image.png": {
     "blurHash": "U3S?DV4T?b_3Dixa%MRj?c.8RlD%bvNaR*j[",

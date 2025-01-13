@@ -189,7 +189,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
     color: ${SECONDARY_COLOR};
     margin: 0 0;
-    font-weight: 700;
+    font-weight: 100;
   }
   h2 {
     color: ${SECONDARY_COLOR};
