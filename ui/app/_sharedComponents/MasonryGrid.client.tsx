@@ -33,7 +33,7 @@ const StyledCell = styled.div<{
   $isJustInView: boolean
   $isHalfView: boolean
 }>`
-  transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.05s ease-in-out;
 
   ${({ $isJustInView, $isHalfView, $isMostlyInView }) => {
     if ($isMostlyInView) {
