@@ -45,3 +45,4 @@ next-env.d.ts
 .env.sentry-build-plugin
 .env
 .env.development
+ui/.env.nfs

@@ -21,11 +21,9 @@
 # Deploy
 
 1. `cd adhocs/blur_hash && yarn run start`
-1. Copy `output.json` to `blurHashLookup.ts`
-1. Navigate to console.cloud.google.com -> buckets -> eng42-asdsad
-1. Clear Contents and upload `public/` and replace with local `public/`
-1. `yarn bundle && yarn serve` Verify things are looking good.
-1. `yarn run deploy:dev` or `yarn run deploy:prod`
+2. Copy `output.json` to `blurHashLookup.ts`
+3. `yarn bundle && yarn serve` Verify things are looking good.
+4. `yarn run deploy:nfc`
 
 # New Photos
 

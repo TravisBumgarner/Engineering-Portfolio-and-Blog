@@ -52,7 +52,7 @@ const BlurHashImage = ({ src, priority, maxWidthPercent, alt }: { src: string, p
       priority={priority}
       // Loading lazy is ignored if priority is true
       {...(priority ? {} : {loading: 'lazy'})}
-      src={`${process.env.NEXT_PUBLIC_STATIC_PATH}${src}`}
+      src={src}
       alt={alt || ''}
       quality={70}
       width={width}

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     'I am a lifelong learner, creator, explorer, and tinkerer. This is a collection of my experiences.',
   openGraph: {
-    images: ['https://storage.googleapis.com/eng42-asdsad/public/me.png']
+    images: ['/me.png']
   }
 }
 
