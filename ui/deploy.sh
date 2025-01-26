@@ -14,9 +14,6 @@ REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
 TEMP_DIR="/tmp/portfolio-build"
 BRANCH="master"
 
-echo "Have you stopped the site on NFS?" # Note - The NFS API is still under development, at some point this could be done automatically.
-read -p "Press Enter to continue..."
-
 # Execute remote commands
 echo "Starting remote deployment..."
 ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST "
@@ -41,7 +38,10 @@ ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST "
 
     # Move build files to deployment directory
     echo 'Moving files to deployment directory...'
+
     rm -rf $REMOTE_DIR/*
+    rm -rf $REMOTE_DIR/.* 2>/dev/null
+
     mv .next start-next.sh package.json package-lock.json next.config.mjs public $REMOTE_DIR/
 
     # Install production dependencies in deployment directory
