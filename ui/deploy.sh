@@ -14,6 +14,7 @@ SERVER_HOST="${DEPLOY_SERVER_HOST}"
 REMOTE_DIR="/home/private"
 REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
 TEMP_DIR="/tmp/portfolio-build"
+BRANCH="nearly-free-speech"
 
 # Execute remote commands
 echo "Starting remote deployment..."
@@ -27,6 +28,7 @@ ssh $SERVER_USER@$SERVER_HOST "
 
     # Change to the ui directory and install dependencies
     cd $TEMP_DIR/ui
+    git checkout $BRANCH
 
     # Install dependencies and build
     echo 'Installing dependencies...'
