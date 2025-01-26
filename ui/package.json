@@ -5,8 +5,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy:dev": "gcloud config set project root-270023 && gcloud builds submit --tag gcr.io/root-270023/eng-42-next-js && gcloud run deploy eng-42-next-js --image gcr.io/root-270023/eng-42-next-js --platform managed --region us-east1",
-    "deploy:prod": "gcloud config set project root-270023 && gcloud builds submit --tag gcr.io/root-270023/eng42 && gcloud run deploy eng42 --image gcr.io/root-270023/eng42 --platform managed --region us-east1"
+    "deploy:nfs": "./deploy.sh"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

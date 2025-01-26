@@ -11,16 +11,6 @@ const nextConfig = {
   reactStrictMode: true,
   compiler: {
     styledComponents: true
-  },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'storage.googleapis.com',
-        port: '',
-        pathname: '/eng42-**/**',
-      },
-    ],
   }
 }
 
