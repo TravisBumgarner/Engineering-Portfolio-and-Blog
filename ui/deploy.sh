@@ -9,8 +9,6 @@ else
 fi
 
 # Define variables
-SERVER_USER="${DEPLOY_SERVER_USER}" 
-SERVER_HOST="${DEPLOY_SERVER_HOST}"
 REMOTE_DIR="/home/protected"
 REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
 TEMP_DIR="/tmp/portfolio-build"
@@ -18,8 +16,9 @@ BRANCH="nfs-part-2"
 
 # Execute remote commands
 echo "Starting remote deployment..."
-ssh $SERVER_USER@$SERVER_HOST "
+ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST "
     # Clean up any existing temp directory
+    echo 'Cleaning up any existing temp directory...'
     rm -rf $TEMP_DIR
 
     # Clone the repository
