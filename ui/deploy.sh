@@ -14,6 +14,9 @@ REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
 TEMP_DIR="/tmp/portfolio-build"
 BRANCH="nfs-part-2"
 
+echo "Have you stopped the site on NFS?" # Note - The NFS API is still under development, at some point this could be done automatically.
+read -p "Press Enter to continue..."
+
 # Execute remote commands
 echo "Starting remote deployment..."
 ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST "
