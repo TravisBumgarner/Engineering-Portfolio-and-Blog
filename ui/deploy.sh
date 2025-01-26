@@ -12,7 +12,7 @@ fi
 REMOTE_DIR="/home/protected"
 REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
 TEMP_DIR="/tmp/portfolio-build"
-BRANCH="nfs-part-2"
+BRANCH="master"
 
 echo "Have you stopped the site on NFS?" # Note - The NFS API is still under development, at some point this could be done automatically.
 read -p "Press Enter to continue..."
