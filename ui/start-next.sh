@@ -1,4 +1,2 @@
 #!/bin/sh
-export HOST=0.0.0.0
-export PORT=3000
-exec npm run start
+node .next/standalone/server.js
