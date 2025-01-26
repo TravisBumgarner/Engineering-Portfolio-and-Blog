@@ -12,27 +12,42 @@ fi
 SERVER_USER="${DEPLOY_SERVER_USER}"
 SERVER_HOST="${DEPLOY_SERVER_HOST}"
 REMOTE_DIR="/home/private"
-LOCAL_BUILD_DIR=".next"
-NODE_VERSION="18"
+REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
+TEMP_DIR="/tmp/portfolio-build"
 
-# Build the Next.js app locally
-echo "Building the Next.js app..."
-npm run build
+# Execute remote commands
+echo "Starting remote deployment..."
+ssh $SERVER_USER@$SERVER_HOST "
+    # Clean up any existing temp directory
+    rm -rf $TEMP_DIR
 
-# Create or update .nvmrc file on server
-echo "Setting up Node.js environment..."
-ssh $SERVER_USER@$SERVER_HOST "echo $NODE_VERSION > $REMOTE_DIR/.nvmrc"
+    # Clone the repository
+    echo 'Cloning repository...'
+    git clone $REPO_URL $TEMP_DIR
 
-# Delete existing private directory on server
-echo "Cleaning up existing deployment..."
-ssh $SERVER_USER@$SERVER_HOST "rm -rf $REMOTE_DIR/*"
+    # Change to the ui directory and install dependencies
+    cd $TEMP_DIR/ui
 
-# Upload the build files
-echo "Uploading build to the server..."
-scp -r $LOCAL_BUILD_DIR start-next.sh package.json package-lock.json next.config.mjs public $SERVER_USER@$SERVER_HOST:$REMOTE_DIR
+    # Install dependencies and build
+    echo 'Installing dependencies...'
+    npm install
 
-# # Setup and start the application
-echo "Setting up the application..."
-ssh $SERVER_USER@$SERVER_HOST "cd $REMOTE_DIR && npm install --production && chmod +x start-next.sh"
+    echo 'Building application...'
+    npm run build
+
+    # Move build files to deployment directory
+    echo 'Moving files to deployment directory...'
+    rm -rf $REMOTE_DIR/*
+    mv .next start-next.sh package.json package-lock.json next.config.mjs public $REMOTE_DIR/
+
+    # Install production dependencies in deployment directory
+    cd $REMOTE_DIR
+    npm install --production
+    chmod +x start-next.sh
+
+    # Clean up
+    echo 'Cleaning up...'
+    rm -rf $TEMP_DIR
+"
 
 echo "Deployment complete!"
