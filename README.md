@@ -3,6 +3,8 @@
 1. Populate .env.nfs
     - Grab username from NearlyFreeSpeech
     - Grab ssh config from `~/.ssh/config`
+1. Install dependencies `yarn`
+`. Run dev `yarn run dev`
 
 # Deploy
 
