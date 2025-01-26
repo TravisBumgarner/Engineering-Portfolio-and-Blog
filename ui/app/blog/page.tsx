@@ -28,7 +28,7 @@ const Blog = () => {
             })}
             link={`${ROUTES.BLOG.path}/${id}`}
             text={title}
-            src={`/posts/${id}/${posts[id].preview_image}`}
+            src={`/post-resources/${id}/${posts[id].preview_image}`}
           />
         )
       }

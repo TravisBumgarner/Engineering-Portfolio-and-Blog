@@ -52,7 +52,7 @@ const Creation = async ({ params }: { params: Promise<{ id: string }> }) => {
         <ProjectImage
           text={i.label}
           key={index}
-          src={`/projects/${id}/${i.src}`}
+          src={`/project-resources/${id}/${i.src}`}
         />
       </SnapshotWrapper>
     )

@@ -27,7 +27,7 @@ const Portfolio = () => {
               { month: 'long', year: 'numeric' }
             )}`}
             src={
-              previewImage && `/projects/${id}/${previewImage.src}`
+              previewImage && `/project-resources/${id}/${previewImage.src}`
             }
           />
         )
