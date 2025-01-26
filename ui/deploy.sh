@@ -14,7 +14,7 @@ SERVER_HOST="${DEPLOY_SERVER_HOST}"
 REMOTE_DIR="/home/protected"
 REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
 TEMP_DIR="/tmp/portfolio-build"
-BRANCH="nearly-free-speech"
+BRANCH="main"
 
 # Execute remote commands
 echo "Starting remote deployment..."
