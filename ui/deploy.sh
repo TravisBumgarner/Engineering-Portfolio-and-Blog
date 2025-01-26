@@ -11,7 +11,7 @@ fi
 # Define variables
 SERVER_USER="${DEPLOY_SERVER_USER}"
 SERVER_HOST="${DEPLOY_SERVER_HOST}"
-REMOTE_DIR="/home/private"
+REMOTE_DIR="/home/protected"
 REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
 TEMP_DIR="/tmp/portfolio-build"
 BRANCH="nearly-free-speech"
