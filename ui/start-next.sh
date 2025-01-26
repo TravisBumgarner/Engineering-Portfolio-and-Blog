@@ -1,2 +1,2 @@
 #!/bin/sh
-node .next/standalone/server.js
+exec npm run start
