@@ -1,6 +1,7 @@
 import ClientLayout from '@/lib/client-layout'
 import StyledComponentsRegistry from '@/lib/styled-components-registry'
 import { makeNewSiteTitle } from '@/lib/utilities'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { ReactNode } from 'react'
 import SiteTitle from './_components/SiteTitle'
 
@@ -29,21 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
 
         <link rel="icon" href="/favicon.png" />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-67RM7JF6TY"
-        ></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || []
-            function gtag() {
-              dataLayer.push(arguments)
-            }
-            gtag('js', new Date())
-
-            gtag('config', 'G-67RM7JF6TY')
-      `}
-        </script>
+        <GoogleAnalytics gaId="G-67RM7JF6TY" />
       </head>
       <body>
         <StyledComponentsRegistry>

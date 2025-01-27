@@ -30,8 +30,11 @@ const ProjectImage = ({
   )
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const project = projects[params.id]
+type Params = Promise<{ id: string }>
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { id } = await params
+  const project = projects[id]
   
   if (!project) {
     return {
@@ -44,12 +47,12 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     title: `${project.title} - Travis Bumgarner`,
     description: `${project.description.slice(0, 150)}...` || 'A project by Travis Bumgarner',
     openGraph: {
-      images: [`/project-resources/${params.id}/${project.previewImage}`]
+      images: [`/project-resources/${id}/${project.previewImage}`]
     }
   }
 }
 
-const Creation = async ({ params }: { params: Promise<{ id: string }> }) => {
+const Creation = async ({ params }: { params: Params }) => {
   const { id } = await params
   const project = projects[id]
   if(!project){

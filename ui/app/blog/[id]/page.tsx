@@ -10,9 +10,16 @@ const loadPost = async (postId: string) => {
   return postModule.default // Assuming the default export is the MDX component
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const post = posts[params.id]
-  
+type Params = Promise<{ id: string }>
+
+export async function generateMetadata({
+  params
+}: {
+  params: Params
+}): Promise<Metadata> {
+  const { id } = await params
+  const post = posts[id]
+
   if (!post) {
     return {
       title: 'Post Not Found',
@@ -24,22 +31,21 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     title: `${post.title} - Travis Bumgarner`,
     description: post.description || 'A blog post by Travis Bumgarner',
     openGraph: {
-      images: [`/post-resources/${params.id}/${post.preview_image}`]
+      images: [`/post-resources/${id}/${post.preview_image}`]
     }
   }
 }
 
-const Post = async ({ params }: { params: Promise<{ id: string }> }) => {
+const Post = async ({ params }: { params: Params }) => {
   const { id } = await params
   const post = posts[id]
-  if(!post){
+  if (!post) {
     return notFound()
   }
   const Component = await loadPost(id)
 
-
   return (
-    <div style={{maxWidth: MAX_CONTENT_WIDTH, margin: '0px auto'}}>
+    <div style={{ maxWidth: MAX_CONTENT_WIDTH, margin: '0px auto' }}>
       <h1>
         <Link to={ROUTES.BLOG.path}>Blog://</Link> {post.title}
       </h1>
