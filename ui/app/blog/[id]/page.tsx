@@ -1,12 +1,12 @@
 import Link from '@/app/_sharedComponents/Link'
-import posts, { postMappings } from '@/content/posts'
+import posts from '@/content/posts'
 import { MAX_CONTENT_WIDTH } from '@/lib/consts'
 import ROUTES from '@/lib/routes'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-const loadPost = async (fileName: keyof typeof postMappings) => {
-  const postModule = await postMappings[fileName]()
+const loadPost = async (postId: string) => {
+  const postModule = await import(`@/content/posts/${postId}.mdx`)
   return postModule.default // Assuming the default export is the MDX component
 }
 
@@ -35,7 +35,7 @@ const Post = async ({ params }: { params: Promise<{ id: string }> }) => {
   if(!post){
     return notFound()
   }
-  const Component = await loadPost(post.postMapping as keyof typeof postMappings)
+  const Component = await loadPost(id)
 
 
   return (

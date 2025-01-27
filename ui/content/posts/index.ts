@@ -1,25 +1,5 @@
 import { BlogPost } from '@/lib/types'
 
-// src/posts/postMappings.ts
-export const postMappings = {
-  Post1: () => import('./1.mdx'),
-  Post2: () => import('./2.mdx'),
-  Post3: () => import('./3.mdx'),
-  Post4: () => import('./4.mdx'),
-  Post5: () => import('./5.mdx'),
-  Post6: () => import('./6.mdx'),
-  Post7: () => import('./7.mdx'),
-  Post8: () => import('./8.mdx'),
-  Post9: () => import('./9.mdx'),
-  Post10: () => import('./10.mdx'),
-  Post11: () => import('./11.mdx'),
-  Post12: () => import('./12.mdx'),
-  Post13: () => import('./13.mdx'),
-  Post14: () => import('./14.mdx'),
-  Post15: () => import('./15.mdx'),
-  Post16: () => import('./16.mdx')
-}
-
 const posts: Record<string, BlogPost> = {
   'a-collection-of-tips-to-become-a-software-engineer': {
     postMapping: 'Post1',
