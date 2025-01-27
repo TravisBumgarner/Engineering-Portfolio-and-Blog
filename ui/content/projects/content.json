@@ -771,10 +771,6 @@
     ],
     "links": [
       {
-        "label": "View App",
-        "src": "https://stitch.sillysideprojects.com"
-      },
-      {
         "label": "GitHub",
         "src": "https://github.com/TravisBumgarner/Silly-Apps/tree/main/stitch_it"
       }
