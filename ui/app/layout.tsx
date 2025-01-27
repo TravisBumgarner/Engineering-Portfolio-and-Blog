@@ -10,6 +10,7 @@ import Sidebar from './_components/Sidebar'
 import { AppWrapper, BodyWrapper } from './layout.client'
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://travisbumgarner.dev"),
   title: 'Travis Bumgarner',
   description:
     'I am a lifelong learner, creator, explorer, and tinkerer. This is a collection of my experiences.',

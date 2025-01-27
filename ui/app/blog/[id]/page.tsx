@@ -28,6 +28,7 @@ export async function generateMetadata({
   }
 
   return {
+    metadataBase: new URL("https://travisbumgarner.dev"),
     title: `${post.title} - Travis Bumgarner`,
     description: post.description || 'A blog post by Travis Bumgarner',
     openGraph: {
