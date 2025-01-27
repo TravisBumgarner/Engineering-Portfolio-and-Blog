@@ -68,7 +68,10 @@ const Contact = () => {
     setIsSubmitting(true)
     const response = await fetch('https://contact-form.nfshost.com/contact', {
       method: 'POST',
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json'
+      },
     })
     if (response.ok) {
       setSuccess(true)
