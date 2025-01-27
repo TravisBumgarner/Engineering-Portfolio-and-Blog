@@ -11,6 +11,7 @@
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.1.0",
+    "@next/third-parties": "^15.1.6",
     "@sentry/nextjs": "^8",
     "@types/mdx": "^2.0.13",
     "blurhash": "^2.0.5",
