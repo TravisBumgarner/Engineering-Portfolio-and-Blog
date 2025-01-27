@@ -1,6 +1,5 @@
 'use client'
 
-import { submitContactForm } from '@/lib/firebase'
 import { BORDER_COLOR, CSSHover } from '@/lib/theme'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
@@ -52,7 +51,7 @@ const Contact = () => {
     name: '',
     email: '',
     message: '',
-    website: 'silly-side-projects-landing-page'
+    website: 'engineering-portfolio-and-blog'
   })
 
   const handleChange = (
@@ -67,8 +66,11 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    const response = await submitContactForm(formData)
-    if (response.data) {
+    const response = await fetch('https://contact-form.nfshost.com/contact', {
+      method: 'POST',
+      body: JSON.stringify(formData)
+    })
+    if (response.ok) {
       setSuccess(true)
       setFormData(prev => ({
         ...prev,
