@@ -44,6 +44,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   }
 
   return {
+    metadataBase: new URL("https://travisbumgarner.dev"),
     title: `${project.title} - Travis Bumgarner`,
     description: `${project.description.slice(0, 150)}...` || 'A project by Travis Bumgarner',
     openGraph: {
