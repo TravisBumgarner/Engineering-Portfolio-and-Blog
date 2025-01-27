@@ -9,7 +9,7 @@ import ROUTES from '@/lib/routes'
 const Portfolio = () => {
   const totalColumns = useTotalColumns()
 
-  const tiles = projects
+  const tiles = Object.values(projects)
     .sort((a, b) => (a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1))
     .map(({ id, title, previewImage, lastMeaningfulUpdate }, index) => {
       return {

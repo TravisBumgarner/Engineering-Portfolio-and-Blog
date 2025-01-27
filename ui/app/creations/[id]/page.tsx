@@ -3,6 +3,7 @@ import Link from '@/app/_sharedComponents/Link'
 import MasonryGrid from '@/app/_sharedComponents/MasonryGrid'
 import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import {
   DescriptionWrapper,
@@ -29,10 +30,28 @@ const ProjectImage = ({
   )
 }
 
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const project = projects[params.id]
+  
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+      description: 'The requested project could not be found'
+    }
+  }
+
+  return {
+    title: `${project.title} - Travis Bumgarner`,
+    description: `${project.description.slice(0, 150)}...` || 'A project by Travis Bumgarner',
+    openGraph: {
+      images: [`/project-resources/${params.id}/${project.previewImage}`]
+    }
+  }
+}
+
 const Creation = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params
-  const projectIndex = projects.findIndex(project => project.id == id)
-  const project = projects[projectIndex]
+  const project = projects[id]
   if(!project){
     return notFound()
   }

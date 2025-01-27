@@ -1,5 +1,5 @@
-[
-  {
+{
+  "2d-plotter-explorations": {
     "title": "2D Plotter Explorations",
     "id": "2d-plotter-explorations",
     "description": "Many explorations over many years into how 2D plotters function and can be made.",
@@ -53,7 +53,7 @@
       "src": "DSC_2538.jpg"
     }
   },
-  {
+  "automated-film-scanner": {
     "title": "Automated Film Scanner",
     "id": "automated-film-scanner",
     "description": "Automated film scanner for 35mm negative film.",
@@ -95,7 +95,7 @@
       "src": "0424160039.jpg"
     }
   },
-  {
+  "camera-from-scratch": {
     "title": "Camera From Scratch",
     "id": "camera-from-scratch",
     "description": "Camera built and coded from scratch.\nTools & Technologies: Arduino, PCB, Soldering Iron, Eagle CAD, ArduCAM",
@@ -141,7 +141,7 @@
       "src": "DSC02544.jpg"
     }
   },
-  {
+  "development-class": {
     "title": "MIT D-Lab Development Class",
     "id": "development-class",
     "description": "Led a group of MIT students on a three-week trip to Bogota, Colombia. We worked on engineering projects and taught workshops around Arduino, soldering, basic electronics, and other related topics.",
@@ -183,7 +183,7 @@
       "src": "17434897_1657246607625359_4142016014936483845_o.jpg"
     }
   },
-  {
+  "educational-content-creator": {
     "title": "Educational Content Creator",
     "id": "educational-content-creator",
     "description": "An exploration into ways to share what I've learned with others.",
@@ -233,7 +233,7 @@
       "src": "DSC_9693.jpg"
     }
   },
-  {
+  "intro-to-arduino-workshop": {
     "title": "Intro to Arduino Workshop",
     "id": "intro-to-arduino-workshop",
     "description": "Designed, developed, and taught an introductory Arduino workshop focusing on the basics of circuits, soldering, safety, and coding.",
@@ -271,7 +271,7 @@
       "src": "IMG_20170530_205251_825.jpg"
     }
   },
-  {
+  "painless-prototyping-first-attempt": {
     "title": "Painless Prototyping Startup First Attempt",
     "id": "painless-prototyping-first-attempt",
     "description": "The Button Board makes adding push buttons to electronics projects a breeze by eliminating headaches and adding useful functionality.",
@@ -305,7 +305,7 @@
       "src": "DSC09243.jpg"
     }
   },
-  {
+  "painless-prototyping-second-attempt": {
     "title": "Painless Prototyping Startup",
     "id": "painless-prototyping-second-attempt",
     "description": "Customize what your keyboard does and how it works! Classes on the topics of soldering, circuits and coding are included!",
@@ -363,7 +363,7 @@
       "src": "DSC_5663.jpg"
     }
   },
-  {
+  "pan-and-tilt-camera-adapter": {
     "title": "Pan & Tilt Camera Adapter",
     "id": "pan-and-tilt-camera-adapter",
     "description": "A camera adapter that allows for pan and tilt functionality.",
@@ -397,7 +397,7 @@
       "src": "DSC08273.jpg"
     }
   },
-  {
+  "selected-woodworking": {
     "title": "Selected Woodworking",
     "id": "selected-woodworking",
     "description": "An assortment of woodworking projects.",
@@ -442,7 +442,7 @@
       "src": "IMG_20170502_194545_028.jpg"
     }
   },
-  {
+  "security-system": {
     "title": "Security System",
     "id": "security-system",
     "description": "Cambridge Hackspace security system.\nTools & Technologies: Raspberry Pi, Python, Flask, Dropbox API",
@@ -476,7 +476,7 @@
       "src": "IMG_20170209_193557.jpg"
     }
   },
-  {
+  "smart-display": {
     "title": "Raspberry Pi Smart Display",
     "id": "smart-display",
     "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather.\nTools & Technologies: Raspberry Pi, SolidWorks, 3D Printer, Node, Google Cloud Platform, Soldering Iron",
@@ -518,7 +518,7 @@
       "src": "model.jpg"
     }
   },
-  {
+  "strangerer-things": {
     "title": "Strangerer Things Lights Display",
     "id": "strangerer-things",
     "description": "Overly engineered Stranger Things lights.\nTools & Technologies: Raspberry Pi, AWS, Slack API, Express, Laser Cutter",
@@ -556,7 +556,7 @@
       "src": "IMG_20181218_123142.jpg"
     }
   },
-  {
+  "gcode2dplotterart": {
     "title": "gcode2dplotterart Python Library",
     "id": "gcode2dplotterart",
     "description": "Easily generate plotter art with your 2D plotter or 3D printer.\nThis library abstracts away G-Code so you can focus on making art.\nTools & Technologies: Python, Docusaurus, G-Code",
@@ -602,7 +602,7 @@
       "src": "1.jpeg"
     }
   },
-  {
+  "photography-portfolio": {
     "title": "Photography Portfolio",
     "id": "photography-portfolio",
     "description": "Portfolio highlighting my photography.\nFeatures advanced browser performance optimizations, including modern file formats, lazy rendering, TTL enhancements, and the blurhash algorithm.\nTools & Technologies: React, TypeScript, Adobe Lightroom, Google Cloud Platform",
@@ -636,7 +636,7 @@
       "src": "1.png"
     }
   },
-  {
+  "todo-today": {
     "title": "Todo Today Desktop App",
     "id": "todo-today",
     "description": "The todo List for the easily distracted.\nTools & Technologies: React, TypeScript, Electron, IndexedDB, Dexie",
@@ -674,7 +674,7 @@
       "src": "todo-today1.png"
     }
   },
-  {
+  "ideas-down": {
     "title": "Ideas Down iPhone App",
     "id": "ideas-down",
     "description": "Clear your mind and make room for your next big idea.\nTools & Technologies: React Native, TypeScript, Figma, Expo, Drizzle",
@@ -724,7 +724,7 @@
       "src": "1.png"
     }
   },
-  {
+  "manifest-playlists": {
     "title": "Spotify Playlist Generator",
     "id": "manifest-playlists",
     "description": "Generate Spotify playlists with interesting parameters.\n Tools & Technologies: React, TypeScript, Express, GraphQL, Spotify API, Google Cloud Platform",
@@ -758,7 +758,7 @@
       "src": "1.png"
     }
   },
-  {
+  "stitch-it": {
     "title": "CSS Cross Stitch Generator",
     "id": "stitch-it",
     "description": "Generate CSS cross stitches from photos\nTools & Technologies: Python, Flask, Google Cloud Platform",
@@ -784,7 +784,7 @@
       "src": "1.png"
     }
   },
-  {
+  "bananarama-voting": {
     "title": "Bananarama Voting App",
     "id": "bananarama-voting",
     "description": "Quickly spin up a poll where people can submit entries and everyone can vote on them.\nTools & Technologies: React, TypeScript, GraphQL, Express, Google Cloud Platform",
@@ -822,7 +822,7 @@
       "src": "3.png"
     }
   },
-  {
+  "candlelight": {
     "title": "Candlelight Game",
     "id": "candlelight",
     "description": "Puzzle game originally created for the Pirate Software Game Jam.\nTools & Technologies: Godot, Aseprite, Figma, Steam API",
@@ -856,4 +856,4 @@
       "src": "1.png"
     }
   }
-]
+}
