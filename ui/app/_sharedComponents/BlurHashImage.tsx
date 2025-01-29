@@ -23,12 +23,12 @@ const getBlurHash = (src: string) => {
 
 const BlurHashImage = ({
   src,
-  preload,
+  priority,
   maxWidthPercent,
   alt
 }: {
   src: string
-  preload: boolean
+  priority: boolean
   maxWidthPercent: '33' | '50' | '100'
   alt?: string
 }) => {
@@ -55,7 +55,7 @@ const BlurHashImage = ({
     <Image
       ref={imgRef}
       blurDataURL={blurDataURL}
-      priority={preload}
+      priority={priority}
       src={src || ''}
       alt={alt || ''}
       quality={70}

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import BlurHashImage from '@/app/_sharedComponents/BlurHashImage'
 import blurhashes from '@/content/blurhashes/index.json'
@@ -12,14 +12,13 @@ import styled, { css } from 'styled-components'
 const PHOTO_SPACING = SPACING.MEDIUM
 const PHOTO_SPACING_MOBILE = SPACING.XSMALL
 
-
-const Cell = ({ src, index }: { src: string, index: number }) => {
+const Cell = ({ src, index }: { src: string; index: number }) => {
   const ref = useRef<HTMLDivElement>(null)
 
   const isMostlyInView = useInView(ref, { amount: 0.75 })
   const isHalfView = useInView(ref, { amount: 0.35 })
   const isJustInView = useInView(ref, { amount: 0.05 })
- 
+
   return (
     <StyledCell
       ref={ref}
@@ -27,8 +26,8 @@ const Cell = ({ src, index }: { src: string, index: number }) => {
       $isJustInView={isJustInView}
       $isHalfView={isHalfView}
     >
-     
-      <BlurHashImage preload={index === 0} src={src} maxWidthPercent="50"  />
+      {/* Priority load the first image in each column.  */}
+      <BlurHashImage priority={index === 0} src={src} maxWidthPercent="50" />
     </StyledCell>
   )
 }
@@ -79,7 +78,13 @@ const StyledColumn = styled.div<{ $columnCount: number }>`
   }
 `
 
-const Column = ({ photos, columnCount }: { photos: string[]; columnCount: number }) => {
+const Column = ({
+  photos,
+  columnCount
+}: {
+  photos: string[]
+  columnCount: number
+}) => {
   return (
     <StyledColumn $columnCount={columnCount}>
       {photos.map((src, index) => (
@@ -118,7 +123,9 @@ const PhotoMasonry = () => {
       // All photos will have a width of 1 unit.
       // Calculate height based on aspect ratio and we'll use that to determine
       // which column to put it in.
-      const { height, width } = blurhashes[src as keyof typeof blurhashes] as BlurHash
+      const { height, width } = blurhashes[
+        src as keyof typeof blurhashes
+      ] as BlurHash
       const unitHeight = height / width
 
       const columnforCurrentPhoto = columnHeights.indexOf(
