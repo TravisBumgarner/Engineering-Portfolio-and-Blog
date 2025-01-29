@@ -39,8 +39,9 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  max-height: 70vh;
-  object-fit: contain;
+  max-height: 90vh;
+  object-fit: cover;
+  object-position: top;
 }
 
 > p {

@@ -36,7 +36,7 @@ export const SnapshotWrapper = styled.div<{ $isLink?: boolean }>`
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
-    max-height: 60vh;
+    max-height: 90vh;
     object-fit: cover;
     object-position: top;
   }
