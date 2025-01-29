@@ -18,7 +18,6 @@ const Favicon = () => {
 
 
 const Loading = () => {
-  console.log('Loading')
   return (
     <LoadingContainer>
       <Favicon />
