@@ -1,9 +1,8 @@
 import blurhashes from '@/content/blurhashes/index.json'
 import { blurHashToDataURL } from '@/lib/blurhashDataURL'
 import { BlurHash } from '@/lib/types'
-import { useInView } from 'motion/react'
 import Image from 'next/image'
-import { useMemo, useRef } from 'react'
+import { useMemo } from 'react'
 
 const getBlurHash = (src: string) => {
   const result = blurhashes[src as keyof typeof blurhashes] as BlurHash
@@ -34,12 +33,6 @@ const BlurHashImage = ({
 }) => {
   const { width, height, blurHash } = getBlurHash(src)
   const blurDataURL = blurHashToDataURL(blurHash)
-  const imgRef = useRef<HTMLImageElement>(null)
-
-  const startLoadingImage = useInView(imgRef, {
-    margin: '0px 0px 100px 0px',
-    once: true
-  })
 
   const sizes = useMemo(() => {
     if (maxWidthPercent === '33') {
@@ -53,10 +46,10 @@ const BlurHashImage = ({
 
   return (
     <Image
-      ref={imgRef}
+      placeholder="blur"
       blurDataURL={blurDataURL}
       priority={priority}
-      src={src || ''}
+      src={src}
       alt={alt || ''}
       quality={70}
       width={width}

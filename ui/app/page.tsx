@@ -18,17 +18,25 @@ const Cell = ({ src, index }: { src: string; index: number }) => {
   const isMostlyInView = useInView(ref, { amount: 0.75 })
   const isHalfView = useInView(ref, { amount: 0.35 })
   const isJustInView = useInView(ref, { amount: 0.05 })
-
+  const shouldLoad = useInView(ref, { margin: '0px 0px 100px 0px', once: true })
+  console.log(shouldLoad)
   return (
-    <StyledCell
-      ref={ref}
-      $isMostlyInView={isMostlyInView}
-      $isJustInView={isJustInView}
-      $isHalfView={isHalfView}
-    >
-      {/* Priority load the first image in each column.  */}
-      <BlurHashImage priority={index === 0} src={src} maxWidthPercent="50" />
-    </StyledCell>
+    <div ref={ref}>
+      {shouldLoad ? (
+        <StyledCell
+          $isMostlyInView={isMostlyInView}
+          $isJustInView={isJustInView}
+          $isHalfView={isHalfView}
+        >
+          {/* Priority load the first image in each column.  */}
+          <BlurHashImage
+            priority={index === 0}
+            src={src}
+            maxWidthPercent="50"
+          />
+        </StyledCell>
+      ) : null}
+    </div>
   )
 }
 
