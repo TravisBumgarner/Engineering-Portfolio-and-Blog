@@ -19,17 +19,7 @@ const Cell = ({ src, index }: { src: string, index: number }) => {
   const isMostlyInView = useInView(ref, { amount: 0.75 })
   const isHalfView = useInView(ref, { amount: 0.35 })
   const isJustInView = useInView(ref, { amount: 0.05 })
-  const aboutToBeInView = useInView(ref, {margin: '0px 0px -500px 0px'})
-
-  const loadMode = useMemo(() => {
-    // Priority load the first image in each column.
-    if (index === 0) {
-      return 'preload'
-    }
-    return aboutToBeInView ? 'normal' : 'lazy'
-  }, [aboutToBeInView, index])
-  
-  console.log('loadMode', loadMode)
+ 
   return (
     <StyledCell
       ref={ref}
@@ -38,7 +28,7 @@ const Cell = ({ src, index }: { src: string, index: number }) => {
       $isHalfView={isHalfView}
     >
      
-      <BlurHashImage loadMode={loadMode} src={src} maxWidthPercent="50"  />
+      <BlurHashImage preload={index === 0} src={src} maxWidthPercent="50"  />
     </StyledCell>
   )
 }

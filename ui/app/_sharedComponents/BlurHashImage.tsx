@@ -1,8 +1,9 @@
 import blurhashes from '@/content/blurhashes/index.json'
 import { blurHashToDataURL } from '@/lib/blurhashDataURL'
 import { BlurHash } from '@/lib/types'
+import { useInView } from 'motion/react'
 import Image from 'next/image'
-import { useMemo } from 'react'
+import { useMemo, useRef } from 'react'
 
 const getBlurHash = (src: string) => {
   const result = blurhashes[src as keyof typeof blurhashes] as BlurHash
@@ -22,17 +23,23 @@ const getBlurHash = (src: string) => {
 
 const BlurHashImage = ({
   src,
-  loadMode,
+  preload,
   maxWidthPercent,
   alt
 }: {
   src: string
-  loadMode: 'preload' | 'lazy' | 'normal'
+  preload: boolean
   maxWidthPercent: '33' | '50' | '100'
-  alt?: string,
+  alt?: string
 }) => {
   const { width, height, blurHash } = getBlurHash(src)
   const blurDataURL = blurHashToDataURL(blurHash)
+  const imgRef = useRef<HTMLImageElement>(null)
+
+  const startLoadingImage = useInView(imgRef, {
+    margin: '0px 0px 100px 0px',
+    once: true
+  })
 
   const sizes = useMemo(() => {
     if (maxWidthPercent === '33') {
@@ -44,22 +51,12 @@ const BlurHashImage = ({
     return '(max-width: 750px) 100vw, 100vw'
   }, [maxWidthPercent])
 
-  const loadObject = useMemo(() => {
-    // NextJS docs mention not mixing eager and lazy.
-    if (loadMode === 'preload') {
-      return { priority: true } as const
-    }
-    if (loadMode === 'lazy') {
-      return { loading: 'lazy' } as const
-    }
-    return {} as const
-  }, [loadMode])
   return (
     <Image
-      placeholder="blur"
+      ref={imgRef}
       blurDataURL={blurDataURL}
-      {...loadObject}
-      src={src}
+      priority={preload}
+      src={src || ''}
       alt={alt || ''}
       quality={70}
       width={width}
