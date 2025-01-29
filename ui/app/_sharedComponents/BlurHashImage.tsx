@@ -51,7 +51,7 @@ const BlurHashImage = ({ src, priority, maxWidthPercent, alt }: { src: string, p
       blurDataURL={blurDataURL}
       priority={priority}
       // Loading lazy is ignored if priority is true
-      {...(priority ? {} : {loading: 'lazy'})}
+      // {...(priority ? {} : {loading: 'lazy'})}
       src={src}
       alt={alt || ''}
       quality={70}
