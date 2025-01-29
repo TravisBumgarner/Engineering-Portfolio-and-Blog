@@ -19,7 +19,6 @@ const Cell = ({ src, index }: { src: string; index: number }) => {
   const isHalfView = useInView(ref, { amount: 0.35 })
   const isJustInView = useInView(ref, { amount: 0.05 })
   const shouldLoad = useInView(ref, { margin: '0px 0px 100px 0px', once: true })
-  console.log(shouldLoad)
   return (
     <div ref={ref}>
       {shouldLoad ? (
