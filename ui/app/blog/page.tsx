@@ -12,7 +12,7 @@ const Blog = () => {
           new Date(posts[a].date) < new Date(posts[b].date) ? 1 : -1
         )
         .map((id, index) => {
-          const { title } = posts[id]
+          const { title, description } = posts[id]
           return (
             <ListItem
               key={id}
@@ -22,7 +22,8 @@ const Blog = () => {
                 year: 'numeric'
               })}
               link={`${ROUTES.BLOG.path}/${id}`}
-              text={title}
+              title={title}
+              description={description}
               src={`/post-resources/${id}/${posts[id].preview_image}`}
             />
           )

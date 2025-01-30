@@ -1,4 +1,6 @@
+'use client'
 
+import { FONT_SIZES, SPACING, THEME } from '@/lib/theme'
 import BlurHashImage from './BlurHashImage'
 
 type FigureProps = {
@@ -8,10 +10,16 @@ type FigureProps = {
 
 const Figure = ({ src, caption }: FigureProps) => {
   return (
-    <div>
+    <figure
+      style={{
+        backgroundColor: THEME.SECONDARY_BACKGROUND_COLOR,
+        color: THEME.FOREGROUND_COLOR,
+        padding: SPACING.MEDIUM
+      }}
+    >
       <BlurHashImage priority={false} src={src} alt={caption} />
-      <figcaption>{caption}</figcaption>
-    </div>
+      <figcaption style={{fontSize: FONT_SIZES.SMALL, fontWeight: 100, marginTop: SPACING.SMALL}}>{caption}</figcaption>
+    </figure>
   )
 }
 

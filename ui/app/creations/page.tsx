@@ -11,22 +11,22 @@ const Portfolio = () => {
         .sort((a, b) =>
           a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1
         )
-        .map(({ id, title, previewImage, lastMeaningfulUpdate }, index) => {
+        .map(({ id, title, previewImage, lastMeaningfulUpdate, description }, index) => {
           return (
             <ListItem
               priority={index === 0}
               key={id}
               link={`${ROUTES.CREATIONS.path}/${id}`}
-              text={title}
-                date={`Last Updated ${new Date(
-                  `${lastMeaningfulUpdate}-05`
-                ).toLocaleString('default', {
-                  month: 'long',
-                  year: 'numeric'
-                })}`}
-                src={
-                  previewImage && `/project-resources/${id}/${previewImage.src}`
-                }
+              title={title}
+              date={`Last Updated ${new Date(
+                `${lastMeaningfulUpdate}-05`
+              ).toLocaleString('default', {
+                month: 'long',
+                year: 'numeric'
+              })}`}
+              src={
+                previewImage && `/project-resources/${id}/${previewImage.src}`
+              }
             />
           )
         })}

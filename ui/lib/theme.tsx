@@ -10,7 +10,7 @@ const COLORS = {
     '100': '#FFFFFF',
     '200': '#F6F6F6',
     '300': '',
-    '400': '',
+    '400': '#2C2C2C',
     '500': '#424242',
     '600': ''
   },
@@ -19,21 +19,31 @@ const COLORS = {
   }
 }
 
-const LIGHT_THEME = {
-  BACKGROUND_COLOR: COLORS.GRAYS['100'],
+type Theme = {
+  PRIMARY_BACKGROUND_COLOR: string
+  SECONDARY_BACKGROUND_COLOR: string
+  FOREGROUND_COLOR: string
+  PRIMARY_COLOR: string
+}
+
+const LIGHT_THEME: Theme = {
+  PRIMARY_BACKGROUND_COLOR: COLORS.GRAYS['100'],
+  SECONDARY_BACKGROUND_COLOR: COLORS.GRAYS['200'],
   FOREGROUND_COLOR: COLORS.GRAYS['500'],
-  PRIMARY_COLOR: COLORS.PRIMARY['100']
+  PRIMARY_COLOR: COLORS.PRIMARY['100'],
 }
 
-const DARK_THEME = {
-  BACKGROUND_COLOR: COLORS.GRAYS['500'],
+const DARK_THEME: Theme = {
+  PRIMARY_BACKGROUND_COLOR: COLORS.GRAYS['500'],
   FOREGROUND_COLOR: COLORS.GRAYS['100'],
-  PRIMARY_COLOR: COLORS.PRIMARY['100']
+  PRIMARY_COLOR: COLORS.PRIMARY['100'],
+  SECONDARY_BACKGROUND_COLOR: COLORS.GRAYS['400']
 }
 
-export const THEME = DARK_THEME
+export const THEME: Theme = DARK_THEME
 
-const FONT_SIZES = {
+export const FONT_SIZES = {
+  XSMALL: '12px',
   SMALL: '16px',
   MEDIUM: '20px',
   LARGE: '36px',
@@ -63,7 +73,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: ${EVERYTHING_FONT};
     color: ${THEME.FOREGROUND_COLOR};
-    background-color: ${THEME.BACKGROUND_COLOR};
+    background-color: ${THEME.PRIMARY_BACKGROUND_COLOR};
   }
 
   body, input, textarea, button {
@@ -107,7 +117,7 @@ export const GlobalStyle = createGlobalStyle`
 
     &:hover {
       background-color: ${THEME.PRIMARY_COLOR};
-      color: ${THEME.BACKGROUND_COLOR};
+      color: ${THEME.PRIMARY_BACKGROUND_COLOR};
     }
   }
 
@@ -116,7 +126,7 @@ export const GlobalStyle = createGlobalStyle`
     p, time, h2, h3 {
       margin: ${SPACING.LARGE} ${SPACING.XXSMALL};
     }
-    code, quote, img {
+    code, quote, figure {
       margin: ${SPACING.LARGE} 0;
     }
     p, li {

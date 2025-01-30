@@ -80,7 +80,7 @@ const SidebarClient = () => {
 const Box = styled.li`
   width: 50px;
   height: 50px;
-  background-color: ${THEME.BACKGROUND_COLOR};
+  background-color: ${THEME.PRIMARY_BACKGROUND_COLOR};
   color: ${THEME.FOREGROUND_COLOR};
   display: flex;
   align-items: center;
@@ -97,7 +97,6 @@ const Positioner = styled.div`
   padding: 10px;
   top: 0;
   left: 0;
-  width: 200px;
   height: 100%;
   align-content: center;
 `
