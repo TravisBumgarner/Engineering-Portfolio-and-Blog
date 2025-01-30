@@ -48,7 +48,7 @@ const Post = async ({ params }: { params: Params }) => {
     <div id="post">
       <Link href={ROUTES.BLOG.path}>Blog</Link> 
       <h2>{post.title}</h2>
-      <time>{new Date(post.date).toDateString()}</time>
+      <time>Posted {new Date(post.date).toDateString()}</time>
       <Component />
     </div>
   )

@@ -73,7 +73,7 @@ const Creation = async ({ params }: { params: Params }) => {
       <Link href={ROUTES.CREATIONS.path}>{ROUTES.CREATIONS.title}</Link>
       <h2>{project.title}</h2>
       <time>
-        Last Update:
+        Last Update:{' '}
         {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString(
           'default',
           {

@@ -18,7 +18,7 @@ const Portfolio = () => {
               key={id}
               link={`${ROUTES.CREATIONS.path}/${id}`}
               text={title}
-                date={`Last Update: ${new Date(
+                date={`Last Updated ${new Date(
                   `${lastMeaningfulUpdate}-05`
                 ).toLocaleString('default', {
                   month: 'long',

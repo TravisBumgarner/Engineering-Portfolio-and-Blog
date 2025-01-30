@@ -46,8 +46,8 @@ export const SPACING = {
   SMALL: '12px',
   //   MEDIUM: 16,
   LARGE: '24px',
-  XLARGE: '32px'
-  //   XXLARGE: 48
+  XLARGE: '32px',
+  XXLARGE: '70px'
 } as const
 
 const customMediaQuery = (maxWidth: number) =>
@@ -67,10 +67,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #site-title {
+    margin: ${SPACING.XXLARGE} 0;
+
     a {
       text-decoration: none;
       color: ${THEME.PRIMARY_COLOR};
     }
+
     h1 {
       font-size: ${FONT_SIZES.LARGE};
       font-weight: 700;
@@ -92,6 +95,7 @@ export const GlobalStyle = createGlobalStyle`
 
     time {
       font-size: ${FONT_SIZES.SMALL};
+      font-weight: 100;
     }
 
     h2 {
@@ -137,7 +141,7 @@ export const GlobalStyle = createGlobalStyle`
 
     li {
       font-size: ${FONT_SIZES.MEDIUM};
-      margin: ${SPACING.SMALL} 0;
+      margin: ${SPACING.XXSMALL} 0;
     }
 
   }
