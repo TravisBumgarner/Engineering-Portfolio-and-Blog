@@ -2,5 +2,5 @@
 
 import styled from 'styled-components'
 
-export const SiteTitleWrapper = styled.h1`
+export const SiteTitleWrapper = styled.div`
 `
