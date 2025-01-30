@@ -1,25 +1,17 @@
 'use client'
 
+import { MAX_LIST_WIDTH } from '@/lib/consts'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  max-width: 800px;
+  max-width: ${MAX_LIST_WIDTH};
   margin: 0 auto;
 `
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-`
-
-const Input = styled.input`
-`
-
-const TextArea = styled.textarea`
-`
-
-const SubmitButton = styled.button<{ $disabled?: boolean }>`
 `
 
 const Contact = () => {
@@ -51,7 +43,7 @@ const Contact = () => {
       body: JSON.stringify(formData),
       headers: {
         'Content-Type': 'application/json'
-      },
+      }
     })
     if (response.ok) {
       setSuccess(true)
@@ -95,33 +87,32 @@ const Contact = () => {
     <Wrapper>
       <h2>Contact</h2>
       <Form onSubmit={handleSubmit}>
-        <Input
+        <input
           placeholder="Name (Optional)"
           name="name"
           value={formData.name}
           onChange={handleChange}
         />
-        <Input
+        <input
           placeholder="Email (Optional)"
           name="email"
           value={formData.email}
           onChange={handleChange}
           type="email"
         />
-        <TextArea
+        <textarea
           placeholder="Message"
           name="message"
           value={formData.message}
           onChange={handleChange}
           rows={4}
         />
-        <SubmitButton
-          $disabled={isSubmitting || formData.message.length === 0}
+        <button
           type="submit"
           disabled={isSubmitting || formData.message.length === 0}
         >
           {buttonText}
-        </SubmitButton>
+        </button>
       </Form>
     </Wrapper>
   )

@@ -1,6 +1,7 @@
 'use client'
 
 import { createGlobalStyle } from 'styled-components'
+import { MAX_LIST_WIDTH } from './consts'
 
 const EVERYTHING_FONT = 'Inter, sans-serif'
 const CODE_FONT = 'Source Code Pro, monospace'
@@ -15,7 +16,8 @@ const COLORS = {
     '600': ''
   },
   PRIMARY: {
-    '100': '#006FB9'
+    '100': '#1298f2',
+    '200': '#006FB9',
   }
 }
 
@@ -40,7 +42,7 @@ const DARK_THEME: Theme = {
   SECONDARY_BACKGROUND_COLOR: COLORS.GRAYS['400']
 }
 
-export const THEME: Theme = DARK_THEME
+export const THEME: Theme = LIGHT_THEME
 
 export const FONT_SIZES = {
   XSMALL: '12px',
@@ -81,7 +83,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #site-title {
-    margin: ${SPACING.XXLARGE} 0;
+    margin: ${SPACING.XLARGE} auto;
+    max-width: ${MAX_LIST_WIDTH};
 
     a {
       text-decoration: none;
@@ -89,39 +92,42 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-      font-size: ${FONT_SIZES.LARGE};
+      font-size: ${FONT_SIZES.MEDIUM};
       font-weight: 700;
       margin-bottom: ${SPACING.SMALL};
     }
   }
 
   input, textarea {
-    background-color: transparent;
+    background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
     color: ${THEME.FOREGROUND_COLOR};
     font-size: ${FONT_SIZES.MEDIUM};
     border: 0;
+    font-weight: 100;
     border-left: 4px solid ${THEME.FOREGROUND_COLOR};
-    margin: ${SPACING.MEDIUM} 0;
-    padding-left: ${SPACING.MEDIUM};
+    margin: ${SPACING.XSMALL} 0;
+    padding: ${SPACING.SMALL};
   }
 
   button {
     cursor: pointer;
     font-size: ${FONT_SIZES.MEDIUM};
-    background-color: transparent;
+    background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
     color: ${THEME.FOREGROUND_COLOR};
     border: 0;
     border-left: 4px solid ${THEME.FOREGROUND_COLOR};
-    margin: ${SPACING.MEDIUM} 0;
-    padding-left: ${SPACING.MEDIUM};
+    margin: ${SPACING.XSMALL} 0;
+    padding: ${SPACING.SMALL};
 
     &:hover {
       background-color: ${THEME.PRIMARY_COLOR};
-      color: ${THEME.PRIMARY_BACKGROUND_COLOR};
     }
   }
 
   #post, #creation {
+    max-width: 100%;
+    width: ${MAX_LIST_WIDTH};
+    margin: 0 auto;
     /* Common Section Spacing */
     p, time, h2, h3 {
       margin: ${SPACING.LARGE} ${SPACING.XXSMALL};

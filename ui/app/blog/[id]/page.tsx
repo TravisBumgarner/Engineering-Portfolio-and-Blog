@@ -1,7 +1,5 @@
 import posts from '@/content/posts'
-import ROUTES from '@/lib/routes'
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 const loadPost = async (postId: string) => {
@@ -46,7 +44,6 @@ const Post = async ({ params }: { params: Params }) => {
 
   return (
     <div id="post">
-      <Link href={ROUTES.BLOG.path}>Blog</Link> 
       <h2>{post.title}</h2>
       <time>Posted {new Date(post.date).toDateString()}</time>
       <Component />

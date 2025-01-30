@@ -1,3 +1,4 @@
+import { MAX_LIST_WIDTH } from '@/lib/consts'
 import { FONT_SIZES, SPACING, THEME } from '@/lib/theme'
 import styled from 'styled-components'
 import BlurHashImage from './BlurHashImage'
@@ -11,33 +12,34 @@ const ListItem = ({
   priority
 }: {
   src?: string
-  link: string
-  title: string
+  link?: string
+  title?: string
   description?: string
-  date: string
-  priority: boolean
+  date?: string
+  priority?: boolean
 }) => {
   return (
-    <StyledListItem href={link}>
-      <h2>{title}</h2>
-      <time>{date}</time>
+    <StyledListItem as={link ? "a" : 'div'} href={link}>
+      {title && <h2>{title}</h2>}
+      {date && <time>{date}</time>}
       {description && <p>{description}</p>}
-      {src && <BlurHashImage priority={priority} src={src} grayscale />}
+      {src && priority !== undefined && <BlurHashImage priority={priority} src={src} grayscale />}
     </StyledListItem>
   )
 }
 
-const StyledListItem = styled.a`
-  display: block;
+const StyledListItem = styled.div`
+  width: ${MAX_LIST_WIDTH};
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
   background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
   color: ${THEME.FOREGROUND_COLOR};
+  flex-direction: column;
   text-decoration: none;
-  margin-bottom: ${SPACING.XXLARGE};
+  margin-bottom: ${SPACING.LARGE};
   padding: ${SPACING.MEDIUM};
-
-  > * {
-    margin-bottom: ${SPACING.MEDIUM};
-  }
+  gap: ${SPACING.MEDIUM};
 
   h2 {
     font-size: ${FONT_SIZES.MEDIUM};

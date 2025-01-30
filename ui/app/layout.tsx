@@ -7,7 +7,6 @@ import SiteTitle from './_components/SiteTitle'
 
 import type { Metadata } from 'next'
 import Sidebar from './_components/Sidebar'
-import { BodyWrapper } from './layout.client'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://travisbumgarner.dev'),
@@ -37,10 +36,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <StyledComponentsRegistry>
           <ClientLayout>
             <Sidebar />
-            <BodyWrapper>
+            <div>
               <SiteTitle title={title} />
               {children}
-            </BodyWrapper>
+            </div>
           </ClientLayout>
         </StyledComponentsRegistry>
       </body>

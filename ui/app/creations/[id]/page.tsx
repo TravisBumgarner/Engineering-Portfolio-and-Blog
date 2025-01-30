@@ -1,6 +1,5 @@
 import Figure from '@/app/_sharedComponents/Figure'
 import projects from '@/content/projects'
-import ROUTES from '@/lib/routes'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -70,7 +69,6 @@ const Creation = async ({ params }: { params: Params }) => {
 
   return (
     <div id="creation">
-      <Link href={ROUTES.CREATIONS.path}>{ROUTES.CREATIONS.title}</Link>
       <h2>{project.title}</h2>
       <time>
         Last Update:{' '}
