@@ -1,6 +1,6 @@
 "use client"
 
-import { BACKGROUND_COLOR, CSSHover, FOREGROUND_COLOR } from '@/lib/theme'
+import { BACKGROUND_COLOR, FOREGROUND_COLOR } from '@/lib/theme'
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
@@ -20,5 +20,4 @@ export const Button = styled.button`
   font-weight: 700;
   font-size: 1rem;
   text-decoration: underline;
-  ${CSSHover}
 `

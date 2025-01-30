@@ -1,6 +1,6 @@
 'use client'
 
-import { createGlobalStyle, css } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 export const FOREGROUND_COLOR = '#EEE'
 export const BACKGROUND_COLOR = '#363636'
@@ -21,19 +21,6 @@ export const SPACING = {
   XLARGE: 32,
   XXLARGE: 48
 } as const
-
-export const CSSHover = css`
-  transition: color 0.3s;
-  transition: background-color 0.3s;
-  color: ${PRIMARY_COLOR};
-  text-decoration-color: ${PRIMARY_COLOR};
-  &:hover {
-    background-color: ${PRIMARY_COLOR};
-    color: ${BACKGROUND_COLOR};
-    border-color: ${PRIMARY_COLOR};
-    text-decoration-color: ${BACKGROUND_COLOR};
-  }
-`
 
 const customMediaQuery = (maxWidth: number) =>
   `@media (max-width: ${maxWidth}px)`
@@ -211,7 +198,6 @@ export const GlobalStyle = createGlobalStyle`
   a {
     font-weight: 100;
     color: ${PRIMARY_COLOR};
-    ${CSSHover};
     text-decoration: underline;
     text-decoration-thickness: from-font;
   }

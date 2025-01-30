@@ -1,24 +1,33 @@
-"use client"
 
 import { BACKGROUND_COLOR, FOREGROUND_COLOR, SPACING } from '@/lib/theme'
-import Link from 'next/link'
 import styled from 'styled-components'
+import BlurHashImage from './BlurHashImage'
 
-export const StyledLink = styled(Link)`
-  color: ${BACKGROUND_COLOR};
-  img {
-    transition: filter 0.3s ease-in-out;
-    filter: contrast(80%) grayscale(100%);
-  }
-  text-decoration: none;
-  &:hover {
-    color: ${BACKGROUND_COLOR};
-    img {
-      color: ${BACKGROUND_COLOR};
-      filter: contrast(100%) grayscale(0%);
-    }
-  }
-`
+const ListItem = ({
+  src,
+  link,
+  text,
+  date,
+  priority,
+}: {
+  src: string
+  link?: string
+  text?: string
+  date?: string
+  priority: boolean
+}) => {
+  return (
+    <a href={link}>
+      <SnapshotWrapper $isLink>
+        <div>
+          <StyledText>{text}</StyledText>
+          {date && <time>{date}</time>}
+        </div>
+        <BlurHashImage priority={priority} src={src} />
+      </SnapshotWrapper>
+    </a>
+  )
+}
 
 export const StyledText = styled.p`
   margin: 0;
@@ -51,3 +60,6 @@ export const SnapshotWrapper = styled.div<{ $isLink?: boolean }>`
     color: color-mix(in srgb, ${BACKGROUND_COLOR} 80%, transparent);
   }
 `
+
+
+export default ListItem

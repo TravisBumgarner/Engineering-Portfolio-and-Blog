@@ -1,12 +1,10 @@
 'use client'
 
 import BlurHashImage from '@/app/_sharedComponents/BlurHashImage'
-import blurhashes from '@/content/blurhashes/index.json'
 import snapshots from '@/content/snapshots/index.json'
 import { FOREGROUND_COLOR, media, SPACING } from '@/lib/theme'
-import { BlurHash } from '@/lib/types'
 import { useInView } from 'framer-motion'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useRef } from 'react'
 import styled, { css } from 'styled-components'
 
 const PHOTO_SPACING = SPACING.MEDIUM
@@ -31,7 +29,6 @@ const Cell = ({ src, index }: { src: string; index: number }) => {
           <BlurHashImage
             priority={index === 0}
             src={src}
-            maxWidthPercent="50"
           />
         </StyledCell>
       ) : null}
@@ -76,92 +73,19 @@ const StyledCell = styled.div<{
   }
 `
 
-const StyledColumn = styled.div<{ $columnCount: number }>`
-  padding: 0 ${PHOTO_SPACING}px;
-  flex-basis: calc(100% / ${props => props.$columnCount});
-
-  ${media.tablet} {
-    padding: 0 ${PHOTO_SPACING_MOBILE}px;
-  }
-`
-
-const Column = ({
-  photos,
-  columnCount
-}: {
-  photos: string[]
-  columnCount: number
-}) => {
-  return (
-    <StyledColumn $columnCount={columnCount}>
-      {photos.map((src, index) => (
-        <Cell key={src} src={src} index={index} />
-      ))}
-    </StyledColumn>
-  )
-}
-
 const PhotoMasonry = () => {
-  const [totalColumns, setTotalColumns] = useState<number>(2)
-
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth
-      setTotalColumns(width < 600 ? 1 : 2)
-    }
-
-    handleResize()
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
-  const imagesByColumn = useMemo(() => {
-    // Grab photos one at a time.
-    // Use photos hardcoded widths and heights to calculate things. Makes it easier for resize
-
-    const columnHeights = Array<number>(totalColumns).fill(0)
-    // Ensure that each `[]` passed to `Array.from` is a new array. Reference issue with fill.
-    const output = Array.from({ length: totalColumns }, () => [] as string[])
-
-    Object.values(snapshots).forEach(({ src }) => {
-      // All photos will have a width of 1 unit.
-      // Calculate height based on aspect ratio and we'll use that to determine
-      // which column to put it in.
-      const { height, width } = blurhashes[
-        src as keyof typeof blurhashes
-      ] as BlurHash
-      const unitHeight = height / width
-
-      const columnforCurrentPhoto = columnHeights.indexOf(
-        Math.min(...columnHeights)
-      )
-      // This algorithm does not account for the vertical spacing between photos.
-      // So if a column has many landscape photos, there's lots of vertical
-      // padding that this algorithm doesn't account for. This is a small factor of safety.
-
-      const FACTOR_OF_SAFETY = height > width ? 0.9 : 1.1
-      columnHeights[columnforCurrentPhoto] += unitHeight * FACTOR_OF_SAFETY
-      output[columnforCurrentPhoto].push(src)
-    })
-
-    return output
-  }, [totalColumns])
-
   return (
-    <Table>
-      {imagesByColumn.map((photos, index) => (
-        <Column columnCount={totalColumns} key={index} photos={photos} />
+    <Wrapper>
+      {Object.values(snapshots).map(({ src }, index) => (
+        <Cell key={index} src={src} index={index} />
       ))}
-    </Table>
+    </Wrapper>
   )
 }
 
-const Table = styled.div`
+const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 `
 
 export default PhotoMasonry

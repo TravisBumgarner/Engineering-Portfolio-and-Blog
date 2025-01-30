@@ -1,6 +1,6 @@
 'use client'
 
-import { BORDER_COLOR, CSSHover } from '@/lib/theme'
+import { BORDER_COLOR } from '@/lib/theme'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
@@ -38,8 +38,6 @@ const SubmitButton = styled.button<{ $disabled?: boolean }>`
   font-size: 1rem;
   text-decoration: underline;
   opacity: ${props => (props.$disabled ? 0.5 : 1)};
-
-  ${CSSHover}
 `
 
 const Contact = () => {

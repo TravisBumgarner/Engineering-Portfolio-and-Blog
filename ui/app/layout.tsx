@@ -7,10 +7,10 @@ import SiteTitle from './_components/SiteTitle'
 
 import type { Metadata } from 'next'
 import Sidebar from './_components/Sidebar'
-import { AppWrapper, BodyWrapper } from './layout.client'
+import { BodyWrapper } from './layout.client'
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://travisbumgarner.dev"),
+  metadataBase: new URL('https://travisbumgarner.dev'),
   title: 'Travis Bumgarner',
   description:
     'I am a lifelong learner, creator, explorer, and tinkerer. This is a collection of my experiences.',
@@ -24,26 +24,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-      <style>
-        {/* eslint-disable-next-line */}
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-      </style>
-
+        <style>
+          {/* eslint-disable-next-line */}
+          @import
+          url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+        </style>
 
         <link rel="icon" href="/favicon.png" />
         <GoogleAnalytics gaId="G-67RM7JF6TY" />
       </head>
       <body>
         <StyledComponentsRegistry>
-          <AppWrapper>
-            <ClientLayout>
+          <ClientLayout>
+            <Sidebar />
+            <BodyWrapper>
               <SiteTitle title={title} />
-              <BodyWrapper>
-                <Sidebar />
-                {children}
-              </BodyWrapper>
-            </ClientLayout>
-          </AppWrapper>
+              {children}
+            </BodyWrapper>
+          </ClientLayout>
         </StyledComponentsRegistry>
       </body>
     </html>

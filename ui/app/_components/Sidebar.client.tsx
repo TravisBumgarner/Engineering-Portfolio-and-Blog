@@ -2,103 +2,81 @@
 
 import Link from '@/app/_sharedComponents/Link'
 import ROUTES from '@/lib/routes'
-import { FOREGROUND_COLOR, PRIMARY_COLOR } from '@/lib/theme'
 import { usePathname } from 'next/navigation'
-import styled, { css } from 'styled-components'
-
-const List = styled.ul`
-  margin: 1rem 0;
-  list-style: none;
-  padding: 0;
-`
-
-const ListItem = styled.li<{ $active?: boolean }>`
-  margin: 0;
-  
-  > a {
-    transition: color 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    color: ${FOREGROUND_COLOR};
-  }
-
-  ${({ $active }) => $active && css`
-    > a {
-      color: ${PRIMARY_COLOR};
-      font-weight: 400;
-    }
-  `}
-`
-
-const SidebarWrapper = styled.div``
+import styled from 'styled-components'
 
 const SidebarClient = () => {
   const pathname = usePathname()
 
-  const isActive = (route: string, exact?: boolean) => {
-    if (exact) {
-      return pathname === route
-    }
-    return pathname.includes(route)
-  }
+  // const isActive = (route: string, exact?: boolean) => {
+  //   if (exact) {
+  //     return pathname === route
+  //   }
+  //   return pathname.includes(route)
+  // }
 
-  const isSnapshotsActive = isActive(ROUTES.SNAPSHOTS.path, true)
-  const isCreationsActive = isActive(ROUTES.CREATIONS.path)
-  const isBlogActive = isActive(ROUTES.BLOG.path)
-  const isContactActive = isActive(ROUTES.CONTACT.path)
+  // const isSnapshotsActive = isActive(ROUTES.SNAPSHOTS.path, true)
+  // const isCreationsActive = isActive(ROUTES.CREATIONS.path)
+  // const isBlogActive = isActive(ROUTES.BLOG.path)
+  // const isContactActive = isActive(ROUTES.CONTACT.path)
 
   return (
-    <SidebarWrapper>
-      <p>
-        I am a lifelong learner, creator, explorer, and tinkerer. This is a
-        collection of my experiences.
-      </p>
+    <Wrapper>
       <h3>Here</h3>
-      <List>
-        <ListItem $active={isSnapshotsActive}>
+      <ul>
+        <li>
           <Link to={ROUTES.SNAPSHOTS.path}>
             {ROUTES.SNAPSHOTS.title}
           </Link>
-        </ListItem>
-        <ListItem $active={isCreationsActive}>
+        </li>
+        <li>
           <Link to={ROUTES.CREATIONS.path}>
             {ROUTES.CREATIONS.title}
           </Link>
-        </ListItem>
-        <ListItem $active={isBlogActive}>
+        </li>
+        <li>
           <Link to={ROUTES.BLOG.path}>{ROUTES.BLOG.title}</Link>
-        </ListItem>
-        <ListItem $active={isContactActive}  >
+        </li>
+        <li>
           <Link to={ROUTES.CONTACT.path}>
             {ROUTES.CONTACT.title}
           </Link>
-        </ListItem>
-      </List>
+        </li>
+      </ul>
       <h3>Elsewhere</h3>
-      <List>
-        <ListItem>
+      <ul>
+        <li>
           <Link target="_blank" to="/travis_bumgarner_resume.pdf">
             Resume
           </Link>
-        </ListItem>
-        <ListItem>
+        </li>
+        <li>
           <Link target="_blank" to="https://www.linkedin.com/in/travisbumgarner/">
             LinkedIn
           </Link>
-        </ListItem>
-        <ListItem>
+        </li>
+        <li>
           <Link target="_blank" to="https://github.com/travisBumgarner/">
             Github
           </Link>
-        </ListItem>
-        <ListItem>
+        </li>
+        <li>
           <Link target="_blank" to="https://travisbumgarner.photography">
             Photography
           </Link>
-        </ListItem>
-      </List>
-    </SidebarWrapper>
+        </li>
+      </ul>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  position: fixed;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+`
 
 export default SidebarClient
