@@ -17,13 +17,11 @@ const ListItem = ({
 }) => {
   return (
     <a href={link}>
-      <SnapshotWrapper $isLink>
         <div>
           <StyledText>{text}</StyledText>
           {date && <time>{date}</time>}
         </div>
         <BlurHashImage priority={priority} src={src} />
-      </SnapshotWrapper>
     </a>
   )
 }
@@ -31,18 +29,6 @@ const ListItem = ({
 export const StyledText = styled.p`
   margin: 0;
   padding: 0;
-`
-
-export const SnapshotWrapper = styled.div<{ $isLink?: boolean }>`
-  > img {
-    height: auto;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    max-height: 60vh;
-    object-fit: cover;
-    object-position: top;
-  }
 `
 
 

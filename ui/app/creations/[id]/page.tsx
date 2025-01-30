@@ -9,7 +9,6 @@ import {
   DetailsWrapper,
   LinksWrapper,
   MetadataWrapper,
-  SnapshotWrapper,
   Time
 } from './_page.client'
 
@@ -22,10 +21,10 @@ const ProjectImage = ({
   text?: string
 }) => {
   return (
-    <SnapshotWrapper>
+    <>
       <BlurHashImage priority={true} src={src} />
       <p>{text}</p>
-    </SnapshotWrapper>
+      </>
   )
 }
 
@@ -70,13 +69,13 @@ const Creation = async ({ params }: { params: Params }) => {
   const Images = project.images.map((i, index) => ({
     key: i.src,
     element: (
-      <SnapshotWrapper key={i.src}>
+      <div key={i.src}>
         <ProjectImage
           text={i.label}
           key={index}
           src={`/project-resources/${id}/${i.src}`}
         />
-      </SnapshotWrapper>
+      </div>
     )
   }))
 

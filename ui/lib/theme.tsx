@@ -2,13 +2,6 @@
 
 import { createGlobalStyle } from 'styled-components'
 
-export const FOREGROUND_COLOR = '#EEE'
-export const BACKGROUND_COLOR = '#363636'
-export const BORDER_COLOR = '#DDD'
-export const SECONDARY_COLOR = '#00eaff'
-export const PRIMARY_COLOR = '#ffce05'
-export const DISABLED_COLOR = '#ccc'
-
 const MONOSPACE_FONT = 'Source Code Pro, monospace'
 const SANS_SERIF_FONT = 'Inter, sans-serif'
 

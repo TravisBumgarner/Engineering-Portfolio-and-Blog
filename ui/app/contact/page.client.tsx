@@ -1,6 +1,5 @@
 'use client'
 
-import { BORDER_COLOR } from '@/lib/theme'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
@@ -15,7 +14,6 @@ const Form = styled.form`
 `
 
 const Input = styled.input`
-  background-color: ${BORDER_COLOR};
 `
 
 const TextArea = styled.textarea`
