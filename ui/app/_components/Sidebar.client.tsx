@@ -1,7 +1,7 @@
 'use client'
 
-import Link from '@/app/_sharedComponents/Link'
 import ROUTES from '@/lib/routes'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styled from 'styled-components'
 
@@ -25,20 +25,20 @@ const SidebarClient = () => {
       <h3>Here</h3>
       <ul>
         <li>
-          <Link to={ROUTES.SNAPSHOTS.path}>
+          <Link href={ROUTES.SNAPSHOTS.path}>
             {ROUTES.SNAPSHOTS.title}
           </Link>
         </li>
         <li>
-          <Link to={ROUTES.CREATIONS.path}>
+          <Link href={ROUTES.CREATIONS.path}>
             {ROUTES.CREATIONS.title}
           </Link>
         </li>
         <li>
-          <Link to={ROUTES.BLOG.path}>{ROUTES.BLOG.title}</Link>
+          <Link href={ROUTES.BLOG.path}>{ROUTES.BLOG.title}</Link>
         </li>
         <li>
-          <Link to={ROUTES.CONTACT.path}>
+          <Link href={ROUTES.CONTACT.path}>
             {ROUTES.CONTACT.title}
           </Link>
         </li>
@@ -46,22 +46,22 @@ const SidebarClient = () => {
       <h3>Elsewhere</h3>
       <ul>
         <li>
-          <Link target="_blank" to="/travis_bumgarner_resume.pdf">
+          <Link target="_blank" href="/travis_bumgarner_resume.pdf">
             Resume
           </Link>
         </li>
         <li>
-          <Link target="_blank" to="https://www.linkedin.com/in/travisbumgarner/">
+          <Link target="_blank" href="https://www.linkedin.com/in/travisbumgarner/">
             LinkedIn
           </Link>
         </li>
         <li>
-          <Link target="_blank" to="https://github.com/travisBumgarner/">
+          <Link target="_blank" href="https://github.com/travisBumgarner/">
             Github
           </Link>
         </li>
         <li>
-          <Link target="_blank" to="https://travisbumgarner.photography">
+          <Link target="_blank" href="https://travisbumgarner.photography">
             Photography
           </Link>
         </li>

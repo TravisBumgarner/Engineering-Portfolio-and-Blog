@@ -1,16 +1,20 @@
 import Figure from '@/app/_sharedComponents/Figure'
-import Link from '@/app/_sharedComponents/Link'
 import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 type Params = Promise<{ id: string }>
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+export async function generateMetadata({
+  params
+}: {
+  params: Params
+}): Promise<Metadata> {
   const { id } = await params
   const project = projects[id]
-  
+
   if (!project) {
     return {
       title: 'Project Not Found',
@@ -19,9 +23,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   }
 
   return {
-    metadataBase: new URL("https://travisbumgarner.dev"),
+    metadataBase: new URL('https://travisbumgarner.dev'),
     title: `${project.title} - Travis Bumgarner`,
-    description: `${project.description.slice(0, 150)}...` || 'A project by Travis Bumgarner',
+    description:
+      `${project.description.slice(0, 150)}...` ||
+      'A project by Travis Bumgarner',
     openGraph: {
       images: [`/project-resources/${id}/${project.previewImage.src}`]
     }
@@ -31,14 +37,16 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 const Creation = async ({ params }: { params: Params }) => {
   const { id } = await params
   const project = projects[id]
-  if(!project){
+  if (!project) {
     return notFound()
   }
 
   const Links = project.links.map(l => {
     return (
       <li key={l.label + l.src}>
-        <Link target="_blank" to={l.src}>{l.label}</Link>
+        <Link target="_blank" href={l.src}>
+          {l.label}
+        </Link>
       </li>
     )
   })
@@ -62,24 +70,21 @@ const Creation = async ({ params }: { params: Params }) => {
 
   return (
     <div id="creation">
-        <h1>
-          <Link to={ROUTES.CREATIONS.path}>
-            {ROUTES.CREATIONS.title}://
-          </Link>{' '}
-          {project.title}
-        </h1>
-        <time>
-          Last Update: {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString(
-            'default',
-            {
-              month: 'long',
-              year: 'numeric'
-            }
-          )}
-        </time>
-        {Description}
-        {Links.length > 0 && <ul>{Links}</ul>}
-        {Images.map(i => i.element)}
+      <Link href={ROUTES.CREATIONS.path}>{ROUTES.CREATIONS.title}</Link>
+      <h2>{project.title}</h2>
+      <time>
+        Last Update:
+        {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString(
+          'default',
+          {
+            month: 'long',
+            year: 'numeric'
+          }
+        )}
+      </time>
+      {Description}
+      {Links.length > 0 && <ul>{Links}</ul>}
+      {Images.map(i => i.element)}
     </div>
   )
 }

@@ -1,15 +1,14 @@
-import Link from '@/app/_sharedComponents/Link'
-import { SiteTitleWrapper } from './SiteTitle.client'
+import Link from "next/link"
 
 const SiteTitle = ({title}: {title: string}) => {
   return (
-    <SiteTitleWrapper>
-      <h1><Link to="/">{title}</Link></h1>
+    <div id="site-title">
+      <Link href="/"><h1>{title}</h1></Link>
       <p>
         I am a lifelong learner, creator, explorer, and tinkerer. This is a
         collection of my experiences.
       </p>
-    </SiteTitleWrapper>
+    </div>
   )
 }
 

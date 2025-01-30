@@ -93,7 +93,7 @@ const Contact = () => {
 
   return (
     <Wrapper>
-      <h1>Contact</h1>
+      <h2>Contact</h2>
       <Form onSubmit={handleSubmit}>
         <Input
           placeholder="Name (Optional)"

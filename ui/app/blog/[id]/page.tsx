@@ -1,7 +1,7 @@
-import Link from '@/app/_sharedComponents/Link'
 import posts from '@/content/posts'
 import ROUTES from '@/lib/routes'
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 const loadPost = async (postId: string) => {
@@ -27,7 +27,7 @@ export async function generateMetadata({
   }
 
   return {
-    metadataBase: new URL("https://travisbumgarner.dev"),
+    metadataBase: new URL('https://travisbumgarner.dev'),
     title: `${post.title} - Travis Bumgarner`,
     description: post.description || 'A blog post by Travis Bumgarner',
     openGraph: {
@@ -46,9 +46,8 @@ const Post = async ({ params }: { params: Params }) => {
 
   return (
     <div id="post">
-      <h1>
-        <Link to={ROUTES.BLOG.path}>Blog://</Link> {post.title}
-      </h1>
+      <Link href={ROUTES.BLOG.path}>Blog</Link> 
+      <h2>{post.title}</h2>
       <time>{new Date(post.date).toDateString()}</time>
       <Component />
     </div>
