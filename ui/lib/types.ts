@@ -27,8 +27,6 @@ export type TCreation = {
 export type BlogPost = {
   title: string
   date: string
-  draft: boolean
-  postMapping: string
   description: string
   preview_image: string
 }

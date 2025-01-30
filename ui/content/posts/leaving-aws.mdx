@@ -1,0 +1,114 @@
+# Escaping Surprise Bills & Over-engineered  Messes: Why I Ditched AWS
+
+I love building side projects. They've been a way to push myself and explore new ideas and technologies. Each site has needed hosting. I started my hosting journey with WordPress. I moved on to raw Linux servers and finally ended up on AWS. Hosting on AWS felt like a badge of honor, but it also felt like a ticking time bomb of complexity and cost.
+
+### Surprise Bills
+
+I’ve heard horror stories of accidental bills.  They ranged from a few hundred to several hundred thousand dollars. Sometimes they’re refunded, like when the story hits the front page of Hacker News and Reddit, but most times not.
+
+I searched for ways to control my financial exposure on AWS. I expected a simple monthly max spend option. I found none. There were mentions of setting up alerts. What if I got DDoSed at 3 a.m.? Some suggested setting up intricate systems to shut everything down. What if they were setup incorrectly?
+
+### Over-Engineered Messes
+
+I have noticed that we as engineers have a tendency over-engineer systems. We tend  to mimic the practices of companies like Facebook or Netflix. We over-engineer solutions, choosing technologies that are often overkill for our actual needs. For me, AWS was far more than I needed.
+
+### NearlyFreeSpeech to the Rescue
+
+After some research and conversations with other engineers, I discovered [NearlyFreeSpeech](https://www.nearlyfreespeech.net/) (NFS). Their approach to hosting was exactly what I was looking for. One blog post stood out to me:
+
+> “[…] since our service is paid in advance, you always have complete control over your maximum financial liability simply by controlling the balance of your account. If you feel your site is attack-prone and you are primarily concerned about costs, we encourage you to maintain a low account balance to limit your exposure.” - [Blog Post](https://faq.nearlyfreespeech.net/q/attack)
+> 
+
+This model was perfect. By prepaying, I could ensure complete control over my financial liability.
+
+It's possible with NFS to setup several billing accounts with prepaid balances. I have a primary account  that I add a few dollars to each month. This is hosting for my portfolio websites and some stable side projects. I have a secondary account for experimental projects. I can add some more money and tinker without the worry of spending too much.
+
+The NFS dashboard is simple and straightforward. Everything is a button click or two away - the bills, what’s enabled, what’s not, what’s working, what’s not and why.
+
+Linux boxes leave it up to you to do everything. AWS offers way too many ways to do things in way too complicated of manners. NFS offers some boilerplate and opinions for each server that gets the best of both of these worlds.
+
+### Moving Apps
+
+In total, I migrated eight of nine apps to NFS.
+
+One app gave me trouble - a Python Flask app. It had several complicated dependencies including OpenCV, Numpy, and Matplotlib. My belief is that this had more to do with the complex nature of the libraries and less to do with NFS.
+
+For implementation notes and pull requests, scroll down to the Migration section.
+
+### Conclusion
+
+I still think AWS holds a place and I’ll most likely use it as a tool in the future. But for now, I’m going to keep things simple simple.
+
+My bill has increased from about $1 to $7 a month. I’m content to pay a few dollars more a month for peace of mind and to support a smaller business.
+
+## Migration Guide
+
+### Pull Requests
+
+Preface - I bit off more than I could chew. I migrated 8 sites at once. There were several follow up PRs to correct some things that slipped through the cracks.
+
+Listed below are the eight websites I migrated. The website, pull requests, technologies used, and some notes are included.
+
+**Engineering Portfolio** [[Website](http://travisbumgarner.dev/)]
+
+- Technologies - Next.JS
+- Pull Requests - [Part 1](https://github.com/TravisBumgarner/Engineering-Portfolio-and-Blog/pull/61), [Part 2](https://github.com/TravisBumgarner/Engineering-Portfolio-and-Blog/pull/63), [Part 3](https://github.com/TravisBumgarner/Engineering-Portfolio-and-Blog/pull/64)
+- Notes - The majority of the files was me misunderstanding NextJS static hosting and had nothing to do with NFS.
+
+**Photography Portfolio [[Website](https://travisbumgarner.photography/)]**
+
+- Technologies - React
+- Pull Requests - [Part 1](https://github.com/TravisBumgarner/Photography-Portfolio/pull/87/files)
+
+Bananarama [[Website](https://voting.sillysideprojects.com/)]
+
+- Technologies - React, Express, GraphQL, WebSockets
+- Pull Requests - [Part 1](https://github.com/TravisBumgarner/Bananarama-Voting-Bananza/pull/5)
+- Notes - Traffic for WebSockets and HTTP need to be served by different ports.
+
+Manifest Playlists [[Website](https://playlists.sillysideprojects.com/)]
+
+- Technologies - React, Express, GraphQL, WebSockets
+- Pull Requests - [Part 1](https://github.com/TravisBumgarner/playlist-generator/pull/8/files)
+
+3x Landing Pages [[Website 1](https://todo.sillysideprojects.com/), [Website 2](https://ideas.sillysideprojects.com/)]
+
+- Technologies - React
+- Pull Requests - [Part 1,](https://github.com/TravisBumgarner/Todo-Today-Website/pull/12) [Part 2](https://github.com/TravisBumgarner/Todo-Today-Website/pull/13)
+- Notes - An `.htaccess` file is required to ensure that all routes direct the user to the React app. Otherwise you’ll get 404 errors.
+
+Contact Form (for the sites above) 
+
+- Technologies - Express, Pushover
+- Pull Requests - [Part 1](https://github.com/TravisBumgarner/Contact-Form/tree/main)
+- Notes - NearlyFreeSpeech doesn’t offer services like Lambdas. My contact form was previously hosted by a Lambda. It now lives as an Express server.
+
+### Migration (or Creation) Process
+
+Reference the pull requests and code in the previous section for examples.
+
+1. **Build your Website**
+2. **Write a `run.sh`  Script**
+    - This script will be responsible for bringing up your app.
+    - For multiple apps (e.g., frontend and backend), create separate scripts for each.
+3. **Configure site on NFS**
+    - **Choose Server Type:**
+        - Use `Apache 2.4 Static Content` for frontend apps (like React without a server).
+        - Use `Custom` for backend apps (e.g., Express, Next.js, Python).
+    - **Set Up Daemon(s):**
+        - Daemons manage the `run.sh` scripts and keep your app running.
+    - **Set Up Proxy(s):**
+        - Expose the necessary ports to the outside world.
+    - **Set Up SSH:**
+        - ****Attach your `deploy.sh` script to the unique login for each site.
+4. **Launch Your App**
+    - **Write and Run `deploy.sh`**:
+        - The `deploy.sh` script sets everything up on the server.
+    - **Start Daemons**:
+        - Use the NFS dashboard to start each daemon for your apps.
+5. **Debug Any Issues**
+    - Check logs in `/home/logs/[daemon_name]` for errors.
+6. **Set Up DNS**
+    - Update your DNS records to point to your NFS site (IP addresses are available in the NFS dashboard).
+7. **Delete AWS Resources**
+    - Once your migration is complete and tested, decommission your AWS resources.
