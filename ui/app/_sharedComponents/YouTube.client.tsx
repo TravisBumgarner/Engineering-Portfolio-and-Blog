@@ -1,13 +1,16 @@
 "use client"
 
+import { SPACING, THEME } from '@/lib/theme'
 import styled from 'styled-components'
 
 export const YoutubeWrapper = styled.figure`
   overflow: hidden;
-  padding-bottom: 56.25%;
   position: relative;
-  height: 0;
   margin: 1rem 0;
+  border: ${SPACING.MEDIUM} solid ${THEME.SECONDARY_BACKGROUND_COLOR};
+  color: ${THEME.FOREGROUND_COLOR};
+  aspect-ratio: 16 / 9;
+  width: 100%;
 
   iframe {
     left: 0;

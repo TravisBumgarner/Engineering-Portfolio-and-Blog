@@ -3,7 +3,7 @@
 import { createGlobalStyle } from 'styled-components'
 import { MAX_LIST_WIDTH } from './consts'
 
-const EVERYTHING_FONT = 'Inter, sans-serif'
+const EVERYTHING_FONT = 'Satoshi, sans-serif'
 const CODE_FONT = 'Source Code Pro, monospace'
 
 const COLORS = {
@@ -12,12 +12,12 @@ const COLORS = {
     '200': '#F6F6F6',
     '300': '',
     '400': '#2C2C2C',
-    '500': '#424242',
+    '500': '#202020',
     '600': ''
   },
   PRIMARY: {
     '100': '#1298f2',
-    '200': '#006FB9',
+    '200': '#006FB9'
   }
 }
 
@@ -32,7 +32,7 @@ const LIGHT_THEME: Theme = {
   PRIMARY_BACKGROUND_COLOR: COLORS.GRAYS['100'],
   SECONDARY_BACKGROUND_COLOR: COLORS.GRAYS['200'],
   FOREGROUND_COLOR: COLORS.GRAYS['500'],
-  PRIMARY_COLOR: COLORS.PRIMARY['100'],
+  PRIMARY_COLOR: COLORS.PRIMARY['100']
 }
 
 const DARK_THEME: Theme = {
@@ -44,8 +44,8 @@ const DARK_THEME: Theme = {
 
 export const FONT_WEIGHTS = {
   LIGHT: 100,
-  REGULAR: 400,
-  BOLD: 700
+  REGULAR: 300,
+  BOLD: 500
 }
 
 export const THEME: Theme = LIGHT_THEME
@@ -78,6 +78,16 @@ export const media = {
 }
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Variable.woff2') format('woff2'),
+       url('/fonts/Satoshi-Variable.woff') format('woff'),
+       url('/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 100 400 700;
+  font-display: swap;
+  font-style: normal;
+}
+
   body {
     font-family: ${EVERYTHING_FONT};
     color: ${THEME.FOREGROUND_COLOR};
@@ -138,10 +148,12 @@ export const GlobalStyle = createGlobalStyle`
     p, time, h2, h3 {
       margin: ${SPACING.LARGE} ${SPACING.XXSMALL};
     }
-    code, quote, figure {
+    code, blockquote, figure {
       margin: ${SPACING.LARGE} 0;
     }
+
     p, li {
+      font-weight: ${FONT_WEIGHTS.REGULAR};
       line-height: ${FONT_SIZES.LARGE};
     }
     /* Common Section Spacing */
@@ -176,13 +188,23 @@ export const GlobalStyle = createGlobalStyle`
       }
     }
 
-    quote {
-      font-size: ${FONT_SIZES.MEDIUM};
-    }
-
-    code{
+    code, blockquote {
+      font-weight: ${FONT_WEIGHTS.LIGHT};
+      padding: ${SPACING.SMALL};
+      display: block;
       font-size: ${FONT_SIZES.MEDIUM};
       font-family: ${CODE_FONT};
+      background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
+    }
+
+    code {
+      overflow-x: scroll;
+    }
+
+    p > code {
+      display: inline;
+      background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
+      padding: 0;
     }
 
     strong {
