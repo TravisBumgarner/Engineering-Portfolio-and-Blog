@@ -1,16 +1,21 @@
-import Link from "next/link"
+import Link from 'next/link'
+import Weak from '../_sharedComponents/Weak'
 
-const SiteTitle = ({title}: {title: string}) => {
+const SiteTitle = ({ title }: { title: string }) => {
   return (
     <div id="site-title">
-      <Link href="/"><h1>{title}</h1></Link>
+      <Link href="/">
+        <h1>{title}</h1>
+      </Link>
       <p>
-        I am a lifelong learner, creator, explorer, and tinkerer. This is a
-        collection of my experiences.
+        <Weak>
+          I am a lifelong learner, creator, explorer, and tinkerer.
+          <br />
+          This is a collection of my experiences.
+        </Weak>
       </p>
     </div>
   )
 }
-
 
 export default SiteTitle

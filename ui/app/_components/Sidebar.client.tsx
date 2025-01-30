@@ -1,82 +1,111 @@
 'use client'
 
 import ROUTES from '@/lib/routes'
+import { THEME } from '@/lib/theme'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 
+const THERE = [
+  {
+    title: 'Resume',
+    path: '/travis_bumgarner_resume.pdf',
+    target: '_blank'
+  },
+  {
+    title: 'LinkedIn',
+    path: 'https://www.linkedin.com/in/travisbumgarner/',
+    target: '_blank'
+  },
+  {
+    title: 'Github',
+    path: 'https://github.com/travisBumgarner/',
+    target: '_blank'
+  },
+  {
+    title: 'Photography',
+    path: 'https://travisbumgarner.photography',
+    target: '_blank'
+  }
+]
+
 const SidebarClient = () => {
-  const pathname = usePathname()
+  const [truncate, setTruncate] = useState(true)
+  const ref = useRef<HTMLDivElement>(null)
 
-  // const isActive = (route: string, exact?: boolean) => {
-  //   if (exact) {
-  //     return pathname === route
-  //   }
-  //   return pathname.includes(route)
-  // }
+  useEffect(() => {
+    ref.current?.addEventListener('mouseenter', () => {
+      setTruncate(false)
+    })
+    ref.current?.addEventListener('mouseleave', () => {
+      setTruncate(true)
+    })
 
-  // const isSnapshotsActive = isActive(ROUTES.SNAPSHOTS.path, true)
-  // const isCreationsActive = isActive(ROUTES.CREATIONS.path)
-  // const isBlogActive = isActive(ROUTES.BLOG.path)
-  // const isContactActive = isActive(ROUTES.CONTACT.path)
+    return () => {
+      ref.current?.removeEventListener('mouseenter', () => {
+        setTruncate(false)
+      })
+      ref.current?.removeEventListener('mouseleave', () => {
+        setTruncate(true)
+      })
+    }
+  }, [ref])
 
   return (
-    <Wrapper>
-      <h3>Here</h3>
-      <ul>
-        <li>
-          <Link href={ROUTES.SNAPSHOTS.path}>
-            {ROUTES.SNAPSHOTS.title}
-          </Link>
-        </li>
-        <li>
-          <Link href={ROUTES.CREATIONS.path}>
-            {ROUTES.CREATIONS.title}
-          </Link>
-        </li>
-        <li>
-          <Link href={ROUTES.BLOG.path}>{ROUTES.BLOG.title}</Link>
-        </li>
-        <li>
-          <Link href={ROUTES.CONTACT.path}>
-            {ROUTES.CONTACT.title}
-          </Link>
-        </li>
-      </ul>
-      <h3>Elsewhere</h3>
-      <ul>
-        <li>
-          <Link target="_blank" href="/travis_bumgarner_resume.pdf">
-            Resume
-          </Link>
-        </li>
-        <li>
-          <Link target="_blank" href="https://www.linkedin.com/in/travisbumgarner/">
-            LinkedIn
-          </Link>
-        </li>
-        <li>
-          <Link target="_blank" href="https://github.com/travisBumgarner/">
-            Github
-          </Link>
-        </li>
-        <li>
-          <Link target="_blank" href="https://travisbumgarner.photography">
-            Photography
-          </Link>
-        </li>
-      </ul>
-    </Wrapper>
+    <Positioner>
+      <Wrapper ref={ref}>
+        <ul>
+          {Object.values(ROUTES).map(r => (
+            <Box key={r.path}>
+              <Link href={r.path}>
+                {truncate ? r.title.slice(0, 1) : r.title}
+              </Link>
+            </Box>
+          ))}
+        </ul>
+        <ul>
+          {THERE.map(t => (
+            <Box key={t.path}>
+              <Link target={t.target} href={t.path}>
+                {truncate ? t.title.slice(0, 1) : t.title}
+              </Link>
+            </Box>
+          ))}
+        </ul>
+      </Wrapper>
+    </Positioner>
   )
 }
 
-const Wrapper = styled.div`
+const Box = styled.li`
+  width: 50px;
+  height: 50px;
+  background-color: ${THEME.BACKGROUND_COLOR};
+  color: ${THEME.FOREGROUND_COLOR};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+    color: ${THEME.PRIMARY_COLOR};
+  }
+`
+
+const Positioner = styled.div`
   position: fixed;
   padding: 10px;
   top: 0;
   left: 0;
   width: 200px;
   height: 100%;
+  align-content: center;
+`
+
+const Wrapper = styled.div`
+  ul:first-child {
+    margin-bottom: 10px;
+  }
 `
 
 export default SidebarClient

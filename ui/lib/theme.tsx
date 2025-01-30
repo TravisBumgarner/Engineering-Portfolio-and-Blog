@@ -2,8 +2,8 @@
 
 import { createGlobalStyle } from 'styled-components'
 
-const MONOSPACE_FONT = 'Source Code Pro, monospace'
-const SANS_SERIF_FONT = 'Inter, sans-serif'
+const EVERYTHING_FONT = 'Inter, sans-serif'
+const CODE_FONT = 'Source Code Pro, monospace'
 
 const COLORS = {
   GRAYS: {
@@ -31,7 +31,7 @@ const DARK_THEME = {
   PRIMARY_COLOR: COLORS.PRIMARY['100']
 }
 
-export const THEME = LIGHT_THEME
+export const THEME = DARK_THEME
 
 const FONT_SIZES = {
   SMALL: '16px',
@@ -42,9 +42,9 @@ const FONT_SIZES = {
 
 export const SPACING = {
   XXSMALL: '4px',
-  //   XSMALL: 8,
+  XSMALL: '8px',
   SMALL: '12px',
-  //   MEDIUM: 16,
+  MEDIUM: '16px',
   LARGE: '24px',
   XLARGE: '32px',
   XXLARGE: '70px'
@@ -61,9 +61,13 @@ export const media = {
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    font-family: ${SANS_SERIF_FONT};
+    font-family: ${EVERYTHING_FONT};
     color: ${THEME.FOREGROUND_COLOR};
     background-color: ${THEME.BACKGROUND_COLOR};
+  }
+
+  body, input, textarea, button {
+    font-family: ${EVERYTHING_FONT};
   }
 
   #site-title {
@@ -77,6 +81,33 @@ export const GlobalStyle = createGlobalStyle`
     h1 {
       font-size: ${FONT_SIZES.LARGE};
       font-weight: 700;
+      margin-bottom: ${SPACING.SMALL};
+    }
+  }
+
+  input, textarea {
+    background-color: transparent;
+    color: ${THEME.FOREGROUND_COLOR};
+    font-size: ${FONT_SIZES.MEDIUM};
+    border: 0;
+    border-left: 4px solid ${THEME.FOREGROUND_COLOR};
+    margin: ${SPACING.MEDIUM} 0;
+    padding-left: ${SPACING.MEDIUM};
+  }
+
+  button {
+    cursor: pointer;
+    font-size: ${FONT_SIZES.MEDIUM};
+    background-color: transparent;
+    color: ${THEME.FOREGROUND_COLOR};
+    border: 0;
+    border-left: 4px solid ${THEME.FOREGROUND_COLOR};
+    margin: ${SPACING.MEDIUM} 0;
+    padding-left: ${SPACING.MEDIUM};
+
+    &:hover {
+      background-color: ${THEME.PRIMARY_COLOR};
+      color: ${THEME.BACKGROUND_COLOR};
     }
   }
 
@@ -129,6 +160,7 @@ export const GlobalStyle = createGlobalStyle`
 
     code{
       font-size: ${FONT_SIZES.MEDIUM};
+      font-family: ${CODE_FONT};
     }
 
     strong {

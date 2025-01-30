@@ -113,6 +113,7 @@ const Contact = () => {
           name="message"
           value={formData.message}
           onChange={handleChange}
+          rows={4}
         />
         <SubmitButton
           $disabled={isSubmitting || formData.message.length === 0}
