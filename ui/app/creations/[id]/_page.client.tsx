@@ -3,7 +3,7 @@
 import styled from 'styled-components'
 
 import { MAX_CONTENT_WIDTH } from '@/lib/consts'
-import { BACKGROUND_COLOR, FOREGROUND_COLOR, SPACING } from '@/lib/theme'
+import { SPACING } from '@/lib/theme'
 
 export const MetadataWrapper = styled.div`
   margin-bottom: ${SPACING.MEDIUM}px;
@@ -44,8 +44,6 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 > p {
-  background-color: ${FOREGROUND_COLOR};
-  color: ${BACKGROUND_COLOR};
   padding: ${SPACING.MEDIUM}px;
   margin: 0;
 }

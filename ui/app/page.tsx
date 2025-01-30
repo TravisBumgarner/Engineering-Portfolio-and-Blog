@@ -2,13 +2,9 @@
 
 import BlurHashImage from '@/app/_sharedComponents/BlurHashImage'
 import snapshots from '@/content/snapshots/index.json'
-import { FOREGROUND_COLOR, media, SPACING } from '@/lib/theme'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import styled, { css } from 'styled-components'
-
-const PHOTO_SPACING = SPACING.MEDIUM
-const PHOTO_SPACING_MOBILE = SPACING.XSMALL
 
 const Cell = ({ src, index }: { src: string; index: number }) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -33,6 +29,16 @@ const Cell = ({ src, index }: { src: string; index: number }) => {
         </StyledCell>
       ) : null}
     </div>
+  )
+}
+
+const Snapshots = () => {
+  return (
+    <Wrapper>
+      {Object.values(snapshots).map(({ src }, index) => (
+        <Cell key={index} src={src} index={index} />
+      ))}
+    </Wrapper>
   )
 }
 
@@ -63,29 +69,12 @@ const StyledCell = styled.div<{
       opacity: 0;
     `
   }}
-
-  border: 5px solid ${FOREGROUND_COLOR};
-  // *2 for vertical margin collapsing.
-  margin-bottom: ${PHOTO_SPACING * 2}px;
-
-  ${media.tablet} {
-    margin-bottom: ${PHOTO_SPACING_MOBILE * 2}px;
-  }
 `
 
-const PhotoMasonry = () => {
-  return (
-    <Wrapper>
-      {Object.values(snapshots).map(({ src }, index) => (
-        <Cell key={index} src={src} index={index} />
-      ))}
-    </Wrapper>
-  )
-}
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
 
-export default PhotoMasonry
+export default Snapshots

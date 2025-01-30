@@ -1,6 +1,5 @@
 import BlurHashImage from '@/app/_sharedComponents/BlurHashImage'
 import Link from '@/app/_sharedComponents/Link'
-import MasonryGrid from '@/app/_sharedComponents/MasonryGrid'
 import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
 import { Metadata } from 'next'
@@ -24,7 +23,7 @@ const ProjectImage = ({
 }) => {
   return (
     <SnapshotWrapper>
-      <BlurHashImage priority={true} maxWidthPercent="100" src={src} />
+      <BlurHashImage priority={true} src={src} />
       <p>{text}</p>
     </SnapshotWrapper>
   )
@@ -106,7 +105,7 @@ const Creation = async ({ params }: { params: Params }) => {
         <DescriptionWrapper>{Description}</DescriptionWrapper>
         {Links.length > 0 && <LinksWrapper>{Links}</LinksWrapper>}
       </MetadataWrapper>
-      <MasonryGrid elementsWithKeys={Images} totalColumns={1} />
+      {Images.map(i => i.element)}
     </DetailsWrapper>
   )
 }

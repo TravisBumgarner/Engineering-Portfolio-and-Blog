@@ -12,32 +12,16 @@ const Wrapper = styled.div`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 `
 
 const Input = styled.input`
   background-color: ${BORDER_COLOR};
-  padding: 0.5rem;
-  border: 0;
 `
 
 const TextArea = styled.textarea`
-  background-color: ${BORDER_COLOR};
-  padding: 0.5rem;
-  border: 0;
-  min-height: 100px;
 `
 
 const SubmitButton = styled.button<{ $disabled?: boolean }>`
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  border: none;
-  cursor: ${props => (props.$disabled ? 'not-allowed' : 'pointer')};
-  font-weight: 700;
-  font-style: italic;
-  font-size: 1rem;
-  text-decoration: underline;
-  opacity: ${props => (props.$disabled ? 0.5 : 1)};
 `
 
 const Contact = () => {
