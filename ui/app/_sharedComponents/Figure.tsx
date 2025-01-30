@@ -1,6 +1,5 @@
 
 import BlurHashImage from './BlurHashImage'
-import { FigureWrapper } from './Figure.client'
 
 type FigureProps = {
   src: string
@@ -9,10 +8,10 @@ type FigureProps = {
 
 const Figure = ({ src, caption }: FigureProps) => {
   return (
-    <FigureWrapper>
-      <BlurHashImage priority={false} maxWidthPercent='100' src={`/post-resources/${src}`} alt={caption} />
+    <div>
+      <BlurHashImage priority={false} src={src} alt={caption} />
       <figcaption>{caption}</figcaption>
-    </FigureWrapper>
+    </div>
   )
 }
 

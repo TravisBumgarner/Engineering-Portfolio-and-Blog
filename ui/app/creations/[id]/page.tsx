@@ -1,32 +1,9 @@
-import BlurHashImage from '@/app/_sharedComponents/BlurHashImage'
+import Figure from '@/app/_sharedComponents/Figure'
 import Link from '@/app/_sharedComponents/Link'
 import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import {
-  DescriptionWrapper,
-  DetailsWrapper,
-  LinksWrapper,
-  MetadataWrapper,
-  Time
-} from './_page.client'
-
-const ProjectImage = ({
-  src,
-  text
-}: {
-  src: string
-  link?: string
-  text?: string
-}) => {
-  return (
-    <>
-      <BlurHashImage priority={true} src={src} />
-      <p>{text}</p>
-      </>
-  )
-}
 
 type Params = Promise<{ id: string }>
 
@@ -70,8 +47,8 @@ const Creation = async ({ params }: { params: Params }) => {
     key: i.src,
     element: (
       <div key={i.src}>
-        <ProjectImage
-          text={i.label}
+        <Figure
+          caption={i.label}
           key={index}
           src={`/project-resources/${id}/${i.src}`}
         />
@@ -84,15 +61,14 @@ const Creation = async ({ params }: { params: Params }) => {
     .map((paragraph, index) => <p key={index}>{paragraph}</p>)
 
   return (
-    <DetailsWrapper>
-      <MetadataWrapper>
+    <div id="creation">
         <h1>
           <Link to={ROUTES.CREATIONS.path}>
             {ROUTES.CREATIONS.title}://
           </Link>{' '}
           {project.title}
         </h1>
-        <Time>
+        <time>
           Last Update: {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString(
             'default',
             {
@@ -100,12 +76,11 @@ const Creation = async ({ params }: { params: Params }) => {
               year: 'numeric'
             }
           )}
-        </Time>
-        <DescriptionWrapper>{Description}</DescriptionWrapper>
-        {Links.length > 0 && <LinksWrapper>{Links}</LinksWrapper>}
-      </MetadataWrapper>
-      {Images.map(i => i.element)}
-    </DetailsWrapper>
+        </time>
+        {Description}
+        {Links.length > 0 && <ul>{Links}</ul>}
+        {Images.map(i => i.element)}
+    </div>
   )
 }
 
