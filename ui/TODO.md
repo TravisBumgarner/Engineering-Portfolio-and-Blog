@@ -7,6 +7,7 @@
     - [ ] Error Page 500
 - [ ] Design theme picker
 - [ ] Figure out navigation
+- [ ] Favicon and loading update
 - [ ] Audit
      - [ ] All posts
      - [ ] All creations

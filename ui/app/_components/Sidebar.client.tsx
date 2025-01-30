@@ -78,8 +78,7 @@ const SidebarClient = () => {
 }
 
 const Box = styled.li`
-  /* width: 50px; */
-  cursor: pointer;
+  width: 50px;
   padding: 0 10px;
   height: 50px;
   margin: ${SPACING.XSMALL} 0;
