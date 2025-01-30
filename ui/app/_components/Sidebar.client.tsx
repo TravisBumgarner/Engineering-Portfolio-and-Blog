@@ -1,7 +1,7 @@
 'use client'
 
 import ROUTES from '@/lib/routes'
-import { THEME } from '@/lib/theme'
+import { SPACING, THEME } from '@/lib/theme'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
@@ -30,7 +30,7 @@ const THERE = [
 ]
 
 const SidebarClient = () => {
-  const [truncate, setTruncate] = useState(true)
+  const [truncate, setTruncate] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -78,9 +78,12 @@ const SidebarClient = () => {
 }
 
 const Box = styled.li`
-  width: 50px;
+  /* width: 50px; */
+  cursor: pointer;
+  padding: 0 10px;
   height: 50px;
-  background-color: ${THEME.PRIMARY_BACKGROUND_COLOR};
+  margin: ${SPACING.XSMALL} 0;
+  background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
   color: ${THEME.FOREGROUND_COLOR};
   display: flex;
   align-items: center;
