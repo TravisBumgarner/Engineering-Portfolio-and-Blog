@@ -42,6 +42,12 @@ const DARK_THEME: Theme = {
   SECONDARY_BACKGROUND_COLOR: COLORS.GRAYS['400']
 }
 
+export const FONT_WEIGHTS = {
+  LIGHT: 100,
+  REGULAR: 400,
+  BOLD: 700
+}
+
 export const THEME: Theme = LIGHT_THEME
 
 export const FONT_SIZES = {
@@ -93,7 +99,7 @@ export const GlobalStyle = createGlobalStyle`
 
     h1 {
       font-size: ${FONT_SIZES.MEDIUM};
-      font-weight: 700;
+      font-weight: ${FONT_WEIGHTS.BOLD};
       margin-bottom: ${SPACING.SMALL};
     }
   }
@@ -103,7 +109,7 @@ export const GlobalStyle = createGlobalStyle`
     color: ${THEME.FOREGROUND_COLOR};
     font-size: ${FONT_SIZES.MEDIUM};
     border: 0;
-    font-weight: 100;
+    font-weight: ${FONT_WEIGHTS.LIGHT};
     border-left: 4px solid ${THEME.FOREGROUND_COLOR};
     margin: ${SPACING.XSMALL} 0;
     padding: ${SPACING.SMALL};
@@ -142,29 +148,29 @@ export const GlobalStyle = createGlobalStyle`
 
     time {
       font-size: ${FONT_SIZES.SMALL};
-      font-weight: 100;
+      font-weight: ${FONT_WEIGHTS.LIGHT};
     }
 
     h2 {
       font-size: ${FONT_SIZES.XLARGE};
-      font-weight: 700;
+      font-weight: ${FONT_WEIGHTS.BOLD};
       margin-top: 0;
     }
 
     h3 {
       font-size: ${FONT_SIZES.LARGE};
-      font-weight: 700;
+      font-weight: ${FONT_WEIGHTS.BOLD};
     }
 
     p {
       font-size: ${FONT_SIZES.MEDIUM};
-      font-weight: 400;
+      font-weight: ${FONT_WEIGHTS.REGULAR};
     }
 
     a {
       color: ${THEME.PRIMARY_COLOR};
       text-decoration: none;
-      font-weight: 400;
+      font-weight: ${FONT_WEIGHTS.REGULAR};
       &:hover {
         text-decoration: underline;
       }
@@ -180,7 +186,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     strong {
-      font-weight: 700;
+      font-weight: ${FONT_WEIGHTS.BOLD};
     }
 
     ul, ol {

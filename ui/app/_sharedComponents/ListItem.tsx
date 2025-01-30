@@ -1,5 +1,5 @@
 import { MAX_LIST_WIDTH } from '@/lib/consts'
-import { FONT_SIZES, SPACING, THEME } from '@/lib/theme'
+import { FONT_SIZES, FONT_WEIGHTS, SPACING, THEME } from '@/lib/theme'
 import styled from 'styled-components'
 import BlurHashImage from './BlurHashImage'
 
@@ -19,11 +19,13 @@ const ListItem = ({
   priority?: boolean
 }) => {
   return (
-    <StyledListItem as={link ? "a" : 'div'} href={link}>
+    <StyledListItem as={link ? 'a' : 'div'} href={link}>
       {title && <h2>{title}</h2>}
       {date && <time>{date}</time>}
       {description && <p>{description}</p>}
-      {src && priority !== undefined && <BlurHashImage priority={priority} src={src} grayscale />}
+      {src && priority !== undefined && (
+        <BlurHashImage priority={priority} src={src} grayscale />
+      )}
     </StyledListItem>
   )
 }
@@ -43,14 +45,14 @@ const StyledListItem = styled.div`
 
   h2 {
     font-size: ${FONT_SIZES.MEDIUM};
-    font-weight: 400;
+    font-weight: ${FONT_WEIGHTS.REGULAR};
     margin-top: 0;
   }
 
   time {
     display: block;
     font-size: ${FONT_SIZES.XSMALL};
-    font-weight: 100;
+    font-weight: ${FONT_WEIGHTS.LIGHT};
   }
 `
 
