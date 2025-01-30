@@ -54,7 +54,7 @@ const posts: Record<string, BlogPost> = {
     title: 'Learning to Learn: Develop Skills to Master Anything',
     date: '2018-12-28',
     description:
-      'In the pursuit of learning about electronics and other subjects, I have developed a set of skills that have enabled me to learn new subjects more quickly and thoroughly and with less frustration. ',
+      'In the pursuit of learning about electronics and other subjects, I have developed a set of skills that have enabled me to learn new subjects more quickly and thoroughly and with less frustration.',
     preview_image: 'preview_image.jpg'
   },
   'on-failing': {
@@ -114,10 +114,10 @@ const posts: Record<string, BlogPost> = {
     preview_image: 'preview.png'
   },
   'leaving-aws': {
-    title: 'Leaving AWS',
+    title: 'Escaping Surprise Bills & Over-engineered Messes: Why I Left AWS',
     date: '2025-01-30',
     description:
-      'I have been using AWS for years. I have learned a lot about it and I have also learned a lot about the problems it can cause. I am moving away from AWS and towards a simpler solution.',
+      "Frustrated with AWS's complexity and cost risks, I switched to NearlyFreeSpeech for its prepaid model, ensuring financial control while keeping hosting simple and flexible.",
     preview_image: 'preview.png'
   }
 }
