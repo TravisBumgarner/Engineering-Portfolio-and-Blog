@@ -1,10 +1,13 @@
 - [ ] Implement
-    - [ ] List Items
-    - [ ] Blog Post
-    - [ ] Creation
-    - [ ] Snapshots
+    - [x] List Items
+    - [x] Blog Post
+    - [x] Creation
+    - [x] Snapshots
     - [ ] Error Page 404
     - [ ] Error Page 500
+- [ ] Design theme picker
+- [ ] Figure out navigation
 - [ ] Audit
      - [ ] All posts
      - [ ] All creations
+     - [ ] All Routes
