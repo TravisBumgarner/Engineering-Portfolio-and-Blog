@@ -113,7 +113,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #site-title {
-    padding: ${SPACING.XLARGE} 0;
     ${LIST_SIZING}
 
     a {

@@ -61,7 +61,6 @@ const StyledListItem = styled.div`
   flex-direction: column;
   text-decoration: none;
   margin-bottom: ${SPACING.LARGE};
-  padding: ${SPACING.MEDIUM};
 
   div {
     margin-bottom: ${SPACING.MEDIUM};

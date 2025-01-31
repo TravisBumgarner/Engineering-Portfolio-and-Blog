@@ -127,8 +127,8 @@ const Box = styled.div`
 const Positioner = styled.div`
   z-index: 999;
   position: fixed;
-  top: ${SPACING.XLARGE};
-  left: ${SPACING.XLARGE};
+  top: ${SPACING.SMALL};
+  left: ${SPACING.SMALL};
 
   @media (max-width: 900px) {
     top: ${SPACING.SMALL};

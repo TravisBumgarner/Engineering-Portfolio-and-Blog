@@ -15,11 +15,9 @@ const Wrapper = styled.div`
   width: 25px;
   height: 25px;
   box-sizing: border-box;
-  /* background-color: ${THEME.SECONDARY_BACKGROUND_COLOR}; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* border: 5px solid ${THEME.SECONDARY_BACKGROUND_COLOR}; */
 `
 
 const Hamburger = ({ onClick }: { onClick: () => void }) => {
