@@ -4,7 +4,7 @@ import ROUTES from '@/lib/routes'
 import { SPACING, THEME } from '@/lib/theme'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
 const THERE = [
@@ -42,31 +42,35 @@ const Item = ({
   overrideHover: boolean
 }) => {
   const [isHovered, setIsHovered] = useState(false)
-  const [displayText, setDisplayText] = useState(title.slice(0, 1))
+  const [displayText, setDisplayText] = useState(title)
 
-  useEffect(() => {
-    if (overrideHover) {
-      setIsHovered(true)
-    }
-  }, [overrideHover])
-
-  useEffect(() => {
+  const animateExpandText = useCallback(() => {
     let timeoutId: NodeJS.Timeout
-    let currentIndex = isHovered ? 1 : title.length
+    let currentIndex = 1
 
     const animateText = () => {
-      if (isHovered) {
-        if (currentIndex <= title.length) {
-          setDisplayText(title.slice(0, currentIndex))
-          currentIndex++
-          timeoutId = setTimeout(animateText, 25)
-        }
-      } else {
-        if (currentIndex > 0) {
-          setDisplayText(title.slice(0, currentIndex))
-          currentIndex--
-          timeoutId = setTimeout(animateText, 25)
-        }
+      if (currentIndex <= title.length) {
+        setDisplayText(title.slice(0, currentIndex))
+        currentIndex++
+        timeoutId = setTimeout(animateText, 25)
+      }
+    }
+    animateText()
+
+    return () => {
+      clearTimeout(timeoutId)
+    }
+  }, [title])
+
+  const animateCollapseText = useCallback(() => {
+    let timeoutId: NodeJS.Timeout
+    let currentIndex = title.length
+
+    const animateText = () => {
+      if (currentIndex > 0) {
+        setDisplayText(title.slice(0, currentIndex))
+        currentIndex--
+        timeoutId = setTimeout(animateText, 25)
       }
     }
     animateText()
@@ -75,6 +79,25 @@ const Item = ({
       clearTimeout(timeoutId)
     }
   }, [isHovered, title])
+
+  useEffect(() => {
+    if (overrideHover) {
+      console.log('overrideHover', overrideHover)
+      return
+    }
+
+    if (isHovered) {
+      animateExpandText()
+    } else {
+      animateCollapseText()
+    }
+  }, [isHovered, animateExpandText, animateCollapseText, overrideHover])
+
+  useEffect(() => {
+    if (overrideHover) {
+      animateExpandText()
+    }
+  }, [overrideHover])
 
   return (
     <Box
@@ -101,7 +124,7 @@ const SidebarClient = () => {
 
     return override
   }, [pathname])
-  console.log(pathname)
+
   return (
     <Positioner>
       {[...Object.values(ROUTES), ...THERE].map(r => (
@@ -119,15 +142,15 @@ const SidebarClient = () => {
 
 const Box = styled.div`
   align-self: flex-start;
-  min-width: 30px;
-  height: 30px;
+  min-width: 45px;
+  height: 40px;
   margin: ${SPACING.XXSMALL} 0;
   background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
   color: ${THEME.FOREGROUND_COLOR};
 
   text-align: left;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 17px;
+  padding-right: 17px;
   align-content: center;
 
   a {
