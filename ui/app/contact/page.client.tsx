@@ -1,12 +1,7 @@
 'use client'
 
-import { LIST_SIZING } from '@/lib/theme'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
-
-const Wrapper = styled.div`
-  ${LIST_SIZING}
-`
 
 const Form = styled.form`
   display: flex;
@@ -83,7 +78,7 @@ const Contact = () => {
   }, [isSubmitting, success, failure, resetButtonText])
 
   return (
-    <Wrapper>
+    <div id="contact">
       <h2>Contact</h2>
       <Form onSubmit={handleSubmit}>
         <input
@@ -113,7 +108,7 @@ const Contact = () => {
           {buttonText}
         </button>
       </Form>
-    </Wrapper>
+    </div>
   )
 }
 

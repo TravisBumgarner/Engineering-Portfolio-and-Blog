@@ -120,7 +120,6 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${FONT_SIZES.MEDIUM};
     border: 0;
     font-weight: ${FONT_WEIGHTS.LIGHT};
-    border-left: 4px solid var(--foreground);
     margin: ${SPACING.XSMALL} 0;
     padding: ${SPACING.SMALL};
   }
@@ -131,16 +130,15 @@ export const GlobalStyle = createGlobalStyle`
     background-color: var(--secondary-background);
     color: var(--foreground);
     border: 0;
-    border-left: 4px solid var(--foreground);
     margin: ${SPACING.XSMALL} 0;
     padding: ${SPACING.SMALL};
 
     &:hover {
-      background-color: var(--primary);
+      color: var(--primary);
     }
   }
 
-  #not-found, #error {
+  #not-found, #error, #contact {
     > * {
       margin: ${SPACING.MEDIUM} 0;
     }
