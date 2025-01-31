@@ -10,7 +10,7 @@
 - [x] Figure out navigation
 - [x] Favicon and loading update
 - [x] scroll to top
-- [ ] Audit
-     - [ ] All posts
-     - [ ] All creations
-     - [ ] All Routes
+- [x] Audit
+     - [x] All posts
+     - [x] All creations
+     - [x] All Routes
