@@ -79,7 +79,7 @@ Contact Form (for the sites above)
 
 - Technologies - Express, Pushover
 - Pull Requests - [Part 1](https://github.com/TravisBumgarner/Contact-Form/tree/main)
-- Notes - NearlyFreeSpeech doesn't offer services like Lambdas. My contact form was previously hosted by a Lambda. It now lives as an Express server.
+- Notes - NFS doesn't offer services like Lambdas. My contact form was previously hosted by a Lambda. It now lives as an Express server.
 
 ### Migration (or Creation) Process
 
@@ -87,26 +87,26 @@ Reference the pull requests and code in the previous section for examples.
 
 1. **Build your Website**
 2. **Write a `run.sh` Script**
-  - This script will be responsible for bringing up your app.
-  - For multiple apps (e.g., frontend and backend), create separate scripts for each.
+    - This script will be responsible for bringing up your app.
+    - For multiple apps (e.g., frontend and backend), create separate scripts for each.
 3. **Configure site on NFS**
-  - **Choose Server Type:**
-    - Use `Apache 2.4 Static Content` for frontend apps (like React without a server).
-    - Use `Custom` for backend apps (e.g., Express, Next.js, Python).
-  - **Set Up Daemon(s):**
-    - Daemons manage the `run.sh` scripts and keep your app running.
-  - **Set Up Proxy(s):**
-    - Expose the necessary ports to the outside world.
-  - **Set Up SSH:**
-    - ****Attach your `deploy.sh` script to the unique login for each site.
+    - **Choose Server Type:**
+        - Use `Apache 2.4 Static Content` for frontend apps (like React without a server).
+        - Use `Custom` for backend apps (e.g., Express, Next.js, Python).
+    - **Set Up Daemon(s):**
+        - Daemons manage the `run.sh` scripts and keep your app running.
+    - **Set Up Proxy(s):**
+        - Expose the necessary ports to the outside world.
+    - **Set Up SSH:**
+        - Attach your `deploy.sh` script to the unique login for each site.
 4. **Launch Your App**
-  - **Write and Run `deploy.sh`**:
-    - The `deploy.sh` script sets everything up on the server.
-  - **Start Daemons**:
-    - Use the NFS dashboard to start each daemon for your apps.
+    - **Write and Run `deploy.sh`**:
+        - The `deploy.sh` script sets everything up on the server.
+    - **Start Daemons**:
+        - Use the NFS dashboard to start each daemon for your apps.
 5. **Debug Any Issues**
-  - Check logs in `/home/logs/[daemon_name]` for errors.
+    - Check logs in `/home/logs/[daemon_name]` for errors.
 6. **Set Up DNS**
-  - Update your DNS records to point to your NFS site (IP addresses are available in the NFS dashboard).
+    - Update your DNS records to point to your NFS site (IP addresses are available in the NFS dashboard).
 7. **Delete AWS Resources**
-  - Once your migration is complete and tested, decommission your AWS resources.
+    - Once your migration is complete and tested, decommission your AWS resources.

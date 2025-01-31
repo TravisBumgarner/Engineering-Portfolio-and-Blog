@@ -152,7 +152,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #post, #creation {
-    p, h3, h4, h5, ul, ol {
+    > p, > h3, > h4, > h5, > ul, > ol {
       margin: ${SPACING.MEDIUM} 0;
     }
 
@@ -220,7 +220,7 @@ export const GlobalStyle = createGlobalStyle`
       overflow-x: scroll;
     }
 
-    p > code {
+    p > code, li > code, strong > code{
       display: inline;
       background-color: var(--secondary-background);
       padding: 0;
