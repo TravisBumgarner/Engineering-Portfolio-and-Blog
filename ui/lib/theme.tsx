@@ -146,12 +146,28 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  #not-found, #error {
+    ${LIST_SIZING}
+
+    > * {
+      margin: ${SPACING.MEDIUM} 0;
+    }
+
+    h2 {
+      font-size: ${FONT_SIZES.XLARGE};
+      font-weight: ${FONT_WEIGHTS.BOLD};
+      margin-top: 0;
+      margin-bottom: ${SPACING.SMALL};
+    }
+  }
+
   #post, #creation {
     ${ITEM_SIZING}
 
     p, h3, h4, h5, ul, ol {
       margin: ${SPACING.MEDIUM} 0;
     }
+
     code, blockquote, figure {
       margin-bottom: ${SPACING.LARGE};
     }
