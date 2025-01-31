@@ -1,104 +1,141 @@
 'use client'
 
-import Link from '@/app/_sharedComponents/Link'
 import ROUTES from '@/lib/routes'
-import { FOREGROUND_COLOR, PRIMARY_COLOR } from '@/lib/theme'
-import { usePathname } from 'next/navigation'
-import styled, { css } from 'styled-components'
+import { SPACING } from '@/lib/theme'
+import Link from 'next/link'
+import { useState } from 'react'
+import styled from 'styled-components'
+import Hamburger from '../_sharedComponents/Hamburger'
 
-const List = styled.ul`
-  margin: 1rem 0;
-  list-style: none;
-  padding: 0;
-`
-
-const ListItem = styled.li<{ $active?: boolean }>`
-  margin: 0;
-  
-  > a {
-    transition: color 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    color: ${FOREGROUND_COLOR};
+const THERE = [
+  {
+    title: 'Resume',
+    path: '/travis_bumgarner_resume.pdf',
+    target: '_blank'
+  },
+  {
+    title: 'LinkedIn',
+    path: 'https://www.linkedin.com/in/travisbumgarner/',
+    target: '_blank'
+  },
+  {
+    title: 'Github',
+    path: 'https://github.com/travisBumgarner/',
+    target: '_blank'
+  },
+  {
+    title: 'Photography',
+    path: 'https://travisbumgarner.photography',
+    target: '_blank'
   }
+]
 
-  ${({ $active }) => $active && css`
-    > a {
-      color: ${PRIMARY_COLOR};
-      font-weight: 400;
-    }
-  `}
-`
+type ItemProps = {
+  title: string
+  path: string
+  target: string
+  onClick: () => void
+}
 
-const SidebarWrapper = styled.div``
-
-const SidebarClient = () => {
-  const pathname = usePathname()
-
-  const isActive = (route: string, exact?: boolean) => {
-    if (exact) {
-      return pathname === route
-    }
-    return pathname.includes(route)
-  }
-
-  const isSnapshotsActive = isActive(ROUTES.SNAPSHOTS.path, true)
-  const isCreationsActive = isActive(ROUTES.CREATIONS.path)
-  const isBlogActive = isActive(ROUTES.BLOG.path)
-  const isContactActive = isActive(ROUTES.CONTACT.path)
-
+const Item = ({ title, path, target, onClick }: ItemProps) => {
   return (
-    <SidebarWrapper>
-      <p>
-        I am a lifelong learner, creator, explorer, and tinkerer. This is a
-        collection of my experiences.
-      </p>
-      <h3>Here</h3>
-      <List>
-        <ListItem $active={isSnapshotsActive}>
-          <Link to={ROUTES.SNAPSHOTS.path}>
-            {ROUTES.SNAPSHOTS.title}
-          </Link>
-        </ListItem>
-        <ListItem $active={isCreationsActive}>
-          <Link to={ROUTES.CREATIONS.path}>
-            {ROUTES.CREATIONS.title}
-          </Link>
-        </ListItem>
-        <ListItem $active={isBlogActive}>
-          <Link to={ROUTES.BLOG.path}>{ROUTES.BLOG.title}</Link>
-        </ListItem>
-        <ListItem $active={isContactActive}  >
-          <Link to={ROUTES.CONTACT.path}>
-            {ROUTES.CONTACT.title}
-          </Link>
-        </ListItem>
-      </List>
-      <h3>Elsewhere</h3>
-      <List>
-        <ListItem>
-          <Link target="_blank" to="/travis_bumgarner_resume.pdf">
-            Resume
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link target="_blank" to="https://www.linkedin.com/in/travisbumgarner/">
-            LinkedIn
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link target="_blank" to="https://github.com/travisBumgarner/">
-            Github
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link target="_blank" to="https://travisbumgarner.photography">
-            Photography
-          </Link>
-        </ListItem>
-      </List>
-    </SidebarWrapper>
+    <Link  scroll={true} style={{ textDecoration: 'none' }} target={target} href={path}>
+      <Box onClick={onClick}>{title}</Box>
+    </Link>
   )
 }
+
+const SidebarClient = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <>
+      {isOpen && <Overlay onClick={() => setIsOpen(false)} />}
+    <Positioner>
+      <Hamburger onClick={() => setIsOpen(!isOpen)} />
+      {isOpen && (
+        <Wrapper>
+          <div>
+          {Object.values(ROUTES).map(r => (
+            <Item
+              onClick={() => setIsOpen(false)}
+              key={r.path}
+              title={r.title}
+              path={r.path}
+              target={r.target}
+            />
+          ))}
+          </div>
+          <div>
+            {THERE.map(r => (
+              <Item
+                onClick={() => setIsOpen(false)}
+                key={r.path}
+                title={r.title}
+                path={r.path}
+              target={r.target}
+              />
+            ))}
+          </div>
+        </Wrapper>
+      )}
+      </Positioner>
+
+    </>
+  )
+}
+
+const Overlay = styled.div`
+  background-color: var(--background-blur);
+  backdrop-filter: blur(1px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+`
+
+const Wrapper = styled.div`
+  z-index: 999;
+  margin-top: ${SPACING.MEDIUM};
+  > div {
+    margin-bottom: ${SPACING.LARGE};
+  }
+`
+
+const Box = styled.div`
+  width: 120px;
+  height: 40px;
+  margin: ${SPACING.XXSMALL} 0;
+  background-color: var(--secondary-background);
+  color: var(--foreground);
+
+  text-align: left;
+  padding-left: 17px;
+  padding-right: 17px;
+  align-content: center;
+
+  &:hover {
+    color: var(--primary);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--foreground);
+  }
+`
+
+const Positioner = styled.div`
+  z-index: 999;
+  position: fixed;
+  top: ${SPACING.SMALL};
+  left: ${SPACING.SMALL};
+
+  @media (max-width: 900px) {
+    top: ${SPACING.SMALL};
+    left: ${SPACING.SMALL};
+  }
+`
 
 export default SidebarClient

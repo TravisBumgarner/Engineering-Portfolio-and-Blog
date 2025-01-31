@@ -1,6 +1,7 @@
+'use client'
 
+import { FONT_SIZES, SPACING } from '@/lib/theme'
 import BlurHashImage from './BlurHashImage'
-import { FigureWrapper } from './Figure.client'
 
 type FigureProps = {
   src: string
@@ -9,10 +10,16 @@ type FigureProps = {
 
 const Figure = ({ src, caption }: FigureProps) => {
   return (
-    <FigureWrapper>
-      <BlurHashImage priority={false} maxWidthPercent='100' src={`/post-resources/${src}`} alt={caption} />
-      <figcaption>{caption}</figcaption>
-    </FigureWrapper>
+    <figure
+      style={{
+        backgroundColor: 'var(--secondary-background)',
+        color: 'var(--foreground)',
+        padding: SPACING.MEDIUM
+      }}
+    >
+      <BlurHashImage priority={false} src={src} alt={caption} />
+      <figcaption style={{fontSize: FONT_SIZES.SMALL, fontWeight: 100, marginTop: SPACING.SMALL}}>{caption}</figcaption>
+    </figure>
   )
 }
 
