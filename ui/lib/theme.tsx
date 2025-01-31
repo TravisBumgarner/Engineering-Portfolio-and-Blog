@@ -20,36 +20,11 @@ const COLORS = {
   }
 }
 
-type Theme = {
-  PRIMARY_BACKGROUND_COLOR: string
-  SECONDARY_BACKGROUND_COLOR: string
-  FOREGROUND_COLOR: string
-  PRIMARY_COLOR: string
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const LIGHT_THEME: Theme = {
-  PRIMARY_BACKGROUND_COLOR: COLORS.GRAYS['100'],
-  SECONDARY_BACKGROUND_COLOR: COLORS.GRAYS['200'],
-  FOREGROUND_COLOR: COLORS.GRAYS['500'],
-  PRIMARY_COLOR: COLORS.PRIMARY['100']
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const DARK_THEME: Theme = {
-  PRIMARY_BACKGROUND_COLOR: COLORS.GRAYS['500'],
-  FOREGROUND_COLOR: COLORS.GRAYS['100'],
-  PRIMARY_COLOR: COLORS.PRIMARY['100'],
-  SECONDARY_BACKGROUND_COLOR: COLORS.GRAYS['400']
-}
-
 export const FONT_WEIGHTS = {
   LIGHT: 100,
   REGULAR: 300,
   BOLD: 500
 }
-
-export const THEME: Theme = LIGHT_THEME
 
 export const FONT_SIZES = {
   XSMALL: '12px',
@@ -82,6 +57,10 @@ export const LIST_SIZING = css`
   max-width: 700px;
   margin: 0 auto;
   padding: ${SPACING.LARGE};
+
+  @media (max-width: 768px) {
+    padding: ${SPACING.SMALL};
+  }
 `
 
 export const ITEM_SIZING = css`
@@ -89,6 +68,10 @@ export const ITEM_SIZING = css`
   max-width: 700px;
   margin: 0 auto;
   padding: ${SPACING.LARGE};
+
+  @media (max-width: 768px) {
+    padding: ${SPACING.MEDIUM};
+  }
 `
 
 export const GlobalStyle = createGlobalStyle`
@@ -98,6 +81,7 @@ export const GlobalStyle = createGlobalStyle`
       --secondary-background: ${COLORS.GRAYS['200']};
       --foreground: ${COLORS.GRAYS['500']};
       --primary: ${COLORS.PRIMARY['100']};
+      --background-blur: rgba(255,255,255,0.9);
     }
   }
 
@@ -107,6 +91,7 @@ export const GlobalStyle = createGlobalStyle`
       --secondary-background: ${COLORS.GRAYS['400']};
       --foreground: ${COLORS.GRAYS['100']};
       --primary: ${COLORS.PRIMARY['100']};
+      --background-blur: rgba(0,0,0,0.9);
     }
   }
 
@@ -129,7 +114,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-      font-size: ${FONT_SIZES.MEDIUM};
+      font-size: ${FONT_SIZES.LARGE};
       font-weight: ${FONT_WEIGHTS.BOLD};
       margin-bottom: ${SPACING.SMALL};
     }

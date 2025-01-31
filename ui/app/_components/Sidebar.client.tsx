@@ -86,6 +86,8 @@ const SidebarClient = () => {
 }
 
 const Overlay = styled.div`
+  background-color: var(--background-blur);
+  backdrop-filter: blur(1px);
   position: fixed;
   top: 0;
   left: 0;

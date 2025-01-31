@@ -5,7 +5,7 @@
     - [x] Snapshots
     - [x] Error Page 404
     - [x] Error Page 500
-- [ ] Design theme picker
+- [x] Design theme picker
 - [ ] Mobile responsive
 - [x] Figure out navigation
 - [ ] Favicon and loading update
