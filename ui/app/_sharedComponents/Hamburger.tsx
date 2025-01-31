@@ -6,20 +6,20 @@ import styled from 'styled-components'
 const Bar = styled.div`
   width: 100%;
   height: 5px;
-  background-color: ${THEME.PRIMARY_COLOR};
+  background-color: ${THEME.FOREGROUND_COLOR};
   box-sizing: border-box;
 `
 
 const Wrapper = styled.div`
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   box-sizing: border-box;
-  background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
+  /* background-color: ${THEME.SECONDARY_BACKGROUND_COLOR}; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 5px solid ${THEME.SECONDARY_BACKGROUND_COLOR};
+  /* border: 5px solid ${THEME.SECONDARY_BACKGROUND_COLOR}; */
 `
 
 const Hamburger = ({ onClick }: { onClick: () => void }) => {

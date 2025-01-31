@@ -1,7 +1,6 @@
 'use client'
 
-import { createGlobalStyle } from 'styled-components'
-import { MAX_LIST_WIDTH } from './consts'
+import { createGlobalStyle, css } from 'styled-components'
 
 const EVERYTHING_FONT = 'Satoshi, sans-serif'
 const CODE_FONT = 'Source Code Pro, monospace'
@@ -79,6 +78,20 @@ export const media = {
   phone: customMediaQuery(376)
 }
 
+export const LIST_SIZING = css`
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: ${SPACING.LARGE};
+`
+
+export const ITEM_SIZING = css`
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: ${SPACING.LARGE};
+`
+
 export const GlobalStyle = createGlobalStyle`
   @font-face {
   font-family: 'Satoshi';
@@ -102,8 +115,7 @@ export const GlobalStyle = createGlobalStyle`
 
   #site-title {
     padding: ${SPACING.XXLARGE} 0;
-    margin: 0 auto;
-    max-width: ${MAX_LIST_WIDTH};
+    ${LIST_SIZING}
 
     a {
       text-decoration: none;
@@ -144,9 +156,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #post, #creation {
-    max-width: 100%;
-    width: ${MAX_LIST_WIDTH};
-    margin: 0 auto;
+    ${ITEM_SIZING}
+
     /* Common Section Spacing */
     p, time, h2, h3 {
       margin: ${SPACING.LARGE} ${SPACING.XXSMALL};
@@ -225,6 +236,8 @@ export const GlobalStyle = createGlobalStyle`
 
   }
 `
+
+
 
 export const GlobalReset = createGlobalStyle`
   * {

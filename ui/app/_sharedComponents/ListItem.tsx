@@ -1,5 +1,4 @@
-import { MAX_LIST_WIDTH } from '@/lib/consts'
-import { FONT_SIZES, FONT_WEIGHTS, SPACING, THEME } from '@/lib/theme'
+import { FONT_SIZES, FONT_WEIGHTS, LIST_SIZING, SPACING, THEME } from '@/lib/theme'
 import Link from 'next/link'
 import styled from 'styled-components'
 import BlurHashImage from './BlurHashImage'
@@ -47,9 +46,7 @@ const ListItem = ({
 }
 
 const StyledListItem = styled.div`
-  width: ${MAX_LIST_WIDTH};
-  max-width: 100%;
-  margin: 0 auto;
+  ${LIST_SIZING}
   display: flex;
   background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
   color: ${THEME.FOREGROUND_COLOR};
@@ -57,7 +54,6 @@ const StyledListItem = styled.div`
   text-decoration: none;
   margin-bottom: ${SPACING.LARGE};
   padding: ${SPACING.MEDIUM};
-  gap: ${SPACING.MEDIUM};
 
   h2 {
     font-size: ${FONT_SIZES.MEDIUM};

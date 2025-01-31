@@ -49,11 +49,14 @@ const SidebarClient = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
+    <>
+      {isOpen && <Overlay onClick={() => setIsOpen(false)}cu />}
     <Positioner>
       <Hamburger onClick={() => setIsOpen(!isOpen)} />
       {isOpen && (
-        <>
-          {[...Object.values(ROUTES), ...THERE].map(r => (
+        <Wrapper>
+          <div>
+          {Object.values(ROUTES).map(r => (
             <Item
               onClick={() => setIsOpen(false)}
               key={r.path}
@@ -62,11 +65,42 @@ const SidebarClient = () => {
               target={r.target}
             />
           ))}
-        </>
+          </div>
+          <div>
+            {THERE.map(r => (
+              <Item
+                onClick={() => setIsOpen(false)}
+                key={r.path}
+                title={r.title}
+                path={r.path}
+              target={r.target}
+              />
+            ))}
+          </div>
+        </Wrapper>
       )}
-    </Positioner>
+      </Positioner>
+
+    </>
   )
 }
+
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+`
+
+const Wrapper = styled.div`
+  z-index: 999;
+  margin-top: ${SPACING.MEDIUM};
+  > div {
+    margin-bottom: ${SPACING.LARGE};
+  }
+`
 
 const Box = styled.div`
   width: 120px;
@@ -91,9 +125,15 @@ const Box = styled.div`
 `
 
 const Positioner = styled.div`
+  z-index: 999;
   position: fixed;
   top: ${SPACING.XXLARGE};
   left: ${SPACING.XXLARGE};
+
+  @media (max-width: 900px) {
+    top: ${SPACING.SMALL};
+    left: ${SPACING.SMALL};
+  }
 `
 
 export default SidebarClient

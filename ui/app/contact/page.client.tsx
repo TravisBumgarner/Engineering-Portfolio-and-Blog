@@ -1,12 +1,11 @@
 'use client'
 
-import { MAX_LIST_WIDTH } from '@/lib/consts'
+import { LIST_SIZING } from '@/lib/theme'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  max-width: ${MAX_LIST_WIDTH};
-  margin: 0 auto;
+  ${LIST_SIZING}
 `
 
 const Form = styled.form`
