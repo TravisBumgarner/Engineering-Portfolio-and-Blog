@@ -156,21 +156,20 @@ export const GlobalStyle = createGlobalStyle`
   #post, #creation {
     ${ITEM_SIZING}
 
-    /* Common Section Spacing */
-    p, time, h2, h3 {
-      margin: ${SPACING.LARGE} ${SPACING.XXSMALL};
+    p, h3, h4, h5, ul, ol {
+      margin: ${SPACING.MEDIUM} 0;
     }
     code, blockquote, figure {
-      margin: ${SPACING.LARGE} 0;
+      margin-bottom: ${SPACING.LARGE};
     }
 
     p, li {
       font-weight: ${FONT_WEIGHTS.REGULAR};
       line-height: ${FONT_SIZES.LARGE};
     }
-    /* Common Section Spacing */
 
     time {
+      margin: ${SPACING.SMALL} 0;
       font-size: ${FONT_SIZES.SMALL};
       font-weight: ${FONT_WEIGHTS.LIGHT};
     }
@@ -179,10 +178,21 @@ export const GlobalStyle = createGlobalStyle`
       font-size: ${FONT_SIZES.XLARGE};
       font-weight: ${FONT_WEIGHTS.BOLD};
       margin-top: 0;
+      margin-bottom: ${SPACING.SMALL};
     }
 
     h3 {
       font-size: ${FONT_SIZES.LARGE};
+      font-weight: ${FONT_WEIGHTS.BOLD};
+    }
+
+    h4 {
+      font-size: ${FONT_SIZES.MEDIUM};
+      font-weight: ${FONT_WEIGHTS.BOLD};
+    }
+
+    h5 {
+      font-size: ${FONT_SIZES.SMALL};
       font-weight: ${FONT_WEIGHTS.BOLD};
     }
 
@@ -210,7 +220,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     code {
-      /* overflow-x: scroll; */
+      overflow-x: scroll;
     }
 
     p > code {
@@ -224,7 +234,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     ul, ol {
-      margin-left: ${SPACING.XLARGE};
+      margin-left: ${SPACING.MEDIUM};
     }
 
     li {
