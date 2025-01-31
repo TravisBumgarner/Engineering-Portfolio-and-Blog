@@ -3,9 +3,9 @@
 import ROUTES from '@/lib/routes'
 import { SPACING, THEME } from '@/lib/theme'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
+import Hamburger from '../_sharedComponents/Hamburger'
 
 const THERE = [
   {
@@ -30,159 +30,46 @@ const THERE = [
   }
 ]
 
-enum AnimationState {
-  EXPANDING = 'expanding',
-  COLLAPSING = 'collapsing',
-  IDLE = 'idle'
-}
-
-type ItemRef = {
-  animateExpandText: () => void
-  animateCollapseText: () => void
-}
-
 type ItemProps = {
   title: string
   path: string
   target: string
-  shouldRemainOpen: boolean
+  onClick: () => void
 }
 
-const Item = forwardRef<ItemRef, ItemProps>(({
-  title,
-  path,
-  target,
-  shouldRemainOpen,
-  }, ref) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [displayText, setDisplayText] = useState(title.slice(0, 1))
-  
-  const animateExpandText = useCallback(() => {
-    let timeoutId: NodeJS.Timeout
-    let currentIndex = 1
-
-    const animateText = () => {
-      if (currentIndex <= title.length) {
-        setDisplayText(title.slice(0, currentIndex))
-        currentIndex++
-        timeoutId = setTimeout(animateText, 25)
-      }
-    }
-    animateText()
-
-    return () => {
-      clearTimeout(timeoutId)
-    }
-  }, [title])
-
-  const animateCollapseText = useCallback(() => {
-    let timeoutId: NodeJS.Timeout
-    let currentIndex = title.length
-
-    const animateText = () => {
-      if (currentIndex > 0) {
-        setDisplayText(title.slice(0, currentIndex))
-        currentIndex--
-        timeoutId = setTimeout(animateText, 25)
-      }
-    }
-    animateText()
-
-    return () => {
-      clearTimeout(timeoutId)
-    }
-  }, [title])
-
-  useImperativeHandle(ref, () => ({
-    animateExpandText,
-    animateCollapseText
-  }))
-
-  useEffect(() => {
-    if (shouldRemainOpen) {
-      return
-    }
-
-    if (isOpen) {
-      animateExpandText()
-    } else {
-      animateCollapseText()
-    }
-  }, [isOpen, animateExpandText, animateCollapseText, shouldRemainOpen])
-
-  useEffect(() => {
-    if (shouldRemainOpen && !isOpen) {
-      setIsOpen(true)
-    } 
-  }, [shouldRemainOpen, isOpen])
-
+const Item = ({ title, path, target, onClick }: ItemProps) => {
   return (
-    <Box
-      $shouldRemainOpen={shouldRemainOpen}
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
-    >
-      <Link target={target} href={path}>
-        {displayText}
-      </Link>
-    </Box>
+    <Link  style={{textDecoration: 'none'}} target={target} href={path}>
+      <Box onClick={onClick}>{title}</Box>
+    </Link>
   )
-})
+}
 
 const SidebarClient = () => {
-  const pathname = usePathname()
-  const [hasMounted, setHasMounted] = useState(false)
-  const itemRefs = useRef<{ [key: string]: React.RefObject<ItemRef> }>({})
-
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
-  useEffect(() => {
-    [...Object.values(ROUTES), ...THERE].forEach(r => {
-      itemRefs.current[r.path] = React.createRef<ItemRef>()
-    })
-    if (hasMounted) return
-    // itemRefs.current[pathname]?.current?.animateExpandText()
-    setHasMounted(true)
-  }, [])
-
-  const shouldRemainOpen = useMemo(() => {
-    let value = false
-    Object.values(ROUTES).forEach(r => {
-      if (pathname === r.path) {
-        value = true
-      }
-    })
-
-    return value
-  }, [pathname])
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <Positioner>
-      {[...Object.values(ROUTES), ...THERE].map(r => (
-        <Item
-          ref={itemRefs.current[r.path]}
-          key={r.path}
-          title={r.title}
-          path={r.path}
-          target={r.target}
-          shouldRemainOpen={shouldRemainOpen}
-        />
-      ))}
+      <Hamburger onClick={() => setIsOpen(!isOpen)} />
+      {isOpen && (
+        <>
+          {[...Object.values(ROUTES), ...THERE].map(r => (
+            <Item
+              onClick={() => setIsOpen(false)}
+              key={r.path}
+              title={r.title}
+              path={r.path}
+              target={r.target}
+            />
+          ))}
+        </>
+      )}
     </Positioner>
   )
 }
 
-const SHARED_WIDTH = '125px'
-const Box = styled.div<{$shouldRemainOpen: boolean}>`
-  transition: width 0.25s ease-in-out;
-
-  align-self: flex-start;
-  width: ${props => props.$shouldRemainOpen ? SHARED_WIDTH : '45px'};
-  &:hover {
-    width: ${SHARED_WIDTH};
-  }
+const Box = styled.div`
+  width: 120px;
   height: 40px;
   margin: ${SPACING.XXSMALL} 0;
   background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
@@ -193,22 +80,22 @@ const Box = styled.div<{$shouldRemainOpen: boolean}>`
   padding-right: 17px;
   align-content: center;
 
+  &:hover {
+    a {
+      color: ${THEME.PRIMARY_COLOR};
+    }
+  }
+
   a {
     text-decoration: none;
-    color: ${THEME.PRIMARY_COLOR};
+    color: ${THEME.FOREGROUND_COLOR};
   }
 `
 
 const Positioner = styled.div`
   position: fixed;
-  padding: 10px;
-  top: 0;
-  left: 0;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
+  top: 16px;
+  left: 16px;
 `
 
 export default SidebarClient

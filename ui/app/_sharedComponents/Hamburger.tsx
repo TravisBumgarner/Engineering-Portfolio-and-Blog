@@ -11,6 +11,7 @@ const Bar = styled.div`
 `
 
 const Wrapper = styled.div`
+  cursor: pointer;
   width: 30px;
   height: 30px;
   box-sizing: border-box;

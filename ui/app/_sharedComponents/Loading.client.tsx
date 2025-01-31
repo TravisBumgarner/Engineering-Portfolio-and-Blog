@@ -8,11 +8,11 @@ export const LoadingContainer = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  position: fixed;
-  top: 0;
+  /* height: 100vh; */
+  /* position: fixed; */
+  /* top: 0;
   left: 0;
-  width: 100vw;
+  width: 100vw; */
 `
 
 export const FaviconLeft = styled.div`
