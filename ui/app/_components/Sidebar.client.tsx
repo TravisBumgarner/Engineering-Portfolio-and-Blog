@@ -4,7 +4,7 @@ import ROUTES from '@/lib/routes'
 import { SPACING, THEME } from '@/lib/theme'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import styled from 'styled-components'
 
 const THERE = [
@@ -30,20 +30,33 @@ const THERE = [
   }
 ]
 
-const Item = ({
-  title,
-  path,
-  target,
-  overrideHover
-}: {
+enum AnimationState {
+  EXPANDING = 'expanding',
+  COLLAPSING = 'collapsing',
+  IDLE = 'idle'
+}
+
+type ItemRef = {
+  animateExpandText: () => void
+  animateCollapseText: () => void
+}
+
+type ItemProps = {
   title: string
   path: string
   target: string
-  overrideHover: boolean
-}) => {
-  const [isHovered, setIsHovered] = useState(false)
-  const [displayText, setDisplayText] = useState(title)
+  shouldRemainOpen: boolean
+}
 
+const Item = forwardRef<ItemRef, ItemProps>(({
+  title,
+  path,
+  target,
+  shouldRemainOpen,
+  }, ref) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const [displayText, setDisplayText] = useState(title.slice(0, 1))
+  
   const animateExpandText = useCallback(() => {
     let timeoutId: NodeJS.Timeout
     let currentIndex = 1
@@ -78,63 +91,83 @@ const Item = ({
     return () => {
       clearTimeout(timeoutId)
     }
-  }, [isHovered, title])
+  }, [title])
+
+  useImperativeHandle(ref, () => ({
+    animateExpandText,
+    animateCollapseText
+  }))
 
   useEffect(() => {
-    if (overrideHover) {
-      console.log('overrideHover', overrideHover)
+    if (shouldRemainOpen) {
       return
     }
 
-    if (isHovered) {
+    if (isOpen) {
       animateExpandText()
     } else {
       animateCollapseText()
     }
-  }, [isHovered, animateExpandText, animateCollapseText, overrideHover])
+  }, [isOpen, animateExpandText, animateCollapseText, shouldRemainOpen])
 
   useEffect(() => {
-    if (overrideHover) {
-      animateExpandText()
-    }
-  }, [overrideHover])
+    if (shouldRemainOpen && !isOpen) {
+      setIsOpen(true)
+    } 
+  }, [shouldRemainOpen, isOpen])
 
   return (
     <Box
-      $overrideHover={overrideHover}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      $shouldRemainOpen={shouldRemainOpen}
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
     >
       <Link target={target} href={path}>
         {displayText}
       </Link>
     </Box>
   )
-}
+})
 
 const SidebarClient = () => {
   const pathname = usePathname()
+  const [hasMounted, setHasMounted] = useState(false)
+  const itemRefs = useRef<{ [key: string]: React.RefObject<ItemRef> }>({})
 
-  const overrideHover = useMemo(() => {
-    let override = false
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  useEffect(() => {
+    [...Object.values(ROUTES), ...THERE].forEach(r => {
+      itemRefs.current[r.path] = React.createRef<ItemRef>()
+    })
+    if (hasMounted) return
+    // itemRefs.current[pathname]?.current?.animateExpandText()
+    setHasMounted(true)
+  }, [])
+
+  const shouldRemainOpen = useMemo(() => {
+    let value = false
     Object.values(ROUTES).forEach(r => {
       if (pathname === r.path) {
-        override = true
+        value = true
       }
     })
 
-    return override
+    return value
   }, [pathname])
 
   return (
     <Positioner>
       {[...Object.values(ROUTES), ...THERE].map(r => (
         <Item
+          ref={itemRefs.current[r.path]}
           key={r.path}
           title={r.title}
           path={r.path}
           target={r.target}
-          overrideHover={overrideHover}
+          shouldRemainOpen={shouldRemainOpen}
         />
       ))}
     </Positioner>
@@ -142,11 +175,11 @@ const SidebarClient = () => {
 }
 
 const SHARED_WIDTH = '125px'
-const Box = styled.div<{$overrideHover: boolean}>`
+const Box = styled.div<{$shouldRemainOpen: boolean}>`
   transition: width 0.25s ease-in-out;
 
   align-self: flex-start;
-  width: ${props => props.$overrideHover ? SHARED_WIDTH : '45px'};
+  width: ${props => props.$shouldRemainOpen ? SHARED_WIDTH : '45px'};
   &:hover {
     width: ${SHARED_WIDTH};
   }

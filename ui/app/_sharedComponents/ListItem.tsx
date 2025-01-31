@@ -1,5 +1,6 @@
 import { MAX_LIST_WIDTH } from '@/lib/consts'
 import { FONT_SIZES, FONT_WEIGHTS, SPACING, THEME } from '@/lib/theme'
+import Link from 'next/link'
 import styled from 'styled-components'
 import BlurHashImage from './BlurHashImage'
 
@@ -18,15 +19,30 @@ const ListItem = ({
   date?: string
   priority?: boolean
 }) => {
+  if (!link) {
+    return (
+      <StyledListItem>
+        {title && <h2>{title}</h2>}
+        {date && <time>{date}</time>}
+        {description && <p>{description}</p>}
+        {src && priority !== undefined && (
+          <BlurHashImage priority={priority} src={src} grayscale />
+        )}
+      </StyledListItem>
+    )
+  }
+
   return (
-    <StyledListItem as={link ? 'a' : 'div'} href={link}>
-      {title && <h2>{title}</h2>}
-      {date && <time>{date}</time>}
-      {description && <p>{description}</p>}
-      {src && priority !== undefined && (
-        <BlurHashImage priority={priority} src={src} grayscale />
-      )}
-    </StyledListItem>
+    <Link href={link} style={{ textDecoration: 'none' }}>
+      <StyledListItem>
+        {title && <h2>{title}</h2>}
+        {date && <time>{date}</time>}
+        {description && <p>{description}</p>}
+        {src && priority !== undefined && (
+          <BlurHashImage priority={priority} src={src} grayscale />
+        )}
+      </StyledListItem>
+    </Link>
   )
 }
 
