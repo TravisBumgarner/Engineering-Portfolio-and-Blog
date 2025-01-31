@@ -1,9 +1,6 @@
-import {
-  FONT_SIZES,
-  FONT_WEIGHTS,
-  LIST_SIZING,
-  SPACING
-} from '@/lib/theme'
+'use client'
+
+import { FONT_SIZES, FONT_WEIGHTS, SHARED_SPACING, SPACING } from '@/lib/theme'
 import Link from 'next/link'
 import styled from 'styled-components'
 import BlurHashImage from './BlurHashImage'
@@ -40,8 +37,10 @@ const ListItem = ({
     <Link href={link} style={{ textDecoration: 'none' }}>
       <StyledListItem>
         <div>
-          {title && <h2>{title}</h2>}
-          {date && <time>{date}</time>}
+          <div>
+            {title && <h2>{title}</h2>}
+            {date && <time>{date}</time>}
+          </div>
           {description && <p>{description}</p>}
         </div>
         {src && priority !== undefined && (
@@ -53,7 +52,7 @@ const ListItem = ({
 }
 
 const StyledListItem = styled.div`
-  ${LIST_SIZING}
+  ${SHARED_SPACING}
   display: flex;
   background-color: var(--secondary-background);
   color: var(--foreground);
@@ -61,8 +60,11 @@ const StyledListItem = styled.div`
   text-decoration: none;
   margin-bottom: ${SPACING.LARGE};
 
-  div {
+  > div {
     margin-bottom: ${SPACING.MEDIUM};
+    display: flex;
+    gap: ${SPACING.SMALL};
+    flex-direction: column;
   }
 
   h2 {

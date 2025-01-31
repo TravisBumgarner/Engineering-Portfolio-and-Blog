@@ -8,6 +8,7 @@ import SiteTitle from './_components/SiteTitle'
 import type { Metadata } from 'next'
 import Scroll from './_components/Scroll'
 import Sidebar from './_components/Sidebar'
+import { BodyWrapper } from './_layout.client'
 
 
 export const metadata: Metadata = {
@@ -38,10 +39,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <StyledComponentsRegistry>
           <ClientLayout>
             <Sidebar />
-            <div>
+            <BodyWrapper>
               <SiteTitle title={title} />
               {children}
-            </div>
+            </BodyWrapper>
           </ClientLayout>
         </StyledComponentsRegistry>
       </body>

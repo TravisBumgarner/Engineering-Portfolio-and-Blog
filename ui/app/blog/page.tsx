@@ -1,12 +1,10 @@
-'use client'
-
 import posts from '@/content/posts'
 import ROUTES from '@/lib/routes'
 import ListItem from '../_sharedComponents/ListItem'
 
 const Blog = () => {
   return (
-    <>
+    <div>
       {Object.keys(posts)
         .sort((a, b) =>
           new Date(posts[a].date) < new Date(posts[b].date) ? 1 : -1
@@ -28,8 +26,11 @@ const Blog = () => {
             />
           )
         })}
-    </>
+    </div>
   )
 }
+
+
+
 
 export default Blog

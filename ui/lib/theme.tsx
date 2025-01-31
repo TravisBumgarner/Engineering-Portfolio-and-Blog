@@ -52,25 +52,11 @@ export const media = {
   phone: customMediaQuery(376)
 }
 
-export const LIST_SIZING = css`
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
+export const SHARED_SPACING = css`
   padding: ${SPACING.LARGE};
 
   @media (max-width: 768px) {
     padding: ${SPACING.SMALL};
-  }
-`
-
-export const ITEM_SIZING = css`
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: ${SPACING.LARGE};
-
-  @media (max-width: 768px) {
-    padding: ${SPACING.MEDIUM};
   }
 `
 
@@ -106,7 +92,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #site-title {
-    ${LIST_SIZING}
+    ${SHARED_SPACING}
+    @media (max-width: 768px) {
+      margin-top: ${SPACING.LARGE};
+    }
 
     a {
       text-decoration: none;
@@ -117,6 +106,10 @@ export const GlobalStyle = createGlobalStyle`
       font-size: ${FONT_SIZES.LARGE};
       font-weight: ${FONT_WEIGHTS.BOLD};
       margin-bottom: ${SPACING.SMALL};
+
+      @media (max-width: 768px) {
+        font-size: ${FONT_SIZES.MEDIUM};
+      }
     }
   }
 
@@ -147,8 +140,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #not-found, #error {
-    ${LIST_SIZING}
-
     > * {
       margin: ${SPACING.MEDIUM} 0;
     }
@@ -162,8 +153,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #post, #creation {
-    ${ITEM_SIZING}
-
     p, h3, h4, h5, ul, ol {
       margin: ${SPACING.MEDIUM} 0;
     }

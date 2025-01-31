@@ -46,7 +46,7 @@ const BlurHashImage = ({
         // Background for transparent images.
         border: `8px solid var(--foreground)`,
         backgroundColor: '#fff',
-        maxHeight: '80vh',
+        maxHeight: '70vh',
         objectFit: 'cover',
         objectPosition: 'top',
         display: 'block',
