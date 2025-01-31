@@ -92,9 +92,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #site-title {
-    ${SHARED_SPACING}
+    padding: ${SPACING.LARGE} 0;
+
     @media (max-width: 768px) {
-      margin-top: ${SPACING.LARGE};
+      margin-top: ${SPACING.SMALL};
     }
 
     a {
