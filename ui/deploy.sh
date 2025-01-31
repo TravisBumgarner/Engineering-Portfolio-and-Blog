@@ -12,7 +12,7 @@ fi
 REMOTE_DIR="/home/protected"
 REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
 TEMP_DIR="/tmp/portfolio-build"
-BRANCH="master"
+BRANCH="clean-it-up"
 
 # Execute remote commands
 echo "Starting remote deployment..."

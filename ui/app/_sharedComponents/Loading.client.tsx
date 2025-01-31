@@ -1,6 +1,5 @@
 "use client"
 
-import { PRIMARY_COLOR } from "@/lib/theme";
 import { motion } from "motion/react";
 import styled from "styled-components";
 
@@ -8,11 +7,8 @@ export const LoadingContainer = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
+  width: 100%;
+  padding: 10vh 0;
 `
 
 export const FaviconLeft = styled.div`
@@ -25,16 +21,17 @@ export const FaviconLeft = styled.div`
 export const FaviconRight = styled.div`
   width: 50%;
   height: 100%;
-  background-color: ${PRIMARY_COLOR};
+  background-color: var(--primary-background);
   box-sizing: border-box;
 `
 
 export const FaviconWrapper = styled(motion.div)`
   width: 100px;
   height: 100px;
-  fill: ${PRIMARY_COLOR};
+  fill: var(--primary);
   border: 12px solid #fff;
   display: flex;
   flex-direction: row;
   border: 10px solid white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 `

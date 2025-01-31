@@ -1,41 +1,19 @@
-import BlurHashImage from '@/app/_sharedComponents/BlurHashImage'
-import Link from '@/app/_sharedComponents/Link'
-import MasonryGrid from '@/app/_sharedComponents/MasonryGrid'
+import Figure from '@/app/_sharedComponents/Figure'
 import projects from '@/content/projects'
-import ROUTES from '@/lib/routes'
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import {
-  DescriptionWrapper,
-  DetailsWrapper,
-  LinksWrapper,
-  MetadataWrapper,
-  SnapshotWrapper,
-  Time
-} from './_page.client'
-
-const ProjectImage = ({
-  src,
-  text
-}: {
-  src: string
-  link?: string
-  text?: string
-}) => {
-  return (
-    <SnapshotWrapper>
-      <BlurHashImage priority={true} maxWidthPercent="100" src={src} />
-      <p>{text}</p>
-    </SnapshotWrapper>
-  )
-}
 
 type Params = Promise<{ id: string }>
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+export async function generateMetadata({
+  params
+}: {
+  params: Params
+}): Promise<Metadata> {
   const { id } = await params
   const project = projects[id]
-  
+
   if (!project) {
     return {
       title: 'Project Not Found',
@@ -44,9 +22,11 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   }
 
   return {
-    metadataBase: new URL("https://travisbumgarner.dev"),
+    metadataBase: new URL('https://travisbumgarner.dev'),
     title: `${project.title} - Travis Bumgarner`,
-    description: `${project.description.slice(0, 150)}...` || 'A project by Travis Bumgarner',
+    description:
+      `${project.description.slice(0, 150)}...` ||
+      'A project by Travis Bumgarner',
     openGraph: {
       images: [`/project-resources/${id}/${project.previewImage.src}`]
     }
@@ -56,14 +36,16 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 const Creation = async ({ params }: { params: Params }) => {
   const { id } = await params
   const project = projects[id]
-  if(!project){
+  if (!project) {
     return notFound()
   }
 
   const Links = project.links.map(l => {
     return (
       <li key={l.label + l.src}>
-        <Link target="_blank" to={l.src}>{l.label}</Link>
+        <Link target="_blank" href={l.src}>
+          {l.label}
+        </Link>
       </li>
     )
   })
@@ -71,13 +53,13 @@ const Creation = async ({ params }: { params: Params }) => {
   const Images = project.images.map((i, index) => ({
     key: i.src,
     element: (
-      <SnapshotWrapper key={i.src}>
-        <ProjectImage
-          text={i.label}
+      <div key={i.src}>
+        <Figure
+          caption={i.label}
           key={index}
           src={`/project-resources/${id}/${i.src}`}
         />
-      </SnapshotWrapper>
+      </div>
     )
   }))
 
@@ -86,28 +68,22 @@ const Creation = async ({ params }: { params: Params }) => {
     .map((paragraph, index) => <p key={index}>{paragraph}</p>)
 
   return (
-    <DetailsWrapper>
-      <MetadataWrapper>
-        <h1>
-          <Link to={ROUTES.CREATIONS.path}>
-            {ROUTES.CREATIONS.title}://
-          </Link>{' '}
-          {project.title}
-        </h1>
-        <Time>
-          Last Update: {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString(
-            'default',
-            {
-              month: 'long',
-              year: 'numeric'
-            }
-          )}
-        </Time>
-        <DescriptionWrapper>{Description}</DescriptionWrapper>
-        {Links.length > 0 && <LinksWrapper>{Links}</LinksWrapper>}
-      </MetadataWrapper>
-      <MasonryGrid elementsWithKeys={Images} totalColumns={1} />
-    </DetailsWrapper>
+    <div id="creation">
+      <h2>{project.title}</h2>
+      <time>
+        Last Update:{' '}
+        {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString(
+          'default',
+          {
+            month: 'long',
+            year: 'numeric'
+          }
+        )}
+      </time>
+      {Description}
+      {Links.length > 0 && <ul>{Links}</ul>}
+      {Images.map(i => i.element)}
+    </div>
   )
 }
 

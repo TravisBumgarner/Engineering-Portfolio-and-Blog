@@ -2,38 +2,46 @@
 
 import { createGlobalStyle, css } from 'styled-components'
 
-export const FOREGROUND_COLOR = '#EEE'
-export const BACKGROUND_COLOR = '#363636'
-export const BORDER_COLOR = '#DDD'
-export const SECONDARY_COLOR = '#00eaff'
-export const PRIMARY_COLOR = '#ffce05'
-export const DISABLED_COLOR = '#ccc'
+const EVERYTHING_FONT = 'Satoshi, sans-serif'
+const CODE_FONT = 'Source Code Pro, monospace'
 
-const MONOSPACE_FONT = 'Source Code Pro, monospace'
-const SANS_SERIF_FONT = 'Inter, sans-serif'
+const COLORS = {
+  GRAYS: {
+    '100': '#FFFFFF',
+    '200': '#F6F6F6',
+    '300': '',
+    '400': '#2C2C2C',
+    '500': '#202020',
+    '600': ''
+  },
+  PRIMARY: {
+    '100': '#1298f2',
+    '200': '#006FB9'
+  }
+}
+
+export const FONT_WEIGHTS = {
+  LIGHT: 100,
+  REGULAR: 300,
+  BOLD: 500
+}
+
+export const FONT_SIZES = {
+  XSMALL: '12px',
+  SMALL: '16px',
+  MEDIUM: '20px',
+  LARGE: '36px',
+  XLARGE: '50px'
+}
 
 export const SPACING = {
-  XXSMALL: 4,
-  XSMALL: 8,
-  SMALL: 12,
-  MEDIUM: 16,
-  LARGE: 24,
-  XLARGE: 32,
-  XXLARGE: 48
+  XXSMALL: '4px',
+  XSMALL: '8px',
+  SMALL: '16px',
+  MEDIUM: '30px',
+  LARGE: '50px',
+  XLARGE: '80px'
 } as const
-
-export const CSSHover = css`
-  transition: color 0.3s;
-  transition: background-color 0.3s;
-  color: ${PRIMARY_COLOR};
-  text-decoration-color: ${PRIMARY_COLOR};
-  &:hover {
-    background-color: ${PRIMARY_COLOR};
-    color: ${BACKGROUND_COLOR};
-    border-color: ${PRIMARY_COLOR};
-    text-decoration-color: ${BACKGROUND_COLOR};
-  }
-`
 
 const customMediaQuery = (maxWidth: number) =>
   `@media (max-width: ${maxWidth}px)`
@@ -44,246 +52,200 @@ export const media = {
   phone: customMediaQuery(376)
 }
 
-export const GlobalReset = createGlobalStyle`
-  html,
-  body,
-  div,
-  span,
-  applet,
-  object,
-  iframe,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  blockquote,
-  pre,
-  a,
-  abbr,
-  acronym,
-  address,
-  big,
-  cite,
-  code,
-  del,
-  dfn,
-  em,
-  img,
-  ins,
-  kbd,
-  q,
-  s,
-  samp,
-  small,
-  strike,
-  strong,
-  sub,
-  sup,
-  tt,
-  var,
-  b,
-  u,
-  i,
-  center,
-  dl,
-  dt,
-  dd,
-  ol,
-  ul,
-  li,
-  fieldset,
-  form,
-  label,
-  legend,
-  table,
-  caption,
-  tbody,
-  tfoot,
-  thead,
-  tr,
-  th,
-  td,
-  article,
-  aside,
-  canvas,
-  details,
-  embed,
-  figure,
-  figcaption,
-  footer,
-  header,
-  hgroup,
-  menu,
-  nav,
-  output,
-  ruby,
-  section,
-  summary,
-  time,
-  mark,
-  audio,
-  button,
-  video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-  }
+export const SHARED_SPACING = css`
+  padding: ${SPACING.LARGE};
 
-  /* HTML5 display-role reset for older browsers */
-  article,
-  aside,
-  details,
-  figcaption,
-  figure,
-  footer,
-  header,
-  hgroup,
-  menu,
-  nav,
-  section {
-    display: block;
-  }
-
-  blockquote,
-  q {
-    quotes: none;
-  }
-
-  blockquote:before,
-  blockquote:after,
-  q:before,
-  q:after {
-    content: '';
-    content: none;
-  }
-
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  @media (max-width: 768px) {
+    padding: ${SPACING.SMALL};
   }
 `
 
 export const GlobalStyle = createGlobalStyle`
-   html {
-        background-color: ${BACKGROUND_COLOR};
-        font-family: ${SANS_SERIF_FONT};
-        line-height: 1.5;
-        font-weight: 400;
-        font-size: 20px;
-        color: ${FOREGROUND_COLOR};
+  @media (prefers-color-scheme: light) {
+    :root {
+      --primary-background: ${COLORS.GRAYS['100']};
+      --secondary-background: ${COLORS.GRAYS['200']};
+      --foreground: ${COLORS.GRAYS['500']};
+      --primary: ${COLORS.PRIMARY['100']};
+      --background-blur: rgba(255,255,255,0.9);
+    }
+  }
 
-        overflow: -moz-scrollbars-vertical; 
-        overflow-y: scroll;
-        ${media.tablet} {
-            font-size: 14px;
-        }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary-background: ${COLORS.GRAYS['500']};
+      --secondary-background: ${COLORS.GRAYS['400']};
+      --foreground: ${COLORS.GRAYS['100']};
+      --primary: ${COLORS.PRIMARY['100']};
+      --background-blur: rgba(0,0,0,0.9);
+    }
+  }
+
+  body {
+    font-family: ${EVERYTHING_FONT};
+    color: var(--foreground);
+    background-color: var(--primary-background);
+  }
+
+  body, input, textarea, button {
+    font-family: ${EVERYTHING_FONT};
+  }
+
+  #site-title {
+    padding: ${SPACING.LARGE} 0;
+
+    @media (max-width: 768px) {
+      margin-top: ${SPACING.SMALL};
     }
 
-  h1 {
-    font-size: 1.6rem;
-    color: ${SECONDARY_COLOR};
-    margin: 0 0;
-    font-weight: 100;
-  }
-  h2 {
-    color: ${SECONDARY_COLOR};
-    font-size: 1.4rem;
-    margin: ${SPACING.MEDIUM}px 0;
-    font-weight: 400;
-  }
-  h3 {
-    color: ${SECONDARY_COLOR};
-  font-size: 1.2rem;
-  margin: ${SPACING.MEDIUM}px 0;
-  font-weight: 400;
-  }
-  strong {
-    font-weight: 700;
-    font-size: 1rem;
+    a {
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    h1 {
+      font-size: ${FONT_SIZES.LARGE};
+      font-weight: ${FONT_WEIGHTS.BOLD};
+      margin-bottom: ${SPACING.SMALL};
+
+      @media (max-width: 768px) {
+        font-size: ${FONT_SIZES.MEDIUM};
+      }
+    }
   }
 
-  a {
-    font-weight: 100;
-    color: ${PRIMARY_COLOR};
-    ${CSSHover};
-    text-decoration: underline;
-    text-decoration-thickness: from-font;
-  }
-
-  p {
-    margin: ${SPACING.MEDIUM}px 0;
-    font-weight: 300;
-  }
-
-  li {
-    margin: ${SPACING.SMALL}px 0;
-    font-weight: 300;
-  }
-
-  ul, ol {
-    margin-bottom: ${SPACING.MEDIUM}px;
-    padding-left: ${SPACING.MEDIUM}px;
-  }
-
-  ul {
-    list-style: circle;
-  }
-  
-  ol {
-    list-style: decimal;
-  }
-
-  code {
-    font-family: ${MONOSPACE_FONT};
-    position: relative;
-    font-size: 1rem;
-    border: 1px solid ${BORDER_COLOR};
-    font-weight: 100;
-    display: block;
-    box-sizing: border-box;
-    padding: ${SPACING.MEDIUM}px;
-    margin: ${SPACING.MEDIUM}px 0;
-  }
-
-  p > code {
-    font-family: ${MONOSPACE_FONT};
-    display: inline;
+  input, textarea {
+    background-color: var(--secondary-background);
+    color: var(--foreground);
+    font-size: ${FONT_SIZES.MEDIUM};
     border: 0;
-    padding: 0;
-    border-radius: 0;
-    background-color: color-mix(in srgb, ${BORDER_COLOR} 25%, transparent);
+    font-weight: ${FONT_WEIGHTS.LIGHT};
+    margin: ${SPACING.XSMALL} 0;
+    padding: ${SPACING.SMALL};
+  }
 
-    &:before,
-    &:after {
-      content: '';
+  button {
+    cursor: pointer;
+    font-size: ${FONT_SIZES.MEDIUM};
+    background-color: var(--secondary-background);
+    color: var(--foreground);
+    border: 0;
+    margin: ${SPACING.XSMALL} 0;
+    padding: ${SPACING.SMALL};
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  #not-found, #error, #contact {
+    > * {
+      margin: ${SPACING.MEDIUM} 0;
+    }
+
+    h2 {
+      font-size: ${FONT_SIZES.XLARGE};
+      font-weight: ${FONT_WEIGHTS.BOLD};
+      margin-top: 0;
+      margin-bottom: ${SPACING.SMALL};
+    }
+  }
+
+  #post, #creation {
+    p, h3, h4, h5, ul, ol {
+      margin: ${SPACING.MEDIUM} 0;
+    }
+
+    code, blockquote, figure {
+      margin-bottom: ${SPACING.LARGE};
+    }
+
+    p, li {
+      font-weight: ${FONT_WEIGHTS.REGULAR};
+      line-height: ${FONT_SIZES.LARGE};
+    }
+
+    time {
+      margin: ${SPACING.SMALL} 0;
+      font-size: ${FONT_SIZES.SMALL};
+      font-weight: ${FONT_WEIGHTS.LIGHT};
+    }
+
+    h2 {
+      font-size: ${FONT_SIZES.XLARGE};
+      font-weight: ${FONT_WEIGHTS.BOLD};
+      margin-top: 0;
+      margin-bottom: ${SPACING.SMALL};
+    }
+
+    h3 {
+      font-size: ${FONT_SIZES.LARGE};
+      font-weight: ${FONT_WEIGHTS.BOLD};
+    }
+
+    h4 {
+      font-size: ${FONT_SIZES.MEDIUM};
+      font-weight: ${FONT_WEIGHTS.BOLD};
+    }
+
+    h5 {
+      font-size: ${FONT_SIZES.SMALL};
+      font-weight: ${FONT_WEIGHTS.BOLD};
+    }
+
+    p {
+      font-size: ${FONT_SIZES.MEDIUM};
+      font-weight: ${FONT_WEIGHTS.REGULAR};
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: ${FONT_WEIGHTS.REGULAR};
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    code, blockquote {
+      font-weight: ${FONT_WEIGHTS.LIGHT};
+      padding: ${SPACING.SMALL};
+      display: block;
+      font-size: ${FONT_SIZES.MEDIUM};
+      font-family: ${CODE_FONT};
+      background-color: var(--secondary-background);
+    }
+
+    code {
+      overflow-x: scroll;
+    }
+
+    p > code {
       display: inline;
+      background-color: var(--secondary-background);
+      padding: 0;
     }
-  }
 
-  blockquote {
-    position: relative;
-    font-size: 1rem;
-    border: 1px solid ${BORDER_COLOR};
-    font-weight: 100;
-    display: block;
+    strong {
+      font-weight: ${FONT_WEIGHTS.BOLD};
+    }
+
+    ul, ol {
+      margin-left: ${SPACING.MEDIUM};
+    }
+
+    li {
+      font-size: ${FONT_SIZES.MEDIUM};
+      margin: ${SPACING.XXSMALL} 0;
+    }
+
+  }
+`
+
+export const GlobalReset = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    padding: ${SPACING.MEDIUM}px;
-    margin: ${SPACING.MEDIUM}px 0;
-  }
-
-  figure {
-    margin: ${SPACING.MEDIUM}px 0;
-
-    figcaption {
-      margin: ${SPACING.SMALL}px 0;
-      font-weight: 300;
-      font-size: 0.8rem;
-    }
   }
 `

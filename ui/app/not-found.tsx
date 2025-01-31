@@ -1,6 +1,5 @@
 "use client"
 
-import { Button, Wrapper } from '@/app/_not-found.client'
 import { useCallback } from 'react'
 
 const Error = () => {
@@ -9,11 +8,11 @@ const Error = () => {
   }, [])
 
   return (
-    <Wrapper>
-      <h1>Whoops!</h1>
+    <div id="not-found">
+      <h2>Whoops!</h2>
       <p>Sorry, the page you were looking for was not found.</p>
-      <Button onClick={handleRefresh}>Return home</Button>
-    </Wrapper>
+      <button onClick={handleRefresh}>Return home</button>
+    </div>
   )
 }
 

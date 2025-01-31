@@ -1,45 +1,11 @@
 'use client'
 
-import { BORDER_COLOR, CSSHover } from '@/lib/theme'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
-
-const Wrapper = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-`
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-`
-
-const Input = styled.input`
-  background-color: ${BORDER_COLOR};
-  padding: 0.5rem;
-  border: 0;
-`
-
-const TextArea = styled.textarea`
-  background-color: ${BORDER_COLOR};
-  padding: 0.5rem;
-  border: 0;
-  min-height: 100px;
-`
-
-const SubmitButton = styled.button<{ $disabled?: boolean }>`
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  border: none;
-  cursor: ${props => (props.$disabled ? 'not-allowed' : 'pointer')};
-  font-weight: 700;
-  font-style: italic;
-  font-size: 1rem;
-  text-decoration: underline;
-  opacity: ${props => (props.$disabled ? 0.5 : 1)};
-
-  ${CSSHover}
 `
 
 const Contact = () => {
@@ -71,7 +37,7 @@ const Contact = () => {
       body: JSON.stringify(formData),
       headers: {
         'Content-Type': 'application/json'
-      },
+      }
     })
     if (response.ok) {
       setSuccess(true)
@@ -112,37 +78,37 @@ const Contact = () => {
   }, [isSubmitting, success, failure, resetButtonText])
 
   return (
-    <Wrapper>
-      <h1>Contact</h1>
+    <div id="contact">
+      <h2>Contact</h2>
       <Form onSubmit={handleSubmit}>
-        <Input
+        <input
           placeholder="Name (Optional)"
           name="name"
           value={formData.name}
           onChange={handleChange}
         />
-        <Input
+        <input
           placeholder="Email (Optional)"
           name="email"
           value={formData.email}
           onChange={handleChange}
           type="email"
         />
-        <TextArea
+        <textarea
           placeholder="Message"
           name="message"
           value={formData.message}
           onChange={handleChange}
+          rows={4}
         />
-        <SubmitButton
-          $disabled={isSubmitting || formData.message.length === 0}
+        <button
           type="submit"
           disabled={isSubmitting || formData.message.length === 0}
         >
           {buttonText}
-        </SubmitButton>
+        </button>
       </Form>
-    </Wrapper>
+    </div>
   )
 }
 

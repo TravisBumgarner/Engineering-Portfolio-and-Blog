@@ -1,40 +1,36 @@
-'use client'
-
-import MasonryGrid from '@/app/_sharedComponents/MasonryGrid'
-import MasonryImage from '@/app/_sharedComponents/MasonryImage'
 import posts from '@/content/posts'
-import useTotalColumns from '@/lib/hooks/useTotalColumns'
 import ROUTES from '@/lib/routes'
+import ListItem from '../_sharedComponents/ListItem'
 
 const Blog = () => {
-  const totalColumns = useTotalColumns()
-
-  const ListItems = Object.keys(posts)
-    .sort((a, b) =>
-      new Date(posts[a].date) < new Date(posts[b].date) ? 1 : -1
-    )
-    .map((id, index) => {
-      const { title } = posts[id]
-      return {
-        key: id,
-        element: (
-          <MasonryImage
-          totalColumns={totalColumns}
-            // Prioritize the first two posts
-            priority={index <= 1}
-            date={new Date(posts[id].date).toLocaleString('default', {
-              month: 'long',
-              year: 'numeric'
-            })}
-            link={`${ROUTES.BLOG.path}/${id}`}
-            text={title}
-            src={`/post-resources/${id}/${posts[id].preview_image}`}
-          />
+  return (
+    <div>
+      {Object.keys(posts)
+        .sort((a, b) =>
+          new Date(posts[a].date) < new Date(posts[b].date) ? 1 : -1
         )
-      }
-    })
-
-  return <MasonryGrid elementsWithKeys={ListItems} totalColumns={totalColumns} />
+        .map((id, index) => {
+          const { title, description } = posts[id]
+          return (
+            <ListItem
+              key={id}
+              priority={index === 0}
+              date={new Date(posts[id].date).toLocaleString('default', {
+                month: 'long',
+                year: 'numeric'
+              })}
+              link={`${ROUTES.BLOG.path}/${id}`}
+              title={title}
+              description={description}
+              src={`/post-resources/${id}/${posts[id].preview_image}`}
+            />
+          )
+        })}
+    </div>
+  )
 }
+
+
+
 
 export default Blog

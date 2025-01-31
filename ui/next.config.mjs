@@ -1,6 +1,6 @@
-import { withSentryConfig } from '@sentry/nextjs'
+import { withSentryConfig } from '@sentry/nextjs';
 // @ts-check
-import createMDX from '@next/mdx'
+import createMDX from '@next/mdx';
 
 /**
  * @type {import('next').NextConfig}
@@ -10,7 +10,20 @@ const nextConfig = {
   reactStrictMode: true,
   compiler: {
     styledComponents: true
-  }
+  },
+  async headers() {
+    return [
+      {
+        source: "/fonts/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
+  },
 }
 
 const withMDX = createMDX({
