@@ -11,7 +11,7 @@ const Portfolio = () => {
         .sort((a, b) =>
           a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1
         )
-        .map(({ id, title, previewImage, lastMeaningfulUpdate, description }, index) => {
+        .map(({ id, title, previewImage, lastMeaningfulUpdate }, index) => {
           return (
             <ListItem
               priority={index === 0}

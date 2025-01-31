@@ -39,7 +39,7 @@ type ItemProps = {
 
 const Item = ({ title, path, target, onClick }: ItemProps) => {
   return (
-    <Link  style={{textDecoration: 'none'}} target={target} href={path}>
+    <Link style={{ textDecoration: 'none' }} target={target} href={path}>
       <Box onClick={onClick}>{title}</Box>
     </Link>
   )
@@ -81,9 +81,7 @@ const Box = styled.div`
   align-content: center;
 
   &:hover {
-    a {
-      color: ${THEME.PRIMARY_COLOR};
-    }
+    color: ${THEME.PRIMARY_COLOR};
   }
 
   a {

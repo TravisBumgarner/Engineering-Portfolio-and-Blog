@@ -28,6 +28,7 @@ type Theme = {
   PRIMARY_COLOR: string
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const LIGHT_THEME: Theme = {
   PRIMARY_BACKGROUND_COLOR: COLORS.GRAYS['100'],
   SECONDARY_BACKGROUND_COLOR: COLORS.GRAYS['200'],
@@ -35,6 +36,7 @@ const LIGHT_THEME: Theme = {
   PRIMARY_COLOR: COLORS.PRIMARY['100']
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const DARK_THEME: Theme = {
   PRIMARY_BACKGROUND_COLOR: COLORS.GRAYS['500'],
   FOREGROUND_COLOR: COLORS.GRAYS['100'],

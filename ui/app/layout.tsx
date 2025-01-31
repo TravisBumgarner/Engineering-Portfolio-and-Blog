@@ -25,8 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         <style>
           {/* eslint-disable-next-line */}
-          @import
-          url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
         </style>
         <link rel="icon" href="/favicon.png" />
         <GoogleAnalytics gaId="G-67RM7JF6TY" />

@@ -1,4 +1,3 @@
-import { MAX_LIST_WIDTH } from '@/lib/consts'
 import Link from 'next/link'
 import Weak from '../_sharedComponents/Weak'
 
