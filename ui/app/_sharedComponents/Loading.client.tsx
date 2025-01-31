@@ -8,7 +8,7 @@ export const LoadingContainer = styled(motion.div)`
   justify-content: center;
   align-items: center;
   width: 100%;
-
+  padding: 10vh 0;
 `
 
 export const FaviconLeft = styled.div`
