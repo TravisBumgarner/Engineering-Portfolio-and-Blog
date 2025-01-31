@@ -6,6 +6,7 @@ import { ReactNode } from 'react'
 import SiteTitle from './_components/SiteTitle'
 
 import type { Metadata } from 'next'
+import Scroll from './_components/Scroll'
 import Sidebar from './_components/Sidebar'
 
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="/favicon.png" />
         <GoogleAnalytics gaId="G-67RM7JF6TY" />
       </head>
+      <Scroll />
       <body>
         <StyledComponentsRegistry>
           <ClientLayout>
