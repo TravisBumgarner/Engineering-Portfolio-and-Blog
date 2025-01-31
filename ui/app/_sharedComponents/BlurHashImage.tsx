@@ -1,5 +1,6 @@
 import blurhashes from '@/content/blurhashes/index.json'
 import { blurHashToDataURL } from '@/lib/blurhashDataURL'
+import { THEME } from '@/lib/theme'
 import { BlurHash } from '@/lib/types'
 import Image from 'next/image'
 
@@ -23,12 +24,10 @@ const BlurHashImage = ({
   src,
   priority,
   alt,
-  grayscale
 }: {
   src: string
   priority: boolean
   alt?: string
-  grayscale?: boolean
 }) => {
   const { width, height, blurHash } = getBlurHash(src)
   const blurDataURL = blurHashToDataURL(blurHash)
@@ -46,6 +45,7 @@ const BlurHashImage = ({
       sizes="(max-width: 750px) 100vw, 100vw"
       style={{
         // Background for transparent images.
+        border: `8px solid ${THEME.FOREGROUND_COLOR}`,
         backgroundColor: '#fff',
         maxHeight: '80vh',
         objectFit: 'cover',
@@ -53,7 +53,6 @@ const BlurHashImage = ({
         display: 'block',
         width: '100%',
         height: 'auto',
-        filter: grayscale ? 'grayscale(100%)' : 'none'
       }}
     />
   )

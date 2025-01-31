@@ -1,4 +1,10 @@
-import { FONT_SIZES, FONT_WEIGHTS, LIST_SIZING, SPACING, THEME } from '@/lib/theme'
+import {
+  FONT_SIZES,
+  FONT_WEIGHTS,
+  LIST_SIZING,
+  SPACING,
+  THEME
+} from '@/lib/theme'
 import Link from 'next/link'
 import styled from 'styled-components'
 import BlurHashImage from './BlurHashImage'
@@ -25,7 +31,7 @@ const ListItem = ({
         {date && <time>{date}</time>}
         {description && <p>{description}</p>}
         {src && priority !== undefined && (
-          <BlurHashImage priority={priority} src={src} grayscale />
+          <BlurHashImage priority={priority} src={src} />
         )}
       </StyledListItem>
     )
@@ -34,11 +40,13 @@ const ListItem = ({
   return (
     <Link href={link} style={{ textDecoration: 'none' }}>
       <StyledListItem>
-        {title && <h2>{title}</h2>}
-        {date && <time>{date}</time>}
-        {description && <p>{description}</p>}
+        <div>
+          {title && <h2>{title}</h2>}
+          {date && <time>{date}</time>}
+          {description && <p>{description}</p>}
+        </div>
         {src && priority !== undefined && (
-          <BlurHashImage priority={priority} src={src} grayscale />
+          <BlurHashImage priority={priority} src={src} />
         )}
       </StyledListItem>
     </Link>
@@ -55,15 +63,19 @@ const StyledListItem = styled.div`
   margin-bottom: ${SPACING.LARGE};
   padding: ${SPACING.MEDIUM};
 
+  div {
+    margin-bottom: ${SPACING.MEDIUM};
+  }
+
   h2 {
-    font-size: ${FONT_SIZES.MEDIUM};
-    font-weight: ${FONT_WEIGHTS.REGULAR};
+    font-size: ${FONT_SIZES.LARGE};
+    font-weight: ${FONT_WEIGHTS.BOLD};
     margin-top: 0;
   }
 
   time {
     display: block;
-    font-size: ${FONT_SIZES.XSMALL};
+    font-size: ${FONT_SIZES.SMALL};
     font-weight: ${FONT_WEIGHTS.LIGHT};
   }
 `

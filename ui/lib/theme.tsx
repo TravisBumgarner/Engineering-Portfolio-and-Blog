@@ -62,11 +62,10 @@ export const FONT_SIZES = {
 export const SPACING = {
   XXSMALL: '4px',
   XSMALL: '8px',
-  SMALL: '12px',
-  MEDIUM: '16px',
-  LARGE: '24px',
-  XLARGE: '32px',
-  XXLARGE: '70px'
+  SMALL: '16px',
+  MEDIUM: '30px',
+  LARGE: '50px',
+  XLARGE: '80px'
 } as const
 
 const customMediaQuery = (maxWidth: number) =>
@@ -87,7 +86,7 @@ export const LIST_SIZING = css`
 
 export const ITEM_SIZING = css`
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   padding: ${SPACING.LARGE};
 `
@@ -114,7 +113,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #site-title {
-    padding: ${SPACING.XXLARGE} 0;
+    padding: ${SPACING.XLARGE} 0;
     ${LIST_SIZING}
 
     a {

@@ -50,7 +50,7 @@ const SidebarClient = () => {
 
   return (
     <>
-      {isOpen && <Overlay onClick={() => setIsOpen(false)}cu />}
+      {isOpen && <Overlay onClick={() => setIsOpen(false)} />}
     <Positioner>
       <Hamburger onClick={() => setIsOpen(!isOpen)} />
       {isOpen && (
@@ -127,8 +127,8 @@ const Box = styled.div`
 const Positioner = styled.div`
   z-index: 999;
   position: fixed;
-  top: ${SPACING.XXLARGE};
-  left: ${SPACING.XXLARGE};
+  top: ${SPACING.XLARGE};
+  left: ${SPACING.XLARGE};
 
   @media (max-width: 900px) {
     top: ${SPACING.SMALL};
