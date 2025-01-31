@@ -3,10 +3,10 @@
     - [x] Blog Post
     - [x] Creation
     - [x] Snapshots
-    - [ ] Error Page 404
-    - [ ] Error Page 500
+    - [x] Error Page 404
+    - [x] Error Page 500
 - [ ] Design theme picker
-- [ ] Figure out navigation
+- [x] Figure out navigation
 - [ ] Favicon and loading update
 - [ ] Audit
      - [ ] All posts

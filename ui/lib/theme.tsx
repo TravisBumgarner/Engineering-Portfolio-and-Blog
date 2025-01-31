@@ -101,7 +101,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #site-title {
-    margin: ${SPACING.XLARGE} auto;
+    padding: ${SPACING.XXLARGE} 0;
+    margin: 0 auto;
     max-width: ${MAX_LIST_WIDTH};
 
     a {
@@ -200,7 +201,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     code {
-      overflow-x: scroll;
+      /* overflow-x: scroll; */
     }
 
     p > code {

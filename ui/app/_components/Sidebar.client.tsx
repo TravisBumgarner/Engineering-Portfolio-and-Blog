@@ -39,7 +39,7 @@ type ItemProps = {
 
 const Item = ({ title, path, target, onClick }: ItemProps) => {
   return (
-    <Link style={{ textDecoration: 'none' }} target={target} href={path}>
+    <Link  scroll={true} style={{ textDecoration: 'none' }} target={target} href={path}>
       <Box onClick={onClick}>{title}</Box>
     </Link>
   )
@@ -92,8 +92,8 @@ const Box = styled.div`
 
 const Positioner = styled.div`
   position: fixed;
-  top: 16px;
-  left: 16px;
+  top: ${SPACING.XXLARGE};
+  left: ${SPACING.XXLARGE};
 `
 
 export default SidebarClient
