@@ -21,7 +21,7 @@ export const FaviconLeft = styled.div`
 export const FaviconRight = styled.div`
   width: 50%;
   height: 100%;
-  background-color: var(--primary);
+  background-color: var(--primary-background);
   box-sizing: border-box;
 `
 

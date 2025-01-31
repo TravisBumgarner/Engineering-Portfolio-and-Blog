@@ -8,7 +8,7 @@
 - [x] Design theme picker
 - [ ] Mobile responsive
 - [x] Figure out navigation
-- [ ] Favicon and loading update
+- [x] Favicon and loading update
 - [x] scroll to top
 - [ ] Audit
      - [ ] All posts
