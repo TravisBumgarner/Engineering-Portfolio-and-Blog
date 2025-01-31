@@ -7,7 +7,6 @@ import SiteTitle from './_components/SiteTitle'
 
 import type { Metadata } from 'next'
 import Sidebar from './_components/Sidebar'
-import ScrollToTop from './_sharedComponents/ScrollToTop'
 
 
 export const metadata: Metadata = {
@@ -35,7 +34,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <GoogleAnalytics gaId="G-67RM7JF6TY" />
       </head>
       <body>
-        <ScrollToTop />
         <StyledComponentsRegistry>
           <ClientLayout>
             <Sidebar />

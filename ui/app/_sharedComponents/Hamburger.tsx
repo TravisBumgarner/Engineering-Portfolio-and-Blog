@@ -1,12 +1,11 @@
 'use client'
 
-import { THEME } from '@/lib/theme'
 import styled from 'styled-components'
 
 const Bar = styled.div`
   width: 100%;
   height: 5px;
-  background-color: ${THEME.FOREGROUND_COLOR};
+  background-color: var(--foreground);
   box-sizing: border-box;
 `
 

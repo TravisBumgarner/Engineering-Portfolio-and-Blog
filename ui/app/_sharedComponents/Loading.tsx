@@ -1,4 +1,3 @@
-import { THEME } from '@/lib/theme'
 import { FaviconLeft, FaviconRight, FaviconWrapper, LoadingContainer } from './Loading.client'
 
 const Favicon = () => {
@@ -6,7 +5,7 @@ const Favicon = () => {
     <FaviconWrapper
       animate={{ transform: 'rotate(360deg)' }}
       transition={{ repeat: Infinity, duration: 3, ease: 'linear' }}
-      style={{ fill: THEME.PRIMARY_COLOR, width: 100, height: 100 }}
+      style={{ fill: 'var(--primary)', width: 100, height: 100 }}
     >
       <FaviconLeft />
       <FaviconRight />

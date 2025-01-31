@@ -92,20 +92,28 @@ export const ITEM_SIZING = css`
 `
 
 export const GlobalStyle = createGlobalStyle`
-  @font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Variable.woff2') format('woff2'),
-       url('/fonts/Satoshi-Variable.woff') format('woff'),
-       url('/fonts/Satoshi-Variable.ttf') format('truetype');
-  font-weight: 100 400 700;
-  font-display: swap;
-  font-style: normal;
-}
+  @media (prefers-color-scheme: light) {
+    :root {
+      --primary-background: ${COLORS.GRAYS['100']};
+      --secondary-background: ${COLORS.GRAYS['200']};
+      --foreground: ${COLORS.GRAYS['500']};
+      --primary: ${COLORS.PRIMARY['100']};
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary-background: ${COLORS.GRAYS['500']};
+      --secondary-background: ${COLORS.GRAYS['400']};
+      --foreground: ${COLORS.GRAYS['100']};
+      --primary: ${COLORS.PRIMARY['100']};
+    }
+  }
 
   body {
     font-family: ${EVERYTHING_FONT};
-    color: ${THEME.FOREGROUND_COLOR};
-    background-color: ${THEME.PRIMARY_BACKGROUND_COLOR};
+    color: var(--foreground);
+    background-color: var(--primary-background);
   }
 
   body, input, textarea, button {
@@ -117,7 +125,7 @@ export const GlobalStyle = createGlobalStyle`
 
     a {
       text-decoration: none;
-      color: ${THEME.PRIMARY_COLOR};
+      color: var(--primary);
     }
 
     h1 {
@@ -128,12 +136,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   input, textarea {
-    background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
-    color: ${THEME.FOREGROUND_COLOR};
+    background-color: var(--secondary-background);
+    color: var(--foreground);
     font-size: ${FONT_SIZES.MEDIUM};
     border: 0;
     font-weight: ${FONT_WEIGHTS.LIGHT};
-    border-left: 4px solid ${THEME.FOREGROUND_COLOR};
+    border-left: 4px solid var(--foreground);
     margin: ${SPACING.XSMALL} 0;
     padding: ${SPACING.SMALL};
   }
@@ -141,15 +149,15 @@ export const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
     font-size: ${FONT_SIZES.MEDIUM};
-    background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
-    color: ${THEME.FOREGROUND_COLOR};
+    background-color: var(--secondary-background);
+    color: var(--foreground);
     border: 0;
-    border-left: 4px solid ${THEME.FOREGROUND_COLOR};
+    border-left: 4px solid var(--foreground);
     margin: ${SPACING.XSMALL} 0;
     padding: ${SPACING.SMALL};
 
     &:hover {
-      background-color: ${THEME.PRIMARY_COLOR};
+      background-color: var(--primary);
     }
   }
 
@@ -202,7 +210,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     a {
-      color: ${THEME.PRIMARY_COLOR};
+      color: var(--primary);
       text-decoration: none;
       font-weight: ${FONT_WEIGHTS.REGULAR};
       &:hover {
@@ -216,7 +224,7 @@ export const GlobalStyle = createGlobalStyle`
       display: block;
       font-size: ${FONT_SIZES.MEDIUM};
       font-family: ${CODE_FONT};
-      background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
+      background-color: var(--secondary-background);
     }
 
     code {
@@ -225,7 +233,7 @@ export const GlobalStyle = createGlobalStyle`
 
     p > code {
       display: inline;
-      background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
+      background-color: var(--secondary-background);
       padding: 0;
     }
 

@@ -1,7 +1,7 @@
 'use client'
 
 import ROUTES from '@/lib/routes'
-import { SPACING, THEME } from '@/lib/theme'
+import { SPACING } from '@/lib/theme'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -74,15 +74,15 @@ const Box = styled.li`
   padding: 0 10px;
   height: 50px;
   margin: ${SPACING.XSMALL} 0;
-  background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
-  color: ${THEME.FOREGROUND_COLOR};
+  background-color: var(--secondary-background);
+  color: var(--foreground);
   display: flex;
   align-items: center;
   justify-content: center;
 
   a {
     text-decoration: none;
-    color: ${THEME.PRIMARY_COLOR};
+    color: var(--primary);
   }
 `
 
@@ -96,7 +96,7 @@ const Positioner = styled.div`
 `
 
 const Wrapper = styled(motion.div)`
-  background: ${THEME.PRIMARY_BACKGROUND_COLOR};
+  background: var(--primary-background-color);
   padding: 10px;
 `
 

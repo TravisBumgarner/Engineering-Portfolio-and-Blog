@@ -1,14 +1,14 @@
 "use client"
 
-import { SPACING, THEME } from '@/lib/theme'
+import { SPACING } from '@/lib/theme'
 import styled from 'styled-components'
 
 export const YoutubeWrapper = styled.figure`
   overflow: hidden;
   position: relative;
   margin: 1rem 0;
-  border: ${SPACING.MEDIUM} solid ${THEME.SECONDARY_BACKGROUND_COLOR};
-  color: ${THEME.FOREGROUND_COLOR};
+  border: ${SPACING.MEDIUM} solid var(--secondary-background);
+  color: var(--foreground);
   aspect-ratio: 16 / 9;
   width: 100%;
 

@@ -1,6 +1,5 @@
 "use client"
 
-import { THEME } from "@/lib/theme";
 import { motion } from "motion/react";
 import styled from "styled-components";
 
@@ -23,14 +22,14 @@ export const FaviconLeft = styled.div`
 export const FaviconRight = styled.div`
   width: 50%;
   height: 100%;
-  background-color: ${THEME.PRIMARY_COLOR};
+  background-color: var(--primary);
   box-sizing: border-box;
 `
 
 export const FaviconWrapper = styled(motion.div)`
   width: 100px;
   height: 100px;
-  fill: ${THEME.PRIMARY_COLOR};
+  fill: var(--primary);
   border: 12px solid #fff;
   display: flex;
   flex-direction: row;

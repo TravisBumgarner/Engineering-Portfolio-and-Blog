@@ -2,8 +2,7 @@ import {
   FONT_SIZES,
   FONT_WEIGHTS,
   LIST_SIZING,
-  SPACING,
-  THEME
+  SPACING
 } from '@/lib/theme'
 import Link from 'next/link'
 import styled from 'styled-components'
@@ -56,8 +55,8 @@ const ListItem = ({
 const StyledListItem = styled.div`
   ${LIST_SIZING}
   display: flex;
-  background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
-  color: ${THEME.FOREGROUND_COLOR};
+  background-color: var(--secondary-background);
+  color: var(--foreground);
   flex-direction: column;
   text-decoration: none;
   margin-bottom: ${SPACING.LARGE};
@@ -70,6 +69,7 @@ const StyledListItem = styled.div`
     font-size: ${FONT_SIZES.LARGE};
     font-weight: ${FONT_WEIGHTS.BOLD};
     margin-top: 0;
+    margin-bottom: ${SPACING.SMALL};
   }
 
   time {

@@ -1,4 +1,4 @@
-- [ ] Implement
+- [x] Implement
     - [x] List Items
     - [x] Blog Post
     - [x] Creation
@@ -9,7 +9,7 @@
 - [ ] Mobile responsive
 - [x] Figure out navigation
 - [ ] Favicon and loading update
-- [ ] scroll to top
+- [x] scroll to top
 - [ ] Audit
      - [ ] All posts
      - [ ] All creations

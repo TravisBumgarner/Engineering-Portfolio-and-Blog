@@ -1,7 +1,7 @@
 'use client'
 
 import ROUTES from '@/lib/routes'
-import { SPACING, THEME } from '@/lib/theme'
+import { SPACING } from '@/lib/theme'
 import Link from 'next/link'
 import { useState } from 'react'
 import styled from 'styled-components'
@@ -106,8 +106,8 @@ const Box = styled.div`
   width: 120px;
   height: 40px;
   margin: ${SPACING.XXSMALL} 0;
-  background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
-  color: ${THEME.FOREGROUND_COLOR};
+  background-color: var(--secondary-background);
+  color: var(--foreground);
 
   text-align: left;
   padding-left: 17px;
@@ -115,12 +115,12 @@ const Box = styled.div`
   align-content: center;
 
   &:hover {
-    color: ${THEME.PRIMARY_COLOR};
+    color: var(--primary);
   }
 
   a {
     text-decoration: none;
-    color: ${THEME.FOREGROUND_COLOR};
+    color: var(--foreground);
   }
 `
 
