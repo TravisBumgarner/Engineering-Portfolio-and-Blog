@@ -1,5 +1,6 @@
 'use client'
 
+import { SPACING } from '@/lib/theme'
 import styled from 'styled-components'
 
 const Bar = styled.div`
@@ -11,12 +12,14 @@ const Bar = styled.div`
 
 const Wrapper = styled.div`
   cursor: pointer;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: var(--primary-background);
+  padding: ${SPACING.XSMALL};
 `
 
 const Hamburger = ({ onClick }: { onClick: () => void }) => {
