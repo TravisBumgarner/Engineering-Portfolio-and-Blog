@@ -101,6 +101,7 @@ const Item = ({
 
   return (
     <Box
+      $overrideHover={overrideHover}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -140,9 +141,15 @@ const SidebarClient = () => {
   )
 }
 
-const Box = styled.div`
+const SHARED_WIDTH = '125px'
+const Box = styled.div<{$overrideHover: boolean}>`
+  transition: width 0.25s ease-in-out;
+
   align-self: flex-start;
-  min-width: 45px;
+  width: ${props => props.$overrideHover ? SHARED_WIDTH : '45px'};
+  &:hover {
+    width: ${SHARED_WIDTH};
+  }
   height: 40px;
   margin: ${SPACING.XXSMALL} 0;
   background-color: ${THEME.SECONDARY_BACKGROUND_COLOR};
