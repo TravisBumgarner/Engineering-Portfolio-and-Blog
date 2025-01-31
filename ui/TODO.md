@@ -9,6 +9,7 @@
 - [ ] Mobile responsive
 - [x] Figure out navigation
 - [ ] Favicon and loading update
+- [ ] scroll to top
 - [ ] Audit
      - [ ] All posts
      - [ ] All creations

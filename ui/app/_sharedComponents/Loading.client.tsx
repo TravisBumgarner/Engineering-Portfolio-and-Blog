@@ -8,11 +8,9 @@ export const LoadingContainer = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
+  width: 100%;
+  padding: 10vh 0;
+
 `
 
 export const FaviconLeft = styled.div`
@@ -37,4 +35,5 @@ export const FaviconWrapper = styled(motion.div)`
   display: flex;
   flex-direction: row;
   border: 10px solid white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 `

@@ -245,8 +245,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
-
-
 export const GlobalReset = createGlobalStyle`
   * {
     margin: 0;

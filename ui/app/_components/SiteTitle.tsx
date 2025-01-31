@@ -3,6 +3,8 @@ import Weak from '../_sharedComponents/Weak'
 
 const SiteTitle = ({ title }: { title: string }) => {
   return (
+    <>
+    <div></div>
     <div id="site-title" >
       <Link href="/">
         <h1>{title}</h1>
@@ -15,6 +17,7 @@ const SiteTitle = ({ title }: { title: string }) => {
         </Weak>
       </p>
     </div>
+    </>
   )
 }
 
