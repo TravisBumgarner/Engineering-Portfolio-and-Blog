@@ -119,6 +119,13 @@ const posts: Record<string, BlogPost> = {
     description:
       "Frustrated with AWS's complexity and cost risks, I switched to NearlyFreeSpeech for its prepaid model, ensuring financial control while keeping hosting simple and flexible.",
     preview_image: 'preview.png'
+  },
+  'somehash': {
+    title: 'An Exploration into Perceived Loading Experiences of Website ',
+    date: '2025-02-08',
+    description:
+      'A Blurhash implementation in React.',
+    preview_image: 'preview.png'
   }
 }
 
