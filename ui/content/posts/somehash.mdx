@@ -37,9 +37,11 @@ Whatever effect that is chosen should occur quickly and work on both fast and sl
 
 <Video src="/post-resources/somehash/preview.mp4" aspectRatio='1564/1184' />
 
-## Step 1: Extract Data
+## Step 1: Data Extraction
 
-The first step is to process the images that'll be displayed on the website. Image processing is an intensive task. It can take roughly several seconds to process an image and extract information. Because of this, a script that runs outside of the browser is selected. 
+([Data Extraction Code](https://github.com/TravisBumgarner/pointless-projects/blob/6b6a1cf8c9937a623f997a72e0e9e83299fe6ab6/somehash/main.py))
+
+The first step is to process the images that will be displayed on the website. Image processing is an intensive task. It can take roughly several seconds to process an image and extract information. Because of this, a script that runs outside of the browser is selected. 
 
 **Selecting Tools**
 
@@ -47,42 +49,45 @@ The language of choice for this task will be Python. Python has an amazing colle
 
 **Extracting Data**
 
-As mentioned above, I went with KMeans clustering. 
+As I mentioned above, I went with KMeans clustering. 
 
 ```python
-def kmeans_colors(image, num_colors=5):   
-    kmeans = KMeans(n_clusters=num_colors)
-    kmeans.fit(image)
-    colors = kmeans.cluster_centers_.astype(int)
-    
-    return colors, aspect_ratio
+kmeans = KMeans(n_clusters=num_colors)
+kmeans.fit(pixels)
+colors = kmeans.cluster_centers_.astype(int)
 ```
+
+**Aside: Aspect Ratios**
+
+A thumbnail does not have the same width and height as the image it represents. Similarly, a somehash should not know the width and height of the image it represents. However, to prevent [cumulative layout shift](https://web.dev/articles/cls), it's important to know the aspect ratio of the space the somehash will be temporarily occupying. Therefore, in addition to storing the somehash, the aspect ratio is also stored. 
 
 **Encoding Data**
 
+([Extracted Data](https://github.com/TravisBumgarner/pointless-projects/blob/main/somehash/react-app/src/output.json))
+
 The next step is to get the information from the Python script to React. I'll be honest, I know almost nothing about compression algorithms. If I were actually setting this up for production, this would probably be worth a few days of tinkering and research but it was not in scope for this project. I did add a bit of future proofing with a `version` field so that if I were to export multiple visualizations, my React component would know how to handle it. 
 
-One other import bit that I learned in hindsight is that dealing with somehashes (and blurhashes) where you don't know the aspect ratio is a pain. [Cumulative layout shift](https://web.dev/articles/cls) is a thing to consider. 
-
 ```python
-def encode_animated_lines(colors, aspect_ratio):
-    color_string = '_'.join([f'{r}-{g}-{b}' for r, g, b in colors])
-    
-    encoded_bytes = base64.b64encode(color_string.encode('utf-8'))
-    encoded_string = encoded_bytes.decode('utf-8')
-    
-    return {'version': 'animated_lines', 'hash': encoded_string, 'aspect_ratio': aspect_ratio}
+color_string = '_'.join([f'{r}-{g}-{b}' for r, g, b in colors])
+encoded_bytes = base64.b64encode(color_string.encode('utf-8'))
+encoded_string = encoded_bytes.decode('utf-8')
 ```
 
-## Step 2: Render Previews
+## Step 2: Preview Rendering
 
-### **Decode Data in React**
+([React Component Code](https://github.com/TravisBumgarner/pointless-projects/blob/6b6a1cf8c9937a623f997a72e0e9e83299fe6ab6/somehash/react-app/src/SomeHashImage.tsx))
 
-This step is the opposite of the previous step. The data stored in the JSON file is decoded and passed to the component responsible for rendering the specific `version` of the  hash. 
+**Decode Data in React**
 
-### Render with Custom React Component
+This step is the opposite of the previous step. The data stored in the JSON file is decoded and passed to the component responsible for rendering the specific `version` of the hash. 
 
-[video]
+**React Renderer**
+
+The extracted colors are converted into vertical lines that animate on the screen.
+
+## Step 3: Image Loading
+
+At this point, the image starts loading, loads, and then takes the place of the preview. 
 
 ## Some Area of Improvement
 

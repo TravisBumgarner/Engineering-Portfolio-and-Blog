@@ -14,23 +14,17 @@ const Video = ({ src, aspectRatio }: VideoProps) => {
         className="video"
         style={{
           backgroundColor: 'var(--secondary-background)',
-          color: 'var(--foreground)',
           padding: SPACING.MEDIUM,
           width: '100%',
           aspectRatio: aspectRatio,
-          overflow: 'hidden', // Prevents any extra space
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          overflow: 'hidden', 
         }}
       >
         <video
           style={{
             width: '100%',
             height: '100%',
-            minWidth: '100%', 
-            minHeight: '100%', 
-            objectFit: 'cover', 
+            objectFit: 'none',  // This line might cause issues in the future with aspect ratio. Check somehash.mdx and make sure that still works.
           }}
           src={src}
           autoPlay
