@@ -1,32 +1,41 @@
+import Figure from '../../app/_sharedComponents/Figure'
+import Video from '../../app/_sharedComponents/Video'
+
 (Final Product: [Demo](https://pointlessprojects.com/somehash/) and [Code](https://github.com/TravisBumgarner/pointless-projects/tree/main/somehash))
 
-I've always been fascinated by perceived time. A website that takes 2 seconds to load has an actual load time of 2 seconds. Adding visual indicators that things are loading, before they've actually loaded, can trick our minds into thinking things are happening more quickly, perceived time. 
+A website takes five seconds to load. What occurs during those five seconds can impact how a user perceives the experience. Offer them nothing but a wall of white and they might get bored and leave. Capture their attention and they'll stick around and feel like the website loads faster?
 
-Blurhash is one such visual indicator. Blurhash will process a website's images and generate very small pretty placeholders, roughly 99% smaller than the images they represent. Then, when a user visits the site, those placeholders are loaded, first and quickly. 
+How can this be achieved?
 
-I've always been fascinated by this inbetween space. More words here. 
+[Blurhash](https://blurha.sh/) is one such method. This library generates incredibly small preview images, roughly 99.99% smaller than the full resolution images. They load almost immediately, are visually appealing, and do a great job of capturing the user's attention.
 
-I always love pulling back the curtain on crazy technical things so let me take you on a journey of building my own image previewer, somehash, from scratch.
+I love this in-between space. It's a space often neglected and de-prioritized. I think it's a space not often explored. Today, I want to explore this space, pull back the curtain, and build my own image previewer, somehash, from scratch.
 
-I've always been curious about the creative opportunities one has when designing a website. 
+Let's go!
 
 ## Overview
 
-The library is broken down into two parts. Step one is to process all the images and generate somehashes. The somehashes are then stored somewhere such as a database. This process is time and resource intensive so we do it outside of the website. Then in step two, the somehashes are served to the user and a custom React component that knows how to render them does so while the full resolution images load in the background. 
+The journey of an image is broken up into three parts - processing, previewing, and loading. First, information is extracted from the image put into a hash and stored. Second, a React component extracts the hash and displays a preview. Finally, the browser loads the image. 
 
-## Step 0: Getting Creative With It
+## Step 0: Creative Exploration
 
-This section itself could probably several blog posts. The creative possibilities are endless. There are tons of algorithms for extracting interesting colors, and textures, and patterns, and gradients from images. I feel like in this regard, I'm just scratching the surface. 
+The creative possibilities are endless. There are tons of algorithms for extracting interesting colors, textures, patterns, gradients, and more from images. 
 
-There are two questions you need to answer.
+There are two questions I needed to answer in my creative exploration.
 
-First, what information do you want to extract from the image? The blurhash extracts about 20 to 30 characters or about 20 bytes of data per image. To keep with the performance that blurhash offers, we'll set this as a constraint. 
+**What information do I want to extract from the image?**
 
-For the proof of concept, I went with [KMeans clustering](https://medium.com/analytics-vidhya/color-separation-in-an-image-using-kmeans-clustering-using-python-f994fa398454). The short summary of KMeans clustering is that it can be used to extract dominant colors from an image. In the screenshot below you can see the colors extracted from the image. 
+Blurhash extracts about 20 to 30 characters or about 20 bytes of data per image. This will be my performance benchmark. 
 
-![Screenshot 2025-01-03 at 5.30.44 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/32b62e89-af52-43b8-8863-88fa1b34d69c/07d383fb-42c9-4bc3-89d1-a50b4e85e5ef/Screenshot_2025-01-03_at_5.30.44_PM.png)
+For the proof of concept, I went with [KMeans clustering](https://medium.com/analytics-vidhya/color-separation-in-an-image-using-kmeans-clustering-using-python-f994fa398454). This algorithm is used to extract dominant colors from an image. In the screenshot below you can see an example.
 
-The second question, is how do we want to display the extracted data? Our constraint here is that whatever we choose should do its thing (load and optionally animate) before the image loads. At our disposal, we have the entirety of JavaScript and CSS to do what we want. 
+<Figure src="/post-resources/somehash/colors.png" caption="Dominant colors extracted from a photo" />
+
+**How do I want to display the extracted data?**
+
+Whatever effect that is chosen should occur quickly and work on both fast and slow internet connections.
+
+<Video src="/post-resources/somehash/preview.mp4" aspectRatio='1564/1184' />
 
 ## Step 1: Extract Data
 

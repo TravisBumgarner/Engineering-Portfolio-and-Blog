@@ -121,10 +121,10 @@ const posts: Record<string, BlogPost> = {
     preview_image: 'preview.png'
   },
   'somehash': {
-    title: 'An Exploration into Perceived Loading Experiences of Website ',
+    title: 'Somehash: A Blurhash Inspired Exploration',
     date: '2025-02-08',
     description:
-      'A Blurhash implementation in React.',
+      'An exploration into perceived loading experiences of websites.',
     preview_image: 'preview.png'
   }
 }

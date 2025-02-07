@@ -156,7 +156,7 @@ export const GlobalStyle = createGlobalStyle`
       margin: ${SPACING.MEDIUM} 0;
     }
 
-    code, blockquote, figure {
+    code, blockquote, figure, .video {
       margin-bottom: ${SPACING.LARGE};
     }
 
