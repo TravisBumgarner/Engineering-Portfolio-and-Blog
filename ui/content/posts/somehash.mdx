@@ -10,7 +10,7 @@ Humans have short attention spans. Websites take time to load. What can be done 
 
 [Blurhash](https://blurha.sh/) is one such solution. It offers quick loading preview images that do a great job of capturing the attention of visitors until the actual content is ready. 
 
-I love this in-between space. It's a place often neglected and de-prioritized. A place often not explored. Today, I want to pull back the curtain and build my own image previewer, Somehash, from scratch.
+This in-between space is rather interesting, often neglected, and rarely explored. Let's go on a journey and build an image previewer, Somehash, from scratch.
 
 ## Overview
 
@@ -26,7 +26,7 @@ There are two questions that need answering in this creative exploration.
 
 The information that is extracted should be small. Blurhash extracts about 20 bytes of data per image.
 
-[KMeans clustering](https://medium.com/analytics-vidhya/color-separation-in-an-image-using-kmeans-clustering-using-python-f994fa398454) is a fascinating algorithm. One application is finding dominant colors from an image. The screenshot below shows an example. 
+[KMeans clustering](https://medium.com/analytics-vidhya/color-separation-in-an-image-using-kmeans-clustering-using-python-f994fa398454) is a fascinating algorithm. One application is to find dominant colors from an image. The screenshot below shows an example. 
 
 <Figure src="/post-resources/somehash/colors.png" caption="Dominant colors extracted from a photo" />
 
@@ -54,9 +54,9 @@ kmeans.fit(pixels)
 colors = kmeans.cluster_centers_.astype(int)
 ```
 
-**Aside: Extracting Aspect Ratios**
+**Note: Extracting Aspect Ratios**
 
-A thumbnail doesn't have the same dimensions as the image it represents, and similarly, a Somehash shouldn't store width and height. However, to prevent [Cumulative Layout Shift](https://web.dev/articles/cls), it's essential to know the aspect ratio of the space the Somehash will temporarily occupy. Therefore, alongside the Somehash, the aspect ratio is also stored.
+A thumbnail doesn't have the same dimensions as the image it represents, and similarly, a Somehash shouldn't store width and height. However, to prevent [cumulative layout shift](https://web.dev/articles/cls), it's essential to know the aspect ratio of the space the Somehash will temporarily occupy. Therefore, alongside the Somehash, the aspect ratio is also stored.
 
 **Encoding Data**
 
@@ -102,10 +102,7 @@ Currently, when the animation completes, it will display whatever is loaded. It 
 
 **Production Readiness**
 
-This project explored the minimum path to complete the process. Production readiness was not considered. There are some optimizations that can be made such as
-
-- Hiding the preview animation after the image has loaded
-- Pick the smallest hash size possible. 
+This project explored the minimum path to complete the process. Production readiness was not considered. There are some optimizations that can be made for production. One is hiding the preview animation code after the image has loaded and another is choosing a better encoding method. 
 
 ## Over to You
 
