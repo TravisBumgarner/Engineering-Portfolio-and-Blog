@@ -1,2 +1,2 @@
 #!/bin/sh
-exec npm run start
+exec npm run start:prod
