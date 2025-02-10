@@ -124,7 +124,7 @@ const posts: Record<string, BlogPost> = {
     title: 'Somehash: A Blurhash Inspired Exploration',
     date: '2025-02-08',
     description:
-      'An exploration into perceived loading experiences of websites.',
+      "",
     preview_image: 'preview.png'
   }
 }

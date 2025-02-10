@@ -1,55 +1,54 @@
 import Figure from '../../app/_sharedComponents/Figure'
 import Video from '../../app/_sharedComponents/Video'
 
-(Final Product: [Demo](https://pointlessprojects.com/somehash/) and [Code](https://github.com/TravisBumgarner/pointless-projects/tree/main/somehash))
+- [ ] Description
+- [ ] Catchy title
 
-A website takes five seconds to load. What occurs during those five seconds can impact how a user perceives the experience. Offer them nothing but a wall of white and they might get bored and leave. Capture their attention and they'll stick around and feel like the website loads faster?
+(Jump Ahead: [Demo](https://pointlessprojects.com/somehash/) and [Code](https://github.com/TravisBumgarner/pointless-projects/tree/main/somehash))
 
-How can this be achieved?
+Humans have a short attention span. A website takes a few seconds to load. What happens during those seconds can decide if visitors stick around or get bored and leave. What can be done to keep their attention?
 
-[Blurhash](https://blurha.sh/) is one such method. This library generates incredibly small preview images, roughly 99.99% smaller than the full resolution images. They load almost immediately, are visually appealing, and do a great job of capturing the user's attention.
+[Blurhash](https://blurha.sh/) is one such method. This library generates ultra-small preview images that are approximately 99.99% smaller than their full-resolution counterparts. These previews load almost instantly while effectively capturing the user's attention.
 
-I love this in-between space. It's a space often neglected and de-prioritized. I think it's a space not often explored. Today, I want to explore this space, pull back the curtain, and build my own image previewer, somehash, from scratch.
-
-Let's go!
+I love this in-between space. It's a space often neglected and de-prioritized. A space often not explored. Today, I want to pull back the curtain and build my own image previewer, Somehash, from scratch.
 
 ## Overview
 
-The journey of an image is broken up into three parts - processing, previewing, and loading. First, information is extracted from the image put into a hash and stored. Second, a React component extracts the hash and displays a preview. Finally, the browser loads the image. 
+The journey of an image occurs in three stages: processing, previewing, and loading. First, information is extracted from the image, hashed, and stored. Next, a React component retrieves the hash and renders a preview image. Finally, the browser loads the full-resolution image.
 
-## Step 0: Creative Exploration
+## Creative Exploration
 
-The creative possibilities are endless. There are tons of algorithms for extracting interesting colors, textures, patterns, gradients, and more from images. 
+The first step to creating Somehash is deciding what it will display. The creative possibilities are endless. There are tons of algorithms for extracting interesting colors, textures, patterns, gradients, and more from images. 
 
-There are two questions I needed to answer in my creative exploration.
+There are two questions that need answering in this creative exploration.
 
-**What information do I want to extract from the image?**
+**What information should be extracted?**
 
-Blurhash extracts about 20 to 30 characters or about 20 bytes of data per image. This will be my performance benchmark. 
+Blurhash extracts about 20 to 30 characters or about 20 bytes of data per image. This will set the performance benchmark. 
 
-For the proof of concept, I went with [KMeans clustering](https://medium.com/analytics-vidhya/color-separation-in-an-image-using-kmeans-clustering-using-python-f994fa398454). This algorithm is used to extract dominant colors from an image. In the screenshot below you can see an example.
+[KMeans clustering](https://medium.com/analytics-vidhya/color-separation-in-an-image-using-kmeans-clustering-using-python-f994fa398454) is an algorithm used to extract dominant colors from an image. The screenshot below shows an example.
 
 <Figure src="/post-resources/somehash/colors.png" caption="Dominant colors extracted from a photo" />
 
-**How do I want to display the extracted data?**
+**How will the extracted information be displayed?**
 
 Whatever effect that is chosen should occur quickly and work on both fast and slow internet connections.
 
 <Video src="/post-resources/somehash/preview.mp4" aspectRatio='1564/1184' />
 
-## Step 1: Data Extraction
+## Data Extraction
 
 ([Data Extraction Code](https://github.com/TravisBumgarner/pointless-projects/blob/6b6a1cf8c9937a623f997a72e0e9e83299fe6ab6/somehash/main.py))
 
-The first step is to process the images that will be displayed on the website. Image processing is an intensive task. It can take roughly several seconds to process an image and extract information. Because of this, a script that runs outside of the browser is selected. 
+The first step is processing the images for the website. This is a computationally intensive task, often taking several seconds per image to extract the necessary information. To handle this efficiently, the processing is done using a script that runs outside the browser. 
 
 **Selecting Tools**
 
-The language of choice for this task will be Python. Python has an amazing collection of libraries such as [Pillow](https://pypi.org/project/pillow/), [NumPy](https://numpy.org/), and [OpenCV](https://opencv.org/) for reading and analyzing images.
+The language of choice for this task will be Python. Python has an amazing collection of libraries such as [Pillow](https://pypi.org/project/pillow/), [NumPy](https://numpy.org/), [scikit-learn](https://scikit-learn.org/stable/), and [OpenCV](https://opencv.org/) for reading and analyzing images.
 
-**Extracting Data**
+**Extracting Image Data**
 
-As I mentioned above, I went with KMeans clustering. 
+With the help of `sklearn`, the process of color extraction is straightforward. 
 
 ```python
 kmeans = KMeans(n_clusters=num_colors)
@@ -57,15 +56,17 @@ kmeans.fit(pixels)
 colors = kmeans.cluster_centers_.astype(int)
 ```
 
-**Aside: Aspect Ratios**
+**Aside: Extracting Aspect Ratios**
 
-A thumbnail does not have the same width and height as the image it represents. Similarly, a somehash should not know the width and height of the image it represents. However, to prevent [cumulative layout shift](https://web.dev/articles/cls), it's important to know the aspect ratio of the space the somehash will be temporarily occupying. Therefore, in addition to storing the somehash, the aspect ratio is also stored. 
+A thumbnail does not have the same width and height as the image it represents. Similarly, a somehash should not know the width and height of the image it represents. However, to prevent , it's important to know the aspect ratio of the space the somehash will be temporarily occupying. Therefore, in addition to storing the somehash, the aspect ratio is also stored. 
+
+A thumbnail doesn't have the same dimensions as the image it represents, and similarly, a somehash shouldn't store width and height. However, to prevent [Cumulative Layout Shift](https://web.dev/articles/cls), it's essential to know the aspect ratio of the space the somehash will temporarily occupy. Therefore, alongside the somehash, the aspect ratio is also stored.
 
 **Encoding Data**
 
 ([Extracted Data](https://github.com/TravisBumgarner/pointless-projects/blob/main/somehash/react-app/src/output.json))
 
-The next step is to get the information from the Python script to React. I'll be honest, I know almost nothing about compression algorithms. If I were actually setting this up for production, this would probably be worth a few days of tinkering and research but it was not in scope for this project. I did add a bit of future proofing with a `version` field so that if I were to export multiple visualizations, my React component would know how to handle it. 
+The next step is to get the information from the Python script to React. It will be put into a format that will be easily transferable from Python to React. The encoding process wasn't given much thought and there are likely better ways to do this. Finally, a `version` field is added so that different renders can be used.  
 
 ```python
 color_string = '_'.join([f'{r}-{g}-{b}' for r, g, b in colors])
@@ -73,7 +74,7 @@ encoded_bytes = base64.b64encode(color_string.encode('utf-8'))
 encoded_string = encoded_bytes.decode('utf-8')
 ```
 
-## Step 2: Preview Rendering
+## Preview Rendering
 
 ([React Component Code](https://github.com/TravisBumgarner/pointless-projects/blob/6b6a1cf8c9937a623f997a72e0e9e83299fe6ab6/somehash/react-app/src/SomeHashImage.tsx))
 
@@ -85,11 +86,11 @@ This step is the opposite of the previous step. The data stored in the JSON file
 
 The extracted colors are converted into vertical lines that animate on the screen.
 
-## Step 3: Image Loading
+## Image Loading
 
 At this point, the image starts loading, loads, and then takes the place of the preview. 
 
-## Some Area of Improvement
+## Areas of Improvement
 
 The React component currently assumes a sufficiently fast internet that when the animation finishes loading, the image will have already been loaded. If the Chrome dev tool toggle for “3G” internet is toggled on, you'll observe that the screen is white after the animation finishes. One improvement here is to keep the animation going until the `img` tag's `onload` event fires and then trigger a quick animation to display the image. 
 
