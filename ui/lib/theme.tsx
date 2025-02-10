@@ -23,7 +23,8 @@ const COLORS = {
 export const FONT_WEIGHTS = {
   LIGHT: 100,
   REGULAR: 300,
-  BOLD: 500
+  BOLD: 500,
+  XBOLD: 600
 }
 
 export const FONT_SIZES = {
@@ -156,7 +157,7 @@ export const GlobalStyle = createGlobalStyle`
       margin: ${SPACING.MEDIUM} 0;
     }
 
-    code, blockquote, figure {
+    code, blockquote, figure, .video {
       margin-bottom: ${SPACING.LARGE};
     }
 
@@ -227,7 +228,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     strong {
-      font-weight: ${FONT_WEIGHTS.BOLD};
+      font-weight: ${FONT_WEIGHTS.XBOLD};
     }
 
     ul, ol {
