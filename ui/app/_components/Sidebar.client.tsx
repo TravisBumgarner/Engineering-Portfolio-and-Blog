@@ -14,6 +14,21 @@ const THERE = [
     target: '_blank'
   },
   {
+    title: "Instagram",
+    path: "https://instagram.com/sillysideprojects",
+    target: '_blank'
+  },
+  {
+    title: "Reddit",
+    path: "https://www.reddit.com/user/travis_the_maker/",
+    target: '_blank'
+  },
+  {
+    title: "Bluesky",
+    path: "https://bsky.app/profile/sillysideprojects.bsky.social",
+    target: '_blank'
+    },
+  {
     title: 'LinkedIn',
     path: 'https://www.linkedin.com/in/travisbumgarner/',
     target: '_blank'
