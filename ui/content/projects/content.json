@@ -560,7 +560,7 @@
     "title": "gcode2dplotterart Python Library",
     "id": "gcode2dplotterart",
     "description": "Easily generate plotter art with your 2D plotter or 3D printer.\nThis library abstracts away G-Code so you can focus on making art.\nTools & Technologies: Python, Docusaurus, G-Code",
-    "lastMeaningfulUpdate": "2023-12",
+    "lastMeaningfulUpdate": "2025-02",
     "images": [
       {
         "src": "1.jpeg",
@@ -606,7 +606,7 @@
     "title": "Photography Portfolio",
     "id": "photography-portfolio",
     "description": "Portfolio highlighting my photography.\nFeatures advanced browser performance optimizations, including modern file formats, lazy rendering, TTL enhancements, and the blurhash algorithm.\nTools & Technologies: React, TypeScript, Adobe Lightroom, Google Cloud Platform",
-    "lastMeaningfulUpdate": "2024-12",
+    "lastMeaningfulUpdate": "2025-01",
     "images": [
       {
         "src": "1.png",
@@ -640,7 +640,7 @@
     "title": "Todo Today Desktop App",
     "id": "todo-today",
     "description": "The todo List for the easily distracted.\nTools & Technologies: React, TypeScript, Electron, IndexedDB, Dexie",
-    "lastMeaningfulUpdate": "2024-09",
+    "lastMeaningfulUpdate": "2025-01",
     "images": [
       {
         "src": "todo-today1.png",
@@ -822,7 +822,7 @@
     "title": "Candlelight Game",
     "id": "candlelight",
     "description": "Puzzle game originally created for the Pirate Software Game Jam.\nTools & Technologies: Godot, Aseprite, Figma, Steam API",
-    "lastMeaningfulUpdate": "2024-11",
+    "lastMeaningfulUpdate": "2025-02",
     "images": [
       {
         "src": "1.png",
