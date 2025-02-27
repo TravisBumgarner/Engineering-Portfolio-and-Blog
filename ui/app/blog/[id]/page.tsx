@@ -1,6 +1,7 @@
 import posts from '@/content/posts'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Subscribe from '../Subscribe'
 
 const loadPost = async (postId: string) => {
   const postModule = await import(`@/content/posts/${postId}.mdx`)
@@ -47,6 +48,7 @@ const Post = async ({ params }: { params: Params }) => {
       <h2>{post.title}</h2>
       <time>Posted {new Date(post.date).toDateString()}</time>
       <Component />
+      <Subscribe />
     </div>
   )
 }
