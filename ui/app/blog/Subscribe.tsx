@@ -38,6 +38,7 @@ const Subscribe = () => {
           rel="noopener noreferrer"
         >
           <svg
+            style={{ position: 'relative', top: '2px' }}
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -53,7 +54,9 @@ const Subscribe = () => {
             <path d="M4 4a16 16 0 0 1 16 16" />
             <circle cx="5" cy="19" r="1" />
           </svg>
-          Subscribe via RSS
+          <span style={{ position: 'relative', top: '-3px', left: '5px' }}>
+            Subscribe via RSS
+          </span>
         </a>
         <p>or</p>
         <Form
