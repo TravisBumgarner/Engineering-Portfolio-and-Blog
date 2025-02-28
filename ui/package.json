@@ -4,7 +4,7 @@
     "dev": "next dev",
     "start:prod": "next start",
     "generate-rss": "cd ../scripts && yarn run generate-rss",
-    "build": "npm run generate-rss && next build",
+    "build": "next build",
     "lint": "next lint",
     "deploy:nfs": "./deploy.sh"
   },
