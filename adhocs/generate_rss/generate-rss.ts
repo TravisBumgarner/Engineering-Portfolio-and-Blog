@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 
 const SITE_URL = 'https://travisbumgarner.dev'
-const POSTS_DIRECTORY = path.join(process.cwd(), '../ui/content/posts')
+const POSTS_DIRECTORY = path.join(process.cwd(), '../../ui/content/posts')
 console.log(POSTS_DIRECTORY)
 
 interface Post {
@@ -68,7 +68,7 @@ const getPosts = (): Post[] => {
 const main = () => {
   const posts = getPosts()
   const rss = generateRSS(posts)
-  fs.writeFileSync('../ui/public/rss.xml', rss)
+  fs.writeFileSync('../../ui/public/rss.xml', rss)
   console.log('RSS feed generated successfully!')
 }
 

@@ -13,9 +13,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": [
-      "mdx"
-    ],
+    "types": ["mdx"],
     "paths": {
       "@/*": ["./*"]
     },
@@ -30,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     "styled.d.ts",
-    ".next/types/**/*.ts"
-, "app/_error.client.tsx", "lib/rss.ts"  ],
+    ".next/types/**/*.ts",
+    "app/_error.client.tsx"
+  ],
   "exclude": ["node_modules"]
 }
