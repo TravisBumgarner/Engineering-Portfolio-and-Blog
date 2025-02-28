@@ -16,7 +16,7 @@ BRANCH="master"
 
 # Execute remote commands
 echo "Starting remote deployment..."
-ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST << 'EOF'
+ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST "
     # Clean up any existing temp directory
     echo 'Cleaning up any existing temp directory...'
     rm -rf $TEMP_DIR
@@ -52,6 +52,6 @@ ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST << 'EOF'
     # Clean up
     echo 'Cleaning up...'
     rm -rf $TEMP_DIR
-EOF
+"
 
 echo "Deployment complete!"
