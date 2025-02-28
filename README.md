@@ -21,6 +21,7 @@
 1. Add medatadata to posts/index.ts
 1. Create new folder in public/posts
 1. Create post
+1. Generate new RSS. `yarn run generate-rss`
 
 ## New Project
 

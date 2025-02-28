@@ -1,17 +1,18 @@
+import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '@/lib/consts'
 import Link from 'next/link'
 import Weak from '../_sharedComponents/Weak'
 
 const SiteTitle = ({ title }: { title: string }) => {
   return (
-    <div id="site-title" >
+    <div id="site-title">
       <Link href="/">
         <h1>{title}</h1>
       </Link>
       <p>
         <Weak>
-          I am a lifelong learner, creator, explorer, and tinkerer.
+          {ABOUT_ME_SENTENCE_1}
           <br />
-          This is a collection of my experiences.
+          {ABOUT_ME_SENTENCE_2}
         </Weak>
       </p>
     </div>

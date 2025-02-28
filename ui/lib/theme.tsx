@@ -139,6 +139,21 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+
+  a.rss {
+    background-color: var(--secondary-background);
+    margin: ${SPACING.XSMALL} 0;
+    width: 100%;
+    display: block;
+    padding: ${SPACING.SMALL};
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: ${FONT_WEIGHTS.REGULAR};
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   #not-found, #error, #contact {
     > * {
       margin: ${SPACING.MEDIUM} 0;
