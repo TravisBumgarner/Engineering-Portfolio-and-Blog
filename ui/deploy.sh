@@ -12,11 +12,11 @@ fi
 REMOTE_DIR="/home/protected"
 REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
 TEMP_DIR="/tmp/portfolio-build"
-BRANCH="mailing-list"
+BRANCH="master"
 
 # Execute remote commands
 echo "Starting remote deployment..."
-ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST "
+ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST << 'EOF'
     # Clean up any existing temp directory
     echo 'Cleaning up any existing temp directory...'
     rm -rf $TEMP_DIR
@@ -42,7 +42,7 @@ ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST "
     rm -rf $REMOTE_DIR/*
     rm -rf $REMOTE_DIR/.* 2>/dev/null
 
-    mv .next start-next.sh package.json package-lock.json next.config.mjs public $REMOTE_DIR/
+    mv .next start-next.sh package.json yarn.lock next.config.mjs public $REMOTE_DIR/
 
     # Install production dependencies in deployment directory
     cd $REMOTE_DIR
@@ -52,6 +52,6 @@ ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST "
     # Clean up
     echo 'Cleaning up...'
     rm -rf $TEMP_DIR
-"
+EOF
 
 echo "Deployment complete!"
