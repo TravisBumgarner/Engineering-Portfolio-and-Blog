@@ -12,7 +12,7 @@ fi
 REMOTE_DIR="/home/protected"
 REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
 TEMP_DIR="/tmp/portfolio-build"
-BRANCH="master"
+BRANCH="mailing-list"
 
 # Execute remote commands
 echo "Starting remote deployment..."
@@ -31,10 +31,10 @@ ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST "
 
     # Install dependencies and build
     echo 'Installing dependencies...'
-    npm install
+    yarn install
 
     echo 'Building application...'
-    npm run build
+    yarn run build
 
     # Move build files to deployment directory
     echo 'Moving files to deployment directory...'
@@ -46,7 +46,7 @@ ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_HOST "
 
     # Install production dependencies in deployment directory
     cd $REMOTE_DIR
-    npm install --production
+    yarn install --production
     chmod +x start-next.sh
 
     # Clean up
