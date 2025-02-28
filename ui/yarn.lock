@@ -538,10 +538,10 @@
   resolved "https://registry.npmjs.org/@nolyfill/is-core-module/-/is-core-module-1.0.39.tgz"
   integrity sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==
 
-"@opentelemetry/api-logs@0.52.1":
-  version "0.52.1"
-  resolved "https://registry.npmjs.org/@opentelemetry/api-logs/-/api-logs-0.52.1.tgz"
-  integrity sha512-qnSqB2DQ9TPP96dl8cDubDvrUyWc0/sK81xHTK8eSUspzDM3bsewX903qclQFvVhgStjRWdC5bLb3kQqMkfV5A==
+"@opentelemetry/api-logs@0.53.0":
+  version "0.53.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/api-logs/-/api-logs-0.53.0.tgz#c478cbd8120ec2547b64edfa03a552cfe42170be"
+  integrity sha512-8HArjKx+RaAI8uEIgcORbZIPklyh1YLjPSBus8hjRmvLi6DeFzgOcdZ7KwPabKj8mXF8dX0hyfAyGfycz0DbFw==
   dependencies:
     "@opentelemetry/api" "^1.0.0"
 
@@ -789,13 +789,13 @@
     semver "^7.5.2"
     shimmer "^1.2.1"
 
-"@opentelemetry/instrumentation@^0.49 || ^0.50 || ^0.51 || ^0.52.0":
-  version "0.52.1"
-  resolved "https://registry.npmjs.org/@opentelemetry/instrumentation/-/instrumentation-0.52.1.tgz"
-  integrity sha512-uXJbYU/5/MBHjMp1FqrILLRuiJCs3Ofk0MeRDk8g1S1gD47U8X3JnSwcMO1rtRo1x1a7zKaQHaoYu49p/4eSKw==
+"@opentelemetry/instrumentation@^0.49 || ^0.50 || ^0.51 || ^0.52.0 || ^0.53.0":
+  version "0.53.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation/-/instrumentation-0.53.0.tgz#e6369e4015eb5112468a4d45d38dcada7dad892d"
+  integrity sha512-DMwg0hy4wzf7K73JJtl95m/e0boSoWhH07rfvHvYzQtBD3Bmv0Wc1x733vyZBqmFm8OjJD0/pfiUg1W3JjFX0A==
   dependencies:
-    "@opentelemetry/api-logs" "0.52.1"
-    "@types/shimmer" "^1.0.2"
+    "@opentelemetry/api-logs" "0.53.0"
+    "@types/shimmer" "^1.2.0"
     import-in-the-middle "^1.8.1"
     require-in-the-middle "^7.1.1"
     semver "^7.5.2"
@@ -840,13 +840,13 @@
   dependencies:
     "@opentelemetry/core" "^1.1.0"
 
-"@prisma/instrumentation@5.19.1":
-  version "5.19.1"
-  resolved "https://registry.npmjs.org/@prisma/instrumentation/-/instrumentation-5.19.1.tgz"
-  integrity sha512-VLnzMQq7CWroL5AeaW0Py2huiNKeoMfCH3SUxstdzPrlWQi6UQ9UrfcbUkNHlVFqOMacqy8X/8YtE0kuKDpD9w==
+"@prisma/instrumentation@5.22.0":
+  version "5.22.0"
+  resolved "https://registry.yarnpkg.com/@prisma/instrumentation/-/instrumentation-5.22.0.tgz#c39941046e9886e17bdb47dbac45946c24d579aa"
+  integrity sha512-LxccF392NN37ISGxIurUljZSh1YWnphO34V5a0+T7FVQG2u9bhAXRTJpgmQ3483woVhkraQZFF7cbRrpbw/F4Q==
   dependencies:
     "@opentelemetry/api" "^1.8"
-    "@opentelemetry/instrumentation" "^0.49 || ^0.50 || ^0.51 || ^0.52.0"
+    "@opentelemetry/instrumentation" "^0.49 || ^0.50 || ^0.51 || ^0.52.0 || ^0.53.0"
     "@opentelemetry/sdk-trace-base" "^1.22"
 
 "@rollup/plugin-commonjs@28.0.1":
@@ -881,51 +881,51 @@
   resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.10.4.tgz"
   integrity sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==
 
-"@sentry-internal/browser-utils@8.46.0":
-  version "8.46.0"
-  resolved "https://registry.npmjs.org/@sentry-internal/browser-utils/-/browser-utils-8.46.0.tgz"
-  integrity sha512-NZSUvCo0wDApXKh9dudJLu2gAJKcC6Dr6sAh8u5apNIapViuwajrOBhRrOWjfUUNH4Ey/GUNDD/4RK1l46KkwQ==
+"@sentry-internal/browser-utils@8.49.0":
+  version "8.49.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/browser-utils/-/browser-utils-8.49.0.tgz#ce448e1b60ff75e009db70d76de9b1186ad98c60"
+  integrity sha512-XkPHHdFqsN7EPaB+QGUOEmpFqXiqP67t2rRZ1HG1UwJoe0PhJEKNy7b4+WRwmT7ODSt+PvFk1gNBlJBpThwH7Q==
   dependencies:
-    "@sentry/core" "8.46.0"
+    "@sentry/core" "8.49.0"
 
-"@sentry-internal/feedback@8.46.0":
-  version "8.46.0"
-  resolved "https://registry.npmjs.org/@sentry-internal/feedback/-/feedback-8.46.0.tgz"
-  integrity sha512-v4sfzMQuZWLO9EqytsKNg/QZlZWj2PXYXlD4r7ML1fOq+by220HzRiY4tBEi3vlyhHSA+YnXLfz01WcJtNQEWg==
+"@sentry-internal/feedback@8.49.0":
+  version "8.49.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/feedback/-/feedback-8.49.0.tgz#577d713ae80ba0698e67616d46050e884d143e72"
+  integrity sha512-v/wf7WvPxEvZUB7xrCnecI3fhevVo84hw8WlxgZIz6mLUHXEIX8xYWc9H8Yet/KKJ2uEB8GQ8aDsY6S1hVEIUA==
   dependencies:
-    "@sentry/core" "8.46.0"
+    "@sentry/core" "8.49.0"
 
-"@sentry-internal/replay-canvas@8.46.0":
-  version "8.46.0"
-  resolved "https://registry.npmjs.org/@sentry-internal/replay-canvas/-/replay-canvas-8.46.0.tgz"
-  integrity sha512-3Gj81GEEtX848Xwzm/oiccgcfkvULSv4BH5wAJZ3tr3YAKYZbCjqB9GkYsPInY0mnc3BMNRDJ9se7iUWD1AROg==
+"@sentry-internal/replay-canvas@8.49.0":
+  version "8.49.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/replay-canvas/-/replay-canvas-8.49.0.tgz#7dede7d04260f38af5e33dbc57d5412afa9f6676"
+  integrity sha512-/yXxI7f+Wu24FIYoRE7A0AidNxORuhAyPzb5ey1wFqMXP72nG8dXhOpcl0w+bi554FkqkLjdeUDhSOBWYZXH9g==
   dependencies:
-    "@sentry-internal/replay" "8.46.0"
-    "@sentry/core" "8.46.0"
+    "@sentry-internal/replay" "8.49.0"
+    "@sentry/core" "8.49.0"
 
-"@sentry-internal/replay@8.46.0":
-  version "8.46.0"
-  resolved "https://registry.npmjs.org/@sentry-internal/replay/-/replay-8.46.0.tgz"
-  integrity sha512-GS3oIHZ/3Qijg5u6hl2cDpJJmOy577cXWFqYZleR9qH7h2TFGpNVNTqoEt3m9e3VylHvhFNEshFCemXaOVb6ZA==
+"@sentry-internal/replay@8.49.0":
+  version "8.49.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/replay/-/replay-8.49.0.tgz#a04ca50a402407f48ca8524a44f185ad7f003754"
+  integrity sha512-BDiiCBxskkktTd6FNplBc9V8l14R4T/AwRIZj2itX4xnuHewTTDjVbeyvGol4roA4r+V0Mzoi31hLEGI6yFQ5Q==
   dependencies:
-    "@sentry-internal/browser-utils" "8.46.0"
-    "@sentry/core" "8.46.0"
+    "@sentry-internal/browser-utils" "8.49.0"
+    "@sentry/core" "8.49.0"
 
 "@sentry/babel-plugin-component-annotate@2.22.7":
   version "2.22.7"
   resolved "https://registry.npmjs.org/@sentry/babel-plugin-component-annotate/-/babel-plugin-component-annotate-2.22.7.tgz"
   integrity sha512-aa7XKgZMVl6l04NY+3X7BP7yvQ/s8scn8KzQfTLrGRarziTlMGrsCOBQtCNWXOPEbtxAIHpZ9dsrAn5EJSivOQ==
 
-"@sentry/browser@8.46.0":
-  version "8.46.0"
-  resolved "https://registry.npmjs.org/@sentry/browser/-/browser-8.46.0.tgz"
-  integrity sha512-lgm1LM2yvgAw+xADc6lpA/sZNL3YuVd0OK8VM2Csdd5bRlquouCqDuW/iimUvO2aBDnXGWGIhMkzpk8Hp8NTvA==
+"@sentry/browser@8.49.0":
+  version "8.49.0"
+  resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-8.49.0.tgz#4dc1b5501bc398dc801651aa8e5bba452ab551a4"
+  integrity sha512-dS4Sw2h8EixHeXOIR++XEVMTen6xCGcIQ/XhJbsjqvddXeIijW0WkxSeTfPkfs0dsqFHSisWmlmo0xhHbXvEsQ==
   dependencies:
-    "@sentry-internal/browser-utils" "8.46.0"
-    "@sentry-internal/feedback" "8.46.0"
-    "@sentry-internal/replay" "8.46.0"
-    "@sentry-internal/replay-canvas" "8.46.0"
-    "@sentry/core" "8.46.0"
+    "@sentry-internal/browser-utils" "8.49.0"
+    "@sentry-internal/feedback" "8.49.0"
+    "@sentry-internal/replay" "8.49.0"
+    "@sentry-internal/replay-canvas" "8.49.0"
+    "@sentry/core" "8.49.0"
 
 "@sentry/bundler-plugin-core@2.22.7":
   version "2.22.7"
@@ -995,35 +995,35 @@
     "@sentry/cli-win32-i686" "2.39.1"
     "@sentry/cli-win32-x64" "2.39.1"
 
-"@sentry/core@8.46.0":
-  version "8.46.0"
-  resolved "https://registry.npmjs.org/@sentry/core/-/core-8.46.0.tgz"
-  integrity sha512-aOEOBw5ueqN0cv7J3DJDDAlfJf+GxiGsUJZCG5Rsgiq4/jYW8ezY4glUyx+J9yjwvpfHt4IFaQtBQaeXUQBN6g==
+"@sentry/core@8.49.0":
+  version "8.49.0"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-8.49.0.tgz#b7a29989e49541b15dd537cb43940a9415f7e128"
+  integrity sha512-/OAm6LdHhh8TvfDAucWfSJV7M03IOHrJm5LVjrrKr4gwQ1HKd4CDbARsBbPwHIzSRAle0IgG3sbJxEvv52JUIw==
 
 "@sentry/nextjs@^8":
-  version "8.46.0"
-  resolved "https://registry.npmjs.org/@sentry/nextjs/-/nextjs-8.46.0.tgz"
-  integrity sha512-d3FH1tlMeXTiJ3L3N0M/KyZUBLP7vFG7t2HsPIyRqBI1PUFaXupS0htcqNcDg2zssbrECNv5YWSgSMbW4HMt3g==
+  version "8.49.0"
+  resolved "https://registry.yarnpkg.com/@sentry/nextjs/-/nextjs-8.49.0.tgz#9b0fdeeb21c9c9019bf5d7513a144670ecd5a44c"
+  integrity sha512-Spr/cp/ztJwZHOUjfSG8T51cLttCcfEoZvfmCQMAku7tLtUowzdTofUCw3DGPLAKY6aM8KUHVTVvUw2pFu91Ig==
   dependencies:
     "@opentelemetry/api" "^1.9.0"
     "@opentelemetry/semantic-conventions" "^1.28.0"
     "@rollup/plugin-commonjs" "28.0.1"
-    "@sentry-internal/browser-utils" "8.46.0"
-    "@sentry/core" "8.46.0"
-    "@sentry/node" "8.46.0"
-    "@sentry/opentelemetry" "8.46.0"
-    "@sentry/react" "8.46.0"
-    "@sentry/vercel-edge" "8.46.0"
+    "@sentry-internal/browser-utils" "8.49.0"
+    "@sentry/core" "8.49.0"
+    "@sentry/node" "8.49.0"
+    "@sentry/opentelemetry" "8.49.0"
+    "@sentry/react" "8.49.0"
+    "@sentry/vercel-edge" "8.49.0"
     "@sentry/webpack-plugin" "2.22.7"
     chalk "3.0.0"
     resolve "1.22.8"
     rollup "3.29.5"
     stacktrace-parser "^0.1.10"
 
-"@sentry/node@8.46.0":
-  version "8.46.0"
-  resolved "https://registry.npmjs.org/@sentry/node/-/node-8.46.0.tgz"
-  integrity sha512-cBgDyjAkwxrwd/tu2BDuH/7u2pJbfrECcV75X2LPxN8ZgpdvhgK4GS9nAewarx+31HNU4cTx4dPQiTXAEWioRQ==
+"@sentry/node@8.49.0":
+  version "8.49.0"
+  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-8.49.0.tgz#9671c3295dba8c85fe8a2e4848d880d983b92d8a"
+  integrity sha512-ui/X6AsHEc+TzgegW8Lq2dZvLHm2npaPMzeICdTotoR8S7LUgTXWfxpzKNra7K13QWY2A2AmabxKOSZJSnPHyQ==
   dependencies:
     "@opentelemetry/api" "^1.9.0"
     "@opentelemetry/context-async-hooks" "^1.29.0"
@@ -1056,34 +1056,34 @@
     "@opentelemetry/resources" "^1.29.0"
     "@opentelemetry/sdk-trace-base" "^1.29.0"
     "@opentelemetry/semantic-conventions" "^1.28.0"
-    "@prisma/instrumentation" "5.19.1"
-    "@sentry/core" "8.46.0"
-    "@sentry/opentelemetry" "8.46.0"
+    "@prisma/instrumentation" "5.22.0"
+    "@sentry/core" "8.49.0"
+    "@sentry/opentelemetry" "8.49.0"
     import-in-the-middle "^1.11.2"
 
-"@sentry/opentelemetry@8.46.0":
-  version "8.46.0"
-  resolved "https://registry.npmjs.org/@sentry/opentelemetry/-/opentelemetry-8.46.0.tgz"
-  integrity sha512-tcgU1PnIlN/RxRpLDNo/FNLTM15XnWFHyGG3k8icWi8cgm4imqmerRKG2/FxEVBKA5f14ypeTPPymjK3VHNUtg==
+"@sentry/opentelemetry@8.49.0":
+  version "8.49.0"
+  resolved "https://registry.yarnpkg.com/@sentry/opentelemetry/-/opentelemetry-8.49.0.tgz#c174ec33d34494aa4207b034b29ebee018f14a77"
+  integrity sha512-Ffasnpat8WhqvRB/DFbcGp+J+xh76NCztTDi6f3a1jBCONTJypHt2p5l9lJuu1O/UPN1vIJjOpUMOvdd0FHGVA==
   dependencies:
-    "@sentry/core" "8.46.0"
+    "@sentry/core" "8.49.0"
 
-"@sentry/react@8.46.0":
-  version "8.46.0"
-  resolved "https://registry.npmjs.org/@sentry/react/-/react-8.46.0.tgz"
-  integrity sha512-GwtD0+I5lTuzi7riGpxmYuH1z6/Kr92wfvHGp+efs6ET8tT2IJgAruUE88T9FJGFQk/GVP7eF4ILolGJwJy9sA==
+"@sentry/react@8.49.0":
+  version "8.49.0"
+  resolved "https://registry.yarnpkg.com/@sentry/react/-/react-8.49.0.tgz#c2838c308d68b029544f8eb4dfd015deb4a0d0c8"
+  integrity sha512-yBMEqiUcN05Sv9CCb4YkvgyIvgLdgecBoZOazJLBiSQ6znoP4oiUfFNDi2TUk46gzqrttuOU0jfT1AVBJ2xgKQ==
   dependencies:
-    "@sentry/browser" "8.46.0"
-    "@sentry/core" "8.46.0"
+    "@sentry/browser" "8.49.0"
+    "@sentry/core" "8.49.0"
     hoist-non-react-statics "^3.3.2"
 
-"@sentry/vercel-edge@8.46.0":
-  version "8.46.0"
-  resolved "https://registry.npmjs.org/@sentry/vercel-edge/-/vercel-edge-8.46.0.tgz"
-  integrity sha512-YdAmqbpc1hCutIrjFlWQtZs/snrbGQ+KpaslfOkdjFDmAFS9+fW0Ip8mWXBkDyiH+x6fl/snuS9kqQXyJFuUMg==
+"@sentry/vercel-edge@8.49.0":
+  version "8.49.0"
+  resolved "https://registry.yarnpkg.com/@sentry/vercel-edge/-/vercel-edge-8.49.0.tgz#075a59534cc58e0e197668d4df46d61363392eeb"
+  integrity sha512-zVdvAH2piiWFSzeNYvclzVmGQNfvpgqsMcr+yzH0n/hFZWBKUD7mJjqOPBR9YhElJZu7IrQb4tRvSXDvrM9NYw==
   dependencies:
     "@opentelemetry/api" "^1.9.0"
-    "@sentry/core" "8.46.0"
+    "@sentry/core" "8.49.0"
 
 "@sentry/webpack-plugin@2.22.7":
   version "2.22.7"
@@ -1230,7 +1230,7 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
-"@types/shimmer@^1.0.2", "@types/shimmer@^1.2.0":
+"@types/shimmer@^1.2.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@types/shimmer/-/shimmer-1.2.0.tgz"
   integrity sha512-UE7oxhQLLd9gub6JKIAhDq06T0F6FnztwMNRvYgjeQSBeMc1ZG/tA47EwfduvkuQS8apbkM/lpLpWsaCeYsXVg==
@@ -4126,19 +4126,10 @@ resolve@1.22.8:
     path-parse "^1.0.7"
     supports-preserve-symlinks-flag "^1.0.0"
 
-resolve@^1.22.4:
+resolve@^1.22.4, resolve@^1.22.8:
   version "1.22.10"
   resolved "https://registry.npmjs.org/resolve/-/resolve-1.22.10.tgz"
   integrity sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==
-  dependencies:
-    is-core-module "^2.16.0"
-    path-parse "^1.0.7"
-    supports-preserve-symlinks-flag "^1.0.0"
-
-resolve@^1.22.8:
-  version "1.22.9"
-  resolved "https://registry.npmjs.org/resolve/-/resolve-1.22.9.tgz"
-  integrity sha512-QxrmX1DzraFIi9PxdG5VkRfRwIgjwyud+z/iBwfRRrVmHc+P9Q7u2lSSpQ6bjr2gy5lrqIiU9vb6iAeGf2400A==
   dependencies:
     is-core-module "^2.16.0"
     path-parse "^1.0.7"
