@@ -4,38 +4,55 @@ import ROUTES from '@/lib/routes'
 import { SPACING } from '@/lib/theme'
 import Link from 'next/link'
 import { useState } from 'react'
+import { SocialIcon } from 'react-social-icons'
 import styled from 'styled-components'
 import Hamburger from '../_sharedComponents/Hamburger'
+
+// console.log(social_icons.keys())
+
+const SOCIAL_MEDIA = [
+  {
+    title: 'GitHub',
+    path: 'https://github.com/travisBumgarner/',
+    target: '_blank',
+    icon: 'github'
+  },
+  {
+    title: 'LinkedIn',
+    path: 'https://www.linkedin.com/in/travisbumgarner/',
+    target: '_blank',
+    icon: 'linkedin'
+  },
+  {
+    title: 'Instagram',
+    path: 'https://instagram.com/sillysideprojects',
+    target: '_blank',
+    icon: 'instagram'
+  },
+  {
+    title: 'Reddit',
+    path: 'https://www.reddit.com/user/travis_the_maker/',
+    target: '_blank',
+    icon: 'reddit'
+  },
+  {
+    title: 'Bluesky',
+    path: 'https://bsky.app/profile/sillysideprojects.bsky.social',
+    target: '_blank',
+    icon: 'bsky.app'
+  },
+  {
+    title: 'YouTube',
+    path: 'https://www.youtube.com/@SillySideProjects',
+    target: '_blank',
+    icon: 'youtube'
+  }
+]
 
 const THERE = [
   {
     title: 'Resume',
     path: '/travis_bumgarner_resume.pdf',
-    target: '_blank'
-  },
-  {
-    title: "Instagram",
-    path: "https://instagram.com/sillysideprojects",
-    target: '_blank'
-  },
-  {
-    title: "Reddit",
-    path: "https://www.reddit.com/user/travis_the_maker/",
-    target: '_blank'
-  },
-  {
-    title: "Bluesky",
-    path: "https://bsky.app/profile/sillysideprojects.bsky.social",
-    target: '_blank'
-    },
-  {
-    title: 'LinkedIn',
-    path: 'https://www.linkedin.com/in/travisbumgarner/',
-    target: '_blank'
-  },
-  {
-    title: 'Github',
-    path: 'https://github.com/travisBumgarner/',
     target: '_blank'
   },
   {
@@ -54,7 +71,12 @@ type ItemProps = {
 
 const Item = ({ title, path, target, onClick }: ItemProps) => {
   return (
-    <Link  scroll={true} style={{ textDecoration: 'none' }} target={target} href={path}>
+    <Link
+      scroll={true}
+      style={{ textDecoration: 'none' }}
+      target={target}
+      href={path}
+    >
       <Box onClick={onClick}>{title}</Box>
     </Link>
   )
@@ -66,36 +88,47 @@ const SidebarClient = () => {
   return (
     <>
       {isOpen && <Overlay onClick={() => setIsOpen(false)} />}
-    <Positioner>
-      <Hamburger onClick={() => setIsOpen(!isOpen)} />
-      {isOpen && (
-        <Wrapper>
-          <div>
-          {Object.values(ROUTES).map(r => (
-            <Item
-              onClick={() => setIsOpen(false)}
-              key={r.path}
-              title={r.title}
-              path={r.path}
-              target={r.target}
-            />
-          ))}
-          </div>
-          <div>
-            {THERE.map(r => (
-              <Item
-                onClick={() => setIsOpen(false)}
-                key={r.path}
-                title={r.title}
-                path={r.path}
-              target={r.target}
-              />
-            ))}
-          </div>
-        </Wrapper>
-      )}
+      <Positioner>
+        <Hamburger onClick={() => setIsOpen(!isOpen)} />
+        {isOpen && (
+          <Wrapper>
+            <div>
+              {Object.values(ROUTES).map(r => (
+                <Item
+                  onClick={() => setIsOpen(false)}
+                  key={r.path}
+                  title={r.title}
+                  path={r.path}
+                  target={r.target}
+                />
+              ))}
+            </div>
+            <div>
+              {THERE.map(r => (
+                <Item
+                  onClick={() => setIsOpen(false)}
+                  key={r.path}
+                  title={r.title}
+                  path={r.path}
+                  target={r.target}
+                />
+              ))}
+            </div>
+            <IconsWrapper>
+              {SOCIAL_MEDIA.map(r => (
+                <SocialIcon
+                  bgColor="transparent"
+                  fgColor="var(--foreground)"
+                  key={r.path}
+                  url={r.path}
+                  network={r.icon}
+                  title={r.title}
+                />
+              ))}
+            </IconsWrapper>
+          </Wrapper>
+        )}
       </Positioner>
-
     </>
   )
 }
@@ -113,14 +146,34 @@ const Overlay = styled.div`
 
 const Wrapper = styled.div`
   z-index: 999;
-  margin-top: ${SPACING.MEDIUM};
+  margin-top: ${SPACING.SMALL};
   > div {
-    margin-bottom: ${SPACING.LARGE};
+    margin-bottom: ${SPACING.SMALL};
+  }
+  /* Wee magic numbers */
+  width: 158px;
+
+  .social-icon:hover {
+    .social-svg-icon {
+      fill: var(--primary) !important;
+    }
+  }
+`
+
+const IconsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* gap: ${SPACING.XXSMALL}; */
+  > * {
+    margin-bottom: ${SPACING.XXSMALL};
+    background-color: var(--secondary-background);
   }
 `
 
 const Box = styled.div`
-  width: 120px;
   height: 40px;
   margin: ${SPACING.XXSMALL} 0;
   background-color: var(--secondary-background);
