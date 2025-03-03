@@ -122,6 +122,7 @@ const SidebarClient = () => {
                   key={r.path}
                   url={r.path}
                   network={r.icon}
+                  title={r.title}
                 />
               ))}
             </IconsWrapper>
