@@ -31,9 +31,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <style>
-          {/* eslint-disable-next-line */}
+          {/* eslint-disable react/no-unescaped-entities */}
           @import
           url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+          {/* eslint-enable react/no-unescaped-entities */}
         </style>
         <link rel="icon" href="/favicon.png" />
         <GoogleAnalytics gaId="G-67RM7JF6TY" />
