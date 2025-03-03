@@ -4,11 +4,11 @@ import ROUTES from '@/lib/routes'
 import { SPACING } from '@/lib/theme'
 import Link from 'next/link'
 import { useState } from 'react'
-import { SocialIcon, social_icons } from 'react-social-icons'
+import { SocialIcon } from 'react-social-icons'
 import styled from 'styled-components'
 import Hamburger from '../_sharedComponents/Hamburger'
 
-console.log(social_icons.keys())
+// console.log(social_icons.keys())
 
 const SOCIAL_MEDIA = [
   {
@@ -150,7 +150,8 @@ const Wrapper = styled.div`
   > div {
     margin-bottom: ${SPACING.SMALL};
   }
-  width: 165px;
+  /* Wee magic numbers */
+  width: 158px;
 
   .social-icon:hover {
     .social-svg-icon {
@@ -165,9 +166,10 @@ const IconsWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  /* gap: ${SPACING.XXSMALL}; */
   > * {
+    margin-bottom: ${SPACING.XXSMALL};
     background-color: var(--secondary-background);
-    margin: 2px;
   }
 `
 
