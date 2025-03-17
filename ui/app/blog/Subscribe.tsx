@@ -4,7 +4,7 @@ import { SPACING } from '@/lib/theme'
 import { useState } from 'react'
 import styled from 'styled-components'
 
-const SubWrapper = styled.form`
+const SubWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: ${SPACING.SMALL};
