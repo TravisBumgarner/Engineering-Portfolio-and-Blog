@@ -106,5 +106,11 @@
     "date": "2025-02-08",
     "description": "The time between visiting a website and seeing its content fully loaded offers creative space to capture a user's attention and keep them from leaving.",
     "preview_image": "preview.png"
+  },
+  "lessons-learned-from-side-projects": {
+    "title": "Lessons Learned from Side Projects",
+    "date": "2025-03-27",
+    "description": "Foobar.",
+    "preview_image": "preview.jpg"
   }
 }
