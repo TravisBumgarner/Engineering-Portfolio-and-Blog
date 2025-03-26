@@ -2,6 +2,17 @@
 
 import { createGlobalStyle, css } from 'styled-components'
 
+export const GlobalFonts = createGlobalStyle`
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('/fonts/Satoshi-Variable.woff2') format('woff2'),
+         url('/fonts/Satoshi-Variable.woff') format('woff'),
+         url('/fonts/Satoshi-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+  }
+`
+
 const EVERYTHING_FONT = 'Satoshi, sans-serif'
 const CODE_FONT = 'Source Code Pro, monospace'
 
