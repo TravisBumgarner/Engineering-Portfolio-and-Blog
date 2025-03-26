@@ -7,7 +7,7 @@ const CACHE_FILE =
 const PHOTO_PATH =
   '/Users/travisbumgarner/Programming/Engineering-Portfolio-and-Blog/ui/public'
 const OUTPUT_FILE =
-'/Users/travisbumgarner/Programming/Engineering-Portfolio-and-Blog/ui/content/blurhashes/index.json'
+  '/Users/travisbumgarner/Programming/Engineering-Portfolio-and-Blog/ui/content/blurhashes/index.json'
 const cache = require(CACHE_FILE)
 
 const processImages = async (dir: string, output: Record<string, any>) => {
@@ -25,7 +25,7 @@ const processImages = async (dir: string, output: Record<string, any>) => {
     } else if (fileStat.isFile() && isValidPhoto) {
       process.stdout.write('P->')
       const relativePath = filePath.replace(PHOTO_PATH, '')
-      
+
       // Check if the image is in the cache
       if (cache[relativePath]) {
         process.stdout.write('Cache ')
