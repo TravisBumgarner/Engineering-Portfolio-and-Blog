@@ -46,7 +46,14 @@ const Post = async ({ params }: { params: Params }) => {
   return (
     <div id="post">
       <h2>{post.title}</h2>
-      <time>Posted {new Date(post.date).toDateString()}</time>
+      <time>
+        Posted{' '}
+        {new Date(post.date + 'T00:00:00Z')
+          .toUTCString()
+          .split(' ')
+          .slice(0, 4)
+          .join(' ')}
+      </time>
       <Component />
       <Subscribe />
     </div>

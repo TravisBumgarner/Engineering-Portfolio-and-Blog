@@ -14,16 +14,12 @@ const Portfolio = () => {
         .map(({ id, title, previewImage, lastMeaningfulUpdate }, index) => {
           return (
             <ListItem
+              type="creation"
               priority={index === 0}
               key={id}
               link={`${ROUTES.CREATIONS.path}/${id}`}
               title={title}
-              date={`Last Updated ${new Date(
-                `${lastMeaningfulUpdate}-05`
-              ).toLocaleString('default', {
-                month: 'long',
-                year: 'numeric'
-              })}`}
+              date={lastMeaningfulUpdate}
               src={
                 previewImage && `/project-resources/${id}/${previewImage.src}`
               }

@@ -822,7 +822,7 @@
     "title": "Candlelight Game",
     "id": "candlelight",
     "description": "Puzzle game originally created for the Pirate Software Game Jam.\nTools & Technologies: Godot, Aseprite, Figma, Steam API",
-    "lastMeaningfulUpdate": "2025-02",
+    "lastMeaningfulUpdate": "2025-03-01",
     "images": [
       {
         "src": "1.png",
