@@ -15,12 +15,10 @@ const Blog = () => {
           const { title, description } = posts[id]
           return (
             <ListItem
+              type="post"
               key={id}
               priority={index === 0}
-              date={new Date(posts[id].date).toLocaleString('default', {
-                month: 'long',
-                year: 'numeric'
-              })}
+              date={posts[id].date}
               link={`${ROUTES.BLOG.path}/${id}`}
               title={title}
               description={description}
