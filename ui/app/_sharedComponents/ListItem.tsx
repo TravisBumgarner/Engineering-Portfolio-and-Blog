@@ -11,7 +11,8 @@ const ListItem = ({
   title,
   description,
   date,
-  priority
+  priority,
+  type
 }: {
   src?: string
   link?: string
@@ -19,12 +20,20 @@ const ListItem = ({
   description?: string
   date?: string
   priority?: boolean
+  type: 'post' | 'creation'
 }) => {
   if (!link) {
     return (
       <StyledListItem>
         {title && <h2>{title}</h2>}
-        {date && <time>{date}</time>}
+        <time>
+          {type === 'post' ? 'Posted ' : 'Last Updated '}
+          {new Date(date + 'T00:00:00Z')
+            .toUTCString()
+            .split(' ')
+            .slice(0, 4)
+            .join(' ')}
+        </time>
         {description && <p>{description}</p>}
         {src && priority !== undefined && (
           <BlurHashImage priority={priority} src={src} />
@@ -39,7 +48,14 @@ const ListItem = ({
         <div>
           <div>
             {title && <h2>{title}</h2>}
-            {date && <time>{date}</time>}
+            <time>
+              {type === 'post' ? 'Posted ' : 'Last Updated '}
+              {new Date(date + 'T00:00:00Z')
+                .toUTCString()
+                .split(' ')
+                .slice(0, 4)
+                .join(' ')}
+            </time>
           </div>
           {description && <p>{description}</p>}
         </div>
