@@ -5,6 +5,12 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import BlurHashImage from './BlurHashImage'
 
+const dateLabelLookup = {
+  post: 'Posted ',
+  creation: 'Last Updated ',
+  snapshot: ''
+}
+
 const ListItem = ({
   src,
   link,
@@ -20,20 +26,22 @@ const ListItem = ({
   description?: string
   date?: string
   priority?: boolean
-  type: 'post' | 'creation'
+  type: 'post' | 'creation' | 'snapshot'
 }) => {
   if (!link) {
     return (
       <StyledListItem>
         {title && <h2>{title}</h2>}
-        <time>
-          {type === 'post' ? 'Posted ' : 'Last Updated '}
-          {new Date(date + 'T00:00:00Z')
-            .toUTCString()
-            .split(' ')
-            .slice(0, 4)
-            .join(' ')}
-        </time>
+        {date && (
+          <time>
+            {dateLabelLookup[type]}
+            {new Date(date + 'T00:00:00Z')
+              .toUTCString()
+              .split(' ')
+              .slice(0, 4)
+              .join(' ')}
+          </time>
+        )}
         {description && <p>{description}</p>}
         {src && priority !== undefined && (
           <BlurHashImage priority={priority} src={src} />
@@ -48,14 +56,16 @@ const ListItem = ({
         <div>
           <div>
             {title && <h2>{title}</h2>}
-            <time>
-              {type === 'post' ? 'Posted ' : 'Last Updated '}
-              {new Date(date + 'T00:00:00Z')
-                .toUTCString()
-                .split(' ')
-                .slice(0, 4)
-                .join(' ')}
-            </time>
+            {date && (
+              <time>
+                {dateLabelLookup[type]}
+                {new Date(date + 'T00:00:00Z')
+                  .toUTCString()
+                  .split(' ')
+                  .slice(0, 4)
+                  .join(' ')}
+              </time>
+            )}
           </div>
           {description && <p>{description}</p>}
         </div>
