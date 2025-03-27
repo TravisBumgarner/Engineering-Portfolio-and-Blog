@@ -1,6 +1,6 @@
 'use client'
 
-import { SPACING } from '@/lib/theme'
+import { FONT_SIZES, SPACING } from '@/lib/theme'
 import { useState } from 'react'
 import styled from 'styled-components'
 
@@ -9,6 +9,12 @@ const SubWrapper = styled.div`
   flex-direction: row;
   gap: ${SPACING.SMALL};
   align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: ${SPACING.XSMALL};
+  }
 `
 
 const Wrapper = styled.div`
@@ -16,9 +22,21 @@ const Wrapper = styled.div`
 `
 
 const Form = styled.form`
+  width: 100%;
   display: flex;
   flex-direction: row;
   gap: ${SPACING.SMALL};
+  input {
+    flex-grow: 1;
+  }
+
+  @media (max-width: 768px) {
+    input,
+    button {
+      font-size: ${FONT_SIZES.SMALL};
+      padding: ${SPACING.XSMALL};
+    }
+  }
 `
 
 const Subscribe = () => {
@@ -58,7 +76,7 @@ const Subscribe = () => {
             Subscribe via RSS
           </span>
         </a>
-        <p>or</p>
+        <p>Or</p>
         <Form
           action="https://buttondown.com/api/emails/embed-subscribe/tbumgarner"
           method="post"
@@ -73,6 +91,7 @@ const Subscribe = () => {
             id="bd-email"
             value={email}
             onChange={e => setEmail(e.target.value)}
+            style={{ borderRadius: 0 }}
           />
           <button type="submit" disabled={email.length === 0}>
             Subscribe
