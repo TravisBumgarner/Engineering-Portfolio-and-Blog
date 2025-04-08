@@ -20,7 +20,9 @@
 1. Create new incremented [number].mdx file. 
 1. Add medatadata to posts/index.ts
 1. Create new folder in public/posts
+1. Add at least a preview image.
 1. Create post
+1. Generate blurhashes
 1. Generate new RSS. `yarn run generate-rss`
 
 ## New Project

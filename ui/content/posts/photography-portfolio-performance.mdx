@@ -1,0 +1,146 @@
+import Figure from '@/app/_sharedComponents/Figure'
+
+(Resources: [Full Codebase](https://github.com/travisBumgarner/photo20), [Live Website](http://travisbumgarner.photography/))
+
+The first commit to my photography portfolio September 1, 2018. As my skills have evolved, so too has the codebase. This article documents a series of performance improvements I've applied over the years.
+
+## Removing the Backend
+
+I used to believe that every problem required the same solution - a backend server, a frontend server, and a database. So that's how I originally constructed my photography portfolio. 
+
+Adobe Lightroom is the library for my photos. I would output photos and upload them to the backend. The photo would be routed to a bucket and the metadata to a database. Eventually it would all be served via a React client.
+
+<Figure src="/post-resources/photography-portfolio-performance/image.png" caption="" />
+
+For some time I struggled with this setup. Eventually I realized my pain point was that I had two sources of truth - Adobe Lightroom and the Database. This got me to thinking, could I completely do away with the backend server and database?
+
+This led to the design below. I wrote a script that would replace the backend and run at compile time. It's responsibility is to extract metadata applied to photos within Lightroom and make a JSON payload that could be bundled with the React App.
+
+<Figure src="/post-resources/photography-portfolio-performance/image2.png" caption="" />
+
+For the curious - [Adhoc Script](https://github.com/TravisBumgarner/Photography-Portfolio/blob/010c91ef0024a4ea3d778d46b0f46f48dd83a28d/lightroom-photo-tagging/src/main-portfolio-metadata.ts), [JSON output](https://github.com/TravisBumgarner/Photography-Portfolio/blob/010c91ef0024a4ea3d778d46b0f46f48dd83a28d/ui/src/content/output.json)
+
+## React Improvements
+
+### From State Hoisting to Signals
+
+One of the fist things we learn about state is that when two components need to share state, we hoist it to their common ancestor. Such is the case as in the example bellow where we want to toggle a sidebar open and closed. The issue with this construction is that every time the sidebar is toggled, due to the state change, the App component re-renders. This causes the component in red to re-render necessarily.
+
+<Figure src="/post-resources/photography-portfolio-performance/image3.png" caption="" />
+
+Enter [@preact/signals-react](https://www.npmjs.com/package/@preact/signals-react). Signals bypass the state hoisting and let us send messages directly between the components that need to know about them. No more unnecessary re-rendering for the component. 
+
+<Figure src="/post-resources/photography-portfolio-performance/image4.png" caption="" />
+
+### From useContext & useReducer → Zustand
+
+I always assumed that a combination of `useContext` and `useReducer` served as a replacement to tools like Redux. In many of my React apps, I stored state inside of a setup using the two. It wasn't until recently that I discovered that all consumers of context will rerender whenever any value within the context changes. 
+
+For example, in the diagram below, if `foo` updates, all three components will re-render. Component C has no dependencies upon `foo` but because it consumes the context, it re-renders anyways.
+
+<Figure src="/post-resources/photography-portfolio-performance/image5.png" caption="" />
+
+Enter [Zustand](https://github.com/pmndrs/zustand). 
+
+Zustand offers a more decoupled experience than context. Each component can decide what values it wants updates on. Only when those values change does the component rerender.
+
+<Figure src="/post-resources/photography-portfolio-performance/image6.png" caption="" />
+
+Quick tangent - I mentioned Redux in the previous section. After doing some research, I decided to go with Zustand due to greatly amount of boilerplate needed to get started. 
+
+## New Technologies
+
+The [Chrome Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) is an amazing way to audit your website on various aspects, including performance. It is what introduced me to a lot of what you see in this section so I highly recommend checking it out. 
+
+### AVIF
+
+AVIF is a new image format, that is [widely supported across internet browsers](https://caniuse.com/?search=AVIF). (However, I have seen that many apps such as Google Slides does not support this) It's a great replacement for JPEG/JPG with a file size reduction of roughly ~X% (YKB to ZKB). 
+
+[INSERT IMAGE JPG]
+
+[INSERT IMAGE AVIF]
+
+### Blurhashes
+
+There are two ways to address performance improvements - technical improvements and user perception improvements.  User perception improvements are concerned with having users think things are loading. Things then feel faster for the user. Blurhashes offer a super small ~20B representation of a full size image. 
+
+Tangent - I wrote a whole article exploring how blurhashes work and you can check it out **HERE**. 
+
+[INSERT IMAGE AVIF]
+
+[INSERT IMAGE BLURHASH]
+
+**Add more content about how blurhashes can be used.  OR move to next section.**
+
+## **Anticipating the User's Next Move**
+
+I recommend opening [my portfolio](http://travisbumgarner.photography/) while following along with this section.
+
+[Also since this section has a lot of content, I've made a video you can check out here]
+
+I watched a talk once from one of the founders of Instagram where they discussed this topic. When a user creates a post, the first thing they do is select a photo. Then, the photo begins uploading in the background. The user then fills out the description and tags the photo. By the time the user hits submit, the photo appears to have uploaded instantaneously. 
+
+This idea inspired me. 
+
+### **On the Homepage**
+
+The first thing to do is load the blurhashes for the photos that the user can see. Then start loading the thumbnails.
+
+**What will the user do next?** They have two choices, 
+
+1. **Select a thumbnail to view a gallery.** It would be a bit unfair to the user's bandwidth to begin loading every photo in every gallery they can see on the screen so for this action let's do nothing.
+2. **Scroll the page**. Since blurhashes and thumbnails are small, let's start loading them. We won't load all the images on the page, let's just look ahead maybe 1,000 pixels below the bottom of what the user can see and start loading that. 
+
+### **Viewing a Gallery**
+
+Once a user, selects a gallery, I'll repeat the process of loading blurhashes and then thumbnails. 
+
+**What will the user do** 
+
+1. **Select a thumbnail to view a full resolution photo.** Once all previews are done loading, let's load the full resolution photo in the background. This way, if the user selects a photo they can see, it'll already be loaded. 
+2. **Scroll the page.** We'll repeat the process above. 
+
+The algorithm will always prioritize loading previews before full size images. If the user starts scrolling, previews will be loaded first, then full resolution images. 
+
+### Viewing a Photo
+
+At this point the user can perform one action, look at the previous or next photo. We'll always load the neighboring photos in full resolution. 
+
+## Future Improvements
+
+(Resources: [Full Codebase](https://github.com/travisBumgarner/engineering-Portfolio-and-Blog/), [Live Website](http://travisbumgarner.dev/))
+
+I decided to refactor my engineering portfolio as a learning opportunity and found some things that would benefit my photography portfolio as well. 
+
+### Photo Preloading
+
+Below is the typical waterfall loading for React. First a nearly empty HTML document is loaded. This leads to the app bundle being downloaded, parsed, and executed. At this point, the browser knows what HTML is included in the bundled app and can begin downloading photos. This process blocks image loading until React is done doing it's thing.
+
+<Figure src="/post-resources/photography-portfolio-performance/image7.png" caption="" />
+
+With NextJS, we can tell the browser to preload certain images. These images get injected into the initial HTML document. This results in images being loaded much earlier in the waterfall. 
+
+<Figure src="/post-resources/photography-portfolio-performance/image8.png" caption="" />
+
+I would use this process to load the first few photos at the top of the page. 
+
+### Server Side Rendering
+
+Back in the “Removing the Backend” section, I discussed how I replaced my backend with a JSON doc. The issue with this is that the entire JSON doc is served bundled with the React app. With NextJS, it's possible to extract only the required JSON needed on the server, and serve this to the user in a much smaller package.
+
+
+<Figure src="/post-resources/photography-portfolio-performance/image9.png" caption="" />
+
+## The Results
+
+### By the Numbers
+
+- 58% Homepage Size Reduction: (8.4MB → 3.5MB)
+- 67% Faster [First Contentful Paint](https://web.dev/articles/fcp): (0.6s → 0.2s)
+- 60% Faster [Largest Contentful Paint](https://web.dev/articles/lcp): (1.5s → 0.6s)
+
+## Reflecting on the Experience
+
+Engineers have lots to learn from the basics of HTML, CSS, and JavaScript to deeper topics like performance. Performance is one of those topics that we as engineers should take the lead on in product and design conversations. 
+
+It's an iceberg, there's lots to learn**.

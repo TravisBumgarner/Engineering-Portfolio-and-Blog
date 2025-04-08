@@ -6,9 +6,16 @@ import BlurHashImage from './BlurHashImage'
 type FigureProps = {
   src: string
   caption: string
+  internalPadding?: boolean
+  disableBackground?: boolean
 }
 
-const Figure = ({ src, caption }: FigureProps) => {
+const Figure = ({
+  src,
+  caption,
+  internalPadding,
+  disableBackground = false
+}: FigureProps) => {
   return (
     <figure
       style={{
@@ -17,8 +24,17 @@ const Figure = ({ src, caption }: FigureProps) => {
         padding: SPACING.MEDIUM
       }}
     >
-      <BlurHashImage priority={false} src={src} alt={caption} />
-      <figcaption style={{fontSize: FONT_SIZES.SMALL, fontWeight: 100, marginTop: SPACING.SMALL}}>{caption}</figcaption>
+      <BlurHashImage includePadding priority={false} src={src} alt={caption} />
+      <figcaption
+        style={{
+          fontSize: FONT_SIZES.SMALL,
+          fontWeight: 100,
+          marginTop: SPACING.SMALL,
+          padding: 20
+        }}
+      >
+        {caption}
+      </figcaption>
     </figure>
   )
 }
