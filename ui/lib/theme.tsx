@@ -39,9 +39,9 @@ export const FONT_WEIGHTS = {
 }
 
 export const FONT_SIZES = {
-  XSMALL: '12px',
   SMALL: '16px',
   MEDIUM: '20px',
+  LARGER: '28px', // Shoot me lol.
   LARGE: '36px',
   XLARGE: '50px'
 }
@@ -211,7 +211,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h4 {
-      font-size: ${FONT_SIZES.MEDIUM};
+      font-size: ${FONT_SIZES.LARGER};
       font-weight: ${FONT_WEIGHTS.BOLD};
     }
 

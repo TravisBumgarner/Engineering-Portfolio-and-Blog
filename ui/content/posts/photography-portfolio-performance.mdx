@@ -1,135 +1,113 @@
+- [ ] Case sensitive the titles all the same
+
 import Figure from '@/app/_sharedComponents/Figure'
+import YouTube from '@/app/_sharedComponents/YouTube'
 
 (Resources: [Full Codebase](https://github.com/travisBumgarner/photo20), [Live Website](http://travisbumgarner.photography/))
 
-The first commit to my photography portfolio September 1, 2018. As my skills have evolved, so too has the codebase. This article documents a series of performance improvements I've applied over the years.
+## Intro
 
-## Removing the Backend
+A solid website experience is the result of a joint effort between a designer and a frontend engineer. Each individual brings their own expertise to the table. Through collaboration, they build something better than either could have built in isolation. As frontend engineers, we be accustomed to taking designs, implementing them, and then moving on. However, there are skills that engineers possess, that designers don't, that can bring experiences to the next level. 
 
-I used to believe that every problem required the same solution - a backend server, a frontend server, and a database. So that's how I originally constructed my photography portfolio. 
+## Two Sides of the Same Problem
 
-Adobe Lightroom is the library for my photos. I would output photos and upload them to the backend. The photo would be routed to a bucket and the metadata to a database. Eventually it would all be served via a React client.
+Designers operate in an artificial environment. There are no network requests. Screen sizes tend to be fixed. Performance is not a concern. This is not the fault of the designer. Figma is not Google Chrome. Figma is far removed from the real world of slow internet connections and devices with limited processing power. 
 
-<Figure src="/post-resources/photography-portfolio-performance/image.png" caption="" />
+Frontend engineers live the opposite experience. They are concerned with interactions within the browser. They contemplate network requests, latency, caching, memoizing, rendering, bundling, lazy loading, and browser behavior. All of these terms are very technical. However, the end result of their implementation is to improve the visitor experience. 
 
-For some time I struggled with this setup. Eventually I realized my pain point was that I had two sources of truth - Adobe Lightroom and the Database. This got me to thinking, could I completely do away with the backend server and database?
+Engineers are tackling the exact same problem as design but from a different perspective. Engineers have the power to implement these techniques to improve the visitor experience. 
 
-This led to the design below. I wrote a script that would replace the backend and run at compile time. It's responsibility is to extract metadata applied to photos within Lightroom and make a JSON payload that could be bundled with the React App.
+## What to Focus On
 
-<Figure src="/post-resources/photography-portfolio-performance/image2.png" caption="" />
+The first step to improving the visitor experience is to decide what to work on. 
 
-For the curious - [Adhoc Script](https://github.com/TravisBumgarner/Photography-Portfolio/blob/010c91ef0024a4ea3d778d46b0f46f48dd83a28d/lightroom-photo-tagging/src/main-portfolio-metadata.ts), [JSON output](https://github.com/TravisBumgarner/Photography-Portfolio/blob/010c91ef0024a4ea3d778d46b0f46f48dd83a28d/ui/src/content/output.json)
+Schooling teaches us to think of performance in abstract terms. Big O. Big Omega. Big Theta. Little o. All of these are very abstract methods of defining the performance of algorithms. They're far removed from the real world. They have their place, but it's not in this article.
 
-## React Improvements
+Imagine you're looking for some improvements to make. You find some code in the frontend that theoretically has poor performance. It can be refactored to have better performance. In reality, its average run time is 50ms. Blinking takes roughly 100ms. <sub>[1]</sub> This is not the best use of your time. 
 
-### From State Hoisting to Signals
+To figure out what to work on, look at real situations. Real devices. Real internet connections. Real complaints. Focus there. 
 
-One of the fist things we learn about state is that when two components need to share state, we hoist it to their common ancestor. Such is the case as in the example bellow where we want to toggle a sidebar open and closed. The issue with this construction is that every time the sidebar is toggled, due to the state change, the App component re-renders. This causes the component in red to re-render necessarily.
+## A Case Study
 
-<Figure src="/post-resources/photography-portfolio-performance/image3.png" caption="" />
+My [photography portfolio](https://travisbumgarner.photography) is a great case study. Open it up to follow along with this section.
 
-Enter [@preact/signals-react](https://www.npmjs.com/package/@preact/signals-react). Signals bypass the state hoisting and let us send messages directly between the components that need to know about them. No more unnecessary re-rendering for the component. 
+The majority of a visitor's interactions can be summarized as follows.
 
-<Figure src="/post-resources/photography-portfolio-performance/image4.png" caption="" />
+1. Browse galleries
+1. Select a gallery
+1. View thumbnail previews
+1. Select a thumbnail
+1. Explore full-resolution photos
+1. Repeat as desired
 
-### From useContext & useReducer → Zustand
+Before diving in there is one thing I want to call out. 
 
-I always assumed that a combination of `useContext` and `useReducer` served as a replacement to tools like Redux. In many of my React apps, I stored state inside of a setup using the two. It wasn't until recently that I discovered that all consumers of context will rerender whenever any value within the context changes. 
+**This is a photography portfolio**. 
 
-For example, in the diagram below, if `foo` updates, all three components will re-render. Component C has no dependencies upon `foo` but because it consumes the context, it re-renders anyways.
+This is a media heavy website. A given with such websites is that they are going to consume a lot of data. Some of the decisions I have made in the following sections were influenced by this fact. Keep in mind the reason why visitors are visiting your website. These solutions are not one sized fits all. Be creative. Be kind to your visitors. For the love of all things decent, do not load a gigabyte video into the background of your marketing site. 
 
-<Figure src="/post-resources/photography-portfolio-performance/image5.png" caption="" />
+### Visitor Intention: View the Website
 
-Enter [Zustand](https://github.com/pmndrs/zustand). 
+When a visitor types https://travisbumgarner.photography into the URL bar, they have the intention of visiting this website. They would like to see its contents as soon as possible. What can be done?
 
-Zustand offers a more decoupled experience than context. Each component can decide what values it wants updates on. Only when those values change does the component rerender.
+#### Preload photos
 
-<Figure src="/post-resources/photography-portfolio-performance/image6.png" caption="" />
+HTML `<link>` tags in the `<head>` of the document have a `rel` attribute which can be set to `preload`. The first few photos on the page can be inserted into the `<head>`. This will cause these resources to take priority on loading. ([Read more on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload).)
 
-Quick tangent - I mentioned Redux in the previous section. After doing some research, I decided to go with Zustand due to greatly amount of boilerplate needed to get started. 
-
-## New Technologies
-
-The [Chrome Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) is an amazing way to audit your website on various aspects, including performance. It is what introduced me to a lot of what you see in this section so I highly recommend checking it out. 
-
-### AVIF
-
-AVIF is a new image format, that is [widely supported across internet browsers](https://caniuse.com/?search=AVIF). (However, I have seen that many apps such as Google Slides does not support this) It's a great replacement for JPEG/JPG with a file size reduction of roughly ~X% (YKB to ZKB). 
-
-[INSERT IMAGE JPG]
-
-[INSERT IMAGE AVIF]
-
-### Blurhashes
-
-There are two ways to address performance improvements - technical improvements and user perception improvements.  User perception improvements are concerned with having users think things are loading. Things then feel faster for the user. Blurhashes offer a super small ~20B representation of a full size image. 
-
-Tangent - I wrote a whole article exploring how blurhashes work and you can check it out **HERE**. 
-
-[INSERT IMAGE AVIF]
-
-[INSERT IMAGE BLURHASH]
-
-**Add more content about how blurhashes can be used.  OR move to next section.**
-
-## **Anticipating the User's Next Move**
-
-I recommend opening [my portfolio](http://travisbumgarner.photography/) while following along with this section.
-
-[Also since this section has a lot of content, I've made a video you can check out here]
-
-I watched a talk once from one of the founders of Instagram where they discussed this topic. When a user creates a post, the first thing they do is select a photo. Then, the photo begins uploading in the background. The user then fills out the description and tags the photo. By the time the user hits submit, the photo appears to have uploaded instantaneously. 
-
-This idea inspired me. 
-
-### **On the Homepage**
-
-The first thing to do is load the blurhashes for the photos that the user can see. Then start loading the thumbnails.
-
-**What will the user do next?** They have two choices, 
-
-1. **Select a thumbnail to view a gallery.** It would be a bit unfair to the user's bandwidth to begin loading every photo in every gallery they can see on the screen so for this action let's do nothing.
-2. **Scroll the page**. Since blurhashes and thumbnails are small, let's start loading them. We won't load all the images on the page, let's just look ahead maybe 1,000 pixels below the bottom of what the user can see and start loading that. 
-
-### **Viewing a Gallery**
-
-Once a user, selects a gallery, I'll repeat the process of loading blurhashes and then thumbnails. 
-
-**What will the user do** 
-
-1. **Select a thumbnail to view a full resolution photo.** Once all previews are done loading, let's load the full resolution photo in the background. This way, if the user selects a photo they can see, it'll already be loaded. 
-2. **Scroll the page.** We'll repeat the process above. 
-
-The algorithm will always prioritize loading previews before full size images. If the user starts scrolling, previews will be loaded first, then full resolution images. 
-
-### Viewing a Photo
-
-At this point the user can perform one action, look at the previous or next photo. We'll always load the neighboring photos in full resolution. 
-
-## Future Improvements
-
-(Resources: [Full Codebase](https://github.com/travisBumgarner/engineering-Portfolio-and-Blog/), [Live Website](http://travisbumgarner.dev/))
-
-I decided to refactor my engineering portfolio as a learning opportunity and found some things that would benefit my photography portfolio as well. 
-
-### Photo Preloading
-
-Below is the typical waterfall loading for React. First a nearly empty HTML document is loaded. This leads to the app bundle being downloaded, parsed, and executed. At this point, the browser knows what HTML is included in the bundled app and can begin downloading photos. This process blocks image loading until React is done doing it's thing.
+It is impossible to do this with a purely client side rendering tool like React. 
 
 <Figure src="/post-resources/photography-portfolio-performance/image7.png" caption="" />
-
-With NextJS, we can tell the browser to preload certain images. These images get injected into the initial HTML document. This results in images being loaded much earlier in the waterfall. 
-
 <Figure src="/post-resources/photography-portfolio-performance/image8.png" caption="" />
 
-I would use this process to load the first few photos at the top of the page. 
+A benefit of With server side tools like NextJS, the first few thumbnails on the page can be programmatically inserted into the `<head>`.
 
-### Server Side Rendering
+Caution - When everything is preloaded, nothing is a preloaded. Be mindful of how many photos get marked with `preload`. 
 
-Back in the “Removing the Backend” section, I discussed how I replaced my backend with a JSON doc. The issue with this is that the entire JSON doc is served bundled with the React app. With NextJS, it's possible to extract only the required JSON needed on the server, and serve this to the user in a much smaller package.
+#### Render Content on the Server
+
+Back in the “Removing the Backend” section, I discussed how I replaced my backend with a JSON doc. The issue with this is that the entire JSON doc is served bundled with the React app. With NextJS, it's possible to extract only the required JSON needed on the server, and serve this to the visitor in a much smaller package.
 
 
 <Figure src="/post-resources/photography-portfolio-performance/image9.png" caption="" />
+
+#### Load the Bare Minimum
+
+The visitor cannot interact with the website until it is loaded. Furthermore, they can't interact with content off the screen until they scroll. Load the content they will see first, first. 
+
+The `<img>` tag has property `loading` which can be set to `lazy`. This tells the browser to defer loading of an image. ([Read more on MDN](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Lazy_loading).)
+
+There are many libraries to detect if an HTML element is within view of the visitor. One example is Motion's `useInView` [React hook](https://motion.dev/docs/react-use-in-view). 
+
+These two bits can be combined for very customized control over how images load. For a full example, check out how the images load with [this code](https://github.com/TravisBumgarner/Photography-Portfolio/blob/2aa42cca8953b7e5ce6573607a6866f84bdaddcd/ui/src/sharedComponents/BlurImage.tsx#L2). 
+
+### Visitor Intention: Browse all galleries
+
+Once the visitor has a fully render homepage they will do one of two things. They will either select a gallery's thumbnail or scroll the page. What can be done?
+
+#### Load the Bare Minimum
+
+The `useInView` hook, discussed in the section of the same name above, takes on a property `margin` which can specify an area off screen that should be loaded before the visitor gets there. For example `margin: '0px 0px 500px 0px'` will start loading any content that is 500px below the bottom of the screen. 
+
+### Visitor Intention: Browse a gallery
+
+The visitor is presented with a list of thumbnails that can be viewed in full resolution. They can either select a thumbnail or scroll the page. What can be done?
+
+#### Load the Bare Minimum.
+
+See both sections of the same name above.
+
+#### Preload full resolution photos
+
+A visitor can only click a thumbnail they can see. Therefore, if they're not scrolling, they're most likely going to click on one of the photos they can see. The two lines of code below will load a full resolution image without needing HTML to do so. For the full example, [check the code](https://github.com/TravisBumgarner/Photography-Portfolio/blob/2aa42cca8953b7e5ce6573607a6866f84bdaddcd/ui/src/components/Gallery.tsx).
+
+```
+const img = new Image()
+img.src = fullResolutionSrc
+```
+
+### Visitor Intention: Browse full resolution photos
+
+At this point the visitor can perform one action, look at the previous or next photo. We'll always load the neighboring photos in full resolution using the same algorithm mentioned in the previous section. 
 
 ## The Results
 
@@ -141,6 +119,15 @@ Back in the “Removing the Backend” section, I discussed how I replaced my ba
 
 ## Reflecting on the Experience
 
-Engineers have lots to learn from the basics of HTML, CSS, and JavaScript to deeper topics like performance. Performance is one of those topics that we as engineers should take the lead on in product and design conversations. 
+Designers design. So too do engineers. 
 
-It's an iceberg, there's lots to learn**.
+## Footnotes
+
+[1] https://en.wikipedia.org/wiki/Blinking
+
+# Maybe included
+https://youtu.be/3pvpNKUPbIY?t=1269
+
+Admiral Grace Hopper 
+
+<YouTube embedId="9eyFDBPk4Yw" />
