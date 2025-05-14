@@ -1,27 +1,22 @@
-- [ ] Case sensitive the titles all the same
-
-import Figure from '@/app/_sharedComponents/Figure'
-import YouTube from '@/app/_sharedComponents/YouTube'
-
-(Resources: [Full Codebase](https://github.com/travisBumgarner/photo20), [Live Website](http://travisbumgarner.photography/))
+(References: [Full Codebase](https://github.com/travisBumgarner/photo20), [Live Website](http://travisbumgarner.photography/))
 
 ## Intro
 
-A solid website experience is the result of a joint effort between a designer and a frontend engineer. Each individual brings their own expertise to the table. Through collaboration, they build something better than either could have built in isolation. As frontend engineers, we be accustomed to taking designs, implementing them, and then moving on. However, there are skills that engineers possess, that designers don't, that can bring experiences to the next level. 
+A solid website experience is the result of a joint effort between a designer and a frontend engineer. Each individual brings their own expertise to the table. Through collaboration, they build something better than either could have built in isolation. As frontend engineers, we are accustomed to taking designs, implementing them, and then moving on. However, there are skills that engineers possess, that designers don't, that can bring user experiences to the next level.
 
-## Two Sides of the Same Problem
+## Different Vantage Points
 
 Designers operate in an artificial environment. There are no network requests. Screen sizes tend to be fixed. Performance is not a concern. This is not the fault of the designer. Figma is not Google Chrome. Figma is far removed from the real world of slow internet connections and devices with limited processing power. 
 
-Frontend engineers live the opposite experience. They are concerned with interactions within the browser. They contemplate network requests, latency, caching, memoizing, rendering, bundling, lazy loading, and browser behavior. All of these terms are very technical. However, the end result of their implementation is to improve the visitor experience. 
+Frontend engineers live the opposite experience. They are concerned with interactions within the browser. They contemplate network requests, latency, caching, memoizing, rendering, bundling, lazy loading, browser behavior, and so much more. All of these terms are very technical. However, the end result of their implementation is to improve the user experience.
 
-Engineers are tackling the exact same problem as design but from a different perspective. Engineers have the power to implement these techniques to improve the visitor experience. 
+Engineers are tackling the exact same problem as design but from a different perspective. Engineers have the power to implement these techniques to improve the user experience. 
 
 ## What to Focus On
 
-The first step to improving the visitor experience is to decide what to work on. 
+The first step to improving the user experience is to decide what to work on. 
 
-Schooling teaches us to think of performance in abstract terms. Big O. Big Omega. Big Theta. Little o. All of these are very abstract methods of defining the performance of algorithms. They're far removed from the real world. They have their place, but it's not in this article.
+Schooling teaches us to think of performance in abstract terms. Big O. Big Omega. Big Theta. Little o. All of these are very abstract methods of defining performance. They're far removed from the real world. They have their place, but it's not in this article.
 
 Imagine you're looking for some improvements to make. You find some code in the frontend that theoretically has poor performance. It can be refactored to have better performance. In reality, its average run time is 50ms. Blinking takes roughly 100ms. <sub>[1]</sub> This is not the best use of your time. 
 
@@ -33,6 +28,7 @@ My [photography portfolio](https://travisbumgarner.photography) is a great case 
 
 The majority of a visitor's interactions can be summarized as follows.
 
+1. See the website
 1. Browse galleries
 1. Select a gallery
 1. View thumbnail previews
@@ -42,22 +38,19 @@ The majority of a visitor's interactions can be summarized as follows.
 
 Before diving in there is one thing I want to call out. 
 
-**This is a photography portfolio**. 
+**This is a photography portfolio** 
 
-This is a media heavy website. A given with such websites is that they are going to consume a lot of data. Some of the decisions I have made in the following sections were influenced by this fact. Keep in mind the reason why visitors are visiting your website. These solutions are not one sized fits all. Be creative. Be kind to your visitors. For the love of all things decent, do not load a gigabyte video into the background of your marketing site. 
+This is a media heavy website. A given with such websites is that they are going to consume a lot of data. Some of the decisions I have made in the following sections were influenced by this fact. Keep in mind the reason why users are visiting your website. These solutions are not one sized fits all. Be creative. Be kind to your users. For the love of all things decent, do not load a gigabyte video into the background of your marketing site. 
 
-### Visitor Intention: View the Website
+### User Intention: View the Website
 
-When a visitor types https://travisbumgarner.photography into the URL bar, they have the intention of visiting this website. They would like to see its contents as soon as possible. What can be done?
+When a user types https://travisbumgarner.photography into the URL bar, they have the intention of visiting this website. They would like to see its contents as soon as possible. What can be done?
 
-#### Preload photos
+#### Preload Photos
 
 HTML `<link>` tags in the `<head>` of the document have a `rel` attribute which can be set to `preload`. The first few photos on the page can be inserted into the `<head>`. This will cause these resources to take priority on loading. ([Read more on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload).)
 
 It is impossible to do this with a purely client side rendering tool like React. 
-
-<Figure src="/post-resources/photography-portfolio-performance/image7.png" caption="" />
-<Figure src="/post-resources/photography-portfolio-performance/image8.png" caption="" />
 
 A benefit of With server side tools like NextJS, the first few thumbnails on the page can be programmatically inserted into the `<head>`.
 
@@ -65,49 +58,46 @@ Caution - When everything is preloaded, nothing is a preloaded. Be mindful of ho
 
 #### Render Content on the Server
 
-Back in the “Removing the Backend” section, I discussed how I replaced my backend with a JSON doc. The issue with this is that the entire JSON doc is served bundled with the React app. With NextJS, it's possible to extract only the required JSON needed on the server, and serve this to the visitor in a much smaller package.
-
-
-<Figure src="/post-resources/photography-portfolio-performance/image9.png" caption="" />
+Back in the “Removing the Backend” section, I discussed how I replaced my backend with a JSON doc. The issue with this is that the entire JSON doc is served bundled with the React app. With NextJS, it's possible to extract only the required JSON needed on the server, and serve this to the user in a much smaller package.
 
 #### Load the Bare Minimum
 
-The visitor cannot interact with the website until it is loaded. Furthermore, they can't interact with content off the screen until they scroll. Load the content they will see first, first. 
+The user cannot interact with the website until it is loaded. Furthermore, they can't interact with content off the screen until they scroll. Load the content they will see first, first. 
 
 The `<img>` tag has property `loading` which can be set to `lazy`. This tells the browser to defer loading of an image. ([Read more on MDN](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Lazy_loading).)
 
-There are many libraries to detect if an HTML element is within view of the visitor. One example is Motion's `useInView` [React hook](https://motion.dev/docs/react-use-in-view). 
+There are many libraries to detect if an HTML element is within view of the user. One example is Motion's `useInView` [React hook](https://motion.dev/docs/react-use-in-view). 
 
 These two bits can be combined for very customized control over how images load. For a full example, check out how the images load with [this code](https://github.com/TravisBumgarner/Photography-Portfolio/blob/2aa42cca8953b7e5ce6573607a6866f84bdaddcd/ui/src/sharedComponents/BlurImage.tsx#L2). 
 
-### Visitor Intention: Browse all galleries
+### User Intention: Browse all galleries
 
-Once the visitor has a fully render homepage they will do one of two things. They will either select a gallery's thumbnail or scroll the page. What can be done?
+Once the user has a fully render homepage they will do one of two things. They will either select a gallery's thumbnail or scroll the page. What can be done?
 
 #### Load the Bare Minimum
 
-The `useInView` hook, discussed in the section of the same name above, takes on a property `margin` which can specify an area off screen that should be loaded before the visitor gets there. For example `margin: '0px 0px 500px 0px'` will start loading any content that is 500px below the bottom of the screen. 
+The `useInView` hook, discussed in the section of the same name above, takes on a property `margin` which can specify an area off screen that should be loaded before the user gets there. For example `margin: '0px 0px 500px 0px'` will start loading any content that is 500px below the bottom of the screen. 
 
-### Visitor Intention: Browse a gallery
+### User Intention: Browse a Gallery
 
-The visitor is presented with a list of thumbnails that can be viewed in full resolution. They can either select a thumbnail or scroll the page. What can be done?
+The user is presented with a list of thumbnails that can be viewed in full resolution. They can either select a thumbnail or scroll the page. What can be done?
 
-#### Load the Bare Minimum.
+#### Load the Bare Minimum
 
 See both sections of the same name above.
 
-#### Preload full resolution photos
+#### Preload Full Resolution Photos
 
-A visitor can only click a thumbnail they can see. Therefore, if they're not scrolling, they're most likely going to click on one of the photos they can see. The two lines of code below will load a full resolution image without needing HTML to do so. For the full example, [check the code](https://github.com/TravisBumgarner/Photography-Portfolio/blob/2aa42cca8953b7e5ce6573607a6866f84bdaddcd/ui/src/components/Gallery.tsx).
+A user can only click a thumbnail they can see. Therefore, if they're not scrolling, they're most likely going to click on one of the photos they can see. The two lines of code below will load a full resolution image without needing HTML to do so. For the full example, [check the code](https://github.com/TravisBumgarner/Photography-Portfolio/blob/2aa42cca8953b7e5ce6573607a6866f84bdaddcd/ui/src/components/Gallery.tsx).
 
 ```
 const img = new Image()
 img.src = fullResolutionSrc
 ```
 
-### Visitor Intention: Browse full resolution photos
+### User Intention: Browse Full Resolution Photos
 
-At this point the visitor can perform one action, look at the previous or next photo. We'll always load the neighboring photos in full resolution using the same algorithm mentioned in the previous section. 
+At this point the user can perform one action, look at the previous or next photo. We'll always load the neighboring photos in full resolution using the same algorithm mentioned in the previous section. 
 
 ## The Results
 
@@ -119,15 +109,9 @@ At this point the visitor can perform one action, look at the previous or next p
 
 ## Reflecting on the Experience
 
-Designers design. So too do engineers. 
+As engineers, we have more to contribute to great user experiences than we often realize. We understand the ins and outs of the applications we build - the user flows, the edge cases, and what happens after every click. By using that knowledge to complement and enhance what designers create, we can build experiences that go beyond what either could build alone.
 
 ## Footnotes
 
 [1] https://en.wikipedia.org/wiki/Blinking
 
-# Maybe included
-https://youtu.be/3pvpNKUPbIY?t=1269
-
-Admiral Grace Hopper 
-
-<YouTube embedId="9eyFDBPk4Yw" />
