@@ -5,7 +5,7 @@
     "start:prod": "next start",
     "build": "next build",
     "lint": "next lint",
-    "deploy:nfs": "./deploy.sh"
+    "deploy:nfs": "yarn run build && ./deploy.sh"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
