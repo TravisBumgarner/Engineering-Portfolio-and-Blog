@@ -3,10 +3,23 @@
 import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
 import ListItem from '../_sharedComponents/ListItem'
+import styled from 'styled-components'
+import { FONT_SIZES, FONT_WEIGHTS, SHARED_SPACING, SPACING } from '@/lib/theme'
+import Link from 'next/link'
 
 const Portfolio = () => {
   return (
     <>
+      <Link
+        style={{ textDecoration: 'none' }}
+        href="https://photopalettes.com"
+        target="_blank"
+      >
+        <AnnouncementItem>
+          <h2>Current Project: Photo Palettes</h2>
+          <p>A social platform for generating color palettes from photos.</p>
+        </AnnouncementItem>
+      </Link>
       {Object.values(projects)
         .sort((a, b) =>
           a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1
@@ -16,16 +29,12 @@ const Portfolio = () => {
             { id, title, previewImage, lastMeaningfulUpdate, description },
             index
           ) => {
-            const paragraphs = description
-              .split('\n')
-              .map((paragraph, index) => <p key={index}>{paragraph}</p>)
-
             return (
               <ListItem
                 type="creation"
                 priority={index === 0}
                 key={id}
-                description={paragraphs}
+                description={description}
                 link={`${ROUTES.CREATIONS.path}/${id}`}
                 title={title}
                 date={lastMeaningfulUpdate}
@@ -39,5 +48,26 @@ const Portfolio = () => {
     </>
   )
 }
+
+const AnnouncementItem = styled.div`
+  padding: ${SPACING.MEDIUM};
+  display: flex;
+  background-color: var(--bright-background);
+  color: var(--foreground);
+  flex-direction: column;
+  text-decoration: none;
+  margin-bottom: ${SPACING.LARGE};
+
+  h2 {
+    font-size: ${FONT_SIZES.LARGE};
+    font-weight: ${FONT_WEIGHTS.BOLD};
+    margin-top: 0;
+    margin-bottom: ${SPACING.SMALL};
+  }
+`
+
+const Announcements = styled.div`
+  display: flex;
+`
 
 export default Portfolio

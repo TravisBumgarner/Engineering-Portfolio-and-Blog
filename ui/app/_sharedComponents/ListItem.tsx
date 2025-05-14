@@ -49,6 +49,12 @@ const ListItem = ({
   priority?: boolean
   type: 'post' | 'creation' | 'snapshot'
 }) => {
+  const paragraphs = !description
+    ? null
+    : description
+        .split('\n')
+        .map((paragraph, index) => <p key={index}>{paragraph}</p>)
+
   if (!link) {
     return (
       <StyledListItem>
@@ -63,7 +69,7 @@ const ListItem = ({
               .join(' ')}
           </time>
         )}
-        {description && <p>{description}</p>}
+        {paragraphs && <p>{paragraphs}</p>}
         {src && priority !== undefined && (
           <BlurHashImage priority={priority} src={src} />
         )}
@@ -84,7 +90,7 @@ const ListItem = ({
               </time>
             )}
           </div>
-          {description}
+          {paragraphs}
         </div>
         {src && priority !== undefined && (
           <BlurHashImage priority={priority} src={src} />
