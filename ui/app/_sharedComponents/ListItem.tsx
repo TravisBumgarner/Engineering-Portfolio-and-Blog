@@ -11,6 +11,27 @@ const dateLabelLookup = {
   snapshot: ''
 }
 
+const formatDateByType = (
+  date: string,
+  type: 'post' | 'creation' | 'snapshot'
+) => {
+  if (type === 'post') {
+    return new Date(date + 'T00:00:00Z')
+      .toUTCString()
+      .split(' ')
+      .slice(0, 4)
+      .join(' ')
+  } else if (type === 'creation') {
+    return new Date(date + 'T00:00:00Z').toLocaleString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      timeZone: 'UTC'
+    })
+  } else {
+    return null
+  }
+}
+
 const ListItem = ({
   src,
   link,
@@ -59,11 +80,7 @@ const ListItem = ({
             {date && (
               <time>
                 {dateLabelLookup[type]}
-                {new Date(date + 'T00:00:00Z')
-                  .toUTCString()
-                  .split(' ')
-                  .slice(0, 4)
-                  .join(' ')}
+                {formatDateByType(date, type)}
               </time>
             )}
           </div>

@@ -1,8 +1,8 @@
 {
-    "name": "Human Friendly",
+    "title": "Human Friendly",
     "id": "human-friendly",
     "description": "Some nice words",
-    "lastMeaningfulUpdate": "YYYY-MM-DD",
+    "lastMeaningfulUpdate": "YYYY-MM",
     "images": [
         {
             "label": "Human readable",

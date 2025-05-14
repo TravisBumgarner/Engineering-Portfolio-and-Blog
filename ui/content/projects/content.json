@@ -854,7 +854,6 @@
   },
   "pixels64":{
     "title": "Pixels64",
-    "name": "https://github.com/TravisBumgarner/pixels64",
     "id": "pixels64",
     "description": "Pixels64 is an 8x8 grid of 64 individually addressable RGB LEDs using the WS2812B package. It’s powered by an ESP32 running CircuitPython with the neopixel library for control. It features a custom-designed circuit board and a 3D-printable housing.",
     "lastMeaningfulUpdate": "2025-04",
@@ -898,5 +897,31 @@
         "label": "Fully functioning Pixels64",
         "src": "preview.jpg"
     }
-  }
+  },
+  "five-pixels": {
+    "title": "Five Pixels",
+    "id": "five-pixels",
+    "description": "What can you say with five pixels? One canvas, many players.",
+    "lastMeaningfulUpdate": "2025-02",
+    "images": [
+        {
+            "label": "Game in progress",
+            "src": "preview.jpg"
+        }
+    ],
+    "links": [
+        {
+            "label": "Website",
+            "src": "http://fivepixels.pointlessprojects.com/"
+        },
+        {
+            "label": "GitHub",
+            "src": "https://github.com/TravisBumgarner/pointless-projects/tree/main/five-pixels"
+        }
+    ],
+    "previewImage": {
+        "label": "Game in progress",
+        "src": "preview.jpg"
+    }
+}
 }
