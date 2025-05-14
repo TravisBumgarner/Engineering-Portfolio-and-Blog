@@ -5,18 +5,18 @@
     "lastMeaningfulUpdate": "YYYY-MM-DD",
     "images": [
         {
-            "name": "Human readable",
-            "src": "id/image_name.jpg"
+            "label": "Human readable",
+            "src": "image_name.jpg"
         }
     ],
     "links": [
         {
-            "name": "GitHub Repository",
-            "src": "https://github.com/TravisBumgarner/Plotter-Explorations"
+            "label": "GitHub",
+            "src": ""
         }
     ],
     "previewImage": {
-        "name": "Description",
-        "src": "id/image_name.jpg"
+        "label": "Description",
+        "src": "image_name.jpg"
     }
 }

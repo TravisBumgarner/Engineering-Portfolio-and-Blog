@@ -822,7 +822,7 @@
     "title": "Candlelight Game",
     "id": "candlelight",
     "description": "Puzzle game originally created for the Pirate Software Game Jam.\nTools & Technologies: Godot, Aseprite, Figma, Steam API",
-    "lastMeaningfulUpdate": "2025-03-01",
+    "lastMeaningfulUpdate": "2025-03",
     "images": [
       {
         "src": "1.png",
@@ -850,6 +850,53 @@
     "previewImage": {
       "label": "Game Preview",
       "src": "1.png"
+    }
+  },
+  "pixels64":{
+    "title": "Pixels64",
+    "name": "https://github.com/TravisBumgarner/pixels64",
+    "id": "pixels64",
+    "description": "Pixels64 is an 8x8 grid of 64 individually addressable RGB LEDs using the WS2812B package. It’s powered by an ESP32 running CircuitPython with the neopixel library for control. It features a custom-designed circuit board and a 3D-printable housing.",
+    "lastMeaningfulUpdate": "2025-04",
+    "images": [
+        {
+            "label": "Prototyping design with LED rope",
+            "src": "1.jpg"
+        },
+        {
+            "label": "PCB Schematic Design",
+            "src": "2.jpg"
+        },
+        {
+            "label": "PCB Board Design",
+            "src": "3.jpg"
+        },
+        {
+            "label": "3d Printed Housing",
+            "src": "4.jpg"
+        },
+        {
+            "label": "PCB",
+            "src": "5.jpg"
+        },
+        {
+            "label": "Fully functioning Pixels64",
+            "src": "preview.jpg"
+        }
+    ],
+    "links": [
+        {
+            "label": "GitHub",
+            "src": "https://github.com/TravisBumgarner/pixels64"
+        },
+        {
+          "label": "Instagram Video",
+          "src": "https://www.instagram.com/p/DHumF8FtDqN/"
+        }
+    ],
+    "previewImage": {
+        "label": "Fully functioning Pixels64",
+        "src": "preview.jpg"
     }
   }
 }
