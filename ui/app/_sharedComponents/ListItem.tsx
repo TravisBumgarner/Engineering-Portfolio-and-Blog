@@ -84,7 +84,7 @@ const ListItem = ({
               </time>
             )}
           </div>
-          {description && <p>{description}</p>}
+          {description}
         </div>
         {src && priority !== undefined && (
           <BlurHashImage priority={priority} src={src} />

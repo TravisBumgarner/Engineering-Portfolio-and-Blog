@@ -761,7 +761,7 @@
   "stitch-it": {
     "title": "CSS Cross Stitch Generator",
     "id": "stitch-it",
-    "description": "Generate CSS cross stitches from photos\nTools & Technologies: Python, Flask, Google Cloud Platform",
+    "description": "Generate CSS cross stitches from photos.\nTools & Technologies: Python, Flask, Google Cloud Platform",
     "lastMeaningfulUpdate": "2020-03",
     "images": [
       {
@@ -923,5 +923,39 @@
         "label": "Game in progress",
         "src": "preview.jpg"
     }
-}
+  },
+  "seis-colores":{
+    "title": "Seis Colores",
+    "id": "seis-colores",
+    "description": "Color palettes inspired by Mexican architecture.",
+    "lastMeaningfulUpdate": "2025-05",
+    "images": [
+        {
+            "label": "Generated Color Palette",
+            "src": "preview.jpg"
+        },
+        {
+            "label": "Generated Color Palette",
+            "src": "2.jpg"
+        },
+        {
+            "label": "Generated Color Palette",
+            "src": "3.jpg"
+        }
+    ],
+    "links": [
+        {
+            "label": "Website",
+            "src": "https://seis.pointlessprojects.com/"
+        },
+        {
+            "label": "GitHub",
+            "src": "https://github.com/TravisBumgarner/pointless-projects/tree/main/seis-colores"
+        }
+    ],
+    "previewImage": {
+        "label": "Generated Color Palette",
+        "src": "preview.jpg"
+    }
+  }
 }

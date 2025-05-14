@@ -11,21 +11,31 @@ const Portfolio = () => {
         .sort((a, b) =>
           a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1
         )
-        .map(({ id, title, previewImage, lastMeaningfulUpdate }, index) => {
-          return (
-            <ListItem
-              type="creation"
-              priority={index === 0}
-              key={id}
-              link={`${ROUTES.CREATIONS.path}/${id}`}
-              title={title}
-              date={lastMeaningfulUpdate}
-              src={
-                previewImage && `/project-resources/${id}/${previewImage.src}`
-              }
-            />
-          )
-        })}
+        .map(
+          (
+            { id, title, previewImage, lastMeaningfulUpdate, description },
+            index
+          ) => {
+            const paragraphs = description
+              .split('\n')
+              .map((paragraph, index) => <p key={index}>{paragraph}</p>)
+
+            return (
+              <ListItem
+                type="creation"
+                priority={index === 0}
+                key={id}
+                description={paragraphs}
+                link={`${ROUTES.CREATIONS.path}/${id}`}
+                title={title}
+                date={lastMeaningfulUpdate}
+                src={
+                  previewImage && `/project-resources/${id}/${previewImage.src}`
+                }
+              />
+            )
+          }
+        )}
     </>
   )
 }
