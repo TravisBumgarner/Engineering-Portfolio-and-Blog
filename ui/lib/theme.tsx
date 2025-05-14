@@ -65,7 +65,7 @@ export const media = {
 }
 
 export const SHARED_SPACING = css`
-  padding: ${SPACING.LARGE};
+  padding: ${SPACING.MEDIUM};
 
   @media (max-width: 768px) {
     padding: ${SPACING.SMALL};
@@ -77,6 +77,7 @@ export const GlobalStyle = createGlobalStyle`
     :root {
       --primary-background: ${COLORS.GRAYS['100']};
       --secondary-background: ${COLORS.GRAYS['200']};
+      --bright-background: ${COLORS.PRIMARY['100']};
       --foreground: ${COLORS.GRAYS['500']};
       --primary: ${COLORS.PRIMARY['100']};
       --background-blur: rgba(255,255,255,0.9);
@@ -87,6 +88,7 @@ export const GlobalStyle = createGlobalStyle`
     :root {
       --primary-background: ${COLORS.GRAYS['500']};
       --secondary-background: ${COLORS.GRAYS['400']};
+      --bright-background: ${COLORS.PRIMARY['200']};
       --foreground: ${COLORS.GRAYS['100']};
       --primary: ${COLORS.PRIMARY['100']};
       --background-blur: rgba(0,0,0,0.9);
@@ -263,7 +265,7 @@ export const GlobalStyle = createGlobalStyle`
 
     li {
       font-size: ${FONT_SIZES.MEDIUM};
-      margin: ${SPACING.XXSMALL} 0;
+      margin: ${SPACING.XXSMALL};
     }
 
   }

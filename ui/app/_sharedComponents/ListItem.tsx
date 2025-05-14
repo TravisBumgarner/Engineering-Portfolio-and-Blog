@@ -11,6 +11,27 @@ const dateLabelLookup = {
   snapshot: ''
 }
 
+const formatDateByType = (
+  date: string,
+  type: 'post' | 'creation' | 'snapshot'
+) => {
+  if (type === 'post') {
+    return new Date(date + 'T00:00:00Z')
+      .toUTCString()
+      .split(' ')
+      .slice(0, 4)
+      .join(' ')
+  } else if (type === 'creation') {
+    return new Date(date + 'T00:00:00Z').toLocaleString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      timeZone: 'UTC'
+    })
+  } else {
+    return null
+  }
+}
+
 const ListItem = ({
   src,
   link,
@@ -28,6 +49,12 @@ const ListItem = ({
   priority?: boolean
   type: 'post' | 'creation' | 'snapshot'
 }) => {
+  const paragraphs = !description
+    ? null
+    : description
+        .split('\n')
+        .map((paragraph, index) => <p key={index}>{paragraph}</p>)
+
   if (!link) {
     return (
       <StyledListItem>
@@ -42,7 +69,7 @@ const ListItem = ({
               .join(' ')}
           </time>
         )}
-        {description && <p>{description}</p>}
+        {paragraphs && <p>{paragraphs}</p>}
         {src && priority !== undefined && (
           <BlurHashImage priority={priority} src={src} />
         )}
@@ -59,15 +86,11 @@ const ListItem = ({
             {date && (
               <time>
                 {dateLabelLookup[type]}
-                {new Date(date + 'T00:00:00Z')
-                  .toUTCString()
-                  .split(' ')
-                  .slice(0, 4)
-                  .join(' ')}
+                {formatDateByType(date, type)}
               </time>
             )}
           </div>
-          {description && <p>{description}</p>}
+          {paragraphs}
         </div>
         {src && priority !== undefined && (
           <BlurHashImage priority={priority} src={src} />

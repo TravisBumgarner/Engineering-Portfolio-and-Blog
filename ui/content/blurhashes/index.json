@@ -514,6 +514,11 @@
     "width": 1280,
     "height": 720
   },
+  "/project-resources/five-pixels/preview.jpg": {
+    "blurHash": "UEH.4wxD00IqtSNbi^$j01R+~Vxax@s=NLNE",
+    "width": 1600,
+    "height": 1000
+  },
   "/project-resources/gcode2dplotterart/1.jpeg": {
     "blurHash": "U8KTGJ3M{HF$DwP7ORgGAS+Ko|#*ISXR:,RU",
     "width": 1600,
@@ -694,6 +699,36 @@
     "width": 1502,
     "height": 1628
   },
+  "/project-resources/pixels64/1.jpg": {
+    "blurHash": "UAEMs]x|02^[N?ozs=k700W%~U9Qa9xVX2V~",
+    "width": 900,
+    "height": 1600
+  },
+  "/project-resources/pixels64/2.jpg": {
+    "blurHash": "U4R:H8R:%QISW8t7xwoy-@RiISoht8j@WUog",
+    "width": 1600,
+    "height": 1219
+  },
+  "/project-resources/pixels64/3.jpg": {
+    "blurHash": "UVE3PQWB?day-;axxuj[%NoMRiaxxuj[WBfR",
+    "width": 1600,
+    "height": 1356
+  },
+  "/project-resources/pixels64/4.jpg": {
+    "blurHash": "UJHBo3xb~U?G$|^*%Lt6^%IpxY%1IVjDWBRj",
+    "width": 1200,
+    "height": 1600
+  },
+  "/project-resources/pixels64/5.jpg": {
+    "blurHash": "UDBzj@IV0}%1~oWC9bxZ6zs:+^bH0zof={Rk",
+    "width": 1600,
+    "height": 1068
+  },
+  "/project-resources/pixels64/preview.jpg": {
+    "blurHash": "U56RWSxH00Ecxus7NIOb4,WS-@sswQXBO7rn",
+    "width": 1600,
+    "height": 1068
+  },
   "/project-resources/security-system/IMG-20170316-WA0005.jpg": {
     "blurHash": "UCDC]pwz3eR%DiayyCj[3lWV;8of_Nj[Diay",
     "width": 891,
@@ -713,6 +748,21 @@
     "blurHash": "UDGb9a?HbFRj~Vt7kCWB9ZWBj@oes+WBjYj[",
     "width": 1944,
     "height": 1944
+  },
+  "/project-resources/seis-colores/2.jpg": {
+    "blurHash": "UMJ8Fa-.?^E-VWS$XTX8_3E2r;${kqX7tRoz",
+    "width": 1600,
+    "height": 999
+  },
+  "/project-resources/seis-colores/3.jpg": {
+    "blurHash": "UXNS,Fn9G8I-MyWEkVoc_MNGiyo3VFs.N[Nv",
+    "width": 1600,
+    "height": 999
+  },
+  "/project-resources/seis-colores/preview.jpg": {
+    "blurHash": "UaKT#+,-pd#lDis8b_xG_NRjV@R*VXxZs:jF",
+    "width": 1600,
+    "height": 999
   },
   "/project-resources/selected-woodworking/IMG_20161103_180829.jpg": {
     "blurHash": "U4Hn1z}=00.7D%^*yEM{00M|?Hs;%2WUWBxt",

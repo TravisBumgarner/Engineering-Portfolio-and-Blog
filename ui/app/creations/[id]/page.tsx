@@ -1,8 +1,10 @@
 import Figure from '@/app/_sharedComponents/Figure'
 import projects from '@/content/projects'
+import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/theme'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import styled from 'styled-components'
 
 type Params = Promise<{ id: string }>
 
@@ -42,8 +44,24 @@ const Creation = async ({ params }: { params: Params }) => {
 
   const Links = project.links.map(l => {
     return (
-      <li key={l.label + l.src}>
-        <Link target="_blank" href={l.src}>
+      <li
+        key={l.label + l.src}
+        style={{
+          backgroundColor: 'var(--bright-background)',
+          margin: 0
+        }}
+      >
+        <Link
+          key={l.label + l.src}
+          style={{
+            textDecoration: 'none',
+            padding: '10px 20px',
+            display: 'block',
+            color: 'var(--foreground)'
+          }}
+          target="_blank"
+          href={l.src}
+        >
           {l.label}
         </Link>
       </li>
@@ -81,7 +99,18 @@ const Creation = async ({ params }: { params: Params }) => {
         )}
       </time>
       {Description}
-      {Links.length > 0 && <ul>{Links}</ul>}
+      {Links.length > 0 && (
+        <ul
+          style={{
+            listStyleType: 'none',
+            display: 'flex',
+            margin: '20px 0',
+            gap: '20px'
+          }}
+        >
+          {Links}
+        </ul>
+      )}
       {Images.map(i => i.element)}
     </div>
   )

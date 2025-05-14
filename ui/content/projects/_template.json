@@ -1,22 +1,22 @@
 {
-    "name": "Human Friendly",
+    "title": "Human Friendly",
     "id": "human-friendly",
     "description": "Some nice words",
-    "lastMeaningfulUpdate": "YYYY-MM-DD",
+    "lastMeaningfulUpdate": "YYYY-MM",
     "images": [
         {
-            "name": "Human readable",
-            "src": "id/image_name.jpg"
+            "label": "Human readable",
+            "src": "image_name.jpg"
         }
     ],
     "links": [
         {
-            "name": "GitHub Repository",
-            "src": "https://github.com/TravisBumgarner/Plotter-Explorations"
+            "label": "GitHub",
+            "src": ""
         }
     ],
     "previewImage": {
-        "name": "Description",
-        "src": "id/image_name.jpg"
+        "label": "Description",
+        "src": "image_name.jpg"
     }
 }
