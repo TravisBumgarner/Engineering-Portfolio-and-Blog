@@ -65,7 +65,7 @@ export const media = {
 }
 
 export const SHARED_SPACING = css`
-  padding: ${SPACING.LARGE};
+  padding: ${SPACING.MEDIUM};
 
   @media (max-width: 768px) {
     padding: ${SPACING.SMALL};
