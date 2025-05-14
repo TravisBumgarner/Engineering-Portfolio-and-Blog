@@ -4,7 +4,7 @@ import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
 import ListItem from '../_sharedComponents/ListItem'
 import styled from 'styled-components'
-import { FONT_SIZES, FONT_WEIGHTS, SHARED_SPACING, SPACING } from '@/lib/theme'
+import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/theme'
 import Link from 'next/link'
 
 const Portfolio = () => {
@@ -73,10 +73,6 @@ const AnnouncementItem = styled.div`
     margin-top: 0;
     margin-bottom: ${SPACING.SMALL};
   }
-`
-
-const Announcements = styled.div`
-  display: flex;
 `
 
 export default Portfolio

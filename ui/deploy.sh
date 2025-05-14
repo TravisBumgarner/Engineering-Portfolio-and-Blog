@@ -1,18 +1,13 @@
 #!/bin/bash
 
-# Load environment variables from .env file
-if [ -f .env.nfs ]; then
-    export $(cat .env.nfs | grep -v '#' | xargs)
-else
-    echo "Error: .env.nfs file not found"
-    exit 1
-fi
-
 # Define variables
 REMOTE_DIR="/home/protected"
 REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
 TEMP_DIR="/tmp/portfolio-build"
 BRANCH="master"
+
+DEPLOY_SERVER_HOST="nfs_eng41"
+DEPLOY_SERVER_USER="tbumgarner_eng41"
 
 # Execute remote commands
 echo "Starting remote deployment..."

@@ -1,6 +1,5 @@
 import content from './content.json'
 import { z } from 'zod'
-console.log('ruda', content)
 
 const linkSchema = z.object({
   label: z.string(),

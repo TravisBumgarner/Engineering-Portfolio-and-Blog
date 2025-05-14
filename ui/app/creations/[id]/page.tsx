@@ -1,10 +1,8 @@
 import Figure from '@/app/_sharedComponents/Figure'
 import projects from '@/content/projects'
-import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/theme'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import styled from 'styled-components'
 
 type Params = Promise<{ id: string }>
 
