@@ -855,7 +855,7 @@
   "pixels64":{
     "title": "Pixels64",
     "id": "pixels64",
-    "description": "Pixels64 is an 8x8 grid of 64 individually addressable RGB LEDs using the WS2812B package. It’s powered by an ESP32 running CircuitPython with the neopixel library for control. It features a custom-designed circuit board and a 3D-printable housing.",
+    "description": "Pixels64 is an 8x8 grid of 64 individually addressable RGB LEDs using the WS2812B package. It's powered by an ESP32 running CircuitPython with the neopixel library for control. It features a custom-designed circuit board and a 3D-printable housing.\nTools & Technologies: SolidWorks, Cura, KiCad, CircuitPython, 3D Printing, PCB Design, Soldering Iron",
     "lastMeaningfulUpdate": "2025-04",
     "images": [
         {
@@ -901,7 +901,7 @@
   "five-pixels": {
     "title": "Five Pixels",
     "id": "five-pixels",
-    "description": "What can you say with five pixels? One canvas, many players.",
+    "description": "What can you say with five pixels? One canvas, many players.\nTools & Technologies: React, TypeScript, Express, Cloudflare, NearlyFreeSpeech",
     "lastMeaningfulUpdate": "2025-02",
     "images": [
         {
@@ -927,7 +927,7 @@
   "seis-colores":{
     "title": "Seis Colores",
     "id": "seis-colores",
-    "description": "Color palettes inspired by Mexican architecture.",
+    "description": "Color palettes inspired by Mexican architecture.\nTools & Technologies: React, TypeScript, Python, Adobe Lightroom, NearlyFreeSpeech",
     "lastMeaningfulUpdate": "2025-05",
     "images": [
         {

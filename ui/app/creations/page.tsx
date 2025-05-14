@@ -17,7 +17,12 @@ const Portfolio = () => {
       >
         <AnnouncementItem>
           <h2>Current Project: Photo Palettes</h2>
-          <p>A social platform for generating color palettes from photos.</p>
+          <div>
+            <p>A social platform for generating color palettes from photos.</p>
+            <p>
+              Tools & Technologies: React, FastAPI, Heroku, Cloudinary, Supabase
+            </p>
+          </div>
         </AnnouncementItem>
       </Link>
       {Object.values(projects)
@@ -51,12 +56,16 @@ const Portfolio = () => {
 
 const AnnouncementItem = styled.div`
   padding: ${SPACING.MEDIUM};
-  display: flex;
   background-color: var(--bright-background);
   color: var(--foreground);
-  flex-direction: column;
   text-decoration: none;
   margin-bottom: ${SPACING.LARGE};
+
+  div {
+    flex-direction: column;
+    display: flex;
+    gap: ${SPACING.SMALL};
+  }
 
   h2 {
     font-size: ${FONT_SIZES.LARGE};
