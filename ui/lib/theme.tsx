@@ -265,7 +265,7 @@ export const GlobalStyle = createGlobalStyle`
 
     li {
       font-size: ${FONT_SIZES.MEDIUM};
-      margin: ${SPACING.XXSMALL} 0;
+      margin: ${SPACING.XXSMALL};
     }
 
   }
