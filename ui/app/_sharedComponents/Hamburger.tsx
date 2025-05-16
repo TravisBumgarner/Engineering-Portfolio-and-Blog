@@ -1,6 +1,6 @@
 'use client'
 
-import { SPACING } from '@/lib/theme'
+import { SPACING } from '@/lib/styles/consts'
 import styled from 'styled-components'
 
 const Bar = styled.div`

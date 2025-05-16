@@ -1,5 +1,5 @@
 import blurhashes from '@/content/blurhashes/index.json'
-import { blurHashToDataURL } from '@/lib/blurhashDataURL'
+import { blurHashToDataURL } from '@/lib/utilities/blurhashDataURL'
 import { BlurHash } from '@/lib/types'
 import Image from 'next/image'
 

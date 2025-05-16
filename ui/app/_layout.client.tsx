@@ -1,7 +1,7 @@
 'use client'
 
-import { SPACING } from "@/lib/theme";
-import styled from "styled-components";
+import { SPACING } from '@/lib/styles/consts'
+import styled from 'styled-components'
 
 export const BodyWrapper = styled.div`
   width: 100%;
