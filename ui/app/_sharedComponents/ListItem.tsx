@@ -1,6 +1,7 @@
 'use client'
 
-import { FONT_SIZES, FONT_WEIGHTS, SHARED_SPACING, SPACING } from '@/lib/theme'
+import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
+import { SHARED_SPACING } from '@/lib/styles/theme'
 import Link from 'next/link'
 import styled from 'styled-components'
 import BlurHashImage from './BlurHashImage'

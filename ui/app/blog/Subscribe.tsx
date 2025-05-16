@@ -1,6 +1,6 @@
 'use client'
 
-import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/theme'
+import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
 import { useState } from 'react'
 import styled from 'styled-components'
 
