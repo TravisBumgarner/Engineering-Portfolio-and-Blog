@@ -1,7 +1,7 @@
 'use client'
 
 import ROUTES from '@/lib/routes'
-import { SPACING } from '@/lib/theme'
+import { SPACING } from '@/lib/styles/consts'
 import Link from 'next/link'
 import { useState } from 'react'
 import { SocialIcon } from 'react-social-icons'
