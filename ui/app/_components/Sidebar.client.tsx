@@ -35,7 +35,7 @@ const SOCIAL_MEDIA = [
   },
   {
     title: 'Bluesky',
-    path: 'https://bsky.app/profile/sillysideprojects.bsky.social',
+    path: 'https://bsky.app/profile/travisbumgarner.dev',
     target: '_blank',
     icon: 'bsky.app'
   },
