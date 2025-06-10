@@ -133,7 +133,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  #not-found, #error, #contact {
+  #not-found, #error, #contact, #work {
     > * {
       margin: ${SPACING.MEDIUM} 0;
     }
