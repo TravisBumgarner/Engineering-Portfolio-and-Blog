@@ -3,6 +3,7 @@
 import { SPACING } from '@/lib/styles/consts'
 import { SHARED_SPACING } from '@/lib/styles/theme'
 import styled from 'styled-components'
+import Contact from './components/Contact'
 
 const WorkWithMe = () => {
   return (
@@ -21,6 +22,11 @@ const WorkWithMe = () => {
         <p>Pixels 64</p>
         <p>Painless Prototyping</p>
       </Section>
+
+      <Section>
+        <h3>Let's Connect</h3>
+      </Section>
+      <Contact />
     </div>
   )
 }
