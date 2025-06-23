@@ -142,8 +142,13 @@ const WorkWithMe = () => {
       </blockquote>
 
       <blockquote>
-        Foo, Bar.
-        <span className="author">Bob, Person</span>
+        Travis is a builder. I’m impressed with his depth in so many subjects,
+        from electronics to photography to woodworking to software. He’s a
+        learner -- he is constantly curious and always tackling new subjects. In
+        addition to being a great learner, Travis is an natural teacher. He
+        routinely shares his knowledge and skills in person, in blog posts, and
+        in presentations.
+        <span className="author">Matt, Head of Architecture</span>
       </blockquote>
 
       <blockquote>
