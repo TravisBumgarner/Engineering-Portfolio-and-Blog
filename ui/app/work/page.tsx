@@ -96,6 +96,19 @@ const PLACES_YOU_CAN_FIND_ME = [
   }
 ]
 
+const CTAButton = styled.a`
+  padding: ${SPACING.SMALL};
+  width: 100%;
+  background-color: var(--bright-background);
+  color: var(--foreground) !important; // Lol.
+  text-decoration: none;
+  margin-bottom: ${SPACING.LARGE};
+  font-weight: 900 !important; //lol. Refactoring for another day.
+  width: 100%;
+  display: block;
+  text-align: center;
+`
+
 const WorkWithMe = () => {
   return (
     <div id="work">
@@ -115,7 +128,9 @@ const WorkWithMe = () => {
         Are you looking to validate an idea quickly? Do you want to turn your
         dream into a working prototype?
       </p>
-      <a href="#lets-chat">Let's Chat</a>
+      <p>
+        <CTAButton href="#lets-chat">Let's Chat</CTAButton>
+      </p>
 
       <h2>Testimonials</h2>
       <blockquote>
@@ -124,6 +139,16 @@ const WorkWithMe = () => {
         figure out the possible approaches and eventually get it all working,
         despite the setbacks and the obstacles out of his control.
         <span className="author">Van, Staff Software Engineer</span>
+      </blockquote>
+
+      <blockquote>
+        Foo, Bar.
+        <span className="author">Bob, Person</span>
+      </blockquote>
+
+      <blockquote>
+        Foo, Bar.
+        <span className="author">Bob, Person</span>
       </blockquote>
 
       <h2>Capabilities</h2>
