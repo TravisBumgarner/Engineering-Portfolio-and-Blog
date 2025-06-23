@@ -83,6 +83,12 @@ const Creation = async ({ params }: { params: Params }) => {
     .split('\n')
     .map((paragraph, index) => <p key={index}>{paragraph}</p>)
 
+  if (project.toolsAndTechnologies) {
+    Description.push(
+      <p key="toolsAndTechnologies">{project.toolsAndTechnologies}</p>
+    )
+  }
+
   return (
     <div id="creation">
       <h2>{project.title}</h2>

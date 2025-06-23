@@ -146,7 +146,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  #post, #creation {
+  #post, #creation, #work {
     > p, > h3, > h4, > h5, > ul, > ol {
       margin: ${SPACING.MEDIUM} 0;
     }
@@ -209,6 +209,12 @@ export const GlobalStyle = createGlobalStyle`
       font-size: ${FONT_SIZES.MEDIUM};
       font-family: ${CODE_FONT};
       background-color: var(--secondary-background);
+
+      span.author {
+        display: block;
+        text-align: right;
+        margin-top: ${SPACING.SMALL};
+      }
     }
 
     code {

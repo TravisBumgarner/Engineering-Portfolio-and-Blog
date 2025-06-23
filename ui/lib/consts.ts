@@ -1,3 +1,4 @@
+export const ABOUT_ME_SENTENCE_0 = "Zero-to-One Generalist Engineer"
 export const ABOUT_ME_SENTENCE_1 =
   'I am a lifelong learner, creator, explorer, and tinkerer.'
 export const ABOUT_ME_SENTENCE_2 = 'This is a collection of my experiences.'
