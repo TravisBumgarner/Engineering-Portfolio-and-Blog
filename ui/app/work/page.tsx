@@ -30,8 +30,10 @@ const ListItem = ({
   return (
     <Link href={link} style={{ textDecoration: 'none' }}>
       <StyledListItem>
-        <h2>{title}</h2>
-        {paragraphs}
+        <div>
+          <h2>{title}</h2>
+          {paragraphs}
+        </div>
         <BlurHashImage priority={false} src={src} />
       </StyledListItem>
     </Link>
@@ -45,12 +47,11 @@ const StyledListItem = styled.div`
   color: var(--foreground);
   flex-direction: column;
   text-decoration: none;
-  margin-bottom: ${SPACING.LARGE};
+  margin-bottom: ${SPACING.XLARGE};
 
   > div {
     margin-bottom: ${SPACING.MEDIUM};
     display: flex;
-    gap: ${SPACING.SMALL};
     flex-direction: column;
   }
 
@@ -131,7 +132,7 @@ const WorkWithMe = () => {
         capabilities
       </p>
       <p>
-        Here are a collectin of places if you'd like even more information -{' '}
+        Here are a collection of places if you'd like even more information -{' '}
         {PLACES_YOU_CAN_FIND_ME.map(({ title, path }, idx) => (
           <React.Fragment key={title}>
             <a target="_blank" href={path}>
@@ -144,9 +145,8 @@ const WorkWithMe = () => {
 
       <h3>Web and App Development</h3>
 
-      {WEB_AND_APP_PROJECTS.map((key, index) => {
-        const { id, title, previewImage, lastMeaningfulUpdate, description } =
-          projects[key]
+      {WEB_AND_APP_PROJECTS.map(key => {
+        const { id, title, previewImage, description } = projects[key]
         return (
           <ListItem
             key={id}
@@ -164,7 +164,7 @@ const WorkWithMe = () => {
         Mechanical Engineering, a startup in electronics, and many projects
         combining hardware and code.
       </p>
-      {ADDITIONAL.map((key, index) => {
+      {ADDITIONAL.map(key => {
         const { id, title, previewImage, description } = projects[key]
         return (
           <ListItem
@@ -182,15 +182,5 @@ const WorkWithMe = () => {
     </div>
   )
 }
-
-const Section = styled.div`
-  ${SHARED_SPACING}
-  display: flex;
-  background-color: var(--secondary-background);
-  color: var(--foreground);
-  flex-direction: column;
-  text-decoration: none;
-  margin-bottom: ${SPACING.LARGE};
-`
 
 export default WorkWithMe
