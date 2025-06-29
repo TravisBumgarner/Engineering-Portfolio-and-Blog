@@ -77,16 +77,21 @@ const Contact = () => {
     return 'Send'
   }, [isSubmitting, success, failure, resetButtonText])
 
+  const canSubmit =
+    formData.email.length > 0 &&
+    formData.message.length > 0 &&
+    formData.name.length > 0
+
   return (
     <Form onSubmit={handleSubmit}>
       <input
-        placeholder="Name (Optional)"
+        placeholder="Name"
         name="name"
         value={formData.name}
         onChange={handleChange}
       />
       <input
-        placeholder="Email (Optional)"
+        placeholder="Email"
         name="email"
         value={formData.email}
         onChange={handleChange}
@@ -99,10 +104,7 @@ const Contact = () => {
         onChange={handleChange}
         rows={4}
       />
-      <button
-        type="submit"
-        disabled={isSubmitting || formData.message.length === 0}
-      >
+      <button type="submit" disabled={isSubmitting || !canSubmit}>
         {buttonText}
       </button>
     </Form>

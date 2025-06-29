@@ -19,13 +19,11 @@ const ListItem = ({
   src: string
   link: string
   title: string
-  description?: string
+  description: string
 }) => {
-  const paragraphs = !description
-    ? null
-    : description
-        .split('\n')
-        .map((paragraph, index) => <p key={index}>{paragraph}</p>)
+  const paragraphs = description
+    .split('\n')
+    .map((paragraph, index) => <p key={index}>{paragraph}</p>)
 
   return (
     <Link href={link} style={{ textDecoration: 'none' }}>
@@ -35,6 +33,9 @@ const ListItem = ({
           {paragraphs}
         </div>
         <BlurHashImage priority={false} src={src} />
+        <button style={{ backgroundColor: 'var(--primary-background)' }}>
+          Learn More
+        </button>
       </StyledListItem>
     </Link>
   )
@@ -48,18 +49,19 @@ const StyledListItem = styled.div`
   flex-direction: column;
   text-decoration: none;
   margin-bottom: ${SPACING.XLARGE};
+  margin-top: ${SPACING.XLARGE};
 
   > div {
     margin-bottom: ${SPACING.MEDIUM};
     display: flex;
     flex-direction: column;
-  }
 
-  h2 {
-    font-size: ${FONT_SIZES.SMALL};
-    font-weight: ${FONT_WEIGHTS.BOLD};
-    margin-top: 0;
-    margin-bottom: ${SPACING.SMALL};
+    > h2 {
+      font-size: ${FONT_SIZES.XLARGE};
+      font-weight: ${FONT_WEIGHTS.BOLD};
+      margin-top: 0;
+      margin-bottom: ${SPACING.SMALL};
+    }
   }
 `
 
@@ -79,7 +81,7 @@ const ADDITIONAL = [
 
 const PLACES_YOU_CAN_FIND_ME = [
   {
-    title: 'Portfolio',
+    title: 'More Creations',
     path: '/creations'
   },
   {
@@ -100,42 +102,35 @@ const CTAButton = styled.a`
   padding: ${SPACING.SMALL};
   width: 100%;
   background-color: var(--bright-background);
-  color: var(--foreground) !important; // Lol.
+  color: white !important;
   text-decoration: none;
   margin-bottom: ${SPACING.LARGE};
-  font-weight: 900 !important; //lol. Refactoring for another day.
-  width: 100%;
+  font-weight: 900 !important;
+  font-size: 24px;
   display: block;
   text-align: center;
 `
 
 const WorkWithMe = () => {
   return (
-    <div id="work">
+    <div id="work" style={{ marginBottom: SPACING.XLARGE }}>
       <h2>
-        If You Can Dream It,
-        <br />I Can Prototype It.
+        I turn early-stage ideas
+        <br />
+        into working prototypes.
       </h2>
       <p>
-        I excel in exploring unknown problem spaces, overcoming technical
-        obstacles, and delivering working prototypes.
+        I work fast, learn fast, and deliver.
+        <br />
+        Software, hardware, design — whatever the idea needs.
       </p>
-      <p>
-        I have spent my career diving deep into learning new programming
-        techologies and building with them. A few highlights are listed below.
-      </p>
-      <p>
-        Are you looking to validate an idea quickly? Do you want to turn your
-        dream into a working prototype?
-      </p>
-      <p>
-        <CTAButton href="#lets-chat">Let's Chat</CTAButton>
-      </p>
+
+      <CTAButton href="#lets-chat">Reach Out</CTAButton>
 
       <h2>Testimonials</h2>
       <blockquote>
         When you have a difficult problem, something you are not sure is even
-        possible, Travis will dive right and start trying things out. He'll
+        possible, Travis will dive right in and start trying things out. He'll
         figure out the possible approaches and eventually get it all working,
         despite the setbacks and the obstacles out of his control.
         <span className="author">Van, Staff Software Engineer</span>
@@ -144,37 +139,42 @@ const WorkWithMe = () => {
       <blockquote>
         Travis is a builder. I’m impressed with his depth in so many subjects,
         from electronics to photography to woodworking to software. He’s a
-        learner -- he is constantly curious and always tackling new subjects. In
-        addition to being a great learner, Travis is an natural teacher. He
-        routinely shares his knowledge and skills in person, in blog posts, and
-        in presentations.
+        learner -- constantly curious and always tackling new subjects. And a
+        teacher, too — he shares his knowledge openly.
         <span className="author">Matt, Head of Architecture</span>
       </blockquote>
 
       <blockquote>
-        Foo, Bar.
-        <span className="author">Bob, Person</span>
+        Travis is an incredible full-stack engineer. He can take large complex
+        projects and break them down into tractable pieces and work with a team
+        to get the project done. He has excellent product intuition, balanced
+        with a healthy sense of what makes engineering teams efficient. He's
+        also a huge catalyst to build a strong culture around collaboration and
+        strong teamwork. An incredible asset to any engineering team!
+        <span className="author">Daniel, CTO</span>
       </blockquote>
 
-      <h2>Capabilities</h2>
+      <blockquote>
+        Travis is the kind of engineer who never backs down from a challenge,
+        cares about craft, and truly wants to build the best possible product.
+        Collaborating with Travis feels like anything is possible because of his
+        strong will to tinker and figure things out.
+        <span className="author">Ian, Staff Product Designer</span>
+      </blockquote>
+
+      <h2>What I Do</h2>
       <p>
-        These are a small collection of personal projects that highlight my
-        capabilities
-      </p>
-      <p>
-        Here are a collection of places if you'd like even more information -{' '}
-        {PLACES_YOU_CAN_FIND_ME.map(({ title, path }, idx) => (
-          <React.Fragment key={title}>
-            <a target="_blank" href={path}>
-              {title}
-            </a>
-            {idx < PLACES_YOU_CAN_FIND_ME.length - 1 && ', '}
-          </React.Fragment>
-        ))}
+        I build across the stack: full-stack apps, embedded systems, hardware
+        interfaces, and design. I’ve built MVPs, production apps, and personal
+        experiments. All of the projects below have been fully managed,
+        researched, designed, and engineered by myself.
       </p>
 
-      <h3>Web and App Development</h3>
-
+      <h3>Web + App Projects</h3>
+      <p>
+        I am self taught and have over ten years of professional experience
+        building applications.
+      </p>
       {WEB_AND_APP_PROJECTS.map(key => {
         const { id, title, previewImage, description } = projects[key]
         return (
@@ -188,11 +188,10 @@ const WorkWithMe = () => {
         )
       })}
 
-      <h3>Hardware</h3>
+      <h3>Hardware Projects</h3>
       <p>
-        In addition to developing software, I have a formal education in
-        Mechanical Engineering, a startup in electronics, and many projects
-        combining hardware and code.
+        I also have a degree in Mechanical Engineering and a collection of
+        related side projects. Many of my projects blend hardware and software.
       </p>
       {ADDITIONAL.map(key => {
         const { id, title, previewImage, description } = projects[key]
@@ -207,7 +206,25 @@ const WorkWithMe = () => {
         )
       })}
 
+      <h2>More About Me</h2>
+      <p>
+        Here are a few more places to learn about my work —{' '}
+        {PLACES_YOU_CAN_FIND_ME.map(({ title, path }, idx) => (
+          <React.Fragment key={title}>
+            <a target="_blank" href={path}>
+              {title}
+            </a>
+            {idx < PLACES_YOU_CAN_FIND_ME.length - 2 && ', '}
+            {idx === PLACES_YOU_CAN_FIND_ME.length - 2 && ', and '}
+          </React.Fragment>
+        ))}
+        .
+      </p>
+
       <h2 id="lets-chat">Let's Chat</h2>
+      <p>
+        Have an idea you want to explore? Want to move from vision to prototype?
+      </p>
       <Contact />
     </div>
   )

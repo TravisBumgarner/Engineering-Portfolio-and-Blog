@@ -5,7 +5,8 @@ export const COLORS = {
   GRAYS: {
     '100': '#FFFFFF',
     '200': '#F6F6F6',
-    '300': '',
+    '300': '#b9b9b9',
+    '350': '#787878', // whoops lol.
     '400': '#303030',
     '500': '#1a1a1a',
     '600': ''
@@ -37,5 +38,6 @@ export const SPACING = {
   SMALL: '16px',
   MEDIUM: '30px',
   LARGE: '50px',
-  XLARGE: '80px'
+  XLARGE: '80px',
+  XXLARGE: '150px'
 } as const
