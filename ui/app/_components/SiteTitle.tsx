@@ -13,8 +13,6 @@ const SiteTitle = ({ title }: { title: string }) => {
         <h1>{title}</h1>
       </Link>
       <p>
-        <strong>{ABOUT_ME_SENTENCE_0}</strong>
-        <br />
         <Weak>
           {ABOUT_ME_SENTENCE_1}
           <br />

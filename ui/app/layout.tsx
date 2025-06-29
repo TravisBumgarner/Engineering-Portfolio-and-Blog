@@ -6,7 +6,6 @@ import { ReactNode } from 'react'
 import SiteTitle from './_components/SiteTitle'
 
 import {
-  ABOUT_ME_SENTENCE_0,
   ABOUT_ME_SENTENCE_1,
   ABOUT_ME_SENTENCE_2,
   SITE_TITLE
@@ -19,7 +18,7 @@ import { BodyWrapper } from './_layout.client'
 export const metadata: Metadata = {
   metadataBase: new URL('https://travisbumgarner.dev'),
   title: SITE_TITLE,
-  description: `${ABOUT_ME_SENTENCE_0} ${ABOUT_ME_SENTENCE_1} ${ABOUT_ME_SENTENCE_2}`,
+  description: `${ABOUT_ME_SENTENCE_1} ${ABOUT_ME_SENTENCE_2}`,
   openGraph: {
     images: ['/me.png']
   }
