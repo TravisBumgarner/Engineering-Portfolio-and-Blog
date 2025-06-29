@@ -10,6 +10,21 @@ import ROUTES from '@/lib/routes'
 import Link from 'next/link'
 import BlurHashImage from '../_sharedComponents/BlurHashImage'
 
+function formatLinks(list: { title: string; path: string }[]) {
+  return list.map(({ title, path }, i) => {
+    const sep =
+      i === list.length - 2 ? ' and ' : i < list.length - 1 ? ', ' : ''
+    return (
+      <React.Fragment key={title}>
+        <a target="_blank" href={path}>
+          {title}
+        </a>
+        {sep}
+      </React.Fragment>
+    )
+  })
+}
+
 const ListItem = ({
   src,
   link,
@@ -26,20 +41,39 @@ const ListItem = ({
     .map((paragraph, index) => <p key={index}>{paragraph}</p>)
 
   return (
-    <Link href={link} style={{ textDecoration: 'none' }}>
+    <Link href={link} target="_blank" style={{ textDecoration: 'none' }}>
       <StyledListItem>
         <div>
           <h2>{title}</h2>
           {paragraphs}
         </div>
         <BlurHashImage priority={false} src={src} />
-        <button style={{ backgroundColor: 'var(--primary-background)' }}>
-          Learn More
-        </button>
+        <LearnMore>Learn More</LearnMore>
       </StyledListItem>
     </Link>
   )
 }
+
+const LearnMore = styled.span`
+  cursor: pointer;
+  font-size: ${FONT_SIZES.MEDIUM};
+  background-color: var(--primary-background);
+  color: var(--foreground);
+  border: 0;
+  margin: ${SPACING.XSMALL} 0;
+  padding: ${SPACING.SMALL};
+  text-align: center;
+  font-weight: 900;
+
+  &:hover {
+    color: var(--primary);
+  }
+
+  &:disabled {
+    color: var(--foreground-disabled);
+    cursor: not-allowed;
+  }
+`
 
 const StyledListItem = styled.div`
   ${SHARED_SPACING}
@@ -145,7 +179,7 @@ const WorkWithMe = () => {
       <p>
         I work fast, learn fast, and deliver.
         <br />
-        Software, hardware, design — whatever the idea needs.
+        Software, hardware, design - whatever the idea needs.
       </p>
 
       <CTAButton href="#lets-chat">Reach Out</CTAButton>
@@ -232,16 +266,7 @@ const WorkWithMe = () => {
       <h2>More About Me</h2>
       <p>
         Here are a few more places to learn about me -{' '}
-        {PLACES_YOU_CAN_FIND_ME.map(({ title, path }, idx) => (
-          <React.Fragment key={title}>
-            <a target="_blank" href={path}>
-              {title}
-            </a>
-            {idx < PLACES_YOU_CAN_FIND_ME.length - 2 && ', '}
-            {idx === PLACES_YOU_CAN_FIND_ME.length - 2 && ', and '}
-          </React.Fragment>
-        ))}
-        .
+        {formatLinks(PLACES_YOU_CAN_FIND_ME)}.
       </p>
 
       <p>
@@ -252,7 +277,9 @@ const WorkWithMe = () => {
       <ul>
         {EXHIBITS.map(({ path, title }) => (
           <li key={title}>
-            <a href={path}>{title}</a>
+            <a href={path} rel="noopener noreferrer" target="_blank">
+              {title}
+            </a>
           </li>
         ))}
       </ul>
