@@ -8,7 +8,7 @@ A solid website experience is the result of a joint effort between a designer an
 
 Designers operate in an artificial environment. There are no network requests. Screen sizes tend to be fixed. Performance is not a concern. This is not the fault of the designer. Figma is not Google Chrome. Figma is far removed from the real world of slow internet connections and devices with limited processing power.
 
-Frontend engineers live the opposite experience. They are concerned with interactions within the browser. They contemplate network requests, latency, caching, memoizing, rendering, bundling, lazy loading, browser behavior, and so much more. All of these terms are very technical. However, the end result of their implementation is to improve the user experience.
+Frontend engineers live the opposite experience. They are concerned with interactions within the browser. They contemplate network requests, latency, caching, memoizing, rendering, bundling, lazy loading, browser behavior, and so much more. While these terms are technically focused, their end goal is to improve the user experience.
 
 Engineers are tackling the exact same problem as design but from a different perspective. Engineers have the power to implement these techniques to improve the user experience.
 
@@ -18,7 +18,7 @@ The first step to improving the user experience is to decide what to work on.
 
 Schooling teaches us to think of performance in abstract terms. Big O. Big Omega. Big Theta. Little o. All of these are very abstract methods of defining performance. They're far removed from the real world. They have their place, but it's not in this article.
 
-Imagine you're looking for some improvements to make. You find some code in the frontend that theoretically has poor performance. It can be refactored to have better performance. In reality, its average run time is 50ms. Blinking takes roughly 100ms. <sub>[1]</sub> This is not the best use of your time.
+Imagine you're looking for some improvements to make. You find some code in the frontend that theoretically has poor performance. It can be refactored to have better performance. In reality, its average run time is 50ms. Blinking takes roughly 100ms. <sub>[1]</sub> This is an improvement the user might not even notice.
 
 To figure out what to work on, look at real situations. Real devices. Real internet connections. Real complaints. Focus there.
 
@@ -26,21 +26,21 @@ To figure out what to work on, look at real situations. Real devices. Real inter
 
 (For technical details, check out the next section)
 
-When a user visits <a>https://travisbumgarner.photography/</a>, their entire journey consists of browsing galleries and viewing full resolution photos. How can we anticipate their actions?
+My [photography portfolio](https://travisbumgarner.photography/) is a great example to consider. User actions are quite limited. They can browse galleries and view full resolution photos. Think through the user journey. What actions might the user want to take? Knowing this, experiences can be built that prepare the website before users act so that interactions feels instantaneous.
 
-**Users want to see the content as quickly as possible.**
+**A user want to see the content as quickly as possible.**
 
 As the page is loading, prioritize what the user can see within their viewport. Use placeholder images, such as blurhashes, to let the user know that things are loading. Put priority on the visible thumbnails and defer everything else for later. As the user scrolls the page, prioritize loading the thumbnails the user will see next.
 
-**Users will want to browse a gallery.**
+**A user want to browse a gallery.**
 
-Apply the techniques from the previous section. 
+Apply the techniques from the previous section.
 
-In addition, now that the user is browsing a gallery, their next action will be to select a thumbnail and view it in full resolution. Once all thumbnails are loaded, begin loading full resolution photos of the thumbnails they can see. 
+In addition, now that the user is browsing a gallery, their next action will be to select a thumbnail and view it in full resolution. Once all thumbnails are loaded, begin loading full resolution photos of the thumbnails in the user's viewport.
 
-**Users want to browse full resolution photos.**
+**A user want to browse full resolution photos.**
 
-Due to the previous step, the photo the user has selected was already loaded. Their next moves are to either look at the previous or next full resolution images. We can again use the technique in the previous section and prioritize loading those images. 
+Due to the previous step, the photo the user has selected has already loaded. Their next move is to either look at the previous or next full resolution image. Prioritize loading these images.
 
 ## Learn More
 
