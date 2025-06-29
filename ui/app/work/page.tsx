@@ -98,6 +98,29 @@ const PLACES_YOU_CAN_FIND_ME = [
   }
 ]
 
+const EXHIBITS = [
+  {
+    title: 'Exhibit 1: Silly Apps',
+    path: 'https://github.com/TravisBumgarner/Silly-Apps'
+  },
+  {
+    title: 'Exhibit 2: Project Graveyard',
+    path: 'https://github.com/TravisBumgarner/Project-Graveyard'
+  },
+  {
+    title: 'Exhibit 3: Proof of Concepts',
+    path: 'https://github.com/TravisBumgarner/Proof-of-Concepts'
+  },
+  {
+    title: 'Exhibit 4: Learning Explorations',
+    path: 'https://github.com/TravisBumgarner/Learning-Explorations/tree/master/archives'
+  },
+  {
+    title: 'Exhibit 5: Pointless Projects',
+    path: 'https://github.com/TravisBumgarner/pointless-projects'
+  }
+]
+
 const CTAButton = styled.a`
   padding: ${SPACING.SMALL};
   width: 100%;
@@ -208,7 +231,7 @@ const WorkWithMe = () => {
 
       <h2>More About Me</h2>
       <p>
-        Here are a few more places to learn about my work —{' '}
+        Here are a few more places to learn about me -{' '}
         {PLACES_YOU_CAN_FIND_ME.map(({ title, path }, idx) => (
           <React.Fragment key={title}>
             <a target="_blank" href={path}>
@@ -220,6 +243,19 @@ const WorkWithMe = () => {
         ))}
         .
       </p>
+
+      <p>
+        The projects listed above barely scratch the surface of my depth and
+        breadth of experience. I invite you to check out some of the following
+        exhibits -
+      </p>
+      <ul>
+        {EXHIBITS.map(({ path, title }) => (
+          <li key={title}>
+            <a href={path}>{title}</a>
+          </li>
+        ))}
+      </ul>
 
       <h2 id="lets-chat">Let's Chat</h2>
       <p>
