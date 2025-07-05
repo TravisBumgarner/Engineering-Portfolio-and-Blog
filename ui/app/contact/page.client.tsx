@@ -82,7 +82,7 @@ const Contact = () => {
 
   return (
     <ContentStyler>
-      <h2>Let's Chat</h2>
+      <h2>Let&apos;s Chat</h2>
       <Form onSubmit={handleSubmit}>
         <Input
           placeholder="Name (Optional)"

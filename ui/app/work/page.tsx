@@ -188,16 +188,17 @@ const WorkWithMe = () => {
       <h2>Testimonials</h2>
       <blockquote>
         When you have a difficult problem, something you are not sure is even
-        possible, Travis will dive right in and start trying things out. He'll
-        figure out the possible approaches and eventually get it all working,
-        despite the setbacks and the obstacles out of his control.
+        possible, Travis will dive right in and start trying things out.
+        He&apos;ll figure out the possible approaches and eventually get it all
+        working, despite the setbacks and the obstacles out of his control.
         <span className="author">Van, Staff Software Engineer</span>
       </blockquote>
 
       <blockquote>
-        Travis is a builder. I'm impressed with his depth in so many subjects,
-        from electronics to photography to woodworking to software. He's a
-        learner -- constantly curious and always tackling new subjects.
+        Travis is a builder. I&apos;m impressed with his depth in so many
+        subjects, from electronics to photography to woodworking to software.
+        He&apos;s a learner -- constantly curious and always tackling new
+        subjects.
         <span className="author">Matt, Head of Architecture</span>
       </blockquote>
 
@@ -205,9 +206,10 @@ const WorkWithMe = () => {
         Travis is an incredible full-stack engineer. He can take large complex
         projects and break them down into tractable pieces and work with a team
         to get the project done. He has excellent product intuition, balanced
-        with a healthy sense of what makes engineering teams efficient. He's
-        also a huge catalyst to build a strong culture around collaboration and
-        strong teamwork. An incredible asset to any engineering team!
+        with a healthy sense of what makes engineering teams efficient.
+        He&apos;s also a huge catalyst to build a strong culture around
+        collaboration and strong teamwork. An incredible asset to any
+        engineering team!
         <span className="author">Daniel, CTO</span>
       </blockquote>
 
@@ -222,11 +224,11 @@ const WorkWithMe = () => {
       <h2>What I Do</h2>
       <p>
         I build across the stack: full-stack apps, embedded systems, hardware
-        interfaces, and design. I've built MVPs, production apps, and personal
-        experiments. All of the projects below have been fully managed,
-        researched, designed, and engineered by myself. Historically, I've
-        consulted with stealth-mode startups, so I'm unable to share that work
-        here.
+        interfaces, and design. I&apos;ve built MVPs, production apps, and
+        personal experiments. All of the projects below have been fully managed,
+        researched, designed, and engineered by myself. Historically, I&apos;ve
+        consulted with stealth-mode startups, so I&apos;m unable to share that
+        work here.
       </p>
 
       <h3>Web + App Projects</h3>
@@ -286,7 +288,7 @@ const WorkWithMe = () => {
         ))}
       </ul>
 
-      <h2 id="lets-chat">Let's Chat</h2>
+      <h2 id="lets-chat">Let&apos;s Chat</h2>
       <p>Have an idea you want to turn into a working prototype?</p>
       <Contact />
       <div style={{ height: SPACING.XLARGE }} />
