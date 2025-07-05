@@ -18,7 +18,8 @@ const projectSchema = z.object({
   lastMeaningfulUpdate: z.string().regex(/^\d{4}-\d{2}$/),
   images: z.array(imageSchema),
   links: z.array(linkSchema),
-  previewImage: imageSchema
+  previewImage: imageSchema,
+  toolsAndTechnologies: z.string().optional()
 })
 
 const projectsSchema = z.record(z.string(), projectSchema)
