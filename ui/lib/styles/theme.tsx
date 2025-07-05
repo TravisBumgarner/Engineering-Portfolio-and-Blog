@@ -186,7 +186,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h4 {
-      font-size: ${FONT_SIZES.MEDIUM};
+      font-size: ${FONT_SIZES.LARGER};
       font-weight: ${FONT_WEIGHTS.BOLD};
     }
 
