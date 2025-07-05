@@ -21,7 +21,7 @@ const ROUTES = {
   },
   CONTACT: {
     path: '/contact',
-    title: 'Contact',
+    title: "Let's Chat",
     target: '_self'
   }
 }

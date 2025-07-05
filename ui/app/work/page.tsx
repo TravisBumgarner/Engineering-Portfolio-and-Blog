@@ -9,6 +9,7 @@ import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
 import Link from 'next/link'
 import BlurHashImage from '../_sharedComponents/BlurHashImage'
+import ContentStyler from '../_sharedComponents/ContentStyler'
 
 function formatLinks(list: { title: string; path: string }[]) {
   return list.map(({ title, path }, i) => {
@@ -170,7 +171,7 @@ const CTAButton = styled.a`
 
 const WorkWithMe = () => {
   return (
-    <div id="work" style={{ marginBottom: SPACING.XLARGE }}>
+    <ContentStyler>
       <h2>
         I turn early-stage ideas
         <br />
@@ -288,7 +289,8 @@ const WorkWithMe = () => {
       <h2 id="lets-chat">Let's Chat</h2>
       <p>Have an idea you want to turn into a working prototype?</p>
       <Contact />
-    </div>
+      <div style={{ height: SPACING.XLARGE }} />
+    </ContentStyler>
   )
 }
 

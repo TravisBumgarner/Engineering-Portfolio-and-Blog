@@ -1,3 +1,4 @@
+import ContentStyler from '@/app/_sharedComponents/ContentStyler'
 import Figure from '@/app/_sharedComponents/Figure'
 import projects from '@/content/projects'
 import { Metadata } from 'next'
@@ -90,7 +91,7 @@ const Creation = async ({ params }: { params: Params }) => {
   }
 
   return (
-    <div id="creation">
+    <ContentStyler>
       <h2>{project.title}</h2>
       <time>
         Last Update:{' '}
@@ -116,7 +117,7 @@ const Creation = async ({ params }: { params: Params }) => {
         </ul>
       )}
       {Images.map(i => i.element)}
-    </div>
+    </ContentStyler>
   )
 }
 
