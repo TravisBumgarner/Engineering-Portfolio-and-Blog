@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { motion } from "motion/react";
-import styled from "styled-components";
+import { motion } from 'motion/react'
+import styled from 'styled-components'
 
 export const LoadingContainer = styled(motion.div)`
   display: flex;
@@ -21,7 +21,7 @@ export const FaviconLeft = styled.div`
 export const FaviconRight = styled.div`
   width: 50%;
   height: 100%;
-  background-color: var(--primary-background);
+  background-color: var(--bright-background);
   box-sizing: border-box;
 `
 

@@ -47,6 +47,7 @@ export const GlobalStyle = createGlobalStyle`
       --foreground: ${COLORS.GRAYS['500']};
       --primary: ${COLORS.PRIMARY['100']};
       --background-blur: rgba(255,255,255,0.9);
+      --foreground-disabled: ${COLORS.GRAYS[300]};
     }
   }
 
@@ -55,9 +56,10 @@ export const GlobalStyle = createGlobalStyle`
       --primary-background: ${COLORS.GRAYS['500']};
       --secondary-background: ${COLORS.GRAYS['400']};
       --bright-background: ${COLORS.PRIMARY['200']};
-      --foreground: ${COLORS.GRAYS['100']};
+      --foreground: ${COLORS.GRAYS['300']};
       --primary: ${COLORS.PRIMARY['100']};
       --background-blur: rgba(0,0,0,0.9);
+      --foreground-disabled: ${COLORS.GRAYS[350]};
     }
   }
 
@@ -116,6 +118,11 @@ export const GlobalStyle = createGlobalStyle`
     &:hover {
       color: var(--primary);
     }
+
+    &:disabled {
+      color: var(--foreground-disabled);
+      cursor: not-allowed;
+    }
   }
 
 
@@ -146,7 +153,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  #post, #creation {
+  #post, #creation, #work {
     > p, > h3, > h4, > h5, > ul, > ol {
       margin: ${SPACING.MEDIUM} 0;
     }
@@ -166,7 +173,7 @@ export const GlobalStyle = createGlobalStyle`
       font-weight: ${FONT_WEIGHTS.LIGHT};
     }
 
-    h2 {
+    > h2 {
       font-size: ${FONT_SIZES.XLARGE};
       font-weight: ${FONT_WEIGHTS.BOLD};
       margin-top: 0;
@@ -209,6 +216,12 @@ export const GlobalStyle = createGlobalStyle`
       font-size: ${FONT_SIZES.MEDIUM};
       font-family: ${CODE_FONT};
       background-color: var(--secondary-background);
+
+      span.author {
+        display: block;
+        text-align: right;
+        margin-top: ${SPACING.SMALL};
+      }
     }
 
     code {

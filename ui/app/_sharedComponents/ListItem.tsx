@@ -40,7 +40,8 @@ const ListItem = ({
   description,
   date,
   priority,
-  type
+  type,
+  smallTitle
 }: {
   src?: string
   link?: string
@@ -49,6 +50,7 @@ const ListItem = ({
   date?: string
   priority?: boolean
   type: 'post' | 'creation' | 'snapshot'
+  smallTitle?: boolean
 }) => {
   const paragraphs = !description
     ? null
@@ -59,7 +61,7 @@ const ListItem = ({
   if (!link) {
     return (
       <StyledListItem>
-        {title && <h2>{title}</h2>}
+        {title && (smallTitle ? <p>{title}</p> : <h2>{title}</h2>)}
         {date && (
           <time>
             {dateLabelLookup[type]}
@@ -83,7 +85,7 @@ const ListItem = ({
       <StyledListItem>
         <div>
           <div>
-            {title && <h2>{title}</h2>}
+            {title && (smallTitle ? <p>{title}</p> : <h2>{title}</h2>)}
             {date && (
               <time>
                 {dateLabelLookup[type]}
