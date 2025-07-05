@@ -1,5 +1,5 @@
-import ClientLayout from '@/lib/client-layout'
-import StyledComponentsRegistry from '@/lib/styled-components-registry'
+import ClientLayout from '@/lib/styles/client-layout'
+import StyledComponentsRegistry from '@/lib/styles/styled-components-registry'
 import { makeNewSiteTitle } from '@/lib/utilities'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { ReactNode } from 'react'

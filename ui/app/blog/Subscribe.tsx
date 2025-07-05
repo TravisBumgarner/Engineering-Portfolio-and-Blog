@@ -1,6 +1,6 @@
 'use client'
 
-import { FONT_SIZES, SPACING } from '@/lib/theme'
+import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
 import { useState } from 'react'
 import styled from 'styled-components'
 
@@ -15,17 +15,30 @@ const SubWrapper = styled.div`
     flex-direction: column;
     gap: ${SPACING.XSMALL};
   }
+
+  a {
+    width: 120px;
+  }
 `
 
 const Wrapper = styled.div`
   margin-bottom: ${SPACING.MEDIUM};
+  padding: ${SPACING.MEDIUM};
+  background-color: var(--bright-background);
+
+  h2 {
+    font-size: ${FONT_SIZES.LARGE};
+    font-weight: ${FONT_WEIGHTS.BOLD};
+    margin-top: 0;
+    margin-bottom: ${SPACING.SMALL};
+  }
 `
 
 const Form = styled.form`
-  width: 100%;
   display: flex;
   flex-direction: row;
   gap: ${SPACING.SMALL};
+  width: 100%;
   input {
     flex-grow: 1;
   }
@@ -48,6 +61,7 @@ const Subscribe = () => {
 
   return (
     <Wrapper>
+      <h2>Subscribe</h2>
       <SubWrapper>
         <a
           className="rss"
@@ -73,7 +87,7 @@ const Subscribe = () => {
             <circle cx="5" cy="19" r="1" />
           </svg>
           <span style={{ position: 'relative', top: '-3px', left: '5px' }}>
-            Subscribe via RSS
+            RSS
           </span>
         </a>
         <p>Or</p>
@@ -94,7 +108,7 @@ const Subscribe = () => {
             style={{ borderRadius: 0 }}
           />
           <button type="submit" disabled={email.length === 0}>
-            Subscribe
+            Submit
           </button>
         </Form>
       </SubWrapper>

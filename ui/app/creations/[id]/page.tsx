@@ -42,8 +42,24 @@ const Creation = async ({ params }: { params: Params }) => {
 
   const Links = project.links.map(l => {
     return (
-      <li key={l.label + l.src}>
-        <Link target="_blank" href={l.src}>
+      <li
+        key={l.label + l.src}
+        style={{
+          backgroundColor: 'var(--bright-background)',
+          margin: 0
+        }}
+      >
+        <Link
+          key={l.label + l.src}
+          style={{
+            textDecoration: 'none',
+            padding: '10px 20px',
+            display: 'block',
+            color: 'var(--foreground)'
+          }}
+          target="_blank"
+          href={l.src}
+        >
           {l.label}
         </Link>
       </li>
@@ -67,6 +83,12 @@ const Creation = async ({ params }: { params: Params }) => {
     .split('\n')
     .map((paragraph, index) => <p key={index}>{paragraph}</p>)
 
+  if (project.toolsAndTechnologies) {
+    Description.push(
+      <p key="toolsAndTechnologies">{project.toolsAndTechnologies}</p>
+    )
+  }
+
   return (
     <div id="creation">
       <h2>{project.title}</h2>
@@ -81,7 +103,18 @@ const Creation = async ({ params }: { params: Params }) => {
         )}
       </time>
       {Description}
-      {Links.length > 0 && <ul>{Links}</ul>}
+      {Links.length > 0 && (
+        <ul
+          style={{
+            listStyleType: 'none',
+            display: 'flex',
+            margin: '20px 0',
+            gap: '20px'
+          }}
+        >
+          {Links}
+        </ul>
+      )}
       {Images.map(i => i.element)}
     </div>
   )

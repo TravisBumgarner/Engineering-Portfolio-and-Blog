@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { FONT_SIZES, FONT_WEIGHTS } from '@/lib/theme'
+import { FONT_SIZES, FONT_WEIGHTS } from '@/lib/styles/consts'
 import styled from 'styled-components'
 
 const Weak = styled.span`

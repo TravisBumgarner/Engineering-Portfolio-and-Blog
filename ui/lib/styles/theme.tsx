@@ -1,6 +1,14 @@
 'use client'
 
 import { createGlobalStyle, css } from 'styled-components'
+import {
+  SPACING,
+  COLORS,
+  EVERYTHING_FONT,
+  CODE_FONT,
+  FONT_SIZES,
+  FONT_WEIGHTS
+} from './consts'
 
 export const GlobalFonts = createGlobalStyle`
   @font-face {
@@ -13,48 +21,6 @@ export const GlobalFonts = createGlobalStyle`
   }
 `
 
-const EVERYTHING_FONT = 'Satoshi, sans-serif'
-const CODE_FONT = 'Source Code Pro, monospace'
-
-const COLORS = {
-  GRAYS: {
-    '100': '#FFFFFF',
-    '200': '#F6F6F6',
-    '300': '',
-    '400': '#303030',
-    '500': '#1a1a1a',
-    '600': ''
-  },
-  PRIMARY: {
-    '100': '#1298f2',
-    '200': '#006FB9'
-  }
-}
-
-export const FONT_WEIGHTS = {
-  LIGHT: 100,
-  REGULAR: 300,
-  BOLD: 500,
-  XBOLD: 600
-}
-
-export const FONT_SIZES = {
-  SMALL: '16px',
-  MEDIUM: '20px',
-  LARGER: '28px', // Shoot me lol.
-  LARGE: '36px',
-  XLARGE: '50px'
-}
-
-export const SPACING = {
-  XXSMALL: '4px',
-  XSMALL: '8px',
-  SMALL: '16px',
-  MEDIUM: '30px',
-  LARGE: '50px',
-  XLARGE: '80px'
-} as const
-
 const customMediaQuery = (maxWidth: number) =>
   `@media (max-width: ${maxWidth}px)`
 
@@ -65,7 +31,7 @@ export const media = {
 }
 
 export const SHARED_SPACING = css`
-  padding: ${SPACING.LARGE};
+  padding: ${SPACING.MEDIUM};
 
   @media (max-width: 768px) {
     padding: ${SPACING.SMALL};
@@ -77,9 +43,11 @@ export const GlobalStyle = createGlobalStyle`
     :root {
       --primary-background: ${COLORS.GRAYS['100']};
       --secondary-background: ${COLORS.GRAYS['200']};
+      --bright-background: ${COLORS.PRIMARY['100']};
       --foreground: ${COLORS.GRAYS['500']};
       --primary: ${COLORS.PRIMARY['100']};
       --background-blur: rgba(255,255,255,0.9);
+      --foreground-disabled: ${COLORS.GRAYS[300]};
     }
   }
 
@@ -87,9 +55,11 @@ export const GlobalStyle = createGlobalStyle`
     :root {
       --primary-background: ${COLORS.GRAYS['500']};
       --secondary-background: ${COLORS.GRAYS['400']};
-      --foreground: ${COLORS.GRAYS['100']};
+      --bright-background: ${COLORS.PRIMARY['200']};
+      --foreground: ${COLORS.GRAYS['300']};
       --primary: ${COLORS.PRIMARY['100']};
       --background-blur: rgba(0,0,0,0.9);
+      --foreground-disabled: ${COLORS.GRAYS[350]};
     }
   }
 
@@ -148,6 +118,11 @@ export const GlobalStyle = createGlobalStyle`
     &:hover {
       color: var(--primary);
     }
+
+    &:disabled {
+      color: var(--foreground-disabled);
+      cursor: not-allowed;
+    }
   }
 
 
@@ -178,7 +153,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  #post, #creation {
+  #post, #creation, #work {
     > p, > h3, > h4, > h5, > ul, > ol {
       margin: ${SPACING.MEDIUM} 0;
     }
@@ -198,7 +173,7 @@ export const GlobalStyle = createGlobalStyle`
       font-weight: ${FONT_WEIGHTS.LIGHT};
     }
 
-    h2 {
+    > h2 {
       font-size: ${FONT_SIZES.XLARGE};
       font-weight: ${FONT_WEIGHTS.BOLD};
       margin-top: 0;
@@ -241,6 +216,12 @@ export const GlobalStyle = createGlobalStyle`
       font-size: ${FONT_SIZES.MEDIUM};
       font-family: ${CODE_FONT};
       background-color: var(--secondary-background);
+
+      span.author {
+        display: block;
+        text-align: right;
+        margin-top: ${SPACING.SMALL};
+      }
     }
 
     code {
@@ -263,7 +244,7 @@ export const GlobalStyle = createGlobalStyle`
 
     li {
       font-size: ${FONT_SIZES.MEDIUM};
-      margin: ${SPACING.XXSMALL} 0;
+      margin: ${SPACING.XXSMALL};
     }
 
   }

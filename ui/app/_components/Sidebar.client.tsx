@@ -1,14 +1,12 @@
 'use client'
 
 import ROUTES from '@/lib/routes'
-import { SPACING } from '@/lib/theme'
+import { SPACING } from '@/lib/styles/consts'
 import Link from 'next/link'
 import { useState } from 'react'
 import { SocialIcon } from 'react-social-icons'
 import styled from 'styled-components'
 import Hamburger from '../_sharedComponents/Hamburger'
-
-// console.log(social_icons.keys())
 
 const SOCIAL_MEDIA = [
   {
@@ -37,7 +35,7 @@ const SOCIAL_MEDIA = [
   },
   {
     title: 'Bluesky',
-    path: 'https://bsky.app/profile/sillysideprojects.bsky.social',
+    path: 'https://bsky.app/profile/travisbumgarner.dev',
     target: '_blank',
     icon: 'bsky.app'
   },

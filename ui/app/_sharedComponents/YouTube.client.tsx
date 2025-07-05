@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { SPACING } from '@/lib/theme'
+import { SPACING } from '@/lib/styles/consts'
 import styled from 'styled-components'
 
 export const YoutubeWrapper = styled.figure`

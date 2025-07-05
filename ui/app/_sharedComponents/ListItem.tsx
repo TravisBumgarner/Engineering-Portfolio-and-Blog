@@ -1,6 +1,7 @@
 'use client'
 
-import { FONT_SIZES, FONT_WEIGHTS, SHARED_SPACING, SPACING } from '@/lib/theme'
+import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
+import { SHARED_SPACING } from '@/lib/styles/theme'
 import Link from 'next/link'
 import styled from 'styled-components'
 import BlurHashImage from './BlurHashImage'
@@ -11,6 +12,27 @@ const dateLabelLookup = {
   snapshot: ''
 }
 
+const formatDateByType = (
+  date: string,
+  type: 'post' | 'creation' | 'snapshot'
+) => {
+  if (type === 'post') {
+    return new Date(date + 'T00:00:00Z')
+      .toUTCString()
+      .split(' ')
+      .slice(0, 4)
+      .join(' ')
+  } else if (type === 'creation') {
+    return new Date(date + 'T00:00:00Z').toLocaleString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      timeZone: 'UTC'
+    })
+  } else {
+    return null
+  }
+}
+
 const ListItem = ({
   src,
   link,
@@ -18,7 +40,8 @@ const ListItem = ({
   description,
   date,
   priority,
-  type
+  type,
+  smallTitle
 }: {
   src?: string
   link?: string
@@ -27,11 +50,18 @@ const ListItem = ({
   date?: string
   priority?: boolean
   type: 'post' | 'creation' | 'snapshot'
+  smallTitle?: boolean
 }) => {
+  const paragraphs = !description
+    ? null
+    : description
+        .split('\n')
+        .map((paragraph, index) => <p key={index}>{paragraph}</p>)
+
   if (!link) {
     return (
       <StyledListItem>
-        {title && <h2>{title}</h2>}
+        {title && (smallTitle ? <p>{title}</p> : <h2>{title}</h2>)}
         {date && (
           <time>
             {dateLabelLookup[type]}
@@ -42,7 +72,7 @@ const ListItem = ({
               .join(' ')}
           </time>
         )}
-        {description && <p>{description}</p>}
+        {paragraphs && <p>{paragraphs}</p>}
         {src && priority !== undefined && (
           <BlurHashImage priority={priority} src={src} />
         )}
@@ -55,19 +85,15 @@ const ListItem = ({
       <StyledListItem>
         <div>
           <div>
-            {title && <h2>{title}</h2>}
+            {title && (smallTitle ? <p>{title}</p> : <h2>{title}</h2>)}
             {date && (
               <time>
                 {dateLabelLookup[type]}
-                {new Date(date + 'T00:00:00Z')
-                  .toUTCString()
-                  .split(' ')
-                  .slice(0, 4)
-                  .join(' ')}
+                {formatDateByType(date, type)}
               </time>
             )}
           </div>
-          {description && <p>{description}</p>}
+          {paragraphs}
         </div>
         {src && priority !== undefined && (
           <BlurHashImage priority={priority} src={src} />

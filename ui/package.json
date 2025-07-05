@@ -5,7 +5,7 @@
     "start:prod": "next start",
     "build": "next build",
     "lint": "next lint",
-    "deploy:nfs": "./deploy.sh"
+    "deploy:nfs": "yarn run build && ./deploy.sh"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
@@ -20,7 +20,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-social-icons": "^6.22.0",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@types/node": "^22.7.4",
