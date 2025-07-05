@@ -29,6 +29,7 @@ export const FONT_SIZES = {
   SMALL: '16px',
   MEDIUM: '20px',
   LARGE: '36px',
+  LARGER: '28px', // Shoot me lol.
   XLARGE: '50px'
 }
 

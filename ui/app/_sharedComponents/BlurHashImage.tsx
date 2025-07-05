@@ -22,7 +22,7 @@ const getBlurHash = (src: string) => {
 const BlurHashImage = ({
   src,
   priority,
-  alt,
+  alt
 }: {
   src: string
   priority: boolean
@@ -51,7 +51,7 @@ const BlurHashImage = ({
         objectPosition: 'top',
         display: 'block',
         width: '100%',
-        height: 'auto',
+        height: 'auto'
       }}
     />
   )
