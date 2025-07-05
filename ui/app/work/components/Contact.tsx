@@ -1,5 +1,7 @@
 'use client'
 
+import Button from '@/app/_sharedComponents/Button'
+import { Input, TextArea } from '@/app/_sharedComponents/Input'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
@@ -84,29 +86,29 @@ const Contact = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <input
+      <Input
         placeholder="Name"
         name="name"
         value={formData.name}
         onChange={handleChange}
       />
-      <input
+      <Input
         placeholder="Email"
         name="email"
         value={formData.email}
         onChange={handleChange}
         type="email"
       />
-      <textarea
+      <TextArea
         placeholder="Message"
         name="message"
         value={formData.message}
         onChange={handleChange}
         rows={4}
       />
-      <button type="submit" disabled={isSubmitting || !canSubmit}>
+      <Button type="submit" disabled={isSubmitting || !canSubmit}>
         {buttonText}
-      </button>
+      </Button>
     </Form>
   )
 }
