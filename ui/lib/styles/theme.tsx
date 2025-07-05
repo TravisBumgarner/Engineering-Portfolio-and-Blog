@@ -49,7 +49,7 @@ export const GlobalStyle = createGlobalStyle`
       --primary-background: ${COLORS.GRAYS['500']};
       --secondary-background: ${COLORS.GRAYS['400']};
       --bright-background: ${COLORS.PRIMARY['200']};
-      --foreground: ${COLORS.GRAYS['300']};
+      --foreground: ${COLORS.GRAYS['100']};
       --primary: ${COLORS.PRIMARY['100']};
       --background-blur: rgba(0,0,0,0.9);
       --foreground-disabled: ${COLORS.GRAYS[350]};
