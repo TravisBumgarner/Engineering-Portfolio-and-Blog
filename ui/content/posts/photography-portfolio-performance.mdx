@@ -24,6 +24,8 @@ To figure out what to work on, look at real situations. Real devices. Real inter
 
 ## An Example
 
+(For technical details, check out the next section)
+
 My [photography portfolio](https://travisbumgarner.photography/) is a great example to consider. User actions are quite limited. They can browse galleries and view full resolution photos. Think through the user journey. What actions might the user want to take? Knowing this, experiences can be built that prepare the website before users act so that interactions feels instantaneous.
 
 **A user want to see the content as quickly as possible.**
@@ -39,6 +41,16 @@ In addition, now that the user is browsing a gallery, their next action will be 
 **A user want to browse full resolution photos.**
 
 Due to the previous step, the photo the user has selected has already loaded. Their next move is to either look at the previous or next full resolution image. Prioritize loading these images.
+
+## Learn More
+
+I originally had this and the previous section together. However, I realized that a deep technical dive is not the point of this article. Each situation requires vastly different technical solutions. I will leave this section should you wish to learn about specific technologies and techniques I used.
+
+- [Chrome Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) - Analyze your website and learn about opportunities to improve performance. This is a solid starting point and where a lot of my learnings originated from.
+- [Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload)
+- [Lazy Loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Lazy_loading)
+- [First Contentful Paint](https://web.dev/articles/fcp)
+- [Largest Contentful Paint](https://web.dev/articles/lcp)
 
 ## Reflecting on the Experience
 
