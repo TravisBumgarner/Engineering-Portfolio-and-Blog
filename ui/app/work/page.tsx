@@ -60,7 +60,7 @@ const LearnMore = styled.span`
   background-color: var(--primary-background);
   color: var(--foreground);
   border: 0;
-  margin: ${SPACING.XSMALL} 0;
+  margin-top: ${SPACING.MEDIUM};
   padding: ${SPACING.SMALL};
   text-align: center;
   font-weight: 900;
@@ -194,10 +194,9 @@ const WorkWithMe = () => {
       </blockquote>
 
       <blockquote>
-        Travis is a builder. I’m impressed with his depth in so many subjects,
-        from electronics to photography to woodworking to software. He’s a
-        learner -- constantly curious and always tackling new subjects. And a
-        teacher, too — he shares his knowledge openly.
+        Travis is a builder. I'm impressed with his depth in so many subjects,
+        from electronics to photography to woodworking to software. He's a
+        learner -- constantly curious and always tackling new subjects.
         <span className="author">Matt, Head of Architecture</span>
       </blockquote>
 
@@ -222,9 +221,11 @@ const WorkWithMe = () => {
       <h2>What I Do</h2>
       <p>
         I build across the stack: full-stack apps, embedded systems, hardware
-        interfaces, and design. I’ve built MVPs, production apps, and personal
+        interfaces, and design. I've built MVPs, production apps, and personal
         experiments. All of the projects below have been fully managed,
-        researched, designed, and engineered by myself.
+        researched, designed, and engineered by myself. Historically, I've
+        consulted with stealth-mode startups, so I'm unable to share that work
+        here.
       </p>
 
       <h3>Web + App Projects</h3>
@@ -247,8 +248,8 @@ const WorkWithMe = () => {
 
       <h3>Hardware Projects</h3>
       <p>
-        I also have a degree in Mechanical Engineering and a collection of
-        related side projects. Many of my projects blend hardware and software.
+        I have a degree in Mechanical Engineering and a collection of related
+        side projects. Many of these projects blend hardware and software.
       </p>
       {ADDITIONAL.map(key => {
         const { id, title, previewImage, description } = projects[key]
@@ -285,9 +286,7 @@ const WorkWithMe = () => {
       </ul>
 
       <h2 id="lets-chat">Let's Chat</h2>
-      <p>
-        Have an idea you want to explore? Want to move from vision to prototype?
-      </p>
+      <p>Have an idea you want to turn into a working prototype?</p>
       <Contact />
     </div>
   )
