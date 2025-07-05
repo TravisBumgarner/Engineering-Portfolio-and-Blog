@@ -23,13 +23,11 @@ const getBlurHash = (src: string) => {
 const BlurHashImage = ({
   src,
   priority,
-  alt,
-  includePadding
+  alt
 }: {
   src: string
   priority: boolean
   alt?: string
-  includePadding?: boolean
 }) => {
   const { width, height, blurHash } = getBlurHash(src)
   const blurDataURL = blurHashToDataURL(blurHash)
@@ -53,7 +51,7 @@ const BlurHashImage = ({
         display: 'block',
         width: '100%',
         height: 'auto',
-        padding: includePadding ? SPACING.MEDIUM : 0,
+        padding: 0,
         // Background for transparent images.
         backgroundColor: '#eee',
         boxSizing: 'border-box'
