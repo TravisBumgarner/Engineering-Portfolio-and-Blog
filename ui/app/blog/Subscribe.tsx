@@ -3,6 +3,8 @@
 import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
 import { useState } from 'react'
 import styled from 'styled-components'
+import Button from '../_sharedComponents/Button'
+import { Input } from '../_sharedComponents/Input'
 
 const SubWrapper = styled.div`
   display: flex;
@@ -62,12 +64,7 @@ const Subscribe = () => {
   return (
     <Wrapper>
       <SubWrapper>
-        <a
-          className="rss"
-          href="/rss.xml"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <RSSLink href="/rss.xml" target="_blank" rel="noopener noreferrer">
           <svg
             style={{ position: 'relative', top: '2px' }}
             xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +85,7 @@ const Subscribe = () => {
           <span style={{ position: 'relative', top: '-3px', left: '5px' }}>
             RSS
           </span>
-        </a>
+        </RSSLink>
         <p>Or</p>
         <Form
           action="https://buttondown.com/api/emails/embed-subscribe/tbumgarner"
@@ -97,7 +94,7 @@ const Subscribe = () => {
           onSubmit={handleSubmit}
           className="embeddable-buttondown-form"
         >
-          <input
+          <Input
             placeholder="Email"
             type="email"
             name="email"
@@ -106,13 +103,27 @@ const Subscribe = () => {
             onChange={e => setEmail(e.target.value)}
             style={{ borderRadius: 0 }}
           />
-          <button type="submit" disabled={email.length === 0}>
+          <Button type="submit" disabled={email.length === 0}>
             Subscribe
-          </button>
+          </Button>
         </Form>
       </SubWrapper>
     </Wrapper>
   )
 }
+
+const RSSLink = styled.a`
+  background-color: var(--secondary-background);
+  margin: ${SPACING.XSMALL} 0;
+  width: 100%;
+  display: block;
+  padding: ${SPACING.SMALL};
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: ${FONT_WEIGHTS.REGULAR};
+  &:hover {
+    text-decoration: underline;
+  }
+`
 
 export default Subscribe

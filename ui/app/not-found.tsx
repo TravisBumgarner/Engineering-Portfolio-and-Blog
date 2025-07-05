@@ -1,6 +1,8 @@
-"use client"
+'use client'
 
 import { useCallback } from 'react'
+import Button from './_sharedComponents/Button'
+import ContentStyler from './_sharedComponents/ContentStyler'
 
 const Error = () => {
   const handleRefresh = useCallback(() => {
@@ -8,11 +10,11 @@ const Error = () => {
   }, [])
 
   return (
-    <div id="not-found">
+    <ContentStyler>
       <h2>Whoops!</h2>
       <p>Sorry, the page you were looking for was not found.</p>
-      <button onClick={handleRefresh}>Return home</button>
-    </div>
+      <Button onClick={handleRefresh}>Return home</Button>
+    </ContentStyler>
   )
 }
 

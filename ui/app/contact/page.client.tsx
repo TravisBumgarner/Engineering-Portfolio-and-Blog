@@ -2,6 +2,9 @@
 
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
+import Button from '../_sharedComponents/Button'
+import { Input, TextArea } from '../_sharedComponents/Input'
+import ContentStyler from '../_sharedComponents/ContentStyler'
 
 const Form = styled.form`
   display: flex;
@@ -78,37 +81,37 @@ const Contact = () => {
   }, [isSubmitting, success, failure, resetButtonText])
 
   return (
-    <div id="contact">
-      <h2>Contact</h2>
+    <ContentStyler>
+      <h2>Let's Chat</h2>
       <Form onSubmit={handleSubmit}>
-        <input
+        <Input
           placeholder="Name (Optional)"
           name="name"
           value={formData.name}
           onChange={handleChange}
         />
-        <input
+        <Input
           placeholder="Email (Optional)"
           name="email"
           value={formData.email}
           onChange={handleChange}
           type="email"
         />
-        <textarea
+        <TextArea
           placeholder="Message"
           name="message"
           value={formData.message}
           onChange={handleChange}
           rows={4}
         />
-        <button
+        <Button
           type="submit"
           disabled={isSubmitting || formData.message.length === 0}
         >
           {buttonText}
-        </button>
+        </Button>
       </Form>
-    </div>
+    </ContentStyler>
   )
 }
 
