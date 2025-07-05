@@ -1,5 +1,4 @@
 import blurhashes from '@/content/blurhashes/index.json'
-import { SPACING } from '@/lib/styles/consts'
 import { blurHashToDataURL } from '@/lib/utilities/blurhashDataURL'
 import { BlurHash } from '@/lib/types'
 import Image from 'next/image'
@@ -44,17 +43,15 @@ const BlurHashImage = ({
       height={height}
       sizes="(max-width: 750px) 100vw, 100vw"
       style={{
+        // Background for transparent images.
         border: `8px solid var(--foreground)`,
-        maxHeight: '85vh', // Not sure why this was 70vh. Changed it.
+        backgroundColor: '#fff',
+        maxHeight: '70vh',
         objectFit: 'cover',
-        objectPosition: 'top center',
+        objectPosition: 'top',
         display: 'block',
         width: '100%',
-        height: 'auto',
-        padding: 0,
-        // Background for transparent images.
-        backgroundColor: '#eee',
-        boxSizing: 'border-box'
+        height: 'auto'
       }}
     />
   )

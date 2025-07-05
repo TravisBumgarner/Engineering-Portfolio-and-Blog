@@ -6,16 +6,9 @@ import BlurHashImage from './BlurHashImage'
 type FigureProps = {
   src: string
   caption: string
-  internalPadding?: boolean
-  disableBackground?: boolean
 }
 
-const Figure = ({
-  src,
-  caption,
-  internalPadding,
-  disableBackground = false
-}: FigureProps) => {
+const Figure = ({ src, caption }: FigureProps) => {
   return (
     <figure
       style={{
