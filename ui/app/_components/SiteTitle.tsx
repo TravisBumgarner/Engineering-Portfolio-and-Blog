@@ -1,8 +1,4 @@
-import {
-  ABOUT_ME_SENTENCE_0,
-  ABOUT_ME_SENTENCE_1,
-  ABOUT_ME_SENTENCE_2
-} from '@/lib/consts'
+import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '@/lib/consts'
 import Link from 'next/link'
 import Weak from '../_sharedComponents/Weak'
 
