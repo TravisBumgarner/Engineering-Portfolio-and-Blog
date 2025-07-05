@@ -1,5 +1,5 @@
 import blurhashes from '@/content/blurhashes/index.json'
-import { SPACING } from '@/lib/theme'
+import { SPACING } from '@/lib/styles/consts'
 import { blurHashToDataURL } from '@/lib/utilities/blurhashDataURL'
 import { BlurHash } from '@/lib/types'
 import Image from 'next/image'
