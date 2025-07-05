@@ -61,7 +61,6 @@ const Subscribe = () => {
 
   return (
     <Wrapper>
-      <h2>Subscribe</h2>
       <SubWrapper>
         <a
           className="rss"
@@ -108,7 +107,7 @@ const Subscribe = () => {
             style={{ borderRadius: 0 }}
           />
           <button type="submit" disabled={email.length === 0}>
-            Submit
+            Subscribe
           </button>
         </Form>
       </SubWrapper>

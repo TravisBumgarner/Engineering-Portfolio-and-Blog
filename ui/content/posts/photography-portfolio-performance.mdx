@@ -10,7 +10,7 @@ Designers operate in an artificial environment. There are no network requests. S
 
 Frontend engineers live the opposite experience. They are concerned with interactions within the browser. They contemplate network requests, latency, caching, memoizing, rendering, bundling, lazy loading, browser behavior, and so much more. While these terms are technically focused, their end goal is to improve the user experience.
 
-Engineers are tackling the exact same problem as design but from a different perspective. Engineers have the power to implement these techniques to improve the user experience.
+Engineers are tackling the exact same problem as designers but from a different perspective. Engineers have the power to implement these techniques to improve the user experience.
 
 ## What to Focus On
 
@@ -18,19 +18,17 @@ The first step to improving the user experience is to decide what to work on.
 
 Schooling teaches us to think of performance in abstract terms. Big O. Big Omega. Big Theta. Little o. All of these are very abstract methods of defining performance. They're far removed from the real world. They have their place, but it's not in this article.
 
-Imagine you're looking for some improvements to make. You find some code in the frontend that theoretically has poor performance. It can be refactored to have better performance. In reality, its average run time is 50ms. Blinking takes roughly 100ms. <sub>[1]</sub> This is an improvement the user might not even notice.
+Imagine you're looking for some improvements to make. You find some code in the frontend that theoretically has poor performance. It can be refactored to have better performance. In reality, its average run time is 50ms. Blinking takes roughly 100ms. <sub>[1]</sub> This is an improvement the user is not going to notice.
 
 To figure out what to work on, look at real situations. Real devices. Real internet connections. Real complaints. Focus there.
 
 ## An Example
 
-(For technical details, check out the next section)
-
 My [photography portfolio](https://travisbumgarner.photography/) is a great example to consider. User actions are quite limited. They can browse galleries and view full resolution photos. Think through the user journey. What actions might the user want to take? Knowing this, experiences can be built that prepare the website before users act so that interactions feels instantaneous.
 
 **A user want to see the content as quickly as possible.**
 
-As the page is loading, prioritize what the user can see within their viewport. Use placeholder images, such as blurhashes, to let the user know that things are loading. Put priority on the visible thumbnails and defer everything else for later. As the user scrolls the page, prioritize loading the thumbnails the user will see next.
+As the page is loading, prioritize what the user can see within their viewport. Use placeholder images, such as [blurhashes](https://blurha.sh/), to let the user know that things are loading. Put priority on the visible thumbnails and defer everything else for later. As the user scrolls the page, prioritize loading the thumbnails the user will see next.
 
 **A user want to browse a gallery.**
 
@@ -41,21 +39,6 @@ In addition, now that the user is browsing a gallery, their next action will be 
 **A user want to browse full resolution photos.**
 
 Due to the previous step, the photo the user has selected has already loaded. Their next move is to either look at the previous or next full resolution image. Prioritize loading these images.
-
-## Learn More
-
-I originally had this and the previous section together. However, I realized that a deep technical dive is not the point of this article. Each situation requires vastly different technical solutions. I will leave this section should you wish to learn about specific technologies and techniques I used.
-
-TODO - cleanup links. Maybe include more.
-
-- [Preload resources](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload) - HTML `<link>` tags in the `<head>` of the document have a `rel` attribute which can be set to `preload`. The first few photos on the page can be inserted into the `<head>`. This will cause these resources to take priority on loading.
-- [Lazy Loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Lazy_loading) - The `<img>` tag has property `loading` which can be set to `lazy`. This tells the browser to defer loading of an image.
-- [React Motion useInView] - Helper util to determine if an element is within the user's viewport or about to be.
-- [Blurhash]() - TODO
-- [Code Example of Previous Points](https://github.com/TravisBumgarner/Photography-Portfolio/blob/2aa42cca8953b7e5ce6573607a6866f84bdaddcd/ui/src/sharedComponents/BlurImage.tsx#L2)
-- [Code Example of Loading images programmatically](https://github.com/TravisBumgarner/Photography-Portfolio/blob/2aa42cca8953b7e5ce6573607a6866f84bdaddcd/ui/src/components/Gallery.tsx)
-- [First Contentful Paint](https://web.dev/articles/fcp)
-- [Largest Contentful Paint](https://web.dev/articles/lcp)
 
 ## Reflecting on the Experience
 
