@@ -1,0 +1,40 @@
+import Figure from '../../app/_sharedComponents/Figure'
+
+I recently shared [Photo Palettes](https://photopalettes.com/) to Reddit for the first time and the app crashed almost immediately.
+
+How did this happen?
+
+I built a beta version of Photo Palettes and deployed it to Heroku. Personal testing went well. However, the moment another few users was added everything began to fail.
+
+It turns out that libraries that are involved with image processing and manipulation are quite memory intensive. The base plan offered by Heroku, Standard-1X, has a memory limit of 500MB. I was idling at 850MB. A few requests in parallel seemed like enough to cause disaster.
+
+I looked into upgrading. The next tier, Standard-2X, provides two 500 MB instances - essentially two smaller servers rather than one larger one. That meant my single process idling at 850 MB would still crash, so it wouldn’t solve the problem.
+
+The next tier up, Performance-M would solve the issue but 10x the cost. As a single developer working on my own projects, I don't have funds to light on fire.
+
+Then what?
+
+<Figure
+  src="/post-resources/scaling-without-burning-money/before.png"
+  caption="Before refactor"
+/>
+
+Most of the intensive processes didn’t need to run immediately, which meant they didn’t belong in the server at all. Heroku offers a worker process for running tasks outside of a server and so that's where I decided to move the code.
+
+Implementation took about a day and a half. I replaced the majority of the the intensive processes with database inserts to a queue table. The code was moved from the server to the worker. The worker polls the database, checks for new records, and processes any it finds.
+
+<Figure
+  src="/post-resources/scaling-without-burning-money/after.png"
+  caption="After refactor"
+/>
+
+Heroku’s Standard-2X was sufficient for the task which doubled my spend instead of 10x’ing it. I gained a deeper understanding of my codebase and more experience in devops. Memory usage dropped from 800MB down to 300MB. Best of all, my server can now handle much more traffic without a hiccup.
+
+<Figure
+  src="/post-resources/scaling-without-burning-money/preview.png"
+  caption="Result"
+/>
+
+I don’t believe throwing money at a technical problem is the best answer. In cases like this, it only treats the symptom. If I had gone the money route, I’d eventually be asking, “How do I avoid 100x'ing my spend?” Moments like these are a chance to pause and ask yourself: can this be solved without spending more?
+
+P.S. If you’re wondering about AWS or GCP, I’ve already explained why I avoid them [here](https://travisbumgarner.dev/blog/leaving-aws).

@@ -5,9 +5,33 @@
     <link>https://travisbumgarner.dev</link>
     <description>Engineering, photography, and everything in between</description>
     <language>en</language>
-    <lastBuildDate>Fri, 28 Feb 2025 00:25:53 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 02 Oct 2025 19:53:25 GMT</lastBuildDate>
     <atom:link href="https://travisbumgarner.dev/rss.xml" rel="self" type="application/rss+xml"/>
     
+  <item>
+    <title><![CDATA[Scaling Without Setting Money on Fire: Journeys of a Solo Developer]]></title>
+    <link>https://travisbumgarner.dev/blog/scaling-without-burning-money</link>
+    <guid>https://travisbumgarner.dev/blog/scaling-without-burning-money</guid>
+    <pubDate>Thu, 02 Oct 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[When all we do is our day jobs, we can afford to throw money at problems. But as a solo developer, every dollar counts.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Predictive UX Engineering]]></title>
+    <link>https://travisbumgarner.dev/blog/photography-portfolio-performance</link>
+    <guid>https://travisbumgarner.dev/blog/photography-portfolio-performance</guid>
+    <pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[We know what the user wants, before they act. Let's build for that.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Lessons from 12 Years of Abandoning Side Projects]]></title>
+    <link>https://travisbumgarner.dev/blog/lessons-learned-from-side-projects</link>
+    <guid>https://travisbumgarner.dev/blog/lessons-learned-from-side-projects</guid>
+    <pubDate>Thu, 27 Mar 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[I've started a bunch of side projects. I've abandoned just as many. In the last year I've completed three. From motivation to burnout, from chasing dopamine to actually finishing things, here's what I've learned along the way.]]></description>
+  </item>
+
   <item>
     <title><![CDATA[Somehash: A Blurhash Inspired Exploration]]></title>
     <link>https://travisbumgarner.dev/blog/somehash</link>
