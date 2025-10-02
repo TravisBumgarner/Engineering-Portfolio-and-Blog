@@ -4,7 +4,7 @@ I recently shared [Photo Palettes](https://photopalettes.com/) to Reddit for the
 
 How did this happen?
 
-I built a beta version of Photo Palettes and deployed it to Heroku. Personal testing went well. However, the moment another few users was added everything began to fail.
+I built a beta version of Photo Palettes and deployed it to Heroku. Personal testing went well. However, the moment a few users were added everything began to fail.
 
 It turns out that libraries that are involved with image processing and manipulation are quite memory intensive. The base plan offered by Heroku, Standard-1X, has a memory limit of 500MB. I was idling at 850MB. A few requests in parallel seemed like enough to cause disaster.
 
@@ -35,6 +35,6 @@ Heroku’s Standard-2X was sufficient for the task which doubled my spend instea
   caption="Result"
 />
 
-I don’t believe throwing money at a technical problem is the best answer. In cases like this, it only treats the symptom. If I had gone the money route, I’d eventually be asking, “How do I avoid 100x'ing my spend?” Moments like these are a chance to pause and ask yourself: can this be solved without spending more?
+I don’t believe throwing money at a technical problem is always the best answer. In cases like this, it only treats the symptom. If I had gone the money route, I’d eventually be asking, “How do I avoid 100x'ing my spend?” Moments like these are a chance to pause and ask yourself: can this be solved without spending more?
 
 P.S. If you’re wondering about AWS or GCP, I’ve already explained why I avoid them [here](https://travisbumgarner.dev/blog/leaving-aws).
