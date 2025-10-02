@@ -118,5 +118,11 @@
     "date": "2025-07-07",
     "description": "We know what the user wants, before they act. Let's build for that.",
     "preview_image": "preview.png"
+  },
+  "scaling-without-burning-money": {
+    "title": "Scaling Without Setting Money on Fire: Journeys of a Solo Developer",
+    "date": "2025-10-02",
+    "description": "When all we do is our day jobs, we can afford to throw money at problems. But as a solo developer, every dollar counts.",
+    "preview_image": "preview.png"
   }
 }
