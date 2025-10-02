@@ -1,10 +1,10 @@
 # Local Setup
 
 1. Populate .env.nfs
-    - Grab username from NearlyFreeSpeech
-    - Grab ssh config from `~/.ssh/config`
+   - Grab username from NearlyFreeSpeech
+   - Grab ssh config from `~/.ssh/config`
 1. Install dependencies `yarn`
-`. Run dev `yarn run dev`
+   `. Run dev `yarn run dev`
 
 # Deploy
 
@@ -17,13 +17,15 @@
 
 ## New Post
 
-1. Create new incremented [number].mdx file. 
-1. Add medatadata to posts/index.ts
+1. Decide on a post slug. `foo-bar-buzz`
+1. Create a post with slug name.
+1. Add medatadata to posts/index.json.
 1. Create new folder in public/posts
 1. Add at least a preview image.
 1. Create post
 1. Generate blurhashes
 1. Generate new RSS. `yarn run generate-rss`
+1. Mail newsletter followers.
 
 ## New Project
 
@@ -39,5 +41,3 @@
 ## Photos
 
 1. Generate a new blurhash and add it to blurHashLookup.ts
-
-
