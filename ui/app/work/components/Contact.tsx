@@ -5,6 +5,8 @@ import { Input, TextArea } from '@/app/_sharedComponents/Input'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
 
+const MAX_LENGTH = 800
+
 const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -25,6 +27,10 @@ const Contact = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    if (e.target.name === 'message' && e.target.value.length > MAX_LENGTH) {
+      return
+    }
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -99,6 +105,9 @@ const Contact = () => {
         onChange={handleChange}
         type="email"
       />
+      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <p>{`${formData.message.length}/${MAX_LENGTH}`}</p>
+      </div>
       <TextArea
         placeholder="Message"
         name="message"
