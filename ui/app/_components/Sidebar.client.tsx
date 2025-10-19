@@ -2,6 +2,7 @@
 
 import ROUTES from '@/lib/routes'
 import { SPACING } from '@/lib/styles/consts'
+import { motion, AnimatePresence } from 'motion/react'
 import Link from 'next/link'
 import { useState } from 'react'
 import { SocialIcon } from 'react-social-icons'
@@ -85,47 +86,63 @@ const SidebarClient = () => {
 
   return (
     <>
-      {isOpen && <Overlay onClick={() => setIsOpen(false)} />}
+      <AnimatePresence>
+        {isOpen && (
+          <Overlay
+            as={motion.div}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setIsOpen(false)}
+          />
+        )}
+      </AnimatePresence>
       <Positioner>
         <Hamburger onClick={() => setIsOpen(!isOpen)} />
-        {isOpen && (
-          <Wrapper>
-            <div>
-              {Object.values(ROUTES).map(r => (
-                <Item
-                  onClick={() => setIsOpen(false)}
-                  key={r.path}
-                  title={r.title}
-                  path={r.path}
-                  target={r.target}
-                />
-              ))}
-            </div>
-            <div>
-              {THERE.map(r => (
-                <Item
-                  onClick={() => setIsOpen(false)}
-                  key={r.path}
-                  title={r.title}
-                  path={r.path}
-                  target={r.target}
-                />
-              ))}
-            </div>
-            <IconsWrapper>
-              {SOCIAL_MEDIA.map(r => (
-                <SocialIcon
-                  bgColor="transparent"
-                  fgColor="var(--foreground)"
-                  key={r.path}
-                  url={r.path}
-                  network={r.icon}
-                  title={r.title}
-                />
-              ))}
-            </IconsWrapper>
-          </Wrapper>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <Wrapper
+              as={motion.div}
+              initial={{ x: -300 }}
+              animate={{ x: 0 }}
+              exit={{ x: -300 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            >
+              <div>
+                {Object.values(ROUTES).map(r => (
+                  <Item
+                    key={r.path}
+                    onClick={() => setIsOpen(false)}
+                    title={r.title}
+                    path={r.path}
+                    target={r.target}
+                  />
+                ))}
+                {THERE.map(r => (
+                  <Item
+                    key={r.path}
+                    onClick={() => setIsOpen(false)}
+                    title={r.title}
+                    path={r.path}
+                    target={r.target}
+                  />
+                ))}
+              </div>
+              <IconsWrapper>
+                {SOCIAL_MEDIA.map(r => (
+                  <SocialIcon
+                    bgColor="transparent"
+                    fgColor="var(--foreground)"
+                    url={r.path}
+                    network={r.icon}
+                    title={r.title}
+                  />
+                ))}
+              </IconsWrapper>
+            </Wrapper>
+          )}
+        </AnimatePresence>
       </Positioner>
     </>
   )
@@ -143,13 +160,22 @@ const Overlay = styled.div`
 `
 
 const Wrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: var(--secondary-background);
   z-index: 999;
-  margin-top: ${SPACING.SMALL};
+  padding: ${SPACING.SMALL};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+
   > div {
-    margin-bottom: ${SPACING.SMALL};
+    margin-bottom: ${SPACING.MEDIUM};
   }
-  /* Wee magic numbers */
-  width: 158px;
 
   .social-icon:hover {
     .social-svg-icon {
@@ -162,25 +188,23 @@ const IconsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  /* gap: ${SPACING.XXSMALL}; */
+  margin: 0 auto;
+  width: 150px;
+
   > * {
-    margin-bottom: ${SPACING.XXSMALL};
-    background-color: var(--secondary-background);
+    background-color: var(--background);
+    border-radius: 50%;
   }
 `
 
 const Box = styled.div`
-  height: 40px;
-  margin: ${SPACING.XXSMALL} 0;
-  background-color: var(--secondary-background);
+  margin: ${SPACING.XSMALL} 0;
+  background-color: var(--background);
   color: var(--foreground);
-
-  text-align: left;
-  padding-left: 17px;
-  padding-right: 17px;
   align-content: center;
+  cursor: pointer;
 
   &:hover {
     color: var(--primary);
@@ -188,12 +212,12 @@ const Box = styled.div`
 
   a {
     text-decoration: none;
-    color: var(--foreground);
+    color: inherit;
   }
 `
 
 const Positioner = styled.div`
-  z-index: 999;
+  z-index: 1000;
   position: fixed;
   top: ${SPACING.SMALL};
   left: ${SPACING.SMALL};
