@@ -1,9 +1,9 @@
 'use client'
 
-import Button from '@/app/_sharedComponents/Button'
-import { Input, TextArea } from '@/app/_sharedComponents/Input'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
+import Button from './Button'
+import { Input, TextArea } from './Input'
 
 const MAX_LENGTH = 800
 
@@ -12,7 +12,7 @@ const Form = styled.form`
   flex-direction: column;
 `
 
-const Contact = () => {
+const ContactForm = ({ subject }: { subject?: string }) => {
   const [success, setSuccess] = useState(false)
   const [failure, setFailure] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -21,6 +21,7 @@ const Contact = () => {
     name: '',
     email: '',
     message: '',
+    subject: subject || '',
     website: 'engineering-portfolio-and-blog'
   })
 
@@ -85,25 +86,26 @@ const Contact = () => {
     return 'Send'
   }, [isSubmitting, success, failure, resetButtonText])
 
-  const canSubmit =
-    formData.email.length > 0 &&
-    formData.message.length > 0 &&
-    formData.name.length > 0
-
   return (
     <Form onSubmit={handleSubmit}>
       <Input
-        placeholder="Name"
+        placeholder="Name (Optional)"
         name="name"
         value={formData.name}
         onChange={handleChange}
       />
       <Input
-        placeholder="Email"
+        placeholder="Email (Optional)"
         name="email"
         value={formData.email}
         onChange={handleChange}
         type="email"
+      />
+      <Input
+        placeholder="Subject"
+        name="subject"
+        value={formData.subject}
+        onChange={handleChange}
       />
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <p>{`${formData.message.length}/${MAX_LENGTH}`}</p>
@@ -115,11 +117,14 @@ const Contact = () => {
         onChange={handleChange}
         rows={4}
       />
-      <Button type="submit" disabled={isSubmitting || !canSubmit}>
+      <Button
+        type="submit"
+        disabled={isSubmitting || formData.message.length === 0}
+      >
         {buttonText}
       </Button>
     </Form>
   )
 }
 
-export default Contact
+export default ContactForm

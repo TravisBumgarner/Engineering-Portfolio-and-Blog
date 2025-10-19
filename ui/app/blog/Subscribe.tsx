@@ -3,8 +3,8 @@
 import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
 import { useState } from 'react'
 import styled from 'styled-components'
-import Button from '../_sharedComponents/Button'
-import { Input } from '../_sharedComponents/Input'
+import Button from '../../lib/sharedComponents/Button'
+import { Input } from '../../lib/sharedComponents/Input'
 
 const Wrapper = styled.div`
   margin-bottom: ${SPACING.MEDIUM};

@@ -2,7 +2,7 @@
 
 import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
-import ListItem from '../_sharedComponents/ListItem'
+import ListItem from '../../lib/sharedComponents/ListItem'
 import styled from 'styled-components'
 import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
 import Link from 'next/link'

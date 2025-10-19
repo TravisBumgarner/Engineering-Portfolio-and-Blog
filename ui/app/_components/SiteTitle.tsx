@@ -2,7 +2,7 @@
 
 import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '@/lib/consts'
 import Link from 'next/link'
-import Weak from '../_sharedComponents/Weak'
+import Weak from '../../lib/sharedComponents/Weak'
 import styled from 'styled-components'
 import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
 
