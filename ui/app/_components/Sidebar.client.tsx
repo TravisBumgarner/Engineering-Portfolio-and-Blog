@@ -132,6 +132,7 @@ const SidebarClient = () => {
               <IconsWrapper>
                 {SOCIAL_MEDIA.map(r => (
                   <SocialIcon
+                    key={r.path}
                     bgColor="transparent"
                     fgColor="var(--foreground)"
                     url={r.path}
