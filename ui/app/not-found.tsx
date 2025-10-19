@@ -1,12 +1,17 @@
 'use client'
 
-import { useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 import Button from './_sharedComponents/Button'
 import ContentStyler from './_sharedComponents/ContentStyler'
+import logger from '@/lib/utilities/logger'
 
 const Error = () => {
   const handleRefresh = useCallback(() => {
     window.location.href = '/'
+  }, [])
+
+  useEffect(() => {
+    logger.info('404 Not Found page viewed', { url: window.location.href })
   }, [])
 
   return (
