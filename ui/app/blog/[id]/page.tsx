@@ -2,7 +2,7 @@ import posts from '@/content/posts'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Subscribe from '../Subscribe'
-import ContentStyler from '@/app/_sharedComponents/ContentStyler'
+import ContentStyler from '@/lib/sharedComponents/ContentStyler'
 
 const loadPost = async (postId: string) => {
   const postModule = await import(`@/content/posts/${postId}.mdx`)

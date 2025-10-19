@@ -1,5 +1,5 @@
-import ContentStyler from '@/app/_sharedComponents/ContentStyler'
-import Figure from '@/app/_sharedComponents/Figure'
+import ContentStyler from '@/lib/sharedComponents/ContentStyler'
+import Figure from '@/lib/sharedComponents/Figure'
 import projects from '@/content/projects'
 import { Metadata } from 'next'
 import Link from 'next/link'

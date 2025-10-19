@@ -1,8 +1,8 @@
 'use client'
 
 import { useCallback, useEffect } from 'react'
-import Button from './_sharedComponents/Button'
-import ContentStyler from './_sharedComponents/ContentStyler'
+import Button from '../lib/sharedComponents/Button'
+import ContentStyler from '../lib/sharedComponents/ContentStyler'
 import logger from '@/lib/utilities/logger'
 
 const Error = () => {

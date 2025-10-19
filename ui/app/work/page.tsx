@@ -4,12 +4,12 @@ import React from 'react'
 import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
 import { SHARED_SPACING } from '@/lib/styles/theme'
 import styled from 'styled-components'
-import Contact from './components/Contact'
+import Contact from '../../lib/sharedComponents/ContactForm'
 import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
 import Link from 'next/link'
-import BlurHashImage from '../_sharedComponents/BlurHashImage'
-import ContentStyler from '../_sharedComponents/ContentStyler'
+import BlurHashImage from '../../lib/sharedComponents/BlurHashImage'
+import ContentStyler from '../../lib/sharedComponents/ContentStyler'
 
 function formatLinks(list: { title: string; path: string }[]) {
   return list.map(({ title, path }, i) => {

@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { SocialIcon } from 'react-social-icons'
 import styled from 'styled-components'
-import Hamburger from '../_sharedComponents/Hamburger'
+import Hamburger from '../../lib/sharedComponents/Hamburger'
 
 const SOCIAL_MEDIA = [
   {
