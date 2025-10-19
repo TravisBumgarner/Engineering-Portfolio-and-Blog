@@ -4,6 +4,7 @@ import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
 import ContentStyler from '@/lib/sharedComponents/ContentStyler'
 import Figure from '@/lib/sharedComponents/Figure'
+import { SPACING } from '@/lib/styles/consts'
 import styled from 'styled-components'
 
 type UpdateType = 'add' | 'update' | 'fix'
@@ -114,17 +115,35 @@ const UpdateComponent = ({ title, date, updates }: Update) => {
 const LandingPage = () => {
   return (
     <ContentStyler>
-      <h2>Todo Today</h2>
-      <p>The todo List for the easily distracted</p>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: SPACING.SMALL
+        }}
+      >
+        <div>
+          <img
+            src="/marketing-resources/todo_today/favicon.png"
+            alt="App Screenshot"
+            width={100}
+            height={100}
+          />
+        </div>
+        <div>
+          <h2>Todo Today</h2>
+          <p>The todo List for the easily distracted</p>
+        </div>
+      </div>
       <p>
         Todo Today isn't about the past or the future, it's about right now.
         Focus on what matters today. Set your tasks, order them, and add notes
         or subtasks. Nothing more, nothing less.
       </p>
 
-      <Figure
+      <BlurHashImage
         src="/marketing-resources/todo_today/main_page.png"
-        caption="App Screenshot"
+        priority={true}
       />
 
       <h3>Release Notes</h3>
@@ -134,6 +153,7 @@ const LandingPage = () => {
 
       <h3>Contact</h3>
       <ContactForm subject="Todo Today Feedback" />
+      <div style={{ height: SPACING.XLARGE }} />
     </ContentStyler>
   )
 }
