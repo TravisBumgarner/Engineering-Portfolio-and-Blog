@@ -1,7 +1,9 @@
 'use client'
 
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
+import ContactForm from '@/lib/sharedComponents/ContactForm'
 import ContentStyler from '@/lib/sharedComponents/ContentStyler'
+import Figure from '@/lib/sharedComponents/Figure'
 import styled from 'styled-components'
 
 type UpdateType = 'add' | 'update' | 'fix'
@@ -114,23 +116,24 @@ const LandingPage = () => {
     <ContentStyler>
       <h2>Todo Today</h2>
       <p>The todo List for the easily distracted</p>
-      <h3>Plan Just Today</h3>
       <p>
         Todo Today isn't about the past or the future, it's about right now.
         Focus on what matters today. Set your tasks, order them, and add notes
         or subtasks. Nothing more, nothing less.
       </p>
 
-      <BlurHashImage
-        priority={true}
+      <Figure
         src="/marketing-resources/todo_today/main_page.png"
-        alt="Main page"
+        caption="App Screenshot"
       />
 
-      <h2>Release Notes</h2>
+      <h3>Release Notes</h3>
       {UPDATES.map(update => (
         <UpdateComponent key={update.title + update.date} {...update} />
       ))}
+
+      <h3>Contact</h3>
+      <ContactForm subject="Todo Today Feedback" />
     </ContentStyler>
   )
 }
