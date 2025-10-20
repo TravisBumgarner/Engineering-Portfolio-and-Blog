@@ -5,11 +5,13 @@ import ContactForm from '@/lib/sharedComponents/ContactForm'
 import ContentStyler from '@/lib/sharedComponents/ContentStyler'
 import { SPACING } from '@/lib/styles/consts'
 import Link from 'next/dist/client/link'
-import { FaApple } from 'react-icons/fa'
+import { FaApple, FaGithub } from 'react-icons/fa'
 import Image from 'next/image'
 
-export const MAC_DOWNLOAD =
+const MAC_DOWNLOAD =
   'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-arm64.dmg'
+
+const GITHUB = 'https://github.com/travisBumgarner/todo-Today'
 
 type UpdateType = 'add' | 'update' | 'fix'
 type Update = {
@@ -171,7 +173,10 @@ const TodoToday = () => {
         }}
       >
         <Link style={{ fontSize: '30px' }} href={MAC_DOWNLOAD} download>
-          <FaApple size={60} />
+          <FaApple size={40} />
+        </Link>
+        <Link style={{ fontSize: '30px' }} href={GITHUB} download>
+          <FaGithub size={40} />
         </Link>
       </div>
     </ContentStyler>
