@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { SocialIcon } from 'react-social-icons'
 import styled from 'styled-components'
-import Hamburger from '../../lib/sharedComponents/Hamburger'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 const SOCIAL_MEDIA = [
   {
@@ -99,7 +99,11 @@ const SidebarClient = () => {
         )}
       </AnimatePresence>
       <Positioner>
-        <Hamburger onClick={() => setIsOpen(!isOpen)} />
+        <GiHamburgerMenu
+          style={{ cursor: 'pointer' }}
+          size={30}
+          onClick={() => setIsOpen(!isOpen)}
+        />
         <AnimatePresence>
           {isOpen && (
             <Wrapper
