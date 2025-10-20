@@ -647,7 +647,7 @@
     "id": "todo-today",
     "description": "The todo List for the easily distracted.",
     "toolsAndTechnologies": "React, TypeScript, Electron, IndexedDB, Dexie",
-    "lastMeaningfulUpdate": "2025-01",
+    "lastMeaningfulUpdate": "2025-10",
     "images": [
       {
         "src": "todo-today1.png",
@@ -668,12 +668,12 @@
     ],
     "links": [
       {
-        "label": "Website",
-        "src": "https://todo.sillysideprojects.com"
-      },
-      {
         "label": "GitHub",
         "src": "https://github.com/TravisBumgarner/todo-today"
+      },
+      {
+        "label": "Marketing Page",
+        "src": "https://travisbumgarner.dev/marketing/todo"
       }
     ],
     "previewImage": {
@@ -719,12 +719,12 @@
         "src": "https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone"
       },
       {
-        "label": "Website",
-        "src": "https://ideas.sillysideprojects.com"
-      },
-      {
         "label": "GitHub",
         "src": "https://github.com/TravisBumgarner/ideas-down-quickly"
+      },
+      {
+        "label": "Marketing Page",
+        "src": "https://travisbumgarner.dev/marketing/ideas"
       }
     ],
     "previewImage": {
@@ -855,8 +855,12 @@
         "src": "https://sillysideprojects.itch.io/candlight"
       },
       {
-        "label": "Steam Store Page",
+        "label": "Steam Store",
         "src": "https://store.steampowered.com/app/3157820?beta=0"
+      },
+      {
+        "label": "Marketing Page",
+        "src": "https://travisbumgarner.dev/marketing/candlelight"
       }
     ],
     "previewImage": {
@@ -864,51 +868,51 @@
       "src": "1.png"
     }
   },
-  "pixels64":{
+  "pixels64": {
     "title": "Pixels64",
     "id": "pixels64",
     "description": "Pixels64 is an 8x8 grid of 64 individually addressable RGB LEDs using the WS2812B package. It's powered by an ESP32 running CircuitPython with the neopixel library for control. It features a custom-designed circuit board and a 3D-printable housing.",
     "toolsAndTechnologies": "SolidWorks, Cura, KiCad, CircuitPython, 3D Printing, PCB Design, Soldering Iron",
     "lastMeaningfulUpdate": "2025-04",
     "images": [
-        {
-            "label": "Prototyping design with LED rope",
-            "src": "1.jpg"
-        },
-        {
-            "label": "PCB Schematic Design",
-            "src": "2.jpg"
-        },
-        {
-            "label": "PCB Board Design",
-            "src": "3.jpg"
-        },
-        {
-            "label": "3d Printed Housing",
-            "src": "4.jpg"
-        },
-        {
-            "label": "PCB",
-            "src": "5.jpg"
-        },
-        {
-            "label": "Fully functioning Pixels64",
-            "src": "preview.jpg"
-        }
-    ],
-    "links": [
-        {
-            "label": "GitHub",
-            "src": "https://github.com/TravisBumgarner/pixels64"
-        },
-        {
-          "label": "Instagram Video",
-          "src": "https://www.instagram.com/p/DHumF8FtDqN/"
-        }
-    ],
-    "previewImage": {
+      {
+        "label": "Prototyping design with LED rope",
+        "src": "1.jpg"
+      },
+      {
+        "label": "PCB Schematic Design",
+        "src": "2.jpg"
+      },
+      {
+        "label": "PCB Board Design",
+        "src": "3.jpg"
+      },
+      {
+        "label": "3d Printed Housing",
+        "src": "4.jpg"
+      },
+      {
+        "label": "PCB",
+        "src": "5.jpg"
+      },
+      {
         "label": "Fully functioning Pixels64",
         "src": "preview.jpg"
+      }
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/pixels64"
+      },
+      {
+        "label": "Instagram Video",
+        "src": "https://www.instagram.com/p/DHumF8FtDqN/"
+      }
+    ],
+    "previewImage": {
+      "label": "Fully functioning Pixels64",
+      "src": "preview.jpg"
     }
   },
   "five-pixels": {
@@ -918,59 +922,59 @@
     "toolsAndTechnologies": "React, TypeScript, Express, Cloudflare, NearlyFreeSpeech",
     "lastMeaningfulUpdate": "2025-02",
     "images": [
-        {
-            "label": "Game in progress",
-            "src": "preview.jpg"
-        }
-    ],
-    "links": [
-        {
-            "label": "Website",
-            "src": "http://fivepixels.pointlessprojects.com/"
-        },
-        {
-            "label": "GitHub",
-            "src": "https://github.com/TravisBumgarner/pointless-projects/tree/main/five-pixels"
-        }
-    ],
-    "previewImage": {
+      {
         "label": "Game in progress",
         "src": "preview.jpg"
+      }
+    ],
+    "links": [
+      {
+        "label": "Website",
+        "src": "http://fivepixels.pointlessprojects.com/"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/pointless-projects/tree/main/five-pixels"
+      }
+    ],
+    "previewImage": {
+      "label": "Game in progress",
+      "src": "preview.jpg"
     }
   },
-  "seis-colores":{
+  "seis-colores": {
     "title": "Seis Colores",
     "id": "seis-colores",
     "description": "Color palettes inspired by Mexican architecture.",
     "toolsAndTechnologies": "React, TypeScript, Python, Adobe Lightroom, NearlyFreeSpeech",
     "lastMeaningfulUpdate": "2025-05",
     "images": [
-        {
-            "label": "Generated Color Palette",
-            "src": "preview.jpg"
-        },
-        {
-            "label": "Generated Color Palette",
-            "src": "2.jpg"
-        },
-        {
-            "label": "Generated Color Palette",
-            "src": "3.jpg"
-        }
-    ],
-    "links": [
-        {
-            "label": "Website",
-            "src": "https://seis.pointlessprojects.com/"
-        },
-        {
-            "label": "GitHub",
-            "src": "https://github.com/TravisBumgarner/pointless-projects/tree/main/seis-colores"
-        }
-    ],
-    "previewImage": {
+      {
         "label": "Generated Color Palette",
         "src": "preview.jpg"
+      },
+      {
+        "label": "Generated Color Palette",
+        "src": "2.jpg"
+      },
+      {
+        "label": "Generated Color Palette",
+        "src": "3.jpg"
+      }
+    ],
+    "links": [
+      {
+        "label": "Website",
+        "src": "https://seis.pointlessprojects.com/"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/pointless-projects/tree/main/seis-colores"
+      }
+    ],
+    "previewImage": {
+      "label": "Generated Color Palette",
+      "src": "preview.jpg"
     }
   }
 }
