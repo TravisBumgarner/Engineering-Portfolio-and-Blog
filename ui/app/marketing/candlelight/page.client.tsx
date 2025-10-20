@@ -3,6 +3,7 @@
 import ContentStyler from '@/lib/sharedComponents/ContentStyler'
 import MarketingLink from '@/lib/sharedComponents/MarketingLink'
 import { SPACING } from '@/lib/styles/consts'
+import Image from 'next/image'
 
 const CandlelightPage = () => {
   return (
@@ -16,7 +17,7 @@ const CandlelightPage = () => {
           }}
         >
           <div>
-            <img
+            <Image
               src="/marketing-resources/candlelight/favicon.png"
               alt="App Screenshot"
               width={75}
@@ -51,8 +52,8 @@ const CandlelightPage = () => {
         <strong>Unwind and play at your own pace.</strong>
       </p>
       <p>
-        There's no goal here—just relax, enjoy the music, and experiment with
-        shapes to your heart's content.
+        There is no goal here, just relax, enjoy the music, and experiment with
+        shapes to your heart&apos;s content.
       </p>
 
       <h3>Daily Challenge</h3>
@@ -66,11 +67,11 @@ const CandlelightPage = () => {
 
       <h3>Tutorial</h3>
       <p>
-        <strong>Master the game's basics.</strong>
+        <strong>Master the game&apos;s basics.</strong>
       </p>
       <p>
         New to Candlelight? The tutorial will guide you through core mechanics,
-        ensuring you're ready to tackle the game.
+        ensuring you&apos;re ready to tackle the game.
       </p>
 
       <h2>Get Candlelight</h2>

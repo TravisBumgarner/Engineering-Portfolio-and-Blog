@@ -1,6 +1,5 @@
 'use client'
 
-import Head from 'next/head'
 import { SPACING } from '@/lib/styles/consts'
 import styled from 'styled-components'
 import Link from 'next/link'
@@ -9,6 +8,7 @@ import MarketingLink from '@/lib/sharedComponents/MarketingLink'
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
 import ContentStyler from '@/lib/sharedComponents/ContentStyler'
+import Image from 'next/image'
 
 const Section = styled.div`
   display: flex;
@@ -45,7 +45,7 @@ const LandingPage = () => {
           }}
         >
           <div>
-            <img
+            <Image
               src="/marketing-resources/ideas_down/favicon.png"
               alt="App Screenshot"
               width={75}

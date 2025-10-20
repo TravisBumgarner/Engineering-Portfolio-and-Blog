@@ -1,7 +1,7 @@
 const ROUTES = {
   SNAPSHOTS: {
     path: '/',
-    title: 'Project Snapshots',
+    title: 'Snapshots',
     target: '_self'
   },
   WORK_WITH_ME: {

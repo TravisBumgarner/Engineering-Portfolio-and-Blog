@@ -25,10 +25,10 @@ ssh $DEPLOY_SERVER_HOST "
 
     # Install dependencies and build
     echo 'Installing dependencies...'
-    yarn install
+    npm install
 
     echo 'Building application...'
-    yarn run build
+    npm run build
 
     # Move build files to deployment directory
     echo 'Moving files to deployment directory...'
@@ -36,11 +36,11 @@ ssh $DEPLOY_SERVER_HOST "
     rm -rf $REMOTE_DIR/*
     rm -rf $REMOTE_DIR/.* 2>/dev/null
 
-    mv .next start-next.sh package.json yarn.lock next.config.mjs public $REMOTE_DIR/
+    mv .next start-next.sh package.json package-lock.json next.config.mjs public $REMOTE_DIR/
 
     # Install production dependencies in deployment directory
     cd $REMOTE_DIR
-    yarn install --production
+    npm install --production
     chmod +x start-next.sh
 
     # Clean up

@@ -6,6 +6,7 @@ import ContentStyler from '@/lib/sharedComponents/ContentStyler'
 import { SPACING } from '@/lib/styles/consts'
 import Link from 'next/dist/client/link'
 import { FaApple } from 'react-icons/fa'
+import Image from 'next/image'
 
 export const MAC_DOWNLOAD =
   'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-arm64.dmg'
@@ -127,7 +128,7 @@ const TodoToday = () => {
           }}
         >
           <div>
-            <img
+            <Image
               src="/marketing-resources/todo_today/favicon.png"
               alt="App Screenshot"
               width={100}
@@ -141,9 +142,9 @@ const TodoToday = () => {
         </div>
       </div>
       <p>
-        Todo Today isn't about the past or the future, it's about right now.
-        Focus on what matters today. Set your tasks, order them, and add notes
-        or subtasks. Nothing more, nothing less.
+        Todo Today isn&apos;t about the past or the future, it&apos;s about
+        right now. Focus on what matters today. Set your tasks, order them, and
+        add notes or subtasks. Nothing more, nothing less.
       </p>
 
       <BlurHashImage
