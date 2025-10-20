@@ -4,8 +4,10 @@ import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
 import ContentStyler from '@/lib/sharedComponents/ContentStyler'
 import { SPACING } from '@/lib/styles/consts'
-import Link from 'next/link'
 import styled from 'styled-components'
+import Link from 'next/link'
+import { FaApple } from 'react-icons/fa'
+import MarketingLink from '@/lib/sharedComponents/MarketingLink'
 
 const Section = styled.div`
   display: flex;
@@ -135,25 +137,47 @@ const LandingPage = () => {
         </ImageColumn>
       </Section>
 
-      <p>
-        <a
-          target="_blank"
-          href="https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone"
-        >
-          App Store
-        </a>
-        {' | '}
-        <a
-          target="_blank"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSftglI15-9coi2P1Tx_QaZitHYrSMvVilQKn6_BB1t_3V3nvg/viewform?usp=sf_link"
-        >
-          Play Store Internal Testing
-        </a>
-      </p>
+      <div
+        style={{
+          display: 'flex',
+          gap: SPACING.MEDIUM
+        }}
+      >
+        <div>
+          <MarketingLink
+            target="_blank"
+            href="https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone"
+          >
+            App Store
+          </MarketingLink>
+        </div>
+        <div>
+          <MarketingLink
+            target="_blank"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSftglI15-9coi2P1Tx_QaZitHYrSMvVilQKn6_BB1t_3V3nvg/viewform?usp=sf_link"
+          >
+            Play Store Internal Testing
+          </MarketingLink>
+        </div>
+      </div>
 
-      <strong>Contact</strong>
+      <h3>Contact</h3>
       <ContactForm subject="Ideas Down Feedback" />
       <div style={{ height: SPACING.XLARGE }} />
+
+      <div
+        style={{
+          position: 'fixed',
+          top: 10,
+          right: 10,
+          fontSize: 12,
+          color: '#888'
+        }}
+      >
+        <Link href="https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone">
+          <FaApple size={60} />
+        </Link>
+      </div>
     </ContentStyler>
   )
 }
