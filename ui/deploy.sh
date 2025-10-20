@@ -1,51 +1,34 @@
 #!/bin/bash
+set -euo pipefail
 
-# Define variables
+REMOTE="nfs_eng41"
 REMOTE_DIR="/home/protected"
-REPO_URL="https://github.com/travisBumgarner/engineering-Portfolio-and-Blog.git"
-TEMP_DIR="/tmp/portfolio-build"
-BRANCH="master"
 
-DEPLOY_SERVER_HOST="nfs_eng41"
+echo "🧱 Building Next.js project locally..."
+npm ci
+npm run build
 
-# Execute remote commands
-echo "Starting remote deployment..."
-ssh $DEPLOY_SERVER_HOST "
-    # Clean up any existing temp directory
-    echo 'Cleaning up any existing temp directory...'
-    rm -rf $TEMP_DIR
+echo "🚀 Syncing build to NearlyFreeSpeech..."
+rsync -azP --delete \
+  --exclude='.next/cache' \
+  --exclude='node_modules' \
+  --exclude='.npm' \
+  package.json package-lock.json next.config.mjs start-next.sh public .next \
+  "$REMOTE:$REMOTE_DIR/"
 
-    # Clone the repository
-    echo 'Cloning repository...'
-    git clone $REPO_URL $TEMP_DIR
+echo "📦 Installing production dependencies remotely..."
+ssh "$REMOTE" "
+  set -euo pipefail
+  cd $REMOTE_DIR
 
-    # Change to the ui directory and install dependencies
-    cd $TEMP_DIR/ui
-    git checkout $BRANCH
+  echo '🧹 Cleaning previous node_modules...'
+  find node_modules -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+  mkdir -p node_modules
 
-    # Install dependencies and build
-    echo 'Installing dependencies...'
-    npm install
+  echo '📦 Installing production dependencies (skipping optional deps like Sentry CLI)...'
+  npm ci --omit=dev --omit=optional
 
-    echo 'Building application...'
-    npm run build
-
-    # Move build files to deployment directory
-    echo 'Moving files to deployment directory...'
-
-    rm -rf $REMOTE_DIR/*
-    rm -rf $REMOTE_DIR/.* 2>/dev/null
-
-    mv .next start-next.sh package.json package-lock.json next.config.mjs public $REMOTE_DIR/
-
-    # Install production dependencies in deployment directory
-    cd $REMOTE_DIR
-    npm install --production
-    chmod +x start-next.sh
-
-    # Clean up
-    echo 'Cleaning up...'
-    rm -rf $TEMP_DIR
+  chmod +x start-next.sh
 "
 
-echo "Deployment complete!"
+echo "✅ Deployment complete!"

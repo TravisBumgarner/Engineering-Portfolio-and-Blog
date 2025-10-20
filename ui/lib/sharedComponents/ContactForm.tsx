@@ -55,7 +55,8 @@ const ContactForm = ({ subject }: { subject?: string }) => {
         ...{
           name: '',
           email: '',
-          message: ''
+          message: '',
+          subject: ''
         }
       }))
     } else {
