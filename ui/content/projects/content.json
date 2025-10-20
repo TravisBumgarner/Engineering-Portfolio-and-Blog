@@ -650,20 +650,24 @@
     "lastMeaningfulUpdate": "2025-10",
     "images": [
       {
+        "src": "todo-today5.png",
+        "label": "New Version: Simplified view and cleaner design"
+      },
+      {
         "src": "todo-today1.png",
-        "label": "Home View"
+        "label": "Old Version: Home View"
       },
       {
         "src": "todo-today2.png",
-        "label": "Support for Multiple Workspaces"
+        "label": "Old Version: Support for Multiple Workspaces"
       },
       {
         "src": "todo-today3.png",
-        "label": "Backups and Themes"
+        "label": "Old Version: Backups and Themes"
       },
       {
         "src": "todo-today4.png",
-        "label": "High Contrast Mode"
+        "label": "Old Version: High Contrast Mode"
       }
     ],
     "links": [
@@ -678,7 +682,7 @@
     ],
     "previewImage": {
       "label": "App Preview",
-      "src": "todo-today1.png"
+      "src": "preview.png"
     }
   },
   "ideas-down": {
