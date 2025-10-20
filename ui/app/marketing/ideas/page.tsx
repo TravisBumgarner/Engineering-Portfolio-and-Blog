@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: DESCRIPTION,
       images: [
         {
-          url: 'https://travisbumgarner.dev/marketing-resources/ideas_down/og_image.png',
+          url: 'https://travisbumgarner.dev/marketing-resources/ideas_down/og-banner.png',
           width: 1200,
           height: 630,
           alt: 'Ideas Down'
