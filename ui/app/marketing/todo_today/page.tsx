@@ -3,9 +3,11 @@
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
 import ContentStyler from '@/lib/sharedComponents/ContentStyler'
-import Figure from '@/lib/sharedComponents/Figure'
 import { SPACING } from '@/lib/styles/consts'
-import styled from 'styled-components'
+import Link from 'next/dist/client/link'
+
+export const MAC_DOWNLOAD =
+  'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-arm64.dmg'
 
 type UpdateType = 'add' | 'update' | 'fix'
 type Update = {
@@ -115,25 +117,30 @@ const UpdateComponent = ({ title, date, updates }: Update) => {
 const LandingPage = () => {
   return (
     <ContentStyler>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: SPACING.SMALL
-        }}
-      >
-        <div>
-          <img
-            src="/marketing-resources/todo_today/favicon.png"
-            alt="App Screenshot"
-            width={100}
-            height={100}
-          />
+      <div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: SPACING.SMALL
+          }}
+        >
+          <div>
+            <img
+              src="/marketing-resources/todo_today/favicon.png"
+              alt="App Screenshot"
+              width={100}
+              height={100}
+            />
+          </div>
+          <div>
+            <h2>Todo Today</h2>
+            <p>The todo List for the easily distracted</p>
+          </div>
         </div>
-        <div>
-          <h2>Todo Today</h2>
-          <p>The todo List for the easily distracted</p>
-        </div>
+        <Link href={MAC_DOWNLOAD} download>
+          Download
+        </Link>
       </div>
       <p>
         Todo Today isn't about the past or the future, it's about right now.
