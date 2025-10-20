@@ -1,7 +1,7 @@
 const ROUTES = {
   SNAPSHOTS: {
     path: '/',
-    title: 'Snapshots',
+    title: 'Project Snapshots',
     target: '_self'
   },
   WORK_WITH_ME: {
@@ -11,7 +11,7 @@ const ROUTES = {
   },
   CREATIONS: {
     path: '/creations',
-    title: 'Creations',
+    title: 'Projects',
     target: '_self'
   },
   BLOG: {
@@ -21,7 +21,7 @@ const ROUTES = {
   },
   CONTACT: {
     path: '/contact',
-    title: "Let's Chat",
+    title: 'Contact',
     target: '_self'
   }
 }

@@ -22,11 +22,13 @@ const getBlurHash = (src: string) => {
 const BlurHashImage = ({
   src,
   priority,
-  alt
+  alt,
+  maxHeight
 }: {
   src: string
   priority: boolean
   alt?: string
+  maxHeight?: number
 }) => {
   const { width, height, blurHash } = getBlurHash(src)
   const blurDataURL = blurHashToDataURL(blurHash)
@@ -44,9 +46,9 @@ const BlurHashImage = ({
       sizes="(max-width: 750px) 100vw, 100vw"
       style={{
         // Background for transparent images.
-        border: `8px solid var(--foreground)`,
+        border: `2px solid var(--foreground)`,
         backgroundColor: '#fff',
-        maxHeight: '70vh',
+        maxHeight: maxHeight ? `${maxHeight}vh` : '90vh',
         objectFit: 'cover',
         objectPosition: 'top',
         display: 'block',

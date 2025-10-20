@@ -1,6 +1,6 @@
 import posts from '@/content/posts'
 import ROUTES from '@/lib/routes'
-import ListItem from '../_sharedComponents/ListItem'
+import ListItem from '../../lib/sharedComponents/ListItem'
 import Subscribe from './Subscribe'
 
 const Blog = () => {

@@ -14,7 +14,7 @@ const Figure = ({ src, caption }: FigureProps) => {
       style={{
         backgroundColor: 'var(--secondary-background)',
         color: 'var(--foreground)',
-        padding: SPACING.MEDIUM
+        padding: SPACING.SMALL
       }}
     >
       <BlurHashImage priority={false} src={src} alt={caption} />

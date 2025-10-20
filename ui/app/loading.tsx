@@ -1,3 +1,3 @@
-import Loading from './_sharedComponents/Loading'
+import Loading from '../lib/sharedComponents/Loading'
 
-export default Loading 
+export default Loading
