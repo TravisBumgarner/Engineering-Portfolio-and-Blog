@@ -107,9 +107,10 @@ const LandingPage = () => {
             <strong>Manage Company Career Pages</strong>
           </p>
           <p>
-            Add career pages from companies you're interested in. Configure CSS
-            selectors to target job listings, or use "body" to scan the entire
-            page. Import multiple sites at once or add them individually.
+            Add career pages from companies you are interested in. Configure CSS
+            selectors to target job listings, or use &apos;body&apos; to scan
+            the entire page. Import multiple sites at once or add them
+            individually.
           </p>
         </TextColumn>
         <ImageColumn>
@@ -224,8 +225,8 @@ const LandingPage = () => {
         Fast Classifieds uses Puppeteer to visit company career pages and
         extract job listings. It then sends each listing to OpenAI along with
         your custom prompt. The AI analyzes the job description and explains why
-        it matches (or doesn't match) your criteria. Jobs are deduplicated using
-        content hashing, so you won't see the same posting twice.
+        it matches (or does not match) your criteria. Jobs are deduplicated
+        using content hashing, so you will not see the same posting twice.
       </p>
       <h3>Why Fast Classifieds?</h3>
       <ul>
