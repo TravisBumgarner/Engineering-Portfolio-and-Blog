@@ -15,15 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: DESCRIPTION,
     openGraph: {
       title: TITLE,
-      description: DESCRIPTION,
-      images: [
-        {
-          url: 'https://travisbumgarner.dev/marketing-resources/fast-classifieds/og-banner.png',
-          width: 1200,
-          height: 630,
-          alt: 'Fast Classifieds - Browse company job boards quickly.'
-        }
-      ]
+      description: DESCRIPTION
     }
   }
 }
