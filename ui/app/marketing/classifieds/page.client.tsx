@@ -1,0 +1,259 @@
+'use client'
+
+import { SPACING } from '@/lib/styles/consts'
+import styled from 'styled-components'
+import { FaApple } from 'react-icons/fa'
+import MarketingLink from '@/lib/sharedComponents/MarketingLink'
+import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
+import ContactForm from '@/lib/sharedComponents/ContactForm'
+import ContentStyler from '@/lib/sharedComponents/ContentStyler'
+import Image from 'next/image'
+import Youtube from '@/lib/sharedComponents/YouTube'
+
+const Section = styled.div`
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  align-items: flex-start;
+  flex-direction: column;
+`
+
+const TextColumn = styled.div`
+  flex: 1;
+  min-width: 200px;
+`
+
+const ImageColumn = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`
+
+const LandingPage = () => {
+  return (
+    <ContentStyler>
+      <div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: SPACING.SMALL,
+            marginBottom: SPACING.MEDIUM
+          }}
+        >
+          <div>
+            <Image
+              src="/marketing-resources/classifieds/favicon.png"
+              alt="Fast Classifieds Logo"
+              width={75}
+              height={75}
+            />
+          </div>
+          <div>
+            <h2>Fast Classifieds</h2>
+            <p>Browse company job boards quickly.</p>
+          </div>
+        </div>
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          margin: `${SPACING.MEDIUM} 0`,
+          textAlign: 'center'
+        }}
+      >
+        <MarketingLink
+          target="_blank"
+          href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.1.0/Fast.Classifieds-1.1.0-arm64.dmg"
+        >
+          <FaApple style={{ marginRight: '0.5rem' }} />
+          Download for macOS
+        </MarketingLink>
+      </div>
+
+      <BlurHashImage
+        src="/marketing-resources/classifieds/screenshot.png"
+        priority
+      />
+      <p>
+        Stop wasting hours manually browsing company career pages. Fast
+        Classifieds uses AI to automatically scan multiple company websites,
+        find relevant job postings, and explain why each opportunity matches
+        your criteria. Keep your job search organized in one desktop
+        application. No accounts, no subscriptions, your data stays local.
+      </p>
+      <Section>
+        <TextColumn>
+          <p>
+            <strong>Create Custom AI Prompts</strong>
+          </p>
+          <p>
+            Define what makes a job relevant to you. The app uses your prompts
+            with OpenAI to analyze job listings and determine matches.
+          </p>
+        </TextColumn>
+        <ImageColumn>
+          <BlurHashImage
+            priority={false}
+            src="/marketing-resources/classifieds/prompt.png"
+          />
+        </ImageColumn>
+      </Section>
+      <Section>
+        <TextColumn>
+          <p>
+            <strong>Manage Company Career Pages</strong>
+          </p>
+          <p>
+            Add career pages from companies you are interested in. Configure CSS
+            selectors to target job listings, or use &apos;body&apos; to scan
+            the entire page. Import multiple sites at once or add them
+            individually.
+          </p>
+        </TextColumn>
+        <ImageColumn>
+          <BlurHashImage
+            priority={false}
+            src="/marketing-resources/classifieds/sites.png"
+          />
+        </ImageColumn>
+      </Section>
+      <Section>
+        <TextColumn>
+          <p>
+            <strong>Automated Scanning with Progress Tracking</strong>
+          </p>
+          <p>
+            Run automated scrapes across all active sites. Watch real-time
+            progress as the app visits each career page, extracts job listings,
+            and uses AI to evaluate relevance.
+          </p>
+        </TextColumn>
+        <ImageColumn>
+          <BlurHashImage
+            priority={false}
+            src="/marketing-resources/classifieds/scanner.png"
+          />
+        </ImageColumn>
+      </Section>
+      <Section>
+        <TextColumn>
+          <p>
+            <strong>Track Your Applications</strong>
+          </p>
+          <p>
+            All discovered jobs appear in one organized table. Update status as
+            you progress (New → Applied → Interview → Offer). Sort by company,
+            title, or date found. View AI explanations for why each job was
+            matched.
+          </p>
+        </TextColumn>
+        <ImageColumn>
+          <BlurHashImage
+            priority={false}
+            src="/marketing-resources/classifieds/postings.png"
+          />
+        </ImageColumn>
+      </Section>
+      <Section>
+        <TextColumn>
+          <p>
+            <strong>Review Scrape History</strong>
+          </p>
+          <p>
+            See detailed history of every scan: which sites were checked, how
+            many new jobs were found, duration, and any errors encountered.
+            Retry failed sites with one click.
+          </p>
+        </TextColumn>
+        <ImageColumn>
+          <BlurHashImage
+            priority={false}
+            src="/marketing-resources/classifieds/history.png"
+          />
+        </ImageColumn>
+      </Section>
+      <Section>
+        <TextColumn>
+          <p>
+            <strong>Privacy & Transparency</strong>
+          </p>
+          <ul>
+            <li>
+              All data stored locally in SQLite, no data leaves your computer.
+            </li>
+            <li>No account or subscription required</li>
+            <li>OpenAI API key stored securely on your device</li>
+            <li>Track API usage directly in the app</li>
+            <li>
+              Fully Open Source (
+              <a
+                target="_blank"
+                href="https://github.com/TravisBumgarner/fast-classifieds"
+              >
+                GitHub
+              </a>
+              )
+            </li>
+            <li>Cross-platform: macOS, Windows, Linux</li>
+          </ul>
+        </TextColumn>
+      </Section>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          margin: `${SPACING.MEDIUM} 0`,
+          textAlign: 'center'
+        }}
+      >
+        <MarketingLink
+          target="_blank"
+          href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.1.0/Fast.Classifieds-1.1.0-arm64.dmg"
+        >
+          <FaApple style={{ marginRight: '0.5rem' }} />
+          Download for macOS
+        </MarketingLink>
+      </div>
+      <p>Windows and Linux coming soon!</p>
+      <h3>Getting Started</h3>
+      <Youtube embedId="FQKY70r2288" />
+      <h3>How It Works</h3>
+      <p>
+        Fast Classifieds uses Puppeteer to visit company career pages and
+        extract job listings. It then sends each listing to OpenAI along with
+        your custom prompt. The AI analyzes the job description and explains why
+        it matches (or does not match) your criteria. Jobs are deduplicated
+        using content hashing, so you will not see the same posting twice.
+      </p>
+      <h3>Why Fast Classifieds?</h3>
+      <ul>
+        <li>
+          <strong>Save Time:</strong> Stop manually checking dozens of career
+          pages daily
+        </li>
+        <li>
+          <strong>Find Better Matches:</strong> AI explains why each job is
+          relevant to you
+        </li>
+        <li>
+          <strong>Stay Organized:</strong> Track applications from discovery to
+          offer
+        </li>
+        <li>
+          <strong>Own Your Data:</strong> Everything stays on your computer
+        </li>
+        <li>
+          <strong>Transparent Costs:</strong> You control your OpenAI API usage
+        </li>
+      </ul>
+      <h3>Contact</h3>
+      <ContactForm subject="Fast Classifieds Feedback" />
+      <div style={{ height: '50px' }} />
+    </ContentStyler>
+  )
+}
+
+export default LandingPage
