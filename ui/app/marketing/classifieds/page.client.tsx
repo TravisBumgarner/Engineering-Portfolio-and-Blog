@@ -66,7 +66,7 @@ const LandingPage = () => {
       >
         <MarketingLink
           target="_blank"
-          href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.1.0/Fast.Classifieds-1.1.0-arm64.dmg"
+          href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.4.0/Fast.Classifieds-1.4.0-arm64.dmg"
         >
           <FaApple style={{ marginRight: '0.5rem' }} />
           Download for macOS
@@ -160,6 +160,25 @@ const LandingPage = () => {
       <Section>
         <TextColumn>
           <p>
+            <strong>Find Duplicates</strong>
+          </p>
+          <p>
+            The app automatically detects duplicate job postings. If the same
+            job appears on multiple sites, it groups them together to keep your
+            list clean.
+          </p>
+        </TextColumn>
+        <ImageColumn>
+          <BlurHashImage
+            priority={false}
+            src="/marketing-resources/classifieds/duplicates.png"
+          />
+        </ImageColumn>
+      </Section>
+
+      <Section>
+        <TextColumn>
+          <p>
             <strong>Review Scrape History</strong>
           </p>
           <p>
@@ -211,7 +230,7 @@ const LandingPage = () => {
       >
         <MarketingLink
           target="_blank"
-          href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.1.0/Fast.Classifieds-1.1.0-arm64.dmg"
+          href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.4.0/Fast.Classifieds-1.4.0-arm64.dmg"
         >
           <FaApple style={{ marginRight: '0.5rem' }} />
           Download for macOS
