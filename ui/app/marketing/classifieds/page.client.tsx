@@ -73,10 +73,7 @@ const LandingPage = () => {
         </MarketingLink>
       </div>
 
-      <BlurHashImage
-        src="/marketing-resources/classifieds/screenshot.png"
-        priority
-      />
+      <Youtube embedId="QES0fxMuP5A" />
       <p>
         Stop wasting hours manually browsing company career pages. Fast
         Classifieds uses AI to automatically scan multiple company websites,
