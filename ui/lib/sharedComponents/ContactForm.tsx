@@ -103,17 +103,19 @@ const ContactForm = ({ subject }: { subject?: string }) => {
           type="email"
         />
         <Input placeholder="Subject" name="subject" value={formData.subject} onChange={handleChange} />
-        <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <Typography>{`${formData.message.length}/${MAX_LENGTH}`}</Typography>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: SPACING.TINY.PX }}>
+          <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Typography sx={{ padding: 0, margin: 0 }}>{`${formData.message.length}/${MAX_LENGTH}`}</Typography>
+          </Box>
+          <Input
+            multiline
+            placeholder="Message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            rows={4}
+          />
         </Box>
-        <Input
-          multiline
-          placeholder="Message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          rows={4}
-        />
         <Button variant="contained" type="submit" disabled={isSubmitting || formData.message.length === 0}>
           {buttonText}
         </Button>

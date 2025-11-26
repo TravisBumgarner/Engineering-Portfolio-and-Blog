@@ -15,7 +15,7 @@ const Figure = ({ src, caption }: FigureProps) => {
       component="figure"
       sx={{
         backgroundColor: 'background.paper',
-        p: SPACING.SMALL.PX,
+        p: SPACING.MEDIUM.PX,
         m: `${SPACING.MEDIUM.PX} 0`,
       }}
     >

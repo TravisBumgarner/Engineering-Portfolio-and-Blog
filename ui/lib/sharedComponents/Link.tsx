@@ -6,7 +6,7 @@ import NextLink, { type LinkProps as NextLinkProps } from 'next/link'
 import { forwardRef } from 'react'
 import { DARK_BUTTON_STYLES, LIGHT_BUTTON_STYLES, PALETTE, SPACING } from '../styles/consts'
 
-export type LinkType = 'block' | 'inline' | 'inlineBlock'
+export type LinkType = 'block' | 'inline' | 'inlineBlock' | 'inlineMenu'
 
 /** Shared block style — returns plain CSS object */
 const sxBlockShared = (mode: 'light' | 'dark'): CSSObject => ({
@@ -31,6 +31,18 @@ const getTypeStyles = (mode: 'light' | 'dark', type: LinkType): CSSObject => {
       return { display: 'block', ...sxBlockShared(mode) }
     case 'inlineBlock':
       return { display: 'inline-block', ...sxBlockShared(mode) }
+    case 'inlineMenu':
+      return {
+        display: 'inline',
+        color: mode === 'light' ? PALETTE.grayscale[800] : PALETTE.grayscale[100],
+        fontWeight: 700,
+        '&:visited': {
+          color: mode === 'light' ? PALETTE.grayscale[800] : PALETTE.grayscale[100],
+        },
+        '&:hover': {
+          color: mode === 'light' ? PALETTE.primary[600] : PALETTE.primary[400],
+        },
+      }
     case 'inline':
       return {
         display: 'inline',
@@ -56,7 +68,7 @@ const normalizeSx = (sx?: SxProps): CSSObject => {
 }
 
 export type MuiNextLinkProps = {
-  type?: LinkType
+  type: LinkType
   sx?: SxProps
   href: NextLinkProps['href']
 } & Omit<NextLinkProps, 'href'> &
@@ -83,7 +95,7 @@ const MuiNextLink = forwardRef<HTMLAnchorElement, MuiNextLinkProps>(function Mui
       underline="none"
       sx={{
         textDecoration: 'none',
-        ...getTypeStyles(mode, type || 'inline'),
+        ...getTypeStyles(mode, type),
         ...normalizeSx(sx),
       }}
     />

@@ -17,9 +17,9 @@ function formatLinks(list: { title: string; path: string }[]) {
     const sep = i === list.length - 2 ? ' and ' : i < list.length - 1 ? ', ' : ''
     return (
       <React.Fragment key={title}>
-        <a target="_blank" href={path}>
+        <Link type="inline" target="_blank" href={path}>
           {title}
-        </a>
+        </Link>
         {sep}
       </React.Fragment>
     )

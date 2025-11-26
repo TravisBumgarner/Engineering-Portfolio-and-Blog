@@ -5,7 +5,15 @@ import { createTheme, type ThemeOptions, ThemeProvider } from '@mui/material/sty
 import useMediaQuery from '@mui/material/useMediaQuery'
 import merge from 'lodash/merge'
 import { useMemo } from 'react'
-import { BORDER_RADIUS, DARK_BUTTON_STYLES, FONT_SIZES, LIGHT_BUTTON_STYLES, PALETTE, SPACING } from './consts'
+import {
+  BORDER_RADIUS,
+  DARK_BUTTON_STYLES,
+  FONT_SIZES,
+  LIGHT_BUTTON_STYLES,
+  PALETTE,
+  SPACING,
+  subtleBackground,
+} from './consts'
 
 export const TAB_HEIGHT = '36px' // for some reason all are needed.
 
@@ -172,9 +180,6 @@ const getThemeOptions = (mode: 'light' | 'dark'): ThemeOptions => ({
     divider: mode === 'light' ? PALETTE.grayscale[200] : PALETTE.grayscale[800],
   },
   typography: {
-    h1: {
-      color: mode === 'light' ? PALETTE.grayscale[900] : PALETTE.grayscale[100],
-    },
     h2: {
       color: mode === 'light' ? PALETTE.grayscale[900] : PALETTE.grayscale[100],
     },
@@ -259,6 +264,15 @@ const getThemeOptions = (mode: 'light' | 'dark'): ThemeOptions => ({
           '&.Mui-focused': {
             color: mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[300],
           },
+        },
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          padding: SPACING.SMALL.PX,
+          margin: 0,
+          backgroundColor: subtleBackground(mode, 'slightly'),
         },
       },
     },

@@ -110,8 +110,8 @@ export const LIGHT_BUTTON_STYLES = {
 
 export const DARK_BUTTON_STYLES = {
   color: PALETTE.primary[900],
-  background: PALETTE.primary[500],
-  hoverBackground: PALETTE.primary[100],
+  background: PALETTE.primary[400],
+  hoverBackground: PALETTE.primary[500],
 }
 
 export const Z_INDICES = {

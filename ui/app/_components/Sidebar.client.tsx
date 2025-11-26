@@ -73,7 +73,7 @@ const SidebarClient = () => {
         <Stack direction="column" spacing={SPACING.TINY.PX}>
           {Object.values(ROUTES).map((r) => (
             <Box key={r.href}>
-              <MuiNextLink type="inline" {...r} onClick={() => setIsOpen(false)}>
+              <MuiNextLink type="inlineMenu" {...r} onClick={() => setIsOpen(false)}>
                 {' '}
                 {r.title}
               </MuiNextLink>
@@ -82,7 +82,7 @@ const SidebarClient = () => {
 
           {THERE.map((r) => (
             <Box key={r.href}>
-              <MuiNextLink type="inline" {...r} onClick={() => setIsOpen(false)}>
+              <MuiNextLink type="inlineMenu" {...r} onClick={() => setIsOpen(false)}>
                 {r.title}
               </MuiNextLink>
             </Box>
@@ -99,7 +99,7 @@ const SidebarClient = () => {
           {SOCIAL_MEDIA.map((s) => (
             <Tooltip key={s.href} title={s.title} placement="top">
               <Box sx={{ margin: SPACING.SMALL.PX }}>
-                <MuiNextLink type="inline" key={s.href} href={s.href} target={s.target} rel="noopener noreferrer">
+                <MuiNextLink type="inlineMenu" key={s.href} href={s.href} target={s.target} rel="noopener noreferrer">
                   <Icon name={s.icon} size={32} />
                 </MuiNextLink>
               </Box>
