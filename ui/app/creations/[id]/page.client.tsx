@@ -12,9 +12,9 @@ const Creation = ({ project }: { project: Project }) => {
   const Images = project.images.map((i) => ({
     key: i.src,
     element: (
-      <div key={i.src}>
+      <Box key={i.src}>
         <Figure caption={i.label} key={i.src} src={`/project-resources/${project.id}/${i.src}`} />
-      </div>
+      </Box>
     ),
   }))
 
