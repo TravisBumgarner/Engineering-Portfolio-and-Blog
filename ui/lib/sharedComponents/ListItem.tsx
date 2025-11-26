@@ -61,24 +61,24 @@ const ListItem = ({
     return (
       <Box
         sx={{
-          padding: SPACING.MEDIUM,
+          padding: SPACING.MEDIUM.PX,
           display: 'flex',
           backgroundColor: 'var(--secondary-background)',
           color: 'var(--foreground)',
           flexDirection: 'column',
           textDecoration: 'none',
-          marginBottom: SPACING.LARGE,
+          marginBottom: SPACING.LARGE.PX,
           '& > div': {
-            marginBottom: SPACING.MEDIUM,
+            marginBottom: SPACING.MEDIUM.PX,
             display: 'flex',
-            gap: SPACING.SMALL,
+            gap: SPACING.SMALL.PX,
             flexDirection: 'column',
           },
           '& h2': {
             fontSize: FONT_SIZES.LARGE,
             fontWeight: FONT_WEIGHTS.BOLD,
             marginTop: 0,
-            marginBottom: SPACING.SMALL,
+            marginBottom: SPACING.SMALL.PX,
           },
           '& time': {
             display: 'block',
@@ -110,24 +110,24 @@ const ListItem = ({
     <Link href={link} style={{ textDecoration: 'none' }}>
       <Box
         sx={{
-          padding: SPACING.MEDIUM,
+          padding: SPACING.MEDIUM.PX,
           display: 'flex',
           backgroundColor: 'var(--secondary-background)',
           color: 'var(--foreground)',
           flexDirection: 'column',
           textDecoration: 'none',
-          marginBottom: SPACING.LARGE,
+          marginBottom: SPACING.LARGE.PX,
           '& > div': {
-            marginBottom: SPACING.MEDIUM,
+            marginBottom: SPACING.MEDIUM.PX,
             display: 'flex',
-            gap: SPACING.SMALL,
+            gap: SPACING.SMALL.PX,
             flexDirection: 'column',
           },
           '& h2': {
             fontSize: FONT_SIZES.LARGE,
             fontWeight: FONT_WEIGHTS.BOLD,
             marginTop: 0,
-            marginBottom: SPACING.SMALL,
+            marginBottom: SPACING.SMALL.PX,
           },
           '& time': {
             display: 'block',

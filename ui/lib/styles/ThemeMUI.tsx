@@ -16,7 +16,7 @@ import {
     LIGHT_BUTTON_STYLES,
     PALETTE,
     SPACING,
-} from './styleConstsNEW'
+} from './consts'
 
 export const TAB_HEIGHT = '36px' // for some reason all are needed.
 

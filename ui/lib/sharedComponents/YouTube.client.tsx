@@ -11,7 +11,7 @@ export const YoutubeWrapper = ({ children, ...props }: BoxProps) => (
       overflow: 'hidden',
       position: 'relative',
       margin: '1rem 0',
-      border: `${SPACING.MEDIUM} solid var(--secondary-background)`,
+      border: `${SPACING.MEDIUM.PX} solid var(--secondary-background)`,
       color: 'var(--foreground)',
       aspectRatio: '16 / 9',
       width: '100%',

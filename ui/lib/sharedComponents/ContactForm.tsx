@@ -91,7 +91,7 @@ const ContactForm = ({ subject }: { subject?: string }) => {
         style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: SPACING.MEDIUM,
+          gap: SPACING.MEDIUM.PX,
           width: '100%',
         }}
         onSubmit={handleSubmit}

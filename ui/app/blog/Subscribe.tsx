@@ -14,10 +14,10 @@ export default function Subscribe() {
   return (
     <Box
       sx={{
-        mb: SPACING.MEDIUM,
+        mb: SPACING.MEDIUM.PX,
         display: 'flex',
         flexDirection: { xs: 'column', sm: 'row' },
-        gap: { xs: SPACING.XSMALL, sm: SPACING.SMALL },
+        gap: { xs: SPACING.XSMALL.PX, sm: SPACING.SMALL.PX },
         alignItems: 'center',
         justifyContent: 'center',
 
@@ -39,7 +39,7 @@ export default function Subscribe() {
           width: 120,
           display: 'flex',
           flexDirection: 'row',
-          gap: SPACING.XSMALL,
+          gap: SPACING.XSMALL.PX,
           alignItems: 'center',
           justifyContent: 'center',
           color: 'var(--primary)',
@@ -78,7 +78,7 @@ export default function Subscribe() {
         sx={{
           display: 'flex',
           flexDirection: 'row',
-          gap: SPACING.SMALL,
+          gap: SPACING.SMALL.PX,
           width: '100%',
         }}
         className="embeddable-buttondown-form"

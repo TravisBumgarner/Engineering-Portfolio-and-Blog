@@ -17,15 +17,15 @@ const Portfolio = () => {
       >
         <Box
           sx={{
-            padding: SPACING.MEDIUM,
+            padding: SPACING.MEDIUM.PX,
             backgroundColor: 'var(--bright-background)',
             color: 'var(--foreground)',
             textDecoration: 'none',
-            marginBottom: SPACING.LARGE,
+            marginBottom: SPACING.LARGE.PX,
             '& > div': {
               flexDirection: 'column',
               display: 'flex',
-              gap: SPACING.SMALL,
+              gap: SPACING.SMALL.PX,
             },
 
           }}
@@ -34,7 +34,7 @@ const Portfolio = () => {
             fontSize: FONT_SIZES.LARGE,
             fontWeight: FONT_WEIGHTS.BOLD,
             marginTop: 0,
-            marginBottom: SPACING.SMALL,
+            marginBottom: SPACING.SMALL.PX,
           }} variant="h2">Current Project: Photo Palettes</Typography>
           <div>
             <Typography>A social platform for generating color palettes from photos.</Typography>

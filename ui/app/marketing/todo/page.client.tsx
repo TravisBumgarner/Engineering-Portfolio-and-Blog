@@ -127,7 +127,7 @@ const TodoToday = () => {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: SPACING.SMALL
+            gap: SPACING.SMALL.PX
           }}
         >
           <Box>
@@ -162,7 +162,7 @@ const TodoToday = () => {
 
       <Typography variant="h3">Contact</Typography>
       <ContactForm subject="Todo Today Feedback" />
-      <Box style={{ height: SPACING.XLARGE }} />
+      <Box style={{ height: SPACING.HUGE.PX }} />
 
       <Box
         style={{

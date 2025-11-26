@@ -14,7 +14,7 @@ const Video = ({ src, aspectRatio }: VideoProps) => {
       className="video"
       style={{
         backgroundColor: 'var(--secondary-background)',
-        padding: SPACING.MEDIUM,
+        padding: SPACING.MEDIUM.PX,
         width: '100%',
         aspectRatio: aspectRatio,
         overflow: 'hidden'

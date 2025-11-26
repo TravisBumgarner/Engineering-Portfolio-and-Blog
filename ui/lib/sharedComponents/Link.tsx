@@ -2,7 +2,7 @@
 import NextLink, { type LinkProps as NextLinkProps } from 'next/link'
 import { Link as MuiLink, SxProps, type LinkProps as MuiLinkProps } from '@mui/material'
 import { forwardRef } from 'react'
-import { SPACING } from '../styles/styleConstsNEW'
+import { SPACING } from '../styles/consts'
 
 type LinkType = 'block' | 'inline'
 
@@ -10,9 +10,9 @@ const SX: Record<LinkType, SxProps> = {
     block: {
         display: 'block',
         textAlign: 'center',
-        padding: SPACING.SMALL.PX,
+        padding: SPACING.SMALL.PX.PX,
         backgroundColor: 'darkred', // TODO - Fix me
-        margin: `${SPACING.SMALL.PX} 0`
+        margin: `${SPACING.SMALL.PX.PX} 0`
     },
     inline: {
         display: 'inline'

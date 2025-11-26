@@ -1,5 +1,3 @@
-import ClientLayout from '@/lib/styles/client-layout'
-import StyledComponentsRegistry from '@/lib/styles/styled-components-registry'
 import { makeNewSiteTitle } from '@/lib/utilities'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { ReactNode } from 'react'
@@ -44,13 +42,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <AppRouterCacheProvider>
           <AppThemeProvider>
-            <StyledComponentsRegistry>
-              <ClientLayout>
-                <Sidebar />
-                <SiteTitle title={title} />
-                {children}
-              </ClientLayout>
-            </StyledComponentsRegistry>
+            <Sidebar />
+            <SiteTitle title={title} />
+            {children}
           </AppThemeProvider>
         </AppRouterCacheProvider>
       </body>

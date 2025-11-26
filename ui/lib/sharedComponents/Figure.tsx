@@ -16,7 +16,7 @@ const Figure = ({ src, caption }: FigureProps) => {
       sx={{
         backgroundColor: 'var(--secondary-background)',
         color: 'var(--foreground)',
-        p: SPACING.SMALL,
+        p: SPACING.SMALL.PX,
         m: 0
       }}
     >
@@ -27,7 +27,7 @@ const Figure = ({ src, caption }: FigureProps) => {
         sx={{
           fontSize: FONT_SIZES.SMALL,
           fontWeight: 100,
-          mt: SPACING.SMALL
+          mt: SPACING.SMALL.PX
         }}
       >
         {caption}

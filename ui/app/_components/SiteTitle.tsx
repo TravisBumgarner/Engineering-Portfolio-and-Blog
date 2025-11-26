@@ -9,8 +9,8 @@ import Typography from '@mui/material/Typography'
 const SiteTitle = ({ title }: { title: string }) => {
   return (
     <Box sx={{
-      py: SPACING.LARGE,
-      mt: { xs: SPACING.SMALL, md: 0 },
+      py: SPACING.LARGE.PX,
+      mt: { xs: SPACING.SMALL.PX, md: 0 },
     }}>
       <Link href="/">
         <Typography variant="h1">{title}</Typography>

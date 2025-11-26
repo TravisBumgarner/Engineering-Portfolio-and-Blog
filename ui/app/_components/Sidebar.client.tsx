@@ -1,14 +1,13 @@
 'use client'
 
 import ROUTES from '@/lib/routes'
-import { SPACING } from '@/lib/styles/consts'
+import { SPACING, Z_INDICES } from '@/lib/styles/consts'
 import { AnimatePresence } from 'motion/react'
 import Link from 'next/link'
 import { useState } from 'react'
 import { SocialIcon } from 'react-social-icons'
 import { Box, Drawer, IconButton, Backdrop } from '@mui/material'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { Z_INDICES } from '@/lib/styles/styleConstsNEW'
 
 const SOCIAL_MEDIA = [
   { title: 'GitHub', path: 'https://github.com/travisBumgarner/', target: '_blank', icon: 'github' },
@@ -40,7 +39,7 @@ const Item = ({ title, path, target, onClick }: ItemProps) => (
   >
     <Box
       sx={{
-        m: `${SPACING.XSMALL} 0`,
+        m: `${SPACING.SMALL.PX} 0`,
         backgroundColor: 'var(--background)',
         color: 'var(--foreground)',
         cursor: 'pointer',
@@ -75,8 +74,8 @@ const SidebarClient = () => {
         sx={{
           zIndex: 1000,
           position: 'fixed',
-          top: SPACING.SMALL,
-          left: SPACING.SMALL
+          top: SPACING.SMALL.PX,
+          left: SPACING.SMALL.PX
         }}
       >
         <IconButton onClick={() => setIsOpen(true)}>
@@ -93,7 +92,7 @@ const SidebarClient = () => {
             sx: {
               width: 190,
               backgroundColor: 'var(--secondary-background)',
-              p: SPACING.SMALL,
+              p: SPACING.SMALL.PX,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between'
@@ -101,7 +100,7 @@ const SidebarClient = () => {
           }
         }}
       >
-        <Box sx={{ mb: SPACING.MEDIUM }}>
+        <Box sx={{ mb: SPACING.MEDIUM.PX }}>
           {Object.values(ROUTES).map(r => (
             <Item
               key={r.path}

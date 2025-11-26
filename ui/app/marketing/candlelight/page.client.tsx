@@ -14,7 +14,7 @@ const CandlelightPage = () => {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: SPACING.SMALL
+            gap: SPACING.SMALL.PX
           }}
         >
           <div>
