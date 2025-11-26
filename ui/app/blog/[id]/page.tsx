@@ -2,7 +2,8 @@ import posts from '@/content/posts'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Subscribe from '../Subscribe'
-import ContentStyler from '@/lib/sharedComponents/ContentStyler'
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
 
 const loadPost = async (postId: string) => {
   const postModule = await import(`@/content/posts/${postId}.mdx`)
@@ -45,8 +46,8 @@ const Post = async ({ params }: { params: Params }) => {
   const Component = await loadPost(id)
 
   return (
-    <ContentStyler>
-      <h2>{post.title}</h2>
+    <Box>
+      <Typography variant="h2">{post.title}</Typography>
       <time>
         Posted{' '}
         {new Date(post.date + 'T00:00:00Z')
@@ -57,7 +58,7 @@ const Post = async ({ params }: { params: Params }) => {
       </time>
       <Component />
       <Subscribe />
-    </ContentStyler>
+    </Box>
   )
 }
 

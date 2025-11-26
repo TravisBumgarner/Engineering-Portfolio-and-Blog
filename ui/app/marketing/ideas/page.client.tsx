@@ -8,7 +8,7 @@ import { useState } from 'react'
 import MarketingLink from '@/lib/sharedComponents/MarketingLink'
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
-import ContentStyler from '@/lib/sharedComponents/ContentStyler'
+import { Box, Typography } from '@mui/material'
 import Image from 'next/image'
 
 type UpdateType = 'add' | 'update' | 'fix'
@@ -67,20 +67,20 @@ const UPDATES: Update[] = [
 const UpdateComponent = ({ title, date, updates }: Update) => {
   // Flatten updates to a single array of { type, text }
   const flatUpdates: { type: UpdateType; text: string }[] = []
-  ;(['add', 'update', 'fix'] as UpdateType[]).forEach((type: UpdateType) => {
-    updates[type].forEach((text: string) => {
-      flatUpdates.push({ type, text })
+    ; (['add', 'update', 'fix'] as UpdateType[]).forEach((type: UpdateType) => {
+      updates[type].forEach((text: string) => {
+        flatUpdates.push({ type, text })
+      })
     })
-  })
 
   return (
     <div>
-      <p>
+      <Typography>
         <strong>{title}</strong>
-      </p>
-      <p>
+      </Typography>
+      <Typography>
         <time>{date}</time>
-      </p>
+      </Typography>
       <ul>
         {flatUpdates.map((item, idx) => (
           <li key={item.type + item.text + idx}>
@@ -143,7 +143,7 @@ const LandingPage = () => {
   const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false)
 
   return (
-    <ContentStyler>
+    <Box>
       <div>
         <div
           style={{
@@ -161,28 +161,28 @@ const LandingPage = () => {
             />
           </div>
           <div>
-            <h2>Ideas Down</h2>
-            <p>Clear your mind and make room for your next big idea.</p>
+            <Typography variant="h2">Ideas Down</Typography>
+            <Typography>Clear your mind and make room for your next big idea.</Typography>
           </div>
         </div>
       </div>
 
-      <p>
+      <Typography>
         Do you find it hard to keep track of your creative ideas? Do they slip
         away or consume your focus? Ideas Down lets you capture them
         instantly—no logins, no complicated setup, and no internet needed. Data
         stays on your device and the app is fully open source.
-      </p>
+      </Typography>
 
       <Section>
         <TextColumn>
-          <p>
+          <Typography>
             <strong>Ideate</strong>
-          </p>
-          <p>
+          </Typography>
+          <Typography>
             Create a new category or choose from an existing one, and start
             ideating.
-          </p>
+          </Typography>
         </TextColumn>
         <ImageColumn>
           <BlurHashImage
@@ -196,13 +196,13 @@ const LandingPage = () => {
 
       <Section>
         <TextColumn>
-          <p>
+          <Typography>
             <strong>Reflect</strong>
-          </p>
-          <p>
+          </Typography>
+          <Typography>
             Keep all your ideas in one place, organized by date and category.
             Use filters to focus on specific topics.
-          </p>
+          </Typography>
         </TextColumn>
         <ImageColumn>
           <BlurHashImage
@@ -216,9 +216,9 @@ const LandingPage = () => {
 
       <Section>
         <TextColumn>
-          <p>
+          <Typography>
             <strong>Privacy & Security First</strong>
-          </p>
+          </Typography>
           <ul>
             <li>No internet connection required</li>
             <li>No login needed</li>
@@ -270,7 +270,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <h3>Contact</h3>
+      <Typography variant="h3">Contact</Typography>
       <ContactForm subject="Ideas Down Feedback" />
 
       <CollapsibleHeader
@@ -292,24 +292,24 @@ const LandingPage = () => {
         Privacy Policy
       </CollapsibleHeader>
       <CollapsibleContent $isOpen={isPrivacyPolicyOpen}>
-        <p>
+        <Typography>
           <strong>Effective Date: July 10th, 2024</strong>
-        </p>
+        </Typography>
 
-        <p>
+        <Typography>
           Welcome to Ideas Down (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or
           &ldquo;us&rdquo;). Your privacy is important to us. This Privacy
           Policy outlines how we handle your information. Importantly, Ideas
           Down does not collect, store, or process any personal data from its
           users.
-        </p>
+        </Typography>
 
-        <h4>1. Information We Do Not Collect</h4>
-        <p>
+        <Typography variant="h4">1. Information We Do Not Collect</Typography>
+        <Typography>
           At Ideas Down, we are committed to maintaining your privacy. We do not
           collect, store, or process any personal data, including but not
           limited to:
-        </p>
+        </Typography>
         <ul>
           <li>
             Personal Identification Information (such as name, email address, or
@@ -321,54 +321,54 @@ const LandingPage = () => {
           <li>Payment Information</li>
         </ul>
 
-        <h4>2. Data Retention</h4>
-        <p>
+        <Typography variant="h4">2. Data Retention</Typography>
+        <Typography>
           Since we do not collect any personal data, we do not retain any
           information about you or your activities.
-        </p>
+        </Typography>
 
-        <h4>3. Third-Party Services</h4>
-        <p>
+        <Typography variant="h4">3. Third-Party Services</Typography>
+        <Typography>
           Ideas Down does not integrate with any third-party services that would
           collect your data. Our app is designed to operate independently
           without needing to share or transfer any information about you to
           third parties.
-        </p>
+        </Typography>
 
-        <h4>4. Cookies and Tracking Technologies</h4>
-        <p>
+        <Typography variant="h4">4. Cookies and Tracking Technologies</Typography>
+        <Typography>
           We do not use cookies, web beacons, or any other tracking technologies
           to collect information about your usage or behavior within the app.
-        </p>
+        </Typography>
 
-        <h4>5. Security</h4>
-        <p>
+        <Typography variant="h4">5. Security</Typography>
+        <Typography>
           Even though we do not collect personal data, we take security
           seriously. We employ standard security measures to ensure that the app
           itself remains secure and free from vulnerabilities.
-        </p>
+        </Typography>
 
-        <h4>6. Children&apos;s Privacy</h4>
-        <p>
+        <Typography variant="h4">6. Children&apos;s Privacy</Typography>
+        <Typography>
           Ideas Down does not knowingly collect or solicit any personal
           information from anyone under the age of 13. If we become aware that
           we have collected personal information from a child under 13, we will
           take steps to delete such information promptly.
-        </p>
+        </Typography>
 
-        <h4>7. Changes to This Privacy Policy</h4>
-        <p>
+        <Typography variant="h4">7. Changes to This Privacy Policy</Typography>
+        <Typography>
           We may update this Privacy Policy from time to time. Any changes will
           be posted in this section with the revised date. We encourage you to
           review this Privacy Policy periodically to stay informed about how we
           are protecting your information.
-        </p>
+        </Typography>
 
-        <h4>8. Contact Us</h4>
-        <p>
+        <Typography variant="h4">8. Contact Us</Typography>
+        <Typography>
           If you have any questions or concerns about this Privacy Policy,
           please contact us at the form listed above.
-        </p>
+        </Typography>
       </CollapsibleContent>
 
       <div style={{ height: SPACING.XLARGE }} />
@@ -389,7 +389,7 @@ const LandingPage = () => {
           <FaGithub size={40} />
         </Link>
       </div>
-    </ContentStyler>
+    </Box>
   )
 }
 

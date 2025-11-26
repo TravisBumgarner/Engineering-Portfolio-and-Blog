@@ -1,9 +1,9 @@
-import ContentStyler from '@/lib/sharedComponents/ContentStyler'
 import Figure from '@/lib/sharedComponents/Figure'
 import projects from '@/content/projects'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { Box, Typography } from '@mui/material'
 
 type Params = Promise<{ id: string }>
 
@@ -82,17 +82,17 @@ const Creation = async ({ params }: { params: Params }) => {
 
   const Description = project.description
     .split('\n')
-    .map((paragraph, index) => <p key={index}>{paragraph}</p>)
+    .map((paragraph, index) => <Typography key={index}>{paragraph}</Typography>)
 
   if (project.toolsAndTechnologies) {
     Description.push(
-      <p key="toolsAndTechnologies">{project.toolsAndTechnologies}</p>
+      <Typography key="toolsAndTechnologies">{project.toolsAndTechnologies}</Typography>
     )
   }
 
   return (
-    <ContentStyler>
-      <h2>{project.title}</h2>
+    <Box>
+      <Typography variant="h2">{project.title}</Typography>
       <time>
         Last Update:{' '}
         {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString(
@@ -117,7 +117,7 @@ const Creation = async ({ params }: { params: Params }) => {
         </ul>
       )}
       {Images.map(i => i.element)}
-    </ContentStyler>
+    </Box>
   )
 }
 

@@ -1,16 +1,14 @@
 'use client'
 
 import React, { useCallback, useMemo, useState } from 'react'
-import styled from 'styled-components'
 import Button from './Button'
-import { Input, TextArea } from './Input'
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
+import { Input } from '@mui/material'
+import { SPACING } from '../styles/consts'
 
 const MAX_LENGTH = 800
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`
 
 const ContactForm = ({ subject }: { subject?: string }) => {
   const [success, setSuccess] = useState(false)
@@ -88,43 +86,54 @@ const ContactForm = ({ subject }: { subject?: string }) => {
   }, [isSubmitting, success, failure, resetButtonText])
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Input
-        placeholder="Name (Optional)"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
-      />
-      <Input
-        placeholder="Email (Optional)"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        type="email"
-      />
-      <Input
-        placeholder="Subject"
-        name="subject"
-        value={formData.subject}
-        onChange={handleChange}
-      />
-      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <p>{`${formData.message.length}/${MAX_LENGTH}`}</p>
-      </div>
-      <TextArea
-        placeholder="Message"
-        name="message"
-        value={formData.message}
-        onChange={handleChange}
-        rows={4}
-      />
-      <Button
-        type="submit"
-        disabled={isSubmitting || formData.message.length === 0}
+    <Box>
+      <form
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: SPACING.MEDIUM,
+          width: '100%',
+        }}
+        onSubmit={handleSubmit}
       >
-        {buttonText}
-      </Button>
-    </Form>
+        <Input
+          placeholder="Name (Optional)"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+        <Input
+          placeholder="Email (Optional)"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          type="email"
+        />
+        <Input
+          placeholder="Subject"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+        />
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Typography>{`${formData.message.length}/${MAX_LENGTH}`}</Typography>
+        </Box>
+        <Input
+          multiline
+          placeholder="Message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          rows={4}
+        />
+        <Button
+          type="submit"
+          disabled={isSubmitting || formData.message.length === 0}
+        >
+          {buttonText}
+        </Button>
+      </form>
+    </Box>
   )
 }
 

@@ -14,6 +14,8 @@ import type { Metadata } from 'next'
 import Scroll from './_components/Scroll'
 import Sidebar from './_components/Sidebar'
 import { BodyWrapper } from './_layout.client'
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
+import AppThemeProvider from '@/lib/styles/ThemeMUI'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://travisbumgarner.dev'),
@@ -41,15 +43,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <Scroll />
       <body>
-        <StyledComponentsRegistry>
-          <ClientLayout>
-            <Sidebar />
-            <BodyWrapper>
-              <SiteTitle title={title} />
-              {children}
-            </BodyWrapper>
-          </ClientLayout>
-        </StyledComponentsRegistry>
+        <AppRouterCacheProvider>
+          <AppThemeProvider>
+            <StyledComponentsRegistry>
+              <ClientLayout>
+                <Sidebar />
+                <BodyWrapper>
+                  <SiteTitle title={title} />
+                  {children}
+                </BodyWrapper>
+              </ClientLayout>
+            </StyledComponentsRegistry>
+          </AppThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   )

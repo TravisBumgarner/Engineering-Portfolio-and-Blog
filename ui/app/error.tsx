@@ -2,7 +2,8 @@
 
 import { useCallback } from 'react'
 import Button from '../lib/sharedComponents/Button'
-import ContentStyler from '../lib/sharedComponents/ContentStyler'
+import Typography from '@mui/material/Typography'
+import { Box } from '@mui/material'
 
 const Error = () => {
   const handleRefresh = useCallback(() => {
@@ -10,11 +11,11 @@ const Error = () => {
   }, [])
 
   return (
-    <ContentStyler>
-      <h2>Whoops!</h2>
-      <p>Sorry, there was an error, please refresh the page.</p>
+    <Box>
+      <Typography variant="h2">Whoops!</Typography>
+      <Typography>Sorry, there was an error, please refresh the page.</Typography>
       <Button onClick={handleRefresh}>Refresh</Button>
-    </ContentStyler>
+    </Box>
   )
 }
 

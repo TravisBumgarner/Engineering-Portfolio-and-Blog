@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useRef } from 'react'
 import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
 import { SHARED_SPACING } from '@/lib/styles/theme'
 import styled from 'styled-components'
@@ -9,7 +9,9 @@ import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
 import Link from 'next/link'
 import BlurHashImage from '../../lib/sharedComponents/BlurHashImage'
-import ContentStyler from '../../lib/sharedComponents/ContentStyler'
+import Button from '@mui/material/Button'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 
 function formatLinks(list: { title: string; path: string }[]) {
   return list.map(({ title, path }, i) => {
@@ -39,13 +41,13 @@ const ListItem = ({
 }) => {
   const paragraphs = description
     .split('\n')
-    .map((paragraph, index) => <p key={index}>{paragraph}</p>)
+    .map((paragraph, index) => <Typography key={index}>{paragraph}</Typography>)
 
   return (
     <Link href={link} target="_blank" style={{ textDecoration: 'none' }}>
       <StyledListItem>
         <div>
-          <h2>{title}</h2>
+          <Typography variant="h2">{title}</Typography>
           {paragraphs}
         </div>
         <BlurHashImage priority={false} src={src} />
@@ -156,36 +158,29 @@ const EXHIBITS = [
   }
 ]
 
-const CTAButton = styled.a`
-  padding: ${SPACING.SMALL};
-  width: 100%;
-  background-color: var(--bright-background);
-  color: white !important;
-  text-decoration: none;
-  margin-bottom: ${SPACING.LARGE};
-  font-weight: 900 !important;
-  font-size: 24px;
-  display: block;
-  text-align: center;
-`
-
 const WorkWithMe = () => {
+  const letsChatRef = useRef<HTMLDivElement | null>(null)
+
+  const handleClick = () => {
+    letsChatRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
-    <ContentStyler>
-      <h2>
+    <Box>
+      <Typography variant='h2'>
         I turn early-stage ideas
         <br />
         into working prototypes.
-      </h2>
-      <p>
+      </Typography>
+      <Typography>
         I work fast, learn fast, and deliver.
         <br />
         Software, hardware, design - whatever the idea needs.
-      </p>
+      </Typography>
 
-      <CTAButton href="#lets-chat">Reach Out</CTAButton>
+      <Button onClick={handleClick} fullWidth variant='contained'>Reach Out</Button>
 
-      <h2>Testimonials</h2>
+      <Typography variant='h2'>Testimonials</Typography>
       <blockquote>
         When you have a difficult problem, something you are not sure is even
         possible, Travis will dive right in and start trying things out.
@@ -221,21 +216,21 @@ const WorkWithMe = () => {
         <span className="author">Ian, Staff Product Designer</span>
       </blockquote>
 
-      <h2>What I Do</h2>
-      <p>
+      <Typography variant="h2">What I Do</Typography>
+      <Typography>
         I build across the stack: full-stack apps, embedded systems, hardware
         interfaces, and design. I&apos;ve built MVPs, production apps, and
         personal experiments. All of the projects below have been fully managed,
         researched, designed, and engineered by myself. Historically, I&apos;ve
         consulted with stealth-mode startups, so I&apos;m unable to share that
         work here.
-      </p>
+      </Typography>
 
-      <h3>Web + App Projects</h3>
-      <p>
+      <Typography variant="h3">Web + App Projects</Typography>
+      <Typography>
         I am self taught and have over ten years of professional experience
         building applications.
-      </p>
+      </Typography>
       {WEB_AND_APP_PROJECTS.map(key => {
         const { id, title, previewImage, description } = projects[key]
         return (
@@ -249,11 +244,11 @@ const WorkWithMe = () => {
         )
       })}
 
-      <h3>Hardware Projects</h3>
-      <p>
+      <Typography variant="h3">Hardware Projects</Typography>
+      <Typography>
         I have a degree in Mechanical Engineering and a collection of related
         side projects. Many of these projects blend hardware and software.
-      </p>
+      </Typography>
       {ADDITIONAL.map(key => {
         const { id, title, previewImage, description } = projects[key]
         return (
@@ -267,17 +262,17 @@ const WorkWithMe = () => {
         )
       })}
 
-      <h2>More About Me</h2>
-      <p>
+      <Typography variant="h2">More About Me</Typography>
+      <Typography>
         Here are a few more places to learn about me -{' '}
         {formatLinks(PLACES_YOU_CAN_FIND_ME)}.
-      </p>
+      </Typography>
 
-      <p>
+      <Typography>
         The projects listed above barely scratch the surface of my depth and
         breadth of experience. I invite you to check out some of the following
         exhibits -
-      </p>
+      </Typography>
       <ul>
         {EXHIBITS.map(({ path, title }) => (
           <li key={title}>
@@ -288,11 +283,13 @@ const WorkWithMe = () => {
         ))}
       </ul>
 
-      <h2 id="lets-chat">Let&apos;s Chat</h2>
-      <p>Have an idea you want to turn into a working prototype?</p>
-      <Contact />
-      <div style={{ height: SPACING.XLARGE }} />
-    </ContentStyler>
+      <Box ref={letsChatRef}>
+        <Typography variant="h2">Let&apos;s Chat</Typography>
+        <Typography>Have an idea you want to turn into a working prototype?</Typography>
+        <Contact />
+        <div style={{ height: SPACING.XLARGE }} />
+      </Box>
+    </Box>
   )
 }
 

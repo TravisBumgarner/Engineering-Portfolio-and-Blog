@@ -1,49 +1,28 @@
 'use client'
 
 import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '@/lib/consts'
-import Link from 'next/link'
-import Weak from '../../lib/sharedComponents/Weak'
-import styled from 'styled-components'
-import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
+import Link from '@/lib/sharedComponents/Link'
+import { SPACING } from '@/lib/styles/consts'
+import { Box } from '@mui/material'
+import Typography from '@mui/material/Typography'
 
 const SiteTitle = ({ title }: { title: string }) => {
   return (
-    <Wrapper>
+    <Box sx={{
+      py: SPACING.LARGE,
+      mt: { xs: SPACING.SMALL, md: 0 },
+    }}>
       <Link href="/">
-        <h1>{title}</h1>
+        <Typography variant="h1">{title}</Typography>
       </Link>
-      <p>
-        <Weak>
-          {ABOUT_ME_SENTENCE_1}
-          <br />
-          {ABOUT_ME_SENTENCE_2}
-        </Weak>
-      </p>
-    </Wrapper>
+      <Typography>
+        {ABOUT_ME_SENTENCE_1}
+        <br />
+        {ABOUT_ME_SENTENCE_2}
+      </Typography>
+    </Box>
   )
 }
 
-const Wrapper = styled.div`
-  padding: ${SPACING.LARGE} 0;
-
-  @media (max-width: 768px) {
-    margin-top: ${SPACING.SMALL};
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--primary);
-  }
-
-  h1 {
-    font-size: ${FONT_SIZES.LARGE};
-    font-weight: ${FONT_WEIGHTS.BOLD};
-    margin-bottom: ${SPACING.SMALL};
-
-    @media (max-width: 768px) {
-      font-size: ${FONT_SIZES.MEDIUM};
-    }
-  }
-`
 
 export default SiteTitle

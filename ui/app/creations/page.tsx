@@ -5,7 +5,8 @@ import ROUTES from '@/lib/routes'
 import ListItem from '../../lib/sharedComponents/ListItem'
 import styled from 'styled-components'
 import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
-import Link from 'next/link'
+import Link from '@/lib/sharedComponents/Link'
+import { Typography } from '@mui/material'
 
 const Portfolio = () => {
   return (
@@ -16,12 +17,12 @@ const Portfolio = () => {
         target="_blank"
       >
         <AnnouncementItem>
-          <h2>Current Project: Photo Palettes</h2>
+          <Typography variant="h2">Current Project: Photo Palettes</Typography>
           <div>
-            <p>A social platform for generating color palettes from photos.</p>
-            <p>
+            <Typography>A social platform for generating color palettes from photos.</Typography>
+            <Typography>
               Tools & Technologies: React, FastAPI, Heroku, Cloudinary, Supabase
-            </p>
+            </Typography>
           </div>
         </AnnouncementItem>
       </Link>

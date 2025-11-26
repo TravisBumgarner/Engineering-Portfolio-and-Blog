@@ -2,11 +2,12 @@
 
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
-import ContentStyler from '@/lib/sharedComponents/ContentStyler'
+import { Box } from '@mui/material'
 import { SPACING } from '@/lib/styles/consts'
 import Link from 'next/dist/client/link'
 import { FaApple, FaGithub } from 'react-icons/fa'
 import Image from 'next/image'
+import { Typography } from '@mui/material'
 
 const MAC_DOWNLOAD =
   'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-arm64.dmg'
@@ -93,20 +94,20 @@ const UPDATES: Update[] = [
 const UpdateComponent = ({ title, date, updates }: Update) => {
   // Flatten updates to a single array of { type, text }
   const flatUpdates: { type: UpdateType; text: string }[] = []
-  ;(['add', 'update', 'fix'] as UpdateType[]).forEach((type: UpdateType) => {
-    updates[type].forEach((text: string) => {
-      flatUpdates.push({ type, text })
+    ; (['add', 'update', 'fix'] as UpdateType[]).forEach((type: UpdateType) => {
+      updates[type].forEach((text: string) => {
+        flatUpdates.push({ type, text })
+      })
     })
-  })
 
   return (
     <div>
-      <p>
+      <Typography>
         <strong>{title}</strong>
-      </p>
-      <p>
+      </Typography>
+      <Typography>
         <time>{date}</time>
-      </p>
+      </Typography>
       <ul>
         {flatUpdates.map((item, idx) => (
           <li key={item.type + item.text + idx}>
@@ -120,7 +121,7 @@ const UpdateComponent = ({ title, date, updates }: Update) => {
 
 const TodoToday = () => {
   return (
-    <ContentStyler>
+    <Box>
       <div>
         <div
           style={{
@@ -138,28 +139,28 @@ const TodoToday = () => {
             />
           </div>
           <div>
-            <h2>Todo Today</h2>
-            <p>The todo List for the easily distracted</p>
+            <Typography variant="h2">Todo Today</Typography>
+            <Typography>The todo List for the easily distracted</Typography>
           </div>
         </div>
       </div>
-      <p>
+      <Typography>
         Todo Today isn&apos;t about the past or the future, it&apos;s about
         right now. Focus on what matters today. Set your tasks, order them, and
         add notes or subtasks. Nothing more, nothing less.
-      </p>
+      </Typography>
 
       <BlurHashImage
         src="/marketing-resources/todo_today/main_page.png"
         priority={true}
       />
 
-      <h3>Release Notes</h3>
+      <Typography variant="h3">Release Notes</Typography>
       {UPDATES.map(update => (
         <UpdateComponent key={update.title + update.date} {...update} />
       ))}
 
-      <h3>Contact</h3>
+      <Typography variant="h3">Contact</Typography>
       <ContactForm subject="Todo Today Feedback" />
       <div style={{ height: SPACING.XLARGE }} />
 
@@ -179,7 +180,7 @@ const TodoToday = () => {
           <FaGithub size={40} />
         </Link>
       </div>
-    </ContentStyler>
+    </Box>
   )
 }
 

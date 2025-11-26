@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react'
-import ContentStyler from '../../lib/sharedComponents/ContentStyler'
 import ContactForm from '../../lib/sharedComponents/ContactForm'
 import { useSearchParams } from 'next/navigation'
+import { Box, Typography } from '@mui/material'
 
 const Contact = () => {
   const searchParams = useSearchParams()
@@ -13,10 +13,10 @@ const Contact = () => {
     : undefined
 
   return (
-    <ContentStyler>
-      <h2>Let&apos;s Chat</h2>
+    <Box>
+      <Typography variant="h2">Let&apos;s Chat</Typography>
       <ContactForm subject={subject} />
-    </ContentStyler>
+    </Box>
   )
 }
 

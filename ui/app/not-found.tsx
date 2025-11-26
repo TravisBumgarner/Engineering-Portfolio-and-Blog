@@ -2,8 +2,9 @@
 
 import { useCallback, useEffect } from 'react'
 import Button from '../lib/sharedComponents/Button'
-import ContentStyler from '../lib/sharedComponents/ContentStyler'
+import Typography from '@mui/material/Typography'
 import logger from '@/lib/utilities/logger'
+import { Box } from '@mui/material'
 
 const Error = () => {
   const handleRefresh = useCallback(() => {
@@ -15,11 +16,11 @@ const Error = () => {
   }, [])
 
   return (
-    <ContentStyler>
-      <h2>Whoops!</h2>
-      <p>Sorry, the page you were looking for was not found.</p>
+    <Box>
+      <Typography variant="h2">Whoops!</Typography>
+      <Typography>Sorry, the page you were looking for was not found.</Typography>
       <Button onClick={handleRefresh}>Return home</Button>
-    </ContentStyler>
+    </Box>
   )
 }
 

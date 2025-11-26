@@ -5,6 +5,7 @@ import { SHARED_SPACING } from '@/lib/styles/theme'
 import Link from 'next/link'
 import styled from 'styled-components'
 import BlurHashImage from './BlurHashImage'
+import Typography from '@mui/material/Typography'
 
 const dateLabelLookup = {
   post: 'Posted ',
@@ -55,13 +56,13 @@ const ListItem = ({
   const paragraphs = !description
     ? null
     : description
-        .split('\n')
-        .map((paragraph, index) => <p key={index}>{paragraph}</p>)
+      .split('\n')
+      .map((paragraph, index) => <Typography key={index}>{paragraph}</Typography>)
 
   if (!link) {
     return (
       <StyledListItem>
-        {title && (smallTitle ? <p>{title}</p> : <h2>{title}</h2>)}
+        {title && (smallTitle ? <Typography>{title}</Typography> : <Typography variant="h2">{title}</Typography>)}
         {date && (
           <time>
             {dateLabelLookup[type]}
@@ -72,7 +73,7 @@ const ListItem = ({
               .join(' ')}
           </time>
         )}
-        {paragraphs && <p>{paragraphs}</p>}
+        {paragraphs && <Typography>{paragraphs}</Typography>}
         {src && priority !== undefined && (
           <BlurHashImage priority={priority} src={src} />
         )}
@@ -85,7 +86,7 @@ const ListItem = ({
       <StyledListItem>
         <div>
           <div>
-            {title && (smallTitle ? <p>{title}</p> : <h2>{title}</h2>)}
+            {title && (smallTitle ? <Typography>{title}</Typography> : <Typography variant="h2">{title}</Typography>)}
             {date && (
               <time>
                 {dateLabelLookup[type]}
