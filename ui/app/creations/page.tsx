@@ -3,7 +3,7 @@
 import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
 import ListItem from '../../lib/sharedComponents/ListItem'
-import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
+import { FONT_SIZES, SPACING } from '@/lib/styles/consts'
 import Link from '@/lib/sharedComponents/Link'
 import { Typography, Box } from '@mui/material'
 
@@ -32,7 +32,6 @@ const Portfolio = () => {
         >
           <Typography sx={{
             fontSize: FONT_SIZES.LARGE,
-            fontWeight: FONT_WEIGHTS.BOLD,
             marginTop: 0,
             marginBottom: SPACING.SMALL.PX,
           }} variant="h2">Current Project: Photo Palettes</Typography>
