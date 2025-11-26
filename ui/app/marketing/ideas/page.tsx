@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import LandingPage from './page.client'
 
@@ -18,10 +18,10 @@ export async function generateMetadata(): Promise<Metadata> {
           url: 'https://travisbumgarner.dev/marketing-resources/ideas_down/og-banner.png',
           width: 1200,
           height: 630,
-          alt: 'Ideas Down'
-        }
-      ]
-    }
+          alt: 'Ideas Down',
+        },
+      ],
+    },
   }
 }
 

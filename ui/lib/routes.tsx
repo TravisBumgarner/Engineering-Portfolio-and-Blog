@@ -1,29 +1,34 @@
 const ROUTES = {
   SNAPSHOTS: {
-    path: '/',
+    href: '/',
     title: 'Snapshots',
-    target: '_self'
+    target: '_self',
   },
   WORK_WITH_ME: {
-    path: '/work',
+    href: '/work',
     title: 'Work with Me',
-    target: '_self'
+    target: '_self',
   },
   CREATIONS: {
-    path: '/creations',
+    href: '/creations',
     title: 'Projects',
-    target: '_self'
+    target: '_self',
   },
   BLOG: {
-    path: '/blog',
+    href: '/blog',
     title: 'Blog',
-    target: '_self'
+    target: '_self',
+  },
+  MARKETING: {
+    href: '/marketing',
+    title: 'Marketing Pages',
+    target: '_self',
   },
   CONTACT: {
-    path: '/contact',
+    href: '/contact',
     title: 'Contact',
-    target: '_self'
-  }
+    target: '_self',
+  },
 }
 
 export default ROUTES

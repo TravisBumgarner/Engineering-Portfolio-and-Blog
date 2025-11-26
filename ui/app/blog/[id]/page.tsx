@@ -1,8 +1,9 @@
-import posts from '@/content/posts'
-import { Metadata } from 'next'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import posts from '@/content/posts'
 import Subscribe from '../Subscribe'
-import ContentStyler from '@/lib/sharedComponents/ContentStyler'
 
 const loadPost = async (postId: string) => {
   const postModule = await import(`@/content/posts/${postId}.mdx`)
@@ -11,18 +12,14 @@ const loadPost = async (postId: string) => {
 
 type Params = Promise<{ id: string }>
 
-export async function generateMetadata({
-  params
-}: {
-  params: Params
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { id } = await params
   const post = posts[id]
 
   if (!post) {
     return {
       title: 'Post Not Found',
-      description: 'The requested blog post could not be found'
+      description: 'The requested blog post could not be found',
     }
   }
 
@@ -31,8 +28,8 @@ export async function generateMetadata({
     title: `${post.title} - Travis Bumgarner`,
     description: post.description || 'A blog post by Travis Bumgarner',
     openGraph: {
-      images: [`/post-resources/${id}/${post.preview_image}`]
-    }
+      images: [`/post-resources/${id}/${post.preview_image}`],
+    },
   }
 }
 
@@ -45,19 +42,15 @@ const Post = async ({ params }: { params: Params }) => {
   const Component = await loadPost(id)
 
   return (
-    <ContentStyler>
-      <h2>{post.title}</h2>
-      <time>
-        Posted{' '}
-        {new Date(post.date + 'T00:00:00Z')
-          .toUTCString()
-          .split(' ')
-          .slice(0, 4)
-          .join(' ')}
-      </time>
+    <Box>
+      <Typography variant="h2">{post.title}</Typography>
+
+      <time>Posted {new Date(post.date + 'T00:00:00Z').toUTCString().split(' ').slice(0, 4).join(' ')}</time>
+
       <Component />
+
       <Subscribe />
-    </ContentStyler>
+    </Box>
   )
 }
 

@@ -1,18 +1,14 @@
+import { Box } from '@mui/material'
 import snapshots from '@/content/snapshots/index.json'
-import ListItem from '../lib/sharedComponents/ListItem'
+import ListItem from '../lib/sharedComponents/ItemPreview'
 
 const Snapshots = () => {
   return (
-    <div>
+    <Box>
       {Object.values(snapshots).map(({ src }, index) => (
-        <ListItem
-          type="snapshot"
-          key={index}
-          src={src}
-          priority={index === 0}
-        />
+        <ListItem type="snapshot" key={src} src={src} priority={index === 0} />
       ))}
-    </div>
+    </Box>
   )
 }
 

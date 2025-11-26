@@ -1,15 +1,14 @@
 'use client'
 
-import { SPACING } from '@/lib/styles/consts'
-import styled from 'styled-components'
-import Link from 'next/link'
-import { FaApple, FaGithub } from 'react-icons/fa'
+import { Box, Collapse, List, ListItem, Typography } from '@mui/material'
 import { useState } from 'react'
-import MarketingLink from '@/lib/sharedComponents/MarketingLink'
+import { FaApple, FaChevronDown, FaChevronUp, FaGithub } from 'react-icons/fa'
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
-import ContentStyler from '@/lib/sharedComponents/ContentStyler'
-import Image from 'next/image'
+import Link from '@/lib/sharedComponents/Link'
+import MarketingHeader from '../../../lib/sharedComponents/MarketingHeader'
+import { SPACING } from '../../../lib/styles/consts'
+import { IDEAS_DESCRIPTION, IDEAS_FAVICON, IDEAS_TITLE } from '../_consts'
 
 type UpdateType = 'add' | 'update' | 'fix'
 type Update = {
@@ -21,7 +20,7 @@ type Update = {
 const LABELS: Record<UpdateType, string> = {
   add: 'Add',
   update: 'Update',
-  fix: 'Fix'
+  fix: 'Fix',
 }
 
 const UPDATES: Update[] = [
@@ -30,11 +29,9 @@ const UPDATES: Update[] = [
     date: 'August 27th, 2024',
     updates: {
       add: ['Feedback request'],
-      update: [
-        'Cancel button behavior when adding an idea after creating a category'
-      ],
-      fix: ['Keyboard not dismissible when trying to delete database']
-    }
+      update: ['Cancel button behavior when adding an idea after creating a category'],
+      fix: ['Keyboard not dismissible when trying to delete database'],
+    },
   },
   {
     title: '1.2.0 - Dropdown Replacement & Bug Fixes',
@@ -42,26 +39,18 @@ const UPDATES: Update[] = [
     updates: {
       add: ['Feedback button to settings page'],
       update: ['Replace dropdown for category select/filter with modal'],
-      fix: [
-        'Help messages displaying at the incorrect time',
-        'Filter to empty list caused incorrect UI'
-      ]
-    }
+      fix: ['Help messages displaying at the incorrect time', 'Filter to empty list caused incorrect UI'],
+    },
   },
   {
     title: '1.1.10 - Initial Release',
     date: 'July 18th, 2024',
     updates: {
-      add: [
-        'Create a Category',
-        'Create an Idea',
-        'Reflect on recorded Ideas',
-        'Backup & Restore'
-      ],
+      add: ['Create a Category', 'Create an Idea', 'Reflect on recorded Ideas', 'Backup & Restore'],
       update: [],
-      fix: []
-    }
-  }
+      fix: [],
+    },
+  },
 ]
 
 const UpdateComponent = ({ title, date, updates }: Update) => {
@@ -74,322 +63,303 @@ const UpdateComponent = ({ title, date, updates }: Update) => {
   })
 
   return (
-    <div>
-      <p>
+    <Box>
+      <Typography>
         <strong>{title}</strong>
-      </p>
-      <p>
+      </Typography>
+      <Typography>
         <time>{date}</time>
-      </p>
-      <ul>
-        {flatUpdates.map((item, idx) => (
-          <li key={item.type + item.text + idx}>
+      </Typography>
+      <List>
+        {flatUpdates.map((item) => (
+          <ListItem key={item.type + item.text}>
             {LABELS[item.type]}: {item.text}
-          </li>
+          </ListItem>
         ))}
-      </ul>
-    </div>
+      </List>
+    </Box>
   )
 }
-
-const Section = styled.div`
-  display: flex;
-  gap: 2rem;
-  margin: 2rem 0;
-  align-items: flex-start;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`
-
-const TextColumn = styled.div`
-  flex: 1;
-  min-width: 200px;
-`
-
-const ImageColumn = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-`
-
-const CollapsibleHeader = styled.h3<{ $isOpen: boolean }>`
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  user-select: none;
-
-  &:hover {
-    opacity: 0.7;
-  }
-
-  &::after {
-    content: '${props => (props.$isOpen ? '▼' : '▶')}';
-    margin-left: 0.5rem;
-    font-size: 0.8em;
-  }
-`
-
-const CollapsibleContent = styled.div<{ $isOpen: boolean }>`
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  max-height: ${props => (props.$isOpen ? '2000px' : '0')};
-`
 
 const LandingPage = () => {
   const [isReleaseNotesOpen, setIsReleaseNotesOpen] = useState(false)
   const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false)
 
   return (
-    <ContentStyler>
-      <div>
-        <div
-          style={{
+    <Box>
+      <MarketingHeader title={IDEAS_TITLE} description={IDEAS_DESCRIPTION} src={IDEAS_FAVICON} />
+
+      <Box sx={{ mb: SPACING.MEDIUM.PX }}>
+        <Link
+          type="block"
+          target="_blank"
+          href="https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone"
+        >
+          <FaApple style={{ marginRight: '0.5rem' }} />
+          App Store
+        </Link>
+      </Box>
+
+      <Typography sx={{ mb: 4, fontSize: '1.1rem', lineHeight: 1.6 }}>
+        Do you find it hard to keep track of your creative ideas? Do they slip away or consume your focus? Ideas Down
+        lets you capture them instantly—no logins, no complicated setup, and no internet needed. Data stays on your
+        device and the app is fully open source.
+      </Typography>
+
+      <Box
+        sx={{
+          mb: 4,
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          gap: 4,
+          alignItems: 'flex-start',
+        }}
+      >
+        <Box sx={{ flex: 1 }}>
+          <Typography variant="h4" gutterBottom>
+            <strong>Ideate</strong>
+          </Typography>
+          <Typography>Create a new category or choose from an existing one, and start ideating.</Typography>
+        </Box>
+        <Box
+          sx={{
+            flex: 1,
             display: 'flex',
+            justifyContent: 'center',
             alignItems: 'center',
-            gap: SPACING.SMALL
           }}
         >
-          <div>
-            <Image
-              src="/marketing-resources/ideas_down/favicon.png"
-              alt="App Screenshot"
-              width={75}
-              height={75}
-            />
-          </div>
-          <div>
-            <h2>Ideas Down</h2>
-            <p>Clear your mind and make room for your next big idea.</p>
-          </div>
-        </div>
-      </div>
+          <BlurHashImage maxHeight={80} priority={true} src="/marketing-resources/ideas_down/ideate.png" alt="Ideate" />
+        </Box>
+      </Box>
 
-      <p>
-        Do you find it hard to keep track of your creative ideas? Do they slip
-        away or consume your focus? Ideas Down lets you capture them
-        instantly—no logins, no complicated setup, and no internet needed. Data
-        stays on your device and the app is fully open source.
-      </p>
-
-      <Section>
-        <TextColumn>
-          <p>
-            <strong>Ideate</strong>
-          </p>
-          <p>
-            Create a new category or choose from an existing one, and start
-            ideating.
-          </p>
-        </TextColumn>
-        <ImageColumn>
-          <BlurHashImage
-            maxHeight={80}
-            priority={true}
-            src="/marketing-resources/ideas_down/ideate.png"
-            alt="Ideate"
-          />
-        </ImageColumn>
-      </Section>
-
-      <Section>
-        <TextColumn>
-          <p>
+      <Box
+        sx={{
+          mb: 4,
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          gap: 4,
+          alignItems: 'flex-start',
+        }}
+      >
+        <Box sx={{ flex: 1 }}>
+          <Typography variant="h4" gutterBottom>
             <strong>Reflect</strong>
-          </p>
-          <p>
-            Keep all your ideas in one place, organized by date and category.
-            Use filters to focus on specific topics.
-          </p>
-        </TextColumn>
-        <ImageColumn>
+          </Typography>
+          <Typography>
+            Keep all your ideas in one place, organized by date and category. Use filters to focus on specific topics.
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            flex: 1,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <BlurHashImage
             maxHeight={80}
             priority={false}
             src="/marketing-resources/ideas_down/reflect.png"
             alt="Reflect"
           />
-        </ImageColumn>
-      </Section>
+        </Box>
+      </Box>
 
-      <Section>
-        <TextColumn>
-          <p>
+      <Box
+        sx={{
+          mb: 4,
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          gap: 4,
+          alignItems: 'flex-start',
+        }}
+      >
+        <Box sx={{ flex: 1 }}>
+          <Typography variant="h4" gutterBottom>
             <strong>Privacy & Security First</strong>
-          </p>
-          <ul>
-            <li>No internet connection required</li>
-            <li>No login needed</li>
-            <li>Ideas remain on your device</li>
-            <li>
+          </Typography>
+          <List>
+            <ListItem>No internet connection required</ListItem>
+            <ListItem>No login needed</ListItem>
+            <ListItem>Ideas remain on your device</ListItem>
+            <ListItem>
               Fully Open Source (
-              <a
-                target="_blank"
-                href="https://github.com/TravisBumgarner/ideas-down-quickly"
-              >
+              <Link type="inline" target="_blank" href="https://github.com/TravisBumgarner/ideas-down-quickly">
                 GitHub
-              </a>
+              </Link>
               )
-            </li>
-            <li>Perform your own backups</li>
-          </ul>
-        </TextColumn>
-        <ImageColumn>
+            </ListItem>
+            <ListItem>Perform your own backups</ListItem>
+          </List>
+        </Box>
+        <Box
+          sx={{
+            flex: 1,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <BlurHashImage
             maxHeight={80}
             priority={false}
             src="/marketing-resources/ideas_down/settings.png"
             alt="Settings"
           />
-        </ImageColumn>
-      </Section>
+        </Box>
+      </Box>
 
-      <div
-        style={{
+      <Box
+        sx={{
           display: 'flex',
-          gap: SPACING.MEDIUM
+          gap: 2,
+          mb: 4,
+          flexWrap: 'wrap',
         }}
       >
-        <div>
-          <MarketingLink
+        <Box>
+          <Link
+            type="block"
             target="_blank"
             href="https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone"
           >
             App Store
-          </MarketingLink>
-        </div>
-        <div>
-          <MarketingLink
+          </Link>
+        </Box>
+        <Box>
+          <Link
+            type="block"
             target="_blank"
             href="https://docs.google.com/forms/d/e/1FAIpQLSftglI15-9coi2P1Tx_QaZitHYrSMvVilQKn6_BB1t_3V3nvg/viewform?usp=sf_link"
           >
             Play Store Internal Testing
-          </MarketingLink>
-        </div>
-      </div>
+          </Link>
+        </Box>
+      </Box>
 
-      <h3>Contact</h3>
+      <Typography variant="h3" gutterBottom sx={{ mt: 4 }}>
+        Contact
+      </Typography>
       <ContactForm subject="Ideas Down Feedback" />
 
-      <CollapsibleHeader
-        $isOpen={isReleaseNotesOpen}
-        onClick={() => setIsReleaseNotesOpen(!isReleaseNotesOpen)}
-      >
-        Release Notes
-      </CollapsibleHeader>
-      <CollapsibleContent $isOpen={isReleaseNotesOpen}>
-        {UPDATES.map(update => (
-          <UpdateComponent key={update.title + update.date} {...update} />
-        ))}
-      </CollapsibleContent>
+      <Box sx={{ mt: 4 }}>
+        <Typography
+          variant="h4"
+          onClick={() => setIsReleaseNotesOpen(!isReleaseNotesOpen)}
+          sx={{
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            userSelect: 'none',
+            '&:hover': { opacity: 0.7 },
+            mb: 1,
+          }}
+        >
+          Release Notes
+          <Box sx={{ ml: 1, display: 'flex', alignItems: 'center' }}>
+            {isReleaseNotesOpen ? <FaChevronUp /> : <FaChevronDown />}
+          </Box>
+        </Typography>
+        <Collapse in={isReleaseNotesOpen}>
+          <Box sx={{ pl: 2 }}>
+            {UPDATES.map((update) => (
+              <UpdateComponent key={update.title + update.date} {...update} />
+            ))}
+          </Box>
+        </Collapse>
+      </Box>
 
-      <CollapsibleHeader
-        $isOpen={isPrivacyPolicyOpen}
-        onClick={() => setIsPrivacyPolicyOpen(!isPrivacyPolicyOpen)}
-      >
-        Privacy Policy
-      </CollapsibleHeader>
-      <CollapsibleContent $isOpen={isPrivacyPolicyOpen}>
-        <p>
-          <strong>Effective Date: July 10th, 2024</strong>
-        </p>
+      <Box sx={{ mt: 4 }}>
+        <Typography
+          variant="h4"
+          onClick={() => setIsPrivacyPolicyOpen(!isPrivacyPolicyOpen)}
+          sx={{
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            userSelect: 'none',
+            '&:hover': { opacity: 0.7 },
+            mb: 1,
+          }}
+        >
+          Privacy Policy
+          <Box sx={{ ml: 1, display: 'flex', alignItems: 'center' }}>
+            {isPrivacyPolicyOpen ? <FaChevronUp /> : <FaChevronDown />}
+          </Box>
+        </Typography>
+        <Collapse in={isPrivacyPolicyOpen}>
+          <Box sx={{ pl: 2 }}>
+            <Typography>
+              <strong>Effective Date: July 10th, 2024</strong>
+            </Typography>
 
-        <p>
-          Welcome to Ideas Down (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or
-          &ldquo;us&rdquo;). Your privacy is important to us. This Privacy
-          Policy outlines how we handle your information. Importantly, Ideas
-          Down does not collect, store, or process any personal data from its
-          users.
-        </p>
+            <Typography>
+              Welcome to Ideas Down (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). Your privacy is
+              important to us. This Privacy Policy outlines how we handle your information. Importantly, Ideas Down does
+              not collect, store, or process any personal data from its users.
+            </Typography>
 
-        <h4>1. Information We Do Not Collect</h4>
-        <p>
-          At Ideas Down, we are committed to maintaining your privacy. We do not
-          collect, store, or process any personal data, including but not
-          limited to:
-        </p>
-        <ul>
-          <li>
-            Personal Identification Information (such as name, email address, or
-            phone number)
-          </li>
-          <li>Location Information</li>
-          <li>Usage Data</li>
-          <li>Device Information</li>
-          <li>Payment Information</li>
-        </ul>
+            <Typography variant="h4">1. Information We Do Not Collect</Typography>
+            <Typography>
+              At Ideas Down, we are committed to maintaining your privacy. We do not collect, store, or process any
+              personal data, including but not limited to:
+            </Typography>
+            <List>
+              <ListItem>Personal Identification Information (such as name, email address, or phone number)</ListItem>
+              <ListItem>Location Information</ListItem>
+              <ListItem>Usage Data</ListItem>
+              <ListItem>Device Information</ListItem>
+              <ListItem>Payment Information</ListItem>
+            </List>
+            <Typography variant="h4">2. Data Retention</Typography>
+            <Typography>
+              Since we do not collect any personal data, we do not retain any information about you or your activities.
+            </Typography>
 
-        <h4>2. Data Retention</h4>
-        <p>
-          Since we do not collect any personal data, we do not retain any
-          information about you or your activities.
-        </p>
+            <Typography variant="h4">3. Third-Party Services</Typography>
+            <Typography>
+              Ideas Down does not integrate with any third-party services that would collect your data. Our app is
+              designed to operate independently without needing to share or transfer any information about you to third
+              parties.
+            </Typography>
 
-        <h4>3. Third-Party Services</h4>
-        <p>
-          Ideas Down does not integrate with any third-party services that would
-          collect your data. Our app is designed to operate independently
-          without needing to share or transfer any information about you to
-          third parties.
-        </p>
+            <Typography variant="h4">4. Cookies and Tracking Technologies</Typography>
+            <Typography>
+              We do not use cookies, web beacons, or any other tracking technologies to collect information about your
+              usage or behavior within the app.
+            </Typography>
 
-        <h4>4. Cookies and Tracking Technologies</h4>
-        <p>
-          We do not use cookies, web beacons, or any other tracking technologies
-          to collect information about your usage or behavior within the app.
-        </p>
+            <Typography variant="h4">5. Security</Typography>
+            <Typography>
+              Even though we do not collect personal data, we take security seriously. We employ standard security
+              measures to ensure that the app itself remains secure and free from vulnerabilities.
+            </Typography>
 
-        <h4>5. Security</h4>
-        <p>
-          Even though we do not collect personal data, we take security
-          seriously. We employ standard security measures to ensure that the app
-          itself remains secure and free from vulnerabilities.
-        </p>
+            <Typography variant="h4">6. Children&apos;s Privacy</Typography>
+            <Typography>
+              Ideas Down does not knowingly collect or solicit any personal information from anyone under the age of 13.
+              If we become aware that we have collected personal information from a child under 13, we will take steps
+              to delete such information promptly.
+            </Typography>
 
-        <h4>6. Children&apos;s Privacy</h4>
-        <p>
-          Ideas Down does not knowingly collect or solicit any personal
-          information from anyone under the age of 13. If we become aware that
-          we have collected personal information from a child under 13, we will
-          take steps to delete such information promptly.
-        </p>
+            <Typography variant="h4">7. Changes to This Privacy Policy</Typography>
+            <Typography>
+              We may update this Privacy Policy from time to time. Any changes will be posted in this section with the
+              revised date. We encourage you to review this Privacy Policy periodically to stay informed about how we
+              are protecting your information.
+            </Typography>
 
-        <h4>7. Changes to This Privacy Policy</h4>
-        <p>
-          We may update this Privacy Policy from time to time. Any changes will
-          be posted in this section with the revised date. We encourage you to
-          review this Privacy Policy periodically to stay informed about how we
-          are protecting your information.
-        </p>
-
-        <h4>8. Contact Us</h4>
-        <p>
-          If you have any questions or concerns about this Privacy Policy,
-          please contact us at the form listed above.
-        </p>
-      </CollapsibleContent>
-
-      <div style={{ height: SPACING.XLARGE }} />
-
-      <div
-        style={{
-          position: 'fixed',
-          top: 10,
-          right: 10,
-          fontSize: 12,
-          color: '#888'
-        }}
-      >
-        <Link href="https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone">
-          <FaApple size={40} />
-        </Link>
-        <Link href="https://github.com/TravisBumgarner/ideas-down-quickly">
-          <FaGithub size={40} />
-        </Link>
-      </div>
-    </ContentStyler>
+            <Typography variant="h4">8. Contact Us</Typography>
+            <Typography>
+              If you have any questions or concerns about this Privacy Policy, please contact us at the form listed
+              above.
+            </Typography>
+          </Box>
+        </Collapse>
+      </Box>
+    </Box>
   )
 }
 

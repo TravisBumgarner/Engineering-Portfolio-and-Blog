@@ -1,22 +1,19 @@
 'use client'
 
-import React from 'react'
-import ContentStyler from '../../lib/sharedComponents/ContentStyler'
-import ContactForm from '../../lib/sharedComponents/ContactForm'
+import { Box, Typography } from '@mui/material'
 import { useSearchParams } from 'next/navigation'
+import ContactForm from '../../lib/sharedComponents/ContactForm'
 
 const Contact = () => {
   const searchParams = useSearchParams()
   const rawSubject = searchParams.get('subject')
-  const subject = rawSubject
-    ? rawSubject.replace(/[^a-zA-Z0-9 :]/g, '').slice(0, 100)
-    : undefined
+  const subject = rawSubject ? rawSubject.replace(/[^a-zA-Z0-9 :]/g, '').slice(0, 100) : undefined
 
   return (
-    <ContentStyler>
-      <h2>Let&apos;s Chat</h2>
+    <Box>
+      <Typography variant="h2">Let&apos;s Chat</Typography>
       <ContactForm subject={subject} />
-    </ContentStyler>
+    </Box>
   )
 }
 

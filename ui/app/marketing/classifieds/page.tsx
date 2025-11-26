@@ -1,22 +1,16 @@
-import { Metadata } from 'next'
-
+import type { Metadata } from 'next'
+import { FAST_CLASSIFIEDS_DESCRIPTION, FAST_CLASSIFIEDS_TITLE } from '../_consts'
 import LandingPage from './page.client'
-
-const TITLE = 'Fast Classifieds - AI Job Search Assistant'
-const DESCRIPTION =
-  'Stop manually browsing job boards. Let AI scan company career pages and find the most relevant opportunities for you.'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    metadataBase: new URL(
-      'https://travisbumgarner.dev/marketing/fast-classifieds'
-    ),
-    title: TITLE,
-    description: DESCRIPTION,
+    metadataBase: new URL('https://travisbumgarner.dev/marketing/fast-classifieds'),
+    title: FAST_CLASSIFIEDS_TITLE,
+    description: FAST_CLASSIFIEDS_DESCRIPTION,
     openGraph: {
-      title: TITLE,
-      description: DESCRIPTION
-    }
+      title: FAST_CLASSIFIEDS_TITLE,
+      description: FAST_CLASSIFIEDS_DESCRIPTION,
+    },
   }
 }
 

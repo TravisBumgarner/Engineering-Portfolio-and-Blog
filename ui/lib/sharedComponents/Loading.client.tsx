@@ -1,37 +1,60 @@
 'use client'
 
+import { Box } from '@mui/material'
 import { motion } from 'motion/react'
-import styled from 'styled-components'
 
-export const LoadingContainer = styled(motion.div)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 10vh 0;
-`
+// Loading container
+export const LoadingContainer = () => (
+  <Box
+    component={motion.div}
+    sx={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
+      padding: '10vh 0',
+    }}
+  />
+)
 
-export const FaviconLeft = styled.div`
-  width: 50%;
-  height: 100%;
-  background-color: #fff;
-  box-sizing: border-box;
-`
+export const FaviconLeft = () => (
+  <Box
+    sx={{
+      width: '50%',
+      height: '100%',
+      backgroundColor: '#fff',
+      boxSizing: 'border-box',
+    }}
+  />
+)
 
-export const FaviconRight = styled.div`
-  width: 50%;
-  height: 100%;
-  background-color: var(--bright-background);
-  box-sizing: border-box;
-`
+export const FaviconRight = () => (
+  <Box
+    sx={{
+      width: '50%',
+      height: '100%',
+      backgroundColor: 'var(--bright-background)',
+      boxSizing: 'border-box',
+    }}
+  />
+)
 
-export const FaviconWrapper = styled(motion.div)`
-  width: 100px;
-  height: 100px;
-  fill: var(--primary);
-  border: 12px solid #fff;
-  display: flex;
-  flex-direction: row;
-  border: 10px solid white;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-`
+export const FaviconWrapper = () => (
+  <Box
+    component={motion.div}
+    animate={{ transform: 'rotate(360deg)' }}
+    transition={{ repeat: Infinity, duration: 3, ease: 'linear' }}
+    sx={{
+      width: 100,
+      height: 100,
+      fill: 'var(--primary)',
+      border: '10px solid white',
+      display: 'flex',
+      flexDirection: 'row',
+      boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+    }}
+  >
+    <FaviconLeft />
+    <FaviconRight />
+  </Box>
+)

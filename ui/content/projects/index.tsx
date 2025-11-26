@@ -1,14 +1,14 @@
-import content from './content.json'
 import { z } from 'zod'
+import content from './content.json'
 
 const linkSchema = z.object({
   label: z.string(),
-  src: z.string()
+  src: z.string(),
 })
 
 const imageSchema = z.object({
   label: z.string(),
-  src: z.string()
+  src: z.string(),
 })
 
 const projectSchema = z.object({
@@ -19,8 +19,10 @@ const projectSchema = z.object({
   images: z.array(imageSchema),
   links: z.array(linkSchema),
   previewImage: imageSchema,
-  toolsAndTechnologies: z.string().optional()
+  toolsAndTechnologies: z.string().optional(),
 })
+
+export type Project = z.infer<typeof projectSchema>
 
 const projectsSchema = z.record(z.string(), projectSchema)
 

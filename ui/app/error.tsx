@@ -1,21 +1,21 @@
 'use client'
 
+import { Box, Button } from '@mui/material'
+import Typography from '@mui/material/Typography'
 import { useCallback } from 'react'
-import Button from '../lib/sharedComponents/Button'
-import ContentStyler from '../lib/sharedComponents/ContentStyler'
 
-const Error = () => {
+const ErrorPage = () => {
   const handleRefresh = useCallback(() => {
     window.location.href = '/'
   }, [])
 
   return (
-    <ContentStyler>
-      <h2>Whoops!</h2>
-      <p>Sorry, there was an error, please refresh the page.</p>
+    <Box>
+      <Typography variant="h2">Whoops!</Typography>
+      <Typography>Sorry, there was an error, please refresh the page.</Typography>
       <Button onClick={handleRefresh}>Refresh</Button>
-    </ContentStyler>
+    </Box>
   )
 }
 
-export default Error
+export default ErrorPage

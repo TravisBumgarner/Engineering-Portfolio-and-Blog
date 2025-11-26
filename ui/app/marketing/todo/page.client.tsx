@@ -1,15 +1,15 @@
 'use client'
 
+import { Box, List, ListItem, Typography } from '@mui/material'
+import { FaApple, FaGithub } from 'react-icons/fa'
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
-import ContentStyler from '@/lib/sharedComponents/ContentStyler'
 import { SPACING } from '@/lib/styles/consts'
-import Link from 'next/dist/client/link'
-import { FaApple, FaGithub } from 'react-icons/fa'
-import Image from 'next/image'
+import Link from '../../../lib/sharedComponents/Link'
+import MarketingHeader from '../../../lib/sharedComponents/MarketingHeader'
+import { TODO_DESCRIPTION, TODO_FAVICON, TODO_TITLE } from '../_consts'
 
-const MAC_DOWNLOAD =
-  'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-arm64.dmg'
+const MAC_DOWNLOAD = 'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-arm64.dmg'
 
 const GITHUB = 'https://github.com/travisBumgarner/todo-Today'
 
@@ -23,7 +23,7 @@ type Update = {
 const LABELS: Record<UpdateType, string> = {
   add: 'Add',
   update: 'Update',
-  fix: 'Fix'
+  fix: 'Fix',
 }
 
 const UPDATES: Update[] = [
@@ -33,8 +33,8 @@ const UPDATES: Update[] = [
     updates: {
       add: [],
       update: ['Update all dependencies and deployments to latest versions'],
-      fix: []
-    }
+      fix: [],
+    },
   },
   {
     title: 'Full Rewrite',
@@ -43,12 +43,10 @@ const UPDATES: Update[] = [
       add: ['Complete rewrite of Todo Today from the ground up'],
       update: [
         'Simplified focus on daily task management',
-        'Removed timers, history, successes, workspaces, and other distracting features'
+        'Removed timers, history, successes, workspaces, and other distracting features',
       ],
-      fix: [
-        'Removed timers, history, successes, workspaces, and other distracting features'
-      ]
-    }
+      fix: ['Removed timers, history, successes, workspaces, and other distracting features'],
+    },
   },
   {
     title: 'Workspaces',
@@ -56,8 +54,8 @@ const UPDATES: Update[] = [
     updates: {
       add: ['Support for grouping tasks into workspaces'],
       update: [],
-      fix: []
-    }
+      fix: [],
+    },
   },
   {
     title: 'Windows Support',
@@ -65,8 +63,8 @@ const UPDATES: Update[] = [
     updates: {
       add: ['Support for Windows automatic updates'],
       update: [],
-      fix: []
-    }
+      fix: [],
+    },
   },
   {
     title: 'Notifications and Timers',
@@ -74,20 +72,18 @@ const UPDATES: Update[] = [
     updates: {
       add: ['Timer for tasks and notification system'],
       update: [],
-      fix: []
-    }
+      fix: [],
+    },
   },
   {
     title: 'Initial Release',
     date: '2023-10-06',
     updates: {
-      add: [
-        'App has been in beta testing for almost a year and is now ready for release!'
-      ],
+      add: ['App has been in beta testing for almost a year and is now ready for release!'],
       update: [],
-      fix: []
-    }
-  }
+      fix: [],
+    },
+  },
 ]
 
 const UpdateComponent = ({ title, date, updates }: Update) => {
@@ -100,86 +96,50 @@ const UpdateComponent = ({ title, date, updates }: Update) => {
   })
 
   return (
-    <div>
-      <p>
+    <Box>
+      <Typography>
         <strong>{title}</strong>
-      </p>
-      <p>
+      </Typography>
+      <Typography>
         <time>{date}</time>
-      </p>
-      <ul>
-        {flatUpdates.map((item, idx) => (
-          <li key={item.type + item.text + idx}>
+      </Typography>
+      <List>
+        {flatUpdates.map((item) => (
+          <ListItem key={item.type + item.text}>
             {LABELS[item.type]}: {item.text}
-          </li>
+          </ListItem>
         ))}
-      </ul>
-    </div>
+      </List>
+    </Box>
   )
 }
 
 const TodoToday = () => {
   return (
-    <ContentStyler>
-      <div>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: SPACING.SMALL
-          }}
-        >
-          <div>
-            <Image
-              src="/marketing-resources/todo_today/favicon.png"
-              alt="App Screenshot"
-              width={100}
-              height={100}
-            />
-          </div>
-          <div>
-            <h2>Todo Today</h2>
-            <p>The todo List for the easily distracted</p>
-          </div>
-        </div>
-      </div>
-      <p>
-        Todo Today isn&apos;t about the past or the future, it&apos;s about
-        right now. Focus on what matters today. Set your tasks, order them, and
-        add notes or subtasks. Nothing more, nothing less.
-      </p>
+    <Box>
+      <MarketingHeader src={TODO_FAVICON} title={TODO_TITLE} description={TODO_DESCRIPTION} />
+      <Typography>
+        <Link type="block" target="_blank" href={MAC_DOWNLOAD}>
+          Download for Mac
+        </Link>
+      </Typography>
 
-      <BlurHashImage
-        src="/marketing-resources/todo_today/main_page.png"
-        priority={true}
-      />
+      <Typography>
+        Todo Today isn&apos;t about the past or the future, it&apos;s about right now. Focus on what matters today. Set
+        your tasks, order them, and add notes or subtasks. Nothing more, nothing less.
+      </Typography>
 
-      <h3>Release Notes</h3>
-      {UPDATES.map(update => (
+      <BlurHashImage src="/marketing-resources/todo_today/main_page.png" priority={true} />
+
+      <Typography variant="h3">Release Notes</Typography>
+      {UPDATES.map((update) => (
         <UpdateComponent key={update.title + update.date} {...update} />
       ))}
 
-      <h3>Contact</h3>
+      <Typography variant="h3">Contact</Typography>
       <ContactForm subject="Todo Today Feedback" />
-      <div style={{ height: SPACING.XLARGE }} />
-
-      <div
-        style={{
-          position: 'fixed',
-          top: 10,
-          right: 10,
-          fontSize: 12,
-          color: '#888'
-        }}
-      >
-        <Link style={{ fontSize: '30px' }} href={MAC_DOWNLOAD} download>
-          <FaApple size={40} />
-        </Link>
-        <Link style={{ fontSize: '30px' }} href={GITHUB} download>
-          <FaGithub size={40} />
-        </Link>
-      </div>
-    </ContentStyler>
+      <Box style={{ height: SPACING.HUGE.PX }} />
+    </Box>
   )
 }
 

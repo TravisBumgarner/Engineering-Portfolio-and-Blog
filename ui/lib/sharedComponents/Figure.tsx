@@ -1,5 +1,6 @@
 'use client'
 
+import { Box, Typography } from '@mui/material'
 import { FONT_SIZES, SPACING } from '@/lib/styles/consts'
 import BlurHashImage from './BlurHashImage'
 
@@ -10,24 +11,28 @@ type FigureProps = {
 
 const Figure = ({ src, caption }: FigureProps) => {
   return (
-    <figure
-      style={{
-        backgroundColor: 'var(--secondary-background)',
-        color: 'var(--foreground)',
-        padding: SPACING.SMALL
+    <Box
+      component="figure"
+      sx={{
+        backgroundColor: 'background.paper',
+        p: SPACING.MEDIUM.PX,
+        m: `${SPACING.MEDIUM.PX} 0`,
       }}
     >
       <BlurHashImage priority={false} src={src} alt={caption} />
-      <figcaption
-        style={{
+
+      <Typography
+        component="figcaption"
+        sx={{
           fontSize: FONT_SIZES.SMALL,
           fontWeight: 100,
-          marginTop: SPACING.SMALL
+          marginTop: SPACING.SMALL.PX,
+          marginBottom: 0,
         }}
       >
         {caption}
-      </figcaption>
-    </figure>
+      </Typography>
+    </Box>
   )
 }
 

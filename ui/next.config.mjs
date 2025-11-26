@@ -5,6 +5,9 @@ import createMDX from '@next/mdx'
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  images: {
+    qualities: [70]
+  },
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
   compiler: {

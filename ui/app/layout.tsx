@@ -1,27 +1,23 @@
-import ClientLayout from '@/lib/styles/client-layout'
-import StyledComponentsRegistry from '@/lib/styles/styled-components-registry'
-import { makeNewSiteTitle } from '@/lib/utilities'
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { ReactNode } from 'react'
-import SiteTitle from './_components/SiteTitle'
-
-import {
-  ABOUT_ME_SENTENCE_1,
-  ABOUT_ME_SENTENCE_2,
-  SITE_TITLE
-} from '@/lib/consts'
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
+
+import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2, SITE_TITLE } from '@/lib/consts'
+import AppThemeProvider from '@/lib/styles/Theme'
+import { makeNewSiteTitle } from '@/lib/utilities'
 import Scroll from './_components/Scroll'
 import Sidebar from './_components/Sidebar'
-import { BodyWrapper } from './_layout.client'
+import SiteTitle from './_components/SiteTitle'
+import { Box } from '@mui/material'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://travisbumgarner.dev'),
   title: SITE_TITLE,
   description: `${ABOUT_ME_SENTENCE_1} ${ABOUT_ME_SENTENCE_2}`,
   openGraph: {
-    images: ['/me.png']
-  }
+    images: ['/me.png'],
+  },
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -41,15 +37,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <Scroll />
       <body>
-        <StyledComponentsRegistry>
-          <ClientLayout>
+        <AppRouterCacheProvider>
+          <AppThemeProvider>
             <Sidebar />
-            <BodyWrapper>
-              <SiteTitle title={title} />
-              {children}
-            </BodyWrapper>
-          </ClientLayout>
-        </StyledComponentsRegistry>
+            <SiteTitle title={title} />
+            {children}
+            <Box sx={{ height: '50px' }} /> {/* Spacer for bottom */}
+          </AppThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   )

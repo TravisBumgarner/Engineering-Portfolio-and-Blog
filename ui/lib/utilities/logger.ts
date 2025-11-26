@@ -1,8 +1,9 @@
 // const isDev = process.env.NODE_ENV === 'development'
 
 export const logger = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // biome-ignore lint/suspicious/noExplicitAny: Fine for now.
   info: (message: string, context?: any) => {
+    // biome-ignore lint/suspicious/noConsole: Fine for now.
     console.info(message, context)
     // if (isDev) {
     //   console.info(message, context)
@@ -10,9 +11,9 @@ export const logger = {
     //   // Sentry.addBreadcrumb({ message, level: 'info', data: context })
     // }
   },
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // biome-ignore lint/suspicious/noExplicitAny: Fine for now.
   warn: (message: string, context?: any) => {
+    // biome-ignore lint/suspicious/noConsole: Fine for now.
     console.warn(message, context)
     // if (isDev) {
     //   console.warn(message, context)
@@ -20,9 +21,9 @@ export const logger = {
     //   // Sentry.captureMessage(message, 'warning')
     // }
   },
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // biome-ignore lint/suspicious/noExplicitAny: Fine for now.
   error: (message: string, error?: Error, context?: any) => {
+    // biome-ignore lint/suspicious/noConsole: Fine for now.
     console.error(message, error, context)
     // if (isDev) {
     // } else {
@@ -32,7 +33,7 @@ export const logger = {
     //   //   Sentry.captureMessage(message, 'error')
     //   // }
     // }
-  }
+  },
 }
 
 export default logger

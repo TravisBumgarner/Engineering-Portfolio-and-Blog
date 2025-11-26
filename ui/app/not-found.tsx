@@ -1,11 +1,11 @@
 'use client'
 
+import { Box, Button } from '@mui/material'
+import Typography from '@mui/material/Typography'
 import { useCallback, useEffect } from 'react'
-import Button from '../lib/sharedComponents/Button'
-import ContentStyler from '../lib/sharedComponents/ContentStyler'
 import logger from '@/lib/utilities/logger'
 
-const Error = () => {
+const NotFound = () => {
   const handleRefresh = useCallback(() => {
     window.location.href = '/'
   }, [])
@@ -15,12 +15,12 @@ const Error = () => {
   }, [])
 
   return (
-    <ContentStyler>
-      <h2>Whoops!</h2>
-      <p>Sorry, the page you were looking for was not found.</p>
+    <Box>
+      <Typography variant="h2">Whoops!</Typography>
+      <Typography>Sorry, the page you were looking for was not found.</Typography>
       <Button onClick={handleRefresh}>Return home</Button>
-    </ContentStyler>
+    </Box>
   )
 }
 
-export default Error
+export default NotFound

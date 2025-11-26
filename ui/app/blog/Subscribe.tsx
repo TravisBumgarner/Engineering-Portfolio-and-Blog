@@ -1,46 +1,11 @@
 'use client'
 
-import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
+import { Box, Button, TextField, Typography } from '@mui/material'
 import { useState } from 'react'
-import styled from 'styled-components'
-import Button from '../../lib/sharedComponents/Button'
-import { Input } from '../../lib/sharedComponents/Input'
+import Link from '@/lib/sharedComponents/Link'
+import { FONT_SIZES, SPACING } from '@/lib/styles/consts'
 
-const Wrapper = styled.div`
-  margin-bottom: ${SPACING.MEDIUM};
-  padding: ${SPACING.XSMALL};
-  background-color: var(--bright-background);
-  display: flex;
-  flex-direction: row;
-  gap: ${SPACING.SMALL};
-  align-items: center;
-  justify-content: center;
-
-  a,
-  input,
-  button {
-    height: 36px;
-    font-size: ${FONT_SIZES.SMALL};
-    margin: 0;
-  }
-
-  @media (max-width: 400px) {
-    flex-direction: column;
-    gap: ${SPACING.XSMALL};
-  }
-`
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: row;
-  gap: ${SPACING.SMALL};
-  width: 100%;
-  input {
-    flex-grow: 1;
-  }
-`
-
-const Subscribe = () => {
+export default function Subscribe() {
   const [email, setEmail] = useState('')
 
   const handleSubmit = () => {
@@ -48,8 +13,45 @@ const Subscribe = () => {
   }
 
   return (
-    <Wrapper>
-      <RSSLink href="/rss.xml" target="_blank" rel="noopener noreferrer">
+    <Box
+      sx={{
+        mb: SPACING.MEDIUM.PX,
+        display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row' },
+        gap: { xs: SPACING.SMALL.PX, sm: SPACING.SMALL.PX },
+        alignItems: 'center',
+        justifyContent: 'center',
+
+        '& a, & input, & button': {
+          height: 36,
+          fontSize: FONT_SIZES.SMALL,
+          m: 0,
+        },
+
+        // Force MUI TextField to be 36px high
+        '& .MuiInputBase-root': {
+          height: 36,
+        },
+        '& .MuiInputBase-input': {
+          height: '36px !important',
+          lineHeight: '36px !important',
+          padding: '0 12px !important',
+        },
+      }}
+    >
+      {/* RSS LINK */}
+      <Link
+        type="block"
+        href="/rss.xml"
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{
+          width: '100px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: SPACING.SMALL.PX,
+        }}
+      >
         <svg
           style={{ position: 'relative', top: '2px' }}
           xmlns="http://www.w3.org/2000/svg"
@@ -61,58 +63,49 @@ const Subscribe = () => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="rss-icon"
         >
+          <title>RSS Feed</title>
           <path d="M4 11a9 9 0 0 1 9 9" />
           <path d="M4 4a16 16 0 0 1 16 16" />
           <circle cx="5" cy="19" r="1" />
         </svg>
         <span>RSS</span>
-      </RSSLink>
-      <p>Or</p>
-      <Form
+      </Link>
+
+      <Typography>Or</Typography>
+
+      {/* FORM */}
+      <Box
+        component="form"
         action="https://buttondown.com/api/emails/embed-subscribe/tbumgarner"
         method="post"
         target="popupwindow"
         onSubmit={handleSubmit}
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          gap: SPACING.SMALL.PX,
+          width: '100%',
+          alignItems: 'center',
+        }}
         className="embeddable-buttondown-form"
       >
-        <Input
+        <TextField
           placeholder="Email"
           type="email"
           name="email"
           id="bd-email"
           value={email}
-          onChange={e => setEmail(e.target.value)}
-          style={{ borderRadius: 0 }}
+          onChange={(e) => setEmail(e.target.value)}
+          fullWidth
+          size="small"
+          variant="outlined"
         />
-        <Button
-          style={{ padding: `0 8px` }}
-          type="submit"
-          disabled={email.length === 0}
-        >
+
+        <Button type="submit" variant="contained" disabled={email.length === 0}>
           Subscribe
         </Button>
-      </Form>
-    </Wrapper>
+      </Box>
+    </Box>
   )
 }
-
-const RSSLink = styled.a`
-  background-color: var(--secondary-background);
-  width: 120px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: ${SPACING.XSMALL};
-  border: 0;
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: ${FONT_WEIGHTS.REGULAR};
-  &:hover {
-    text-decoration: underline;
-  }
-`
-
-export default Subscribe

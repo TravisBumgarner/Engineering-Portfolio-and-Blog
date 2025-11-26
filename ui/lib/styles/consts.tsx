@@ -1,44 +1,122 @@
-export const EVERYTHING_FONT = 'Satoshi, sans-serif'
-export const CODE_FONT = 'Source Code Pro, monospace'
+export const subtleBackground = (theme: 'dark' | 'light', subtleness: 'very' | 'slightly' = 'very') => {
+  // This function could evolve over time. Adds a light overlay to the background.
+  // I think, I only want one of these functions but could want more in the future.
 
-export const COLORS = {
-  GRAYS: {
-    '100': '#FFFFFF',
-    '200': '#F6F6F6',
-    '300': '#b9b9b9',
-    '350': '#787878', // whoops lol.
-    '400': '#303030',
-    '500': '#1a1a1a',
-    '600': ''
-  },
-  PRIMARY: {
-    '100': '#1298f2',
-    '200': '#006FB9'
+  if (subtleness === 'slightly') {
+    return theme === 'dark'
+      ? `color-mix(in hsl, ${PALETTE.grayscale[500]}, ${PALETTE.grayscale[900]} 90%)`
+      : `color-mix(in hsl, ${PALETTE.grayscale[100]}, ${PALETTE.grayscale[50]} 50%)`
   }
+
+  return theme === 'dark'
+    ? `color-mix(in hsl, ${PALETTE.grayscale[800]}, ${PALETTE.grayscale[900]} 80%)`
+    : `color-mix(in hsl, ${PALETTE.grayscale[100]}, ${PALETTE.grayscale[50]} 80%)`
 }
 
-export const FONT_WEIGHTS = {
-  LIGHT: 100,
-  REGULAR: 300,
-  BOLD: 500,
-  XBOLD: 600
+export const PALETTE = {
+  grayscale: {
+    0: 'hsl(0 0% 100%)',
+    50: 'hsl(0 0% 95%)',
+    100: 'hsl(0 0% 90%)',
+    200: 'hsl(0 0% 80%)',
+    300: 'hsl(0 0% 70%)',
+    400: 'hsl(0 0% 60%)',
+    500: 'hsl(0 0% 50%)',
+    600: 'hsl(0 0% 40%)',
+    700: 'hsl(0 0% 30%)',
+    800: 'hsl(0 0% 20%)',
+    850: 'hsl(0 0% 15%)',
+    900: 'hsl(0 0% 10%)',
+    1000: 'hsl(0 0% 0%)',
+  },
+  primary: {
+    50: 'hsl(204, 90%, 95%)',
+    100: 'hsl(204, 90%, 90%)',
+    200: 'hsl(204, 90%, 80%)',
+    300: 'hsl(204, 90%, 70%)',
+    400: 'hsl(204, 90%, 60%)',
+    500: 'hsl(204, 90%, 50%)',
+    600: 'hsl(204, 90%, 40%)',
+    700: 'hsl(204, 90%, 30%)',
+    800: 'hsl(204, 90%, 20%)',
+    900: 'hsl(204, 90%, 10%)',
+    950: 'hsl(204, 90%, 5%)',
+  },
+}
+
+export const BORDER_RADIUS = {
+  ZERO: {
+    PX: '0px',
+    INT: 0,
+  },
 }
 
 export const FONT_SIZES = {
-  XSMALL: '12px',
-  SMALL: '16px',
-  MEDIUM: '20px',
-  LARGE: '36px',
-  LARGER: '28px', // Shoot me lol.
-  XLARGE: '50px'
+  SMALL: {
+    PX: '12px',
+    INT: 12,
+  },
+  MEDIUM: {
+    PX: '18px',
+    INT: 18,
+  },
+  LARGE: {
+    PX: '24px',
+    INT: 24,
+  },
+  HUGE: {
+    PX: '32px',
+    INT: 32,
+  },
+  HUGE_PLUS: {
+    PX: '48px',
+    INT: 48,
+  },
 }
 
 export const SPACING = {
-  XXSMALL: '4px',
-  XSMALL: '8px',
-  SMALL: '16px',
-  MEDIUM: '30px',
-  LARGE: '50px',
-  XLARGE: '80px',
-  XXLARGE: '150px'
+  TINY: {
+    PX: '4px',
+    INT: 4,
+  },
+  SMALL: {
+    PX: '10px',
+    INT: 10,
+  },
+  MEDIUM: {
+    PX: '20px',
+    INT: 20,
+  },
+  LARGE: {
+    PX: '36px',
+    INT: 36,
+  },
+  HUGE: {
+    PX: '48px',
+    INT: 48,
+  },
+  OMNIPRESENT: {
+    PX: '128px',
+    INT: 128,
+  },
 } as const
+
+// // Button Styles. Used in <Button /> and Share.tsx
+export const LIGHT_BUTTON_STYLES = {
+  color: PALETTE.primary[50],
+  background: PALETTE.primary[500],
+  hoverBackground: PALETTE.primary[800],
+}
+
+export const DARK_BUTTON_STYLES = {
+  color: PALETTE.primary[900],
+  background: PALETTE.primary[400],
+  hoverBackground: PALETTE.primary[500],
+}
+
+export const Z_INDICES = {
+  MODAL: 998,
+  APP_LOADING: 997,
+  SIDEBAR_BACKDROP: 500,
+  SIDEBAR: 501,
+}

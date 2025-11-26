@@ -1,299 +1,229 @@
 'use client'
 
-import React from 'react'
-import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
-import { SHARED_SPACING } from '@/lib/styles/theme'
-import styled from 'styled-components'
-import Contact from '../../lib/sharedComponents/ContactForm'
+import { List, ListItem, Stack, type SxProps } from '@mui/material'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import React, { useRef } from 'react'
 import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
-import Link from 'next/link'
-import BlurHashImage from '../../lib/sharedComponents/BlurHashImage'
-import ContentStyler from '../../lib/sharedComponents/ContentStyler'
+import ItemPreview from '@/lib/sharedComponents/ItemPreview'
+import { SPACING } from '@/lib/styles/consts'
+import Contact from '../../lib/sharedComponents/ContactForm'
+import Link from '../../lib/sharedComponents/Link'
 
 function formatLinks(list: { title: string; path: string }[]) {
   return list.map(({ title, path }, i) => {
-    const sep =
-      i === list.length - 2 ? ' and ' : i < list.length - 1 ? ', ' : ''
+    const sep = i === list.length - 2 ? ' and ' : i < list.length - 1 ? ', ' : ''
     return (
       <React.Fragment key={title}>
-        <a target="_blank" href={path}>
+        <Link type="inline" target="_blank" href={path}>
           {title}
-        </a>
+        </Link>
         {sep}
       </React.Fragment>
     )
   })
 }
 
-const ListItem = ({
-  src,
-  link,
-  title,
-  description
-}: {
-  src: string
-  link: string
-  title: string
-  description: string
-}) => {
-  const paragraphs = description
-    .split('\n')
-    .map((paragraph, index) => <p key={index}>{paragraph}</p>)
+const WEB_AND_APP_PROJECTS = ['seis-colores', 'ideas-down', 'five-pixels', 'photography-portfolio']
 
-  return (
-    <Link href={link} target="_blank" style={{ textDecoration: 'none' }}>
-      <StyledListItem>
-        <div>
-          <h2>{title}</h2>
-          {paragraphs}
-        </div>
-        <BlurHashImage priority={false} src={src} />
-        <LearnMore>Learn More</LearnMore>
-      </StyledListItem>
-    </Link>
-  )
-}
-
-const LearnMore = styled.span`
-  cursor: pointer;
-  font-size: ${FONT_SIZES.MEDIUM};
-  background-color: var(--primary-background);
-  color: var(--foreground);
-  border: 0;
-  margin-top: ${SPACING.MEDIUM};
-  padding: ${SPACING.SMALL};
-  text-align: center;
-  font-weight: 900;
-
-  &:hover {
-    color: var(--primary);
-  }
-
-  &:disabled {
-    color: var(--foreground-disabled);
-    cursor: not-allowed;
-  }
-`
-
-const StyledListItem = styled.div`
-  ${SHARED_SPACING}
-  display: flex;
-  background-color: var(--secondary-background);
-  color: var(--foreground);
-  flex-direction: column;
-  text-decoration: none;
-  margin-bottom: ${SPACING.XLARGE};
-  margin-top: ${SPACING.XLARGE};
-
-  > div {
-    margin-bottom: ${SPACING.MEDIUM};
-    display: flex;
-    flex-direction: column;
-
-    > h2 {
-      font-size: ${FONT_SIZES.XLARGE};
-      font-weight: ${FONT_WEIGHTS.BOLD};
-      margin-top: 0;
-      margin-bottom: ${SPACING.SMALL};
-    }
-  }
-`
-
-const WEB_AND_APP_PROJECTS = [
-  'seis-colores',
-  'ideas-down',
-  'five-pixels',
-  'photography-portfolio'
-]
-
-const ADDITIONAL = [
-  'painless-prototyping-second-attempt',
-  'pixels64',
-  'strangerer-things',
-  'camera-from-scratch'
-]
+const ADDITIONAL = ['painless-prototyping-second-attempt', 'pixels64', 'strangerer-things', 'camera-from-scratch']
 
 const PLACES_YOU_CAN_FIND_ME = [
   {
     title: 'More Creations',
-    path: '/creations'
+    path: '/creations',
   },
   {
     title: 'GitHub',
-    path: 'https://github.com/travisBumgarner/'
+    path: 'https://github.com/travisBumgarner/',
   },
   {
     title: 'LinkedIn',
-    path: 'https://www.linkedin.com/in/travisbumgarner/'
+    path: 'https://www.linkedin.com/in/travisbumgarner/',
   },
   {
     title: 'Resume',
-    path: '/travis_bumgarner_resume.pdf'
-  }
+    path: '/travis_bumgarner_resume.pdf',
+  },
 ]
 
 const EXHIBITS = [
   {
     title: 'Exhibit 1: Silly Apps',
-    path: 'https://github.com/TravisBumgarner/Silly-Apps'
+    path: 'https://github.com/TravisBumgarner/Silly-Apps',
   },
   {
     title: 'Exhibit 2: Project Graveyard',
-    path: 'https://github.com/TravisBumgarner/Project-Graveyard'
+    path: 'https://github.com/TravisBumgarner/Project-Graveyard',
   },
   {
     title: 'Exhibit 3: Proof of Concepts',
-    path: 'https://github.com/TravisBumgarner/Proof-of-Concepts'
+    path: 'https://github.com/TravisBumgarner/Proof-of-Concepts',
   },
   {
     title: 'Exhibit 4: Learning Explorations',
-    path: 'https://github.com/TravisBumgarner/Learning-Explorations/tree/master/archives'
+    path: 'https://github.com/TravisBumgarner/Learning-Explorations/tree/master/archives',
   },
   {
     title: 'Exhibit 5: Pointless Projects',
-    path: 'https://github.com/TravisBumgarner/pointless-projects'
-  }
+    path: 'https://github.com/TravisBumgarner/pointless-projects',
+  },
 ]
 
-const CTAButton = styled.a`
-  padding: ${SPACING.SMALL};
-  width: 100%;
-  background-color: var(--bright-background);
-  color: white !important;
-  text-decoration: none;
-  margin-bottom: ${SPACING.LARGE};
-  font-weight: 900 !important;
-  font-size: 24px;
-  display: block;
-  text-align: center;
-`
-
 const WorkWithMe = () => {
+  const letsChatRef = useRef<HTMLDivElement | null>(null)
+
+  const handleClick = () => {
+    letsChatRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
-    <ContentStyler>
-      <h2>
+    <Box>
+      <Typography variant="h2" gutterBottom>
         I turn early-stage ideas
         <br />
         into working prototypes.
-      </h2>
-      <p>
+      </Typography>
+      <Typography>
         I work fast, learn fast, and deliver.
         <br />
         Software, hardware, design - whatever the idea needs.
-      </p>
+      </Typography>
 
-      <CTAButton href="#lets-chat">Reach Out</CTAButton>
+      <Button onClick={handleClick} fullWidth variant="contained" size="large">
+        Reach Out
+      </Button>
 
-      <h2>Testimonials</h2>
-      <blockquote>
-        When you have a difficult problem, something you are not sure is even
-        possible, Travis will dive right in and start trying things out.
-        He&apos;ll figure out the possible approaches and eventually get it all
-        working, despite the setbacks and the obstacles out of his control.
-        <span className="author">Van, Staff Software Engineer</span>
-      </blockquote>
+      <Typography variant="h2">Testimonials</Typography>
+      <Stack direction="column" spacing={SPACING.MEDIUM.PX}>
+        <Box>
+          <Typography sx={quoteSX}>
+            When you have a difficult problem, something you are not sure is even possible, Travis will dive right in
+            and start trying things out. He&apos;ll figure out the possible approaches and eventually get it all
+            working, despite the setbacks and the obstacles out of his control.
+          </Typography>
+          <Typography variant="body1" sx={{ textAlign: 'right' }}>
+            Van, Staff Software Engineer
+          </Typography>
+        </Box>
 
-      <blockquote>
-        Travis is a builder. I&apos;m impressed with his depth in so many
-        subjects, from electronics to photography to woodworking to software.
-        He&apos;s a learner -- constantly curious and always tackling new
-        subjects.
-        <span className="author">Matt, Head of Architecture</span>
-      </blockquote>
+        <Box>
+          <Typography sx={quoteSX}>
+            Travis is a builder. I&apos;m impressed with his depth in so many subjects, from electronics to photography
+            to woodworking to software. He&apos;s a learner -- constantly curious and always tackling new subjects.
+          </Typography>
+          <Typography variant="body1" sx={{ textAlign: 'right' }}>
+            Matt, Head of Architecture
+          </Typography>
+        </Box>
 
-      <blockquote>
-        Travis is an incredible full-stack engineer. He can take large complex
-        projects and break them down into tractable pieces and work with a team
-        to get the project done. He has excellent product intuition, balanced
-        with a healthy sense of what makes engineering teams efficient.
-        He&apos;s also a huge catalyst to build a strong culture around
-        collaboration and strong teamwork. An incredible asset to any
-        engineering team!
-        <span className="author">Daniel, CTO</span>
-      </blockquote>
+        <Box>
+          <Typography sx={quoteSX}>
+            Travis is an incredible full-stack engineer. He can take large complex projects and break them down into
+            tractable pieces and work with a team to get the project done. He has excellent product intuition, balanced
+            with a healthy sense of what makes engineering teams efficient. He&apos;s also a huge catalyst to build a
+            strong culture around collaboration and strong teamwork. An incredible asset to any engineering team!
+          </Typography>
+          <Typography variant="body1" sx={{ textAlign: 'right' }}>
+            Daniel, CTO
+          </Typography>
+        </Box>
 
-      <blockquote>
-        Travis is the kind of engineer who never backs down from a challenge,
-        cares about craft, and truly wants to build the best possible product.
-        Collaborating with Travis feels like anything is possible because of his
-        strong will to tinker and figure things out.
-        <span className="author">Ian, Staff Product Designer</span>
-      </blockquote>
+        <Box>
+          <Typography sx={quoteSX}>
+            Travis is the kind of engineer who never backs down from a challenge, cares about craft, and truly wants to
+            build the best possible product. Collaborating with Travis feels like anything is possible because of his
+            strong will to tinker and figure things out.
+          </Typography>
+          <Typography variant="body1" sx={{ textAlign: 'right' }}>
+            Ian, Staff Product Designer
+          </Typography>
+        </Box>
+      </Stack>
 
-      <h2>What I Do</h2>
-      <p>
-        I build across the stack: full-stack apps, embedded systems, hardware
-        interfaces, and design. I&apos;ve built MVPs, production apps, and
-        personal experiments. All of the projects below have been fully managed,
-        researched, designed, and engineered by myself. Historically, I&apos;ve
-        consulted with stealth-mode startups, so I&apos;m unable to share that
-        work here.
-      </p>
+      <Typography variant="h2">What I Do</Typography>
+      <Typography>
+        I build across the stack: full-stack apps, embedded systems, hardware interfaces, and design. I&apos;ve built
+        MVPs, production apps, and personal experiments. All of the projects below have been fully managed, researched,
+        designed, and engineered by myself. Historically, I&apos;ve consulted with stealth-mode startups, so I&apos;m
+        unable to share that work here.
+      </Typography>
 
-      <h3>Web + App Projects</h3>
-      <p>
-        I am self taught and have over ten years of professional experience
-        building applications.
-      </p>
-      {WEB_AND_APP_PROJECTS.map(key => {
+      <Typography variant="h3">Web + App Projects</Typography>
+      <Typography>
+        I am self taught and have over ten years of professional experience building applications.
+      </Typography>
+      {WEB_AND_APP_PROJECTS.map((key) => {
         const { id, title, previewImage, description } = projects[key]
         return (
-          <ListItem
+          <ItemPreview
+            priority={false}
+            type="creation"
             key={id}
             description={description}
-            link={`${ROUTES.CREATIONS.path}/${id}`}
+            link={`${ROUTES.CREATIONS.href}/${id}`}
             title={title}
-            src={previewImage && `/project-resources/${id}/${previewImage.src}`}
+            src={`/project-resources/${id}/${previewImage.src}`}
           />
         )
       })}
 
-      <h3>Hardware Projects</h3>
-      <p>
-        I have a degree in Mechanical Engineering and a collection of related
-        side projects. Many of these projects blend hardware and software.
-      </p>
-      {ADDITIONAL.map(key => {
+      <Typography variant="h3">Hardware Projects</Typography>
+      <Typography>
+        I have a degree in Mechanical Engineering and a collection of related side projects. Many of these projects
+        blend hardware and software.
+      </Typography>
+      {ADDITIONAL.map((key) => {
         const { id, title, previewImage, description } = projects[key]
         return (
-          <ListItem
+          <ItemPreview
+            priority={false}
+            type="creation"
             key={id}
             description={description}
-            link={`${ROUTES.CREATIONS.path}/${id}`}
+            link={`${ROUTES.CREATIONS.href}/${id}`}
             title={title}
-            src={previewImage && `/project-resources/${id}/${previewImage.src}`}
+            src={`/project-resources/${id}/${previewImage.src}`}
           />
         )
       })}
 
-      <h2>More About Me</h2>
-      <p>
-        Here are a few more places to learn about me -{' '}
-        {formatLinks(PLACES_YOU_CAN_FIND_ME)}.
-      </p>
+      <Typography variant="h2">More About Me</Typography>
+      <Typography sx={{ mb: 2 }}>
+        Here are a few more places to learn about me - {formatLinks(PLACES_YOU_CAN_FIND_ME)}.
+      </Typography>
 
-      <p>
-        The projects listed above barely scratch the surface of my depth and
-        breadth of experience. I invite you to check out some of the following
-        exhibits -
-      </p>
-      <ul>
+      <Typography sx={{ mb: 2 }}>
+        The projects listed above barely scratch the surface of my depth and breadth of experience. I invite you to
+        check out some of the following exhibits -
+      </Typography>
+      <List>
         {EXHIBITS.map(({ path, title }) => (
-          <li key={title}>
-            <a href={path} rel="noopener noreferrer" target="_blank">
+          <ListItem key={title}>
+            <Link type="inline" href={path} target="_blank">
               {title}
-            </a>
-          </li>
+            </Link>
+          </ListItem>
         ))}
-      </ul>
+      </List>
 
-      <h2 id="lets-chat">Let&apos;s Chat</h2>
-      <p>Have an idea you want to turn into a working prototype?</p>
-      <Contact />
-      <div style={{ height: SPACING.XLARGE }} />
-    </ContentStyler>
+      <Box ref={letsChatRef} sx={{ mt: 4 }}>
+        <Typography variant="h2" gutterBottom>
+          Let&apos;s Chat
+        </Typography>
+        <Typography>Have an idea you want to turn into a working prototype?</Typography>
+        <Contact />
+        <Box sx={{ height: 64 }} />
+      </Box>
+    </Box>
   )
+}
+
+const quoteSX: SxProps = {
+  fontStyle: 'italic',
+  marginBottom: SPACING.SMALL.PX,
 }
 
 export default WorkWithMe
