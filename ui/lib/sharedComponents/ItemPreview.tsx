@@ -16,9 +16,9 @@ const dateLabelLookup = {
 
 const formatDateByType = (date: string, type: ItemType) => {
   if (type === 'post') {
-    return new Date(date + 'T00:00:00Z').toUTCString().split(' ').slice(0, 4).join(' ')
+    return new Date(`${date}T00:00:00Z`).toUTCString().split(' ').slice(0, 4).join(' ')
   } else if (type === 'creation') {
-    return new Date(date + 'T00:00:00Z').toLocaleString('en-US', {
+    return new Date(`${date}T00:00:00Z`).toLocaleString('en-US', {
       year: 'numeric',
       month: 'long',
       timeZone: 'UTC',
@@ -52,7 +52,7 @@ const ItemPreview = ({
   return (
     <Box
       sx={{
-        padding: SPACING.SMALL.PX,
+        padding: SPACING.MEDIUM.PX,
         display: 'flex',
         backgroundColor: 'background.paper',
         flexDirection: 'column',

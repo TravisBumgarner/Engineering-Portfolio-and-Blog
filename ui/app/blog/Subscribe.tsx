@@ -27,6 +27,16 @@ export default function Subscribe() {
           fontSize: FONT_SIZES.SMALL,
           m: 0,
         },
+
+        // Force MUI TextField to be 36px high
+        '& .MuiInputBase-root': {
+          height: 36,
+        },
+        '& .MuiInputBase-input': {
+          height: '36px !important',
+          lineHeight: '36px !important',
+          padding: '0 12px !important',
+        },
       }}
     >
       {/* RSS LINK */}
@@ -35,7 +45,12 @@ export default function Subscribe() {
         href="/rss.xml"
         target="_blank"
         rel="noopener noreferrer"
-        sx={{ width: '100px', display: 'flex', alignItems: 'center', gap: SPACING.SMALL.PX }}
+        sx={{
+          width: '100px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: SPACING.SMALL.PX,
+        }}
       >
         <svg
           style={{ position: 'relative', top: '2px' }}

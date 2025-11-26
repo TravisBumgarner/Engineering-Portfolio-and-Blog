@@ -92,7 +92,7 @@ const WorkWithMe = () => {
         Software, hardware, design - whatever the idea needs.
       </Typography>
 
-      <Button onClick={handleClick} fullWidth variant="contained" size="large" sx={{ mb: 4 }}>
+      <Button onClick={handleClick} fullWidth variant="contained" size="large">
         Reach Out
       </Button>
 

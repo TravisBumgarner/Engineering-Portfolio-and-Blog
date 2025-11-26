@@ -9,6 +9,7 @@ import { makeNewSiteTitle } from '@/lib/utilities'
 import Scroll from './_components/Scroll'
 import Sidebar from './_components/Sidebar'
 import SiteTitle from './_components/SiteTitle'
+import { Box } from '@mui/material'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://travisbumgarner.dev'),
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <Sidebar />
             <SiteTitle title={title} />
             {children}
+            <Box sx={{ height: '50px' }} /> {/* Spacer for bottom */}
           </AppThemeProvider>
         </AppRouterCacheProvider>
       </body>
