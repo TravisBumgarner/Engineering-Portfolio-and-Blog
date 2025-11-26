@@ -8,9 +8,7 @@ const Blog = () => {
     <div>
       <Subscribe />
       {Object.keys(posts)
-        .sort((a, b) =>
-          new Date(posts[a].date) < new Date(posts[b].date) ? 1 : -1
-        )
+        .sort((a, b) => (new Date(posts[a].date) < new Date(posts[b].date) ? 1 : -1))
         .map((id, index) => {
           const { title, description } = posts[id]
           return (

@@ -1,16 +1,13 @@
 'use client'
 
-import React from 'react'
-import ContactForm from '../../lib/sharedComponents/ContactForm'
-import { useSearchParams } from 'next/navigation'
 import { Box, Typography } from '@mui/material'
+import { useSearchParams } from 'next/navigation'
+import ContactForm from '../../lib/sharedComponents/ContactForm'
 
 const Contact = () => {
   const searchParams = useSearchParams()
   const rawSubject = searchParams.get('subject')
-  const subject = rawSubject
-    ? rawSubject.replace(/[^a-zA-Z0-9 :]/g, '').slice(0, 100)
-    : undefined
+  const subject = rawSubject ? rawSubject.replace(/[^a-zA-Z0-9 :]/g, '').slice(0, 100) : undefined
 
   return (
     <Box>

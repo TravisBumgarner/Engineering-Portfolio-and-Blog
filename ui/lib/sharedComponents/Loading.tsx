@@ -1,10 +1,7 @@
 import { LoadingContainer } from './Loading.client'
 
-
 const Loading = () => {
-  return (
-    <LoadingContainer />
-  )
+  return <LoadingContainer />
 }
 
 export default Loading

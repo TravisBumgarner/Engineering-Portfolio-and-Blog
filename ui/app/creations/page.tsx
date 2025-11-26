@@ -9,30 +9,21 @@ const Portfolio = () => {
     <>
       {/* Todo - add Photo Palettes to projects, and set new highlights */}
       {Object.values(projects)
-        .sort((a, b) =>
-          a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1
-        )
-        .map(
-          (
-            { id, title, previewImage, lastMeaningfulUpdate, description },
-            index
-          ) => {
-            return (
-              <ListItem
-                type="creation"
-                priority={index === 0}
-                key={id}
-                description={description}
-                link={`${ROUTES.CREATIONS.href}/${id}`}
-                title={title}
-                date={lastMeaningfulUpdate}
-                src={
-                  previewImage && `/project-resources/${id}/${previewImage.src}`
-                }
-              />
-            )
-          }
-        )}
+        .sort((a, b) => (a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1))
+        .map(({ id, title, previewImage, lastMeaningfulUpdate, description }, index) => {
+          return (
+            <ListItem
+              type="creation"
+              priority={index === 0}
+              key={id}
+              description={description}
+              link={`${ROUTES.CREATIONS.href}/${id}`}
+              title={title}
+              date={lastMeaningfulUpdate}
+              src={previewImage && `/project-resources/${id}/${previewImage.src}`}
+            />
+          )
+        })}
     </>
   )
 }

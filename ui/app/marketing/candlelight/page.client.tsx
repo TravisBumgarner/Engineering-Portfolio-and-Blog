@@ -1,41 +1,34 @@
 'use client'
 
-import ContentStyler from '@/lib/sharedComponents/ContentStyler'
+import { Box, Typography } from '@mui/material'
+import Image from 'next/image'
 import Link from '@/lib/sharedComponents/Link'
 import { SPACING } from '@/lib/styles/consts'
-import { Typography } from '@mui/material'
-import Image from 'next/image'
 
 const CandlelightPage = () => {
   return (
-    <ContentStyler>
-      <div>
-        <div
+    <Box>
+      <Box>
+        <Box
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: SPACING.SMALL.PX
+            gap: SPACING.SMALL.PX,
           }}
         >
-          <div>
-            <Image
-              src="/marketing-resources/candlelight/favicon.png"
-              alt="App Screenshot"
-              width={75}
-              height={75}
-            />
-          </div>
-          <div>
+          <Box>
+            <Image src="/marketing-resources/candlelight/favicon.png" alt="App Screenshot" width={75} height={75} />
+          </Box>
+          <Box>
             <Typography variant="h2">Candlelight</Typography>
             <Typography>A Puzzle Game of Shape, Color, and Alchemy</Typography>
-          </div>
-        </div>
-      </div>
+          </Box>
+        </Box>
+      </Box>
 
       <Typography>
-        Candlelight is a puzzle game where each shape you place onto the grid
-        inverts the color of the space it occupies. Every inversion offers the
-        opportunity to alchemize a gem and advance.
+        Candlelight is a puzzle game where each shape you place onto the grid inverts the color of the space it
+        occupies. Every inversion offers the opportunity to alchemize a gem and advance.
       </Typography>
 
       <Typography variant="h3">Puzzle Mode</Typography>
@@ -43,9 +36,8 @@ const CandlelightPage = () => {
         <strong>Solve puzzles using limited shapes.</strong>
       </Typography>
       <Typography>
-        Complete 50 levels across 9 worlds, each challenging you to work with a
-        limited number of shapes. Every move counts as you aim for the most
-        efficient solution.
+        Complete 50 levels across 9 worlds, each challenging you to work with a limited number of shapes. Every move
+        counts as you aim for the most efficient solution.
       </Typography>
 
       <Typography variant="h3">Free Play</Typography>
@@ -53,8 +45,7 @@ const CandlelightPage = () => {
         <strong>Unwind and play at your own pace.</strong>
       </Typography>
       <Typography>
-        There is no goal here, just relax, enjoy the music, and experiment with
-        shapes to your heart&apos;s content.
+        There is no goal here, just relax, enjoy the music, and experiment with shapes to your heart&apos;s content.
       </Typography>
 
       <Typography variant="h3">Daily Challenge</Typography>
@@ -62,8 +53,7 @@ const CandlelightPage = () => {
         <strong>Solve the daily challenge with the fewest moves.</strong>
       </Typography>
       <Typography>
-        Every day brings a fresh puzzle. Compete with friends to see who can
-        solve it using the fewest shapes.
+        Every day brings a fresh puzzle. Compete with friends to see who can solve it using the fewest shapes.
       </Typography>
 
       <Typography variant="h3">Tutorial</Typography>
@@ -71,20 +61,17 @@ const CandlelightPage = () => {
         <strong>Master the game&apos;s basics.</strong>
       </Typography>
       <Typography>
-        New to Candlelight? The tutorial will guide you through core mechanics,
-        ensuring you&apos;re ready to tackle the game.
+        New to Candlelight? The tutorial will guide you through core mechanics, ensuring you&apos;re ready to tackle the
+        game.
       </Typography>
 
       <Typography variant="h2">Get Candlelight</Typography>
       <Typography>
-        <Link
-          target="_blank"
-          href="https://store.steampowered.com/app/3157820/Candlelight/"
-        >
+        <Link type="block" target="_blank" href="https://store.steampowered.com/app/3157820/Candlelight/">
           Steam Store
         </Link>
       </Typography>
-    </ContentStyler>
+    </Box>
   )
 }
 

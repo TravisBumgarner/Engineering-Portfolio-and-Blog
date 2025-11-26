@@ -1,26 +1,22 @@
-import { makeNewSiteTitle } from '@/lib/utilities'
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { ReactNode } from 'react'
-import SiteTitle from './_components/SiteTitle'
-
-import {
-  ABOUT_ME_SENTENCE_1,
-  ABOUT_ME_SENTENCE_2,
-  SITE_TITLE
-} from '@/lib/consts'
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
+
+import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2, SITE_TITLE } from '@/lib/consts'
+import AppThemeProvider from '@/lib/styles/Theme'
+import { makeNewSiteTitle } from '@/lib/utilities'
 import Scroll from './_components/Scroll'
 import Sidebar from './_components/Sidebar'
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
-import AppThemeProvider from '@/lib/styles/Theme'
+import SiteTitle from './_components/SiteTitle'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://travisbumgarner.dev'),
   title: SITE_TITLE,
   description: `${ABOUT_ME_SENTENCE_1} ${ABOUT_ME_SENTENCE_2}`,
   openGraph: {
-    images: ['/me.png']
-  }
+    images: ['/me.png'],
+  },
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {

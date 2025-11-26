@@ -1,10 +1,10 @@
 'use client'
 
-import { useCallback } from 'react'
-import Typography from '@mui/material/Typography'
 import { Box, Button } from '@mui/material'
+import Typography from '@mui/material/Typography'
+import { useCallback } from 'react'
 
-const Error = () => {
+const ErrorPage = () => {
   const handleRefresh = useCallback(() => {
     window.location.href = '/'
   }, [])
@@ -18,4 +18,4 @@ const Error = () => {
   )
 }
 
-export default Error
+export default ErrorPage

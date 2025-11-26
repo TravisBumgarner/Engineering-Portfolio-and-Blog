@@ -1,9 +1,9 @@
 'use client'
 
+import { Box, Button, TextField, Typography } from '@mui/material'
 import { useState } from 'react'
-import { Box, Typography, Button, TextField } from '@mui/material'
-import { SPACING, FONT_SIZES } from '@/lib/styles/consts'
 import Link from '@/lib/sharedComponents/Link'
+import { FONT_SIZES, SPACING } from '@/lib/styles/consts'
 
 export default function Subscribe() {
   const [email, setEmail] = useState('')
@@ -49,6 +49,7 @@ export default function Subscribe() {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
+          <title>RSS Feed</title>
           <path d="M4 11a9 9 0 0 1 9 9" />
           <path d="M4 4a16 16 0 0 1 16 16" />
           <circle cx="5" cy="19" r="1" />
@@ -80,17 +81,13 @@ export default function Subscribe() {
           name="email"
           id="bd-email"
           value={email}
-          onChange={e => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           fullWidth
           size="small"
           variant="outlined"
         />
 
-        <Button
-          type="submit"
-          variant="contained"
-          disabled={email.length === 0}
-        >
+        <Button type="submit" variant="contained" disabled={email.length === 0}>
           Subscribe
         </Button>
       </Box>

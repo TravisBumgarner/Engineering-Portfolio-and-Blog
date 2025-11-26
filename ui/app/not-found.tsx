@@ -1,12 +1,11 @@
 'use client'
 
-import { useCallback, useEffect } from 'react'
-import { Button } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import Typography from '@mui/material/Typography'
+import { useCallback, useEffect } from 'react'
 import logger from '@/lib/utilities/logger'
-import { Box } from '@mui/material'
 
-const Error = () => {
+const NotFound = () => {
   const handleRefresh = useCallback(() => {
     window.location.href = '/'
   }, [])
@@ -24,4 +23,4 @@ const Error = () => {
   )
 }
 
-export default Error
+export default NotFound

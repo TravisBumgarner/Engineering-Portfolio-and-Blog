@@ -1,14 +1,14 @@
 'use client'
 
-import React, { useCallback, useMemo, useState } from 'react'
+import { Input } from '@mui/material'
+import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
-import Box from '@mui/material/Box'
-import { Input } from '@mui/material'
+import type React from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { SPACING } from '../styles/consts'
 
 const MAX_LENGTH = 800
-
 
 const ContactForm = ({ subject }: { subject?: string }) => {
   const [success, setSuccess] = useState(false)
@@ -20,19 +20,17 @@ const ContactForm = ({ subject }: { subject?: string }) => {
     email: '',
     message: '',
     subject: subject || '',
-    website: 'engineering-portfolio-and-blog'
+    website: 'engineering-portfolio-and-blog',
   })
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (e.target.name === 'message' && e.target.value.length > MAX_LENGTH) {
       return
     }
 
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     })
   }
 
@@ -43,19 +41,19 @@ const ContactForm = ({ subject }: { subject?: string }) => {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     })
     if (response.ok) {
       setSuccess(true)
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
         ...{
           name: '',
           email: '',
           message: '',
-          subject: ''
-        }
+          subject: '',
+        },
       }))
     } else {
       setFailure(true)
@@ -96,12 +94,7 @@ const ContactForm = ({ subject }: { subject?: string }) => {
         }}
         onSubmit={handleSubmit}
       >
-        <Input
-          placeholder="Name (Optional)"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
+        <Input placeholder="Name (Optional)" name="name" value={formData.name} onChange={handleChange} />
         <Input
           placeholder="Email (Optional)"
           name="email"
@@ -109,12 +102,7 @@ const ContactForm = ({ subject }: { subject?: string }) => {
           onChange={handleChange}
           type="email"
         />
-        <Input
-          placeholder="Subject"
-          name="subject"
-          value={formData.subject}
-          onChange={handleChange}
-        />
+        <Input placeholder="Subject" name="subject" value={formData.subject} onChange={handleChange} />
         <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
           <Typography>{`${formData.message.length}/${MAX_LENGTH}`}</Typography>
         </Box>
@@ -126,11 +114,7 @@ const ContactForm = ({ subject }: { subject?: string }) => {
           onChange={handleChange}
           rows={4}
         />
-        <Button
-          variant='contained'
-          type="submit"
-          disabled={isSubmitting || formData.message.length === 0}
-        >
+        <Button variant="contained" type="submit" disabled={isSubmitting || formData.message.length === 0}>
           {buttonText}
         </Button>
       </form>

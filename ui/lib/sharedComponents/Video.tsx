@@ -1,9 +1,7 @@
 'use client'
 
+import { Box, useTheme } from '@mui/material'
 import { PALETTE, SPACING } from '@/lib/styles/consts'
-import { useTheme } from '@mui/material'
-import { Box } from '@mui/material'
-import { Palette } from '../styles/consts'
 
 type VideoProps = {
   src: string
@@ -21,14 +19,14 @@ const Video = ({ src, aspectRatio }: VideoProps) => {
         padding: SPACING.MEDIUM.PX,
         width: '100%',
         aspectRatio: aspectRatio,
-        overflow: 'hidden'
+        overflow: 'hidden',
       }}
     >
       <video
         style={{
           width: '100%',
           height: '100%',
-          objectFit: 'none' // This line might cause issues in the future with aspect ratio. Check somehash.mdx and make sure that still works.
+          objectFit: 'none', // This line might cause issues in the future with aspect ratio. Check somehash.mdx and make sure that still works.
         }}
         src={src}
         autoPlay

@@ -1,8 +1,8 @@
-import blurhashes from '@/content/blurhashes/index.json'
-import { blurHashToDataURL } from '@/lib/utilities/blurhashDataURL'
-import { BlurHash } from '@/lib/types'
-import Image from 'next/image'
 import { useTheme } from '@mui/material'
+import Image from 'next/image'
+import blurhashes from '@/content/blurhashes/index.json'
+import type { BlurHash } from '@/lib/types'
+import { blurHashToDataURL } from '@/lib/utilities/blurhashDataURL'
 import { PALETTE } from '../styles/consts'
 
 const getBlurHash = (src: string) => {
@@ -10,11 +10,12 @@ const getBlurHash = (src: string) => {
 
   if (!result) {
     // Shame me for this code!
+    // biome-ignore lint/suspicious/noConsole: Fine for now.
     console.error('missing blurhash', src)
     return {
       blurHash: '',
       width: 0,
-      height: 0
+      height: 0,
     }
   }
 
@@ -25,7 +26,7 @@ const BlurHashImage = ({
   src,
   priority,
   alt,
-  maxHeight
+  maxHeight,
 }: {
   src: string
   priority: boolean
@@ -55,7 +56,7 @@ const BlurHashImage = ({
         objectPosition: 'top',
         display: 'block',
         width: '100%',
-        height: 'auto'
+        height: 'auto',
       }}
     />
   )
