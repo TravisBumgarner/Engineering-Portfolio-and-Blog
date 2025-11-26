@@ -2,13 +2,12 @@
 
 import { SPACING } from '@/lib/styles/consts'
 import styled from 'styled-components'
-import Link from 'next/link'
 import { FaApple, FaGithub } from 'react-icons/fa'
 import { useState } from 'react'
-import MarketingLink from '@/lib/sharedComponents/MarketingLink'
+import Link from '@/lib/sharedComponents/Link'
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
-import { Box, Typography } from '@mui/material'
+import { Box, List, ListItem, Typography } from '@mui/material'
 import Image from 'next/image'
 
 type UpdateType = 'add' | 'update' | 'fix'
@@ -74,21 +73,21 @@ const UpdateComponent = ({ title, date, updates }: Update) => {
     })
 
   return (
-    <div>
+    <Box>
       <Typography>
         <strong>{title}</strong>
       </Typography>
       <Typography>
         <time>{date}</time>
       </Typography>
-      <ul>
+      <List>
         {flatUpdates.map((item, idx) => (
-          <li key={item.type + item.text + idx}>
+          <ListItem key={item.type + item.text + idx}>
             {LABELS[item.type]}: {item.text}
-          </li>
+          </ListItem>
         ))}
-      </ul>
-    </div>
+      </List>
+    </Box>
   )
 }
 
@@ -144,28 +143,28 @@ const LandingPage = () => {
 
   return (
     <Box>
-      <div>
-        <div
+      <Box>
+        <Box
           style={{
             display: 'flex',
             alignItems: 'center',
             gap: SPACING.SMALL
           }}
         >
-          <div>
+          <Box>
             <Image
               src="/marketing-resources/ideas_down/favicon.png"
               alt="App Screenshot"
               width={75}
               height={75}
             />
-          </div>
-          <div>
+          </Box>
+          <Box>
             <Typography variant="h2">Ideas Down</Typography>
             <Typography>Clear your mind and make room for your next big idea.</Typography>
-          </div>
-        </div>
-      </div>
+          </Box>
+        </Box>
+      </Box>
 
       <Typography>
         Do you find it hard to keep track of your creative ideas? Do they slip
@@ -219,22 +218,22 @@ const LandingPage = () => {
           <Typography>
             <strong>Privacy & Security First</strong>
           </Typography>
-          <ul>
-            <li>No internet connection required</li>
-            <li>No login needed</li>
-            <li>Ideas remain on your device</li>
-            <li>
+          <List>
+            <ListItem>No internet connection required</ListItem>
+            <ListItem>No login needed</ListItem>
+            <ListItem>Ideas remain on your device</ListItem>
+            <ListItem>
               Fully Open Source (
-              <a
+              <Link
                 target="_blank"
                 href="https://github.com/TravisBumgarner/ideas-down-quickly"
               >
                 GitHub
-              </a>
+              </Link>
               )
-            </li>
-            <li>Perform your own backups</li>
-          </ul>
+            </ListItem>
+            <ListItem>Perform your own backups</ListItem>
+          </List>
         </TextColumn>
         <ImageColumn>
           <BlurHashImage
@@ -246,29 +245,31 @@ const LandingPage = () => {
         </ImageColumn>
       </Section>
 
-      <div
-        style={{
+      <Box
+        sx={{
           display: 'flex',
-          gap: SPACING.MEDIUM
+          gap: SPACING.SMALL
         }}
       >
-        <div>
-          <MarketingLink
+        <Box>
+          <Link
+            type="block"
             target="_blank"
             href="https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone"
           >
             App Store
-          </MarketingLink>
-        </div>
-        <div>
-          <MarketingLink
+          </Link>
+        </Box>
+        <Box>
+          <Link
+            type='block'
             target="_blank"
             href="https://docs.google.com/forms/d/e/1FAIpQLSftglI15-9coi2P1Tx_QaZitHYrSMvVilQKn6_BB1t_3V3nvg/viewform?usp=sf_link"
           >
             Play Store Internal Testing
-          </MarketingLink>
-        </div>
-      </div>
+          </Link>
+        </Box>
+      </Box>
 
       <Typography variant="h3">Contact</Typography>
       <ContactForm subject="Ideas Down Feedback" />
@@ -310,17 +311,16 @@ const LandingPage = () => {
           collect, store, or process any personal data, including but not
           limited to:
         </Typography>
-        <ul>
-          <li>
+        <List>
+          <ListItem>
             Personal Identification Information (such as name, email address, or
             phone number)
-          </li>
-          <li>Location Information</li>
-          <li>Usage Data</li>
-          <li>Device Information</li>
-          <li>Payment Information</li>
-        </ul>
-
+          </ListItem>
+          <ListItem>Location Information</ListItem  >
+          <ListItem>Usage Data</ListItem>
+          <ListItem>Device Information</ListItem>
+          <ListItem>Payment Information</ListItem>
+        </List>
         <Typography variant="h4">2. Data Retention</Typography>
         <Typography>
           Since we do not collect any personal data, we do not retain any
@@ -371,9 +371,9 @@ const LandingPage = () => {
         </Typography>
       </CollapsibleContent>
 
-      <div style={{ height: SPACING.XLARGE }} />
+      <Box style={{ height: SPACING.XLARGE }} />
 
-      <div
+      <Box
         style={{
           position: 'fixed',
           top: 10,
@@ -388,7 +388,7 @@ const LandingPage = () => {
         <Link href="https://github.com/TravisBumgarner/ideas-down-quickly">
           <FaGithub size={40} />
         </Link>
-      </div>
+      </Box>
     </Box>
   )
 }

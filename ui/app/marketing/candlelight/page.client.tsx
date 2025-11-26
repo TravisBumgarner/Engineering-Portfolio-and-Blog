@@ -1,8 +1,9 @@
 'use client'
 
 import ContentStyler from '@/lib/sharedComponents/ContentStyler'
-import MarketingLink from '@/lib/sharedComponents/MarketingLink'
+import Link from '@/lib/sharedComponents/Link'
 import { SPACING } from '@/lib/styles/consts'
+import { Typography } from '@mui/material'
 import Image from 'next/image'
 
 const CandlelightPage = () => {
@@ -76,12 +77,12 @@ const CandlelightPage = () => {
 
       <Typography variant="h2">Get Candlelight</Typography>
       <Typography>
-        <MarketingLink
+        <Link
           target="_blank"
           href="https://store.steampowered.com/app/3157820/Candlelight/"
         >
           Steam Store
-        </MarketingLink>
+        </Link>
       </Typography>
     </ContentStyler>
   )

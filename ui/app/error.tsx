@@ -1,9 +1,8 @@
 'use client'
 
 import { useCallback } from 'react'
-import Button from '../lib/sharedComponents/Button'
 import Typography from '@mui/material/Typography'
-import { Box } from '@mui/material'
+import { Box, Button } from '@mui/material'
 
 const Error = () => {
   const handleRefresh = useCallback(() => {

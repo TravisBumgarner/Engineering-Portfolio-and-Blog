@@ -1,11 +1,28 @@
 // MuiNextLink.tsx
 import NextLink, { type LinkProps as NextLinkProps } from 'next/link'
-import { Link as MuiLink, type LinkProps as MuiLinkProps } from '@mui/material'
+import { Link as MuiLink, SxProps, type LinkProps as MuiLinkProps } from '@mui/material'
 import { forwardRef } from 'react'
+import { SPACING } from '../styles/styleConstsNEW'
+
+type LinkType = 'block' | 'inline'
+
+const SX: Record<LinkType, SxProps> = {
+    block: {
+        display: 'block',
+        textAlign: 'center',
+        padding: SPACING.SMALL.PX,
+        backgroundColor: 'darkred', // TODO - Fix me
+        margin: `${SPACING.SMALL.PX} 0`
+    },
+    inline: {
+        display: 'inline'
+    }
+}
 
 export type MuiNextLinkProps = MuiLinkProps &
     Omit<NextLinkProps, 'href'> & {
         href: NextLinkProps['href']
+        type?: LinkType
     }
 
 const MuiNextLink = forwardRef<HTMLAnchorElement, MuiNextLinkProps>(
@@ -14,7 +31,7 @@ const MuiNextLink = forwardRef<HTMLAnchorElement, MuiNextLinkProps>(
 
         return (
             <MuiLink
-                sx={{ textDecoration: 'none' }}
+                sx={{ textDecoration: 'none', ...SX[muiProps.type ?? 'inline'] }}
                 component={NextLink}
                 ref={ref}
                 href={href}

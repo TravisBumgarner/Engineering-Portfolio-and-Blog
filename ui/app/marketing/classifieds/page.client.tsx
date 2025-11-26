@@ -3,12 +3,12 @@
 import { SPACING } from '@/lib/styles/consts'
 import styled from 'styled-components'
 import { FaApple } from 'react-icons/fa'
-import MarketingLink from '@/lib/sharedComponents/MarketingLink'
+import Link from '@/lib/sharedComponents/Link'
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
 import Image from 'next/image'
 import Youtube from '@/lib/sharedComponents/YouTube'
-import { Box, Typography } from '@mui/material'
+import { Box, List, ListItem, Typography } from '@mui/material'
 
 const Section = styled.div`
   display: flex;
@@ -56,22 +56,14 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          margin: `${SPACING.MEDIUM} 0`,
-          textAlign: 'center'
-        }}
+      <Link
+        type='block'
+        target="_blank"
+        href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.4.0/Fast.Classifieds-1.4.0-arm64.dmg"
       >
-        <MarketingLink
-          target="_blank"
-          href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.4.0/Fast.Classifieds-1.4.0-arm64.dmg"
-        >
-          <FaApple style={{ marginRight: '0.5rem' }} />
-          Download for macOS
-        </MarketingLink>
-      </div>
+        <FaApple style={{ marginRight: '0.5rem' }} />
+        Download for macOS
+      </Link>
 
       <BlurHashImage
         src="/marketing-resources/classifieds/screenshot.png"
@@ -199,25 +191,25 @@ const LandingPage = () => {
           <Typography>
             <strong>Privacy & Transparency</strong>
           </Typography>
-          <ul>
-            <li>
+          <List>
+            <ListItem>
               All data stored locally in SQLite, no data leaves your computer.
-            </li>
-            <li>No account or subscription required</li>
-            <li>OpenAI API key stored securely on your device</li>
-            <li>Track API usage directly in the app</li>
-            <li>
+            </ListItem>
+            <ListItem>No account or subscription required</ListItem>
+            <ListItem>OpenAI API key stored securely on your device</ListItem>
+            <ListItem>Track API usage directly in the app</ListItem>
+            <ListItem>
               Fully Open Source (
-              <a
+              <Link
                 target="_blank"
                 href="https://github.com/TravisBumgarner/fast-classifieds"
               >
                 GitHub
-              </a>
+              </Link>
               )
-            </li>
-            <li>Cross-platform: macOS, Windows, Linux</li>
-          </ul>
+            </ListItem>
+            <ListItem>Cross-platform: macOS, Windows, Linux</ListItem>
+          </List>
         </TextColumn>
       </Section>
       <div
@@ -228,13 +220,13 @@ const LandingPage = () => {
           textAlign: 'center'
         }}
       >
-        <MarketingLink
+        <Link
           target="_blank"
           href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.4.0/Fast.Classifieds-1.4.0-arm64.dmg"
         >
           <FaApple style={{ marginRight: '0.5rem' }} />
           Download for macOS
-        </MarketingLink>
+        </Link>
       </div>
       <Typography>Windows and Linux coming soon!</Typography>
       <Typography variant="h3">Getting Started</Typography>
@@ -248,26 +240,26 @@ const LandingPage = () => {
         using content hashing, so you will not see the same posting twice.
       </Typography>
       <Typography variant="h3">Why Fast Classifieds?</Typography>
-      <ul>
-        <li>
+      <List>
+        <ListItem>
           <strong>Save Time:</strong> Stop manually checking dozens of career
           pages daily
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           <strong>Find Better Matches:</strong> AI explains why each job is
           relevant to you
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           <strong>Stay Organized:</strong> Track applications from discovery to
           offer
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           <strong>Own Your Data:</strong> Everything stays on your computer
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           <strong>Transparent Costs:</strong> You control your OpenAI API usage
-        </li>
-      </ul>
+        </ListItem>
+      </List>
       <Typography variant="h3">Contact</Typography>
       <ContactForm subject="Fast Classifieds Feedback" />
       <div style={{ height: '50px' }} />

@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useCallback, useMemo, useState } from 'react'
-import Button from './Button'
+import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { Input } from '@mui/material'

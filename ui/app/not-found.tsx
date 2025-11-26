@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useEffect } from 'react'
-import Button from '../lib/sharedComponents/Button'
+import { Button } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import logger from '@/lib/utilities/logger'
 import { Box } from '@mui/material'
