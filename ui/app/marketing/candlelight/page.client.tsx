@@ -3,7 +3,7 @@
 import { Box, Typography } from '@mui/material'
 import Link from '@/lib/sharedComponents/Link'
 import MarketingHeader from '../../../lib/sharedComponents/MarketingHeader'
-import { CANDLELIGHT_DESCRIPTION, CANDLELIGHT_FAVICON, CANDLELIGHT_TITLE } from '../classifieds/_consts'
+import { CANDLELIGHT_DESCRIPTION, CANDLELIGHT_FAVICON, CANDLELIGHT_TITLE } from '../_consts'
 
 const CandlelightPage = () => {
   return (

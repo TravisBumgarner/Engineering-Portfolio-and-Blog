@@ -7,7 +7,7 @@ import ContactForm from '@/lib/sharedComponents/ContactForm'
 import { SPACING } from '@/lib/styles/consts'
 import Link from '../../../lib/sharedComponents/Link'
 import MarketingHeader from '../../../lib/sharedComponents/MarketingHeader'
-import { TODO_DESCRIPTION, TODO_FAVICON, TODO_TITLE } from '../classifieds/_consts'
+import { TODO_DESCRIPTION, TODO_FAVICON, TODO_TITLE } from '../_consts'
 
 const MAC_DOWNLOAD = 'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-arm64.dmg'
 

@@ -8,7 +8,7 @@ import Link from '@/lib/sharedComponents/Link'
 import Youtube from '@/lib/sharedComponents/YouTube'
 import MarketingHeader from '../../../lib/sharedComponents/MarketingHeader'
 import { SPACING } from '../../../lib/styles/consts'
-import { FAST_CLASSIFIEDS_DESCRIPTION, FAST_CLASSIFIEDS_FAVICON, FAST_CLASSIFIEDS_TITLE } from './_consts'
+import { FAST_CLASSIFIEDS_DESCRIPTION, FAST_CLASSIFIEDS_FAVICON, FAST_CLASSIFIEDS_TITLE } from '../_consts'
 
 const LandingPage = () => {
   return (

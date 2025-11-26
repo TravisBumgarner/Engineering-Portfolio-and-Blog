@@ -13,7 +13,7 @@ import {
   TODO_DESCRIPTION,
   TODO_IMAGE,
   TODO_TITLE,
-} from './classifieds/_consts'
+} from './_consts'
 
 const Marketing = () => {
   return (

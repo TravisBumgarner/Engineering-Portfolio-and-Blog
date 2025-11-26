@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { TODO_DESCRIPTION, TODO_TITLE } from '../classifieds/_consts'
+import { TODO_DESCRIPTION, TODO_TITLE } from '../_consts'
 import TodoToday from './page.client'
 
 export async function generateMetadata(): Promise<Metadata> {

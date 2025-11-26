@@ -8,7 +8,7 @@ import ContactForm from '@/lib/sharedComponents/ContactForm'
 import Link from '@/lib/sharedComponents/Link'
 import MarketingHeader from '../../../lib/sharedComponents/MarketingHeader'
 import { SPACING } from '../../../lib/styles/consts'
-import { IDEAS_DESCRIPTION, IDEAS_FAVICON, IDEAS_TITLE } from '../classifieds/_consts'
+import { IDEAS_DESCRIPTION, IDEAS_FAVICON, IDEAS_TITLE } from '../_consts'
 
 type UpdateType = 'add' | 'update' | 'fix'
 type Update = {

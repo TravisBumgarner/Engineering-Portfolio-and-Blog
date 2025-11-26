@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { CANDLELIGHT_DESCRIPTION, CANDLELIGHT_TITLE } from '../classifieds/_consts'
+import { CANDLELIGHT_DESCRIPTION, CANDLELIGHT_TITLE } from '../_consts'
 import CandlelightPage from './page.client'
 
 export async function generateMetadata(): Promise<Metadata> {
