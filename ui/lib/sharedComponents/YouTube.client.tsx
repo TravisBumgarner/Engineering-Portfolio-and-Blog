@@ -1,18 +1,19 @@
 'use client'
 
-import { Box, BoxProps } from '@mui/material'
-import { SPACING } from '@/lib/styles/consts'
+import { Box, BoxProps, useTheme } from '@mui/material'
+import { PALETTE } from '../styles/consts'
 
-export const YoutubeWrapper = ({ children, ...props }: BoxProps) => (
-  <Box
+export const YoutubeWrapper = ({ children, ...props }: BoxProps) => {
+  const theme = useTheme()
+  return (<Box
     component="figure"
     {...props}
     sx={{
       overflow: 'hidden',
       position: 'relative',
       margin: '1rem 0',
-      border: `${SPACING.MEDIUM.PX} solid var(--secondary-background)`,
-      color: 'var(--foreground)',
+      border: `4px solid ${theme.palette.mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[200]}`,
+      backgroundColor: 'background.paper',
       aspectRatio: '16 / 9',
       width: '100%',
 
@@ -28,5 +29,5 @@ export const YoutubeWrapper = ({ children, ...props }: BoxProps) => (
     }}
   >
     {children}
-  </Box>
-)
+  </Box>)
+}

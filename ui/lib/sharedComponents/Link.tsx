@@ -1,3 +1,5 @@
+'use client'
+
 // MuiNextLink.tsx
 import NextLink, { type LinkProps as NextLinkProps } from 'next/link'
 import { Link as MuiLink, SxProps, useTheme, type LinkProps as MuiLinkProps } from '@mui/material'

@@ -1,5 +1,4 @@
 import posts from '@/content/posts'
-import MDXClient from '@/lib/MDXClient'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { Metadata } from 'next'
@@ -59,9 +58,7 @@ const Post = async ({ params }: { params: Params }) => {
           .join(' ')}
       </time>
 
-      <MDXClient>
-        <Component />
-      </MDXClient>
+      <Component />
 
       <Subscribe />
     </Box>

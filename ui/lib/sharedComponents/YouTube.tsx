@@ -13,6 +13,7 @@ const Youtube = ({ embedId }: YoutubeProps) => (
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
       title="Embedded youtube"
+      frameBorder={0}
     />
   </YoutubeWrapper>
 )

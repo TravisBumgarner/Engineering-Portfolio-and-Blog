@@ -26,7 +26,8 @@ const Figure = ({ src, caption }: FigureProps) => {
         sx={{
           fontSize: FONT_SIZES.SMALL,
           fontWeight: 100,
-          mt: SPACING.SMALL.PX
+          marginTop: SPACING.SMALL.PX,
+          marginBottom: 0,
         }}
       >
         {caption}

@@ -1,6 +1,9 @@
 'use client'
 
-import { SPACING } from '@/lib/styles/consts'
+import { PALETTE, SPACING } from '@/lib/styles/consts'
+import { useTheme } from '@mui/material'
+import { Box } from '@mui/material'
+import { Palette } from '../styles/consts'
 
 type VideoProps = {
   src: string
@@ -9,11 +12,12 @@ type VideoProps = {
 }
 
 const Video = ({ src, aspectRatio }: VideoProps) => {
+  const theme = useTheme()
   return (
-    <div
+    <Box
       className="video"
-      style={{
-        backgroundColor: 'var(--secondary-background)',
+      sx={{
+        border: `4px solid ${theme.palette.mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[200]}`,
         padding: SPACING.MEDIUM.PX,
         width: '100%',
         aspectRatio: aspectRatio,
@@ -35,7 +39,7 @@ const Video = ({ src, aspectRatio }: VideoProps) => {
       >
         <source src={src} type="video/mp4" />
       </video>
-    </div>
+    </Box>
   )
 }
 

@@ -70,6 +70,7 @@ export default function Subscribe() {
           flexDirection: 'row',
           gap: SPACING.SMALL.PX,
           width: '100%',
+          alignItems: 'center',
         }}
         className="embeddable-buttondown-form"
       >
@@ -82,12 +83,7 @@ export default function Subscribe() {
           onChange={e => setEmail(e.target.value)}
           fullWidth
           size="small"
-          sx={{
-            '& .MuiOutlinedInput-root': {
-              borderRadius: 0,
-              height: 36,
-            },
-          }}
+          variant="outlined"
         />
 
         <Button
