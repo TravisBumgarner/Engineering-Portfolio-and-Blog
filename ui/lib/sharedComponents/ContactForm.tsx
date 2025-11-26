@@ -127,6 +127,7 @@ const ContactForm = ({ subject }: { subject?: string }) => {
           rows={4}
         />
         <Button
+          variant='contained'
           type="submit"
           disabled={isSubmitting || formData.message.length === 0}
         >

@@ -69,6 +69,7 @@ const baseThemeOptions: ThemeOptions = {
             styleOverrides: {
                 root: {
                     display: 'list-item',
+                    padding: `${SPACING.TINY.PX} 0`,
                 },
             },
         },
@@ -76,6 +77,7 @@ const baseThemeOptions: ThemeOptions = {
             styleOverrides: {
                 root: {
                     listStyleType: 'square',
+                    marginLeft: SPACING.LARGE.PX,
                 },
             },
         },
@@ -142,13 +144,16 @@ const baseThemeOptions: ThemeOptions = {
         h2: {
             fontSize: FONT_SIZES.LARGE.PX,
             fontWeight: 900,
+            margin: `${SPACING.MEDIUM.PX} 0 ${SPACING.SMALL.PX} 0`,
         },
         h3: {
             fontSize: FONT_SIZES.MEDIUM.PX,
             fontWeight: 900,
+            margin: `${SPACING.MEDIUM.PX} 0 ${SPACING.SMALL.PX} 0`,
         },
         body1: {
             fontSize: FONT_SIZES.MEDIUM.PX,
+            margin: `${SPACING.TINY.PX} 0 ${SPACING.TINY.PX} 0`,
         },
         body2: {
             fontSize: FONT_SIZES.SMALL.PX,
@@ -162,7 +167,7 @@ const getThemeOptions = (mode: 'light' | 'dark'): ThemeOptions => ({
         background: {
             default:
                 mode === 'light' ? PALETTE.grayscale[50] : PALETTE.grayscale[900],
-            paper: mode === 'light' ? PALETTE.grayscale[50] : PALETTE.grayscale[800],
+            paper: mode === 'light' ? PALETTE.grayscale[100] : PALETTE.grayscale[800],
         },
         info: {
             main: mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[200],

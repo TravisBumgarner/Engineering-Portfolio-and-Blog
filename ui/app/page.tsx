@@ -1,5 +1,5 @@
 import snapshots from '@/content/snapshots/index.json'
-import ListItem from '../lib/sharedComponents/ListItem'
+import ListItem from '../lib/sharedComponents/ItemPreview'
 
 const Snapshots = () => {
   return (

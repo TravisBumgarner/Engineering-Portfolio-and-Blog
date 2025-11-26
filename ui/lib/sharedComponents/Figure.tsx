@@ -14,10 +14,9 @@ const Figure = ({ src, caption }: FigureProps) => {
     <Box
       component="figure"
       sx={{
-        backgroundColor: 'var(--secondary-background)',
-        color: 'var(--foreground)',
+        backgroundColor: 'background.paper',
         p: SPACING.SMALL.PX,
-        m: 0
+        m: `${SPACING.MEDIUM.PX} 0`,
       }}
     >
       <BlurHashImage priority={false} src={src} alt={caption} />

@@ -3,55 +3,25 @@
 import ROUTES from '@/lib/routes'
 import { SPACING, Z_INDICES } from '@/lib/styles/consts'
 import { AnimatePresence } from 'motion/react'
-import Link from 'next/link'
+import Link from '@/lib/sharedComponents/Link'
 import { useState } from 'react'
 import { SocialIcon } from 'react-social-icons'
-import { Box, Drawer, IconButton, Backdrop } from '@mui/material'
+import { Box, Drawer, IconButton, Backdrop, Stack } from '@mui/material'
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 const SOCIAL_MEDIA = [
-  { title: 'GitHub', path: 'https://github.com/travisBumgarner/', target: '_blank', icon: 'github' },
-  { title: 'LinkedIn', path: 'https://www.linkedin.com/in/travisbumgarner/', target: '_blank', icon: 'linkedin' },
-  { title: 'Instagram', path: 'https://instagram.com/sillysideprojects', target: '_blank', icon: 'instagram' },
-  { title: 'Reddit', path: 'https://www.reddit.com/user/travis_the_maker/', target: '_blank', icon: 'reddit' },
-  { title: 'Bluesky', path: 'https://bsky.app/profile/travisbumgarner.dev', target: '_blank', icon: 'bsky.app' },
-  { title: 'YouTube', path: 'https://www.youtube.com/@SillySideProjects', target: '_blank', icon: 'youtube' }
+  { title: 'GitHub', href: 'https://github.com/travisBumgarner/', target: '_blank', icon: 'github' },
+  { title: 'LinkedIn', href: 'https://www.linkedin.com/in/travisbumgarner/', target: '_blank', icon: 'linkedin' },
+  { title: 'Instagram', href: 'https://instagram.com/sillysideprojects', target: '_blank', icon: 'instagram' },
+  { title: 'Reddit', href: 'https://www.reddit.com/user/travis_the_maker/', target: '_blank', icon: 'reddit' },
+  { title: 'Bluesky', href: 'https://bsky.app/profile/travisbumgarner.dev', target: '_blank', icon: 'bsky.app' },
+  { title: 'YouTube', href: 'https://www.youtube.com/@SillySideProjects', target: '_blank', icon: 'youtube' }
 ]
 
 const THERE = [
-  { title: 'Resume', path: '/travis_bumgarner_resume.pdf', target: '_blank' },
-  { title: 'Photography', path: 'https://travisbumgarner.photography', target: '_blank' }
+  { title: 'Resume', href: '/travis_bumgarner_resume.pdf', target: '_blank' },
+  { title: 'Photography', href: 'https://travisbumgarner.photography', target: '_blank' }
 ]
-
-interface ItemProps {
-  title: string
-  path: string
-  target: string
-  onClick: () => void
-}
-
-const Item = ({ title, path, target, onClick }: ItemProps) => (
-  <Link
-    href={path}
-    target={target}
-    scroll
-    style={{ textDecoration: 'none' }}
-  >
-    <Box
-      sx={{
-        m: `${SPACING.SMALL.PX} 0`,
-        backgroundColor: 'var(--background)',
-        color: 'var(--foreground)',
-        cursor: 'pointer',
-        p: '4px 0',
-        '&:hover': { color: 'var(--primary)' }
-      }}
-      onClick={onClick}
-    >
-      {title}
-    </Box>
-  </Link>
-)
 
 const SidebarClient = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -72,7 +42,7 @@ const SidebarClient = () => {
 
       <Box
         sx={{
-          zIndex: 1000,
+          zIndex: Z_INDICES.SIDEBAR,
           position: 'fixed',
           top: SPACING.SMALL.PX,
           left: SPACING.SMALL.PX
@@ -91,7 +61,7 @@ const SidebarClient = () => {
           paper: {
             sx: {
               width: 190,
-              backgroundColor: 'var(--secondary-background)',
+              backgroundColor: 'background.paper',
               p: SPACING.SMALL.PX,
               display: 'flex',
               flexDirection: 'column',
@@ -100,27 +70,28 @@ const SidebarClient = () => {
           }
         }}
       >
-        <Box sx={{ mb: SPACING.MEDIUM.PX }}>
+        <Stack direction="column" spacing={SPACING.TINY.PX}>
           {Object.values(ROUTES).map(r => (
-            <Item
-              key={r.path}
-              title={r.title}
-              path={r.path}
-              target={r.target}
-              onClick={() => setIsOpen(false)}
-            />
+            <Box key={r.href}>
+              <Link
+                type="inline"
+                {...r}
+                onClick={() => setIsOpen(false)}
+              >  {r.title}
+              </Link>
+            </Box>
           ))}
 
           {THERE.map(r => (
-            <Item
-              key={r.path}
-              title={r.title}
-              path={r.path}
-              target={r.target}
-              onClick={() => setIsOpen(false)}
-            />
+            <Box key={r.href}>
+              <Link
+                type='inline'
+                {...r}
+                onClick={() => setIsOpen(false)}
+              >{r.title}</Link>
+            </Box>
           ))}
-        </Box>
+        </Stack>
 
         <Box
           sx={{
@@ -131,10 +102,10 @@ const SidebarClient = () => {
         >
           {SOCIAL_MEDIA.map(s => (
             <SocialIcon
-              key={s.path}
+              key={s.href}
               bgColor="transparent"
               fgColor="var(--foreground)"
-              url={s.path}
+              url={s.href}
               network={s.icon}
               title={s.title}
             />

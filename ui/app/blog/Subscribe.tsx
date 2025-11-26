@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { Box, Link, Typography, Button, TextField } from '@mui/material'
-import { SPACING, FONT_SIZES, FONT_WEIGHTS } from '@/lib/styles/consts'
+import { Box, Typography, Button, TextField } from '@mui/material'
+import { SPACING, FONT_SIZES } from '@/lib/styles/consts'
+import Link from '@/lib/sharedComponents/Link'
 
 export default function Subscribe() {
   const [email, setEmail] = useState('')
@@ -17,7 +18,7 @@ export default function Subscribe() {
         mb: SPACING.MEDIUM.PX,
         display: 'flex',
         flexDirection: { xs: 'column', sm: 'row' },
-        gap: { xs: SPACING.XSMALL.PX, sm: SPACING.SMALL.PX },
+        gap: { xs: SPACING.SMALL.PX, sm: SPACING.SMALL.PX },
         alignItems: 'center',
         justifyContent: 'center',
 
@@ -30,22 +31,11 @@ export default function Subscribe() {
     >
       {/* RSS LINK */}
       <Link
+        type="block"
         href="/rss.xml"
         target="_blank"
         rel="noopener noreferrer"
-        underline="none"
-        sx={{
-          bgcolor: 'var(--secondary-background)',
-          width: 120,
-          display: 'flex',
-          flexDirection: 'row',
-          gap: SPACING.XSMALL.PX,
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'var(--primary)',
-          fontWeight: FONT_WEIGHTS.REGULAR,
-          '&:hover': { textDecoration: 'underline' },
-        }}
+        sx={{ width: '100px', display: 'flex', alignItems: 'center', gap: SPACING.SMALL.PX }}
       >
         <svg
           style={{ position: 'relative', top: '2px' }}

@@ -22,6 +22,8 @@ const projectSchema = z.object({
   toolsAndTechnologies: z.string().optional()
 })
 
+export type Project = z.infer<typeof projectSchema>
+
 const projectsSchema = z.record(z.string(), projectSchema)
 
 const parsedContent = projectsSchema.parse(content)

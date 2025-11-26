@@ -32,6 +32,19 @@ export const PALETTE = {
         900: 'hsl(0 0% 10%)',
         1000: 'hsl(0 0% 0%)',
     },
+    primary: {
+        50: "hsl(204, 90%, 95%)",
+        100: "hsl(204, 90%, 90%)",
+        200: "hsl(204, 90%, 80%)",
+        300: "hsl(204, 90%, 70%)",
+        400: "hsl(204, 90%, 60%)",
+        500: "hsl(204, 90%, 50%)",
+        600: "hsl(204, 90%, 40%)",
+        700: "hsl(204, 90%, 30%)",
+        800: "hsl(204, 90%, 20%)",
+        900: "hsl(204, 90%, 10%)",
+        950: "hsl(204, 90%, 5%)",
+    }
 }
 
 export const BORDER_RADIUS = {
@@ -94,19 +107,20 @@ export const SPACING = {
 
 // // Button Styles. Used in <Button /> and Share.tsx
 export const LIGHT_BUTTON_STYLES = {
-    color: PALETTE.grayscale[50],
-    background: PALETTE.grayscale[800],
-    hoverBackground: PALETTE.grayscale[800],
+    color: PALETTE.primary[50],
+    background: PALETTE.primary[500],
+    hoverBackground: PALETTE.primary[800],
 }
 
 export const DARK_BUTTON_STYLES = {
-    color: PALETTE.grayscale[900],
-    background: PALETTE.grayscale[200],
-    hoverBackground: PALETTE.grayscale[100],
+    color: PALETTE.primary[900],
+    background: PALETTE.primary[500],
+    hoverBackground: PALETTE.primary[100],
 }
 
 export const Z_INDICES = {
     MODAL: 998,
     APP_LOADING: 997,
-    SIDEBAR_BACKDROP: 996,
+    SIDEBAR_BACKDROP: 500,
+    SIDEBAR: 501,
 }

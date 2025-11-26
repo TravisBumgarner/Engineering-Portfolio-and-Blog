@@ -1,9 +1,10 @@
 import posts from '@/content/posts'
+import MDXClient from '@/lib/MDXClient'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Subscribe from '../Subscribe'
-import Typography from '@mui/material/Typography'
-import Box from '@mui/material/Box'
 
 const loadPost = async (postId: string) => {
   const postModule = await import(`@/content/posts/${postId}.mdx`)
@@ -48,6 +49,7 @@ const Post = async ({ params }: { params: Params }) => {
   return (
     <Box>
       <Typography variant="h2">{post.title}</Typography>
+
       <time>
         Posted{' '}
         {new Date(post.date + 'T00:00:00Z')
@@ -56,7 +58,11 @@ const Post = async ({ params }: { params: Params }) => {
           .slice(0, 4)
           .join(' ')}
       </time>
-      <Component />
+
+      <MDXClient>
+        <Component />
+      </MDXClient>
+
       <Subscribe />
     </Box>
   )

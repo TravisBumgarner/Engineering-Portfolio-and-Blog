@@ -1,7 +1,7 @@
 'use client'
 
 import { FONT_SIZES, SPACING } from '@/lib/styles/consts'
-import Link from 'next/link'
+import Link from '@/lib/sharedComponents/Link'
 import BlurHashImage from './BlurHashImage'
 import { Typography, Box } from '@mui/material'
 
@@ -32,7 +32,7 @@ const formatDateByType = (
   }
 }
 
-const ListItem = ({
+const ItemPreview = ({
   src,
   link,
   title,
@@ -41,12 +41,12 @@ const ListItem = ({
   priority,
   type,
 }: {
-  src?: string
+  src: string
   link?: string
   title?: string
   description?: string
   date?: string
-  priority?: boolean
+  priority: boolean
   type: 'post' | 'creation' | 'snapshot'
 }) => {
   const paragraphs = !description
@@ -59,38 +59,30 @@ const ListItem = ({
 
     <Box
       sx={{
-        padding: SPACING.MEDIUM.PX,
+        padding: SPACING.SMALL.PX,
         display: 'flex',
-        backgroundColor: 'var(--secondary-background)',
-        color: 'var(--foreground)',
+        backgroundColor: 'background.paper',
         flexDirection: 'column',
-        textDecoration: 'none',
         marginBottom: SPACING.LARGE.PX,
+        gap: SPACING.SMALL.PX,
       }}
     >
-      <Box>
-        {title && (<Typography sx={{
-          fontSize: FONT_SIZES.LARGE,
-          marginTop: 0,
-          marginBottom: SPACING.SMALL.PX,
-        }} variant="h2">{title}</Typography>)}
-        {date && (
-          <time style={{
-            display: 'block',
-            fontSize: FONT_SIZES.SMALL.PX,
-          }}>
-            {dateLabelLookup[type]}
-            {formatDateByType(date, type)}
-          </time>
-        )}
-      </Box>
-      {paragraphs}
-      {src && priority !== undefined && (
-        <BlurHashImage priority={priority} src={src} />
+
+      {!!title && (<Typography variant="h2" sx={{ margin: 0 }}>{title}</Typography>)}
+      {!!date && (
+        <time style={{
+          display: 'block',
+          fontSize: FONT_SIZES.SMALL.PX,
+        }}>
+          {dateLabelLookup[type]}
+          {formatDateByType(date, type)}
+        </time>
       )}
-      {link && <Link href={link} style={{ textDecoration: 'none' }}>Click me</Link>}
-    </Box>
+      {paragraphs}
+      <BlurHashImage maxHeight={70} priority={priority} src={src} />
+      {link && <Link type="block" href={link}>Learn more</Link>}
+    </Box >
   )
 }
 
-export default ListItem
+export default ItemPreview

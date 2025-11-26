@@ -12,7 +12,7 @@ import type { Metadata } from 'next'
 import Scroll from './_components/Scroll'
 import Sidebar from './_components/Sidebar'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
-import AppThemeProvider from '@/lib/styles/ThemeMUI'
+import AppThemeProvider from '@/lib/styles/Theme'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://travisbumgarner.dev'),

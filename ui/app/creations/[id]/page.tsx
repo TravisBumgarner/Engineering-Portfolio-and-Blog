@@ -1,11 +1,8 @@
-import Figure from '@/lib/sharedComponents/Figure'
 import projects from '@/content/projects'
 import { Metadata } from 'next'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { Box, List, ListItem, Typography } from '@mui/material'
+import { Params } from './page.client'
+import CreationClient from './page.client'
 
-type Params = Promise<{ id: string }>
 
 export async function generateMetadata({
   params
@@ -37,88 +34,7 @@ export async function generateMetadata({
 const Creation = async ({ params }: { params: Params }) => {
   const { id } = await params
   const project = projects[id]
-  if (!project) {
-    return notFound()
-  }
 
-  const Links = project.links.map(l => {
-    return (
-      <ListItem
-        key={l.label + l.src}
-        style={{
-          backgroundColor: 'var(--bright-background)',
-          margin: 0
-        }}
-      >
-        <Link
-          key={l.label + l.src}
-          style={{
-            textDecoration: 'none',
-            padding: '10px 20px',
-            display: 'block',
-            color: 'var(--foreground)'
-          }}
-          target="_blank"
-          href={l.src}
-        >
-          {l.label}
-        </Link>
-      </ListItem>
-    )
-  })
-
-  const Images = project.images.map((i, index) => ({
-    key: i.src,
-    element: (
-      <div key={i.src}>
-        <Figure
-          caption={i.label}
-          key={index}
-          src={`/project-resources/${id}/${i.src}`}
-        />
-      </div>
-    )
-  }))
-
-  const Description = project.description
-    .split('\n')
-    .map((paragraph, index) => <Typography key={index}>{paragraph}</Typography>)
-
-  if (project.toolsAndTechnologies) {
-    Description.push(
-      <Typography key="toolsAndTechnologies">{project.toolsAndTechnologies}</Typography>
-    )
-  }
-
-  return (
-    <Box>
-      <Typography variant="h2">{project.title}</Typography>
-      <time>
-        Last Update:{' '}
-        {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString(
-          'default',
-          {
-            month: 'long',
-            year: 'numeric'
-          }
-        )}
-      </time>
-      {Description}
-      {Links.length > 0 && (
-        <List
-          style={{
-            listStyleType: 'none',
-            display: 'flex',
-            margin: '20px 0',
-            gap: '20px'
-          }}
-        >
-          {Links}
-        </List>
-      )}
-      {Images.map(i => i.element)}
-    </Box>
-  )
+  return <CreationClient project={project} />
 }
-
 export default Creation

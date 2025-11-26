@@ -1,6 +1,6 @@
 import posts from '@/content/posts'
 import ROUTES from '@/lib/routes'
-import ListItem from '../../lib/sharedComponents/ListItem'
+import ItemPreview from '../../lib/sharedComponents/ItemPreview'
 import Subscribe from './Subscribe'
 
 const Blog = () => {
@@ -14,12 +14,12 @@ const Blog = () => {
         .map((id, index) => {
           const { title, description } = posts[id]
           return (
-            <ListItem
+            <ItemPreview
               type="post"
               key={id}
               priority={index === 0}
               date={posts[id].date}
-              link={`${ROUTES.BLOG.path}/${id}`}
+              link={`${ROUTES.BLOG.href}/${id}`}
               title={title}
               description={description}
               src={`/post-resources/${id}/${posts[id].preview_image}`}
