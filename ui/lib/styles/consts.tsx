@@ -57,8 +57,8 @@ export const FONT_SIZES = {
     INT: 12,
   },
   MEDIUM: {
-    PX: '16px',
-    INT: 16,
+    PX: '18px',
+    INT: 18,
   },
   LARGE: {
     PX: '24px',

@@ -1,5 +1,6 @@
 import { List, ListItem, Typography } from '@mui/material'
 import type { MDXComponents } from 'mdx/types'
+import Code from './lib/sharedComponents/Code'
 import Link from './lib/sharedComponents/Link'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -67,6 +68,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         <Link href={href || '#'} {...restProps} type="inline">
           {children}
         </Link>
+      )
+    },
+    code: ({ children, ...props }) => {
+      const { ref: _ref, ...restProps } = props
+      return <Code {...restProps}>{children}</Code>
+    },
+    pre: ({ children, ...props }) => {
+      const { ref: _ref, ...restProps } = props
+      return (
+        <Code block {...restProps}>
+          {children}
+        </Code>
       )
     },
   }
