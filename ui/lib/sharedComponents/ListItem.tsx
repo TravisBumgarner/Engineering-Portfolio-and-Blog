@@ -1,11 +1,9 @@
 'use client'
 
 import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
-import { SHARED_SPACING } from '@/lib/styles/theme'
 import Link from 'next/link'
-import styled from 'styled-components'
 import BlurHashImage from './BlurHashImage'
-import Typography from '@mui/material/Typography'
+import { Typography, Box } from '@mui/material'
 
 const dateLabelLookup = {
   post: 'Posted ',
@@ -61,7 +59,34 @@ const ListItem = ({
 
   if (!link) {
     return (
-      <StyledListItem>
+      <Box
+        sx={{
+          padding: SPACING.MEDIUM,
+          display: 'flex',
+          backgroundColor: 'var(--secondary-background)',
+          color: 'var(--foreground)',
+          flexDirection: 'column',
+          textDecoration: 'none',
+          marginBottom: SPACING.LARGE,
+          '& > div': {
+            marginBottom: SPACING.MEDIUM,
+            display: 'flex',
+            gap: SPACING.SMALL,
+            flexDirection: 'column',
+          },
+          '& h2': {
+            fontSize: FONT_SIZES.LARGE,
+            fontWeight: FONT_WEIGHTS.BOLD,
+            marginTop: 0,
+            marginBottom: SPACING.SMALL,
+          },
+          '& time': {
+            display: 'block',
+            fontSize: FONT_SIZES.SMALL,
+            fontWeight: FONT_WEIGHTS.LIGHT,
+          },
+        }}
+      >
         {title && (smallTitle ? <Typography>{title}</Typography> : <Typography variant="h2">{title}</Typography>)}
         {date && (
           <time>
@@ -77,13 +102,40 @@ const ListItem = ({
         {src && priority !== undefined && (
           <BlurHashImage priority={priority} src={src} />
         )}
-      </StyledListItem>
+      </Box>
     )
   }
 
   return (
     <Link href={link} style={{ textDecoration: 'none' }}>
-      <StyledListItem>
+      <Box
+        sx={{
+          padding: SPACING.MEDIUM,
+          display: 'flex',
+          backgroundColor: 'var(--secondary-background)',
+          color: 'var(--foreground)',
+          flexDirection: 'column',
+          textDecoration: 'none',
+          marginBottom: SPACING.LARGE,
+          '& > div': {
+            marginBottom: SPACING.MEDIUM,
+            display: 'flex',
+            gap: SPACING.SMALL,
+            flexDirection: 'column',
+          },
+          '& h2': {
+            fontSize: FONT_SIZES.LARGE,
+            fontWeight: FONT_WEIGHTS.BOLD,
+            marginTop: 0,
+            marginBottom: SPACING.SMALL,
+          },
+          '& time': {
+            display: 'block',
+            fontSize: FONT_SIZES.SMALL,
+            fontWeight: FONT_WEIGHTS.LIGHT,
+          },
+        }}
+      >
         <div>
           <div>
             {title && (smallTitle ? <Typography>{title}</Typography> : <Typography variant="h2">{title}</Typography>)}
@@ -99,39 +151,9 @@ const ListItem = ({
         {src && priority !== undefined && (
           <BlurHashImage priority={priority} src={src} />
         )}
-      </StyledListItem>
+      </Box>
     </Link>
   )
 }
-
-const StyledListItem = styled.div`
-  ${SHARED_SPACING}
-  display: flex;
-  background-color: var(--secondary-background);
-  color: var(--foreground);
-  flex-direction: column;
-  text-decoration: none;
-  margin-bottom: ${SPACING.LARGE};
-
-  > div {
-    margin-bottom: ${SPACING.MEDIUM};
-    display: flex;
-    gap: ${SPACING.SMALL};
-    flex-direction: column;
-  }
-
-  h2 {
-    font-size: ${FONT_SIZES.LARGE};
-    font-weight: ${FONT_WEIGHTS.BOLD};
-    margin-top: 0;
-    margin-bottom: ${SPACING.SMALL};
-  }
-
-  time {
-    display: block;
-    font-size: ${FONT_SIZES.SMALL};
-    font-weight: ${FONT_WEIGHTS.LIGHT};
-  }
-`
 
 export default ListItem

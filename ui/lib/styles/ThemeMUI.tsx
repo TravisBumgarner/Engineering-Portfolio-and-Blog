@@ -23,6 +23,15 @@ export const TAB_HEIGHT = '36px' // for some reason all are needed.
 // Base theme options shared between light and dark
 const baseThemeOptions: ThemeOptions = {
     components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                body: {
+                    width: '100%',
+                    maxWidth: '700px',
+                    margin: '0 auto',
+                },
+            },
+        },
         MuiIconButton: {
             styleOverrides: {
                 root: {
@@ -60,8 +69,6 @@ const baseThemeOptions: ThemeOptions = {
             styleOverrides: {
                 root: {
                     display: 'list-item',
-                    margin: 0,
-                    padding: SPACING.TINY.PX,
                 },
             },
         },

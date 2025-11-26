@@ -1,9 +1,6 @@
 'use client'
 
 import React, { useRef } from 'react'
-import { FONT_SIZES, FONT_WEIGHTS, SPACING } from '@/lib/styles/consts'
-import { SHARED_SPACING } from '@/lib/styles/theme'
-import styled from 'styled-components'
 import Contact from '../../lib/sharedComponents/ContactForm'
 import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
@@ -12,6 +9,7 @@ import BlurHashImage from '../../lib/sharedComponents/BlurHashImage'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
+import { List, Card, CardContent, CardMedia, CardActions } from '@mui/material'
 
 function formatLinks(list: { title: string; path: string }[]) {
   return list.map(({ title, path }, i) => {
@@ -44,63 +42,40 @@ const ListItem = ({
     .map((paragraph, index) => <Typography key={index}>{paragraph}</Typography>)
 
   return (
-    <Link href={link} target="_blank" style={{ textDecoration: 'none' }}>
-      <StyledListItem>
-        <div>
-          <Typography variant="h2">{title}</Typography>
-          {paragraphs}
-        </div>
-        <BlurHashImage priority={false} src={src} />
-        <LearnMore>Learn More</LearnMore>
-      </StyledListItem>
-    </Link>
+    <Card sx={{ mb: 3, transition: 'transform 0.2s', '&:hover': { transform: 'translateY(-2px)' } }}>
+      <Link href={link} target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <CardContent>
+          <Typography variant="h5" component="h2" gutterBottom>
+            {title}
+          </Typography>
+          <Box sx={{ mb: 2 }}>
+            {paragraphs}
+          </Box>
+        </CardContent>
+        {src && (
+          <CardMedia sx={{ height: 200, mx: 2, borderRadius: 1 }}>
+            <BlurHashImage priority={false} src={src} />
+          </CardMedia>
+        )}
+        <CardActions sx={{ justifyContent: 'center', pb: 2 }}>
+          <Button
+            variant="contained"
+            size="small"
+            sx={{
+              fontWeight: 900,
+              '&:hover': {
+                transform: 'scale(1.05)'
+              }
+            }}
+          >
+            Learn More
+          </Button>
+        </CardActions>
+      </Link>
+    </Card>
   )
 }
 
-const LearnMore = styled.span`
-  cursor: pointer;
-  font-size: ${FONT_SIZES.MEDIUM};
-  background-color: var(--primary-background);
-  color: var(--foreground);
-  border: 0;
-  margin-top: ${SPACING.MEDIUM};
-  padding: ${SPACING.SMALL};
-  text-align: center;
-  font-weight: 900;
-
-  &:hover {
-    color: var(--primary);
-  }
-
-  &:disabled {
-    color: var(--foreground-disabled);
-    cursor: not-allowed;
-  }
-`
-
-const StyledListItem = styled.div`
-  ${SHARED_SPACING}
-  display: flex;
-  background-color: var(--secondary-background);
-  color: var(--foreground);
-  flex-direction: column;
-  text-decoration: none;
-  margin-bottom: ${SPACING.XLARGE};
-  margin-top: ${SPACING.XLARGE};
-
-  > div {
-    margin-bottom: ${SPACING.MEDIUM};
-    display: flex;
-    flex-direction: column;
-
-    > h2 {
-      font-size: ${FONT_SIZES.XLARGE};
-      font-weight: ${FONT_WEIGHTS.BOLD};
-      margin-top: 0;
-      margin-bottom: ${SPACING.SMALL};
-    }
-  }
-`
 
 const WEB_AND_APP_PROJECTS = [
   'seis-colores',
@@ -166,58 +141,68 @@ const WorkWithMe = () => {
   }
 
   return (
-    <Box>
-      <Typography variant='h2'>
+    <Box sx={{ maxWidth: 800, mx: 'auto', p: 3 }}>
+      <Typography variant='h2' gutterBottom>
         I turn early-stage ideas
         <br />
         into working prototypes.
       </Typography>
-      <Typography>
+      <Typography sx={{ mb: 3 }}>
         I work fast, learn fast, and deliver.
         <br />
         Software, hardware, design - whatever the idea needs.
       </Typography>
 
-      <Button onClick={handleClick} fullWidth variant='contained'>Reach Out</Button>
+      <Button onClick={handleClick} fullWidth variant='contained' size="large" sx={{ mb: 4 }}>Reach Out</Button>
 
-      <Typography variant='h2'>Testimonials</Typography>
-      <blockquote>
-        When you have a difficult problem, something you are not sure is even
-        possible, Travis will dive right in and start trying things out.
-        He&apos;ll figure out the possible approaches and eventually get it all
-        working, despite the setbacks and the obstacles out of his control.
-        <span className="author">Van, Staff Software Engineer</span>
-      </blockquote>
+      <Typography variant='h2' gutterBottom sx={{ mt: 4 }}>Testimonials</Typography>
+      <Box sx={{ mb: 4 }}>
+        <Box sx={{ mb: 3, p: 2, }}>
+          <Typography sx={{ fontStyle: 'italic', mb: 1 }}>
+            When you have a difficult problem, something you are not sure is even
+            possible, Travis will dive right in and start trying things out.
+            He&apos;ll figure out the possible approaches and eventually get it all
+            working, despite the setbacks and the obstacles out of his control.
+          </Typography>
+          <Typography variant="body2" sx={{ fontWeight: 'bold', textAlign: 'right' }}>Van, Staff Software Engineer</Typography>
+        </Box>
 
-      <blockquote>
-        Travis is a builder. I&apos;m impressed with his depth in so many
-        subjects, from electronics to photography to woodworking to software.
-        He&apos;s a learner -- constantly curious and always tackling new
-        subjects.
-        <span className="author">Matt, Head of Architecture</span>
-      </blockquote>
+        <Box sx={{ mb: 3, p: 2, }}>
+          <Typography sx={{ fontStyle: 'italic', mb: 1 }}>
+            Travis is a builder. I&apos;m impressed with his depth in so many
+            subjects, from electronics to photography to woodworking to software.
+            He&apos;s a learner -- constantly curious and always tackling new
+            subjects.
+          </Typography>
+          <Typography variant="body2" sx={{ fontWeight: 'bold', textAlign: 'right' }}>Matt, Head of Architecture</Typography>
+        </Box>
 
-      <blockquote>
-        Travis is an incredible full-stack engineer. He can take large complex
-        projects and break them down into tractable pieces and work with a team
-        to get the project done. He has excellent product intuition, balanced
-        with a healthy sense of what makes engineering teams efficient.
-        He&apos;s also a huge catalyst to build a strong culture around
-        collaboration and strong teamwork. An incredible asset to any
-        engineering team!
-        <span className="author">Daniel, CTO</span>
-      </blockquote>
+        <Box sx={{ mb: 3, p: 2, }}>
+          <Typography sx={{ fontStyle: 'italic', mb: 1 }}>
+            Travis is an incredible full-stack engineer. He can take large complex
+            projects and break them down into tractable pieces and work with a team
+            to get the project done. He has excellent product intuition, balanced
+            with a healthy sense of what makes engineering teams efficient.
+            He&apos;s also a huge catalyst to build a strong culture around
+            collaboration and strong teamwork. An incredible asset to any
+            engineering team!
+          </Typography>
+          <Typography variant="body2" sx={{ fontWeight: 'bold', textAlign: 'right' }}>Daniel, CTO</Typography>
+        </Box>
 
-      <blockquote>
-        Travis is the kind of engineer who never backs down from a challenge,
-        cares about craft, and truly wants to build the best possible product.
-        Collaborating with Travis feels like anything is possible because of his
-        strong will to tinker and figure things out.
-        <span className="author">Ian, Staff Product Designer</span>
-      </blockquote>
+        <Box sx={{ mb: 3, p: 2, }}>
+          <Typography sx={{ fontStyle: 'italic', mb: 1 }}>
+            Travis is the kind of engineer who never backs down from a challenge,
+            cares about craft, and truly wants to build the best possible product.
+            Collaborating with Travis feels like anything is possible because of his
+            strong will to tinker and figure things out.
+          </Typography>
+          <Typography variant="body2" sx={{ fontWeight: 'bold', textAlign: 'right' }}>Ian, Staff Product Designer</Typography>
+        </Box>
+      </Box>
 
-      <Typography variant="h2">What I Do</Typography>
-      <Typography>
+      <Typography variant="h2" gutterBottom sx={{ mt: 4 }}>What I Do</Typography>
+      <Typography sx={{ mb: 3 }}>
         I build across the stack: full-stack apps, embedded systems, hardware
         interfaces, and design. I&apos;ve built MVPs, production apps, and
         personal experiments. All of the projects below have been fully managed,
@@ -226,8 +211,8 @@ const WorkWithMe = () => {
         work here.
       </Typography>
 
-      <Typography variant="h3">Web + App Projects</Typography>
-      <Typography>
+      <Typography variant="h3" gutterBottom sx={{ mt: 4 }}>Web + App Projects</Typography>
+      <Typography sx={{ mb: 3 }}>
         I am self taught and have over ten years of professional experience
         building applications.
       </Typography>
@@ -244,8 +229,8 @@ const WorkWithMe = () => {
         )
       })}
 
-      <Typography variant="h3">Hardware Projects</Typography>
-      <Typography>
+      <Typography variant="h3" gutterBottom sx={{ mt: 4 }}>Hardware Projects</Typography>
+      <Typography sx={{ mb: 3 }}>
         I have a degree in Mechanical Engineering and a collection of related
         side projects. Many of these projects blend hardware and software.
       </Typography>
@@ -262,32 +247,36 @@ const WorkWithMe = () => {
         )
       })}
 
-      <Typography variant="h2">More About Me</Typography>
-      <Typography>
+      <Typography variant="h2" gutterBottom sx={{ mt: 4 }}>More About Me</Typography>
+      <Typography sx={{ mb: 2 }}>
         Here are a few more places to learn about me -{' '}
         {formatLinks(PLACES_YOU_CAN_FIND_ME)}.
       </Typography>
 
-      <Typography>
+      <Typography sx={{ mb: 2 }}>
         The projects listed above barely scratch the surface of my depth and
         breadth of experience. I invite you to check out some of the following
         exhibits -
       </Typography>
-      <ul>
+      <List sx={{ mb: 3 }}>
         {EXHIBITS.map(({ path, title }) => (
-          <li key={title}>
-            <a href={path} rel="noopener noreferrer" target="_blank">
-              {title}
-            </a>
-          </li>
+          <Box key={title} component="li" sx={{ mb: 1 }}>
+            <Typography>
+              <Link href={path} target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button variant="text" sx={{ textTransform: 'none', justifyContent: 'flex-start' }}>
+                  {title}
+                </Button>
+              </Link>
+            </Typography>
+          </Box>
         ))}
-      </ul>
+      </List>
 
-      <Box ref={letsChatRef}>
-        <Typography variant="h2">Let&apos;s Chat</Typography>
-        <Typography>Have an idea you want to turn into a working prototype?</Typography>
+      <Box ref={letsChatRef} sx={{ mt: 4 }}>
+        <Typography variant="h2" gutterBottom>Let&apos;s Chat</Typography>
+        <Typography sx={{ mb: 3 }}>Have an idea you want to turn into a working prototype?</Typography>
         <Contact />
-        <div style={{ height: SPACING.XLARGE }} />
+        <Box sx={{ height: 64 }} />
       </Box>
     </Box>
   )

@@ -1,7 +1,5 @@
 'use client'
 
-import { SPACING } from '@/lib/styles/consts'
-import styled from 'styled-components'
 import { FaApple } from 'react-icons/fa'
 import Link from '@/lib/sharedComponents/Link'
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
@@ -10,92 +8,78 @@ import Image from 'next/image'
 import Youtube from '@/lib/sharedComponents/YouTube'
 import { Box, List, ListItem, Typography } from '@mui/material'
 
-const Section = styled.div`
-  display: flex;
-  gap: 2rem;
-  margin: 2rem 0;
-  align-items: flex-start;
-  flex-direction: column;
-`
 
-const TextColumn = styled.div`
-  flex: 1;
-  min-width: 200px;
-`
-
-const ImageColumn = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-`
 
 const LandingPage = () => {
   return (
-    <Box>
-      <div>
-        <div
-          style={{
+    <Box sx={{ maxWidth: 1200, mx: 'auto', p: 3 }}>
+      <Box sx={{ mb: 4 }}>
+        <Box
+          sx={{
             display: 'flex',
             alignItems: 'center',
-            gap: SPACING.SMALL,
-            marginBottom: SPACING.MEDIUM
+            gap: 2,
+            mb: 3
           }}
         >
-          <div>
+          <Box>
             <Image
               src="/marketing-resources/classifieds/favicon.png"
               alt="Fast Classifieds Logo"
               width={75}
               height={75}
             />
-          </div>
-          <div>
-            <Typography variant="h2">Fast Classifieds</Typography>
-            <Typography>Browse company job boards quickly.</Typography>
-          </div>
-        </div>
-      </div>
-      <Link
-        type='block'
-        target="_blank"
-        href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.4.0/Fast.Classifieds-1.4.0-arm64.dmg"
-      >
-        <FaApple style={{ marginRight: '0.5rem' }} />
-        Download for macOS
-      </Link>
+          </Box>
+          <Box>
+            <Typography variant="h2" gutterBottom>Fast Classifieds</Typography>
+            <Typography variant="h5" color="text.secondary">Browse company job boards quickly.</Typography>
+          </Box>
+        </Box>
+      </Box>
+      <Box sx={{ mb: 3 }}>
+        <Link
+          type='block'
+          target="_blank"
+          href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.4.0/Fast.Classifieds-1.4.0-arm64.dmg"
+        >
+          <FaApple style={{ marginRight: '0.5rem' }} />
+          Download for macOS
+        </Link>
+      </Box>
 
-      <BlurHashImage
-        src="/marketing-resources/classifieds/screenshot.png"
-        priority
-      />
-      <Typography>
+      <Box sx={{ mb: 3 }}>
+        <BlurHashImage
+          src="/marketing-resources/classifieds/screenshot.png"
+          priority
+        />
+      </Box>
+      <Typography sx={{ mb: 4, fontSize: '1.1rem', lineHeight: 1.6 }}>
         Stop wasting hours manually browsing company career pages. Fast
         Classifieds uses AI to automatically scan multiple company websites,
         find relevant job postings, and explain why each opportunity matches
         your criteria. Keep your job search organized in one desktop
         application. No accounts, no subscriptions, your data stays local.
       </Typography>
-      <Section>
-        <TextColumn>
-          <Typography>
+      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: { xs: 'column', md: 'row' } }}>
+        <Box sx={{ flex: 1, minWidth: 200 }}>
+          <Typography variant="h4" gutterBottom>
             <strong>Create Custom AI Prompts</strong>
           </Typography>
           <Typography>
             Define what makes a job relevant to you. The app uses your prompts
             with OpenAI to analyze job listings and determine matches.
           </Typography>
-        </TextColumn>
-        <ImageColumn>
+        </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
           <BlurHashImage
             priority={false}
             src="/marketing-resources/classifieds/prompt.png"
           />
-        </ImageColumn>
-      </Section>
-      <Section>
-        <TextColumn>
-          <Typography>
+        </Box>
+      </Box>
+      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: { xs: 'column', md: 'row' } }}>
+        <Box sx={{ flex: 1, minWidth: 200 }}>
+          <Typography variant="h4" gutterBottom>
             <strong>Manage Company Career Pages</strong>
           </Typography>
           <Typography>
@@ -104,17 +88,17 @@ const LandingPage = () => {
             the entire page. Import multiple sites at once or add them
             individually.
           </Typography>
-        </TextColumn>
-        <ImageColumn>
+        </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
           <BlurHashImage
             priority={false}
             src="/marketing-resources/classifieds/sites.png"
           />
-        </ImageColumn>
-      </Section>
-      <Section>
-        <TextColumn>
-          <Typography>
+        </Box>
+      </Box>
+      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: { xs: 'column', md: 'row' } }}>
+        <Box sx={{ flex: 1, minWidth: 200 }}>
+          <Typography variant="h4" gutterBottom>
             <strong>Automated Scanning with Progress Tracking</strong>
           </Typography>
           <Typography>
@@ -122,17 +106,17 @@ const LandingPage = () => {
             progress as the app visits each career page, extracts job listings,
             and uses AI to evaluate relevance.
           </Typography>
-        </TextColumn>
-        <ImageColumn>
+        </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
           <BlurHashImage
             priority={false}
             src="/marketing-resources/classifieds/scanner.png"
           />
-        </ImageColumn>
-      </Section>
-      <Section>
-        <TextColumn>
-          <Typography>
+        </Box>
+      </Box>
+      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: { xs: 'column', md: 'row' } }}>
+        <Box sx={{ flex: 1, minWidth: 200 }}>
+          <Typography variant="h4" gutterBottom>
             <strong>Track Your Applications</strong>
           </Typography>
           <Typography>
@@ -141,17 +125,17 @@ const LandingPage = () => {
             title, or date found. View AI explanations for why each job was
             matched.
           </Typography>
-        </TextColumn>
-        <ImageColumn>
+        </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
           <BlurHashImage
             priority={false}
             src="/marketing-resources/classifieds/postings.png"
           />
-        </ImageColumn>
-      </Section>
-      <Section>
-        <TextColumn>
-          <Typography>
+        </Box>
+      </Box>
+      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: { xs: 'column', md: 'row' } }}>
+        <Box sx={{ flex: 1, minWidth: 200 }}>
+          <Typography variant="h4" gutterBottom>
             <strong>Find Duplicates</strong>
           </Typography>
           <Typography>
@@ -159,18 +143,18 @@ const LandingPage = () => {
             job appears on multiple sites, it groups them together to keep your
             list clean.
           </Typography>
-        </TextColumn>
-        <ImageColumn>
+        </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
           <BlurHashImage
             priority={false}
             src="/marketing-resources/classifieds/duplicates.png"
           />
-        </ImageColumn>
-      </Section>
+        </Box>
+      </Box>
 
-      <Section>
-        <TextColumn>
-          <Typography>
+      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: { xs: 'column', md: 'row' } }}>
+        <Box sx={{ flex: 1, minWidth: 200 }}>
+          <Typography variant="h4" gutterBottom>
             <strong>Review Scrape History</strong>
           </Typography>
           <Typography>
@@ -178,45 +162,44 @@ const LandingPage = () => {
             many new jobs were found, duration, and any errors encountered.
             Retry failed sites with one click.
           </Typography>
-        </TextColumn>
-        <ImageColumn>
+        </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
           <BlurHashImage
             priority={false}
             src="/marketing-resources/classifieds/history.png"
           />
-        </ImageColumn>
-      </Section>
-      <Section>
-        <TextColumn>
-          <Typography>
-            <strong>Privacy & Transparency</strong>
-          </Typography>
-          <List>
-            <ListItem>
-              All data stored locally in SQLite, no data leaves your computer.
-            </ListItem>
-            <ListItem>No account or subscription required</ListItem>
-            <ListItem>OpenAI API key stored securely on your device</ListItem>
-            <ListItem>Track API usage directly in the app</ListItem>
-            <ListItem>
-              Fully Open Source (
-              <Link
-                target="_blank"
-                href="https://github.com/TravisBumgarner/fast-classifieds"
-              >
-                GitHub
-              </Link>
-              )
-            </ListItem>
-            <ListItem>Cross-platform: macOS, Windows, Linux</ListItem>
-          </List>
-        </TextColumn>
-      </Section>
-      <div
-        style={{
+        </Box>
+      </Box>
+      <Box sx={{ mb: 4 }}>
+        <Typography variant="h4" gutterBottom>
+          <strong>Privacy & Transparency</strong>
+        </Typography>
+        <List>
+          <ListItem>
+            All data stored locally in SQLite, no data leaves your computer.
+          </ListItem>
+          <ListItem>No account or subscription required</ListItem>
+          <ListItem>OpenAI API key stored securely on your device</ListItem>
+          <ListItem>Track API usage directly in the app</ListItem>
+          <ListItem>
+            Fully Open Source (
+            <Link
+              target="_blank"
+              href="https://github.com/TravisBumgarner/fast-classifieds"
+            >
+              GitHub
+            </Link>
+            )
+          </ListItem>
+          <ListItem>Cross-platform: macOS, Windows, Linux</ListItem>
+        </List>
+      </Box>
+      <Box
+        sx={{
           display: 'flex',
           flexDirection: 'column',
-          margin: `${SPACING.MEDIUM} 0`,
+          alignItems: 'center',
+          mb: 3,
           textAlign: 'center'
         }}
       >
@@ -227,20 +210,22 @@ const LandingPage = () => {
           <FaApple style={{ marginRight: '0.5rem' }} />
           Download for macOS
         </Link>
-      </div>
-      <Typography>Windows and Linux coming soon!</Typography>
-      <Typography variant="h3">Getting Started</Typography>
-      <Youtube embedId="FQKY70r2288" />
-      <Typography variant="h3">How It Works</Typography>
-      <Typography>
+      </Box>
+      <Typography sx={{ mb: 3, textAlign: 'center' }}>Windows and Linux coming soon!</Typography>
+      <Typography variant="h3" gutterBottom sx={{ mt: 4 }}>Getting Started</Typography>
+      <Box sx={{ mb: 3 }}>
+        <Youtube embedId="FQKY70r2288" />
+      </Box>
+      <Typography variant="h3" gutterBottom sx={{ mt: 4 }}>How It Works</Typography>
+      <Typography sx={{ mb: 4, lineHeight: 1.6 }}>
         Fast Classifieds uses Puppeteer to visit company career pages and
         extract job listings. It then sends each listing to OpenAI along with
         your custom prompt. The AI analyzes the job description and explains why
         it matches (or does not match) your criteria. Jobs are deduplicated
         using content hashing, so you will not see the same posting twice.
       </Typography>
-      <Typography variant="h3">Why Fast Classifieds?</Typography>
-      <List>
+      <Typography variant="h3" gutterBottom sx={{ mt: 4 }}>Why Fast Classifieds?</Typography>
+      <List sx={{ mb: 4 }}>
         <ListItem>
           <strong>Save Time:</strong> Stop manually checking dozens of career
           pages daily
@@ -260,9 +245,9 @@ const LandingPage = () => {
           <strong>Transparent Costs:</strong> You control your OpenAI API usage
         </ListItem>
       </List>
-      <Typography variant="h3">Contact</Typography>
+      <Typography variant="h3" gutterBottom sx={{ mt: 4 }}>Contact</Typography>
       <ContactForm subject="Fast Classifieds Feedback" />
-      <div style={{ height: '50px' }} />
+      <Box sx={{ height: 50 }} />
     </Box>
   )
 }

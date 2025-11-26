@@ -2,7 +2,7 @@
 
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
-import { Box } from '@mui/material'
+import { Box, List, ListItem } from '@mui/material'
 import { SPACING } from '@/lib/styles/consts'
 import Link from 'next/dist/client/link'
 import { FaApple, FaGithub } from 'react-icons/fa'
@@ -101,49 +101,49 @@ const UpdateComponent = ({ title, date, updates }: Update) => {
     })
 
   return (
-    <div>
+    <Box>
       <Typography>
         <strong>{title}</strong>
       </Typography>
       <Typography>
         <time>{date}</time>
       </Typography>
-      <ul>
+      <List>
         {flatUpdates.map((item, idx) => (
-          <li key={item.type + item.text + idx}>
+          <ListItem key={item.type + item.text + idx}>
             {LABELS[item.type]}: {item.text}
-          </li>
+          </ListItem>
         ))}
-      </ul>
-    </div>
+      </List>
+    </Box>
   )
 }
 
 const TodoToday = () => {
   return (
     <Box>
-      <div>
-        <div
+      <Box>
+        <Box
           style={{
             display: 'flex',
             alignItems: 'center',
             gap: SPACING.SMALL
           }}
         >
-          <div>
+          <Box>
             <Image
               src="/marketing-resources/todo_today/favicon.png"
               alt="App Screenshot"
               width={100}
               height={100}
             />
-          </div>
-          <div>
+          </Box>
+          <Box>
             <Typography variant="h2">Todo Today</Typography>
             <Typography>The todo List for the easily distracted</Typography>
-          </div>
-        </div>
-      </div>
+          </Box>
+        </Box>
+      </Box>
       <Typography>
         Todo Today isn&apos;t about the past or the future, it&apos;s about
         right now. Focus on what matters today. Set your tasks, order them, and
@@ -162,9 +162,9 @@ const TodoToday = () => {
 
       <Typography variant="h3">Contact</Typography>
       <ContactForm subject="Todo Today Feedback" />
-      <div style={{ height: SPACING.XLARGE }} />
+      <Box style={{ height: SPACING.XLARGE }} />
 
-      <div
+      <Box
         style={{
           position: 'fixed',
           top: 10,
@@ -179,7 +179,7 @@ const TodoToday = () => {
         <Link style={{ fontSize: '30px' }} href={GITHUB} download>
           <FaGithub size={40} />
         </Link>
-      </div>
+      </Box>
     </Box>
   )
 }

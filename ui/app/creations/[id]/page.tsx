@@ -3,7 +3,7 @@ import projects from '@/content/projects'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Box, Typography } from '@mui/material'
+import { Box, List, ListItem, Typography } from '@mui/material'
 
 type Params = Promise<{ id: string }>
 
@@ -43,7 +43,7 @@ const Creation = async ({ params }: { params: Params }) => {
 
   const Links = project.links.map(l => {
     return (
-      <li
+      <ListItem
         key={l.label + l.src}
         style={{
           backgroundColor: 'var(--bright-background)',
@@ -63,7 +63,7 @@ const Creation = async ({ params }: { params: Params }) => {
         >
           {l.label}
         </Link>
-      </li>
+      </ListItem>
     )
   })
 
@@ -105,7 +105,7 @@ const Creation = async ({ params }: { params: Params }) => {
       </time>
       {Description}
       {Links.length > 0 && (
-        <ul
+        <List
           style={{
             listStyleType: 'none',
             display: 'flex',
@@ -114,7 +114,7 @@ const Creation = async ({ params }: { params: Params }) => {
           }}
         >
           {Links}
-        </ul>
+        </List>
       )}
       {Images.map(i => i.element)}
     </Box>
