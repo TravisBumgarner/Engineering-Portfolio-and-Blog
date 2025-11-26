@@ -12,7 +12,7 @@ import { Box, List, ListItem, Typography } from '@mui/material'
 
 const LandingPage = () => {
   return (
-    <Box sx={{ maxWidth: 1200, mx: 'auto', p: 3 }}>
+    <Box>
       <Box sx={{ mb: 4 }}>
         <Box
           sx={{
