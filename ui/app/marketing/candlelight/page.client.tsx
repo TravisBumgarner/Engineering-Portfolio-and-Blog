@@ -1,30 +1,20 @@
 'use client'
 
 import { Box, Typography } from '@mui/material'
-import Image from 'next/image'
 import Link from '@/lib/sharedComponents/Link'
-import { SPACING } from '@/lib/styles/consts'
+import MarketingHeader from '../../../lib/sharedComponents/MarketingHeader'
+import { CANDLELIGHT_DESCRIPTION, CANDLELIGHT_FAVICON, CANDLELIGHT_TITLE } from '../classifieds/_consts'
 
 const CandlelightPage = () => {
   return (
     <Box>
-      <Box>
-        <Box
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: SPACING.SMALL.PX,
-          }}
-        >
-          <Box>
-            <Image src="/marketing-resources/candlelight/favicon.png" alt="App Screenshot" width={75} height={75} />
-          </Box>
-          <Box>
-            <Typography variant="h2">Candlelight</Typography>
-            <Typography>A Puzzle Game of Shape, Color, and Alchemy</Typography>
-          </Box>
-        </Box>
-      </Box>
+      <MarketingHeader src={CANDLELIGHT_FAVICON} title={CANDLELIGHT_TITLE} description={CANDLELIGHT_DESCRIPTION} />
+
+      <Typography>
+        <Link type="block" target="_blank" href="https://store.steampowered.com/app/3157820/Candlelight/">
+          Steam Store
+        </Link>
+      </Typography>
 
       <Typography>
         Candlelight is a puzzle game where each shape you place onto the grid inverts the color of the space it

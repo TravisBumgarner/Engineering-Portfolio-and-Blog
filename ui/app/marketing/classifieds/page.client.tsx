@@ -1,44 +1,25 @@
 'use client'
 
 import { Box, List, ListItem, Typography } from '@mui/material'
-import Image from 'next/image'
 import { FaApple } from 'react-icons/fa'
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
 import Link from '@/lib/sharedComponents/Link'
 import Youtube from '@/lib/sharedComponents/YouTube'
+import MarketingHeader from '../../../lib/sharedComponents/MarketingHeader'
+import { SPACING } from '../../../lib/styles/consts'
+import { FAST_CLASSIFIEDS_DESCRIPTION, FAST_CLASSIFIEDS_FAVICON, FAST_CLASSIFIEDS_TITLE } from './_consts'
 
 const LandingPage = () => {
   return (
     <Box>
-      <Box sx={{ mb: 4 }}>
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 2,
-            mb: 3,
-          }}
-        >
-          <Box>
-            <Image
-              src="/marketing-resources/classifieds/favicon.png"
-              alt="Fast Classifieds Logo"
-              width={75}
-              height={75}
-            />
-          </Box>
-          <Box>
-            <Typography variant="h2" gutterBottom>
-              Fast Classifieds
-            </Typography>
-            <Typography variant="h5" color="text.secondary">
-              Browse company job boards quickly.
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
-      <Box sx={{ mb: 3 }}>
+      <MarketingHeader
+        src={FAST_CLASSIFIEDS_FAVICON}
+        title={FAST_CLASSIFIEDS_TITLE}
+        description={FAST_CLASSIFIEDS_DESCRIPTION}
+      />
+
+      <Box sx={{ mb: SPACING.MEDIUM.PX }}>
         <Link
           type="block"
           target="_blank"
@@ -49,7 +30,7 @@ const LandingPage = () => {
         </Link>
       </Box>
 
-      <Box sx={{ mb: 3 }}>
+      <Box sx={{ mb: SPACING.MEDIUM.PX }}>
         <BlurHashImage src="/marketing-resources/classifieds/screenshot.png" priority />
       </Box>
       <Typography sx={{ mb: 4, fontSize: '1.1rem', lineHeight: 1.6 }}>
@@ -57,9 +38,7 @@ const LandingPage = () => {
         multiple company websites, find relevant job postings, and explain why each opportunity matches your criteria.
         Keep your job search organized in one desktop application. No accounts, no subscriptions, your data stays local.
       </Typography>
-      <Box
-        sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: { xs: 'column', md: 'row' } }}
-      >
+      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
         <Box sx={{ flex: 1, minWidth: 200 }}>
           <Typography variant="h4" gutterBottom>
             <strong>Create Custom AI Prompts</strong>
@@ -73,9 +52,7 @@ const LandingPage = () => {
           <BlurHashImage priority={false} src="/marketing-resources/classifieds/prompt.png" />
         </Box>
       </Box>
-      <Box
-        sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: { xs: 'column', md: 'row' } }}
-      >
+      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
         <Box sx={{ flex: 1, minWidth: 200 }}>
           <Typography variant="h4" gutterBottom>
             <strong>Manage Company Career Pages</strong>
@@ -89,9 +66,7 @@ const LandingPage = () => {
           <BlurHashImage priority={false} src="/marketing-resources/classifieds/sites.png" />
         </Box>
       </Box>
-      <Box
-        sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: { xs: 'column', md: 'row' } }}
-      >
+      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
         <Box sx={{ flex: 1, minWidth: 200 }}>
           <Typography variant="h4" gutterBottom>
             <strong>Automated Scanning with Progress Tracking</strong>
@@ -105,9 +80,7 @@ const LandingPage = () => {
           <BlurHashImage priority={false} src="/marketing-resources/classifieds/scanner.png" />
         </Box>
       </Box>
-      <Box
-        sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: { xs: 'column', md: 'row' } }}
-      >
+      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
         <Box sx={{ flex: 1, minWidth: 200 }}>
           <Typography variant="h4" gutterBottom>
             <strong>Track Your Applications</strong>
@@ -121,9 +94,7 @@ const LandingPage = () => {
           <BlurHashImage priority={false} src="/marketing-resources/classifieds/postings.png" />
         </Box>
       </Box>
-      <Box
-        sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: { xs: 'column', md: 'row' } }}
-      >
+      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
         <Box sx={{ flex: 1, minWidth: 200 }}>
           <Typography variant="h4" gutterBottom>
             <strong>Find Duplicates</strong>
@@ -138,9 +109,7 @@ const LandingPage = () => {
         </Box>
       </Box>
 
-      <Box
-        sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: { xs: 'column', md: 'row' } }}
-      >
+      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
         <Box sx={{ flex: 1, minWidth: 200 }}>
           <Typography variant="h4" gutterBottom>
             <strong>Review Scrape History</strong>
@@ -165,7 +134,7 @@ const LandingPage = () => {
           <ListItem>Track API usage directly in the app</ListItem>
           <ListItem>
             Fully Open Source (
-            <Link type="block" target="_blank" href="https://github.com/TravisBumgarner/fast-classifieds">
+            <Link type="inline" target="_blank" href="https://github.com/TravisBumgarner/fast-classifieds">
               GitHub
             </Link>
             )
@@ -173,15 +142,7 @@ const LandingPage = () => {
           <ListItem>Cross-platform: macOS, Windows, Linux</ListItem>
         </List>
       </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          mb: 3,
-          textAlign: 'center',
-        }}
-      >
+      <Box sx={{ mb: SPACING.MEDIUM.PX }}>
         <Link
           type="block"
           target="_blank"

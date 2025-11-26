@@ -2,7 +2,7 @@
 
 import projects from '@/content/projects'
 import ROUTES from '@/lib/routes'
-import ListItem from '../../lib/sharedComponents/ItemPreview'
+import ItemPreview from '../../lib/sharedComponents/ItemPreview'
 
 const Portfolio = () => {
   return (
@@ -12,7 +12,7 @@ const Portfolio = () => {
         .sort((a, b) => (a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1))
         .map(({ id, title, previewImage, lastMeaningfulUpdate, description }, index) => {
           return (
-            <ListItem
+            <ItemPreview
               type="creation"
               priority={index === 0}
               key={id}

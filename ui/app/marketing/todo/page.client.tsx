@@ -1,12 +1,13 @@
 'use client'
 
 import { Box, List, ListItem, Typography } from '@mui/material'
-import Link from 'next/dist/client/link'
-import Image from 'next/image'
 import { FaApple, FaGithub } from 'react-icons/fa'
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
 import { SPACING } from '@/lib/styles/consts'
+import Link from '../../../lib/sharedComponents/Link'
+import MarketingHeader from '../../../lib/sharedComponents/MarketingHeader'
+import { TODO_DESCRIPTION, TODO_FAVICON, TODO_TITLE } from '../classifieds/_consts'
 
 const MAC_DOWNLOAD = 'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-arm64.dmg'
 
@@ -116,23 +117,13 @@ const UpdateComponent = ({ title, date, updates }: Update) => {
 const TodoToday = () => {
   return (
     <Box>
-      <Box>
-        <Box
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: SPACING.SMALL.PX,
-          }}
-        >
-          <Box>
-            <Image src="/marketing-resources/todo_today/favicon.png" alt="App Screenshot" width={100} height={100} />
-          </Box>
-          <Box>
-            <Typography variant="h2">Todo Today</Typography>
-            <Typography>The todo List for the easily distracted</Typography>
-          </Box>
-        </Box>
-      </Box>
+      <MarketingHeader src={TODO_FAVICON} title={TODO_TITLE} description={TODO_DESCRIPTION} />
+      <Typography>
+        <Link type="block" target="_blank" href={MAC_DOWNLOAD}>
+          Download for Mac
+        </Link>
+      </Typography>
+
       <Typography>
         Todo Today isn&apos;t about the past or the future, it&apos;s about right now. Focus on what matters today. Set
         your tasks, order them, and add notes or subtasks. Nothing more, nothing less.
@@ -148,23 +139,6 @@ const TodoToday = () => {
       <Typography variant="h3">Contact</Typography>
       <ContactForm subject="Todo Today Feedback" />
       <Box style={{ height: SPACING.HUGE.PX }} />
-
-      <Box
-        style={{
-          position: 'fixed',
-          top: 10,
-          right: 10,
-          fontSize: 12,
-          color: '#888',
-        }}
-      >
-        <Link style={{ fontSize: '30px' }} href={MAC_DOWNLOAD} download>
-          <FaApple size={40} />
-        </Link>
-        <Link style={{ fontSize: '30px' }} href={GITHUB} download>
-          <FaGithub size={40} />
-        </Link>
-      </Box>
     </Box>
   )
 }

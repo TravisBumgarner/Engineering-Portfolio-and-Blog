@@ -1,13 +1,14 @@
 'use client'
 
 import { Box, Collapse, List, ListItem, Typography } from '@mui/material'
-import Image from 'next/image'
 import { useState } from 'react'
 import { FaApple, FaChevronDown, FaChevronUp, FaGithub } from 'react-icons/fa'
 import BlurHashImage from '@/lib/sharedComponents/BlurHashImage'
 import ContactForm from '@/lib/sharedComponents/ContactForm'
 import Link from '@/lib/sharedComponents/Link'
-import { IDEAS_DESCRIPTION, IDEAS_TITLE } from '../classifieds/_consts'
+import MarketingHeader from '../../../lib/sharedComponents/MarketingHeader'
+import { SPACING } from '../../../lib/styles/consts'
+import { IDEAS_DESCRIPTION, IDEAS_FAVICON, IDEAS_TITLE } from '../classifieds/_consts'
 
 type UpdateType = 'add' | 'update' | 'fix'
 type Update = {
@@ -85,28 +86,18 @@ const LandingPage = () => {
   const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false)
 
   return (
-    <Box sx={{ maxWidth: 1200, mx: 'auto', p: 3 }}>
-      <Box sx={{ mb: 4 }}>
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 2,
-            mb: 3,
-          }}
+    <Box>
+      <MarketingHeader title={IDEAS_TITLE} description={IDEAS_DESCRIPTION} src={IDEAS_FAVICON} />
+
+      <Box sx={{ mb: SPACING.MEDIUM.PX }}>
+        <Link
+          type="block"
+          target="_blank"
+          href="https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone"
         >
-          <Box>
-            <Image src="/marketing-resources/ideas_down/favicon.png" alt="App Screenshot" width={75} height={75} />
-          </Box>
-          <Box>
-            <Typography variant="h2" gutterBottom>
-              {IDEAS_TITLE}
-            </Typography>
-            <Typography variant="h5" color="text.secondary">
-              {IDEAS_DESCRIPTION}
-            </Typography>
-          </Box>
-        </Box>
+          <FaApple style={{ marginRight: '0.5rem' }} />
+          App Store
+        </Link>
       </Box>
 
       <Typography sx={{ mb: 4, fontSize: '1.1rem', lineHeight: 1.6 }}>
@@ -367,27 +358,6 @@ const LandingPage = () => {
             </Typography>
           </Box>
         </Collapse>
-      </Box>
-
-      <Box sx={{ height: 64 }} />
-
-      <Box
-        sx={{
-          position: 'fixed',
-          top: 10,
-          right: 10,
-          fontSize: 12,
-          color: '#888',
-          display: 'flex',
-          gap: 1,
-        }}
-      >
-        <Link type="inline" href="https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone">
-          <FaApple size={40} />
-        </Link>
-        <Link type="inline" href="https://github.com/TravisBumgarner/ideas-down-quickly">
-          <FaGithub size={40} />
-        </Link>
       </Box>
     </Box>
   )
