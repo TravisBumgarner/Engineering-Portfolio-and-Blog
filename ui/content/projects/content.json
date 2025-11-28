@@ -81,14 +81,13 @@
         "label": "Scanner in action"
       }
     ],
+    "videos": [
+      "vDLHhMvcVL0"
+    ],
     "links": [
       {
         "label": "GitHub",
         "src": "https://github.com/TravisBumgarner/Automatic-Film-Scanner/tree/master/film_scanner_arduino"
-      },
-      {
-        "label": "YouTube Video",
-        "src": "https://www.youtube.com/watch?v=vDLHhMvcVL0"
       }
     ],
     "previewImage": {
@@ -377,6 +376,9 @@
     "description": "A camera adapter that allows for pan and tilt functionality.",
     "shortDescription": "A camera adapter that allows for pan and tilt functionality.",
     "lastMeaningfulUpdate": "2016-07",
+    "videos": [
+      "E8Qu_i_7nHc"
+    ],
     "images": [
       {
         "src": "0610162138b.jpg",
@@ -395,10 +397,6 @@
       {
         "label": "GitHub",
         "src": "https://github.com/TravisBumgarner/PanTilt/"
-      },
-      {
-        "label": "YouTube Video",
-        "src": "https://www.youtube.com/watch?v=E8Qu_i_7nHc"
       }
     ],
     "previewImage": {
@@ -539,6 +537,9 @@
     "shortDescription": "Overly engineered Stranger Things lights.",
     "toolsAndTechnologies": "Raspberry Pi, AWS, Slack API, Express, Laser Cutter",
     "lastMeaningfulUpdate": "2018-12",
+    "videos": [
+      "DL1EOHFlQWA"
+    ],
     "images": [
       {
         "src": "IMG_20181211_204613.jpg",
@@ -558,10 +559,6 @@
       }
     ],
     "links": [
-      {
-        "label": "YouTube Video",
-        "src": "https://www.youtube.com/watch?v=DL1EOHFlQWA"
-      },
       {
         "label": "GitHub",
         "src": "https://github.com/TravisBumgarner/strangerer_things"

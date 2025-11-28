@@ -19,7 +19,7 @@ const Creation = ({ project }: { project: Project }) => {
     ),
   }))
 
-  const Videos = project.videos?.map(embedId => <Youtube embedId={embedId} />)
+  const Videos = project.videos?.map(embedId => <Youtube key={embedId} embedId={embedId} />)
 
   const Description = [
     ...(project.toolsAndTechnologies ? [<Typography key="toolsAndTechnologies">Tools & Tech: {project.toolsAndTechnologies}</Typography>] : []),
