@@ -151,7 +151,7 @@ const baseThemeOptions: ThemeOptions = {
     },
     body1: {
       fontSize: FONT_SIZES.MEDIUM.PX,
-      margin: `${SPACING.MEDIUM.PX} 0`,
+      margin: `${SPACING.SMALL.PX} 0`,
     },
     body2: {
       fontSize: FONT_SIZES.SMALL.PX,

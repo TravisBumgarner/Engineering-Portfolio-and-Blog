@@ -21,19 +21,18 @@ const Creation = ({ project }: { project: Project }) => {
 
   const Videos = project.videos?.map(embedId => <Youtube embedId={embedId} />)
 
-  const Description = project.description
-    .split('\n')
-    .map((paragraph) => <Typography key={paragraph}>{paragraph}</Typography>)
-
-  if (project.toolsAndTechnologies) {
-    Description.push(<Typography key="toolsAndTechnologies">{project.toolsAndTechnologies}</Typography>)
-  }
+  const Description = [
+    ...(project.toolsAndTechnologies ? [<Typography key="toolsAndTechnologies">Tools & Tech: {project.toolsAndTechnologies}</Typography>] : []),
+    ...(project.description
+      .split('\n')
+      .map((paragraph) => <Typography key={paragraph}>{paragraph}</Typography>))
+  ]
 
   return (
     <Box>
       <Typography variant="h2">{project.title}</Typography>
       <time>
-        Last Update:{' '}
+        Last Updated {' '}
         {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString('default', {
           month: 'long',
           year: 'numeric',
