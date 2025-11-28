@@ -24,8 +24,9 @@ const baseThemeOptions: ThemeOptions = {
       styleOverrides: {
         body: {
           width: '100%',
-          maxWidth: '700px',
+          maxWidth: '900px',
           margin: '0 auto',
+          padding: SPACING.MEDIUM.PX
         },
       },
     },

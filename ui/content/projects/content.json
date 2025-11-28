@@ -865,6 +865,10 @@
       {
         "label": "Marketing Page",
         "src": "https://travisbumgarner.dev/marketing/candlelight"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/candlelight"
       }
     ],
     "previewImage": {
