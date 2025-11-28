@@ -2,11 +2,10 @@
 
 import projects, { Project } from '@/content/projects'
 import ROUTES from '@/lib/routes'
-import ItemPreview from '../../lib/sharedComponents/ItemPreview'
-import { FAST_CLASSIFIEDS_DESCRIPTION, FAST_CLASSIFIEDS_TITLE } from '../marketing/_consts'
-import { Box, Stack, Typography } from '@mui/material'
 import Link from '@/lib/sharedComponents/Link'
 import { FONT_SIZES, SPACING, subtleBackground } from '@/lib/styles/consts'
+import { Box, Stack, Typography } from '@mui/material'
+import ItemPreview from '../../lib/sharedComponents/ItemPreview'
 
 const CURRENT_WORK: Project[] = [
   {
@@ -47,7 +46,7 @@ const MiniItemPreview = ({ project }: { project: Project }) => {
     <Box sx={{ width: '33%', backgroundColor: (theme) => subtleBackground(theme.palette.mode, 'slightly'), padding: SPACING.SMALL.PX }}>
       <Typography variant="h2" sx={{ fontSize: FONT_SIZES.MEDIUM.PX, margin: 0 }}>{project.title}</Typography>
       <Typography sx={{ fontSize: FONT_SIZES.SMALL.PX, margin: 0, marginBottom: SPACING.SMALL.PX }}>{project.description}</Typography>
-      <Stack direction="row" spacing={SPACING.TINY.PX}>{project.links.map(l => (<Link target="_blank" sx={{ padding: SPACING.TINY.PX, flexGrow: 1 }} type="inlineBlock" href={l.src}>{l.label}</Link>))}</Stack>
+      <Stack direction="row" spacing={SPACING.TINY.PX}>{project.links.map(l => (<Link key={l.src} target="_blank" sx={{ padding: SPACING.TINY.PX, flexGrow: 1 }} type="inlineBlock" href={l.src}>{l.label}</Link>))}</Stack>
     </Box>
   )
 }

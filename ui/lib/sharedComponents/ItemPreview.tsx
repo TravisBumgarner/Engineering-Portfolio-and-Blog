@@ -47,7 +47,7 @@ const ItemPreview = ({
 }) => {
   const paragraphs = !description
     ? null
-    : description.split('\n').map((paragraph) => <Typography key={paragraph}>{paragraph}</Typography>)
+    : description.split('\n').map((paragraph) => <Typography sx={{ margin: 0 }} key={paragraph}>{paragraph}</Typography>)
 
   return (
     <Box

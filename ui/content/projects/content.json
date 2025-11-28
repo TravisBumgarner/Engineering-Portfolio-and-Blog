@@ -30,21 +30,20 @@
         "label": "Fourth exploration fully assembled"
       }
     ],
+    "videos": [
+      "Y7Nzjou3Buw"
+    ],
     "links": [
       {
         "label": "GitHub",
         "src": "https://github.com/TravisBumgarner/Plotter-Explorations"
       },
       {
-        "label": "YouTube Video - 2D Plotter First Movement",
-        "src": "https://www.youtube.com/watch?v=Y7Nzjou3Buw"
-      },
-      {
-        "label": "YouTube Playlist - 3D Printer to 2D Plotter",
+        "label": "3D Printer → Plotter YouTube Playlist",
         "src": "https://www.youtube.com/watch?v=eNIFybCENtE&list=PL58d_qyxyaOF-66-4kabZ9wtJEJlURT8i"
       },
       {
-        "label": "YouTube Playlist - 2D Plotter From Scratch",
+        "label": "DIY 2D Plotter Youtube Playlist",
         "src": "https://www.youtube.com/watch?v=lJApWtDMxLM&list=PL58d_qyxyaOGu1aUYKD9BjNBRsrKP4v3W"
       }
     ],
@@ -984,5 +983,98 @@
       "label": "Generated Color Palette",
       "src": "preview.jpg"
     }
+  },
+  "dice-of-sending": {
+    "title": "Dice of Sending",
+    "id": "dice-of-sending",
+    "description": "When a Dungeon Master insists you roll in plain sight, the Dice of Sending offer a clever loophole. These enchanted dice are linked by invisible arcane currents (or Bluetooth, depending on your realm’s tech level), allowing a roll in both the physical and digital planes simultaneously.\nThose attuned to the Dice of Sending may appear obedient while still indulging their chaotic good nature—rolling fairly, yet unpredictably.",
+    "toolsAndTechnologies": "Arduino, OnShape, 3D Printer, Soldering Iron",
+    "lastMeaningfulUpdate": "2025-11",
+    "previewImage": {
+      "label": "Final Design",
+      "src": "preview.jpg"
+    },
+    "videos": [
+      "vspw8OGop4w"
+    ],
+    "images": [
+      {
+        "label": "Initial breadboard design",
+        "src": "breadboard.jpg"
+      },
+      {
+        "label": "Soldered circuit and printed model",
+        "src": "circuit.jpg"
+      },
+      {
+        "label": "Comparison of a few iterations as the design got smaller",
+        "src": "iterations.jpg"
+      },
+      {
+        "label": "Final D6 design",
+        "src": "preview.jpg"
+      }
+    ],
+    "links": [
+      {
+        "label": "Project Resources",
+        "src": "https://github.com/TravisBumgarner/dice-of-sending"
+      }
+    ]
+  },
+  "photo-palettes": {
+    "title": "Photo Palettes",
+    "id": "photo-palettes",
+    "description": "Find color inspiration in the everyday.",
+    "toolsAndTechnologies": "React, TypeScript, Python, Heroku, Supabase, FastAPI",
+    "lastMeaningfulUpdate": "2025-11",
+    "previewImage": {
+      "label": "Gallery view",
+      "src": "latest-browse-id.jpg"
+    },
+    "images": [
+      {
+        "label": "Browse list view",
+        "src": "latest-browse-list.jpg"
+      },
+      {
+        "label": "Browse item view",
+        "src": "latest-browse-id.jpg"
+      },
+      {
+        "label": "Color palette creation",
+        "src": "latest-creation.jpg"
+      },
+      {
+        "label": "Architecture rough draft",
+        "src": "architecture.jpg"
+      },
+      {
+        "label": "Initial browse experience",
+        "src": "early-browse.jpg"
+      },
+      {
+        "label": "Initial creation experience",
+        "src": "early-creation.jpg"
+      }
+    ],
+    "links": [
+      {
+        "label": "Website",
+        "src": "https://photopalettes.com"
+      },
+      {
+        "label": "Figma Plugin",
+        "src": "https://www.figma.com/community/plugin/1553603263291862336/photo-palettes"
+      },
+      {
+        "label": "App Store",
+        "src": "https://apps.apple.com/us/app/photo-color-palettes/id6751658619"
+      },
+      {
+        "label": "GitHub",
+        "src": "https://github.com/TravisBumgarner/photo-palettes"
+      }
+    ]
   }
 }

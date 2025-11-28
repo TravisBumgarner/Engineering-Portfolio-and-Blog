@@ -5,6 +5,7 @@ import type { Project } from '@/content/projects'
 import Figure from '@/lib/sharedComponents/Figure'
 import Link from '@/lib/sharedComponents/Link'
 import { SPACING } from '@/lib/styles/consts'
+import Youtube from '@/lib/sharedComponents/YouTube'
 
 export type Params = Promise<{ id: string }>
 
@@ -17,6 +18,8 @@ const Creation = ({ project }: { project: Project }) => {
       </Box>
     ),
   }))
+
+  const Videos = project.videos?.map(embedId => <Youtube embedId={embedId} />)
 
   const Description = project.description
     .split('\n')
@@ -37,15 +40,16 @@ const Creation = ({ project }: { project: Project }) => {
         })}
       </time>
       {Description}
-      <Stack direction="row" gap={SPACING.SMALL.PX}>
+      <Stack direction="row" gap={SPACING.SMALL.PX} flexWrap="wrap">
         {project.links.map((l) => (
           <Link type="inlineBlock" key={l.label + l.src} target="_blank" href={l.src}>
             {l.label}
           </Link>
         ))}
       </Stack>
+      {project.videos && Videos}
       {Images.map((i) => i.element)}
-    </Box>
+    </Box >
   )
 }
 export default Creation
