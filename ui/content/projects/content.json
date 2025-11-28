@@ -3,6 +3,7 @@
     "title": "2D Plotter Explorations",
     "id": "2d-plotter-explorations",
     "description": "Many explorations over many years into how 2D plotters function and can be made.",
+    "shortDescription": "Many explorations over many years into how 2D plotters function and can be made.",
     "lastMeaningfulUpdate": "2020-08",
     "images": [
       {
@@ -56,6 +57,7 @@
     "title": "Automated Film Scanner",
     "id": "automated-film-scanner",
     "description": "Automated film scanner for 35mm negative film.",
+    "shortDescription": "Automated film scanner for 35mm negative film.",
     "lastMeaningfulUpdate": "2016-05",
     "images": [
       {
@@ -98,6 +100,7 @@
     "title": "Camera From Scratch",
     "id": "camera-from-scratch",
     "description": "Camera built and coded from scratch.",
+    "shortDescription": "Camera built and coded from scratch.",
     "toolsAndTechnologies": "Arduino, PCB, Soldering Iron, Eagle CAD, ArduCAM",
     "lastMeaningfulUpdate": "2016-09",
     "images": [
@@ -145,6 +148,7 @@
     "title": "MIT D-Lab Development Class",
     "id": "development-class",
     "description": "Led a group of MIT students on a three-week trip to Bogota, Colombia. We worked on engineering projects and taught workshops around Arduino, soldering, basic electronics, and other related topics.",
+    "shortDescription": "Led an MIT student group to Bogota for engineering projects and hands-on electronics workshops.",
     "lastMeaningfulUpdate": "2017-01",
     "images": [
       {
@@ -187,6 +191,7 @@
     "title": "Educational Content Creator",
     "id": "educational-content-creator",
     "description": "An exploration into ways to share what I've learned with others.",
+    "shortDescription": "An exploration into ways to share what I've learned with others.",
     "lastMeaningfulUpdate": "2024-09",
     "images": [
       {
@@ -237,6 +242,7 @@
     "title": "Intro to Arduino Workshop",
     "id": "intro-to-arduino-workshop",
     "description": "Designed, developed, and taught an introductory Arduino workshop focusing on the basics of circuits, soldering, safety, and coding.",
+    "shortDescription": "Designed, developed, and taught an introductory Arduino workshop focusing on the basics of circuits, soldering, safety, and coding.",
     "lastMeaningfulUpdate": "2017-07",
     "images": [
       {
@@ -275,6 +281,7 @@
     "title": "Painless Prototyping Startup First Attempt",
     "id": "painless-prototyping-first-attempt",
     "description": "The Button Board makes adding push buttons to electronics projects a breeze by eliminating headaches and adding useful functionality.",
+    "shortDescription": "The Button Board makes adding push buttons to electronics projects a breeze by eliminating headaches and adding useful functionality.",
     "lastMeaningfulUpdate": "2017-07",
     "images": [
       {
@@ -309,6 +316,7 @@
     "title": "Painless Prototyping Startup",
     "id": "painless-prototyping-second-attempt",
     "description": "Customize what your keyboard does and how it works! Classes on the topics of soldering, circuits and coding are included!",
+    "shortDescription": "Customize what your keyboard does and how it works! Classes on the topics of soldering, circuits and coding are included!",
     "lastMeaningfulUpdate": "2021-10",
     "images": [
       {
@@ -367,6 +375,7 @@
     "title": "Pan & Tilt Camera Adapter",
     "id": "pan-and-tilt-camera-adapter",
     "description": "A camera adapter that allows for pan and tilt functionality.",
+    "shortDescription": "A camera adapter that allows for pan and tilt functionality.",
     "lastMeaningfulUpdate": "2016-07",
     "images": [
       {
@@ -401,6 +410,7 @@
     "title": "Selected Woodworking",
     "id": "selected-woodworking",
     "description": "An assortment of woodworking projects.",
+    "shortDescription": "An assortment of woodworking projects.",
     "lastMeaningfulUpdate": "2019-01",
     "images": [
       {
@@ -446,6 +456,7 @@
     "title": "Security System",
     "id": "security-system",
     "description": "Cambridge Hackspace security system.",
+    "shortDescription": "Cambridge Hackspace security system.",
     "toolsAndTechnologies": "Raspberry Pi, Python, Flask, Dropbox API",
     "lastMeaningfulUpdate": "2017-05",
     "images": [
@@ -481,6 +492,7 @@
     "title": "Raspberry Pi Smart Display",
     "id": "smart-display",
     "description": "An information kiosk, that shows a variety of stats including bus schedules and the weather.",
+    "shortDescription": "An information kiosk, that shows a variety of stats including bus schedules and the weather.",
     "toolsAndTechnologies": "Raspberry Pi, SolidWorks, 3D Printer, Node, Google Cloud Platform, Soldering Iron",
     "lastMeaningfulUpdate": "2020-08",
     "images": [
@@ -524,6 +536,7 @@
     "title": "Strangerer Things Lights Display",
     "id": "strangerer-things",
     "description": "Overly engineered Stranger Things lights.",
+    "shortDescription": "Overly engineered Stranger Things lights.",
     "toolsAndTechnologies": "Raspberry Pi, AWS, Slack API, Express, Laser Cutter",
     "lastMeaningfulUpdate": "2018-12",
     "images": [
@@ -563,6 +576,7 @@
     "title": "gcode2dplotterart Python Library",
     "id": "gcode2dplotterart",
     "description": "Easily generate plotter art with your 2D plotter or 3D printer.\nThis library abstracts away G-Code so you can focus on making art.",
+    "shortDescription": "Easily generate plotter art with your 2D plotter or 3D printer.",
     "toolsAndTechnologies": "Python, Docusaurus, G-Code",
     "lastMeaningfulUpdate": "2025-02",
     "images": [
@@ -610,6 +624,7 @@
     "title": "Photography Portfolio",
     "id": "photography-portfolio",
     "description": "Portfolio highlighting my photography.\nFeatures advanced browser performance optimizations, including modern file formats, lazy rendering, TTL enhancements, and the blurhash algorithm.",
+    "shortDescription": "Portfolio highlighting my photography with advanced browser performance optimizations.",
     "toolsAndTechnologies": "React, TypeScript, Adobe Lightroom, Google Cloud Platform",
     "lastMeaningfulUpdate": "2025-01",
     "images": [
@@ -645,6 +660,7 @@
     "title": "Todo Today Desktop App",
     "id": "todo-today",
     "description": "The todo List for the easily distracted.",
+    "shortDescription": "The todo List for the easily distracted.",
     "toolsAndTechnologies": "React, TypeScript, Electron, IndexedDB, Dexie",
     "lastMeaningfulUpdate": "2025-10",
     "images": [
@@ -688,6 +704,7 @@
     "title": "Ideas Down iPhone App",
     "id": "ideas-down",
     "description": "Clear your mind and make room for your next big idea.",
+    "shortDescription": "Clear your mind and make room for your next big idea.",
     "toolsAndTechnologies": "React Native, TypeScript, Figma, Expo, Drizzle",
     "lastMeaningfulUpdate": "2024-12",
     "images": [
@@ -739,6 +756,7 @@
     "title": "Spotify Playlist Generator",
     "id": "manifest-playlists",
     "description": "Generate Spotify playlists with interesting parameters.",
+    "shortDescription": "Generate Spotify playlists with interesting parameters.",
     "toolsAndTechnologies": "React, TypeScript, Express, GraphQL, Spotify API, Google Cloud Platform",
     "lastMeaningfulUpdate": "2023-08",
     "images": [
@@ -774,6 +792,7 @@
     "title": "CSS Cross Stitch Generator",
     "id": "stitch-it",
     "description": "Generate CSS cross stitches from photos.",
+    "shortDescription": "Generate CSS cross stitches from photos.",
     "toolsAndTechnologies": "Python, Flask, Google Cloud Platform",
     "lastMeaningfulUpdate": "2020-03",
     "images": [
@@ -797,6 +816,7 @@
     "title": "Bananarama Voting App",
     "id": "bananarama-voting",
     "description": "Quickly spin up a poll where people can submit entries and everyone can vote on them.",
+    "shortDescription": "Quickly spin up a poll where people can submit entries and everyone can vote on them.",
     "toolsAndTechnologies": "React, TypeScript, GraphQL, Express, Google Cloud Platform",
     "lastMeaningfulUpdate": "2023-03",
     "images": [
@@ -836,6 +856,7 @@
     "title": "Candlelight Game",
     "id": "candlelight",
     "description": "Puzzle game originally created for the Pirate Software Game Jam.",
+    "shortDescription": "Puzzle game originally created for the Pirate Software Game Jam.",
     "toolsAndTechnologies": "Godot, Aseprite, Figma, Steam API",
     "lastMeaningfulUpdate": "2025-03",
     "images": [
@@ -879,6 +900,7 @@
     "title": "Pixels64",
     "id": "pixels64",
     "description": "Pixels64 is an 8x8 grid of 64 individually addressable RGB LEDs using the WS2812B package. It's powered by an ESP32 running CircuitPython with the neopixel library for control. It features a custom-designed circuit board and a 3D-printable housing.",
+    "shortDescription": "Custom-designed 8x8 RGB LED grid with ESP32 and CircuitPython control.",
     "toolsAndTechnologies": "SolidWorks, Cura, KiCad, CircuitPython, 3D Printing, PCB Design, Soldering Iron",
     "lastMeaningfulUpdate": "2025-04",
     "images": [
@@ -926,6 +948,7 @@
     "title": "Five Pixels",
     "id": "five-pixels",
     "description": "What can you say with five pixels? One canvas, many players.",
+    "shortDescription": "What can you say with five pixels? One canvas, many players.",
     "toolsAndTechnologies": "React, TypeScript, Express, Cloudflare, NearlyFreeSpeech",
     "lastMeaningfulUpdate": "2025-02",
     "images": [
@@ -953,6 +976,7 @@
     "title": "Seis Colores",
     "id": "seis-colores",
     "description": "Color palettes inspired by Mexican architecture.",
+    "shortDescription": "Color palettes inspired by Mexican architecture.",
     "toolsAndTechnologies": "React, TypeScript, Python, Adobe Lightroom, NearlyFreeSpeech",
     "lastMeaningfulUpdate": "2025-05",
     "images": [
@@ -988,6 +1012,7 @@
     "title": "Dice of Sending",
     "id": "dice-of-sending",
     "description": "When a Dungeon Master insists you roll in plain sight, the Dice of Sending offer a clever loophole. These enchanted dice are linked by invisible arcane currents (or Bluetooth, depending on your realm’s tech level), allowing a roll in both the physical and digital planes simultaneously.\nThose attuned to the Dice of Sending may appear obedient while still indulging their chaotic good nature—rolling fairly, yet unpredictably.",
+    "shortDescription": "Dice that roll both physically and digitally via Bluetooth.",
     "toolsAndTechnologies": "Arduino, OnShape, 3D Printer, Soldering Iron",
     "lastMeaningfulUpdate": "2025-11",
     "previewImage": {
@@ -1026,6 +1051,7 @@
     "title": "Photo Palettes",
     "id": "photo-palettes",
     "description": "Find color inspiration in the everyday.",
+    "shortDescription": "Find color inspiration in the everyday.",
     "toolsAndTechnologies": "React, TypeScript, Python, Heroku, Supabase, FastAPI",
     "lastMeaningfulUpdate": "2025-11",
     "previewImage": {

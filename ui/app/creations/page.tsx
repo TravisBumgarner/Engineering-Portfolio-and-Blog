@@ -18,6 +18,7 @@ const CURRENT_WORK: Project[] = [
       label: "Listen", src: "https://happymaking.art/"
     }],
     previewImage: { label: 'Preview', src: 'preview.png' },
+    shortDescription: "",
   },
   {
     title: 'Fast Classifieds',
@@ -27,6 +28,7 @@ const CURRENT_WORK: Project[] = [
     images: [],
     links: [{ label: "Marketing", src: '/marketing/classifieds' }, { label: "GitHub", src: "https://github.com/TravisBumgarner/fast-classifieds" }],
     previewImage: { label: 'Preview', src: 'preview.png' },
+    shortDescription: "",
   },
   {
     title: "Menu Engineering",
@@ -38,12 +40,13 @@ const CURRENT_WORK: Project[] = [
       label: "GitHub", src: "https://github.com/TravisBumgarner/menu-engineering"
     }],
     previewImage: { label: 'Preview', src: 'preview.png' },
+    shortDescription: "",
   }
 ]
 
 const MiniItemPreview = ({ project }: { project: Project }) => {
   return (
-    <Box sx={{ width: '33%', backgroundColor: (theme) => subtleBackground(theme.palette.mode, 'slightly'), padding: SPACING.SMALL.PX }}>
+    <Box sx={{ width: '33%', backgroundColor: 'background.paper', padding: SPACING.SMALL.PX }}>
       <Typography variant="h2" sx={{ fontSize: FONT_SIZES.MEDIUM.PX, margin: 0 }}>{project.title}</Typography>
       <Typography sx={{ fontSize: FONT_SIZES.SMALL.PX, margin: 0, marginBottom: SPACING.SMALL.PX }}>{project.description}</Typography>
       <Stack direction="row" spacing={SPACING.TINY.PX}>{project.links.map(l => (<Link key={l.src} target="_blank" sx={{ padding: SPACING.TINY.PX, flexGrow: 1 }} type="inlineBlock" href={l.src}>{l.label}</Link>))}</Stack>
@@ -54,7 +57,7 @@ const MiniItemPreview = ({ project }: { project: Project }) => {
 const CurrentWork = () => {
   return (
     <>
-      <Typography variant="h2" sx={{ marginBottom: SPACING.MEDIUM.PX }}>Work In Progress</Typography >
+      <Typography variant="h2" sx={{ fontWeight: 500, marginBottom: SPACING.SMALL.PX, fontSize: FONT_SIZES.MEDIUM.PX }}>Work In Progress</Typography >
       <Stack spacing={SPACING.SMALL.PX} mb={SPACING.LARGE.PX} direction="row">
         {CURRENT_WORK.map((project, index) => {
           return (
@@ -70,16 +73,16 @@ const Portfolio = () => {
   return (
     <>
       <CurrentWork />
-      <Typography variant="h2" sx={{ marginBottom: SPACING.MEDIUM.PX }}>Portfolio</Typography >
+      <Typography variant="h2" sx={{ fontWeight: 500, marginBottom: SPACING.SMALL.PX, fontSize: FONT_SIZES.MEDIUM.PX }}>Portfolio</Typography >
       {Object.values(projects)
         .sort((a, b) => (a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1))
-        .map(({ id, title, previewImage, lastMeaningfulUpdate, description }, index) => {
+        .map(({ id, title, previewImage, lastMeaningfulUpdate, shortDescription }, index) => {
           return (
             <ItemPreview
               type="creation"
               priority={index === 0}
               key={id}
-              description={description}
+              description={shortDescription}
               link={`${ROUTES.CREATIONS.href}/${id}`}
               title={title}
               date={lastMeaningfulUpdate}
