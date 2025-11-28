@@ -15,7 +15,7 @@ const SiteTitle = ({ title }: { title: string }) => {
       }}
     >
       <Link type="inline" href="/">
-        <Typography variant="h1">{title}</Typography>
+        <Typography variant="h1" sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' } }}>{title}</Typography>
       </Link>
       <Typography>
         {ABOUT_ME_SENTENCE_1}

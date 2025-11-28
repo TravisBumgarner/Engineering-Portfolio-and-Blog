@@ -5,6 +5,7 @@ import type { Project } from '@/content/projects'
 import Figure from '@/lib/sharedComponents/Figure'
 import Link from '@/lib/sharedComponents/Link'
 import { SPACING } from '@/lib/styles/consts'
+import Youtube from '@/lib/sharedComponents/YouTube'
 
 export type Params = Promise<{ id: string }>
 
@@ -18,34 +19,36 @@ const Creation = ({ project }: { project: Project }) => {
     ),
   }))
 
-  const Description = project.description
-    .split('\n')
-    .map((paragraph) => <Typography key={paragraph}>{paragraph}</Typography>)
+  const Videos = project.videos?.map(embedId => <Youtube key={embedId} embedId={embedId} />)
 
-  if (project.toolsAndTechnologies) {
-    Description.push(<Typography key="toolsAndTechnologies">{project.toolsAndTechnologies}</Typography>)
-  }
+  const Description = [
+    ...(project.toolsAndTechnologies ? [<Typography key="toolsAndTechnologies">Tools & Tech: {project.toolsAndTechnologies}</Typography>] : []),
+    ...(project.description
+      .split('\n')
+      .map((paragraph) => <Typography key={paragraph}>{paragraph}</Typography>))
+  ]
 
   return (
     <Box>
       <Typography variant="h2">{project.title}</Typography>
       <time>
-        Last Update:{' '}
+        Last Updated {' '}
         {new Date(`${project.lastMeaningfulUpdate}-05`).toLocaleString('default', {
           month: 'long',
           year: 'numeric',
         })}
       </time>
       {Description}
-      <Stack direction="row" gap={SPACING.SMALL.PX}>
+      <Stack direction="row" gap={SPACING.SMALL.PX} flexWrap="wrap">
         {project.links.map((l) => (
           <Link type="inlineBlock" key={l.label + l.src} target="_blank" href={l.src}>
             {l.label}
           </Link>
         ))}
       </Stack>
+      {project.videos && Videos}
       {Images.map((i) => i.element)}
-    </Box>
+    </Box >
   )
 }
 export default Creation

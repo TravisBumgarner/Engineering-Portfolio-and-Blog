@@ -24,8 +24,9 @@ const baseThemeOptions: ThemeOptions = {
       styleOverrides: {
         body: {
           width: '100%',
-          maxWidth: '700px',
+          maxWidth: '900px',
           margin: '0 auto',
+          padding: SPACING.MEDIUM.PX
         },
       },
     },
@@ -150,7 +151,7 @@ const baseThemeOptions: ThemeOptions = {
     },
     body1: {
       fontSize: FONT_SIZES.MEDIUM.PX,
-      margin: `${SPACING.MEDIUM.PX} 0`,
+      margin: `${SPACING.SMALL.PX} 0`,
     },
     body2: {
       fontSize: FONT_SIZES.SMALL.PX,
