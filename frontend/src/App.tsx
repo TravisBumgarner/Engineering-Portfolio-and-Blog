@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react'
 import AppThemeProvider from './styles/Theme'
 
 import Scroll from './components/Scroll'

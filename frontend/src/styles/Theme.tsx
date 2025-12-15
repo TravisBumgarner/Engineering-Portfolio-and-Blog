@@ -13,8 +13,6 @@ import {
     subtleBackground,
 } from './consts'
 
-export const TAB_HEIGHT = '36px' // for some reason all are needed.
-
 // Base theme options shared between light and dark
 const baseThemeOptions: ThemeOptions = {
     components: {
@@ -35,32 +33,6 @@ const baseThemeOptions: ThemeOptions = {
                 },
             },
         },
-        MuiTabs: {
-            styleOverrides: {
-                root: {
-                    minHeight: TAB_HEIGHT,
-                },
-                indicator: {
-                    display: 'none', // hide globally
-                },
-            },
-        },
-        MuiTab: {
-            styleOverrides: {
-                root: {
-                    minWidth: 0,
-                    textTransform: 'none',
-                    minHeight: TAB_HEIGHT,
-                    height: TAB_HEIGHT,
-                    '&.Mui-selected': {
-                        fontWeight: 900,
-                    },
-                    '&:hover': {
-                        fontWeight: 900,
-                    },
-                },
-            },
-        },
         MuiListItem: {
             styleOverrides: {
                 root: {
@@ -74,16 +46,6 @@ const baseThemeOptions: ThemeOptions = {
                 root: {
                     listStyleType: 'square',
                     marginLeft: SPACING.LARGE.PX,
-                },
-            },
-        },
-        MuiSwitch: {
-            styleOverrides: {
-                track: {
-                    borderRadius: 0,
-                },
-                root: {
-                    borderRadius: 0,
                 },
             },
         },
@@ -194,43 +156,6 @@ const getThemeOptions = (mode: 'light' | 'dark'): ThemeOptions => ({
         },
     },
     components: {
-        MuiSwitch: {
-            styleOverrides: {
-                ...(mode === 'dark' && { thumb: { borderRadius: 0 } }),
-                switchBase: {
-                    color: PALETTE.grayscale[500],
-                    '&.Mui-checked': {
-                        color: mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[200],
-                    },
-                    '&.Mui-checked + .MuiSwitch-track': {
-                        backgroundColor: mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[200],
-                    },
-                },
-                track: {
-                    backgroundColor: mode === 'light' ? PALETTE.grayscale[400] : PALETTE.grayscale[600],
-                },
-            },
-        },
-        MuiTabs: {
-            styleOverrides: {
-                indicator: { backgroundColor: PALETTE.grayscale[200] },
-            },
-        },
-        MuiTab: {
-            styleOverrides: {
-                root: {
-                    color: mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[100],
-                    '&.Mui-selected': {
-                        backgroundColor: PALETTE.grayscale[200],
-                        color: PALETTE.grayscale[900],
-                    },
-                    '&:hover': {
-                        backgroundColor: mode === 'light' ? PALETTE.grayscale[800] : PALETTE.grayscale[100],
-                        color: mode === 'light' ? PALETTE.grayscale[50] : PALETTE.grayscale[900],
-                    },
-                },
-            },
-        },
         MuiLink: {
             styleOverrides: {
                 root: {
