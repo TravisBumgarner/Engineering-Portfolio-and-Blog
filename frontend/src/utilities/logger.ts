@@ -12,7 +12,7 @@ export const logger = {
     console.warn(message, context)
   },
   // biome-ignore lint/suspicious/noExplicitAny: Fine for now.
-  error: (message: string, error?: Error, context?: any) => {
+  error: (message: string, error?: Error | unknown, context?: any) => {
     // biome-ignore lint/suspicious/noConsole: Fine for now.
     console.error(message, error, context)
     if (import.meta.env.PROD) {
