@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography'
 import posts from '../../content/posts'
 import Subscribe from './Subscribe'
 import ROUTES from "../../routes"
+import logger from "../../utilities/logger"
 
 const BlogPost = () => {
     const { id } = useParams()
@@ -16,10 +17,10 @@ const BlogPost = () => {
 
         const loadPost = async () => {
             try {
-                const postModule = await import(`../content/posts/${id}.mdx`)
+                const postModule = await import(`../../content/posts/${id}.mdx`)
                 setPostComponent(() => postModule.default)
             } catch (error) {
-                console.error('Failed to load post:', error)
+                logger.error('Failed to load post:', error)
                 setPostComponent(null)
             } finally {
                 setLoading(false)

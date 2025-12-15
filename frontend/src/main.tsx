@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import * as Sentry from "@sentry/react";
+import './styles/globals.css'
 
 if (import.meta.env.PROD) {
   Sentry.init({

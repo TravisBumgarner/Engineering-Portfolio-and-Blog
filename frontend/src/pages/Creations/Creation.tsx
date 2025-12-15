@@ -6,11 +6,16 @@ import Figure from '../../sharedComponents/Figure'
 import Link from '../../sharedComponents/Link'
 import { SPACING } from '../../styles/consts'
 import Youtube from '../../sharedComponents/YouTube'
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
+import ROUTES from '../../routes'
 
 const Creation = () => {
     const { id } = useParams()
     const project = projects[id || '']
+
+    if (!project) {
+        return <Navigate to={ROUTES.NOT_FOUND.href} />
+    }
 
     const Images = project.images.map((i) => ({
         key: i.src,
