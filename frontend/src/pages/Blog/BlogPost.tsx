@@ -2,9 +2,9 @@ import { Navigate, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import posts from '../content/posts'
-import Subscribe from './Blog/Subscribe'
-import ROUTES from "../routes"
+import posts from '../../content/posts'
+import Subscribe from './Subscribe'
+import ROUTES from "../../routes"
 
 const BlogPost = () => {
     const { id } = useParams()
