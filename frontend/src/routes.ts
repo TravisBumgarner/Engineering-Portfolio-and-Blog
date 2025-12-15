@@ -24,6 +24,26 @@ const ROUTES = {
         title: 'Marketing Pages',
         target: '_self',
     },
+    MARKETING_CLASSIFIEDS: {
+        href: '/marketing/classifieds',
+        title: 'Fast Classifieds Marketing Page',
+        target: '_self',
+    },
+    MARKETING_IDEAS: {
+        href: '/marketing/ideas',
+        title: 'Ideas Marketing Page',
+        target: '_self',
+    },
+    MARKETING_CANDLELIGHT: {
+        href: '/marketing/candlelight',
+        title: 'Candlelight Marketing Page',
+        target: '_self',
+    },
+    MARKETING_TODO: {
+        href: '/marketing/todo',
+        title: 'ToDo Marketing Page',
+        target: '_self',
+    },
     CONTACT: {
         href: '/contact',
         title: 'Contact',
@@ -34,6 +54,6 @@ const ROUTES = {
         title: 'Not Found',
         target: '_self',
     },
-}
+} as const
 
 export default ROUTES

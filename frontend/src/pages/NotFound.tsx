@@ -1,0 +1,24 @@
+import { Box, Button } from '@mui/material'
+import Typography from '@mui/material/Typography'
+import { useCallback, useEffect } from 'react'
+import logger from '../utilities/logger'
+
+const NotFound = () => {
+    const handleRefresh = useCallback(() => {
+        window.location.href = '/'
+    }, [])
+
+    useEffect(() => {
+        logger.info('404 Not Found page viewed', { url: window.location.href })
+    }, [])
+
+    return (
+        <Box>
+            <Typography variant="h2">Whoops!</Typography>
+            <Typography>Sorry, the page you were looking for was not found.</Typography>
+            <Button variant='contained' onClick={handleRefresh}>Return home</Button>
+        </Box>
+    )
+}
+
+export default NotFound

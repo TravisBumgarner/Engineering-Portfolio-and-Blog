@@ -23,6 +23,13 @@ const THERE = [
   { title: 'Photography', href: 'https://travisbumgarner.photography', target: '_blank' },
 ]
 
+const ROUTES_TO_DISPLAY: (keyof typeof ROUTES)[] = [
+  'SNAPSHOTS',
+  'CREATIONS',
+  'BLOG',
+  'MARKETING',
+]
+
 const SidebarClient = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -71,22 +78,28 @@ const SidebarClient = () => {
         }}
       >
         <Stack direction="column" spacing={SPACING.TINY.PX}>
-          {Object.values(ROUTES).map((r) => (
-            <Box key={r.href}>
-              <Link type="inlineMenu" {...r} onClick={() => setIsOpen(false)}>
-                {' '}
-                {r.title}
-              </Link>
-            </Box>
-          ))}
+          {ROUTES_TO_DISPLAY.map((key) => {
+            const r = ROUTES[key as keyof typeof ROUTES]
+            return (
+              <Box key={r.href}>
+                <Link type="inlineMenu" {...r} onClick={() => setIsOpen(false)}>
+                  {' '}
+                  {r.title}
+                </Link>
+              </Box>
+            )
+          }
+          )}
 
-          {THERE.map((r) => (
-            <Box key={r.href}>
-              <Link type="inlineMenu" {...r} onClick={() => setIsOpen(false)}>
-                {r.title}
-              </Link>
-            </Box>
-          ))}
+          {
+            THERE.map((r) => (
+              <Box key={r.href}>
+                <Link type="inlineMenu" {...r} onClick={() => setIsOpen(false)}>
+                  {r.title}
+                </Link>
+              </Box>
+            ))
+          }
         </Stack>
 
         <Box
