@@ -1,0 +1,22 @@
+{
+    "title": "Human Friendly",
+    "id": "human-friendly",
+    "description": "Some nice words",
+    "lastMeaningfulUpdate": "YYYY-MM",
+    "images": [
+        {
+            "label": "Human readable",
+            "src": "image_name.jpg"
+        }
+    ],
+    "links": [
+        {
+            "label": "GitHub",
+            "src": ""
+        }
+    ],
+    "previewImage": {
+        "label": "Description",
+        "src": "image_name.jpg"
+    }
+}

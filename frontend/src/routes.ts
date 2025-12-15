@@ -29,6 +29,11 @@ const ROUTES = {
         title: 'Contact',
         target: '_self',
     },
+    NOT_FOUND: {
+        href: '/404',
+        title: 'Not Found',
+        target: '_self',
+    },
 }
 
 export default ROUTES

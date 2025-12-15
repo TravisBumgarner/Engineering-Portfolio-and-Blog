@@ -1,0 +1,118 @@
+import Figure from '../../lib/sharedComponents/Figure'
+import Video from '../../lib/sharedComponents/Video'
+
+(Jump Ahead: [Demo](https://pointlessprojects.com/somehash/) and [Code](https://github.com/TravisBumgarner/pointless-projects/tree/main/somehash))
+
+Humans have short attention spans. Websites take time to load. What can be done to prevent visitors from leaving?
+
+[Blurhash](https://blurha.sh/), shown below, is one such solution. It offers quick loading placeholder images that do a great job of capturing the attention of visitors until the actual content is ready.
+
+<Figure
+  src="/post-resources/somehash/blurhash.png"
+  caption="Blurhash in Action"
+/>
+
+This in-between space is rather interesting, often neglected, and rarely explored. Let's go on a journey and build an image placeholder, Somehash, from scratch.
+
+## Overview
+
+The journey of an image occurs in three stages: processing, placeholding, and loading. First, information is extracted from the image, hashed, and stored. Next, a React component retrieves the hash and renders a placeholder image. Finally, the full-resolution image is loaded.
+
+## Creative Exploration
+
+The first step to creating Somehash is deciding what it will display. The creative possibilities are endless. There are tons of algorithms for extracting interesting colors, textures, patterns, gradients, and more from images.
+
+There are two questions that need answering in this creative exploration.
+
+**What information should be extracted?**
+
+The information that is extracted should be small. Blurhash extracts about 20 bytes of data per image.
+
+[KMeans clustering](https://medium.com/analytics-vidhya/color-separation-in-an-image-using-kmeans-clustering-using-python-f994fa398454) is a fascinating algorithm. One application is to find dominant colors from an image. The screenshot below shows an example.
+
+<Figure
+  src="/post-resources/somehash/colors.png"
+  caption="Dominant colors extracted from a photo"
+/>
+
+**How will the extracted information be displayed?**
+
+Whatever effect that is chosen should occur quickly and work on both fast and slow internet connections.
+
+## Data Extraction
+
+([Data Extraction Code](https://github.com/TravisBumgarner/pointless-projects/blob/6b6a1cf8c9937a623f997a72e0e9e83299fe6ab6/somehash/main.py), [Extracted Data](https://github.com/TravisBumgarner/pointless-projects/blob/main/somehash/react-app/src/output.json))
+
+The first step is processing the images for the website. This is a computationally intensive task, often taking several seconds per image to extract the necessary information. To handle this efficiently, the processing is done using a script that runs outside the browser.
+
+**Selecting Tools**
+
+The language of choice for this task will be Python. Python has an amazing collection of libraries such as [Pillow](https://pypi.org/project/pillow/), [NumPy](https://numpy.org/), [scikit-learn](https://scikit-learn.org/stable/), and [OpenCV](https://opencv.org/) for reading and analyzing images.
+
+**Extracting Image Data**
+
+With the help of `sklearn`, the process of color extraction is straightforward.
+
+```python
+kmeans = KMeans(n_clusters=num_colors)
+kmeans.fit(pixels)
+colors = kmeans.cluster_centers_.astype(int)
+```
+
+**Note: Extracting Aspect Ratios**
+
+A thumbnail doesn't have the same dimensions as the image it represents, and similarly, a Somehash shouldn't store width and height. However, to prevent [cumulative layout shift](https://web.dev/articles/cls), it's essential to know the aspect ratio of the space the Somehash will temporarily occupy. Therefore, alongside the Somehash, the aspect ratio is also stored.
+
+**Encoding Data**
+
+The next step is to transfer information from the Python script to React. The data will be formatted in a way that ensures it can be easily transferred between the two.
+
+```python
+color_string = '_'.join([f'{r}-{g}-{b}' for r, g, b in colors])
+encoded_bytes = base64.b64encode(color_string.encode('utf-8'))
+encoded_string = encoded_bytes.decode('utf-8')
+```
+
+Additionally, a version field will be added so that different renderers can be used.
+
+```
+return {
+    'version': 'animated_lines',
+    'hash': encoded_string,
+    'aspect_ratio': aspect_ratio
+}
+```
+
+## Placeholder Rendering
+
+([Demo](https://pointlessprojects.com/somehash/), [React Component Code](https://github.com/TravisBumgarner/pointless-projects/blob/6b6a1cf8c9937a623f997a72e0e9e83299fe6ab6/somehash/react-app/src/SomeHashImage.tsx))
+
+**Decode Data in React**
+
+This step is the opposite of the previous step. The data stored in the JSON file is decoded and passed to the component responsible for rendering the specific `version` of the hash. In this case, it'll be five interesting colors extracted with KMeans.
+
+**React Renderer**
+
+The extracted colors are converted into vertical lines that animate on the screen.
+
+<Video src="/post-resources/somehash/preview.mp4" aspectRatio="1564/1184" />
+
+At this point, the image starts loading, loads, and then takes the place of the placeholder.
+
+## Areas of Improvement
+
+**Encoding / Decoding**
+
+The data is small enough that it could probably be moved around inside of the JSON object without needing the additional step of Base64 encoding.
+
+**Placeholder to Full Image Transition**
+
+Currently, when the animation completes, it will display whatever is loaded. It would be best if the animation was instead connected to the image's `onload` event for a more seamless transition.
+
+**Production Readiness**
+
+This project explored the minimum path to complete the process. Production readiness was not considered.
+
+## Over to You
+
+If you had creative control over the time between the page loading and being loaded - what would you create? [Let me know!](/contact)
