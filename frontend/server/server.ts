@@ -3,7 +3,7 @@ import type { Request, Response } from 'express'
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '../common/dist/index.js'
+import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '@common/core'
 
 Sentry.init({
   dsn: "https://bcd547c832cb7bbb68cea814aa198f5d@o196886.ingest.us.sentry.io/4510551525949440",
@@ -16,13 +16,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
 const port = process.env.PORT || 3000
 
-const frontendDist = path.join(__dirname, 'dist-web')
+const frontendDist = path.join(__dirname, 'frontend-dist')
 app.set('view engine', 'ejs')
 app.set('views', frontendDist)
 
 // Serve static assets first
 app.use('/assets', express.static(path.join(frontendDist, 'assets')))
-app.use('/public', express.static(frontendDist)) // serve everything in dist, including og.png and favicon.png
+app.use(express.static(frontendDist)) // serve everything in dist, including og.png and favicon.png
 
 const BASE_TITLE = 'Travis Bumgarner'
 const BASE_DESCRIPTION = `${ABOUT_ME_SENTENCE_1} ${ABOUT_ME_SENTENCE_2}`
@@ -36,11 +36,16 @@ app.get('/health-check', (_req: Request, res: Response) => {
 // Match only non file routes.
 app.get(/^\/(?!.*\.[a-zA-Z0-9]+$).*/, async (_req, res) => {
   try {
-    res.render('index', { ogTitle: BASE_TITLE, ogDescription: BASE_DESCRIPTION, ogUrl: BASE_URL })
+    res.render('index', {
+      title: BASE_TITLE,
+      ogTitle: BASE_TITLE,
+      ogDescription: BASE_DESCRIPTION,
+      ogUrl: BASE_URL
+    })
   } catch (error) {
     Sentry.captureException(error)
     res.render('index', {
-      ogTitle: BASE_TITLE,
+      title: BASE_TITLE,
       ogDescription: BASE_DESCRIPTION,
       ogUrl: BASE_URL,
     })

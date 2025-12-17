@@ -1,5 +1,5 @@
 // Re-export all types
-export * from './types.js'
+export * from './types'
 
 // Re-export all constants  
-export * from './consts.js'
+export * from './consts'

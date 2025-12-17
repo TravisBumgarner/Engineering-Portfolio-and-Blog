@@ -76,7 +76,7 @@ const Portfolio = () => {
             <Typography variant="h2" sx={{ fontWeight: 500, marginBottom: SPACING.SMALL.PX, fontSize: FONT_SIZES.MEDIUM.PX }}>Portfolio</Typography >
             {Object.values(projects)
                 .sort((a, b) => (a.lastMeaningfulUpdate > b.lastMeaningfulUpdate ? -1 : 1))
-                .map(({ id, title, previewImage, lastMeaningfulUpdate, shortDescription }, index) => {
+                .map(({ id, title, previewImage, lastMeaningfulUpdate, shortDescription }) => {
                     return (
                         <ItemPreview
                             type="creation"

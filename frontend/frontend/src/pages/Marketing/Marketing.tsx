@@ -19,7 +19,7 @@ const Marketing = () => {
     return (
         <Box>
             <ItemPreview
-                priority
+
                 type="marketing"
                 title={FAST_CLASSIFIEDS_TITLE}
                 description={FAST_CLASSIFIEDS_DESCRIPTION}
@@ -27,7 +27,7 @@ const Marketing = () => {
                 link="/marketing/classifieds"
             />
             <ItemPreview
-                priority
+
                 type="marketing"
                 title={IDEAS_TITLE}
                 description={IDEAS_DESCRIPTION}
@@ -35,7 +35,7 @@ const Marketing = () => {
                 link="/marketing/ideas"
             />
             <ItemPreview
-                priority
+
                 type="marketing"
                 title={CANDLELIGHT_TITLE}
                 description={CANDLELIGHT_DESCRIPTION}
@@ -43,7 +43,7 @@ const Marketing = () => {
                 link="/marketing/candlelight"
             />
             <ItemPreview
-                priority
+
                 type="marketing"
                 title={TODO_TITLE}
                 description={TODO_DESCRIPTION}

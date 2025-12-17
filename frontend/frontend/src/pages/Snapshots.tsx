@@ -5,8 +5,8 @@ import ListItem from '../sharedComponents/ItemPreview'
 const Snapshots = () => {
     return (
         <Box>
-            {Object.values(snapshots).map(({ src }, index) => (
-                <ListItem type="snapshot" key={src} src={src}/>
+            {Object.values(snapshots).map(({ src }) => (
+                <ListItem type="snapshot" key={src} src={src} />
             ))}
         </Box>
     )
