@@ -1,5 +1,3 @@
-'use client'
-
 import { Box, Button, TextField, Typography } from '@mui/material'
 import { useState } from 'react'
 import Link from '../../sharedComponents/Link'

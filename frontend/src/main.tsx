@@ -1,8 +1,8 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
 import * as Sentry from "@sentry/react";
-import './styles/globals.css'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App.tsx';
+import './styles/globals.css';
 
 if (import.meta.env.PROD) {
   Sentry.init({
@@ -13,6 +13,7 @@ if (import.meta.env.PROD) {
   });
 }
 
+// biome-ignore lint/style/noNonNullAssertion: This is expected with React.
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />

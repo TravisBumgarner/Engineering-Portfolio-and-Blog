@@ -1,7 +1,5 @@
-'use client'
-
-import { Box, Typography } from '@mui/material'
-import { SPACING } from '../styles/consts'
+import { Box, Typography } from '@mui/material';
+import { SPACING } from '../styles/consts';
 
 const MarketingHeader = ({ title, description, src }: { title: string; description: string; src: string }) => {
   return (

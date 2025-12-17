@@ -1,5 +1,3 @@
-'use client'
-
 import { Box, Typography } from '@mui/material'
 import Link from '../sharedComponents/Link'
 import { FONT_SIZES, SPACING } from '../styles/consts'

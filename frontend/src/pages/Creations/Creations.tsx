@@ -1,11 +1,11 @@
 'use client'
 
+import { Box, Stack, Typography } from '@mui/material'
 import projects, { type Project } from '../../content/projects'
 import ROUTES from '../../routes'
+import ItemPreview from '../../sharedComponents/ItemPreview'
 import Link from '../../sharedComponents/Link'
 import { FONT_SIZES, SPACING } from '../../styles/consts'
-import { Box, Stack, Typography } from '@mui/material'
-import ItemPreview from '../../sharedComponents/ItemPreview'
 
 const CURRENT_WORK: Project[] = [
     {

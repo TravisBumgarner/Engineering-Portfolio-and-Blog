@@ -1,13 +1,13 @@
 import { MDXProvider } from '@mdx-js/react'
 import { List, ListItem, Typography } from '@mui/material'
-import { type ReactNode } from 'react'
 import type { MDXComponents } from 'mdx/types'
+import type { ReactNode } from 'react'
 import Code from '../sharedComponents/Code'
 import Figure from '../sharedComponents/Figure'
+import Icon from '../sharedComponents/Icon'
 import Link from '../sharedComponents/Link'
 import Video from '../sharedComponents/Video'
 import YouTube from '../sharedComponents/YouTube'
-import Icon from '../sharedComponents/Icon'
 
 // Define your custom component mappings using the pattern from your old code
 const components: MDXComponents = {

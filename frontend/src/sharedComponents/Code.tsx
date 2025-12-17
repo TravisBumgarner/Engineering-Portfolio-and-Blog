@@ -1,5 +1,3 @@
-'use client'
-
 import { Typography } from '@mui/material'
 import { FONT_SIZES, SPACING, subtleBackground } from '../styles/consts'
 

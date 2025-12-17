@@ -1,9 +1,7 @@
-'use client'
-
 import { Link as MuiLink, type LinkProps as MuiLinkProps, type SxProps, useTheme } from '@mui/material'
 import type { CSSObject } from '@mui/material/styles'
-import { Link as RouterLink } from 'react-router-dom'
 import { forwardRef } from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import { DARK_BUTTON_STYLES, LIGHT_BUTTON_STYLES, PALETTE, SPACING } from '../styles/consts'
 
 export type LinkType = 'block' | 'inline' | 'inlineBlock' | 'inlineMenu'

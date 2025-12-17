@@ -1,7 +1,7 @@
 import { useTheme } from '@mui/material'
 import blurhashes from '../content/blurhashes/index.json'
-import type { BlurHash } from '../types'
 import { PALETTE } from '../styles/consts'
+import type { BlurHash } from '../types'
 
 const getBlurHash = (src: string) => {
     const result = blurhashes[src as keyof typeof blurhashes] as BlurHash

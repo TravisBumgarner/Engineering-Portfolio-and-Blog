@@ -1,13 +1,13 @@
 'use client'
 
 import { Box, Stack, Typography } from '@mui/material'
+import { Navigate, useParams } from 'react-router-dom'
 import projects from '../../content/projects'
+import ROUTES from '../../routes'
 import Figure from '../../sharedComponents/Figure'
 import Link from '../../sharedComponents/Link'
-import { SPACING } from '../../styles/consts'
-import { Navigate, useParams } from 'react-router-dom'
-import ROUTES from '../../routes'
 import Youtube from '../../sharedComponents/YouTube'
+import { SPACING } from '../../styles/consts'
 
 const Creation = () => {
     const { id } = useParams()
@@ -25,7 +25,7 @@ const Creation = () => {
             </Box>
         ),
     }))
-
+    
     const Videos = project.videos?.map(embedId => <Youtube key={embedId} embedId={embedId} />)
 
     const Description = [

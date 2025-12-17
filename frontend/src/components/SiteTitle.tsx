@@ -1,11 +1,9 @@
-'use client'
-
 import { Box } from '@mui/material'
 import Typography from '@mui/material/Typography'
+import { useMemo } from 'react'
 import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '../consts'
 import Link from '../sharedComponents/Link'
 import { SPACING } from '../styles/consts'
-import { useMemo } from 'react'
 
 export const makeNewSiteTitle = () => {
   const VALID_FILE_SUFFIX = ['proto', 'test', 'sample', 'mockup', 'demo', 'final', 'draft']

@@ -1,13 +1,11 @@
-'use client'
-
 import { Backdrop, Box, Drawer, IconButton, Stack, Tooltip } from '@mui/material'
 import { AnimatePresence } from 'motion/react'
 import { useState } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import ROUTES from '../routes'
-import { SPACING, Z_INDICES } from '../styles/consts'
 import Icon from '../sharedComponents/Icon'
 import Link from '../sharedComponents/Link'
+import { SPACING, Z_INDICES } from '../styles/consts'
 
 const SOCIAL_MEDIA = [
   { title: 'GitHub', href: 'https://github.com/travisBumgarner/', target: '_blank', icon: 'github' },

@@ -1,5 +1,3 @@
-'use client'
-
 import { Box, Typography } from '@mui/material'
 import { FONT_SIZES, SPACING } from '../styles/consts'
 import BlurHashImage from './BlurHashImage'
