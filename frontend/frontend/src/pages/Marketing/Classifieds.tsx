@@ -31,7 +31,7 @@ const LandingPage = () => {
       </Box>
 
       <Box sx={{ mb: SPACING.MEDIUM.PX }}>
-        <BlurHashImage src="/marketing-resources/classifieds/screenshot.png" priority />
+        <BlurHashImage src="/marketing-resources/classifieds/screenshot.png" />
       </Box>
       <Typography sx={{ mb: 4, fontSize: '1.1rem', lineHeight: 1.6 }}>
         Stop wasting hours manually browsing company career pages. Fast Classifieds uses AI to automatically scan

@@ -89,13 +89,11 @@ import { PALETTE } from '../styles/consts'
 import type { BlurHash } from '../types'
 
 interface Props {
-    blurHash: string
     src: string
     useSquareImage?: boolean
-    alt: string
+    alt?: string
     loadingStartCallback?: () => void
     loadingEndCallback?: (src: string) => void
-    aspectRatio: number
     maxDimensions?: { maxWidth?: string; maxHeight?: string } // Fuck fuck fuck.
     maxHeight?: number
 }
