@@ -1,9 +1,9 @@
 import * as Sentry from '@sentry/node'
-import type { Response } from 'express'
+import type { Request, Response } from 'express'
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '../frontend/src/consts'
+import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '../common/dist/index.js'
 
 Sentry.init({
   dsn: "https://bcd547c832cb7bbb68cea814aa198f5d@o196886.ingest.us.sentry.io/4510551525949440",
@@ -29,6 +29,10 @@ const BASE_DESCRIPTION = `${ABOUT_ME_SENTENCE_1} ${ABOUT_ME_SENTENCE_2}`
 // const BASE_IMAGE = 'https://photopalettes.com/public/og.png'
 const BASE_URL = 'https://travisbumgarner.dev'
 
+app.get('/health-check', (_req: Request, res: Response) => {
+  res.status(200).send('OK!')
+})
+
 // Match only non file routes.
 app.get(/^\/(?!.*\.[a-zA-Z0-9]+$).*/, async (_req, res) => {
   try {
@@ -50,6 +54,7 @@ Sentry.setupExpressErrorHandler(app)
 app.use(function onError(_err: unknown, _req: unknown, res: Response, _next: unknown) {
   // The error id is attached to `res.sentry` to be returned
   // and optionally displayed to the user for support.
+    console.log(_err)
     res.sendStatus(500)
 })
 

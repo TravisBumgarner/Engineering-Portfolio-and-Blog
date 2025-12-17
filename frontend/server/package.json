@@ -3,15 +3,24 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon --exec tsx server.ts",
+    "start": "tsx server.ts",
+    "build": "tsc",
+    "build:watch": "tsc -w"
+  },
   "dependencies": {
     "@biomejs/biome": "^2.3.10",
+    "@common/core": "file:../common",
     "@sentry/node": "^10.31.0",
+    "ejs": "^3.1.9",
     "express": "^5.2.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^24.10.4",
+    "nodemon": "^3.1.11",
+    "tsx": "^4.21.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4"
   }

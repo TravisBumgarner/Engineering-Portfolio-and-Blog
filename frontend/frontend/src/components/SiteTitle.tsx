@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { useMemo } from 'react'
-import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '../consts'
+import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '@common/core'
 import Link from '../sharedComponents/Link'
 import { SPACING } from '../styles/consts'
 
