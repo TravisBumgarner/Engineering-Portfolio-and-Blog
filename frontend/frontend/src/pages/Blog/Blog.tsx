@@ -10,13 +10,12 @@ const Blog = () => {
       <Subscribe />
       {Object.keys(posts)
         .sort((a, b) => (new Date(posts[a].date) < new Date(posts[b].date) ? 1 : -1))
-        .map((id, index) => {
+        .map((id) => {
           const { title, description } = posts[id]
           return (
             <ItemPreview
               type="post"
               key={id}
-              priority={index === 0}
               date={posts[id].date}
               link={`${ROUTES.BLOG.href}/${id}`}
               title={title}

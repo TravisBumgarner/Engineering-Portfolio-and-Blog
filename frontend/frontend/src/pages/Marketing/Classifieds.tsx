@@ -49,7 +49,7 @@ const LandingPage = () => {
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <BlurHashImage priority={false} src="/marketing-resources/classifieds/prompt.png" />
+          <BlurHashImage src="/marketing-resources/classifieds/prompt.png" />
         </Box>
       </Box>
       <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
@@ -63,7 +63,7 @@ const LandingPage = () => {
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <BlurHashImage priority={false} src="/marketing-resources/classifieds/sites.png" />
+          <BlurHashImage src="/marketing-resources/classifieds/sites.png" />
         </Box>
       </Box>
       <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
@@ -77,7 +77,7 @@ const LandingPage = () => {
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <BlurHashImage priority={false} src="/marketing-resources/classifieds/scanner.png" />
+          <BlurHashImage src="/marketing-resources/classifieds/scanner.png" />
         </Box>
       </Box>
       <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
@@ -91,7 +91,7 @@ const LandingPage = () => {
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <BlurHashImage priority={false} src="/marketing-resources/classifieds/postings.png" />
+          <BlurHashImage src="/marketing-resources/classifieds/postings.png" />
         </Box>
       </Box>
       <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
@@ -105,7 +105,7 @@ const LandingPage = () => {
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <BlurHashImage priority={false} src="/marketing-resources/classifieds/duplicates.png" />
+          <BlurHashImage src="/marketing-resources/classifieds/duplicates.png" />
         </Box>
       </Box>
 
@@ -120,7 +120,7 @@ const LandingPage = () => {
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <BlurHashImage priority={false} src="/marketing-resources/classifieds/history.png" />
+          <BlurHashImage src="/marketing-resources/classifieds/history.png" />
         </Box>
       </Box>
       <Box sx={{ mb: 4 }}>

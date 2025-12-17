@@ -129,7 +129,7 @@ const LandingPage = () => {
             alignItems: 'center',
           }}
         >
-          <BlurHashImage maxHeight={80} priority={true} src="/marketing-resources/ideas_down/ideate.png" alt="Ideate" />
+          <BlurHashImage maxHeight={80} src="/marketing-resources/ideas_down/ideate.png" alt="Ideate" />
         </Box>
       </Box>
 
@@ -160,7 +160,7 @@ const LandingPage = () => {
         >
           <BlurHashImage
             maxHeight={80}
-            priority={false}
+
             src="/marketing-resources/ideas_down/reflect.png"
             alt="Reflect"
           />
@@ -204,7 +204,7 @@ const LandingPage = () => {
         >
           <BlurHashImage
             maxHeight={80}
-            priority={false}
+
             src="/marketing-resources/ideas_down/settings.png"
             alt="Settings"
           />

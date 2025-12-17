@@ -17,7 +17,7 @@ const Figure = ({ src, caption }: FigureProps) => {
         m: `${SPACING.MEDIUM.PX} 0`,
       }}
     >
-      <BlurHashImage priority={false} src={src} alt={caption} />
+      <BlurHashImage src={src} alt={caption} />
 
       <Typography
         component="figcaption"

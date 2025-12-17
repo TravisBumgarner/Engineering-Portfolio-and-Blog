@@ -126,7 +126,7 @@ const TodoToday = () => {
         your tasks, order them, and add notes or subtasks. Nothing more, nothing less.
       </Typography>
 
-      <BlurHashImage src="/marketing-resources/todo_today/main_page.png" priority={true} />
+      <BlurHashImage src="/marketing-resources/todo_today/main_page.png" />
 
       <Typography variant="h3">Release Notes</Typography>
       {UPDATES.map((update) => (

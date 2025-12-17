@@ -6,7 +6,7 @@ const Snapshots = () => {
     return (
         <Box>
             {Object.values(snapshots).map(({ src }, index) => (
-                <ListItem type="snapshot" key={src} src={src} priority={index === 0} />
+                <ListItem type="snapshot" key={src} src={src}/>
             ))}
         </Box>
     )

@@ -32,7 +32,6 @@ const ItemPreview = ({
     title,
     description,
     date,
-    priority,
     type,
 }: {
     src: string
@@ -40,7 +39,6 @@ const ItemPreview = ({
     title?: string
     description?: string
     date?: string
-    priority: boolean
     type: ItemType
 }) => {
     const paragraphs = !description
@@ -75,7 +73,7 @@ const ItemPreview = ({
                 </time>
             )}
             {paragraphs}
-            <BlurHashImage maxHeight={70} priority={priority} src={src} />
+            <BlurHashImage maxHeight={70} src={src} />
             {link && (
                 <Link type="block" href={link}>
                     Learn more

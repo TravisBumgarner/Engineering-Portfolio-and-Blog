@@ -80,7 +80,6 @@ const Portfolio = () => {
                     return (
                         <ItemPreview
                             type="creation"
-                            priority={index === 0}
                             key={id}
                             description={shortDescription}
                             link={`${ROUTES.CREATIONS.href}/${id}`}
