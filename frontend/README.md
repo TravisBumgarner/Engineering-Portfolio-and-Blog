@@ -10,15 +10,15 @@ Therefore - We keep an index.html in frontend/ and move it to the server/ via `n
 1. Populate .env.nfs
    - Grab username from NearlyFreeSpeech
    - Grab ssh config from `~/.ssh/config`
-1. Install dependencies `yarn`
-   `. Run dev `yarn run dev`
+1. Install dependencies `npm`
+1. Run dev `npm run dev` or to test with the server `npm run dev-with-server`
 
 # Deploy
 
-1. `cd adhocs/blur_hash && yarn run start`
+1. `cd adhocs/blur_hash && npm run start`
 2. Copy `output.json` to `blurHashLookup.ts`
-3. `yarn build && yarn start` Verify things are looking good.
-4. `yarn run deploy:nfc`
+3. `npm build && npm start` Verify things are looking good.
+4. `npm run deploy:nfc`
 
 # Adding Content
 
