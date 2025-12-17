@@ -2,7 +2,7 @@
 
 import { Box, Stack, Typography } from '@mui/material'
 import projects, { type Project } from '../../content/projects'
-import ROUTES from '../../routes'
+import { ROUTES } from '@common/core'
 import ItemPreview from '../../sharedComponents/ItemPreview'
 import Link from '../../sharedComponents/Link'
 import { FONT_SIZES, SPACING } from '../../styles/consts'

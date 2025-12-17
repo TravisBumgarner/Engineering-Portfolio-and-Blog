@@ -2,7 +2,7 @@ import { Backdrop, Box, Drawer, IconButton, Stack, Tooltip } from '@mui/material
 import { AnimatePresence } from 'motion/react'
 import { useState } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import ROUTES from '../routes'
+import { ROUTES } from '@common/core'
 import Icon from '../sharedComponents/Icon'
 import Link from '../sharedComponents/Link'
 import { SPACING, Z_INDICES } from '../styles/consts'

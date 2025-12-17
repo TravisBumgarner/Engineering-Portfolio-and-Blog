@@ -1,4 +1,4 @@
-const ROUTES = {
+export const ROUTES = {
     SNAPSHOTS: {
         href: '/',
         title: 'Snapshots',
@@ -55,5 +55,3 @@ const ROUTES = {
         target: '_self',
     },
 } as const
-
-export default ROUTES

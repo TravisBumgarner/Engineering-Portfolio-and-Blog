@@ -127,6 +127,7 @@ const LandingPage = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            height: '600px'
           }}
         >
           <BlurHashImage maxHeight={80} src="/marketing-resources/ideas_down/ideate.png" alt="Ideate" />
@@ -156,6 +157,7 @@ const LandingPage = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            height: '600px'
           }}
         >
           <BlurHashImage
@@ -200,11 +202,11 @@ const LandingPage = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            height: '600px'
           }}
         >
           <BlurHashImage
             maxHeight={80}
-
             src="/marketing-resources/ideas_down/settings.png"
             alt="Settings"
           />

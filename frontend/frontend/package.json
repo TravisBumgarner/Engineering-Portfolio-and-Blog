@@ -12,7 +12,6 @@
     "dev-with-server": "npm run clean-dist && tsc -b --watch & vite build --watch"
   },
   "dependencies": {
-    "@biomejs/biome": "^2.3.10",
     "@common/core": "file:../common",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",

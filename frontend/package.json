@@ -6,7 +6,8 @@
         "server"
     ],
     "devDependencies": {
-        "concurrently": "^9.2.1"
+        "concurrently": "^9.2.1",
+        "@biomejs/biome": "^2.3.10"
     },
     "scripts": {
         "dev": "concurrently -n common,frontend -c magenta,cyan \"npm --workspace=common run dev\" \"npm --workspace=frontend run dev\"",

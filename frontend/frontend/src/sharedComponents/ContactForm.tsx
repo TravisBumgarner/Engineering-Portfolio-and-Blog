@@ -92,15 +92,16 @@ const ContactForm = ({ subject }: { subject?: string }) => {
         }}
         onSubmit={handleSubmit}
       >
-        <Input placeholder="Name (Optional)" name="name" value={formData.name} onChange={handleChange} />
+        <Input fullWidth placeholder="Name (Optional)" name="name" value={formData.name} onChange={handleChange} />
         <Input
+          fullWidth
           placeholder="Email (Optional)"
           name="email"
           value={formData.email}
           onChange={handleChange}
           type="email"
         />
-        <Input placeholder="Subject" name="subject" value={formData.subject} onChange={handleChange} />
+        <Input fullWidth placeholder="Subject" name="subject" value={formData.subject} onChange={handleChange} />
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: SPACING.TINY.PX }}>
           <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Typography sx={{ padding: 0, margin: 0 }}>{`${formData.message.length}/${MAX_LENGTH}`}</Typography>
@@ -112,6 +113,7 @@ const ContactForm = ({ subject }: { subject?: string }) => {
             value={formData.message}
             onChange={handleChange}
             rows={4}
+            fullWidth
           />
         </Box>
         <Button variant="contained" type="submit" disabled={isSubmitting || formData.message.length === 0}>

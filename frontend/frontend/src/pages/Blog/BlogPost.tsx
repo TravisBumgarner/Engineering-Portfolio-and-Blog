@@ -4,7 +4,7 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import posts from '../../content/posts'
 import Subscribe from './Subscribe'
-import ROUTES from "../../routes"
+import { ROUTES } from '@common/core'
 import logger from "../../utilities/logger"
 
 const BlogPost = () => {

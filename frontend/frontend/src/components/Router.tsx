@@ -1,6 +1,6 @@
 import { lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import ROUTES from '../routes'
+import { ROUTES } from '@common/core'
 const Creation = lazy(async () => await import('../pages/Creations/Creation'))
 const NotFound = lazy(async () => await import('../pages/NotFound'))
 const Marketing = lazy(async () => await import('../pages/Marketing'))

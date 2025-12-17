@@ -115,7 +115,7 @@ const BlurImage = ({
         margin: '0px 0px 100px 0px',
         once: true,
     })
-    const aspectRatio = width / height // this might be inncorrect.
+    const aspectRatio = width / height // this might be incorrect.
 
     const [imgLoaded, setImgLoaded] = useState(false)
 

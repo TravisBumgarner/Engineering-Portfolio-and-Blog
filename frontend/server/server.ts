@@ -4,13 +4,14 @@ import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '@common/core'
+import { getOgContentFromParts } from './og-content'
 
 Sentry.init({
-  dsn: "https://bcd547c832cb7bbb68cea814aa198f5d@o196886.ingest.us.sentry.io/4510551525949440",
+  dsn: 'https://bcd547c832cb7bbb68cea814aa198f5d@o196886.ingest.us.sentry.io/4510551525949440',
   // Setting this option to true will send default PII data to Sentry.
   // For example, automatic IP address collection on events
   sendDefaultPii: true,
-});
+})
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
@@ -26,8 +27,8 @@ app.use(express.static(frontendDist)) // serve everything in dist, including og.
 
 const BASE_TITLE = 'Travis Bumgarner'
 const BASE_DESCRIPTION = `${ABOUT_ME_SENTENCE_1} ${ABOUT_ME_SENTENCE_2}`
-// const BASE_IMAGE = 'https://photopalettes.com/public/og.png'
 const BASE_URL = 'https://travisbumgarner.dev'
+const BASE_IMAGE = 'https://travisbumgarner.dev/assets/og-image.png' // TODO - I NEED ONE.
 
 app.get('/health-check', (_req: Request, res: Response) => {
   res.status(200).send('OK!')
@@ -35,18 +36,33 @@ app.get('/health-check', (_req: Request, res: Response) => {
 
 // Match only non file routes.
 app.get(/^\/(?!.*\.[a-zA-Z0-9]+$).*/, async (_req, res) => {
-  try {
+  const routeParts = _req.path.split('/').filter(Boolean)
+  const ogData = getOgContentFromParts(routeParts)
+
+  if (!ogData) {
     res.render('index', {
       title: BASE_TITLE,
       ogTitle: BASE_TITLE,
       ogDescription: BASE_DESCRIPTION,
-      ogUrl: BASE_URL
+      ogUrl: BASE_URL,
+    })
+    return
+  }
+
+  try {
+    res.render('index', {
+      title: ogData['og:title'],
+      ogTitle: ogData['og:title'],
+      ogDescription: ogData['og:description'],
+      ogImage: ogData['og:image'],
+      ogUrl: `${BASE_URL}${_req.path}`,
     })
   } catch (error) {
     Sentry.captureException(error)
     res.render('index', {
       title: BASE_TITLE,
       ogDescription: BASE_DESCRIPTION,
+      ogImage: BASE_IMAGE,
       ogUrl: BASE_URL,
     })
   }
@@ -59,8 +75,8 @@ Sentry.setupExpressErrorHandler(app)
 app.use(function onError(_err: unknown, _req: unknown, res: Response, _next: unknown) {
   // The error id is attached to `res.sentry` to be returned
   // and optionally displayed to the user for support.
-    console.log(_err)
-    res.sendStatus(500)
+  console.log(_err)
+  res.sendStatus(500)
 })
 
 app.listen(port, () => {

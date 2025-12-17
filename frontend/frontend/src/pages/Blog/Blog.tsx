@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 import posts from '../../content/posts'
-import ROUTES from '../../routes'
+import { ROUTES } from '@common/core'
 import ItemPreview from '../../sharedComponents/ItemPreview'
 import Subscribe from './Subscribe'
 

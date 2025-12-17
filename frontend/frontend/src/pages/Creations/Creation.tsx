@@ -3,7 +3,7 @@
 import { Box, Stack, Typography } from '@mui/material'
 import { Navigate, useParams } from 'react-router-dom'
 import projects from '../../content/projects'
-import ROUTES from '../../routes'
+import { ROUTES } from '@common/core'
 import Figure from '../../sharedComponents/Figure'
 import Link from '../../sharedComponents/Link'
 import Youtube from '../../sharedComponents/YouTube'
@@ -25,7 +25,7 @@ const Creation = () => {
             </Box>
         ),
     }))
-    
+
     const Videos = project.videos?.map(embedId => <Youtube key={embedId} embedId={embedId} />)
 
     const Description = [
