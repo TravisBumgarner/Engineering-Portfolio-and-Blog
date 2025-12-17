@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material'
-import Link from '../sharedComponents/Link'
+import Link from './Link'
 import { FONT_SIZES, SPACING } from '../styles/consts'
 import BlurHashImage from './BlurHashImage'
 

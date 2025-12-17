@@ -22,7 +22,7 @@ const getBlurHash = (src: string) => {
 
 const BlurHashImage = ({
     src,
-    priority,
+    // priority,
     alt,
     maxHeight,
 }: {
@@ -31,7 +31,9 @@ const BlurHashImage = ({
     alt?: string
     maxHeight?: number
 }) => {
-    const { width, height, blurHash } = getBlurHash(src)
+    const { width, height,
+        // blurHash
+    } = getBlurHash(src)
     const theme = useTheme()
 
     return (
