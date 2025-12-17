@@ -1,4 +1,5 @@
 import AppThemeProvider from './styles/Theme'
+import MDXWrapper from './components/MDXProvider'
 
 import Scroll from './components/Scroll'
 import Sidebar from './components/Sidebar'
@@ -23,8 +24,10 @@ const WrappedApp = () => {
   return (
     <BrowserRouter>
       <AppThemeProvider>
-        <App />
-        <Scroll />
+        <MDXWrapper>
+          <App />
+          <Scroll />
+        </MDXWrapper>
       </AppThemeProvider>
     </BrowserRouter>
   )

@@ -111,10 +111,13 @@ const baseThemeOptions: ThemeOptions = {
         },
         body1: {
             fontSize: FONT_SIZES.MEDIUM.PX,
-            margin: `${SPACING.SMALL.PX} 0`,
+            margin: `${SPACING.MEDIUM.PX} 0`,
+            lineHeight: 1.5,
+            maxWidth: '700px' // Note to self: Little experimentation on typography instead of adjusting the entire site.
         },
         body2: {
             fontSize: FONT_SIZES.SMALL.PX,
+            maxWidth: '700px' // Note to self: Little experimentation on typography instead of adjusting the entire site.
         },
     },
 }

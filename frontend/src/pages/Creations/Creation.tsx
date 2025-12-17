@@ -5,9 +5,9 @@ import projects from '../../content/projects'
 import Figure from '../../sharedComponents/Figure'
 import Link from '../../sharedComponents/Link'
 import { SPACING } from '../../styles/consts'
-import Youtube from '../../sharedComponents/YouTube'
 import { Navigate, useParams } from 'react-router-dom'
 import ROUTES from '../../routes'
+import Youtube from '../../sharedComponents/YouTube'
 
 const Creation = () => {
     const { id } = useParams()

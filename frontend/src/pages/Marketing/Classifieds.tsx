@@ -157,7 +157,7 @@ const LandingPage = () => {
         Getting Started
       </Typography>
       <Box sx={{ mb: 3 }}>
-        <Youtube embedId="FQKY70r2288" />
+        <YouTube embedId="FQKY70r2288" />
       </Box>
       <Typography variant="h3" gutterBottom sx={{ mt: 4 }}>
         How It Works

@@ -1,6 +1,3 @@
-import Figure from '../../sharedComponents/Figure'
-import Youtube from '../../sharedComponents/YouTube'
-
 (Originally published in three parts to my Photography Portfolio)
 
 ### Part 1
@@ -37,11 +34,11 @@ While I waited for the Arducam camera to arrive I set about designing the user d
 
 I ran into a flash memory issue where I ran out of space on the Arduino chip. I have two implementations of this project, one to control the little Arducam camera, and another to control a DSLR. Once I create the design for the DSLR, I can remove Arducam and its SD card reader which will free up a bunch of flash memory which will allow me to add more custom settings. Until then, I've had to keep it simple.
 
-<Youtube embedId="TFMe69kptv0" />
+<YouTube embedId="TFMe69kptv0" />
 
 Once the camera arrived, I rewrote the code to include the ArduCam library. This is about the point where I began to lose my mind a bit. I pushed the flash memory to its limit with libraries for an LCD screen, SD Card reader, and Arducam.  This started to cause some errors I couldn't quite figure out. In the end, I had to take a break to figure out how to clean up my code and reduce its size. When you're working with an Arduino, you only have 16KB which runs out quite quickly. After several hours of coding issues as well as some physical wiring issues, I had a working camera!
 
-<Youtube embedId="xecbKr4nb_E" />
+<YouTube embedId="xecbKr4nb_E" />
 
 With a working camera, it was time for tests. I kept having partial successes leaving my camera running and taking pictures. However, 1 in every 15 or so images wouldn't save properly and the camera wouldn't always continually run. After several hours of troubleshooting issues, I realized that the SD card had reached its end and since I only had one, I've had to take a break while I wait for a new card. I was able to run a successful test of taking pictures with the camera, exporting them to the computer, and modifying them with the Python script I wrote.
 
@@ -94,4 +91,4 @@ Time to head out and shoot some cooler pictures.
 
 For now, enjoy a typical timelapse shot I took from my kitchen window.  Just an FYI, it is of terrible quality, I know. I was more focused on just getting the thing to work, the next step will be learning how to take good pictures with my new camera.  Also, the jerkiness is due to my roommates/pets/me bumping into the camera. (Another design consideration!)
 
-<Youtube embedId="yd60Sxf1P1o" />
+<YouTube embedId="yd60Sxf1P1o" />
