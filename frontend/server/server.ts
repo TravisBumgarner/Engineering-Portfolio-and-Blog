@@ -3,7 +3,7 @@ import type { Response } from 'express'
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from './src/consts'
+import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '../frontend/src/consts'
 
 Sentry.init({
   dsn: "https://bcd547c832cb7bbb68cea814aa198f5d@o196886.ingest.us.sentry.io/4510551525949440",
