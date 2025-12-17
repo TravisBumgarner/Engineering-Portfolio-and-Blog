@@ -1,9 +1,7 @@
-'use client'
-
+import { CANDLELIGHT_DESCRIPTION, CANDLELIGHT_FAVICON, CANDLELIGHT_TITLE } from '@common/core'
 import { Box, Typography } from '@mui/material'
 import Link from '../../sharedComponents/Link'
 import MarketingHeader from '../../sharedComponents/MarketingHeader'
-import { CANDLELIGHT_DESCRIPTION, CANDLELIGHT_FAVICON, CANDLELIGHT_TITLE } from './consts'
 
 const CandlelightPage = () => {
   return (

@@ -3,10 +3,10 @@
 import { Box, List, ListItem, Typography } from '@mui/material'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
 import ContactForm from '../../sharedComponents/ContactForm'
-import { SPACING } from '../../styles/consts'
 import Link from '../../sharedComponents/Link'
 import MarketingHeader from '../../sharedComponents/MarketingHeader'
-import { TODO_DESCRIPTION, TODO_FAVICON, TODO_TITLE } from './consts'
+import { SPACING } from '../../styles/consts'
+import { TODO_DESCRIPTION, TODO_FAVICON, TODO_TITLE } from '@common/core'
 
 const MAC_DOWNLOAD = 'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-arm64.dmg'
 

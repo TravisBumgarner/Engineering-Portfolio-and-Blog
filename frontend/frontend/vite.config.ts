@@ -7,7 +7,7 @@ import { exec } from 'child_process'
 // https://vite.dev/config/
 export default defineConfig({
   build: {
-    outDir: '../server/frontend-dist'
+    outDir: '../server/src/frontend-dist',
   },
   plugins: [
     {
@@ -16,17 +16,17 @@ export default defineConfig({
         exec('npm run mv-html-to-ejs')
       },
     },
-    { 
-      enforce: 'pre', 
+    {
+      enforce: 'pre',
       ...mdx({
-        providerImportSource: '@mdx-js/react'
-      }) 
+        providerImportSource: '@mdx-js/react',
+      }),
     },
-    react()
+    react(),
   ],
   resolve: {
     alias: {
-      '@common/core': path.resolve(__dirname, '../common/dist/index.js')
-    }
-  }
+      '@common/core': path.resolve(__dirname, '../common/dist/index.js'),
+    },
+  },
 })

@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "clean-dist": "rm -rf ../server/frontend-dist/",
-    "mv-html-to-ejs": "mv ../server/frontend-dist/index.html ../server/frontend-dist/index.ejs",
+    "clean-dist": "rm -rf ../server/src/frontend-dist/",
+    "mv-html-to-ejs": "mv ../server/src/frontend-dist/index.html ../server/src/frontend-dist/index.ejs",
     "build": "npm run clean-dist && tsc -b && vite build",
     "dev-with-server": "npm run clean-dist && tsc -b --watch & vite build --watch"
   },

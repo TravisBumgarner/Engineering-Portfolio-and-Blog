@@ -1,5 +1,5 @@
+import { projects } from '@common/core'
 import { z } from 'zod'
-import content from './content.json'
 
 const linkSchema = z.object({
   label: z.string(),
@@ -28,6 +28,6 @@ export type Project = z.infer<typeof projectSchema>
 
 const projectsSchema = z.record(z.string(), projectSchema)
 
-const parsedContent = projectsSchema.parse(content)
+const parsedContent = projectsSchema.parse(projects)
 
 export default parsedContent

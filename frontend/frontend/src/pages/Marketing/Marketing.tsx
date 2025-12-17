@@ -1,5 +1,3 @@
-import { Box } from '@mui/material'
-import ItemPreview from '../../sharedComponents/ItemPreview'
 import {
     CANDLELIGHT_DESCRIPTION,
     CANDLELIGHT_IMAGE,
@@ -13,7 +11,9 @@ import {
     TODO_DESCRIPTION,
     TODO_IMAGE,
     TODO_TITLE,
-} from './consts'
+} from '@common/core'
+import { Box } from '@mui/material'
+import ItemPreview from '../../sharedComponents/ItemPreview'
 
 const Marketing = () => {
     return (

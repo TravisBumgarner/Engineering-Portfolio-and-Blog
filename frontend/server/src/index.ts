@@ -1,10 +1,18 @@
+import { ABOUT_ME, SITE_OG_IMAGE, SITE_TITLE, SITE_URL } from '@common/core'
 import * as Sentry from '@sentry/node'
 import type { Request, Response } from 'express'
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '@common/core'
 import { getOgContentFromParts } from './og-content'
+
+const SITE_OG_TAGS = {
+  title: SITE_TITLE,
+  ogTitle: SITE_TITLE,
+  ogDescription: ABOUT_ME,
+  ogUrl: SITE_URL,
+  ogImage: SITE_OG_IMAGE,
+}
 
 Sentry.init({
   dsn: 'https://bcd547c832cb7bbb68cea814aa198f5d@o196886.ingest.us.sentry.io/4510551525949440',
@@ -18,17 +26,13 @@ const app = express()
 const port = process.env.PORT || 3000
 
 const frontendDist = path.join(__dirname, 'frontend-dist')
+console.log(`Serving frontend from ${frontendDist}`)
 app.set('view engine', 'ejs')
 app.set('views', frontendDist)
 
 // Serve static assets first
 app.use('/assets', express.static(path.join(frontendDist, 'assets')))
 app.use(express.static(frontendDist)) // serve everything in dist, including og.png and favicon.png
-
-const BASE_TITLE = 'Travis Bumgarner'
-const BASE_DESCRIPTION = `${ABOUT_ME_SENTENCE_1} ${ABOUT_ME_SENTENCE_2}`
-const BASE_URL = 'https://travisbumgarner.dev'
-const BASE_IMAGE = 'https://travisbumgarner.dev/assets/og-image.png' // TODO - I NEED ONE.
 
 app.get('/health-check', (_req: Request, res: Response) => {
   res.status(200).send('OK!')
@@ -40,12 +44,7 @@ app.get(/^\/(?!.*\.[a-zA-Z0-9]+$).*/, async (_req, res) => {
   const ogData = getOgContentFromParts(routeParts)
 
   if (!ogData) {
-    res.render('index', {
-      title: BASE_TITLE,
-      ogTitle: BASE_TITLE,
-      ogDescription: BASE_DESCRIPTION,
-      ogUrl: BASE_URL,
-    })
+    res.render('index', SITE_OG_TAGS)
     return
   }
 
@@ -55,16 +54,11 @@ app.get(/^\/(?!.*\.[a-zA-Z0-9]+$).*/, async (_req, res) => {
       ogTitle: ogData['og:title'],
       ogDescription: ogData['og:description'],
       ogImage: ogData['og:image'],
-      ogUrl: `${BASE_URL}${_req.path}`,
+      ogUrl: `${SITE_URL}${_req.path}`,
     })
   } catch (error) {
     Sentry.captureException(error)
-    res.render('index', {
-      title: BASE_TITLE,
-      ogDescription: BASE_DESCRIPTION,
-      ogImage: BASE_IMAGE,
-      ogUrl: BASE_URL,
-    })
+    res.render('index', SITE_OG_TAGS)
   }
 })
 

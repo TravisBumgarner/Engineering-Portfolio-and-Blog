@@ -1,5 +1,4 @@
-'use client'
-
+import { FAST_CLASSIFIEDS_DESCRIPTION, FAST_CLASSIFIEDS_FAVICON, FAST_CLASSIFIEDS_TITLE } from '@common/core'
 import { Box, List, ListItem, Typography } from '@mui/material'
 import { FaApple } from 'react-icons/fa'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
@@ -8,7 +7,6 @@ import Link from '../../sharedComponents/Link'
 import MarketingHeader from '../../sharedComponents/MarketingHeader'
 import Youtube from '../../sharedComponents/YouTube'
 import { SPACING } from '../../styles/consts'
-import { FAST_CLASSIFIEDS_DESCRIPTION, FAST_CLASSIFIEDS_FAVICON, FAST_CLASSIFIEDS_TITLE } from './consts'
 
 const LandingPage = () => {
   return (

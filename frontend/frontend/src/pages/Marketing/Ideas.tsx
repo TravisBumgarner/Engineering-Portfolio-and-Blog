@@ -1,5 +1,4 @@
-'use client'
-
+import { IDEAS_DESCRIPTION, IDEAS_FAVICON, IDEAS_TITLE } from '@common/core'
 import { Box, Collapse, List, ListItem, Typography } from '@mui/material'
 import { useState } from 'react'
 import { FaApple, FaChevronDown, FaChevronUp } from 'react-icons/fa'
@@ -8,7 +7,6 @@ import ContactForm from '../../sharedComponents/ContactForm'
 import Link from '../../sharedComponents/Link'
 import MarketingHeader from '../../sharedComponents/MarketingHeader'
 import { SPACING } from '../../styles/consts'
-import { IDEAS_DESCRIPTION, IDEAS_FAVICON, IDEAS_TITLE } from './consts'
 
 type UpdateType = 'add' | 'update' | 'fix'
 type Update = {

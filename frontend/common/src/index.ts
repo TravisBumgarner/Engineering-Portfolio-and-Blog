@@ -1,3 +1,5 @@
 export * from './types'
 export * from './consts'
 export * from './routes'
+export * from './posts'
+export * from './projects'
