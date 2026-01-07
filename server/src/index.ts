@@ -4,7 +4,7 @@ import type { Request, Response } from 'express'
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { getOgContentFromParts } from './og-content'
+import { getOgContentFromParts } from './og-content.js'
 
 const SITE_OG_TAGS = {
   title: SITE_TITLE,
@@ -23,9 +23,9 @@ Sentry.init({
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
-const port = process.env.PORT || 3000
+const port = Number(process.env.PORT) || 3000
 
-const frontendDist = path.join(__dirname, 'frontend-dist')
+const frontendDist = path.join(__dirname, '..', 'frontend-dist')
 console.log(`Serving frontend from ${frontendDist}`)
 app.set('view engine', 'ejs')
 app.set('views', frontendDist)
@@ -73,7 +73,7 @@ app.use(function onError(_err: unknown, _req: unknown, res: Response, _next: unk
   res.sendStatus(500)
 })
 
-app.listen(port, () => {
+app.listen(port, '127.0.0.1', () => {
   // biome-ignore lint/suspicious/noConsole: This is fine.
   console.log(`Server running on port ${port}`)
 })
