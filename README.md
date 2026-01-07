@@ -11,7 +11,7 @@
 1. `cd adhocs/blur_hash && yarn run start`
 2. Copy `output.json` to `blurHashLookup.ts`
 3. `yarn build && yarn start` Verify things are looking good.
-4. `yarn run deploy:nfc`
+4. `yarn run deploy:nfs`
 
 # Adding Content
 

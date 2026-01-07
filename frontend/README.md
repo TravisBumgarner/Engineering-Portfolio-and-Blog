@@ -1,50 +1,73 @@
-# Dev Notes
+# React + TypeScript + Vite
 
-**ejs vs html**
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Given - Vite expects an HTML file and I need an EJS template for the server.
-Therefore - We keep an index.html in frontend/ and move it to the server/ via `npm run mv-html-to-ejs`
+Currently, two official plugins are available:
 
-# Local Setup
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-1. Populate .env.nfs
-   - Grab username from NearlyFreeSpeech
-   - Grab ssh config from `~/.ssh/config`
-1. Install dependencies `npm`
-1. Run dev `npm run dev` or to test with the server `npm run dev-with-server`
+## React Compiler
 
-# Deploy
+The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
 
-1. `cd adhocs/blur_hash && npm run start`
-2. Copy `output.json` to `blurHashLookup.ts`
-3. `npm build && npm start` Verify things are looking good.
-4. `npm run deploy:nfc`
+## Expanding the ESLint configuration
 
-# Adding Content
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## New Post
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-1. Decide on a post slug. `foo-bar-buzz`
-1. Create a post with slug name.
-1. Add medatadata to posts/index.json.
-1. Create new folder in public/posts
-1. Add at least a preview image.
-1. Create post
-1. Generate blurhashes
-1. Generate new RSS. `yarn run generate-rss`
-1. Mail newsletter followers.
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-## New Project
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-1. Select an `id` and use everywhere. (It'll be the url guid)
-1. Make new folder in `public/projects/${id}`
-1. Duplicate `_template.json` and fill in
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## New Snapshot
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-1. Add image to src/public/snapshots
-1. Run script `app/scripts/snapshotsToJSON.ts`
-
-## Photos
-
-1. Generate a new blurhash and add it to blurHashLookup.ts
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
