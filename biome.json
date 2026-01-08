@@ -16,13 +16,12 @@
             "!out",
             "!drizzle",
             "!fake_website",
-            "!biome.json",
-            "!tsconfig.json",
-            "!tsconfig.node.json",
-            "!vite.config.ts",
-            "!*.log",
-            "!package.json",
-            "!package-lock.json"
+            "!**/*.json",
+            "!**/vite.config.ts",
+            "!**/*.log",
+            "!**/dist",
+            "!**/frontend-dist",
+            "!old-nextjs"
         ]
     },
     "formatter": {

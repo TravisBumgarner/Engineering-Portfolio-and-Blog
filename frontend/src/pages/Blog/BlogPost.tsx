@@ -51,7 +51,7 @@ const BlogPost = () => {
     <Box>
       <Typography variant="h2">{post.title}</Typography>
 
-      <time>Posted {new Date(post.date + 'T00:00:00Z').toUTCString().split(' ').slice(0, 4).join(' ')}</time>
+      <time>Posted {new Date(`${post.date}T00:00:00Z`).toUTCString().split(' ').slice(0, 4).join(' ')}</time>
 
       <PostComponent />
 

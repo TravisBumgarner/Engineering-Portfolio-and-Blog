@@ -9,7 +9,10 @@ const PHOTO_PATH = '/Users/travisbumgarner/Programming/Engineering-Portfolio-and
 const OUTPUT_FILE = '/Users/travisbumgarner/Programming/Engineering-Portfolio-and-Blog/ui/content/blurhashes/index.json'
 const cache = require(CACHE_FILE)
 
-const processImages = async (dir: string, output: Record<string, any>) => {
+const processImages = async (
+  dir: string,
+  output: Record<string, { blurHash: string; width: number; height: number }>,
+) => {
   const files = await readdir(dir)
   for (const file of files) {
     const filePath = join(dir, file)
@@ -45,7 +48,7 @@ const processImages = async (dir: string, output: Record<string, any>) => {
 }
 
 const main = () => {
-  const output: Record<string, string> = {}
+  const output: Record<string, { blurHash: string; width: number; height: number }> = {}
   processImages(PHOTO_PATH, output)
     .then(() => writeFile(OUTPUT_FILE, JSON.stringify(output, null, 2)))
     .then(() => console.log('Done!'))

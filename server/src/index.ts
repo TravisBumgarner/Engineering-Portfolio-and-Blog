@@ -1,9 +1,9 @@
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { ABOUT_ME, SITE_OG_IMAGE, SITE_TITLE, SITE_URL } from '@common/core'
 import * as Sentry from '@sentry/node'
 import type { Request, Response } from 'express'
 import express from 'express'
-import path from 'path'
-import { fileURLToPath } from 'url'
 import { getOgContentFromParts } from './og-content.js'
 
 const SITE_OG_TAGS = {

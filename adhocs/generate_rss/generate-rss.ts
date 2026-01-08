@@ -1,7 +1,7 @@
 // biome-ignore-all lint/suspicious/noConsole: Adhoc script.
 
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 
 const SITE_URL = 'https://travisbumgarner.dev'
 const POSTS_DIRECTORY = path.join(process.cwd(), '../../ui/content/posts')
