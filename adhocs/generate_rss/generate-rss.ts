@@ -1,5 +1,7 @@
-import fs from 'fs'
-import path from 'path'
+// biome-ignore-all lint/suspicious/noConsole: Adhoc script.
+
+import fs from 'node:fs'
+import path from 'node:path'
 
 const SITE_URL = 'https://travisbumgarner.dev'
 const POSTS_DIRECTORY = path.join(process.cwd(), '../../ui/content/posts')
@@ -23,9 +25,7 @@ const generateRSSItem = (post: Post): string => `
   </item>
 `
 
-const generateRSS = (
-  posts: Post[]
-): string => `<?xml version="1.0" encoding="UTF-8"?>
+const generateRSS = (posts: Post[]): string => `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Travis Bumgarner's Blog</title>
@@ -40,12 +40,10 @@ const generateRSS = (
 `
 
 const getPosts = (): Post[] => {
-  const postMetadata = JSON.parse(
-    fs.readFileSync(path.join(POSTS_DIRECTORY, 'index.json'), 'utf8')
-  )
+  const postMetadata = JSON.parse(fs.readFileSync(path.join(POSTS_DIRECTORY, 'index.json'), 'utf8'))
   console.log(postMetadata)
   return Object.keys(postMetadata)
-    .map(file => {
+    .map((file) => {
       const data = postMetadata[file]
 
       if (!data.title || !data.date) {
@@ -58,10 +56,10 @@ const getPosts = (): Post[] => {
         date: data.date,
         slug: file.replace(/\.mdx$/, ''),
         content: '', // Assuming content is not needed for RSS
-        description: data.description || ''
+        description: data.description || '',
       }
     })
-    .filter(post => post !== null)
+    .filter((post) => post !== null)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 

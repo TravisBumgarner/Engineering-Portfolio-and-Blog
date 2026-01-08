@@ -1,9 +1,10 @@
-import fs from 'fs'
-import path from 'path'
+// biome-ignore-all lint/suspicious/noConsole: Adhoc script.
 
+import fs from 'node:fs'
+import path from 'node:path'
 import * as exifr from 'exifr'
 
-const DEBUG = false // to get logs.
+// const DEBUG = false // to get logs.
 
 type Sidecar = {
   lr: {
@@ -13,16 +14,13 @@ type Sidecar = {
 
 const getProjectId = async (file: string): Promise<string | null> => {
   let {
-    lr: { hierarchicalSubject }
+    lr: { hierarchicalSubject },
   } = (await exifr.sidecar(file)) as unknown as Sidecar
   if (!hierarchicalSubject) return null
 
-  if (!Array.isArray(hierarchicalSubject))
-    hierarchicalSubject = [hierarchicalSubject]
+  if (!Array.isArray(hierarchicalSubject)) hierarchicalSubject = [hierarchicalSubject]
   console.log(hierarchicalSubject)
-  const match = hierarchicalSubject.filter(
-    s => s.includes('|') && s.includes('EngineeringPortfolio')
-  )[0]
+  const match = hierarchicalSubject.filter((s) => s.includes('|') && s.includes('EngineeringPortfolio'))[0]
   const projectId = match.replace('EngineeringPortfolio|', '')
 
   if (!projectId) {
@@ -39,7 +37,7 @@ const processPhotos = async () => {
   let wasFileSkipped = false
   const jsonData: Record<string, { label: string; src: string }[]> = {}
 
-  for (let file of files) {
+  for (const file of files) {
     const inputPath = path.join(__dirname, 'input')
     const projectId = await getProjectId(path.join(inputPath, file))
 
@@ -55,7 +53,7 @@ const processPhotos = async () => {
     }
   }
   if (!wasFileSkipped) {
-    for (let [oldPath, newPath, file] of moveActions) {
+    for (const [oldPath, newPath, file] of moveActions) {
       console.log(oldPath, newPath)
       fs.mkdirSync(newPath, { recursive: true })
       fs.renameSync(path.join(oldPath, file), path.join(newPath, file))

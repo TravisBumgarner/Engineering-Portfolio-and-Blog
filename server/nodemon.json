@@ -1,0 +1,12 @@
+{
+    "watch": [
+        "server.ts",
+        "../common/src/**/*"
+    ],
+    "ext": "ts,js,json",
+    "ignore": [
+        "node_modules",
+        "dist"
+    ],
+    "delay": "1000"
+}

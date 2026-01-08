@@ -1,0 +1,19 @@
+{
+    "private": true,
+    "workspaces": [
+        "common",
+        "frontend",
+        "server"
+    ],
+    "devDependencies": {
+        "concurrently": "^9.2.1",
+        "@biomejs/biome": "^2.3.10"
+    },
+    "scripts": {
+        "dev": "concurrently -n common,frontend -c magenta,cyan \"npm --workspace=common run dev\" \"npm --workspace=frontend run dev\"",
+        "dev-with-server": "concurrently -n common,frontend,server -c magenta,cyan,green \"npm --workspace=common run dev\" \"npm --workspace=frontend run dev-with-server\" \"npm --workspace=server run dev\"",
+        "build": "npm --workspace=common run build && npm --workspace=frontend run build && npm --workspace=server run build",
+        "deploy:nfs": "./deploy.sh",
+        "lint": "biome check ."
+    }
+}

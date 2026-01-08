@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Travis Bumgarner's Blog</title>
+    <link>https://travisbumgarner.dev</link>
+    <description>Engineering, photography, and everything in between</description>
+    <language>en</language>
+    <lastBuildDate>Thu, 02 Oct 2025 19:53:25 GMT</lastBuildDate>
+    <atom:link href="https://travisbumgarner.dev/rss.xml" rel="self" type="application/rss+xml"/>
+    
+  <item>
+    <title><![CDATA[Scaling Without Setting Money on Fire: Journeys of a Solo Developer]]></title>
+    <link>https://travisbumgarner.dev/blog/scaling-without-burning-money</link>
+    <guid>https://travisbumgarner.dev/blog/scaling-without-burning-money</guid>
+    <pubDate>Thu, 02 Oct 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[When all we do is our day jobs, we can afford to throw money at problems. But as a solo developer, every dollar counts.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Predictive UX Engineering]]></title>
+    <link>https://travisbumgarner.dev/blog/photography-portfolio-performance</link>
+    <guid>https://travisbumgarner.dev/blog/photography-portfolio-performance</guid>
+    <pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[We know what the user wants, before they act. Let's build for that.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Lessons from 12 Years of Abandoning Side Projects]]></title>
+    <link>https://travisbumgarner.dev/blog/lessons-learned-from-side-projects</link>
+    <guid>https://travisbumgarner.dev/blog/lessons-learned-from-side-projects</guid>
+    <pubDate>Thu, 27 Mar 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[I've started a bunch of side projects. I've abandoned just as many. In the last year I've completed three. From motivation to burnout, from chasing dopamine to actually finishing things, here's what I've learned along the way.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Somehash: A Blurhash Inspired Exploration]]></title>
+    <link>https://travisbumgarner.dev/blog/somehash</link>
+    <guid>https://travisbumgarner.dev/blog/somehash</guid>
+    <pubDate>Sat, 08 Feb 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[The time between visiting a website and seeing its content fully loaded offers creative space to capture a user's attention and keep them from leaving.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Escaping Surprise Bills & Over-engineered Messes: Why I Left AWS]]></title>
+    <link>https://travisbumgarner.dev/blog/leaving-aws</link>
+    <guid>https://travisbumgarner.dev/blog/leaving-aws</guid>
+    <pubDate>Thu, 30 Jan 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[Frustrated with AWS's complexity and cost risks, I switched to NearlyFreeSpeech for its prepaid model, ensuring financial control while keeping hosting simple and flexible.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Resume as Code]]></title>
+    <link>https://travisbumgarner.dev/blog/resume-as-code</link>
+    <guid>https://travisbumgarner.dev/blog/resume-as-code</guid>
+    <pubDate>Tue, 14 Jan 2025 00:00:00 GMT</pubDate>
+    <description><![CDATA[Text editors are great for writing code. But what if we used them to write our resume?]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[What we Lost When We Went Remote]]></title>
+    <link>https://travisbumgarner.dev/blog/what-we-lost-when-we-went-remote</link>
+    <guid>https://travisbumgarner.dev/blog/what-we-lost-when-we-went-remote</guid>
+    <pubDate>Mon, 13 Mar 2023 00:00:00 GMT</pubDate>
+    <description><![CDATA[These are my observations as the world went remote and team dynamics went online.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[How to organize a virtual team building event]]></title>
+    <link>https://travisbumgarner.dev/blog/virtual-team-building-event</link>
+    <guid>https://travisbumgarner.dev/blog/virtual-team-building-event</guid>
+    <pubDate>Tue, 15 Feb 2022 00:00:00 GMT</pubDate>
+    <description><![CDATA[So you want to organize a virtual team outing? We put together a quick guide to help with research, planning, and the actual event.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Storytelling in Presentation]]></title>
+    <link>https://travisbumgarner.dev/blog/storytelling-in-presentation</link>
+    <guid>https://travisbumgarner.dev/blog/storytelling-in-presentation</guid>
+    <pubDate>Wed, 29 Dec 2021 00:00:00 GMT</pubDate>
+    <description><![CDATA[Ever wanted to improve your ability to convey what's in your head to your audience? This talk is for you!]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Software Engineers Rush to Write Bad Code]]></title>
+    <link>https://travisbumgarner.dev/blog/code-to-production</link>
+    <guid>https://travisbumgarner.dev/blog/code-to-production</guid>
+    <pubDate>Sun, 18 Apr 2021 00:00:00 GMT</pubDate>
+    <description><![CDATA[Engineers are pushed to write code quickly and the quality suffers because of it. How can you move quickly while maintaining a high level of quality?]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Talking Technical With Non Technical Talkers]]></title>
+    <link>https://travisbumgarner.dev/blog/talking-technical-with-non-technical-talkers</link>
+    <guid>https://travisbumgarner.dev/blog/talking-technical-with-non-technical-talkers</guid>
+    <pubDate>Fri, 20 Nov 2020 00:00:00 GMT</pubDate>
+    <description><![CDATA[This is my first technical talk! I wanted to share with the world what I've learned working with folks from different backgrounds and disciplines.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[How to Make a Photo Stitching Website & Avoid Burnout]]></title>
+    <link>https://travisbumgarner.dev/blog/how-to-make-a-photo-stitching-website</link>
+    <guid>https://travisbumgarner.dev/blog/how-to-make-a-photo-stitching-website</guid>
+    <pubDate>Fri, 13 Mar 2020 00:00:00 GMT</pubDate>
+    <description><![CDATA[Engineers love to start side projects and never finish them. This leads to burnout. Why not build fun things instead? How about a tool to develop virtual cross stitches!]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[A Collection of Tips to Become a Software Engineer]]></title>
+    <link>https://travisbumgarner.dev/blog/a-collection-of-tips-to-become-a-software-engineer</link>
+    <guid>https://travisbumgarner.dev/blog/a-collection-of-tips-to-become-a-software-engineer</guid>
+    <pubDate>Mon, 15 Apr 2019 00:00:00 GMT</pubDate>
+    <description><![CDATA[Over the years I have been on both sides of the interview process. I have learned a wealth of experience, here is my advice.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Sharing What You've Learned with Others]]></title>
+    <link>https://travisbumgarner.dev/blog/teach-anyone-anything</link>
+    <guid>https://travisbumgarner.dev/blog/teach-anyone-anything</guid>
+    <pubDate>Wed, 23 Jan 2019 00:00:00 GMT</pubDate>
+    <description><![CDATA[I have learned a lot along the way and I'll share those lessons learned here.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Learning to Learn: Develop Skills to Master Anything]]></title>
+    <link>https://travisbumgarner.dev/blog/learning-to-learn</link>
+    <guid>https://travisbumgarner.dev/blog/learning-to-learn</guid>
+    <pubDate>Fri, 28 Dec 2018 00:00:00 GMT</pubDate>
+    <description><![CDATA[In the pursuit of learning about electronics and other subjects, I have developed a set of skills that have enabled me to learn new subjects more quickly and thoroughly and with less frustration.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Finish What You Start]]></title>
+    <link>https://travisbumgarner.dev/blog/finish-what-you-start</link>
+    <guid>https://travisbumgarner.dev/blog/finish-what-you-start</guid>
+    <pubDate>Fri, 23 Nov 2018 00:00:00 GMT</pubDate>
+    <description><![CDATA[I love starting hobby projects. However, I seem to hate finishing them. Let's figure out how to finish things.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[How to Build a Circuit Board]]></title>
+    <link>https://travisbumgarner.dev/blog/how-to-build-a-circuit-board</link>
+    <guid>https://travisbumgarner.dev/blog/how-to-build-a-circuit-board</guid>
+    <pubDate>Thu, 17 Nov 2016 00:00:00 GMT</pubDate>
+    <description><![CDATA[One Day I decided to learn how to make circuit boards. Several months later, my first PCB arrived in the mail. This is how I got there.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Time Management & Productivity]]></title>
+    <link>https://travisbumgarner.dev/blog/time-management-and-productivity</link>
+    <guid>https://travisbumgarner.dev/blog/time-management-and-productivity</guid>
+    <pubDate>Thu, 27 Oct 2016 00:00:00 GMT</pubDate>
+    <description><![CDATA[I have gotten very good at managing my time over the years, here is how I do it.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[What it Means to Fail]]></title>
+    <link>https://travisbumgarner.dev/blog/on-failing</link>
+    <guid>https://travisbumgarner.dev/blog/on-failing</guid>
+    <pubDate>Sun, 16 Oct 2016 00:00:00 GMT</pubDate>
+    <description><![CDATA[I marked my service in the Peace Corps as a failure. After much reflection on that summarization, I realized there is more than one way to look at failure.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[What I learned from Failing with Kickstarter]]></title>
+    <link>https://travisbumgarner.dev/blog/failing-at-kickstarter</link>
+    <guid>https://travisbumgarner.dev/blog/failing-at-kickstarter</guid>
+    <pubDate>Sun, 18 Sep 2016 00:00:00 GMT</pubDate>
+    <description><![CDATA[In 2016, I set out to launch my first product on Kickstarter. I failed, did some research, tried again and succeeded. These are my observations.]]></description>
+  </item>
+
+  <item>
+    <title><![CDATA[Combining Hobbies: Programming, Electronics & Photography]]></title>
+    <link>https://travisbumgarner.dev/blog/combining-hobbies</link>
+    <guid>https://travisbumgarner.dev/blog/combining-hobbies</guid>
+    <pubDate>Mon, 04 Apr 2016 00:00:00 GMT</pubDate>
+    <description><![CDATA[This is an exploration into learning more about photography by building a camera.]]></description>
+  </item>
+
+  </channel>
+</rss>
