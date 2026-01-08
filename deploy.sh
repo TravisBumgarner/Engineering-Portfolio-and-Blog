@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-REMOTE="nfs_eng_test"
+REMOTE="nfs_eng43"
 REMOTE_DIR="/home/protected"
 
 echo "🧱 Building project locally..."

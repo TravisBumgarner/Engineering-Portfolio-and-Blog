@@ -1,4 +1,4 @@
-export const SITE_OG_IMAGE = 'https://travisbumgarner.dev/assets/og-image.png' // TODO - I NEED ONE.
+export const SITE_OG_IMAGE = 'https://travisbumgarner.dev/og-image.png'
 export const SITE_URL = 'https://travisbumgarner.dev'
 export const ABOUT_ME_SENTENCE_1 = 'I am a lifelong learner, creator, explorer, and tinkerer.'
 export const ABOUT_ME_SENTENCE_2 = 'This is a collection of my experiences.'
@@ -24,6 +24,6 @@ export const CANDLELIGHT_FAVICON = '/marketing-resources/candlelight/favicon.png
 
 export const TODO_TITLE = 'Todo Today'
 export const TODO_DESCRIPTION = 'The todo List for the easily distracted.'
-export const TODO_IMAGE = '/marketing-resources/todo_today/preview.png' //
+export const TODO_IMAGE = '/marketing-resources/todo_today/preview.png'
 export const TODO_FAVICON = '/marketing-resources/todo_today/favicon.png'
 // This could be improved upon in the future to patch common/routes but for the moment I'm going to leave it be.
