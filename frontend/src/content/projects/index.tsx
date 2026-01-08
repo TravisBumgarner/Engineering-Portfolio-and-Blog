@@ -21,7 +21,7 @@ const projectSchema = z.object({
   links: z.array(linkSchema),
   previewImage: imageSchema,
   toolsAndTechnologies: z.string().optional(),
-  videos: z.array(z.string()).optional()
+  videos: z.array(z.string()).optional(),
 })
 
 export type Project = z.infer<typeof projectSchema>

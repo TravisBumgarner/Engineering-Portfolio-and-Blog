@@ -1,8 +1,8 @@
+import { ROUTES } from '@common/core'
 import { Backdrop, Box, Drawer, IconButton, Stack, Tooltip } from '@mui/material'
 import { AnimatePresence } from 'motion/react'
 import { useState } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { ROUTES } from '@common/core'
 import Icon from '../sharedComponents/Icon'
 import Link from '../sharedComponents/Link'
 import { SPACING, Z_INDICES } from '../styles/consts'
@@ -21,12 +21,7 @@ const THERE = [
   { title: 'Photography', href: 'https://travisbumgarner.photography', target: '_blank' },
 ]
 
-const ROUTES_TO_DISPLAY: (keyof typeof ROUTES)[] = [
-  'SNAPSHOTS',
-  'CREATIONS',
-  'BLOG',
-  'MARKETING',
-]
+const ROUTES_TO_DISPLAY: (keyof typeof ROUTES)[] = ['SNAPSHOTS', 'CREATIONS', 'BLOG', 'MARKETING']
 
 const SidebarClient = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -86,18 +81,15 @@ const SidebarClient = () => {
                 </Link>
               </Box>
             )
-          }
-          )}
+          })}
 
-          {
-            THERE.map((r) => (
-              <Box key={r.href}>
-                <Link type="inlineMenu" {...r} onClick={() => setIsOpen(false)}>
-                  {r.title}
-                </Link>
-              </Box>
-            ))
-          }
+          {THERE.map((r) => (
+            <Box key={r.href}>
+              <Link type="inlineMenu" {...r} onClick={() => setIsOpen(false)}>
+                {r.title}
+              </Link>
+            </Box>
+          ))}
         </Stack>
 
         <Box

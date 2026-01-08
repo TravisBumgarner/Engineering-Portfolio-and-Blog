@@ -22,11 +22,13 @@ const Youtube = ({ embedId }: YoutubeProps) => (
 export const YoutubeWrapper = ({ children, ...props }: BoxProps) => {
   const theme = useTheme()
   return (
-    <Box sx={{
-      backgroundColor: 'background.paper',
-      p: SPACING.MEDIUM.PX,
-      m: `${SPACING.MEDIUM.PX} 0`,
-    }}>
+    <Box
+      sx={{
+        backgroundColor: 'background.paper',
+        p: SPACING.MEDIUM.PX,
+        m: `${SPACING.MEDIUM.PX} 0`,
+      }}
+    >
       <Box
         component="figure"
         {...props}
@@ -55,6 +57,5 @@ export const YoutubeWrapper = ({ children, ...props }: BoxProps) => {
     </Box>
   )
 }
-
 
 export default Youtube

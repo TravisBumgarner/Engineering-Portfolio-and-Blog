@@ -1,7 +1,7 @@
+import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '@common/core'
 import { Box } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { useMemo } from 'react'
-import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '@common/core'
 import Link from '../sharedComponents/Link'
 import { SPACING } from '../styles/consts'
 
@@ -41,7 +41,6 @@ export const makeNewSiteTitle = () => {
   return `travis_bumgarner_${RANDOM_FILE_SUFIX}${RANDOM_FILE_SUFFIX_2}.${RANDOM_FILE_TYPE}`
 }
 
-
 const SiteTitle = () => {
   const siteTitle = useMemo(() => makeNewSiteTitle(), [])
 
@@ -53,7 +52,9 @@ const SiteTitle = () => {
       }}
     >
       <Link type="inline" href="/">
-        <Typography variant="h1" sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' } }}>{siteTitle}</Typography>
+        <Typography variant="h1" sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' } }}>
+          {siteTitle}
+        </Typography>
       </Link>
       <Typography>
         {ABOUT_ME_SENTENCE_1}

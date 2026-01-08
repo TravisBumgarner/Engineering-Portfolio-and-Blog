@@ -1,63 +1,63 @@
-import { Navigate, useParams } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { ROUTES } from '@common/core'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
+import { useEffect, useState } from 'react'
+import { Navigate, useParams } from 'react-router-dom'
 import posts from '../../content/posts'
+import logger from '../../utilities/logger'
 import Subscribe from './Subscribe'
-import { ROUTES } from '@common/core'
-import logger from "../../utilities/logger"
 
 const BlogPost = () => {
-    const { id } = useParams()
-    const [PostComponent, setPostComponent] = useState<React.ComponentType | null>(null)
-    const [loading, setLoading] = useState(true)
+  const { id } = useParams()
+  const [PostComponent, setPostComponent] = useState<React.ComponentType | null>(null)
+  const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        if (!id) return
+  useEffect(() => {
+    if (!id) return
 
-        const loadPost = async () => {
-            try {
-                const postModule = await import(`../../content/posts/${id}.mdx`)
-                setPostComponent(() => postModule.default)
-            } catch (error) {
-                logger.error('Failed to load post:', error)
-                setPostComponent(null)
-            } finally {
-                setLoading(false)
-            }
-        }
-
-        loadPost()
-    }, [id])
-
-    if (!id) {
-        return <Navigate to={ROUTES.NOT_FOUND.href} />
+    const loadPost = async () => {
+      try {
+        const postModule = await import(`../../content/posts/${id}.mdx`)
+        setPostComponent(() => postModule.default)
+      } catch (error) {
+        logger.error('Failed to load post:', error)
+        setPostComponent(null)
+      } finally {
+        setLoading(false)
+      }
     }
 
-    const post = posts[id]
-    if (!post) {
-        return <Navigate to={ROUTES.NOT_FOUND.href} />
-    }
+    loadPost()
+  }, [id])
 
-    if (loading) {
-        return <Box>Loading...</Box>
-    }
+  if (!id) {
+    return <Navigate to={ROUTES.NOT_FOUND.href} />
+  }
 
-    if (!PostComponent) {
-        return <Navigate to={ROUTES.NOT_FOUND.href} />
-    }
+  const post = posts[id]
+  if (!post) {
+    return <Navigate to={ROUTES.NOT_FOUND.href} />
+  }
 
-    return (
-        <Box>
-            <Typography variant="h2">{post.title}</Typography>
+  if (loading) {
+    return <Box>Loading...</Box>
+  }
 
-            <time>Posted {new Date(post.date + 'T00:00:00Z').toUTCString().split(' ').slice(0, 4).join(' ')}</time>
+  if (!PostComponent) {
+    return <Navigate to={ROUTES.NOT_FOUND.href} />
+  }
 
-            <PostComponent />
+  return (
+    <Box>
+      <Typography variant="h2">{post.title}</Typography>
 
-            <Subscribe />
-        </Box>
-    )
+      <time>Posted {new Date(post.date + 'T00:00:00Z').toUTCString().split(' ').slice(0, 4).join(' ')}</time>
+
+      <PostComponent />
+
+      <Subscribe />
+    </Box>
+  )
 }
 
 export default BlogPost

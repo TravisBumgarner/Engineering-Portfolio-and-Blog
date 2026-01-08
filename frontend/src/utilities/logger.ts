@@ -1,4 +1,4 @@
-import * as Sentry from "@sentry/react";
+import * as Sentry from '@sentry/react'
 
 export const logger = {
   // biome-ignore lint/suspicious/noExplicitAny: Fine for now.

@@ -1,1 +1,1 @@
-export type Foo = string | number;
+export type Foo = string | number

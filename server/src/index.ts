@@ -26,7 +26,7 @@ const app = express()
 const port = Number(process.env.PORT) || 3000
 
 const frontendDist = path.join(__dirname, '..', 'frontend-dist')
-console.log(`Serving frontend from ${frontendDist}`)
+
 app.set('view engine', 'ejs')
 app.set('views', frontendDist)
 

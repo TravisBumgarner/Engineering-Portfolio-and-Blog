@@ -54,11 +54,11 @@ const UPDATES: Update[] = [
 const UpdateComponent = ({ title, date, updates }: Update) => {
   // Flatten updates to a single array of { type, text }
   const flatUpdates: { type: UpdateType; text: string }[] = []
-    ; (['add', 'update', 'fix'] as UpdateType[]).forEach((type: UpdateType) => {
-      updates[type].forEach((text: string) => {
-        flatUpdates.push({ type, text })
-      })
+  ;(['add', 'update', 'fix'] as UpdateType[]).forEach((type: UpdateType) => {
+    updates[type].forEach((text: string) => {
+      flatUpdates.push({ type, text })
     })
+  })
 
   return (
     <Box>
@@ -125,7 +125,7 @@ const LandingPage = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '600px'
+            height: '600px',
           }}
         >
           <BlurHashImage maxHeight={80} src="/marketing-resources/ideas_down/ideate.png" alt="Ideate" />
@@ -155,15 +155,10 @@ const LandingPage = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '600px'
+            height: '600px',
           }}
         >
-          <BlurHashImage
-            maxHeight={80}
-
-            src="/marketing-resources/ideas_down/reflect.png"
-            alt="Reflect"
-          />
+          <BlurHashImage maxHeight={80} src="/marketing-resources/ideas_down/reflect.png" alt="Reflect" />
         </Box>
       </Box>
 
@@ -200,14 +195,10 @@ const LandingPage = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '600px'
+            height: '600px',
           }}
         >
-          <BlurHashImage
-            maxHeight={80}
-            src="/marketing-resources/ideas_down/settings.png"
-            alt="Settings"
-          />
+          <BlurHashImage maxHeight={80} src="/marketing-resources/ideas_down/settings.png" alt="Settings" />
         </Box>
       </Box>
 

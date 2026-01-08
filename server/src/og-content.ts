@@ -74,8 +74,6 @@ const OG_CONTENT: Record<DataType, Record<string, OGContent>> = {
   },
 }
 
-console.log(OG_CONTENT)
-
 export function getOgContentFromParts(parts: string[]): OGContent | null {
   if (parts.length < 2) return null
 

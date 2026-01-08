@@ -16,7 +16,7 @@ const Banner = () => {
         color: 'warning.contrastText',
         textAlign: 'center',
         py: 1,
-        height: '50px'
+        height: '50px',
       }}
     >
       Heads up - I am currently rewriting the entire website so things might be a little broken.
