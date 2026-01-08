@@ -5,6 +5,7 @@ import * as Sentry from '@sentry/node'
 import type { Request, Response } from 'express'
 import express from 'express'
 import { getOgContentFromParts } from './og-content.js'
+import { logger } from './utilities.js'
 
 const SITE_OG_TAGS = {
   title: SITE_TITLE,
@@ -69,7 +70,7 @@ Sentry.setupExpressErrorHandler(app)
 app.use(function onError(_err: unknown, _req: unknown, res: Response, _next: unknown) {
   // The error id is attached to `res.sentry` to be returned
   // and optionally displayed to the user for support.
-  console.log(_err)
+  logger.error('Unhandled error', _err as Error)
   res.sendStatus(500)
 })
 
