@@ -7,23 +7,6 @@ import Sidebar from './components/Sidebar'
 import SiteTitle from './components/SiteTitle'
 import AppThemeProvider from './styles/Theme'
 
-const Banner = () => {
-  return (
-    <Box
-      sx={{
-        width: '100%',
-        bgcolor: 'warning.main',
-        color: 'warning.contrastText',
-        textAlign: 'center',
-        py: 1,
-        height: '50px',
-      }}
-    >
-      Heads up - I am currently rewriting the entire website so things might be a little broken.
-    </Box>
-  )
-}
-
 const App = () => {
   return (
     <AppThemeProvider>
@@ -40,7 +23,6 @@ const WrappedApp = () => {
     <BrowserRouter>
       <AppThemeProvider>
         <MDXWrapper>
-          <Banner />
           <App />
           <Scroll />
         </MDXWrapper>

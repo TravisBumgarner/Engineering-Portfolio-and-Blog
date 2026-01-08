@@ -40,7 +40,7 @@ const OG_CONTENT: Record<DataType, Record<string, OGContent>> = {
       'og:description': CANDLELIGHT_DESCRIPTION,
       'og:image': CANDLELIGHT_IMAGE,
     },
-    todo_today: {
+    todo: {
       'og:title': TODO_TITLE,
       'og:description': TODO_DESCRIPTION,
       'og:image': TODO_IMAGE,
