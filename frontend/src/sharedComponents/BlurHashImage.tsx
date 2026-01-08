@@ -82,7 +82,7 @@ import { useTheme } from '@mui/material'
 import Box from '@mui/material/Box'
 import { useInView } from 'framer-motion'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { PALETTE } from '../styles/consts'
+import { PALETTE, SPACING } from '../styles/consts'
 import type { BlurHash } from '../types'
 import { blurHashToDataURL } from '../utilities/blurhashDataURL'
 
@@ -152,6 +152,7 @@ const BlurImage = ({ src, alt, loadingStartCallback, loadingEndCallback, maxDime
         rel={startLoadingImage ? 'preload' : ''}
         alt={alt}
         sx={{
+          padding: SPACING.SMALL.PX,
           width: '100%',
           height: '100%',
           objectFit: 'contain',
