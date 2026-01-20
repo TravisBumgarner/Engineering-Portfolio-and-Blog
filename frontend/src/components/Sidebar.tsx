@@ -1,9 +1,10 @@
 import { ROUTES } from '@common/core'
 import { Backdrop, Box, Drawer, IconButton, Stack, Typography, useMediaQuery } from '@mui/material'
+import { useSignals } from '@preact/signals-react/runtime'
 import { AnimatePresence } from 'motion/react'
-import { useState } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import Link from '../sharedComponents/Link'
+import { isSidebarOpen, toggleSidebar } from '../signals'
 import { SPACING, Z_INDICES } from '../styles/consts'
 
 // Work section
@@ -111,7 +112,7 @@ const SidebarContent = ({ onLinkClick }: { onLinkClick?: () => void }) => (
 )
 
 const SidebarClient = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  useSignals()
   const isDesktop = useMediaQuery(`(min-width:1100px)`)
 
   if (isDesktop) {
@@ -123,10 +124,10 @@ const SidebarClient = () => {
   return (
     <>
       <AnimatePresence>
-        {isOpen && (
+        {isSidebarOpen.value && (
           <Backdrop
             open
-            onClick={() => setIsOpen(false)}
+            onClick={toggleSidebar}
             sx={{
               zIndex: Z_INDICES.SIDEBAR_BACKDROP,
             }}
@@ -134,23 +135,10 @@ const SidebarClient = () => {
         )}
       </AnimatePresence>
 
-      <Box
-        sx={{
-          zIndex: Z_INDICES.SIDEBAR,
-          position: 'fixed',
-          top: SPACING.SMALL.PX,
-          left: SPACING.SMALL.PX,
-        }}
-      >
-        <IconButton onClick={() => setIsOpen(true)}>
-          <GiHamburgerMenu size={30} />
-        </IconButton>
-      </Box>
-
       <Drawer
         anchor="left"
-        open={isOpen}
-        onClose={() => setIsOpen(false)}
+        open={isSidebarOpen.value}
+        onClose={toggleSidebar}
         slotProps={{
           paper: {
             sx: {
@@ -164,7 +152,7 @@ const SidebarClient = () => {
           },
         }}
       >
-        <SidebarContent onLinkClick={() => setIsOpen(false)} />
+        <SidebarContent onLinkClick={toggleSidebar} />
       </Drawer>
     </>
   )
@@ -179,17 +167,15 @@ export const DesktopSidebarContent = () => {
   return (
     <Box
       sx={{
-        position: 'fixed',
-        top: '50%',
-        left: 0,
-        transform: 'translateY(-50%)',
-        width: 190,
+        position: 'sticky',
+        top: 0,
+        width: 240,
+        height: '100vh',
         p: SPACING.SMALL.PX,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        justifyContent: 'center',
         flexShrink: 0,
-        zIndex: 1,
       }}
     >
       <SidebarContent />

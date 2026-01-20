@@ -1,9 +1,11 @@
 import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '@common/core'
-import { Box } from '@mui/material'
+import { Box, IconButton, Stack } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { useMemo } from 'react'
+import { GiHamburgerMenu } from 'react-icons/gi'
 import Link from '../sharedComponents/Link'
-import { SPACING } from '../styles/consts'
+import { toggleSidebar } from '../signals'
+import { SPACING, Z_INDICES } from '../styles/consts'
 
 export const makeNewSiteTitle = () => {
   const VALID_FILE_SUFFIX = ['proto', 'test', 'sample', 'mockup', 'demo', 'final', 'draft']
@@ -41,24 +43,31 @@ export const makeNewSiteTitle = () => {
   return `travis_bumgarner_${RANDOM_FILE_SUFIX}${RANDOM_FILE_SUFFIX_2}.${RANDOM_FILE_TYPE}`
 }
 
-const SiteTitle = () => {
+const SiteTitle = ({ isDesktop }: { isDesktop: boolean }) => {
   const siteTitle = useMemo(() => makeNewSiteTitle(), [])
 
   return (
     <Box
       sx={{
         py: SPACING.LARGE.PX,
-        mt: { xs: SPACING.SMALL.PX, md: 0 },
       }}
     >
-      <Link type="inline" href="/">
-        <Typography variant="h1" sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' } }}>
-          {siteTitle}
-        </Typography>
-      </Link>
+      <Stack direction="row" justifyContent="space-between" alignItems="center" mb={SPACING.MEDIUM.PX}>
+        <Link type="inline" href="/">
+          <Typography variant="h1" sx={{ fontSize: { xs: '1.2rem', sm: '2rem' } }}>
+            {siteTitle}
+          </Typography>
+        </Link>
+
+        {!isDesktop && (
+          <IconButton onClick={toggleSidebar}>
+            <GiHamburgerMenu size={30} />
+          </IconButton>
+        )}
+      </Stack>
+
       <Typography>
-        {ABOUT_ME_SENTENCE_1}
-        <br />
+        {ABOUT_ME_SENTENCE_1} <br />
         {ABOUT_ME_SENTENCE_2}
       </Typography>
     </Box>

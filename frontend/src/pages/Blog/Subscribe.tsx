@@ -44,7 +44,7 @@ export default function Subscribe() {
         target="_blank"
         rel="noopener noreferrer"
         sx={{
-          width: '100px',
+          width: { xs: '100%', sm: '100px' },
           display: 'flex',
           alignItems: 'center',
           gap: SPACING.SMALL.PX,
@@ -70,7 +70,7 @@ export default function Subscribe() {
         <span>RSS</span>
       </Link>
 
-      <Typography>Or</Typography>
+      <Typography sx={{ margin: 0, display: { xs: 'none', sm: 'block' } }}>Or</Typography>
 
       {/* FORM */}
       <Box

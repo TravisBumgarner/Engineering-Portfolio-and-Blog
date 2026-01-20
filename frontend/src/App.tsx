@@ -1,14 +1,22 @@
 import { Box, useMediaQuery } from '@mui/material'
+import { useEffect } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import MDXWrapper from './components/MDXProvider'
 import Router from './components/Router'
 import Scroll from './components/Scroll'
 import Sidebar, { DesktopSidebarContent } from './components/Sidebar'
 import SiteTitle from './components/SiteTitle'
+import { isSidebarOpen } from './signals'
 import AppThemeProvider from './styles/Theme'
 
 const App = () => {
   const isDesktop = useMediaQuery(`(min-width:1200px)`)
+
+  useEffect(() => {
+    if (isDesktop) {
+      isSidebarOpen.value = false
+    }
+  }, [isDesktop])
 
   if (isDesktop) {
     return (
@@ -16,8 +24,8 @@ const App = () => {
         <Box sx={{ display: 'flex' }}>
           <DesktopSidebarContent />
           <Box sx={{ flex: 1 }}>
+            <SiteTitle isDesktop={true} />
             <Sidebar />
-            <SiteTitle />
             <Router />
             <Box sx={{ height: '50px' }} /> {/* Spacer for bottom */}
           </Box>
@@ -29,7 +37,7 @@ const App = () => {
   return (
     <AppThemeProvider>
       <Sidebar />
-      <SiteTitle />
+      <SiteTitle isDesktop={false} />
       <Router />
       <Box sx={{ height: '50px' }} /> {/* Spacer for bottom */}
     </AppThemeProvider>

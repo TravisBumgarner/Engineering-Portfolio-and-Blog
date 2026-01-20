@@ -46,7 +46,6 @@ export default function Subscribe() {
         target="_blank"
         rel="noopener noreferrer"
         sx={{
-          width: '100px',
           display: 'flex',
           alignItems: 'center',
           gap: SPACING.SMALL.PX,

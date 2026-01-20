@@ -27,10 +27,7 @@ const CURRENT_WORK: Project[] = [
     description: 'Automated job searching',
     lastMeaningfulUpdate: '2024-11',
     images: [],
-    links: [
-      { label: 'Marketing', src: '/marketing/classifieds' },
-      { label: 'GitHub', src: 'https://github.com/TravisBumgarner/fast-classifieds' },
-    ],
+    links: [{ label: 'Marketing', src: '/marketing/classifieds' }],
     previewImage: { label: 'Preview', src: 'preview.png' },
     shortDescription: '',
   },
@@ -53,7 +50,16 @@ const CURRENT_WORK: Project[] = [
 
 const MiniItemPreview = ({ project }: { project: Project }) => {
   return (
-    <Box sx={{ width: '33%', backgroundColor: 'background.paper', padding: SPACING.SMALL.PX }}>
+    <Box
+      sx={{
+        width: '33%',
+        backgroundColor: 'background.paper',
+        padding: SPACING.SMALL.PX,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}
+    >
       <Typography variant="h2" sx={{ fontSize: FONT_SIZES.MEDIUM.PX, margin: 0 }}>
         {project.title}
       </Typography>
