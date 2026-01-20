@@ -49,10 +49,10 @@ const SiteTitle = ({ isDesktop }: { isDesktop: boolean }) => {
   return (
     <Box
       sx={{
-        py: SPACING.LARGE.PX,
+        padding: `${SPACING.LARGE.PX} 0 ${SPACING.MEDIUM.PX} 0`,
       }}
     >
-      <Stack direction="row" justifyContent="space-between" alignItems="center" mb={SPACING.MEDIUM.PX}>
+      <Stack direction="row" justifyContent="space-between" alignItems="center" mb={SPACING.TINY.PX}>
         <Link type="inline" href="/">
           <Typography variant="h1" sx={{ fontSize: { xs: '1.2rem', sm: '2rem' } }}>
             {siteTitle}
@@ -66,7 +66,7 @@ const SiteTitle = ({ isDesktop }: { isDesktop: boolean }) => {
         )}
       </Stack>
 
-      <Typography>
+      <Typography sx={{ m: 0 }}>
         {ABOUT_ME_SENTENCE_1} <br />
         {ABOUT_ME_SENTENCE_2}
       </Typography>

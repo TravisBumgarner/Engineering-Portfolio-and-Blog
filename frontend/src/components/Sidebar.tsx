@@ -73,9 +73,8 @@ const SidebarContent = ({ onLinkClick }: { onLinkClick?: () => void }) => (
   </Stack>
 )
 
-const SidebarClient = () => {
+const SidebarClient = ({ isDesktop }: { isDesktop: boolean }) => {
   useSignals()
-  const isDesktop = useMediaQuery(`(min-width:1100px)`)
 
   if (isDesktop) {
     // Desktop persistent sidebar - return null as we'll render it in the App component

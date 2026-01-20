@@ -25,7 +25,7 @@ const App = () => {
           <DesktopSidebarContent />
           <Box sx={{ flex: 1 }}>
             <SiteTitle isDesktop={true} />
-            <Sidebar />
+            <Sidebar isDesktop={true} />
             <Router />
             <Box sx={{ height: '50px' }} /> {/* Spacer for bottom */}
           </Box>
@@ -36,7 +36,7 @@ const App = () => {
 
   return (
     <AppThemeProvider>
-      <Sidebar />
+      <Sidebar isDesktop={false} />
       <SiteTitle isDesktop={false} />
       <Router />
       <Box sx={{ height: '50px' }} /> {/* Spacer for bottom */}
