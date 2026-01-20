@@ -5,7 +5,7 @@ import { AnimatePresence } from 'motion/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import Link from '../sharedComponents/Link'
 import { isSidebarOpen, toggleSidebar } from '../signals'
-import { SPACING, Z_INDICES } from '../styles/consts'
+import { FONT_SIZES, SPACING, Z_INDICES } from '../styles/consts'
 
 // Work section
 const WORK_LINKS = [
@@ -32,6 +32,13 @@ const SOCIAL_MEDIA = [
   { title: 'YouTube', href: 'https://www.youtube.com/@SillySideProjects', target: '_blank', icon: 'youtube' },
 ]
 
+const MARKETING_PAGES = [
+  { title: 'Candlelight', href: ROUTES.MARKETING_CANDLELIGHT.href },
+  { title: 'Fast Classifieds', href: ROUTES.MARKETING_CLASSIFIEDS.href },
+  { title: 'Ideas Down', href: ROUTES.MARKETING_IDEAS.href },
+  { title: 'Todo Today', href: ROUTES.MARKETING_TODO.href },
+]
+
 // Generic reusable section component
 const Section = ({
   title,
@@ -43,14 +50,14 @@ const Section = ({
   onLinkClick?: () => void
 }) => (
   <Box>
-    <Typography variant="body1" sx={{ fontWeight: 400, mb: SPACING.TINY.PX, mt: 0 }}>
+    <Typography variant="body1" sx={{ fontWeight: 700, mb: SPACING.TINY.PX, mt: 0 }}>
       {title}
     </Typography>
     <Stack direction="column" spacing={SPACING.TINY.PX}>
       {links.map((link) => (
         <Link
           key={link.href}
-          sx={{ fontWeight: 100 }}
+          sx={{ fontWeight: 400 }}
           type="inlineMenu"
           href={link.href}
           target={link.target}
@@ -68,6 +75,7 @@ const Section = ({
 const SidebarContent = ({ onLinkClick }: { onLinkClick?: () => void }) => (
   <Stack direction="column" spacing={SPACING.LARGE.PX}>
     <Section title="Work" links={WORK_LINKS} onLinkClick={onLinkClick} />
+    <Section title="Marketing Pages" links={MARKETING_PAGES} onLinkClick={onLinkClick} />
     <Section title="Creative" links={CREATIVE_LINKS} onLinkClick={onLinkClick} />
     <Section title="Socials" links={SOCIAL_MEDIA} onLinkClick={onLinkClick} />
   </Stack>

@@ -1,139 +1,96 @@
-import { TODO_DESCRIPTION, TODO_FAVICON, TODO_TITLE } from '@common/core'
-import { Box, List, ListItem, Typography } from '@mui/material'
+import { TODO_FAVICON, TODO_IMAGE } from '@common/core'
+import { Box, Typography } from '@mui/material'
+import { FaApple, FaWindows } from 'react-icons/fa'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
 import ContactForm from '../../sharedComponents/ContactForm'
 import Link from '../../sharedComponents/Link'
-import MarketingHeader from '../../sharedComponents/MarketingHeader'
 import { SPACING } from '../../styles/consts'
+import { BenefitsList, DownloadSection, MarketingHero } from './components'
 
-const MAC_DOWNLOAD = 'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-arm64.dmg'
+const MAC_DOWNLOAD_URL =
+  'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-arm64.dmg'
+const WINDOWS_DOWNLOAD_URL =
+  'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-x64.exe'
 
-type UpdateType = 'add' | 'update' | 'fix'
-type Update = {
-  title: string
-  date: string
-  updates: Record<UpdateType, string[]>
-}
-
-const LABELS: Record<UpdateType, string> = {
-  add: 'Add',
-  update: 'Update',
-  fix: 'Fix',
-}
-
-const UPDATES: Update[] = [
-  {
-    title: 'Oh hey, another almost full rewrite',
-    date: '2025-10-11',
-    updates: {
-      add: [],
-      update: ['Update all dependencies and deployments to latest versions'],
-      fix: [],
-    },
-  },
-  {
-    title: 'Full Rewrite',
-    date: '2025-01-26',
-    updates: {
-      add: ['Complete rewrite of Todo Today from the ground up'],
-      update: [
-        'Simplified focus on daily task management',
-        'Removed timers, history, successes, workspaces, and other distracting features',
-      ],
-      fix: ['Removed timers, history, successes, workspaces, and other distracting features'],
-    },
-  },
-  {
-    title: 'Workspaces',
-    date: '2024-09-25',
-    updates: {
-      add: ['Support for grouping tasks into workspaces'],
-      update: [],
-      fix: [],
-    },
-  },
-  {
-    title: 'Windows Support',
-    date: '2024-07-05',
-    updates: {
-      add: ['Support for Windows automatic updates'],
-      update: [],
-      fix: [],
-    },
-  },
-  {
-    title: 'Notifications and Timers',
-    date: '2023-10-08',
-    updates: {
-      add: ['Timer for tasks and notification system'],
-      update: [],
-      fix: [],
-    },
-  },
-  {
-    title: 'Initial Release',
-    date: '2023-10-06',
-    updates: {
-      add: ['App has been in beta testing for almost a year and is now ready for release!'],
-      update: [],
-      fix: [],
-    },
-  },
+const BENEFITS = [
+  'Focus on today: No past or future clutter',
+  'Simple ordering: Drag and drop your priorities',
+  'Notes and subtasks: Add details when you need them',
+  'Distraction-free: No timers, workspaces, or extra features',
+  'Local data: Everything stays on your computer',
+  'Free and open source',
 ]
-
-const UpdateComponent = ({ title, date, updates }: Update) => {
-  // Flatten updates to a single array of { type, text }
-  const flatUpdates: { type: UpdateType; text: string }[] = []
-  ;(['add', 'update', 'fix'] as UpdateType[]).forEach((type: UpdateType) => {
-    updates[type].forEach((text: string) => {
-      flatUpdates.push({ type, text })
-    })
-  })
-
-  return (
-    <Box>
-      <Typography>
-        <strong>{title}</strong>
-      </Typography>
-      <Typography>
-        <time>{date}</time>
-      </Typography>
-      <List>
-        {flatUpdates.map((item) => (
-          <ListItem key={item.type + item.text}>
-            {LABELS[item.type]}: {item.text}
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  )
-}
 
 const TodoToday = () => {
   return (
     <Box>
-      <MarketingHeader src={TODO_FAVICON} title={TODO_TITLE} description={TODO_DESCRIPTION} />
-      <Typography>
-        <Link type="block" target="_blank" href={MAC_DOWNLOAD}>
-          Download for Mac
+      <MarketingHero
+        icon={TODO_FAVICON}
+        title="Todo Today"
+        tagline="The todo list for the easily distracted"
+        ctas={[
+          { label: 'macOS', href: MAC_DOWNLOAD_URL, icon: <FaApple /> },
+          { label: 'Windows', href: WINDOWS_DOWNLOAD_URL, icon: <FaWindows /> },
+        ]}
+      />
+
+      <Typography sx={{ mb: SPACING.LARGE.PX, fontSize: '1.1rem', lineHeight: 1.6 }}>
+        Todo Today isn't about the past or the future—it's about right now. Focus on what matters today. Set your
+        tasks, order them, and add notes or subtasks. Nothing more, nothing less.
+      </Typography>
+
+      <Box sx={{ mb: SPACING.LARGE.PX }}>
+        <BlurHashImage src={TODO_IMAGE} alt="Todo Today app interface" />
+      </Box>
+
+      <BenefitsList title="Why Todo Today?" items={BENEFITS} />
+
+      <Box sx={{ mb: SPACING.LARGE.PX }}>
+        <Typography sx={{ fontSize: '0.9rem', opacity: 0.8 }}>
+          Fully open source on{' '}
+          <Link type="inline" target="_blank" href="https://github.com/TravisBumgarner/Todo-Today">
+            GitHub
+          </Link>
+        </Typography>
+      </Box>
+
+      <DownloadSection
+        platforms={[
+          {
+            platform: 'macos',
+            label: 'macOS',
+            href: MAC_DOWNLOAD_URL,
+            available: true,
+            icon: <FaApple />,
+          },
+          {
+            platform: 'windows',
+            label: 'Windows',
+            href: WINDOWS_DOWNLOAD_URL,
+            available: true,
+            icon: <FaWindows />,
+          },
+          {
+            platform: 'linux',
+            label: 'Linux',
+            href: '',
+            available: false,
+          },
+        ]}
+      />
+
+      <Box sx={{ mb: SPACING.LARGE.PX }}>
+        <Typography variant="h3" sx={{ mb: SPACING.MEDIUM.PX }}>
+          Contact
+        </Typography>
+        <ContactForm subject="Todo Today Feedback" />
+      </Box>
+
+      <Box sx={{ display: 'flex', gap: SPACING.MEDIUM.PX, flexWrap: 'wrap', opacity: 0.8, fontSize: '0.9rem' }}>
+        <Link type="inline" target="_blank" href="https://github.com/TravisBumgarner/Todo-Today/releases">
+          Release Notes
         </Link>
-      </Typography>
-
-      <Typography>
-        Todo Today isn&apos;t about the past or the future, it&apos;s about right now. Focus on what matters today. Set
-        your tasks, order them, and add notes or subtasks. Nothing more, nothing less.
-      </Typography>
-
-      <BlurHashImage src="/marketing-resources/todo_today/main_page.png" />
-
-      <Typography variant="h3">Release Notes</Typography>
-      {UPDATES.map((update) => (
-        <UpdateComponent key={update.title + update.date} {...update} />
-      ))}
-
-      <Typography variant="h3">Contact</Typography>
-      <ContactForm subject="Todo Today Feedback" />
-      <Box style={{ height: SPACING.HUGE.PX }} />
+      </Box>
     </Box>
   )
 }

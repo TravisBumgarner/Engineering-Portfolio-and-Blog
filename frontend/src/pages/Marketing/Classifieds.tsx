@@ -1,198 +1,129 @@
-import { FAST_CLASSIFIEDS_DESCRIPTION, FAST_CLASSIFIEDS_FAVICON, FAST_CLASSIFIEDS_TITLE } from '@common/core'
-import { Box, List, ListItem, Typography } from '@mui/material'
+import { FAST_CLASSIFIEDS_FAVICON, FAST_CLASSIFIEDS_IMAGE } from '@common/core'
+import { Box, Typography } from '@mui/material'
 import { FaApple } from 'react-icons/fa'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
 import ContactForm from '../../sharedComponents/ContactForm'
 import Link from '../../sharedComponents/Link'
-import MarketingHeader from '../../sharedComponents/MarketingHeader'
 import Youtube from '../../sharedComponents/YouTube'
 import { SPACING } from '../../styles/consts'
+import { BenefitsList, DownloadSection, FeatureGrid, MarketingHero } from './components'
 
-const LandingPage = () => {
+const MACOS_DOWNLOAD_URL =
+  'https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.4.0/Fast.Classifieds-1.4.0-arm64.dmg'
+
+const FEATURES = [
+  {
+    title: 'AI Matching',
+    description:
+      'Define what makes a job relevant to you. The app uses your custom prompts with OpenAI to analyze job listings and explain why each opportunity matches your criteria.',
+    image: '/marketing-resources/classifieds/prompt.png',
+  },
+  {
+    title: 'Auto-Scanning',
+    description:
+      'Run automated scrapes across all your saved company career pages. Watch real-time progress as the app visits each site, extracts job listings, and evaluates relevance.',
+    image: '/marketing-resources/classifieds/scanner.png',
+  },
+  {
+    title: 'Application Tracking',
+    description:
+      'All discovered jobs appear in one organized table. Update status as you progress from discovery to offer. View AI explanations for why each job was matched.',
+    image: '/marketing-resources/classifieds/postings.png',
+  },
+]
+
+const BENEFITS = [
+  'Save time: Stop manually checking dozens of career pages daily',
+  'Better matches: AI explains why each job is relevant to you',
+  'Own your data: Everything stays on your computer',
+  'No subscriptions: Free and open source',
+  'Transparent costs: You control your OpenAI API usage',
+]
+
+const ClassifiedsPage = () => {
   return (
     <Box>
-      <MarketingHeader
-        src={FAST_CLASSIFIEDS_FAVICON}
-        title={FAST_CLASSIFIEDS_TITLE}
-        description={FAST_CLASSIFIEDS_DESCRIPTION}
+      <MarketingHero
+        icon={FAST_CLASSIFIEDS_FAVICON}
+        title="Fast Classifieds"
+        tagline="AI-powered job search automation"
+        ctas={[{ label: 'Download for macOS', href: MACOS_DOWNLOAD_URL, icon: <FaApple /> }]}
       />
 
-      <Box sx={{ mb: SPACING.MEDIUM.PX }}>
-        <Link
-          type="block"
-          target="_blank"
-          href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.4.0/Fast.Classifieds-1.4.0-arm64.dmg"
-        >
-          <FaApple style={{ marginRight: '0.5rem' }} />
-          Download for macOS
-        </Link>
+      <Box sx={{ mb: SPACING.LARGE.PX }}>
+        <BlurHashImage src={FAST_CLASSIFIEDS_IMAGE} alt="Fast Classifieds app interface" />
       </Box>
 
-      <Box sx={{ mb: SPACING.MEDIUM.PX }}>
-        <BlurHashImage src="/marketing-resources/classifieds/screenshot.png" />
-      </Box>
-      <Typography sx={{ mb: 4, fontSize: '1.1rem', lineHeight: 1.6 }}>
+      <Typography sx={{ mb: SPACING.LARGE.PX, fontSize: '1.1rem', lineHeight: 1.6 }}>
         Stop wasting hours manually browsing company career pages. Fast Classifieds uses AI to automatically scan
         multiple company websites, find relevant job postings, and explain why each opportunity matches your criteria.
-        Keep your job search organized in one desktop application. No accounts, no subscriptions, your data stays local.
+        Keep your job search organized in one desktop application—no accounts, no subscriptions, your data stays local.
       </Typography>
-      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
-        <Box sx={{ flex: 1, minWidth: 200 }}>
-          <Typography variant="h4" gutterBottom>
-            <strong>Create Custom AI Prompts</strong>
-          </Typography>
-          <Typography>
-            Define what makes a job relevant to you. The app uses your prompts with OpenAI to analyze job listings and
-            determine matches.
-          </Typography>
-        </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <BlurHashImage src="/marketing-resources/classifieds/prompt.png" />
-        </Box>
-      </Box>
-      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
-        <Box sx={{ flex: 1, minWidth: 200 }}>
-          <Typography variant="h4" gutterBottom>
-            <strong>Manage Company Career Pages</strong>
-          </Typography>
-          <Typography>
-            Add career pages from companies you are interested in. Configure CSS selectors to target job listings, or
-            use &apos;body&apos; to scan the entire page. Import multiple sites at once or add them individually.
-          </Typography>
-        </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <BlurHashImage src="/marketing-resources/classifieds/sites.png" />
-        </Box>
-      </Box>
-      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
-        <Box sx={{ flex: 1, minWidth: 200 }}>
-          <Typography variant="h4" gutterBottom>
-            <strong>Automated Scanning with Progress Tracking</strong>
-          </Typography>
-          <Typography>
-            Run automated scrapes across all active sites. Watch real-time progress as the app visits each career page,
-            extracts job listings, and uses AI to evaluate relevance.
-          </Typography>
-        </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <BlurHashImage src="/marketing-resources/classifieds/scanner.png" />
-        </Box>
-      </Box>
-      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
-        <Box sx={{ flex: 1, minWidth: 200 }}>
-          <Typography variant="h4" gutterBottom>
-            <strong>Track Your Applications</strong>
-          </Typography>
-          <Typography>
-            All discovered jobs appear in one organized table. Update status as you progress (New → Applied → Interview
-            → Offer). Sort by company, title, or date found. View AI explanations for why each job was matched.
-          </Typography>
-        </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <BlurHashImage src="/marketing-resources/classifieds/postings.png" />
-        </Box>
-      </Box>
-      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
-        <Box sx={{ flex: 1, minWidth: 200 }}>
-          <Typography variant="h4" gutterBottom>
-            <strong>Find Duplicates</strong>
-          </Typography>
-          <Typography>
-            The app automatically detects duplicate job postings. If the same job appears on multiple sites, it groups
-            them together to keep your list clean.
-          </Typography>
-        </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <BlurHashImage src="/marketing-resources/classifieds/duplicates.png" />
-        </Box>
-      </Box>
 
-      <Box sx={{ display: 'flex', gap: 4, mb: 4, alignItems: 'flex-start', flexDirection: 'column' }}>
-        <Box sx={{ flex: 1, minWidth: 200 }}>
-          <Typography variant="h4" gutterBottom>
-            <strong>Review Scrape History</strong>
-          </Typography>
-          <Typography>
-            See detailed history of every scan: which sites were checked, how many new jobs were found, duration, and
-            any errors encountered. Retry failed sites with one click.
-          </Typography>
-        </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <BlurHashImage src="/marketing-resources/classifieds/history.png" />
-        </Box>
-      </Box>
-      <Box sx={{ mb: 4 }}>
-        <Typography variant="h4" gutterBottom>
-          <strong>Privacy & Transparency</strong>
+      <FeatureGrid features={FEATURES} fullWidthImages />
+
+      <BenefitsList title="Why Fast Classifieds?" items={BENEFITS} />
+
+      <Box sx={{ mb: SPACING.LARGE.PX }}>
+        <Typography variant="h3" sx={{ mb: SPACING.MEDIUM.PX }}>
+          Getting Started
         </Typography>
-        <List>
-          <ListItem>All data stored locally in SQLite, no data leaves your computer.</ListItem>
-          <ListItem>No account or subscription required</ListItem>
-          <ListItem>OpenAI API key stored securely on your device</ListItem>
-          <ListItem>Track API usage directly in the app</ListItem>
-          <ListItem>
-            Fully Open Source (
-            <Link type="inline" target="_blank" href="https://github.com/TravisBumgarner/fast-classifieds">
-              GitHub
-            </Link>
-            )
-          </ListItem>
-          <ListItem>Cross-platform: macOS, Windows, Linux</ListItem>
-        </List>
-      </Box>
-      <Box sx={{ mb: SPACING.MEDIUM.PX }}>
-        <Link
-          type="block"
-          target="_blank"
-          href="https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.4.0/Fast.Classifieds-1.4.0-arm64.dmg"
-        >
-          <FaApple style={{ marginRight: '0.5rem' }} />
-          Download for macOS
-        </Link>
-      </Box>
-      <Typography sx={{ mb: 3, textAlign: 'center' }}>Windows and Linux coming soon!</Typography>
-      <Typography variant="h3" gutterBottom sx={{ mt: 4 }}>
-        Getting Started
-      </Typography>
-      <Box sx={{ mb: 3 }}>
         <Youtube embedId="FQKY70r2288" />
       </Box>
-      <Typography variant="h3" gutterBottom sx={{ mt: 4 }}>
-        How It Works
-      </Typography>
-      <Typography sx={{ mb: 4, lineHeight: 1.6 }}>
-        Fast Classifieds uses Puppeteer to visit company career pages and extract job listings. It then sends each
-        listing to OpenAI along with your custom prompt. The AI analyzes the job description and explains why it matches
-        (or does not match) your criteria. Jobs are deduplicated using content hashing, so you will not see the same
-        posting twice.
-      </Typography>
-      <Typography variant="h3" gutterBottom sx={{ mt: 4 }}>
-        Why Fast Classifieds?
-      </Typography>
-      <List sx={{ mb: 4 }}>
-        <ListItem>
-          <strong>Save Time:</strong> Stop manually checking dozens of career pages daily
-        </ListItem>
-        <ListItem>
-          <strong>Find Better Matches:</strong> AI explains why each job is relevant to you
-        </ListItem>
-        <ListItem>
-          <strong>Stay Organized:</strong> Track applications from discovery to offer
-        </ListItem>
-        <ListItem>
-          <strong>Own Your Data:</strong> Everything stays on your computer
-        </ListItem>
-        <ListItem>
-          <strong>Transparent Costs:</strong> You control your OpenAI API usage
-        </ListItem>
-      </List>
-      <Typography variant="h3" gutterBottom sx={{ mt: 4 }}>
-        Contact
-      </Typography>
-      <ContactForm subject="Fast Classifieds Feedback" />
-      <Box sx={{ height: 50 }} />
+
+      <Box sx={{ mb: SPACING.LARGE.PX }}>
+        <Typography variant="h3" sx={{ mb: SPACING.SMALL.PX }}>
+          How It Works
+        </Typography>
+        <Typography sx={{ lineHeight: 1.6 }}>
+          Fast Classifieds uses Puppeteer to visit company career pages and extract job listings. It then sends each
+          listing to OpenAI along with your custom prompt. The AI analyzes the job description and explains why it
+          matches (or does not match) your criteria. Jobs are deduplicated using content hashing, so you won't see the
+          same posting twice.
+        </Typography>
+      </Box>
+
+      <Box sx={{ mb: SPACING.LARGE.PX }}>
+        <Typography sx={{ fontSize: '0.9rem', opacity: 0.8 }}>
+          Fully open source on{' '}
+          <Link type="inline" target="_blank" href="https://github.com/TravisBumgarner/fast-classifieds">
+            GitHub
+          </Link>
+        </Typography>
+      </Box>
+
+      <DownloadSection
+        platforms={[
+          {
+            platform: 'macos',
+            label: 'macOS',
+            href: MACOS_DOWNLOAD_URL,
+            available: true,
+            icon: <FaApple />,
+          },
+          {
+            platform: 'windows',
+            label: 'Windows',
+            href: '',
+            available: false,
+          },
+          {
+            platform: 'linux',
+            label: 'Linux',
+            href: '',
+            available: false,
+          },
+        ]}
+      />
+
+      <Box sx={{ mb: SPACING.LARGE.PX }}>
+        <Typography variant="h3" sx={{ mb: SPACING.MEDIUM.PX }}>
+          Contact
+        </Typography>
+        <ContactForm subject="Fast Classifieds Feedback" />
+      </Box>
     </Box>
   )
 }
 
-export default LandingPage
+export default ClassifiedsPage
