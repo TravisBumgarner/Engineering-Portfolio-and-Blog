@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import Link from '../../../sharedComponents/Link'
-import { SPACING } from '../../../styles/consts'
+import { SPACING, subtleBackground } from '../../../styles/consts'
 
 interface CTA {
   label: string
@@ -25,6 +25,8 @@ const MarketingHero = ({ icon, title, tagline, ctas }: MarketingHeroProps) => {
         alignItems: 'center',
         textAlign: 'center',
         mb: SPACING.LARGE.PX,
+        backgroundColor: ({ palette }) => subtleBackground(palette.mode, 'slightly'),
+        padding: SPACING.MEDIUM.PX,
       }}
     >
       <Box sx={{ mb: SPACING.MEDIUM.PX }}>
@@ -38,9 +40,7 @@ const MarketingHero = ({ icon, title, tagline, ctas }: MarketingHeroProps) => {
           }}
         />
       </Box>
-      <Typography variant="h1" sx={{ mb: SPACING.SMALL.PX }}>
-        {title}
-      </Typography>
+      <Typography variant="h1">{title}</Typography>
       <Typography
         sx={{
           mb: SPACING.MEDIUM.PX,
