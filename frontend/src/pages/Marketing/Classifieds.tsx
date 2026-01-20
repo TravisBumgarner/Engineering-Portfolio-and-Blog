@@ -4,6 +4,7 @@ import { FaApple } from 'react-icons/fa'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
 import ContactForm from '../../sharedComponents/ContactForm'
 import Link from '../../sharedComponents/Link'
+import PageWrapper from '../../sharedComponents/PageWrapper'
 import Youtube from '../../sharedComponents/YouTube'
 import { SPACING } from '../../styles/consts'
 import { BenefitsList, DownloadSection, FeatureGrid, MarketingHero } from './components'
@@ -42,7 +43,7 @@ const BENEFITS = [
 
 const ClassifiedsPage = () => {
   return (
-    <Box>
+    <PageWrapper width="medium">
       <MarketingHero
         icon={FAST_CLASSIFIEDS_FAVICON}
         title="Fast Classifieds"
@@ -122,7 +123,7 @@ const ClassifiedsPage = () => {
         </Typography>
         <ContactForm subject="Fast Classifieds Feedback" />
       </Box>
-    </Box>
+    </PageWrapper>
   )
 }
 

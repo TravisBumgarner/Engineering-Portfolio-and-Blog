@@ -33,9 +33,18 @@ interface Props {
   loadingEndCallback?: (src: string) => void
   maxDimensions?: { maxWidth?: string; maxHeight?: string } // Fuck fuck fuck.
   maxHeight?: number
+  useBorder?: boolean
 }
 
-const BlurImage = ({ src, alt, loadingStartCallback, loadingEndCallback, maxDimensions, maxHeight }: Props) => {
+const BlurImage = ({
+  src,
+  alt,
+  loadingStartCallback,
+  loadingEndCallback,
+  maxDimensions,
+  maxHeight,
+  useBorder = true,
+}: Props) => {
   const imgRef = useRef<HTMLImageElement>(null)
   const theme = useTheme()
   const { width, height, blurHash } = getBlurHash(src)
@@ -77,9 +86,10 @@ const BlurImage = ({ src, alt, loadingStartCallback, loadingEndCallback, maxDime
         backgroundPosition: 'center',
         overflow: 'hidden',
         ...maxDimensions,
-        // These next 3 lines might belong below.
-        backgroundColor: 'white',
-        border: `4px solid ${theme.palette.mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[200]}`,
+        backgroundColor: useBorder ? 'white' : 'transparent',
+        border: useBorder
+          ? `4px solid ${theme.palette.mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[200]}`
+          : 'none',
         maxHeight: maxHeight ? `${maxHeight}vh` : '90vh',
       }}
     >
@@ -91,7 +101,7 @@ const BlurImage = ({ src, alt, loadingStartCallback, loadingEndCallback, maxDime
         rel={startLoadingImage ? 'preload' : ''}
         alt={alt}
         sx={{
-          padding: SPACING.SMALL.PX,
+          padding: useBorder ? SPACING.SMALL.PX : 0,
           width: '100%',
           height: '100%',
           objectFit: 'contain',

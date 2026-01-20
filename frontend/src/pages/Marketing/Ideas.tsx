@@ -3,6 +3,7 @@ import { Box, Typography } from '@mui/material'
 import { FaAndroid, FaApple } from 'react-icons/fa'
 import ContactForm from '../../sharedComponents/ContactForm'
 import Link from '../../sharedComponents/Link'
+import PageWrapper from '../../sharedComponents/PageWrapper'
 import { SPACING } from '../../styles/consts'
 import { BenefitsList, DownloadSection, FeatureGrid, MarketingHero } from './components'
 
@@ -41,7 +42,7 @@ const BENEFITS = [
 
 const IdeasPage = () => {
   return (
-    <Box>
+    <PageWrapper width="medium">
       <MarketingHero
         icon={IDEAS_FAVICON}
         title="Ideas Down"
@@ -58,7 +59,7 @@ const IdeasPage = () => {
         device and the app is fully open source.
       </Typography>
 
-      <FeatureGrid features={FEATURES} fullWidthImages />
+      <FeatureGrid features={FEATURES} />
 
       <BenefitsList title="Why Ideas Down?" items={BENEFITS} />
 
@@ -96,7 +97,7 @@ const IdeasPage = () => {
           Source Code
         </Link>
       </Box>
-    </Box>
+    </PageWrapper>
   )
 }
 

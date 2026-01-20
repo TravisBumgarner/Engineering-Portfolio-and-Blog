@@ -3,6 +3,7 @@ import { Box, IconButton, Stack } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { useMemo } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { SITE_TITLE_HEIGHT } from '../consts'
 import Link from '../sharedComponents/Link'
 import { toggleSidebar } from '../signals'
 import { SPACING, Z_INDICES } from '../styles/consts'
@@ -49,7 +50,10 @@ const SiteTitle = ({ isDesktop }: { isDesktop: boolean }) => {
   return (
     <Box
       sx={{
-        padding: `${SPACING.LARGE.PX} 0 ${SPACING.MEDIUM.PX} 0`,
+        height: SITE_TITLE_HEIGHT,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
       }}
     >
       <Stack direction="row" justifyContent="space-between" alignItems="center" mb={SPACING.TINY.PX}>

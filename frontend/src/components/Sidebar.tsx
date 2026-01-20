@@ -1,16 +1,15 @@
 import { ROUTES } from '@common/core'
-import { Backdrop, Box, Drawer, IconButton, Stack, Typography, useMediaQuery } from '@mui/material'
+import { Backdrop, Box, Drawer, Stack, Typography, useMediaQuery } from '@mui/material'
 import { useSignals } from '@preact/signals-react/runtime'
 import { AnimatePresence } from 'motion/react'
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { HiOutlineExternalLink } from 'react-icons/hi'
 import Link from '../sharedComponents/Link'
 import { isSidebarOpen, toggleSidebar } from '../signals'
-import { FONT_SIZES, SPACING, Z_INDICES } from '../styles/consts'
+import { SPACING, Z_INDICES } from '../styles/consts'
 
 // Work section
 const WORK_LINKS = [
   { title: 'Portfolio', href: ROUTES.CREATIONS.href },
-  { title: 'Launch Pages', href: ROUTES.MARKETING.href },
   { title: 'Hire Me', href: ROUTES.WORK_WITH_ME.href },
   { title: 'Resume', href: '/travis_bumgarner_resume.pdf', target: '_blank' },
 ]
@@ -57,7 +56,7 @@ const Section = ({
       {links.map((link) => (
         <Link
           key={link.href}
-          sx={{ fontWeight: 400 }}
+          sx={{ fontWeight: 400, display: 'flex', alignItems: 'center', gap: SPACING.TINY.PX }}
           type="inlineMenu"
           href={link.href}
           target={link.target}
@@ -65,6 +64,7 @@ const Section = ({
           onClick={onLinkClick}
         >
           {link.title}
+          {link.target === '_blank' && <HiOutlineExternalLink size={16} />}
         </Link>
       ))}
     </Stack>
@@ -75,8 +75,8 @@ const Section = ({
 const SidebarContent = ({ onLinkClick }: { onLinkClick?: () => void }) => (
   <Stack direction="column" spacing={SPACING.LARGE.PX}>
     <Section title="Work" links={WORK_LINKS} onLinkClick={onLinkClick} />
-    <Section title="Marketing Pages" links={MARKETING_PAGES} onLinkClick={onLinkClick} />
     <Section title="Creative" links={CREATIVE_LINKS} onLinkClick={onLinkClick} />
+    <Section title="Marketing Pages" links={MARKETING_PAGES} onLinkClick={onLinkClick} />
     <Section title="Socials" links={SOCIAL_MEDIA} onLinkClick={onLinkClick} />
   </Stack>
 )

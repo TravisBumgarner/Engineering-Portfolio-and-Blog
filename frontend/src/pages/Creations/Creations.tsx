@@ -1,8 +1,9 @@
 import { ROUTES } from '@common/core'
-import { Box, Stack, Typography } from '@mui/material'
+import { Box, Grid, Stack, Typography } from '@mui/material'
 import projects, { type Project } from '../../content/projects'
 import ItemPreview from '../../sharedComponents/ItemPreview'
 import Link from '../../sharedComponents/Link'
+import PageWrapper from '../../sharedComponents/PageWrapper'
 import { FONT_SIZES, SPACING } from '../../styles/consts'
 
 const CURRENT_WORK: Project[] = [
@@ -100,7 +101,7 @@ const CurrentWork = () => {
 
 const Portfolio = () => {
   return (
-    <>
+    <PageWrapper width="small">
       <CurrentWork />
       <Typography variant="h2" sx={{ fontWeight: 500, marginBottom: SPACING.SMALL.PX, fontSize: FONT_SIZES.MEDIUM.PX }}>
         Portfolio
@@ -120,7 +121,7 @@ const Portfolio = () => {
             />
           )
         })}
-    </>
+    </PageWrapper>
   )
 }
 

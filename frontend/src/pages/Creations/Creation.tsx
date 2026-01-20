@@ -4,6 +4,7 @@ import { Navigate, useParams } from 'react-router-dom'
 import projects from '../../content/projects'
 import Figure from '../../sharedComponents/Figure'
 import Link from '../../sharedComponents/Link'
+import PageWrapper from '../../sharedComponents/PageWrapper'
 import Youtube from '../../sharedComponents/YouTube'
 import { SPACING } from '../../styles/consts'
 
@@ -34,7 +35,7 @@ const Creation = () => {
   ]
 
   return (
-    <Box>
+    <PageWrapper width="small">
       <Typography variant="h2">{project.title}</Typography>
       <time>
         Last Updated{' '}
@@ -53,7 +54,7 @@ const Creation = () => {
       </Stack>
       {project.videos && Videos}
       {Images.map((i) => i.element)}
-    </Box>
+    </PageWrapper>
   )
 }
 export default Creation

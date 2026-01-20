@@ -1,1 +1,1 @@
-export const MAX_IMAGE_HEIGHT = '90vh'
+export const SITE_TITLE_HEIGHT = '140px'

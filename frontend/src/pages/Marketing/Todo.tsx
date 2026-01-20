@@ -4,6 +4,7 @@ import { FaApple, FaWindows } from 'react-icons/fa'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
 import ContactForm from '../../sharedComponents/ContactForm'
 import Link from '../../sharedComponents/Link'
+import PageWrapper from '../../sharedComponents/PageWrapper'
 import { SPACING } from '../../styles/consts'
 import { BenefitsList, DownloadSection, MarketingHero } from './components'
 
@@ -23,7 +24,7 @@ const BENEFITS = [
 
 const TodoToday = () => {
   return (
-    <Box>
+    <PageWrapper width="medium">
       <MarketingHero
         icon={TODO_FAVICON}
         title="Todo Today"
@@ -35,8 +36,8 @@ const TodoToday = () => {
       />
 
       <Typography sx={{ mb: SPACING.LARGE.PX, fontSize: '1.1rem', lineHeight: 1.6 }}>
-        Todo Today isn't about the past or the future—it's about right now. Focus on what matters today. Set your
-        tasks, order them, and add notes or subtasks. Nothing more, nothing less.
+        Todo Today isn't about the past or the future—it's about right now. Focus on what matters today. Set your tasks,
+        order them, and add notes or subtasks. Nothing more, nothing less.
       </Typography>
 
       <Box sx={{ mb: SPACING.LARGE.PX }}>
@@ -91,7 +92,7 @@ const TodoToday = () => {
           Release Notes
         </Link>
       </Box>
-    </Box>
+    </PageWrapper>
   )
 }
 

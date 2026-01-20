@@ -10,6 +10,7 @@ import projects from '../content/projects'
 import Contact from '../sharedComponents/ContactForm'
 import ItemPreview from '../sharedComponents/ItemPreview'
 import Link from '../sharedComponents/Link'
+import PageWrapper from '../sharedComponents/PageWrapper'
 import { SPACING } from '../styles/consts'
 
 function formatLinks(list: { title: string; path: string }[]) {
@@ -80,7 +81,7 @@ const WorkWithMe = () => {
   }
 
   return (
-    <Box>
+    <PageWrapper width="medium">
       <Typography variant="h2" gutterBottom>
         I turn early-stage ideas
         <br />
@@ -215,7 +216,7 @@ const WorkWithMe = () => {
         <Contact />
         <Box sx={{ height: 64 }} />
       </Box>
-    </Box>
+    </PageWrapper>
   )
 }
 
