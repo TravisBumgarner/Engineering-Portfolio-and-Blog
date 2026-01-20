@@ -30,72 +30,34 @@ const SOCIAL_MEDIA = [
   { title: 'LinkedIn', href: 'https://www.linkedin.com/in/travisbumgarner/', target: '_blank', icon: 'linkedin' },
   { title: 'Reddit', href: 'https://www.reddit.com/user/travis_the_maker/', target: '_blank', icon: 'reddit' },
   { title: 'YouTube', href: 'https://www.youtube.com/@SillySideProjects', target: '_blank', icon: 'youtube' },
-] as const
+]
 
-// Work section component
-const WorkSection = ({ onLinkClick }: { onLinkClick?: () => void }) => (
+// Generic reusable section component
+const Section = ({
+  title,
+  links,
+  onLinkClick,
+}: {
+  title: string
+  links: Array<{ title: string; href: string; target?: string }>
+  onLinkClick?: () => void
+}) => (
   <Box>
-    <Typography variant="body1" sx={{ fontWeight: 400, mb: SPACING.TINY.PX }}>
-      Work
+    <Typography variant="body1" sx={{ fontWeight: 400, mb: SPACING.TINY.PX, mt: 0 }}>
+      {title}
     </Typography>
     <Stack direction="column" spacing={SPACING.TINY.PX}>
-      {WORK_LINKS.map((link) => (
+      {links.map((link) => (
         <Link
           key={link.href}
           sx={{ fontWeight: 100 }}
           type="inlineMenu"
           href={link.href}
           target={link.target}
+          rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
           onClick={onLinkClick}
         >
           {link.title}
-        </Link>
-      ))}
-    </Stack>
-  </Box>
-)
-
-// Creative section component
-const CreativeSection = ({ onLinkClick }: { onLinkClick?: () => void }) => (
-  <Box>
-    <Typography variant="body1" sx={{ fontWeight: 400, mb: SPACING.TINY.PX }}>
-      Creative
-    </Typography>
-    <Stack direction="column" spacing={SPACING.TINY.PX}>
-      {CREATIVE_LINKS.map((link) => (
-        <Link
-          key={link.href}
-          sx={{ fontWeight: 100 }}
-          type="inlineMenu"
-          href={link.href}
-          target={link.target}
-          onClick={onLinkClick}
-        >
-          {link.title}
-        </Link>
-      ))}
-    </Stack>
-  </Box>
-)
-
-// Socials section component
-const SocialsSection = ({ onLinkClick }: { onLinkClick?: () => void }) => (
-  <Box>
-    <Typography variant="body1" sx={{ fontWeight: 400, mb: SPACING.TINY.PX }}>
-      Socials
-    </Typography>
-    <Stack direction="column" spacing={SPACING.TINY.PX}>
-      {SOCIAL_MEDIA.map((s) => (
-        <Link
-          key={s.href}
-          sx={{ fontWeight: 100 }}
-          type="inlineMenu"
-          href={s.href}
-          target={s.target}
-          rel="noopener noreferrer"
-          onClick={onLinkClick}
-        >
-          {s.title}
         </Link>
       ))}
     </Stack>
@@ -104,10 +66,10 @@ const SocialsSection = ({ onLinkClick }: { onLinkClick?: () => void }) => (
 
 // Reusable sidebar content component
 const SidebarContent = ({ onLinkClick }: { onLinkClick?: () => void }) => (
-  <Stack direction="column" spacing={SPACING.MEDIUM.PX}>
-    <WorkSection onLinkClick={onLinkClick} />
-    <CreativeSection onLinkClick={onLinkClick} />
-    <SocialsSection onLinkClick={onLinkClick} />
+  <Stack direction="column" spacing={SPACING.LARGE.PX}>
+    <Section title="Work" links={WORK_LINKS} onLinkClick={onLinkClick} />
+    <Section title="Creative" links={CREATIVE_LINKS} onLinkClick={onLinkClick} />
+    <Section title="Socials" links={SOCIAL_MEDIA} onLinkClick={onLinkClick} />
   </Stack>
 )
 
@@ -144,7 +106,7 @@ const SidebarClient = () => {
             sx: {
               width: 190,
               backgroundColor: 'background.paper',
-              p: SPACING.SMALL.PX,
+              p: `${SPACING.HUGE.PX} ${SPACING.MEDIUM.PX} ${SPACING.MEDIUM.PX} ${SPACING.MEDIUM.PX}`,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
