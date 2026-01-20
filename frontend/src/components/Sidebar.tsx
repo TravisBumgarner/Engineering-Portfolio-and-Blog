@@ -21,7 +21,7 @@ const THERE = [
   { title: 'Photography', href: 'https://travisbumgarner.photography', target: '_blank' },
 ]
 
-const ROUTES_TO_DISPLAY: (keyof typeof ROUTES)[] = ['SNAPSHOTS', 'CREATIONS', 'BLOG', 'MARKETING']
+const ROUTES_TO_DISPLAY: (keyof typeof ROUTES)[] = ['SNAPSHOTS', 'WORK_WITH_ME', 'CREATIONS', 'BLOG', 'MARKETING']
 
 const SidebarClient = () => {
   const [isOpen, setIsOpen] = useState(false)
