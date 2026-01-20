@@ -1,6 +1,7 @@
 import { ROUTES } from '@common/core'
 import { lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import WorkWithMe from '../pages/Work'
 
 const Creation = lazy(async () => await import('../pages/Creations/Creation'))
 const NotFound = lazy(async () => await import('../pages/NotFound'))
@@ -27,6 +28,7 @@ const Router = () => (
     <Route path={ROUTES.MARKETING_IDEAS.href} element={<Ideas />} />
     <Route path={ROUTES.MARKETING_TODO.href} element={<Todo />} />
     <Route path={ROUTES.MARKETING.href} element={<Marketing />} />
+    <Route path={ROUTES.WORK_WITH_ME.href} element={<WorkWithMe />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 )
