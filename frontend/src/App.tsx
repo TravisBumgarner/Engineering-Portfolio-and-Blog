@@ -10,7 +10,7 @@ import { isSidebarOpen } from './signals'
 import AppThemeProvider from './styles/Theme'
 
 const App = () => {
-  const isDesktop = useMediaQuery(`(min-width:1000px)`)
+  const isDesktop = useMediaQuery(`(min-width:900px)`)
 
   useEffect(() => {
     if (isDesktop) {
@@ -22,7 +22,7 @@ const App = () => {
     return (
       <AppThemeProvider>
         <Box sx={{ display: 'flex' }}>
-          <DesktopSidebarContent />
+          <DesktopSidebarContent isDesktop={true} />
           <Box sx={{ flex: 1 }}>
             <SiteTitle isDesktop={true} />
             <Sidebar isDesktop={true} />
