@@ -103,6 +103,24 @@ const Snapshots = () => {
     return () => window.removeEventListener('keydown', handleKeyPress)
   }, [lightboxIndex, closeLightbox, goToPrevious, goToNext])
 
+  // Prefetch adjacent images when lightbox index changes
+  useEffect(() => {
+    if (lightboxIndex === null) return
+
+    const prefetchImage = (src: string) => {
+      const img = new Image()
+      img.src = src
+    }
+
+    // Prefetch previous image
+    const prevIndex = lightboxIndex === 0 ? allSnapshots.length - 1 : lightboxIndex - 1
+    prefetchImage(allSnapshots[prevIndex].src)
+
+    // Prefetch next image
+    const nextIndex = lightboxIndex === allSnapshots.length - 1 ? 0 : lightboxIndex + 1
+    prefetchImage(allSnapshots[nextIndex].src)
+  }, [lightboxIndex, allSnapshots])
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
