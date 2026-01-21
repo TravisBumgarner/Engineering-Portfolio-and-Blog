@@ -128,9 +128,7 @@ const SidebarClient = ({ isDesktop }: { isDesktop: boolean }) => {
 }
 
 // Export the sidebar content for use in desktop layout
-export const DesktopSidebarContent = () => {
-  const isDesktop = useMediaQuery(`(min-width:1100px)`)
-
+export const DesktopSidebarContent = ({ isDesktop }: { isDesktop: boolean }) => {
   if (!isDesktop) return null
 
   return (
@@ -138,9 +136,8 @@ export const DesktopSidebarContent = () => {
       sx={{
         position: 'sticky',
         top: 0,
-        width: 240,
         height: '100vh',
-        p: SPACING.SMALL.PX,
+        p: `${SPACING.SMALL.PX} ${SPACING.LARGE.PX} ${SPACING.SMALL.PX} ${SPACING.SMALL.PX}`,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
