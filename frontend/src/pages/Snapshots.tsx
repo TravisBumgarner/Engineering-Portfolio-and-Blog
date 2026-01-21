@@ -182,6 +182,8 @@ const Snapshots = () => {
       <Modal
         open={lightboxIndex !== null}
         onClose={closeLightbox}
+        disableAutoFocus
+        disableEnforceFocus
         sx={{
           display: 'flex',
           alignItems: 'center',
@@ -198,6 +200,10 @@ const Snapshots = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            outline: 'none', // Remove focus outline
+            '&:focus': {
+              outline: 'none', // Ensure no focus outline even when explicitly focused
+            },
           }}
         >
           {lightboxIndex !== null && (
