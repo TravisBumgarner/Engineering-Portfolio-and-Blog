@@ -3,9 +3,8 @@ import { Box, Typography } from '@mui/material'
 import { FaApple, FaLinux, FaWindows } from 'react-icons/fa'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
 import ContactForm from '../../sharedComponents/ContactForm'
-import Link from '../../sharedComponents/Link'
 import { SPACING } from '../../styles/consts'
-import { BenefitsList, DownloadSection, MarketingHero } from './components'
+import { BenefitsList, DownloadSection, MarketingHero, MarketingLinks } from './components'
 
 const MAC_DOWNLOAD_URL = 'https://github.com/TravisBumgarner/Todo-Today/releases/latest/download/Todo-Today-darwin.dmg'
 const WINDOWS_DOWNLOAD_URL =
@@ -80,11 +79,18 @@ const TodoToday = () => {
         <ContactForm subject="Todo Today Feedback" />
       </Box>
 
-      <Box sx={{ display: 'flex', gap: SPACING.MEDIUM.PX, flexWrap: 'wrap', opacity: 0.8, fontSize: '0.9rem' }}>
-        <Link type="inline" target="_blank" href="https://github.com/TravisBumgarner/Todo-Today/releases">
-          Release Notes
-        </Link>
-      </Box>
+      <MarketingLinks
+        links={[
+          {
+            href: 'https://github.com/TravisBumgarner/Todo-Today',
+            label: 'Source Code',
+          },
+          {
+            href: 'https://github.com/TravisBumgarner/Todo-Today/releases',
+            label: 'Releases',
+          },
+        ]}
+      />
     </>
   )
 }

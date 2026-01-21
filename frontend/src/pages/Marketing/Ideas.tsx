@@ -2,9 +2,8 @@ import { IDEAS_FAVICON } from '@common/core'
 import { Box, Typography } from '@mui/material'
 import { FaAndroid, FaApple } from 'react-icons/fa'
 import ContactForm from '../../sharedComponents/ContactForm'
-import Link from '../../sharedComponents/Link'
 import { SPACING } from '../../styles/consts'
-import { BenefitsList, DownloadSection, FeatureGrid, MarketingHero } from './components'
+import { BenefitsList, DownloadSection, FeatureGrid, MarketingHero, MarketingLinks } from './components'
 
 const APP_STORE_URL = 'https://apps.apple.com/us/app/ideas-down-quickly/id6529524065?platform=iphone'
 const PLAY_STORE_TESTING_URL =
@@ -88,14 +87,18 @@ const IdeasPage = () => {
         <ContactForm subject="Ideas Down Feedback" />
       </Box>
 
-      <Box sx={{ display: 'flex', gap: SPACING.MEDIUM.PX, flexWrap: 'wrap', opacity: 0.8, fontSize: '0.9rem' }}>
-        <Link type="inline" target="_blank" href="https://github.com/TravisBumgarner/ideas-down-quickly/releases">
-          Release Notes
-        </Link>
-        <Link type="inline" target="_blank" href="https://github.com/TravisBumgarner/ideas-down-quickly">
-          Source Code
-        </Link>
-      </Box>
+      <MarketingLinks
+        links={[
+          {
+            href: 'https://github.com/TravisBumgarner/ideas-down-quickly',
+            label: 'Source Code',
+          },
+          {
+            href: 'https://github.com/TravisBumgarner/ideas-down-quickly/releases',
+            label: 'Releases',
+          },
+        ]}
+      />
     </>
   )
 }

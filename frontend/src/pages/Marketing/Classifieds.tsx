@@ -3,10 +3,9 @@ import { Box, Typography } from '@mui/material'
 import { FaApple, FaLinux, FaWindows } from 'react-icons/fa'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
 import ContactForm from '../../sharedComponents/ContactForm'
-import Link from '../../sharedComponents/Link'
 import Youtube from '../../sharedComponents/YouTube'
 import { SPACING } from '../../styles/consts'
-import { BenefitsList, DownloadSection, FeatureGrid, MarketingHero } from './components'
+import { BenefitsList, DownloadSection, FeatureGrid, MarketingHero, MarketingLinks } from './components'
 
 const MAC_DOWNLOAD_URL =
   'https://github.com/TravisBumgarner/fast-classifieds/releases/latest/download/Fast-Classifieds-darwin.dmg'
@@ -91,15 +90,6 @@ const ClassifiedsPage = () => {
         </Typography>
       </Box>
 
-      <Box sx={{ mb: SPACING.LARGE.PX }}>
-        <Typography sx={{ fontSize: '0.9rem', opacity: 0.8 }}>
-          Fully open source on{' '}
-          <Link type="inline" target="_blank" href="https://github.com/TravisBumgarner/fast-classifieds">
-            GitHub
-          </Link>
-        </Typography>
-      </Box>
-
       <DownloadSection
         platforms={[
           {
@@ -132,6 +122,19 @@ const ClassifiedsPage = () => {
         </Typography>
         <ContactForm subject="Fast Classifieds Feedback" />
       </Box>
+
+      <MarketingLinks
+        links={[
+          {
+            href: 'https://github.com/TravisBumgarner/fast-classifieds',
+            label: 'Source Code',
+          },
+          {
+            href: 'https://github.com/TravisBumgarner/fast-classifieds/releases',
+            label: 'Releases',
+          },
+        ]}
+      />
     </>
   )
 }

@@ -4,7 +4,7 @@ import { FaSteam } from 'react-icons/fa'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
 import ContactForm from '../../sharedComponents/ContactForm'
 import { SPACING } from '../../styles/consts'
-import { DownloadSection, FeatureGrid, MarketingHero } from './components'
+import { DownloadSection, FeatureGrid, MarketingHero, MarketingLinks } from './components'
 
 const STEAM_URL = 'https://store.steampowered.com/app/3157820/Candlelight/'
 
@@ -67,6 +67,15 @@ const CandlelightPage = () => {
         </Typography>
         <ContactForm subject="Candlelight Feedback" />
       </Box>
+
+      <MarketingLinks
+        links={[
+          {
+            href: 'https://github.com/TravisBumgarner/candlelight',
+            label: 'Source Code',
+          },
+        ]}
+      />
     </>
   )
 }
