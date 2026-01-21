@@ -36,8 +36,5 @@
 ## New Snapshot
 
 1. Add image to src/public/snapshots
-1. Run script `app/scripts/snapshotsToJSON.ts`
-
-## Photos
-
-1. Generate a new blurhash and add it to blurHashLookup.ts
+1. Run script `app/scripts/generate_snapshots_json.ts`
+1. Generate blurhashes. 

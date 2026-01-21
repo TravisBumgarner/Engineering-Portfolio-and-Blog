@@ -1,27 +1,27 @@
 export const ROUTES = {
   SNAPSHOTS: {
     href: '/',
-    title: 'Snapshots',
+    title: 'Photo Journal',
     target: '_self',
   },
   WORK_WITH_ME: {
     href: '/work',
-    title: 'Work with Me',
+    title: 'Hire Me',
     target: '_self',
   },
   CREATIONS: {
     href: '/creations',
-    title: 'Projects',
+    title: 'Portfolio',
     target: '_self',
   },
   BLOG: {
     href: '/blog',
-    title: 'Blog',
+    title: 'Writing',
     target: '_self',
   },
   MARKETING: {
     href: '/marketing',
-    title: 'Marketing Pages',
+    title: 'Launch Pages',
     target: '_self',
   },
   MARKETING_CLASSIFIEDS: {

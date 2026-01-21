@@ -34,7 +34,7 @@ const Creation = () => {
   ]
 
   return (
-    <Box>
+    <>
       <Typography variant="h2">{project.title}</Typography>
       <time>
         Last Updated{' '}
@@ -53,7 +53,7 @@ const Creation = () => {
       </Stack>
       {project.videos && Videos}
       {Images.map((i) => i.element)}
-    </Box>
+    </>
   )
 }
 export default Creation

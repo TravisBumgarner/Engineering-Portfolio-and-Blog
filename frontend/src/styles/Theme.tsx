@@ -20,9 +20,9 @@ const baseThemeOptions: ThemeOptions = {
       styleOverrides: {
         body: {
           width: '100%',
-          maxWidth: '900px',
+          maxWidth: '1000px',
           margin: '0 auto',
-          padding: SPACING.MEDIUM.PX,
+          padding: `0 ${SPACING.SMALL.PX} 0 ${SPACING.SMALL.PX}`,
         },
       },
     },

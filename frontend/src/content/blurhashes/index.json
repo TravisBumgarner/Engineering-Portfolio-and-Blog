@@ -109,6 +109,11 @@
     "width": 795,
     "height": 796
   },
+  "/og-image.png": {
+    "blurHash": "U16[2H?b00-;M{oft7WB009F~qD%_3M{IUxu",
+    "width": 1200,
+    "height": 630
+  },
   "/post-resources/a-collection-of-tips-to-become-a-software-engineer/old_preview_image.jpg": {
     "blurHash": "U4G+UJ~ptQt7_2ofRjxuIUofxaWBWqaxayay",
     "width": 1200,
@@ -1059,15 +1064,35 @@
     "width": 806,
     "height": 1000
   },
+  "/snapshot-resources/01-DSC_8829.jpg": {
+    "blurHash": "UPD,Dy9GwGxanNWqt7so~Bt7TKn%M{t6f4a#",
+    "width": 1080,
+    "height": 1618
+  },
   "/snapshot-resources/02-DSC_5687.jpg": {
     "blurHash": "U9OV}*01K#SP~AXTTKXSrAW.E2.7%NR*i^I@",
     "width": 775,
     "height": 1000
   },
+  "/snapshot-resources/02-DSC_8842.jpg": {
+    "blurHash": "UaM@Gx={s-jZIot6jsoL~VNHNHj[s.WCR*ay",
+    "width": 1080,
+    "height": 331
+  },
+  "/snapshot-resources/03-DSC_8876.jpg": {
+    "blurHash": "U0LqX]00aHD+-cOGNNjIFdJ;ngnlP9wg#Q#*",
+    "width": 1080,
+    "height": 1083
+  },
   "/snapshot-resources/03-Screen Shot 2022-11-17 at 5.58.20 PM.jpg": {
     "blurHash": "UNA1;SNFIAjF8{tQx]f,yskBenaeDOoytRbb",
     "width": 1080,
     "height": 784
+  },
+  "/snapshot-resources/04-DSC_8889.jpg": {
+    "blurHash": "UPI$B5=_^0WX~VxFR*R+}qNcIqoKofNbR*s.",
+    "width": 1080,
+    "height": 721
   },
   "/snapshot-resources/04-PXL_20211215_044737034.MP.jpg": {
     "blurHash": "U8HB#cp000~pEO_3~px]00t7_2s:xtxaM|M{",
@@ -1079,15 +1104,35 @@
     "width": 1000,
     "height": 1000
   },
+  "/snapshot-resources/05-DSC_8914.jpg": {
+    "blurHash": "UcM*Bb9u%1#+N_g3jFj[~V-UM|OZrCnOX9f6",
+    "width": 1080,
+    "height": 721
+  },
   "/snapshot-resources/06-DSC_5933.jpg": {
     "blurHash": "UaO|X$8^n.R%~W%1R%ogyCxZoLbI#ExbX7nj",
     "width": 800,
     "height": 1000
   },
+  "/snapshot-resources/06-DSC_9047.jpg": {
+    "blurHash": "UDBzj@IV0}%1~oWC9bxZ6#s:+^bH0zof={Rk",
+    "width": 1080,
+    "height": 721
+  },
+  "/snapshot-resources/07-DSC_9063.jpg": {
+    "blurHash": "UJHLYrIVI9N[~q-;r=W;ITkCRkoeS}D*g3xZ",
+    "width": 1080,
+    "height": 762
+  },
   "/snapshot-resources/07-PXL_20201213_185641807.jpg": {
     "blurHash": "UEIEFf00IV.S1K%#R-U_-BS%g2nO~D9ENdyE",
     "width": 1080,
     "height": 810
+  },
+  "/snapshot-resources/08-2025-04-01 18.57.21-1.jpg": {
+    "blurHash": "U8Du$G$l00=d0Jaex_OA00GE%%aes;v~+Zr@",
+    "width": 1080,
+    "height": 1440
   },
   "/snapshot-resources/08-IMG_20200414_185830.jpg": {
     "blurHash": "UIDl7r~VxtM|D*Djrrs;gh={oySNF{s,%1%2",
@@ -1098,6 +1143,31 @@
     "blurHash": "UAGRq@?^n3Rjt-My9atRQ-M{x]WCRjtRSit2",
     "width": 1080,
     "height": 722
+  },
+  "/snapshot-resources/09-Screenshot 2025-05-13 at 9.52.36 PM.jpg": {
+    "blurHash": "UXNS,Fn9G8I-MyWEkVoc_MNGiyo3VFs.N[Nv",
+    "width": 1080,
+    "height": 675
+  },
+  "/snapshot-resources/10-Screenshot 2025-05-13 at 9.34.25 PM.jpg": {
+    "blurHash": "UEH.4wxD00IqtSNbi^$j01R+~Vxax@s=NLNE",
+    "width": 1080,
+    "height": 675
+  },
+  "/snapshot-resources/11-Screenshot 2025-09-30 at 11.59.15 AM.jpg": {
+    "blurHash": "UIGun00L00}?GGxG#Qbbv~jCNhKQ00-p_3Io",
+    "width": 1080,
+    "height": 675
+  },
+  "/snapshot-resources/12-Screenshot 2025-11-07 at 3.55.50 PM.jpg": {
+    "blurHash": "UJJ89D~q-.E2-oIoV@V??ao#IVs+xtM{WBxu",
+    "width": 1080,
+    "height": 830
+  },
+  "/snapshot-resources/13-DSC_4100.jpg": {
+    "blurHash": "UEI#x__3_3IU9FM{?bt7~qIU4nxu?bt7M{WB",
+    "width": 1080,
+    "height": 721
   },
   "/snapshot-resources/Screenshot_20180325-145347.jpg": {
     "blurHash": "UiK_B?R*xut7~pozV@jE%NnhWBWrRkV@ofkC",
@@ -1112,16 +1182,6 @@
   "/snapshot-resources/snapshot-1.jpg": {
     "blurHash": "UNEoSV=yMf$_}@,[-UxFQ=$N-nVw-Us9RQRj",
     "width": 800,
-    "height": 600
-  },
-  "/snapshot-resources/snapshot-10.jpg": {
-    "blurHash": "UDGIZQ~A?G~A00~qV?aIKm0NM{%LKSXW%NRh",
-    "width": 900,
-    "height": 600
-  },
-  "/snapshot-resources/snapshot-11.jpg": {
-    "blurHash": "UIGQOG~9RjEi-.tk$$nOoztQt7o0xaxZoft6",
-    "width": 900,
     "height": 600
   },
   "/snapshot-resources/snapshot-12.jpg": {

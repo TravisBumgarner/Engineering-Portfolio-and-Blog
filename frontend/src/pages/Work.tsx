@@ -80,7 +80,7 @@ const WorkWithMe = () => {
   }
 
   return (
-    <Box>
+    <>
       <Typography variant="h2" gutterBottom>
         I turn early-stage ideas
         <br />
@@ -215,7 +215,7 @@ const WorkWithMe = () => {
         <Contact />
         <Box sx={{ height: 64 }} />
       </Box>
-    </Box>
+    </>
   )
 }
 

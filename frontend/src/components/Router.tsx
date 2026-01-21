@@ -5,7 +5,6 @@ import WorkWithMe from '../pages/Work'
 
 const Creation = lazy(async () => await import('../pages/Creations/Creation'))
 const NotFound = lazy(async () => await import('../pages/NotFound'))
-const Marketing = lazy(async () => await import('../pages/Marketing'))
 const Candlelight = lazy(async () => await import('../pages/Marketing/Candlelight'))
 const Ideas = lazy(async () => await import('../pages/Marketing/Ideas'))
 const Classifieds = lazy(async () => await import('../pages/Marketing/Classifieds'))
@@ -27,7 +26,6 @@ const Router = () => (
     <Route path={ROUTES.MARKETING_CLASSIFIEDS.href} element={<Classifieds />} />
     <Route path={ROUTES.MARKETING_IDEAS.href} element={<Ideas />} />
     <Route path={ROUTES.MARKETING_TODO.href} element={<Todo />} />
-    <Route path={ROUTES.MARKETING.href} element={<Marketing />} />
     <Route path={ROUTES.WORK_WITH_ME.href} element={<WorkWithMe />} />
     <Route path="*" element={<NotFound />} />
   </Routes>

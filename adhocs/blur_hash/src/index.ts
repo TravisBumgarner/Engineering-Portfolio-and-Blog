@@ -4,9 +4,11 @@ import { readdir, stat, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { encodeImageToBlurHash } from './blur-hash'
 
-const CACHE_FILE = '/Users/travisbumgarner/Programming/Engineering-Portfolio-and-Blog/ui/content/blurhashes/index.json'
-const PHOTO_PATH = '/Users/travisbumgarner/Programming/Engineering-Portfolio-and-Blog/ui/public'
-const OUTPUT_FILE = '/Users/travisbumgarner/Programming/Engineering-Portfolio-and-Blog/ui/content/blurhashes/index.json'
+const CACHE_FILE =
+  '/Users/travisbumgarner/Programming/Engineering-Portfolio-and-Blog/frontend/src/content/blurhashes/index.json'
+const PHOTO_PATH = '/Users/travisbumgarner/Programming/Engineering-Portfolio-and-Blog/frontend/public'
+const OUTPUT_FILE =
+  '/Users/travisbumgarner/Programming/Engineering-Portfolio-and-Blog/frontend/src/content/blurhashes/index.json'
 const cache = require(CACHE_FILE)
 
 const processImages = async (

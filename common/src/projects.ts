@@ -662,7 +662,7 @@ export const projects = {
     description: 'The todo List for the easily distracted.',
     shortDescription: 'The todo List for the easily distracted.',
     toolsAndTechnologies: 'React, TypeScript, Electron, IndexedDB, Dexie',
-    lastMeaningfulUpdate: '2025-10',
+    lastMeaningfulUpdate: '2026-01',
     images: [
       {
         src: 'todo-today5.png',
@@ -1053,7 +1053,7 @@ export const projects = {
     description: 'Find color inspiration in the everyday.',
     shortDescription: 'Find color inspiration in the everyday.',
     toolsAndTechnologies: 'React, TypeScript, Python, Heroku, Supabase, FastAPI',
-    lastMeaningfulUpdate: '2025-11',
+    lastMeaningfulUpdate: '2026-01',
     previewImage: {
       label: 'Gallery view',
       src: 'latest-browse-id.jpg',
