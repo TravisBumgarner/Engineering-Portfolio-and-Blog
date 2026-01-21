@@ -29,10 +29,10 @@ const distributeToColumns = (items: { src: string; aspectRatio: number }[], colu
 const Snapshots = () => {
   const theme = useTheme()
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
-  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'))
+  // const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'))
 
   // Determine column count based on screen size
-  const columnCount = isSmallScreen ? 1 : isMediumScreen ? 2 : 3
+  const columnCount = 2
 
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
@@ -54,7 +54,7 @@ const Snapshots = () => {
   // Distribute images across columns for better balance
   const columns = useMemo(() => {
     return distributeToColumns(visibleImages, columnCount)
-  }, [visibleImages, columnCount])
+  }, [visibleImages])
 
   // Lightbox navigation functions
   const openLightbox = useCallback(

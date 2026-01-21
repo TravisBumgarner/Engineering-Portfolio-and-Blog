@@ -5,7 +5,7 @@ import { useMemo } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import Link from '../sharedComponents/Link'
 import { toggleSidebar } from '../signals'
-import { SPACING } from '../styles/consts'
+import { PALETTE, SPACING } from '../styles/consts'
 
 export const makeNewSiteTitle = () => {
   const VALID_FILE_SUFFIX = ['proto', 'test', 'sample', 'mockup', 'demo', 'final', 'draft']
@@ -56,20 +56,20 @@ const SiteTitle = ({ isDesktop }: { isDesktop: boolean }) => {
       }}
     >
       <Stack direction="row" justifyContent="space-between" alignItems="center" mb={SPACING.TINY.PX}>
-        <Link type="inline" href="/">
-          <Typography variant="h1" sx={{ fontSize: { xs: '1.2rem', sm: '2rem' } }}>
+        <Link type="inlineMenu" href="/">
+          <Typography variant="h1" sx={{ fontSize: { xs: '1.2rem', sm: '1.5rem', fontWeight: 700 } }}>
             {siteTitle}
           </Typography>
         </Link>
 
         {!isDesktop && (
           <IconButton onClick={toggleSidebar}>
-            <GiHamburgerMenu size={30} />
+            <GiHamburgerMenu size={30} color={PALETTE.primary[500]} />
           </IconButton>
         )}
       </Stack>
 
-      <Typography sx={{ m: 0 }}>
+      <Typography variant="body2" sx={{ m: 0 }}>
         {ABOUT_ME_SENTENCE_1} <br />
         {ABOUT_ME_SENTENCE_2}
       </Typography>
