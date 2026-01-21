@@ -1,5 +1,6 @@
-import { Box } from '@mui/material'
-import { useEffect, useRef, useState } from 'react'
+import { Box, useMediaQuery, useTheme } from '@mui/material'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import blurhashes from '../content/blurhashes/index.json'
 import snapshots from '../content/snapshots/index.json'
 import BlurHashImage from '../sharedComponents/BlurHashImage'
 import PageWrapper from '../sharedComponents/PageWrapper'
@@ -7,12 +8,52 @@ import { SPACING } from '../styles/consts'
 
 const ITEMS_PER_PAGE = 12
 
+// Helper function to distribute images across columns to balance height
+const distributeToColumns = (items: { src: string; aspectRatio: number }[], columnCount: number) => {
+  const columns: (typeof items)[] = Array(columnCount)
+    .fill(null)
+    .map(() => [])
+  const columnHeights = Array(columnCount).fill(0)
+
+  items.forEach((item) => {
+    // Find column with minimum height
+    const shortestColumn = columnHeights.indexOf(Math.min(...columnHeights))
+    columns[shortestColumn].push(item)
+    // Add to height (inverse of aspect ratio since taller images have smaller aspect ratios)
+    columnHeights[shortestColumn] += 1 / item.aspectRatio
+  })
+
+  return columns
+}
+
 const Snapshots = () => {
+  const theme = useTheme()
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'))
+
+  // Determine column count based on screen size
+  const columnCount = isSmallScreen ? 1 : isMediumScreen ? 2 : 3
+
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)
   const loadMoreRef = useRef<HTMLDivElement>(null)
   const allSnapshots = Object.values(snapshots)
-  const visibleSnapshots = allSnapshots.slice(0, visibleCount)
   const hasMore = visibleCount < allSnapshots.length
+
+  // Prepare images with aspect ratios from blur hash data
+  const imagesWithAspectRatios = useMemo(() => {
+    return allSnapshots.map(({ src }) => {
+      const blurHashData = blurhashes[src as keyof typeof blurhashes] as { width: number; height: number } | undefined
+      const aspectRatio = blurHashData ? blurHashData.width / blurHashData.height : 1
+      return { src, aspectRatio }
+    })
+  }, [allSnapshots])
+
+  const visibleImages = imagesWithAspectRatios.slice(0, visibleCount)
+
+  // Distribute images across columns for better balance
+  const columns = useMemo(() => {
+    return distributeToColumns(visibleImages, columnCount)
+  }, [visibleImages, columnCount])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,19 +76,25 @@ const Snapshots = () => {
     <PageWrapper width="full">
       <Box
         sx={{
-          columnCount: { xs: 1, sm: 2, md: 3 },
-          columnGap: SPACING.SMALL.PX,
+          display: 'flex',
+          gap: SPACING.SMALL.PX,
+          alignItems: 'flex-start',
         }}
       >
-        {visibleSnapshots.map(({ src }) => (
+        {columns.map((column, columnIndex) => (
           <Box
-            key={src}
+            // biome-ignore lint/suspicious/noArrayIndexKey: This is fine.
+            key={columnIndex}
             sx={{
-              breakInside: 'avoid',
-              mb: SPACING.SMALL.PX,
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: SPACING.SMALL.PX,
             }}
           >
-            <BlurHashImage useBorder={false} src={src} alt="Snapshot" />
+            {column.map(({ src }) => (
+              <BlurHashImage key={src} useBorder={false} src={src} alt="Snapshot" />
+            ))}
           </Box>
         ))}
       </Box>
