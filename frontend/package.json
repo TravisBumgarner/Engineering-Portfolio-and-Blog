@@ -20,7 +20,7 @@
     "@mui/material": "^7.3.6",
     "@sentry/react": "^10.30.0",
     "blurhash": "^2.0.5",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "motion": "^12.23.26",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
