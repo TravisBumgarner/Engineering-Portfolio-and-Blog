@@ -4,7 +4,6 @@ import Typography from '@mui/material/Typography'
 import { useEffect, useState } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
 import posts from '../../content/posts'
-import PageWrapper from '../../sharedComponents/PageWrapper'
 import logger from '../../utilities/logger'
 import Subscribe from './Subscribe'
 
@@ -49,7 +48,7 @@ const BlogPost = () => {
   }
 
   return (
-    <PageWrapper width="small">
+    <>
       <Typography variant="h2">{post.title}</Typography>
 
       <time>Posted {new Date(`${post.date}T00:00:00Z`).toUTCString().split(' ').slice(0, 4).join(' ')}</time>
@@ -57,7 +56,7 @@ const BlogPost = () => {
       <PostComponent />
 
       <Subscribe />
-    </PageWrapper>
+    </>
   )
 }
 

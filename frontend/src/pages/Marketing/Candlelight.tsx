@@ -3,7 +3,6 @@ import { Box, Typography } from '@mui/material'
 import { FaSteam } from 'react-icons/fa'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
 import ContactForm from '../../sharedComponents/ContactForm'
-import PageWrapper from '../../sharedComponents/PageWrapper'
 import { SPACING } from '../../styles/consts'
 import { DownloadSection, FeatureGrid, MarketingHero } from './components'
 
@@ -29,7 +28,7 @@ const FEATURES = [
 
 const CandlelightPage = () => {
   return (
-    <PageWrapper width="medium">
+    <>
       <MarketingHero
         icon={CANDLELIGHT_FAVICON}
         title={CANDLELIGHT_TITLE}
@@ -68,7 +67,7 @@ const CandlelightPage = () => {
         </Typography>
         <ContactForm subject="Candlelight Feedback" />
       </Box>
-    </PageWrapper>
+    </>
   )
 }
 

@@ -1,9 +1,9 @@
-import { Box, useMediaQuery, useTheme } from '@mui/material'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { Box, IconButton, Modal, useMediaQuery, useTheme } from '@mui/material'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { GrFormClose, GrFormNext, GrFormPrevious } from 'react-icons/gr'
 import blurhashes from '../content/blurhashes/index.json'
 import snapshots from '../content/snapshots/index.json'
 import BlurHashImage from '../sharedComponents/BlurHashImage'
-import PageWrapper from '../sharedComponents/PageWrapper'
 import { SPACING } from '../styles/consts'
 
 const ITEMS_PER_PAGE = 12
@@ -35,6 +35,7 @@ const Snapshots = () => {
   const columnCount = isSmallScreen ? 1 : isMediumScreen ? 2 : 3
 
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const loadMoreRef = useRef<HTMLDivElement>(null)
   const allSnapshots = Object.values(snapshots)
   const hasMore = visibleCount < allSnapshots.length
@@ -55,6 +56,53 @@ const Snapshots = () => {
     return distributeToColumns(visibleImages, columnCount)
   }, [visibleImages, columnCount])
 
+  // Lightbox navigation functions
+  const openLightbox = useCallback(
+    (src: string) => {
+      const index = allSnapshots.findIndex((snapshot) => snapshot.src === src)
+      setLightboxIndex(index)
+    },
+    [allSnapshots],
+  )
+
+  const closeLightbox = useCallback(() => {
+    setLightboxIndex(null)
+  }, [])
+
+  const goToPrevious = useCallback(() => {
+    if (lightboxIndex !== null) {
+      setLightboxIndex((prev) => (prev === 0 ? allSnapshots.length - 1 : prev! - 1))
+    }
+  }, [lightboxIndex, allSnapshots.length])
+
+  const goToNext = useCallback(() => {
+    if (lightboxIndex !== null) {
+      setLightboxIndex((prev) => (prev === allSnapshots.length - 1 ? 0 : prev! + 1))
+    }
+  }, [lightboxIndex, allSnapshots.length])
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (lightboxIndex === null) return
+
+      switch (event.key) {
+        case 'Escape':
+          closeLightbox()
+          break
+        case 'ArrowLeft':
+          goToPrevious()
+          break
+        case 'ArrowRight':
+          goToNext()
+          break
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyPress)
+    return () => window.removeEventListener('keydown', handleKeyPress)
+  }, [lightboxIndex, closeLightbox, goToPrevious, goToNext])
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -73,7 +121,7 @@ const Snapshots = () => {
   }, [hasMore, allSnapshots.length])
 
   return (
-    <PageWrapper width="full">
+    <>
       <Box
         sx={{
           display: 'flex',
@@ -93,13 +141,178 @@ const Snapshots = () => {
             }}
           >
             {column.map(({ src }) => (
-              <BlurHashImage key={src} useBorder={false} src={src} alt="Snapshot" />
+              <Box
+                key={src}
+                onClick={() => openLightbox(src)}
+                sx={{
+                  cursor: 'pointer',
+                  transition: 'transform 0.2s ease',
+                  '&:hover': {
+                    transform: 'scale(1.02)',
+                  },
+                }}
+              >
+                <BlurHashImage useBorder={false} src={src} alt="Snapshot" />
+              </Box>
             ))}
           </Box>
         ))}
       </Box>
       {hasMore && <Box ref={loadMoreRef} sx={{ height: 1 }} />}
-    </PageWrapper>
+
+      {/* Lightbox Modal */}
+      <Modal
+        open={lightboxIndex !== null}
+        onClose={closeLightbox}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Box
+          sx={{
+            position: 'relative',
+            maxWidth: '95vw',
+            maxHeight: '95vh',
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {lightboxIndex !== null && (
+            <>
+              {/* Desktop: positioned buttons */}
+              {!isSmallScreen && (
+                <>
+                  {/* Close Button */}
+                  <IconButton
+                    size="large"
+                    onClick={closeLightbox}
+                    sx={{
+                      position: 'fixed',
+                      top: SPACING.SMALL.PX,
+                      right: SPACING.SMALL.PX,
+                      color: 'white',
+                      bgcolor: 'rgba(0, 0, 0, 0.4)',
+                      zIndex: 2,
+                      '&:hover': {
+                        bgcolor: 'rgba(0, 0, 0, 0.6)',
+                      },
+                    }}
+                  >
+                    <GrFormClose />
+                  </IconButton>
+
+                  {/* Previous Button */}
+                  <IconButton
+                    onClick={goToPrevious}
+                    size="large"
+                    sx={{
+                      position: 'fixed',
+                      left: SPACING.SMALL.PX,
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      color: 'white',
+                      bgcolor: 'rgba(0, 0, 0, 0.4)',
+                      zIndex: 2,
+                      '&:hover': {
+                        bgcolor: 'rgba(0, 0, 0, 0.6)',
+                      },
+                    }}
+                  >
+                    <GrFormPrevious />
+                  </IconButton>
+
+                  {/* Next Button */}
+                  <IconButton
+                    onClick={goToNext}
+                    size="large"
+                    sx={{
+                      position: 'fixed',
+                      right: SPACING.SMALL.PX,
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      color: 'white',
+                      bgcolor: 'rgba(0, 0, 0, 0.4)',
+                      zIndex: 2,
+                      '&:hover': {
+                        bgcolor: 'rgba(0, 0, 0, 0.6)',
+                      },
+                    }}
+                  >
+                    <GrFormNext />
+                  </IconButton>
+                </>
+              )}
+
+              <Box>
+                <BlurHashImage src={allSnapshots[lightboxIndex].src} alt="Snapshot" />
+              </Box>
+
+              {/* Mobile: bottom centered buttons */}
+              {isSmallScreen && (
+                <Box
+                  sx={{
+                    position: 'fixed',
+                    bottom: SPACING.SMALL.PX,
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    display: 'flex',
+                    gap: SPACING.SMALL.PX,
+                    zIndex: 2,
+                  }}
+                >
+                  <IconButton
+                    onClick={goToPrevious}
+                    size="large"
+                    sx={{
+                      color: 'white',
+                      bgcolor: 'rgba(0, 0, 0, 0.4)',
+                      '&:hover': {
+                        bgcolor: 'rgba(0, 0, 0, 0.6)',
+                      },
+                    }}
+                  >
+                    <GrFormPrevious />
+                  </IconButton>
+
+                  <IconButton
+                    size="large"
+                    onClick={closeLightbox}
+                    sx={{
+                      color: 'white',
+                      bgcolor: 'rgba(0, 0, 0, 0.4)',
+                      '&:hover': {
+                        bgcolor: 'rgba(0, 0, 0, 0.6)',
+                      },
+                    }}
+                  >
+                    <GrFormClose />
+                  </IconButton>
+
+                  <IconButton
+                    onClick={goToNext}
+                    size="large"
+                    sx={{
+                      color: 'white',
+                      bgcolor: 'rgba(0, 0, 0, 0.4)',
+                      '&:hover': {
+                        bgcolor: 'rgba(0, 0, 0, 0.6)',
+                      },
+                    }}
+                  >
+                    <GrFormNext />
+                  </IconButton>
+                </Box>
+              )}
+            </>
+          )}
+        </Box>
+      </Modal>
+    </>
   )
 }
 

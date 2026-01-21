@@ -1,12 +1,11 @@
 import { ROUTES } from '@common/core'
 import posts from '../../content/posts'
 import ItemPreview from '../../sharedComponents/ItemPreview'
-import PageWrapper from '../../sharedComponents/PageWrapper'
 import Subscribe from './Subscribe'
 
 const Blog = () => {
   return (
-    <PageWrapper width="small">
+    <>
       <Subscribe />
       {Object.keys(posts)
         .sort((a, b) => (new Date(posts[a].date) < new Date(posts[b].date) ? 1 : -1))
@@ -24,7 +23,7 @@ const Blog = () => {
             />
           )
         })}
-    </PageWrapper>
+    </>
   )
 }
 

@@ -4,7 +4,6 @@ import { FaApple, FaLinux, FaWindows } from 'react-icons/fa'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
 import ContactForm from '../../sharedComponents/ContactForm'
 import Link from '../../sharedComponents/Link'
-import PageWrapper from '../../sharedComponents/PageWrapper'
 import { SPACING } from '../../styles/consts'
 import { BenefitsList, DownloadSection, MarketingHero } from './components'
 
@@ -25,7 +24,7 @@ const BENEFITS = [
 
 const TodoToday = () => {
   return (
-    <PageWrapper width="medium">
+    <>
       <MarketingHero
         icon={TODO_FAVICON}
         title="Todo Today"
@@ -86,7 +85,7 @@ const TodoToday = () => {
           Release Notes
         </Link>
       </Box>
-    </PageWrapper>
+    </>
   )
 }
 

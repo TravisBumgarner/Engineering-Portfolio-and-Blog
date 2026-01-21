@@ -1,10 +1,16 @@
+import { useTheme } from '@mui/material'
+import Box from '@mui/material/Box'
+import { useInView } from 'framer-motion'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import blurhashes from '../content/blurhashes/index.json'
+import { PALETTE, SPACING } from '../styles/consts'
+import type { BlurHash } from '../types'
+import { blurHashToDataURL } from '../utilities/blurhashDataURL'
 
 const getBlurHash = (src: string) => {
   const result = blurhashes[src as keyof typeof blurhashes] as BlurHash
 
   if (!result) {
-    // Shame me for this code!
     // biome-ignore lint/suspicious/noConsole: Fine for now.
     console.error('missing blurhash', src)
     return {
@@ -17,26 +23,17 @@ const getBlurHash = (src: string) => {
   return result
 }
 
-import { useTheme } from '@mui/material'
-import Box from '@mui/material/Box'
-import { useInView } from 'framer-motion'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { PALETTE, SPACING } from '../styles/consts'
-import type { BlurHash } from '../types'
-import { blurHashToDataURL } from '../utilities/blurhashDataURL'
-
 interface Props {
   src: string
-  useSquareImage?: boolean
   alt?: string
   loadingStartCallback?: () => void
   loadingEndCallback?: (src: string) => void
-  maxDimensions?: { maxWidth?: string; maxHeight?: string } // Fuck fuck fuck.
+  maxDimensions?: { maxWidth?: string; maxHeight?: string }
   maxHeight?: number
   useBorder?: boolean
 }
 
-const BlurImage = ({
+const BlurHashImage = ({
   src,
   alt,
   loadingStartCallback,
@@ -45,76 +42,71 @@ const BlurImage = ({
   maxHeight,
   useBorder = true,
 }: Props) => {
-  const imgRef = useRef<HTMLImageElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const theme = useTheme()
   const { width, height, blurHash } = getBlurHash(src)
-  const startLoadingImage = useInView(imgRef, {
+  const aspectRatio = width / height
+
+  const isInView = useInView(containerRef, {
     margin: '0px 0px 100px 0px',
     once: true,
   })
-  const aspectRatio = width / height // this might be incorrect.
 
-  const [imgLoaded, setImgLoaded] = useState(false)
-
+  const [imageLoaded, setImageLoaded] = useState(false)
   const blurDataURL = useMemo(() => blurHashToDataURL(blurHash), [blurHash])
 
-  const handleOnLoad = useCallback(() => {
-    setImgLoaded(true)
+  const handleImageLoad = useCallback(() => {
+    setImageLoaded(true)
     loadingEndCallback?.(src)
   }, [loadingEndCallback, src])
 
   useEffect(() => {
-    if (startLoadingImage) {
+    if (isInView) {
       loadingStartCallback?.()
     }
-  }, [startLoadingImage, loadingStartCallback])
-
-  // Safari be like. I have no idea.
-  // >=1 is landscape
-  // <1 is portrait
-  const cssProp = aspectRatio >= 1 ? { width: '100%' } : { height: '100%' }
+  }, [isInView, loadingStartCallback])
 
   return (
     <Box
+      ref={containerRef}
       sx={{
+        width: '100%',
+        aspectRatio: aspectRatio.toString(),
         position: 'relative',
-        ...cssProp,
-        aspectRatio: `${aspectRatio}`,
-        backgroundImage: blurDataURL && !imgLoaded ? `url(${blurDataURL})` : undefined,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
         overflow: 'hidden',
-        ...maxDimensions,
-        backgroundColor: useBorder ? 'white' : 'transparent',
-        border: useBorder
-          ? `4px solid ${theme.palette.mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[200]}`
-          : 'none',
+
         maxHeight: maxHeight ? `${maxHeight}vh` : '90vh',
+        ...maxDimensions,
+        // Show blur hash as background
+        backgroundImage: blurDataURL ? `url(${blurDataURL})` : undefined,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
     >
-      <Box
-        component="img"
-        ref={imgRef}
-        src={startLoadingImage || imgLoaded ? src : undefined}
-        loading={startLoadingImage ? 'eager' : 'lazy'}
-        rel={startLoadingImage ? 'preload' : ''}
-        alt={alt}
-        sx={{
-          padding: useBorder ? SPACING.SMALL.PX : 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          display: 'block',
-          transition: 'all 0.3s ease',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-        }}
-        onLoad={handleOnLoad}
-      />
+      {isInView && (
+        <Box
+          component="img"
+          src={src}
+          alt={alt}
+          loading="lazy"
+          onLoad={handleImageLoad}
+          sx={{
+            backgroundColor: useBorder ? 'white' : 'transparent',
+            border: useBorder
+              ? `4px solid ${theme.palette.mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[200]}`
+              : 'none',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            padding: useBorder ? SPACING.SMALL.PX : 0,
+            opacity: imageLoaded ? 1 : 0,
+            transition: 'opacity 0.3s ease',
+          }}
+        />
+      )}
     </Box>
   )
 }
 
-export default BlurImage
+export default BlurHashImage
