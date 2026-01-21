@@ -1,6 +1,6 @@
 import { FAST_CLASSIFIEDS_FAVICON, FAST_CLASSIFIEDS_IMAGE } from '@common/core'
 import { Box, Typography } from '@mui/material'
-import { FaApple } from 'react-icons/fa'
+import { FaApple, FaLinux, FaWindows } from 'react-icons/fa'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
 import ContactForm from '../../sharedComponents/ContactForm'
 import Link from '../../sharedComponents/Link'
@@ -9,8 +9,12 @@ import Youtube from '../../sharedComponents/YouTube'
 import { SPACING } from '../../styles/consts'
 import { BenefitsList, DownloadSection, FeatureGrid, MarketingHero } from './components'
 
-const MACOS_DOWNLOAD_URL =
-  'https://github.com/TravisBumgarner/fast-classifieds/releases/download/v1.4.0/Fast.Classifieds-1.4.0-arm64.dmg'
+const MAC_DOWNLOAD_URL =
+  'https://github.com/TravisBumgarner/fast-classifieds/releases/latest/download/Fast-Classifieds-darwin.dmg'
+const WINDOWS_DOWNLOAD_URL =
+  'https://github.com/TravisBumgarner/fast-classifieds/releases/latest/download/Fast-Classifieds-win32-x64-setup.exe'
+const DEBIAN_UBUNTU_DOWNLOAD_URL =
+  'https://github.com/TravisBumgarner/fast-classifieds/releases/latest/download/fast-classifieds-linux-x64.deb'
 
 const FEATURES = [
   {
@@ -48,7 +52,11 @@ const ClassifiedsPage = () => {
         icon={FAST_CLASSIFIEDS_FAVICON}
         title="Fast Classifieds"
         tagline="AI-powered job search automation"
-        ctas={[{ label: 'Download for macOS', href: MACOS_DOWNLOAD_URL, icon: <FaApple /> }]}
+        ctas={[
+          { label: 'macOS (Apple Silicon)', href: MAC_DOWNLOAD_URL, icon: <FaApple /> },
+          { label: 'Windows (64-bit)', href: WINDOWS_DOWNLOAD_URL, icon: <FaWindows /> },
+          { label: 'Linux (.deb)', href: DEBIAN_UBUNTU_DOWNLOAD_URL, icon: <FaLinux /> },
+        ]}
       />
 
       <Box sx={{ mb: SPACING.LARGE.PX }}>
@@ -97,22 +105,24 @@ const ClassifiedsPage = () => {
         platforms={[
           {
             platform: 'macos',
-            label: 'macOS',
-            href: MACOS_DOWNLOAD_URL,
+            label: 'macOS (Apple Silicon)',
+            href: MAC_DOWNLOAD_URL,
             available: true,
             icon: <FaApple />,
           },
           {
             platform: 'windows',
-            label: 'Windows',
-            href: '',
-            available: false,
+            label: 'Windows (64-bit)',
+            href: WINDOWS_DOWNLOAD_URL,
+            available: true,
+            icon: <FaWindows />,
           },
           {
             platform: 'linux',
-            label: 'Linux',
-            href: '',
-            available: false,
+            label: 'Linux (.deb)',
+            href: DEBIAN_UBUNTU_DOWNLOAD_URL,
+            available: true,
+            icon: <FaLinux />,
           },
         ]}
       />

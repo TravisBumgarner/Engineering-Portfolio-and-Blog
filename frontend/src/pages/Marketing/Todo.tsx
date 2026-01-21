@@ -1,6 +1,6 @@
 import { TODO_FAVICON, TODO_IMAGE } from '@common/core'
 import { Box, Typography } from '@mui/material'
-import { FaApple, FaWindows } from 'react-icons/fa'
+import { FaApple, FaLinux, FaWindows } from 'react-icons/fa'
 import BlurHashImage from '../../sharedComponents/BlurHashImage'
 import ContactForm from '../../sharedComponents/ContactForm'
 import Link from '../../sharedComponents/Link'
@@ -8,10 +8,11 @@ import PageWrapper from '../../sharedComponents/PageWrapper'
 import { SPACING } from '../../styles/consts'
 import { BenefitsList, DownloadSection, MarketingHero } from './components'
 
-const MAC_DOWNLOAD_URL =
-  'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-arm64.dmg'
+const MAC_DOWNLOAD_URL = 'https://github.com/TravisBumgarner/Todo-Today/releases/latest/download/Todo-Today-darwin.dmg'
 const WINDOWS_DOWNLOAD_URL =
-  'https://github.com/TravisBumgarner/Todo-Today/releases/download/v3.0.0/Todo.Today-3.0.0-x64.exe'
+  'https://github.com/TravisBumgarner/Todo-Today/releases/latest/download/Todo-Today-win32-x64-setup.exe'
+const DEBIAN_UBUNTU_DOWNLOAD_URL =
+  'https://github.com/TravisBumgarner/Todo-Today/releases/latest/download/todo-today-linux-x64.deb'
 
 const BENEFITS = [
   'Focus on today: No past or future clutter',
@@ -30,8 +31,9 @@ const TodoToday = () => {
         title="Todo Today"
         tagline="The todo list for the easily distracted"
         ctas={[
-          { label: 'macOS', href: MAC_DOWNLOAD_URL, icon: <FaApple /> },
-          { label: 'Windows', href: WINDOWS_DOWNLOAD_URL, icon: <FaWindows /> },
+          { label: 'macOS (Apple Silicon)', href: MAC_DOWNLOAD_URL, icon: <FaApple /> },
+          { label: 'Windows (64-bit)', href: WINDOWS_DOWNLOAD_URL, icon: <FaWindows /> },
+          { label: 'Linux (.deb)', href: DEBIAN_UBUNTU_DOWNLOAD_URL, icon: <FaLinux /> },
         ]}
       />
 
@@ -46,36 +48,28 @@ const TodoToday = () => {
 
       <BenefitsList title="Why Todo Today?" items={BENEFITS} />
 
-      <Box sx={{ mb: SPACING.LARGE.PX }}>
-        <Typography sx={{ fontSize: '0.9rem', opacity: 0.8 }}>
-          Fully open source on{' '}
-          <Link type="inline" target="_blank" href="https://github.com/TravisBumgarner/Todo-Today">
-            GitHub
-          </Link>
-        </Typography>
-      </Box>
-
       <DownloadSection
         platforms={[
           {
             platform: 'macos',
-            label: 'macOS',
+            label: 'macOS (Apple Silicon)',
             href: MAC_DOWNLOAD_URL,
             available: true,
             icon: <FaApple />,
           },
           {
             platform: 'windows',
-            label: 'Windows',
+            label: 'Windows (64-bit)',
             href: WINDOWS_DOWNLOAD_URL,
             available: true,
             icon: <FaWindows />,
           },
           {
             platform: 'linux',
-            label: 'Linux',
-            href: '',
-            available: false,
+            label: 'Linux (.deb)',
+            href: DEBIAN_UBUNTU_DOWNLOAD_URL,
+            available: true,
+            icon: <FaLinux />,
           },
         ]}
       />
