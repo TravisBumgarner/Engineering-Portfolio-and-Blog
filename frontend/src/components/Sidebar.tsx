@@ -1,5 +1,5 @@
 import { ROUTES } from '@common/core'
-import { Backdrop, Box, Drawer, Stack, Typography, useMediaQuery } from '@mui/material'
+import { Backdrop, Box, Drawer, Stack, Typography } from '@mui/material'
 import { useSignals } from '@preact/signals-react/runtime'
 import { AnimatePresence } from 'motion/react'
 import { HiOutlineExternalLink } from 'react-icons/hi'
