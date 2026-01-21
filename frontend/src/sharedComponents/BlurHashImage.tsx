@@ -104,7 +104,7 @@ const BlurImage = ({
           padding: useBorder ? SPACING.SMALL.PX : 0,
           width: '100%',
           height: '100%',
-          objectFit: 'contain',
+          objectFit: 'cover',
           display: 'block',
           transition: 'all 0.3s ease',
           position: 'absolute',
