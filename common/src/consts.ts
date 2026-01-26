@@ -26,4 +26,8 @@ export const TODO_TITLE = 'Todo Today'
 export const TODO_DESCRIPTION = 'The todo List for the easily distracted.'
 export const TODO_IMAGE = '/marketing-resources/todo_today/preview.png'
 export const TODO_FAVICON = '/marketing-resources/todo_today/favicon.png'
+
+export const FILM_TRACKER_TITLE = 'Film Tracker'
+export const FILM_TRACKER_DESCRIPTION = 'Track your film photography.'
+export const FILM_TRACKER_FAVICON = '/marketing-resources/film_tracker/favicon.png'
 // This could be improved upon in the future to patch common/routes but for the moment I'm going to leave it be.

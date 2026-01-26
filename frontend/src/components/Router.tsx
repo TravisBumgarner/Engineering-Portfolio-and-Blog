@@ -9,6 +9,7 @@ const Candlelight = lazy(async () => await import('../pages/Marketing/Candleligh
 const Ideas = lazy(async () => await import('../pages/Marketing/Ideas'))
 const Classifieds = lazy(async () => await import('../pages/Marketing/Classifieds'))
 const Todo = lazy(async () => await import('../pages/Marketing/Todo'))
+const FilmTracker = lazy(async () => await import('../pages/Marketing/FilmTracker'))
 const Blog = lazy(async () => await import('../pages/Blog'))
 const BlogPost = lazy(async () => await import('../pages/Blog/BlogPost'))
 const Creations = lazy(async () => await import('../pages/Creations/Creations'))
@@ -26,6 +27,7 @@ const Router = () => (
     <Route path={ROUTES.MARKETING_CLASSIFIEDS.href} element={<Classifieds />} />
     <Route path={ROUTES.MARKETING_IDEAS.href} element={<Ideas />} />
     <Route path={ROUTES.MARKETING_TODO.href} element={<Todo />} />
+    <Route path={ROUTES.MARKETING_FILM_TRACKER.href} element={<FilmTracker />} />
     <Route path={ROUTES.WORK_WITH_ME.href} element={<WorkWithMe />} />
     <Route path="*" element={<NotFound />} />
   </Routes>

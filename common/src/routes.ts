@@ -44,6 +44,11 @@ export const ROUTES = {
     title: 'ToDo Marketing Page',
     target: '_self',
   },
+  MARKETING_FILM_TRACKER: {
+    href: '/marketing/film-tracker',
+    title: 'Film Tracker Marketing Page',
+    target: '_self',
+  },
   CONTACT: {
     href: '/contact',
     title: 'Contact',
