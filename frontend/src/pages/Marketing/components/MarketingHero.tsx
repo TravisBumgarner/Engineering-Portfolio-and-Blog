@@ -7,6 +7,7 @@ interface CTA {
   label: string
   href: string
   icon?: ReactNode
+  disabled?: boolean
 }
 
 interface MarketingHeroProps {
@@ -58,16 +59,40 @@ const MarketingHero = ({ icon, title, tagline, ctas }: MarketingHeroProps) => {
           justifyContent: 'center',
         }}
       >
-        {ctas.map((cta) => (
-          <Link key={cta.href} type="block" target="_blank" href={cta.href}>
-            {cta.icon && (
-              <Box component="span" sx={{ mr: 1, display: 'inline-flex', alignItems: 'center' }}>
-                {cta.icon}
+        {ctas.map((cta) => {
+          const content = (
+            <>
+              {cta.icon && (
+                <Box component="span" sx={{ mr: 1, display: 'inline-flex', alignItems: 'center' }}>
+                  {cta.icon}
+                </Box>
+              )}
+              {cta.label}
+            </>
+          )
+
+          if (cta.disabled) {
+            return (
+              <Box
+                key={cta.href}
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  opacity: 0.5,
+                  cursor: 'default',
+                }}
+              >
+                {content}
               </Box>
-            )}
-            {cta.label}
-          </Link>
-        ))}
+            )
+          }
+
+          return (
+            <Link key={cta.href} type="block" target="_blank" href={cta.href}>
+              {content}
+            </Link>
+          )
+        })}
       </Box>
     </Box>
   )
