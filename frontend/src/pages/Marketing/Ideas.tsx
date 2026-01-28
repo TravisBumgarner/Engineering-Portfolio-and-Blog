@@ -25,7 +25,7 @@ const FEATURES = [
   {
     title: 'Privacy First',
     description:
-      'No account required. No internet connection needed. All your ideas stay on your device, and you control your own backups.',
+      'No account required. No internet connection needed. All your ideas stay on your device, and you control your own backups. Cloud storage is disabled by default but can be enabled if you prefer.',
     image: '/marketing-resources/ideas_down/settings.png',
   },
 ]

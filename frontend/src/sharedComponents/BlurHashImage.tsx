@@ -66,6 +66,11 @@ const BlurHashImage = ({
     }
   }, [isInView, loadingStartCallback])
 
+  // Check if image is very tall (aspect ratio < 0.6 means height is significantly larger than width)
+  const isVeryTall = aspectRatio < 0.6
+  const objectPosition = isVeryTall ? 'top' : 'center'
+  const backgroundPosition = isVeryTall ? 'top' : 'center'
+
   return (
     <Box
       ref={containerRef}
@@ -80,7 +85,7 @@ const BlurHashImage = ({
         // Show blur hash as background
         backgroundImage: blurDataURL ? `url(${blurDataURL})` : undefined,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: backgroundPosition,
         backgroundRepeat: 'no-repeat',
       }}
     >
@@ -99,6 +104,7 @@ const BlurHashImage = ({
             width: '100%',
             height: '100%',
             objectFit: 'cover',
+            objectPosition: objectPosition,
             padding: useBorder ? SPACING.SMALL.PX : 0,
             opacity: imageLoaded ? 1 : 0,
             transition: 'opacity 0.3s ease',
