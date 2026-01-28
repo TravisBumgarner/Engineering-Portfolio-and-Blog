@@ -72,7 +72,7 @@ const MiniItemPreview = ({ project }: { project: Project }) => {
   return (
     <Box
       sx={{
-        width: 'calc(33.333% - 8px)',
+        width: { md: 'calc(33.333% - 8px)', xs: 'calc(50% - 8px)' },
         backgroundColor: 'background.paper',
         padding: SPACING.SMALL.PX,
         display: 'flex',
