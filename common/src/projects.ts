@@ -839,10 +839,6 @@ export const projects = {
     ],
     links: [
       {
-        label: 'View App',
-        src: 'https://voting.sillysideprojects.com',
-      },
-      {
         label: 'GitHub',
         src: 'https://github.com/TravisBumgarner/Bananarama-Voting-Bananza',
       },
@@ -959,10 +955,6 @@ export const projects = {
       },
     ],
     links: [
-      {
-        label: 'Website',
-        src: 'http://fivepixels.pointlessprojects.com/',
-      },
       {
         label: 'GitHub',
         src: 'https://github.com/TravisBumgarner/pointless-projects/tree/main/five-pixels',
