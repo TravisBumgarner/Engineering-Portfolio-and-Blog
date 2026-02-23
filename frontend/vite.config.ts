@@ -4,6 +4,7 @@ import mdx from '@mdx-js/rollup'
 import path from 'path'
 import { exec } from 'child_process'
 import { blurhashPlugin } from './scripts/vite-plugin-blurhash'
+import { rssPlugin } from './scripts/vite-plugin-rss'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -11,6 +12,7 @@ export default defineConfig({
     outDir: '../server/src/frontend-dist',
   },
   plugins: [
+    rssPlugin(),
     blurhashPlugin(
       path.resolve(__dirname, 'public'),
       path.resolve(__dirname, 'src/content/blurhashes/index.json'),
