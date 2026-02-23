@@ -662,7 +662,7 @@ export const projects = {
     description: 'The todo List for the easily distracted.',
     shortDescription: 'The todo List for the easily distracted.',
     toolsAndTechnologies: 'React, TypeScript, Electron, IndexedDB, Dexie',
-    lastMeaningfulUpdate: '2025-10',
+    lastMeaningfulUpdate: '2026-01',
     images: [
       {
         src: 'todo-today5.png',
@@ -839,10 +839,6 @@ export const projects = {
     ],
     links: [
       {
-        label: 'View App',
-        src: 'https://voting.sillysideprojects.com',
-      },
-      {
         label: 'GitHub',
         src: 'https://github.com/TravisBumgarner/Bananarama-Voting-Bananza',
       },
@@ -960,10 +956,6 @@ export const projects = {
     ],
     links: [
       {
-        label: 'Website',
-        src: 'http://fivepixels.pointlessprojects.com/',
-      },
-      {
         label: 'GitHub',
         src: 'https://github.com/TravisBumgarner/pointless-projects/tree/main/five-pixels',
       },
@@ -1053,7 +1045,7 @@ export const projects = {
     description: 'Find color inspiration in the everyday.',
     shortDescription: 'Find color inspiration in the everyday.',
     toolsAndTechnologies: 'React, TypeScript, Python, Heroku, Supabase, FastAPI',
-    lastMeaningfulUpdate: '2025-11',
+    lastMeaningfulUpdate: '2026-01',
     previewImage: {
       label: 'Gallery view',
       src: 'latest-browse-id.jpg',
@@ -1086,20 +1078,16 @@ export const projects = {
     ],
     links: [
       {
-        label: 'Website',
-        src: 'https://photopalettes.com',
-      },
-      {
-        label: 'Figma Plugin',
-        src: 'https://www.figma.com/community/plugin/1553603263291862336/photo-palettes',
-      },
-      {
-        label: 'App Store',
-        src: 'https://apps.apple.com/us/app/photo-color-palettes/id6751658619',
+        label: 'Blog Post',
+        src: '/blog/photo-palettes',
       },
       {
         label: 'GitHub',
         src: 'https://github.com/TravisBumgarner/photo-palettes',
+      },
+      {
+        label: 'Figma Plugin',
+        src: 'https://www.figma.com/community/plugin/1553603263291862336/photo-palettes',
       },
     ],
   },

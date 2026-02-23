@@ -1,5 +1,5 @@
-import { Box, useTheme } from '@mui/material'
-import { PALETTE, SPACING } from '../styles/consts'
+import { Box, Typography, useTheme } from '@mui/material'
+import { FONT_SIZES, PALETTE, SPACING } from '../styles/consts'
 
 type VideoProps = {
   src: string
@@ -7,34 +7,54 @@ type VideoProps = {
   aspectRatio: string
 }
 
-const Video = ({ src, aspectRatio }: VideoProps) => {
+const Video = ({ src, aspectRatio, caption }: VideoProps) => {
   const theme = useTheme()
   return (
     <Box
-      className="video"
+      component="figure"
       sx={{
-        border: `4px solid ${theme.palette.mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[200]}`,
-        padding: SPACING.MEDIUM.PX,
-        width: '100%',
-        aspectRatio: aspectRatio,
-        overflow: 'hidden',
+        backgroundColor: 'background.paper',
+        p: SPACING.MEDIUM.PX,
+        m: `${SPACING.MEDIUM.PX} 0`,
       }}
     >
-      <video
-        style={{
+      <Box
+        className="video"
+        sx={{
+          border: `4px solid ${theme.palette.mode === 'light' ? PALETTE.grayscale[700] : PALETTE.grayscale[200]}`,
+          padding: SPACING.MEDIUM.PX,
           width: '100%',
-          height: '100%',
-          objectFit: 'none', // This line might cause issues in the future with aspect ratio. Check somehash.mdx and make sure that still works.
+          aspectRatio: aspectRatio,
+          overflow: 'hidden',
         }}
-        src={src}
-        autoPlay
-        muted
-        loop
-        playsInline
-        controls
       >
-        <source src={src} type="video/mp4" />
-      </video>
+        <video
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover', // This line might cause issues in the future with aspect ratio. Check somehash.mdx and make sure that still works.
+          }}
+          src={src}
+          muted
+          loop
+          playsInline
+          controls
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      </Box>
+
+      <Typography
+        component="figcaption"
+        sx={{
+          fontSize: FONT_SIZES.SMALL,
+          fontWeight: 100,
+          marginTop: SPACING.SMALL.PX,
+          marginBottom: 0,
+        }}
+      >
+        {caption}
+      </Typography>
     </Box>
   )
 }

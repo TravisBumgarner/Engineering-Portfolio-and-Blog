@@ -1,0 +1,121 @@
+Today I sunset the largest personal project I've ever worked on, one where I managed research, design, development, DevOps, marketing, user interviews, and support.
+
+A year ago, I wrote a goal for myself: **“To complete my vision.”**
+
+I elaborated:
+
+> Looking at my GitHub, I see Photography-Stats, Time-Tracker, grumpy-collective, life-experiments, photoventures, photoventures2, phraseaday, winions - a bunch of [half-baked projects](https://github.com/TravisBumgarner/Project-Graveyard) with over 100,000 lines of code and unfinished ideas. I want to see a project through to the end.
+
+I've always been fascinated by color and launched [Seis Colores](https://seis.pointlessprojects.com/). It gained strong traction, so I decided to build Photo Palettes and explore even further.
+
+# Lessons Learned
+
+- **AI is changing everything.** An app that once took months to build can now take days or weeks. What makes a good app, and how to stand out, has fundamentally changed.
+- **Building social communities is hard.** Why should early users stick around? What's in it for them?
+- **Identifying user pain points without users is nearly impossible.** Think about how often you've visited a new site. Something feels unintuitive. One click too many. A weird bug. You have seconds of patience before leaving. Was that my issue or was it the product itself?
+- **There's an art to going from zero to one.** Before login pages or home screens, there's a blank canvas. Without focus, you go broad and deep at the same time. That leads to endless work. I've found it better to go broad first, build primitives, then iterate.
+- **Building in a saturated market is hard.** Over the year, I watched three similar apps launch and gain traction.
+
+# Wins
+
+## Product / Marketing
+
+This project included several firsts for me, including conducting user interviews and integrating Amplitude analytics. I managed and scoped the entire project in Linear, launched it on [Product Hunt](https://www.producthunt.com/products/photo-color-palettes), and created an unauthenticated experience so users could try the app without logging in. I also set up automatic social publishing to Twitter, Instagram, and Bluesky.
+
+<Figure
+  src="/post-resources/photo-palettes/misc_social_media_1.jpg"
+  caption="Instagram"
+/>
+
+<Figure
+  src="/post-resources/photo-palettes/misc_social_media_2.jpg"
+  caption="Instagram"
+/>
+
+## Technical
+
+I worked with several new technologies, including FastAPI, Supabase, Heroku, Cloudinary, CapacitorJS, UptimeRobot, and Resend. I also shipped several firsts: sending programmatic emails, implementing a full authentication system, and building a Figma plugin. Finally, I reused the core codebase with minimal changes to launch the iPhone app.
+
+<Figure
+  src="/post-resources/photo-palettes/architecture.jpg"
+  caption="Architecture"
+/>
+
+## Design
+
+I went both broad and deep to build a complete theme and polished UI for desktop and mobile, including designing the app icon.
+
+<Figure
+  src="/post-resources/photo-palettes/icon_design.jpg"
+  caption="Icon design"
+/>
+
+Below are a few examples of experiences I'm especially proud of having the chance to refine.
+
+### Create Palette
+
+<Figure
+  src="/post-resources/photo-palettes/create_before.jpg"
+  caption="Broad create experience"
+/>
+
+<Video
+  src="/post-resources/photo-palettes/creation_experience.mov"
+  aspectRatio={1664/1039}
+  caption="Deep create experience"
+/>
+
+### Homepage
+
+<Figure
+  src="/post-resources/photo-palettes/home_page_before.jpg"
+  caption="Broad homepage experience"
+/>
+
+<Figure
+  src="/post-resources/photo-palettes/home_page_after.jpg"
+  caption="Deep homepage experience"
+/>
+
+### Single Palette View 
+
+<Figure
+  src="/post-resources/photo-palettes/single_palette_before.jpg"
+  caption="Broad single palette experience"
+/>
+
+<Figure
+  src="/post-resources/photo-palettes/single_palette_after.jpg"
+  caption="Deep single palette experience"
+/>
+
+## Additional Screens
+
+<Figure
+  src="/post-resources/photo-palettes/misc_admin.jpg"
+  caption="Admin page"
+/>
+
+<Figure
+  src="/post-resources/photo-palettes/misc_app_store.jpg"
+  caption="App Store listing"
+/>
+
+<Figure
+  src="/post-resources/photo-palettes/misc_dark_theme.jpg"
+  caption="Dark theme"
+/>
+
+<Figure
+  src="/post-resources/photo-palettes/misc_user_profile.jpg"
+  caption="User profile"
+/>
+
+<Figure
+  src="/post-resources/photo-palettes/figma_plugin.jpg"
+  caption="Figma plugin"
+/>
+
+I learned new systems, made hard architectural decisions, and shipped anyway. The app now lives on as a Figma plugin, which you can try [here](https://www.figma.com/community/plugin/1553603263291862336/photo-palettes). While the domain won't be renewed and the code repository will be archived, I'm grateful for what I built. Many of the architectural patterns have already gone on to inspire other apps.
+
+You can always see what I'm currently working on at the top of the [Portfolio page](/creations).

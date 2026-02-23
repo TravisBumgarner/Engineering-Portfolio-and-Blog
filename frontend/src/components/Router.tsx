@@ -1,19 +1,41 @@
 import { ROUTES } from '@common/core'
-import { lazy } from 'react'
+import { type ComponentType, lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import WorkWithMe from '../pages/Work'
 
-const Creation = lazy(async () => await import('../pages/Creations/Creation'))
-const NotFound = lazy(async () => await import('../pages/NotFound'))
-const Marketing = lazy(async () => await import('../pages/Marketing'))
-const Candlelight = lazy(async () => await import('../pages/Marketing/Candlelight'))
-const Ideas = lazy(async () => await import('../pages/Marketing/Ideas'))
-const Classifieds = lazy(async () => await import('../pages/Marketing/Classifieds'))
-const Todo = lazy(async () => await import('../pages/Marketing/Todo'))
-const Blog = lazy(async () => await import('../pages/Blog'))
-const BlogPost = lazy(async () => await import('../pages/Blog/BlogPost'))
-const Creations = lazy(async () => await import('../pages/Creations/Creations'))
-const Snapshots = lazy(async () => await import('../pages/Snapshots'))
+// Helper that auto-reloads once if a chunk fails to load (handles stale deployments)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const lazyWithRetry = <T extends ComponentType<any>>(
+  importFn: () => Promise<{ default: T }>
+) => {
+  return lazy(async () => {
+    const storageKey = 'chunk-refresh'
+    const hasRefreshed = sessionStorage.getItem(storageKey)
+    try {
+      const module = await importFn()
+      sessionStorage.removeItem(storageKey)
+      return module
+    } catch (error) {
+      if (!hasRefreshed) {
+        sessionStorage.setItem(storageKey, 'true')
+        window.location.reload()
+      }
+      throw error
+    }
+  })
+}
+
+const Creation = lazyWithRetry(async () => await import('../pages/Creations/Creation'))
+const NotFound = lazyWithRetry(async () => await import('../pages/NotFound'))
+const Candlelight = lazyWithRetry(async () => await import('../pages/Marketing/Candlelight'))
+const Ideas = lazyWithRetry(async () => await import('../pages/Marketing/Ideas'))
+const Classifieds = lazyWithRetry(async () => await import('../pages/Marketing/Classifieds'))
+const Todo = lazyWithRetry(async () => await import('../pages/Marketing/Todo'))
+const FilmTracker = lazyWithRetry(async () => await import('../pages/Marketing/FilmTracker'))
+const Blog = lazyWithRetry(async () => await import('../pages/Blog'))
+const BlogPost = lazyWithRetry(async () => await import('../pages/Blog/BlogPost'))
+const Creations = lazyWithRetry(async () => await import('../pages/Creations/Creations'))
+const Snapshots = lazyWithRetry(async () => await import('../pages/Snapshots'))
 
 const Router = () => (
   <Routes>
@@ -27,7 +49,7 @@ const Router = () => (
     <Route path={ROUTES.MARKETING_CLASSIFIEDS.href} element={<Classifieds />} />
     <Route path={ROUTES.MARKETING_IDEAS.href} element={<Ideas />} />
     <Route path={ROUTES.MARKETING_TODO.href} element={<Todo />} />
-    <Route path={ROUTES.MARKETING.href} element={<Marketing />} />
+    <Route path={ROUTES.MARKETING_FILM_TRACKER.href} element={<FilmTracker />} />
     <Route path={ROUTES.WORK_WITH_ME.href} element={<WorkWithMe />} />
     <Route path="*" element={<NotFound />} />
   </Routes>

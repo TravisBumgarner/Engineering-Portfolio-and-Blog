@@ -48,7 +48,7 @@ const BlogPost = () => {
   }
 
   return (
-    <Box>
+    <>
       <Typography variant="h2">{post.title}</Typography>
 
       <time>Posted {new Date(`${post.date}T00:00:00Z`).toUTCString().split(' ').slice(0, 4).join(' ')}</time>
@@ -56,7 +56,7 @@ const BlogPost = () => {
       <PostComponent />
 
       <Subscribe />
-    </Box>
+    </>
   )
 }
 

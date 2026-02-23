@@ -1,0 +1,210 @@
+project: Marketing Landing Pages Redesign
+repo: travisbumgarner/Engineering-Portfolio-and-Blog
+design_file: designs/marketing-landing-pages/DESIGN.md
+scoping_date: 2026-01-20
+
+milestones:
+  - number: 1
+    title: "1. Marketing Landing Page Components"
+    description: Create shared components for the new marketing landing page template
+    branch:
+      working: 125-marketing-components
+      base: master
+
+  - number: 2
+    title: "2. Candlelight Page Redesign"
+    description: Apply the new template to the Candlelight landing page
+    branch:
+      working: 129-candlelight-redesign
+      base: 125-marketing-components
+
+  - number: 3
+    title: "3. Classifieds Page Redesign"
+    description: Apply the new template to the Classifieds landing page
+    branch:
+      working: 130-classifieds-redesign
+      base: 125-marketing-components
+
+  - number: 4
+    title: "4. Ideas Page Redesign"
+    description: Apply the new template to the Ideas landing page
+    branch:
+      working: 131-ideas-redesign
+      base: 125-marketing-components
+
+tasks:
+  - id: 1
+    github_issue: 125
+    milestone: 1
+    title: Create MarketingHero shared component
+    description: |
+      Create a new `MarketingHero` component for landing page hero sections.
+
+      Location: `frontend/src/pages/Marketing/components/MarketingHero.tsx`
+
+      Props:
+      - icon: string (path to product icon)
+      - title: string (product name)
+      - tagline: string (one-line description)
+      - ctaLabel: string (button text)
+      - ctaHref: string (button link)
+      - ctaIcon?: React.ReactNode (optional platform icon)
+
+      Design: Centered layout with 100x100 icon, h1 title, subtitle tagline,
+      and block-style CTA button. Uses existing PALETTE and SPACING constants.
+    acceptance_criteria:
+      - Component renders correctly with all required props
+      - Responsive on mobile (icon scales appropriately)
+      - Supports optional CTA icon for platform icons
+    depends_on: []
+    effort: 2
+    status: complete
+
+  - id: 2
+    github_issue: 126
+    milestone: 1
+    title: Create FeatureGrid shared component
+    description: |
+      Create a `FeatureGrid` component for displaying product features in a
+      responsive grid layout.
+
+      Location: `frontend/src/pages/Marketing/components/FeatureGrid.tsx`
+
+      Props:
+      - features: Array<{ title: string, description: string, image?: string }>
+
+      Design: 1 column on mobile, 2-3 columns on desktop. Each feature has
+      a bold h4 title, description text, and optional BlurHashImage.
+    acceptance_criteria:
+      - Responsive grid layout (1 col mobile, 2-3 col desktop)
+      - Feature cards display correctly with and without images
+      - Uses BlurHashImage for lazy-loaded images
+    depends_on: []
+    effort: 2
+    status: complete
+
+  - id: 3
+    github_issue: 127
+    milestone: 1
+    title: Create BenefitsList shared component
+    description: |
+      Create a `BenefitsList` component for displaying key product benefits.
+
+      Location: `frontend/src/pages/Marketing/components/BenefitsList.tsx`
+
+      Props:
+      - title?: string (optional section header)
+      - items: string[] (benefit items)
+
+      Design: Clean bullet list with optional h3 title, proper vertical spacing.
+    acceptance_criteria:
+      - List renders with proper bullet styling
+      - Optional title renders when provided
+      - Spacing matches portfolio design system
+    depends_on: []
+    effort: 1
+    status: complete
+
+  - id: 4
+    github_issue: 128
+    milestone: 1
+    title: Create DownloadSection shared component
+    description: |
+      Create a `DownloadSection` component for platform download buttons.
+
+      Location: `frontend/src/pages/Marketing/components/DownloadSection.tsx`
+
+      Props:
+      - platforms: Array<{ platform, label, href, available, icon? }>
+      - title?: string (default: "Get Started")
+
+      Design: Flex row of download buttons with "Coming soon" state for
+      unavailable platforms. Uses existing Link component.
+    acceptance_criteria:
+      - Available platforms show clickable download buttons
+      - Unavailable platforms show "Coming soon" indicator
+      - Icons render correctly for each platform
+      - Responsive layout (wraps on mobile)
+    depends_on: []
+    effort: 2
+    status: complete
+
+  - id: 5
+    github_issue: 129
+    milestone: 2
+    title: Redesign Candlelight landing page with new template
+    description: |
+      Rewrite Candlelight.tsx using the new shared marketing components.
+
+      Structure:
+      1. MarketingHero - game icon, title, tagline, Steam CTA
+      2. Value proposition - 2-3 sentences about gameplay
+      3. FeatureGrid - Puzzle Mode, Free Play, Daily Challenge
+      4. DownloadSection - Steam link
+
+      Remove duplicate links and tutorial section. Keep it minimal and focused.
+    acceptance_criteria:
+      - Uses MarketingHero, FeatureGrid, and DownloadSection components
+      - Page is significantly shorter than current version
+      - All Steam links work correctly
+      - Responsive on mobile
+    depends_on: [1, 2, 4]
+    effort: 2
+    status: complete
+
+  - id: 6
+    github_issue: 130
+    milestone: 3
+    title: Redesign Classifieds landing page with new template
+    description: |
+      Rewrite Classifieds.tsx using the new shared marketing components.
+
+      Structure:
+      1. MarketingHero - app icon, title, tagline, macOS download CTA
+      2. Value proposition - AI job search automation pitch
+      3. Main screenshot - hero image of app
+      4. FeatureGrid - top 3 features (AI Matching, Auto-Scanning, Tracking)
+      5. BenefitsList - privacy, time-saving, open source
+      6. YouTube tutorial section
+      7. DownloadSection - macOS available, Windows/Linux coming soon
+      8. ContactForm
+
+      Reduce from 7 features to 3. Consolidate privacy messaging.
+    acceptance_criteria:
+      - Uses all new shared components
+      - YouTube tutorial retained
+      - Contact form retained
+      - Feature count reduced from 7 to 3
+      - All download links work
+    depends_on: [1, 2, 3, 4]
+    effort: 2
+    status: complete
+
+  - id: 7
+    github_issue: 131
+    milestone: 4
+    title: Redesign Ideas landing page with new template
+    description: |
+      Rewrite Ideas.tsx using the new shared marketing components.
+
+      Structure:
+      1. MarketingHero - app icon, title, tagline, App Store CTA
+      2. Value proposition - quick idea capture pitch
+      3. FeatureGrid - Quick Capture, Organize/Reflect, Privacy First
+      4. BenefitsList - no internet, no login, open source
+      5. DownloadSection - iOS available, Android internal testing
+      6. ContactForm
+      7. Footer links - Release Notes (GitHub), Privacy Policy (link)
+
+      Remove inline release notes and privacy policy content.
+      Link to external pages instead.
+    acceptance_criteria:
+      - Uses all new shared components
+      - Contact form retained
+      - Privacy policy accessible via link
+      - Release notes accessible via link
+      - App Store and Play Store links work
+      - Fixed height issues on mobile resolved
+    depends_on: [1, 2, 3, 4]
+    effort: 2
+    status: complete

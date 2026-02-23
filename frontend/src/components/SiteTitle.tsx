@@ -1,9 +1,11 @@
 import { ABOUT_ME_SENTENCE_1, ABOUT_ME_SENTENCE_2 } from '@common/core'
-import { Box } from '@mui/material'
+import { Box, IconButton, Stack } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { useMemo } from 'react'
+import { GiHamburgerMenu } from 'react-icons/gi'
 import Link from '../sharedComponents/Link'
-import { SPACING } from '../styles/consts'
+import { toggleSidebar } from '../signals'
+import { PALETTE, SPACING } from '../styles/consts'
 
 export const makeNewSiteTitle = () => {
   const VALID_FILE_SUFFIX = ['proto', 'test', 'sample', 'mockup', 'demo', 'final', 'draft']
@@ -41,24 +43,34 @@ export const makeNewSiteTitle = () => {
   return `travis_bumgarner_${RANDOM_FILE_SUFIX}${RANDOM_FILE_SUFFIX_2}.${RANDOM_FILE_TYPE}`
 }
 
-const SiteTitle = () => {
+const SiteTitle = ({ isDesktop }: { isDesktop: boolean }) => {
   const siteTitle = useMemo(() => makeNewSiteTitle(), [])
 
   return (
     <Box
       sx={{
-        py: SPACING.LARGE.PX,
-        mt: { xs: SPACING.SMALL.PX, md: 0 },
+        padding: `${SPACING.MEDIUM.PX} 0`,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
       }}
     >
-      <Link type="inline" href="/">
-        <Typography variant="h1" sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' } }}>
-          {siteTitle}
-        </Typography>
-      </Link>
-      <Typography>
-        {ABOUT_ME_SENTENCE_1}
-        <br />
+      <Stack direction="row" justifyContent="space-between" alignItems="center" mb={SPACING.TINY.PX}>
+        <Link type="inlineMenu" href="/">
+          <Typography variant="h1" sx={{ fontSize: { xs: '1.2rem', sm: '1.5rem', fontWeight: 700 } }}>
+            {siteTitle}
+          </Typography>
+        </Link>
+
+        {!isDesktop && (
+          <IconButton onClick={toggleSidebar}>
+            <GiHamburgerMenu size={30} color={PALETTE.primary[500]} />
+          </IconButton>
+        )}
+      </Stack>
+
+      <Typography variant="body2" sx={{ m: 0 }}>
+        {ABOUT_ME_SENTENCE_1} <br />
         {ABOUT_ME_SENTENCE_2}
       </Typography>
     </Box>

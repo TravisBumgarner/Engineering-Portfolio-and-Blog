@@ -82,7 +82,7 @@ const ContactForm = ({ subject }: { subject?: string }) => {
   }, [isSubmitting, success, failure, resetButtonText])
 
   return (
-    <Box>
+    <Box id="contact">
       <form
         style={{
           display: 'flex',

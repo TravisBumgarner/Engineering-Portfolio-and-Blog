@@ -1,5 +1,6 @@
 import { FaGithub, FaInstagram, FaLinkedinIn, FaReddit, FaYoutube } from 'react-icons/fa'
 import { FaBluesky } from 'react-icons/fa6'
+import { LiaExternalLinkSquareAltSolid } from 'react-icons/lia'
 
 export const iconMap = {
   github: FaGithub,
@@ -8,6 +9,7 @@ export const iconMap = {
   reddit: FaReddit,
   bsky: FaBluesky,
   youtube: FaYoutube,
+  externalLink: LiaExternalLinkSquareAltSolid,
 }
 
 const Icon = ({

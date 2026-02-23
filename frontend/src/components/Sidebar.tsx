@@ -1,38 +1,139 @@
 import { ROUTES } from '@common/core'
-import { Backdrop, Box, Drawer, IconButton, Stack, Tooltip } from '@mui/material'
+import { Backdrop, Box, Drawer, Stack, Typography } from '@mui/material'
+import { useSignals } from '@preact/signals-react/runtime'
 import { AnimatePresence } from 'motion/react'
-import { useState } from 'react'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import Icon from '../sharedComponents/Icon'
+import { HiOutlineExternalLink } from 'react-icons/hi'
+import { useLocation } from 'react-router-dom'
 import Link from '../sharedComponents/Link'
+import { isSidebarOpen, toggleSidebar } from '../signals'
 import { SPACING, Z_INDICES } from '../styles/consts'
 
-const SOCIAL_MEDIA = [
+// Helper function to determine if a link is active
+const isLinkActive = (linkHref: string, currentPath: string): boolean => {
+  // Exact match for external links or non-nested routes
+  if (linkHref.startsWith('http') || linkHref === currentPath) {
+    return linkHref === currentPath
+  }
+
+  // For internal routes, check if current path starts with the link href
+  // This handles nested routes like /blog and /blog/post-id
+  return currentPath.startsWith(linkHref) && linkHref !== '/'
+}
+
+// Work section
+const WORK_LINKS = [
+  { title: 'Portfolio', href: ROUTES.CREATIONS.href },
+  { title: 'Hire Me', href: ROUTES.WORK_WITH_ME.href },
+  { title: 'Resume', href: '/travis_bumgarner_resume.pdf', target: '_blank' },
   { title: 'GitHub', href: 'https://github.com/travisBumgarner/', target: '_blank', icon: 'github' },
   { title: 'LinkedIn', href: 'https://www.linkedin.com/in/travisbumgarner/', target: '_blank', icon: 'linkedin' },
-  { title: 'Instagram', href: 'https://instagram.com/sillysideprojects', target: '_blank', icon: 'instagram' },
-  { title: 'Reddit', href: 'https://www.reddit.com/user/travis_the_maker/', target: '_blank', icon: 'reddit' },
-  { title: 'Bluesky', href: 'https://bsky.app/profile/travisbumgarner.dev', target: '_blank', icon: 'bsky' },
-  { title: 'YouTube', href: 'https://www.youtube.com/@SillySideProjects', target: '_blank', icon: 'youtube' },
-] as const
+]
 
-const THERE = [
-  { title: 'Resume', href: '/travis_bumgarner_resume.pdf', target: '_blank' },
+// Home section
+const HOME_LINK = [{ title: 'Home', href: ROUTES.SNAPSHOTS.href }]
+
+// Creative section
+const CREATIVE_LINKS = [
+  { title: 'Writing', href: ROUTES.BLOG.href },
   { title: 'Photography', href: 'https://travisbumgarner.photography', target: '_blank' },
 ]
 
-const ROUTES_TO_DISPLAY: (keyof typeof ROUTES)[] = ['SNAPSHOTS', 'WORK_WITH_ME', 'CREATIONS', 'BLOG', 'MARKETING']
+// Social media section
+const SOCIAL_MEDIA = [
+  { title: 'Bluesky', href: 'https://bsky.app/profile/travisbumgarner.dev', target: '_blank', icon: 'bsky' },
+  { title: 'Instagram', href: 'https://instagram.com/sillysideprojects', target: '_blank', icon: 'instagram' },
+  { title: 'Reddit', href: 'https://www.reddit.com/user/travis_the_maker/', target: '_blank', icon: 'reddit' },
+  { title: 'YouTube', href: 'https://www.youtube.com/@SillySideProjects', target: '_blank', icon: 'youtube' },
+]
 
-const SidebarClient = () => {
-  const [isOpen, setIsOpen] = useState(false)
+const MARKETING_PAGES = [
+  { title: 'Candlelight', href: ROUTES.MARKETING_CANDLELIGHT.href },
+  { title: 'Fast Classifieds', href: ROUTES.MARKETING_CLASSIFIEDS.href },
+  { title: 'Ideas Down', href: ROUTES.MARKETING_IDEAS.href },
+  { title: 'Todo Today', href: ROUTES.MARKETING_TODO.href },
+]
 
+// Generic reusable section component
+const Section = ({
+  title,
+  links,
+  onLinkClick,
+  currentPath,
+}: {
+  title: string
+  links: Array<{ title: string; href: string; target?: string }>
+  onLinkClick?: () => void
+  currentPath: string
+}) => (
+  <Box>
+    {title && (
+      <Typography variant="body1" sx={{ fontWeight: 700, mb: SPACING.TINY.PX, mt: 0 }}>
+        {title}
+      </Typography>
+    )}
+    <Stack direction="column" spacing={SPACING.TINY.PX}>
+      {links.map((link) => {
+        const isActive = isLinkActive(link.href, currentPath)
+        return (
+          <Link
+            key={link.href}
+            sx={{
+              fontWeight: isActive ? 600 : title === '' ? 600 : 400,
+              display: 'flex',
+              alignItems: 'center',
+              gap: SPACING.TINY.PX,
+              color: isActive ? 'primary.main' : undefined,
+              '&:hover': {
+                color: isActive ? 'primary.main' : undefined,
+              },
+            }}
+            type="inlineMenu"
+            href={link.href}
+            target={link.target}
+            rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
+            onClick={onLinkClick}
+          >
+            {link.title}
+            {link.target === '_blank' && <HiOutlineExternalLink size={16} />}
+          </Link>
+        )
+      })}
+    </Stack>
+  </Box>
+)
+
+// Reusable sidebar content component
+const SidebarContent = ({ onLinkClick }: { onLinkClick?: () => void }) => {
+  const location = useLocation()
+  const currentPath = location.pathname
+
+  return (
+    <Stack direction="column" spacing={SPACING.LARGE.PX}>
+      <Section title="" links={HOME_LINK} onLinkClick={onLinkClick} currentPath={currentPath} />
+      <Section title="Work" links={WORK_LINKS} onLinkClick={onLinkClick} currentPath={currentPath} />
+      <Section title="Creative" links={CREATIVE_LINKS} onLinkClick={onLinkClick} currentPath={currentPath} />
+      <Section title="Marketing Pages" links={MARKETING_PAGES} onLinkClick={onLinkClick} currentPath={currentPath} />
+      <Section title="Socials" links={SOCIAL_MEDIA} onLinkClick={onLinkClick} currentPath={currentPath} />
+    </Stack>
+  )
+}
+
+const SidebarClient = ({ isDesktop }: { isDesktop: boolean }) => {
+  useSignals()
+
+  if (isDesktop) {
+    // Desktop persistent sidebar - return null as we'll render it in the App component
+    return null
+  }
+
+  // Mobile drawer sidebar
   return (
     <>
       <AnimatePresence>
-        {isOpen && (
+        {isSidebarOpen.value && (
           <Backdrop
             open
-            onClick={() => setIsOpen(false)}
+            onClick={toggleSidebar}
             sx={{
               zIndex: Z_INDICES.SIDEBAR_BACKDROP,
             }}
@@ -40,29 +141,16 @@ const SidebarClient = () => {
         )}
       </AnimatePresence>
 
-      <Box
-        sx={{
-          zIndex: Z_INDICES.SIDEBAR,
-          position: 'fixed',
-          top: SPACING.SMALL.PX,
-          left: SPACING.SMALL.PX,
-        }}
-      >
-        <IconButton onClick={() => setIsOpen(true)}>
-          <GiHamburgerMenu size={30} />
-        </IconButton>
-      </Box>
-
       <Drawer
         anchor="left"
-        open={isOpen}
-        onClose={() => setIsOpen(false)}
+        open={isSidebarOpen.value}
+        onClose={toggleSidebar}
         slotProps={{
           paper: {
             sx: {
               width: 190,
               backgroundColor: 'background.paper',
-              p: SPACING.SMALL.PX,
+              p: `${SPACING.HUGE.PX} ${SPACING.MEDIUM.PX} ${SPACING.MEDIUM.PX} ${SPACING.MEDIUM.PX}`,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
@@ -70,47 +158,31 @@ const SidebarClient = () => {
           },
         }}
       >
-        <Stack direction="column" spacing={SPACING.TINY.PX}>
-          {ROUTES_TO_DISPLAY.map((key) => {
-            const r = ROUTES[key as keyof typeof ROUTES]
-            return (
-              <Box key={r.href}>
-                <Link type="inlineMenu" {...r} onClick={() => setIsOpen(false)}>
-                  {' '}
-                  {r.title}
-                </Link>
-              </Box>
-            )
-          })}
-
-          {THERE.map((r) => (
-            <Box key={r.href}>
-              <Link type="inlineMenu" {...r} onClick={() => setIsOpen(false)}>
-                {r.title}
-              </Link>
-            </Box>
-          ))}
-        </Stack>
-
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-          }}
-        >
-          {SOCIAL_MEDIA.map((s) => (
-            <Tooltip key={s.href} title={s.title} placement="top">
-              <Box sx={{ margin: SPACING.SMALL.PX }}>
-                <Link type="inlineMenu" key={s.href} href={s.href} target={s.target} rel="noopener noreferrer">
-                  <Icon name={s.icon} size={32} />
-                </Link>
-              </Box>
-            </Tooltip>
-          ))}
-        </Box>
+        <SidebarContent onLinkClick={toggleSidebar} />
       </Drawer>
     </>
+  )
+}
+
+// Export the sidebar content for use in desktop layout
+export const DesktopSidebarContent = ({ isDesktop }: { isDesktop: boolean }) => {
+  if (!isDesktop) return null
+
+  return (
+    <Box
+      sx={{
+        position: 'sticky',
+        top: 0,
+        height: '100vh',
+        p: `${SPACING.SMALL.PX} ${SPACING.LARGE.PX} ${SPACING.SMALL.PX} ${SPACING.SMALL.PX}`,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        flexShrink: 0,
+      }}
+    >
+      <SidebarContent />
+    </Box>
   )
 }
 

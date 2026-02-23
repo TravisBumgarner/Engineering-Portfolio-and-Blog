@@ -7,6 +7,36 @@ import { FONT_SIZES, SPACING } from '../../styles/consts'
 
 const CURRENT_WORK: Project[] = [
   {
+    title: 'Just Recordings',
+    id: 'just-recordings',
+    description: 'Screen recording. Nothing more.',
+    lastMeaningfulUpdate: '2026-02',
+    images: [],
+    links: [{ label: 'GitHub', src: 'https://github.com/TravisBumgarner/just-recordings' }],
+    previewImage: { label: 'Preview', src: 'preview.png' },
+    shortDescription: '',
+  },
+  {
+    title: 'Context Maintainer',
+    id: 'context-maintainer',
+    description: 'Per-desktop todo lists for macOS.',
+    lastMeaningfulUpdate: '2026-02',
+    images: [],
+    links: [{ label: 'GitHub', src: 'https://github.com/TravisBumgarner/context-maintainer' }],
+    previewImage: { label: 'Preview', src: 'preview.png' },
+    shortDescription: '',
+  },
+  {
+    title: 'Personal Photo Gallery',
+    id: 'personal-photo-gallery',
+    description: 'Self hosted mobile photo gallery.',
+    lastMeaningfulUpdate: '2026-02',
+    images: [],
+    links: [{ label: 'GitHub', src: 'https://github.com/TravisBumgarner/photo-gallery' }],
+    previewImage: { label: 'Preview', src: 'preview.png' },
+    shortDescription: '',
+  },
+  {
     title: 'Happy Making Podcast',
     id: 'happy-making-podcast',
     description: 'A podcast for hobbying vicariously.',
@@ -24,13 +54,10 @@ const CURRENT_WORK: Project[] = [
   {
     title: 'Fast Classifieds',
     id: 'fast-classifieds',
-    description: 'Automated job searching',
+    description: 'Automated job searching.',
     lastMeaningfulUpdate: '2024-11',
     images: [],
-    links: [
-      { label: 'Marketing', src: '/marketing/classifieds' },
-      { label: 'GitHub', src: 'https://github.com/TravisBumgarner/fast-classifieds' },
-    ],
+    links: [{ label: 'Marketing', src: ROUTES.MARKETING_CLASSIFIEDS.href }],
     previewImage: { label: 'Preview', src: 'preview.png' },
     shortDescription: '',
   },
@@ -49,11 +76,30 @@ const CURRENT_WORK: Project[] = [
     previewImage: { label: 'Preview', src: 'preview.png' },
     shortDescription: '',
   },
+  {
+    title: 'Film Tracker',
+    id: 'film-tracker',
+    description: 'Track your film photography.',
+    lastMeaningfulUpdate: '2024-11',
+    images: [],
+    links: [{ label: 'GitHub', src: 'https://github.com/TravisBumgarner/film-tracker' }],
+    previewImage: { label: 'Preview', src: 'preview.png' },
+    shortDescription: '',
+  },
 ]
 
 const MiniItemPreview = ({ project }: { project: Project }) => {
   return (
-    <Box sx={{ width: '33%', backgroundColor: 'background.paper', padding: SPACING.SMALL.PX }}>
+    <Box
+      sx={{
+        width: { md: 'calc(33.333% - 8px)', xs: 'calc(50% - 8px)' },
+        backgroundColor: 'background.paper',
+        padding: SPACING.SMALL.PX,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}
+    >
       <Typography variant="h2" sx={{ fontSize: FONT_SIZES.MEDIUM.PX, margin: 0 }}>
         {project.title}
       </Typography>
@@ -83,11 +129,18 @@ const CurrentWork = () => {
       <Typography variant="h2" sx={{ fontWeight: 500, marginBottom: SPACING.SMALL.PX, fontSize: FONT_SIZES.MEDIUM.PX }}>
         Work In Progress
       </Typography>
-      <Stack spacing={SPACING.SMALL.PX} mb={SPACING.LARGE.PX} direction="row">
+      <Box
+        sx={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: SPACING.SMALL.PX,
+          mb: SPACING.LARGE.PX,
+        }}
+      >
         {CURRENT_WORK.map((project) => {
           return <MiniItemPreview project={project} key={project.id} />
         })}
-      </Stack>
+      </Box>
     </>
   )
 }
