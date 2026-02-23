@@ -1078,20 +1078,16 @@ export const projects = {
     ],
     links: [
       {
-        label: 'Website',
-        src: 'https://photopalettes.com',
-      },
-      {
-        label: 'Figma Plugin',
-        src: 'https://www.figma.com/community/plugin/1553603263291862336/photo-palettes',
-      },
-      {
-        label: 'App Store',
-        src: 'https://apps.apple.com/us/app/photo-color-palettes/id6751658619',
+        label: 'Blog Post',
+        src: '/blog/photo-palettes',
       },
       {
         label: 'GitHub',
         src: 'https://github.com/TravisBumgarner/photo-palettes',
+      },
+      {
+        label: 'Figma Plugin',
+        src: 'https://www.figma.com/community/plugin/1553603263291862336/photo-palettes',
       },
     ],
   },
