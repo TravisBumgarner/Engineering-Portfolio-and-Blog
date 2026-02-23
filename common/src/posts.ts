@@ -143,7 +143,7 @@ export const posts = {
   'photo-palettes': {
     title: 'Photo Palettes Post Mortem',
     date: '2026-02-29',
-    description: 'Successes, failures, and lessons learned from largest project to date.',
-    preview_image: 'preview.png',
+    description: 'Successes, Failures, and Lessons Learned from My Largest Project to Date.',
+    preview_image: 'preview.jpg',
   },
 }

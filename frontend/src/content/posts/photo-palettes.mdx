@@ -1,56 +1,50 @@
-Today I sunset the largest personal project I've ever worked on where I managed research, design, development, devops, marketing, user interviews, and support. 
+Today I sunset the largest personal project I've ever worked on. One where I managed research, design, development, DevOps, marketing, user interviews, and support.
 
-
-
-A year ago, I wrote a goal for myself "To Complete my Vision"
+A year ago, I wrote a goal for myself - "**To Complete my Vision**".
 
 I elaborated further:
 
-> Looking at my Github I see Photography-Stats, Time-Tracker, grumpy-collective, life-experiments, photoventures, photoventures2, phraseaday, winions. 
-> Just to name a few. What a bunch of half baked projects with so many lines of code written and hours 
-> wasted. I want to see a project through to the end.
+> Looking at my Github I see Photography-Stats, Time-Tracker, grumpy-collective, life-experiments, photoventures, photoventures2, phraseaday, winions. A bunch of [half-baked projects](https://github.com/TravisBumgarner/Project-Graveyard) with over 100,000 lines of code written and hours wasted. I want to see a project through to the end.
 
-I've always been fascinated by color and launched [Seis Colores](https://seis.pointlessprojects.com/). It gained great traction and so I decided to build Photo Palettes so I could explore even more. It was a great adventure. I learned about CIEDE2000, k-means clustering, and color sorting algorithms.
+I'd always been fascinated by color and launched [Seis Colores](https://seis.pointlessprojects.com/). It gained strong traction, so I decided to build Photo Palettes to explore even further.
 
 
-# Lessons learned
+# Lessons Learned
 
-- **AI is changing everything** - An app that used to take many months to build can now take days or weeks. What makes a good app and how to stand out has changed. 
-- **Building social communities is HARD. ** - Why should the first users stick around? What's in it for them. 
-- **Identifying user pain points when you have no users is impossible.** - Think about how many times you've visited a new website. You try it out, something is unintuitive, there's one click too many to get where you want to go, or some weird bug. You've got just a few seconds of patience before leaving. Was this my problem? Was the product offering the problem? 
-- **There's an art to designing an app from zero to one.** - Before there's a login page, before there's a home page, before any of that, there's a blank canvas. Without focus, you'll find yourself going both broad - building a theme and going deep - making a particular experience pixel perfect. This lack of focus, results in a never ending series of work. What I've found to be more beneficial is to go broad first and iterate. Build the primitive and then expand on them later.  
-- **Building in a saturated market is hard** - Three separate times 
+- **AI is changing everything.** An app that once took months to build can now take days or weeks. What makes a good app and how to stand out has changed. I'm still in the process of exploring the implications of this. 
+- **Building social communities is hard.** Why should early users stick around? What's in it for them?
+- **Identifying user pain points without users is nearly impossible.** Think about how often you've visited a new site. Something feels unintuitive. One click too many. A weird bug. You have seconds of patience before leaving. Was that my issue? Or was it the product itself?
+- **There's an art to going from zero to one.** Before login pages or home screens, there's a blank canvas. Without focus, you go broad (minimum app functionality like logins and browsing) and deep (pixel perfection) at the same time. That leads to endless work. I've found it better to go broad first, build primitives, then iterate.
+- **Building in a saturated market is hard.** Over the year that I worked on this project, I saw three similar apps launch on Reddit. 
 
 # Wins
 
-## Product / Marketing 
+## Product / Marketing
 
-- Firsts - User interviews, Amplitude Analytics
-- Managed and scoped entire project via Linear
-- [Product Hunt Launch](https://www.producthunt.com/products/photo-color-palettes)
-- Created an unautheticated experience for users to try the app without requiring login. 
-- Setup automatic social publishing to Twitter, Instagram, and Bluesky
-- Automated social media accounts 
+This project included several firsts for me, including conducting user interviews and integrating Amplitude analytics. I managed and scoped the entire project in Linear, launched it on [Product Hunt](https://www.producthunt.com/products/photo-color-palettes), and created an unauthenticated experience so users could try the app without logging in. I also set up automatic social publishing to Twitter, Instagram, and Bluesky.
 
 <Figure
   src="/post-resources/photo-palettes/misc_social_media_1.jpg"
-  caption="Social media 1"
+  caption="Instagram"
 />
 
 <Figure
   src="/post-resources/photo-palettes/misc_social_media_2.jpg"
-  caption="Social media 2"
+  caption="Instagram"
 />
 
 ## Design
 
-- Went both broad and deep to build a complete theme and polished UI for both desktop and mobile.
-- Icon Design
+I went both broad and deep to build a complete theme and polished UI for desktop and mobile, including designing the app icon.
 
 <Figure
   src="/post-resources/photo-palettes/icon_design.jpg"
   caption="Icon design"
 />
+
+Below are a few examples of experiences I'm very proud of having the chance to go deep on.
+
+### Create Palette Before & After 
 
 <Figure
   src="/post-resources/photo-palettes/create_before.jpg"
@@ -60,14 +54,10 @@ I've always been fascinated by color and launched [Seis Colores](https://seis.po
 <Video
   src="/post-resources/photo-palettes/creation_experience.mov"
   aspectRatio={1664/1039}
-  caption="Creation after"
+  caption="Create after"
   />
 
-
-<Figure
-  src="/post-resources/photo-palettes/home_page_after.jpg"
-  caption="Home page after"
-/>
+### Homepage Before & After 
 
 <Figure
   src="/post-resources/photo-palettes/home_page_before.jpg"
@@ -75,30 +65,32 @@ I've always been fascinated by color and launched [Seis Colores](https://seis.po
 />
 
 <Figure
-  src="/post-resources/photo-palettes/single_palette_after.jpg"
-  caption="Single palette after"
+  src="/post-resources/photo-palettes/home_page_after.jpg"
+  caption="Home page after"
 />
+
+### Single Palette View Before & After
 
 <Figure
   src="/post-resources/photo-palettes/single_palette_before.jpg"
   caption="Single palette before"
 />
 
+<Figure
+  src="/post-resources/photo-palettes/single_palette_after.jpg"
+  caption="Single palette after"
+/>
 
 ## Technical 
 
-- New technologies - FastAPI, Supabase, Heroku, Cloudinary, CapacitorJS, UptimeRobot, Resend\
-- Firsts - Programmatic email sent, auth system implemented, Figma Plugin
-- Reused codebase with minimal changes to launch iPhone app
+I worked with several new technologies, including FastAPI, Supabase, Heroku, Cloudinary, CapacitorJS, UptimeRobot, and Resend. I also shipped several firsts: sending programmatic emails, implementing a full authentication system, and building a Figma plugin. Finally, I reused the core codebase with minimal changes to launch the iPhone app.
 
 <Figure
   src="/post-resources/photo-palettes/architecture.jpg"
   caption="Architecture"
 />
 
-
-
-## Misc Photos
+## Misc Screenshots
 
 <Figure
   src="/post-resources/photo-palettes/misc_admin.jpg"
@@ -120,15 +112,14 @@ I've always been fascinated by color and launched [Seis Colores](https://seis.po
   caption="User profile"
 />
 
-
-
-# Looking forward
-
-The app lives as a Figma plugin which you can try out [here](https://www.figma.com/community/plugin/1553603263291862336/photo-palettes). 
-
-You can always see what I'm currently working on ath the top of the [creations page](/creations).
-
 <Figure
   src="/post-resources/photo-palettes/figma_plugin.jpg"
   caption="Figma plugin"
 />
+
+# Looking forward
+
+The app now lives on as a Figma plugin, which you can try [here](https://www.figma.com/community/plugin/1553603263291862336/photo-palettes).
+
+You can always see what I'm currently working on at the top of the [Creations page](/creations).
+
