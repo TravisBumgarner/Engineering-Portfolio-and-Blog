@@ -1,5 +1,5 @@
 import { MDXProvider } from '@mdx-js/react'
-import { List, ListItem, Typography } from '@mui/material'
+import { Box, List, ListItem, Typography } from '@mui/material'
 import type { MDXComponents } from 'mdx/types'
 import type { ReactNode } from 'react'
 import Code from '../sharedComponents/Code'
@@ -18,6 +18,26 @@ const components: MDXComponents = {
   Icon,
 
   // Override HTML elements with custom components
+  blockquote: ({ children, ...props }) => {
+    const { ref: _ref, ...restProps } = props
+    return (
+      <Box
+        component="blockquote"
+        sx={(theme) => ({
+          borderLeft: `4px solid`,
+          borderColor: 'divider',
+          margin: `${theme.spacing(2)} 0`,
+          padding: `${theme.spacing(1)} ${theme.spacing(2)}`,
+          '& p': {
+            margin: 0,
+          },
+        })}
+        {...restProps}
+      >
+        {children}
+      </Box>
+    )
+  },
   h1: ({ children, ...props }) => {
     const { ref: _ref, ...restProps } = props
     return (

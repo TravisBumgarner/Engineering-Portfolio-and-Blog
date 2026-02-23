@@ -140,4 +140,10 @@ export const posts = {
       'When all we do is our day jobs, we can afford to throw money at problems. But as a solo developer, every dollar counts.',
     preview_image: 'preview.png',
   },
+  'photo-palettes': {
+    title: 'Photo Palettes Post Mortem',
+    date: '2026-02-29',
+    description: 'Successes, failures, and lessons learned from largest project to date.',
+    preview_image: 'preview.png',
+  },
 }

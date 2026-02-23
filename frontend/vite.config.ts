@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 import mdx from '@mdx-js/rollup'
 import path from 'path'
 import { exec } from 'child_process'
+import { blurhashPlugin } from './scripts/vite-plugin-blurhash'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -10,6 +11,10 @@ export default defineConfig({
     outDir: '../server/src/frontend-dist',
   },
   plugins: [
+    blurhashPlugin(
+      path.resolve(__dirname, 'public'),
+      path.resolve(__dirname, 'src/content/blurhashes/index.json'),
+    ),
     {
       name: 'mv-html-to-ejs',
       writeBundle() {

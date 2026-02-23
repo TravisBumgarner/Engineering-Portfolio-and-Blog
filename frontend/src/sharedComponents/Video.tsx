@@ -24,10 +24,9 @@ const Video = ({ src, aspectRatio }: VideoProps) => {
         style={{
           width: '100%',
           height: '100%',
-          objectFit: 'none', // This line might cause issues in the future with aspect ratio. Check somehash.mdx and make sure that still works.
+          objectFit: 'cover', // This line might cause issues in the future with aspect ratio. Check somehash.mdx and make sure that still works.
         }}
         src={src}
-        autoPlay
         muted
         loop
         playsInline
