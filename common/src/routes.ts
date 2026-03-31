@@ -16,17 +16,12 @@ export const ROUTES = {
   },
   BLOG: {
     href: '/blog',
-    title: 'Writing',
+    title: 'Writing & Talks',
     target: '_self',
   },
   MARKETING: {
     href: '/marketing',
     title: 'Launch Pages',
-    target: '_self',
-  },
-  MARKETING_CLASSIFIEDS: {
-    href: '/marketing/classifieds',
-    title: 'Fast Classifieds Marketing Page',
     target: '_self',
   },
   MARKETING_IDEAS: {
