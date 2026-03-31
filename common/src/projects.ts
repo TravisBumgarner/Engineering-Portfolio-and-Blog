@@ -775,10 +775,6 @@ export const projects = {
     ],
     links: [
       {
-        label: 'View App',
-        src: 'https://playlists.sillysideprojects.com',
-      },
-      {
         label: 'GitHub',
         src: 'https://github.com/TravisBumgarner/playlist-generator',
       },
@@ -989,7 +985,7 @@ export const projects = {
     links: [
       {
         label: 'Website',
-        src: 'https://seis.pointlessprojects.com/',
+        src: 'https://seis.travisbumgarner.dev/',
       },
       {
         label: 'GitHub',
