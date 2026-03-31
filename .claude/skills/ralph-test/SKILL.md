@@ -3,47 +3,113 @@ name: ralph-test
 description: Use this skill when writing tests, especially when working in TDD style to define tests before the actual functions are complete. This is the "Red" phase of TDD.
 ---
 
-Your goal is to write tests for the currently scoped task. You should be able to do this autonomously with no input from the user, if you need more information look at the SCOPES.yml or DESIGN.yml files for the project.
+Your goal is to write tests for the currently scoped task. You should be able to do this autonomously with no input from the user. If you need more information, look at the SCOPES.yml or DESIGN.yml files for the project.
 
 ## Tasks That Don't Require Tests
 
-Some tasks have no testable behavior. Before writing tests, evaluate if the task falls into one of these categories:
+Before writing any tests, evaluate whether the task has testable behavior at all.
 
-- **TypeScript type definitions** - Interfaces, type aliases, enums, and other pure type constructs have no runtime behavior to test. The TypeScript compiler validates these.
-- **Type-only files** - Files that only export types (e.g., `webhookTypes.ts`, `*Types.ts`) don't need tests.
-- **Re-exports** - Files that simply re-export from other modules.
+**Skip tests entirely for:**
+- TypeScript type definitions (interfaces, type aliases, enums) — the compiler validates these
+- Type-only files (e.g., `webhookTypes.ts`, `*Types.ts`)
+- Re-export files that simply forward exports from other modules
+- Configuration objects or constants with no logic
+- Simple pass-through functions that just delegate to another function
 
-If the task only involves creating types/interfaces with no runtime code:
-1. Skip directly to the ralph-code skill (no stubs or tests needed)
-2. Pass the same arguments that were passed to this skill
-
-Otherwise, proceed with the normal test-writing workflow below.
+If the task only involves items from this list, skip directly to the ralph-code skill with the same arguments. Otherwise, proceed below.
 
 ---
 
-First, create stubs:
-In the code being tested create stubs for any missing functions for the task we're devleoping. These functions can have hard coded or empty return values and should not cause any side effects.  This will give us something for the tests to import and run, expecting that the tests themselves will initially be failing.
+## What Makes a Test Worth Writing
 
-Second, create tests:
-- Tests should be organized by behaviors, using nested describe blocks if needed
-- **DO** write tests for exported/public functions
-- **DO** write tests for reasonable edge cases but these should be limited
-- **DO NOT** over test, make sure intended behaviors and happy paths are tested but do not write tests for things that should not happen
-- **DO NOT** write tests for private functions or internal implementation details
-- Don't over-mock, try to use the real versions of methods when doing so doesn't add a lot of additional effort or make the tests hard to reason about
-- Keep tests focused on just one or two assertions. If a test has more than 3 assertions it may need to be broken up into multiple tests. This is not a rule but a strong guideline.
-- Don't write lots of test utility functions, limit these to things like object generators, but in general having a lot of code in tests causes confusing and brittle tests, prefer to hard code the values you need when this would not significantly bloat the test
-- Don't test implementation details - directly or indirectly - of third party modules or systems, trust those development teams to have done their jobs and only test the systems we're responsible for
+The purpose of a test is to protect important behavior from accidentally breaking. Before writing any test, ask:
 
-Third, reevaluate the quality of each test - delete or update any that do not pass these criteria
-- Is the test accurate
-- Does the test describe a behavior that needs to be protected and/or documented, or is it just an implementation detail
-- Is the test simple and readable
-- Is this test redundant
-- **IMPORTANT** Is this test testing code, or just testing itself. It is easy to accidentally write tests that, because of mocking and contrived data, do not test the function in any meaningful way and instead just confirm that they return what they've already forced the code to return
+> "If this test fails, what real bug would it catch?"
 
-Fourth, update the current task in the SCOPES.yml file to assign a status of "testing"
+If you can't articulate a concrete bug that would affect users or system correctness, don't write the test.
 
-Fifth, commit ALL changes (including the status update) to VCS.
+### Test These
 
-Finally, call the ralph-code skill using the Skill tool with the same arguments that were passed to this skill.
+- **Business logic and calculations** — math, validation rules, pricing, permissions
+- **State transitions** — what happens when status changes from A to B
+- **Conditional behavior** — different inputs produce different outputs
+- **Error handling that affects users** — what happens when things go wrong
+- **Data transformations** — input shape → output shape
+- **Integration boundaries** — calls to APIs, databases, external services
+
+### Don't Test These
+
+- **UI text, labels, or copy** — this changes constantly and isn't logic
+- **Styling, CSS classes, or visual presentation** — not behavioral
+- **The mere existence of elements** — unless conditional rendering is the feature
+- **Third-party library internals** — trust them to test their own code
+- **Implementation details** — private functions, internal data structures, the order operations happen in (unless order is the contract)
+- **Getters/setters with no side effects**
+
+### UI Component Heuristic
+
+For components, modals, and UI elements, ask: "Does this test behavior or appearance?"
+
+| Skip | Keep |
+|------|------|
+| `expect(modal.text).toBe("Are you sure?")` | `expect(onConfirm).toHaveBeenCalled()` after click |
+| `expect(button).toHaveClass("primary")` | `expect(submitButton).toBeDisabled()` when form invalid |
+| `expect(title).toBe("Settings")` | `expect(errorMessage).toBeVisible()` after failed submit |
+
+---
+
+## Workflow
+
+### 1. Create stubs
+
+In the code being tested, create stubs for any missing functions. These should:
+- Have hardcoded or empty return values
+- Cause no side effects
+- Be importable by the tests
+
+This gives tests something to import and call, with the expectation that tests will initially fail.
+
+### 2. Write tests
+
+**Structure:**
+- Organize by behaviors using nested `describe` blocks where it aids readability
+- Keep each test focused on one behavior — aim for 1-2 assertions, rarely more than 3
+- Name tests as behaviors: "returns error when input is empty" not "test validateInput"
+
+**Quantity guideline:**
+Most functions need 1-3 tests. If you've written 5+ tests for a single function, step back — you're likely testing implementation details. Identify the 2-3 behaviors that actually matter.
+
+**Mocking:**
+- Use real implementations when practical
+- Mock at integration boundaries (network, database, filesystem)
+- Don't mock the thing you're testing
+- If a test requires elaborate mocking to work, that's a signal the code may need refactoring, not more mocks
+
+**Edge cases:**
+Test reasonable edge cases (empty input, null values, boundary conditions) but don't enumerate every possible invalid input. One or two representative error cases is usually enough.
+
+### 3. Audit ruthlessly — look for tests to delete
+
+For each test you've written, ask:
+
+1. **If I deleted this test, what bug could ship?** If you can't name a concrete bug, delete it.
+2. **Does this test the contract (what) or implementation (how)?** Delete implementation tests.
+3. **Would a product manager care if this broke?** If not, probably delete it.
+4. **Is this test just confirming its own mocks?** A test that mocks a function to return X, calls the code, and asserts X was returned tests nothing. Delete it.
+5. **Is this redundant with another test?** Keep the clearer one.
+
+Be aggressive here. Fewer, meaningful tests are better than comprehensive tests that don't catch real bugs.
+
+### 4. Update status
+
+Update the current task in SCOPES.yml to status: "testing"
+
+### 5. Commit
+
+**IMPORTANT**: Never commit directly to main or master. All work must be done on a feature branch.
+
+Commit all changes including the status update to VCS.
+
+### 6. Continue
+
+Call the ralph-code skill with the same arguments that were passed to this skill.1

@@ -22,7 +22,6 @@ This skill receives the same arguments as other ralph-* skills:
    - Title: Task title from SCOPES.yml
    - Base: The milestone's `base_branch`
    - Body should include:
-     - Reference to the issue: `Closes #<github_issue>`
      - Summary of what was implemented
      - The acceptance criteria from the task
 7. Report the PR URL
@@ -37,8 +36,6 @@ This skill receives the same arguments as other ralph-* skills:
 - [x] Criterion 1
 - [x] Criterion 2
 ...
-
-Closes #<github_issue>
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 ```
@@ -59,5 +56,4 @@ For Task 2 "Define theme constants" in Milestone 1 (base: main):
 - Branch: `task-2-define-theme-constants`
 - PR: `task-2-define-theme-constants` → `main`
 - Title: "Define theme constants and design tokens"
-- Body references: `Closes #2`
 - Merge: `gh pr merge --squash --delete-branch`

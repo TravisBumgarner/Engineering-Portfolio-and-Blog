@@ -9,17 +9,10 @@ You should be provided with the path to a design or plan file. If you're not sur
 
 **CRITICAL** DO NOT modify any code or attempt to make changes during the scoping process.
 
-## Required Information
-
-Before starting, ask the user for:
-1. **GitHub repository** - The repo where issues will be created (e.g., `owner/repo`). Ask: "What is the GitHub repository for this work?"
-
 ## Process
 
 At the end of scoping you should:
-1. Create GitHub milestones for each logical grouping (typically per PR)
-2. Create GitHub issues for each task, assigned to the appropriate milestone
-3. Create (or update) a ./designs/solution-name/SCOPES.yml file with the outcome of the scoping process
+1. Create (or update) a ./designs/solution-name/SCOPES.yml file with the outcome of the scoping process
 
 DO look up referenced GitHub issues and repos, find and read relevant files in the current project and use the WebSearch tool to check your work and update your understanding
 
@@ -41,7 +34,7 @@ All tasks are developed using **Test-Driven Development (TDD)**. Do NOT create s
 
 Once you've identified all the tasks you also need to decide how to best divide the project into branches or PRs.
 
-**Branch naming**: All branches must be prefixed with the GitHub issue number (e.g., `123-feature-name`).
+**Branch naming**: Branches use the format `task-<id>-<slugified-title>` (e.g., `task-1-initialize-expo-project`).
 
 **PR boundaries**: Consider separating work into logical PR boundaries:
 - **Additive PRs first**: New code (types, classes, modules) that doesn't change existing behavior can be merged independently and reviewed in isolation.
@@ -56,46 +49,12 @@ This ensures developers can work on dependent tasks immediately without waiting 
 
 **Remember** PRs should also be reasonably sized and focused so strike a balance between giving every task its own branch vs putting the whole scope of work in a single PR.
 
-## GitHub Milestone & Issue Creation
-
-### Creating Milestones
-
-Group related tasks into milestones (typically one milestone per PR). Use the GitHub API to create milestones:
-
-```bash
-gh api repos/{owner}/{repo}/milestones -f title="1. Milestone Name" -f description="Description of this milestone" -f state="open"
-```
-
-### Creating Issues
-
-For each task, create a GitHub issue assigned to its milestone:
-
-```bash
-gh issue create --repo {owner}/{repo} \
-  --title "Task title" \
-  --body "Task description with acceptance criteria" \
-  --milestone "1. Milestone Name" \
-  --label "enhancement"
-```
-
-The issue body should include:
-- **Description**: What needs to be done
-- **Acceptance Criteria**: Checklist of requirements
-- **Dependencies**: Links to blocking issues (if any)
-
-### Workflow
-
-1. First, create all milestones
-2. Then, create issues for each task, assigning them to the appropriate milestone
-3. Record the issue numbers in SCOPES.yml
-
 ## SCOPES.yml Format
 
-When you've identified all the tasks, created the GitHub milestones/issues, and determined the branching strategy, create a SCOPES.yml file:
+When you've identified all the tasks and determined the branching strategy, create a SCOPES.yml file:
 
 ```yaml
 project: project name
-repo: owner/repo
 design_file: path/to/DESIGN.md
 scoping_date: 2026-01-01
 
@@ -109,7 +68,6 @@ milestones:
 
 tasks:
   - id: 1
-    github_issue: 123  # The GitHub issue number created for this task
     milestone: 1  # References milestones[].number
     title: one sentence description of the task
     description: |

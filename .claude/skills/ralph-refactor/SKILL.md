@@ -62,8 +62,9 @@ If the security review identifies issues:
 If NO issues are found (code is clean AND security audit passes):
 
 1. Ensure there are no uncommitted workspace changes (all modified code should be committed)
-2. Update the current task in the SCOPES.yml file to assign a status of "completed"
-3. Commit the status update to VCS
+2. Ensure you are NOT on main or master — all work must be done on a feature branch
+3. Update the current task in the SCOPES.yml file to assign a status of "completed"
+4. Commit the status update to VCS
 4. Call the `ralph-pr` skill using the Skill tool with the same arguments that were passed to this skill
 
 ## Notes

@@ -7,6 +7,8 @@ Implement the code to fulfill the task. If you have questions about what you're 
 
 Write the code to implement the task. Do not go beyond the definition of the task, other agents will be developing those features, stick to the task you are assigned.
 
+**IMPORTANT**: Never commit directly to main or master. All work must be done on a feature branch.
+
 As you develop, after any significant piece of work is done you are permitted to commit your changes. Before commiting fix any linting errors.  Not all tests have to be passing for an in-progress commit.
 
 Do not update tests to fit your code unless they are significantly out of line. Use the tests as they are and make your code fit the tests.
