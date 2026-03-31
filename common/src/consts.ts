@@ -6,12 +6,6 @@ export const ABOUT_ME = `${ABOUT_ME_SENTENCE_1} ${ABOUT_ME_SENTENCE_2}`
 export const SITE_TITLE = 'Travis Bumgarner'
 export const SITE_IMAGE = '/me.png'
 
-export const FAST_CLASSIFIEDS_TITLE = 'Fast Classifieds - AI Job Search Assistant'
-export const FAST_CLASSIFIEDS_DESCRIPTION =
-  'Stop manually browsing job boards. Let AI scan company career pages and find the most relevant opportunities for you.'
-export const FAST_CLASSIFIEDS_IMAGE = '/marketing-resources/classifieds/screenshot.png'
-export const FAST_CLASSIFIEDS_FAVICON = '/marketing-resources/classifieds/favicon.png'
-
 export const IDEAS_TITLE = 'Ideas Down'
 export const IDEAS_DESCRIPTION = 'Clear your mind and make room for your next big idea.'
 export const IDEAS_IMAGE = '/marketing-resources/ideas_down/reflect.png'

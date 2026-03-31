@@ -2,9 +2,6 @@ import {
   CANDLELIGHT_DESCRIPTION,
   CANDLELIGHT_IMAGE,
   CANDLELIGHT_TITLE,
-  FAST_CLASSIFIEDS_DESCRIPTION,
-  FAST_CLASSIFIEDS_IMAGE,
-  FAST_CLASSIFIEDS_TITLE,
   IDEAS_DESCRIPTION,
   IDEAS_IMAGE,
   IDEAS_TITLE,
@@ -25,11 +22,6 @@ type DataType = 'marketing' | 'blog' | 'creations'
 
 const OG_CONTENT: Record<DataType, Record<string, OGContent>> = {
   marketing: {
-    classifieds: {
-      'og:title': FAST_CLASSIFIEDS_TITLE,
-      'og:description': FAST_CLASSIFIEDS_DESCRIPTION,
-      'og:image': FAST_CLASSIFIEDS_IMAGE,
-    },
     ideas: {
       'og:title': IDEAS_TITLE,
       'og:description': IDEAS_DESCRIPTION,

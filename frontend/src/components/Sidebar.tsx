@@ -34,8 +34,9 @@ const HOME_LINK = [{ title: 'Home', href: ROUTES.SNAPSHOTS.href }]
 
 // Creative section
 const CREATIVE_LINKS = [
-  { title: 'Writing', href: ROUTES.BLOG.href },
+  { title: ROUTES.BLOG.title, href: ROUTES.BLOG.href },
   { title: 'Photography', href: 'https://travisbumgarner.photography', target: '_blank' },
+  { title: 'Creative Podcast', href: 'https://happymaking.art/', target: '_blank' },
 ]
 
 // Social media section
@@ -48,7 +49,6 @@ const SOCIAL_MEDIA = [
 
 const MARKETING_PAGES = [
   { title: 'Candlelight', href: ROUTES.MARKETING_CANDLELIGHT.href },
-  { title: 'Fast Classifieds', href: ROUTES.MARKETING_CLASSIFIEDS.href },
   { title: 'Ideas Down', href: ROUTES.MARKETING_IDEAS.href },
   { title: 'Todo Today', href: ROUTES.MARKETING_TODO.href },
 ]

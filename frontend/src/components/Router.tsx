@@ -29,7 +29,6 @@ const Creation = lazyWithRetry(async () => await import('../pages/Creations/Crea
 const NotFound = lazyWithRetry(async () => await import('../pages/NotFound'))
 const Candlelight = lazyWithRetry(async () => await import('../pages/Marketing/Candlelight'))
 const Ideas = lazyWithRetry(async () => await import('../pages/Marketing/Ideas'))
-const Classifieds = lazyWithRetry(async () => await import('../pages/Marketing/Classifieds'))
 const Todo = lazyWithRetry(async () => await import('../pages/Marketing/Todo'))
 const FilmTracker = lazyWithRetry(async () => await import('../pages/Marketing/FilmTracker'))
 const Blog = lazyWithRetry(async () => await import('../pages/Blog'))
@@ -46,7 +45,6 @@ const Router = () => (
     <Route path={ROUTES.BLOG.href} element={<Blog />} />
     <Route path={ROUTES.NOT_FOUND.href} element={<NotFound />} />
     <Route path={ROUTES.MARKETING_CANDLELIGHT.href} element={<Candlelight />} />
-    <Route path={ROUTES.MARKETING_CLASSIFIEDS.href} element={<Classifieds />} />
     <Route path={ROUTES.MARKETING_IDEAS.href} element={<Ideas />} />
     <Route path={ROUTES.MARKETING_TODO.href} element={<Todo />} />
     <Route path={ROUTES.MARKETING_FILM_TRACKER.href} element={<FilmTracker />} />
