@@ -6,16 +6,16 @@ import Link from '../../sharedComponents/Link'
 import { FONT_SIZES, SPACING } from '../../styles/consts'
 
 const CURRENT_WORK: Project[] = [
-  {
-    title: 'Just Recordings',
-    id: 'just-recordings',
-    description: 'Screen recording. Nothing more.',
-    lastMeaningfulUpdate: '2026-02',
-    images: [],
-    links: [{ label: 'Website', src: 'https://justrecordings.com/' }],
-    previewImage: { label: 'Preview', src: 'preview.png' },
-    shortDescription: '',
-  },
+  // {
+  //   title: 'Just Recordings',
+  //   id: 'just-recordings',
+  //   description: 'Screen recording. Nothing more.',
+  //   lastMeaningfulUpdate: '2026-02',
+  //   images: [],
+  //   links: [{ label: 'Website', src: 'https://justrecordings.com/' }],
+  //   previewImage: { label: 'Preview', src: 'preview.png' },
+  //   shortDescription: '',
+  // },
   {
     title: 'Infinite Adventures',
     id: 'infinite-adventures',
