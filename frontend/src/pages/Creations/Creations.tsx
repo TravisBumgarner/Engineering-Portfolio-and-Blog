@@ -17,6 +17,16 @@ const CURRENT_WORK: Project[] = [
   //   shortDescription: '',
   // },
   {
+    title: 'Your Own Gallery',
+    id: 'your-own-gallery',
+    description: 'Self-hosted photo gallery\.',
+    lastMeaningfulUpdate: '2026-02',
+    images: [],
+    links: [{ label: 'GitHub', src: 'https://github.com/TravisBumgarner/your-own-gallery' }],
+    previewImage: { label: 'Preview', src: 'preview.png' },
+    shortDescription: '',
+  },
+  {
     title: 'Infinite Adventures',
     id: 'infinite-adventures',
     description: 'Tabletop game note taker.',
