@@ -6,13 +6,23 @@ import Link from '../../sharedComponents/Link'
 import { FONT_SIZES, SPACING } from '../../styles/consts'
 
 const CURRENT_WORK: Project[] = [
+  // {
+  //   title: 'Just Recordings',
+  //   id: 'just-recordings',
+  //   description: 'Screen recording. Nothing more.',
+  //   lastMeaningfulUpdate: '2026-02',
+  //   images: [],
+  //   links: [{ label: 'Website', src: 'https://justrecordings.com/' }],
+  //   previewImage: { label: 'Preview', src: 'preview.png' },
+  //   shortDescription: '',
+  // },
   {
-    title: 'Just Recordings',
-    id: 'just-recordings',
-    description: 'Screen recording. Nothing more.',
+    title: 'Your Own Gallery',
+    id: 'your-own-gallery',
+    description: 'Self-hosted photo gallery.',
     lastMeaningfulUpdate: '2026-02',
     images: [],
-    links: [{ label: 'Website', src: 'https://justrecordings.com/' }],
+    links: [{ label: 'GitHub', src: 'https://github.com/TravisBumgarner/your-own-gallery' }],
     previewImage: { label: 'Preview', src: 'preview.png' },
     shortDescription: '',
   },
