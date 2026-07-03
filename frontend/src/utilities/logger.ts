@@ -1,4 +1,4 @@
-import * as Sentry from '@sentry/react'
+import posthog from 'posthog-js'
 
 export const logger = {
   // biome-ignore lint/suspicious/noExplicitAny: Fine for now.
@@ -16,11 +16,7 @@ export const logger = {
     // biome-ignore lint/suspicious/noConsole: Fine for now.
     console.error(message, error, context)
     if (import.meta.env.PROD) {
-      if (error) {
-        Sentry.captureException(error)
-      } else {
-        Sentry.captureMessage(message, 'error')
-      }
+      posthog.captureException(error ?? new Error(message), context)
     }
   },
 }
