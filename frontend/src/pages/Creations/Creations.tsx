@@ -19,7 +19,7 @@ const CURRENT_WORK: Project[] = [
   {
     title: 'Your Own Gallery',
     id: 'your-own-gallery',
-    description: 'Self-hosted photo gallery\.',
+    description: 'Self-hosted photo gallery.',
     lastMeaningfulUpdate: '2026-02',
     images: [],
     links: [{ label: 'GitHub', src: 'https://github.com/TravisBumgarner/your-own-gallery' }],
