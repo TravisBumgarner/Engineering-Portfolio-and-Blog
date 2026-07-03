@@ -1,7 +1,6 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { ABOUT_ME, SITE_OG_IMAGE, SITE_TITLE, SITE_URL } from '@common/core'
-import * as Sentry from '@sentry/node'
 import type { Request, Response } from 'express'
 import express from 'express'
 import { getOgContentFromParts } from './og-content.js'
@@ -14,13 +13,6 @@ const SITE_OG_TAGS = {
   ogUrl: SITE_URL,
   ogImage: SITE_OG_IMAGE,
 }
-
-Sentry.init({
-  dsn: 'https://bcd547c832cb7bbb68cea814aa198f5d@o196886.ingest.us.sentry.io/4510551525949440',
-  // Setting this option to true will send default PII data to Sentry.
-  // For example, automatic IP address collection on events
-  sendDefaultPii: true,
-})
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
@@ -58,18 +50,13 @@ app.get(/^\/(?!.*\.[a-zA-Z0-9]+$).*/, async (_req, res) => {
       ogUrl: `${SITE_URL}${_req.path}`,
     })
   } catch (error) {
-    Sentry.captureException(error)
+    logger.error('OG render failed', error as Error)
     res.render('index', SITE_OG_TAGS)
   }
 })
 
-// The error handler must be registered before any other error middleware and after all controllers
-Sentry.setupExpressErrorHandler(app)
-
 // Fallthrough error handler
 app.use(function onError(_err: unknown, _req: unknown, res: Response, _next: unknown) {
-  // The error id is attached to `res.sentry` to be returned
-  // and optionally displayed to the user for support.
   logger.error('Unhandled error', _err as Error)
   res.sendStatus(500)
 })

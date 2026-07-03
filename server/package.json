@@ -12,9 +12,9 @@
   "dependencies": {
     "@biomejs/biome": "^2.3.10",
     "@common/core": "file:../common",
-    "@sentry/node": "^10.31.0",
     "ejs": "^3.1.9",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "posthog-node": "^5.39.4"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",

@@ -1,15 +1,13 @@
-import * as Sentry from '@sentry/react'
+import posthog from 'posthog-js'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './styles/globals.css'
 
 if (import.meta.env.PROD) {
-  Sentry.init({
-    dsn: 'https://70a85f691dc27fc54bcdd73ca86849a0@o196886.ingest.us.sentry.io/4510540755173376',
-    // Setting this option to true will send default PII data to Sentry.
-    // For example, automatic IP address collection on events
-    sendDefaultPii: true,
+  posthog.init('phc_tFX3Eygr8Eq9Dz5fEQayTzx2uiykLMPcGdQvh46sB8Rg', {
+    api_host: 'https://us.i.posthog.com',
+    defaults: '2025-05-24',
   })
 }
 
