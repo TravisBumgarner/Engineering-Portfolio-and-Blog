@@ -5,9 +5,7 @@ import WorkWithMe from '../pages/Work'
 
 // Helper that auto-reloads once if a chunk fails to load (handles stale deployments)
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const lazyWithRetry = <T extends ComponentType<any>>(
-  importFn: () => Promise<{ default: T }>
-) => {
+const lazyWithRetry = <T extends ComponentType<any>>(importFn: () => Promise<{ default: T }>) => {
   return lazy(async () => {
     const storageKey = 'chunk-refresh'
     const hasRefreshed = sessionStorage.getItem(storageKey)
@@ -35,6 +33,7 @@ const Blog = lazyWithRetry(async () => await import('../pages/Blog'))
 const BlogPost = lazyWithRetry(async () => await import('../pages/Blog/BlogPost'))
 const Creations = lazyWithRetry(async () => await import('../pages/Creations/Creations'))
 const Snapshots = lazyWithRetry(async () => await import('../pages/Snapshots'))
+const WorkWithMeV2 = lazyWithRetry(async () => await import('../pages/Work2'))
 
 const Router = () => (
   <Routes>
@@ -49,6 +48,7 @@ const Router = () => (
     <Route path={ROUTES.MARKETING_TODO.href} element={<Todo />} />
     <Route path={ROUTES.MARKETING_FILM_TRACKER.href} element={<FilmTracker />} />
     <Route path={ROUTES.WORK_WITH_ME.href} element={<WorkWithMe />} />
+    <Route path={ROUTES.WORK_WITH_ME_V2.href} element={<WorkWithMeV2 />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 )

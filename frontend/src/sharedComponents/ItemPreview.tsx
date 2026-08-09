@@ -33,6 +33,8 @@ const ItemPreview = ({
   description,
   date,
   type,
+  titleComponent = 'h2',
+  linkText = 'Learn more',
 }: {
   src: string
   link?: string
@@ -40,6 +42,9 @@ const ItemPreview = ({
   description?: string
   date?: string
   type: ItemType
+  /** Keeps the h2 look while letting the caller nest the card correctly in the page outline. */
+  titleComponent?: 'h2' | 'h3' | 'h4'
+  linkText?: string
 }) => {
   const paragraphs = !description
     ? null
@@ -61,7 +66,7 @@ const ItemPreview = ({
       }}
     >
       {!!title && (
-        <Typography variant="h2" sx={{ margin: 0 }}>
+        <Typography variant="h2" component={titleComponent} sx={{ margin: 0 }}>
           {title}
         </Typography>
       )}
@@ -80,7 +85,7 @@ const ItemPreview = ({
       <BlurHashImage maxHeight={70} src={src} />
       {link && (
         <Link type="block" href={link}>
-          Learn more
+          {linkText}
         </Link>
       )}
     </Box>

@@ -6,6 +6,13 @@ export const ABOUT_ME = `${ABOUT_ME_SENTENCE_1} ${ABOUT_ME_SENTENCE_2}`
 export const SITE_TITLE = 'Travis Bumgarner'
 export const SITE_IMAGE = '/me.png'
 
+// The nav label ('Build with Me') is short so it scans; the document title is
+// written for search, where nobody types "build with me".
+export const WORK_WITH_ME_PAGE_TITLE = 'Hardware & IoT Prototyping | Travis Bumgarner'
+export const WORK_WITH_ME_OG_TITLE = 'I turn early-stage ideas into working hardware'
+export const WORK_WITH_ME_DESCRIPTION =
+  'Custom electronics, firmware, and enclosures, plus the app that talks to them. I take connected devices from sketch to something you can hold.'
+
 export const IDEAS_TITLE = 'Ideas Down'
 export const IDEAS_DESCRIPTION = 'Clear your mind and make room for your next big idea.'
 export const IDEAS_IMAGE = '/marketing-resources/ideas_down/reflect.png'

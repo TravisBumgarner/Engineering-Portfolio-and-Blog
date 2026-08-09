@@ -1,4 +1,4 @@
-import { ROUTES } from '@common/core'
+import { CANDLELIGHT_TITLE, IDEAS_TITLE, ROUTES, TODO_TITLE } from '@common/core'
 import { Backdrop, Box, Drawer, Stack, Typography } from '@mui/material'
 import { useSignals } from '@preact/signals-react/runtime'
 import { AnimatePresence } from 'motion/react'
@@ -21,15 +21,19 @@ const isLinkActive = (linkHref: string, currentPath: string): boolean => {
 }
 
 // Work section
+// Internal links pull their label from ROUTES so there's one source of truth.
+// External links and files aren't in ROUTES, so they stay literal.
 const WORK_LINKS = [
-  { title: 'Portfolio', href: ROUTES.CREATIONS.href },
-  { title: 'Hire Me', href: ROUTES.WORK_WITH_ME.href },
+  { title: ROUTES.CREATIONS.title, href: ROUTES.CREATIONS.href },
+  { title: ROUTES.WORK_WITH_ME.title, href: ROUTES.WORK_WITH_ME.href },
   { title: 'Resume', href: '/travis_bumgarner_resume.pdf', target: '_blank' },
   { title: 'GitHub', href: 'https://github.com/travisBumgarner/', target: '_blank', icon: 'github' },
   { title: 'LinkedIn', href: 'https://www.linkedin.com/in/travisbumgarner/', target: '_blank', icon: 'linkedin' },
 ]
 
 // Home section
+// Deliberately not ROUTES.SNAPSHOTS.title ('Photo Journal'). In the nav this is
+// the home link, and the page names itself on the page.
 const HOME_LINK = [{ title: 'Home', href: ROUTES.SNAPSHOTS.href }]
 
 // Creative section
@@ -47,10 +51,12 @@ const SOCIAL_MEDIA = [
   { title: 'YouTube', href: 'https://www.youtube.com/@SillySideProjects', target: '_blank', icon: 'youtube' },
 ]
 
+// Product names, not the route titles ('Candlelight Marketing Page' etc.), which
+// are internal labels rather than anything a visitor should read.
 const MARKETING_PAGES = [
-  { title: 'Candlelight', href: ROUTES.MARKETING_CANDLELIGHT.href },
-  { title: 'Ideas Down', href: ROUTES.MARKETING_IDEAS.href },
-  { title: 'Todo Today', href: ROUTES.MARKETING_TODO.href },
+  { title: CANDLELIGHT_TITLE, href: ROUTES.MARKETING_CANDLELIGHT.href },
+  { title: IDEAS_TITLE, href: ROUTES.MARKETING_IDEAS.href },
+  { title: TODO_TITLE, href: ROUTES.MARKETING_TODO.href },
 ]
 
 // Generic reusable section component
