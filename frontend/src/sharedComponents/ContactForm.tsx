@@ -8,7 +8,14 @@ import { SPACING } from '../styles/consts'
 
 const MAX_LENGTH = 800
 
-const ContactForm = ({ subject }: { subject?: string }) => {
+// Good enough to catch typos and empty submissions. Real validation happens on the server.
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+/**
+ * `requireEmail` is for pages where a message I can't reply to is a dropped lead
+ * (hiring, project inquiries). Feedback forms on the marketing pages leave it off.
+ */
+const ContactForm = ({ subject, requireEmail = false }: { subject?: string; requireEmail?: boolean }) => {
   const [success, setSuccess] = useState(false)
   const [failure, setFailure] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -81,6 +88,10 @@ const ContactForm = ({ subject }: { subject?: string }) => {
     return 'Send'
   }, [isSubmitting, success, failure, resetButtonText])
 
+  const isEmailValid = EMAIL_REGEX.test(formData.email)
+  const showEmailError = requireEmail && formData.email.length > 0 && !isEmailValid
+  const canSubmit = formData.message.length > 0 && (!requireEmail || isEmailValid)
+
   return (
     <Box id="contact">
       <form
@@ -92,15 +103,30 @@ const ContactForm = ({ subject }: { subject?: string }) => {
         }}
         onSubmit={handleSubmit}
       >
-        <Input fullWidth placeholder="Name (Optional)" name="name" value={formData.name} onChange={handleChange} />
         <Input
           fullWidth
-          placeholder="Email (Optional)"
-          name="email"
-          value={formData.email}
+          placeholder={requireEmail ? 'Name' : 'Name (Optional)'}
+          name="name"
+          value={formData.name}
           onChange={handleChange}
-          type="email"
         />
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: SPACING.TINY.PX }}>
+          <Input
+            fullWidth
+            placeholder={requireEmail ? 'Email (so I can reply)' : 'Email (Optional)'}
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            type="email"
+            required={requireEmail}
+            error={showEmailError}
+          />
+          {showEmailError && (
+            <Typography variant="body2" sx={{ m: 0 }}>
+              That doesn&apos;t look like a valid email address.
+            </Typography>
+          )}
+        </Box>
         <Input fullWidth placeholder="Subject" name="subject" value={formData.subject} onChange={handleChange} />
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: SPACING.TINY.PX }}>
           <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -116,7 +142,7 @@ const ContactForm = ({ subject }: { subject?: string }) => {
             fullWidth
           />
         </Box>
-        <Button variant="contained" type="submit" disabled={isSubmitting || formData.message.length === 0}>
+        <Button variant="contained" type="submit" disabled={isSubmitting || !canSubmit}>
           {buttonText}
         </Button>
       </form>

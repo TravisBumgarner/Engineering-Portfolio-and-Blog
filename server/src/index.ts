@@ -43,7 +43,8 @@ app.get(/^\/(?!.*\.[a-zA-Z0-9]+$).*/, async (_req, res) => {
 
   try {
     res.render('index', {
-      title: ogData['og:title'],
+      // Pages can set a search-oriented <title> distinct from the share title.
+      title: ogData.title ?? ogData['og:title'],
       ogTitle: ogData['og:title'],
       ogDescription: ogData['og:description'],
       ogImage: ogData['og:image'],

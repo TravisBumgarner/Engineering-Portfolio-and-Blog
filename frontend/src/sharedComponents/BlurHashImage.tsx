@@ -31,6 +31,12 @@ interface Props {
   maxDimensions?: { maxWidth?: string; maxHeight?: string }
   maxHeight?: number
   useBorder?: boolean
+  /**
+   * Override the image's natural aspect ratio. The img is already objectFit
+   * cover, so this crops rather than distorts. For uniform grids of mixed
+   * portrait/landscape source images.
+   */
+  aspectRatio?: number
 }
 
 const BlurHashImage = ({
@@ -41,11 +47,13 @@ const BlurHashImage = ({
   maxDimensions,
   maxHeight,
   useBorder = true,
+  aspectRatio: aspectRatioOverride,
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const theme = useTheme()
   const { width, height, blurHash } = getBlurHash(src)
-  const aspectRatio = width / height
+  const naturalAspectRatio = width / height
+  const aspectRatio = aspectRatioOverride ?? naturalAspectRatio
 
   const isInView = useInView(containerRef, {
     margin: '0px 0px 100px 0px',
@@ -67,7 +75,8 @@ const BlurHashImage = ({
   }, [isInView, loadingStartCallback])
 
   // Check if image is very tall (aspect ratio < 0.6 means height is significantly larger than width)
-  const isVeryTall = aspectRatio < 0.6
+  // Keyed off the source image, not the override, since it decides how to crop it.
+  const isVeryTall = naturalAspectRatio < 0.6
   const objectPosition = isVeryTall ? 'top' : 'center'
   const backgroundPosition = isVeryTall ? 'top' : 'center'
 
