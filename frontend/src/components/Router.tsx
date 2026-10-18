@@ -5,9 +5,7 @@ import WorkWithMe from '../pages/Work'
 
 // Helper that auto-reloads once if a chunk fails to load (handles stale deployments)
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const lazyWithRetry = <T extends ComponentType<any>>(
-  importFn: () => Promise<{ default: T }>
-) => {
+const lazyWithRetry = <T extends ComponentType<any>>(importFn: () => Promise<{ default: T }>) => {
   return lazy(async () => {
     const storageKey = 'chunk-refresh'
     const hasRefreshed = sessionStorage.getItem(storageKey)

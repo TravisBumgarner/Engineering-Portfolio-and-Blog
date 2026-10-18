@@ -7,15 +7,22 @@ import {
   IDEAS_TITLE,
   posts,
   projects,
+  ROUTES,
+  SITE_OG_IMAGE,
   TODO_DESCRIPTION,
   TODO_IMAGE,
   TODO_TITLE,
+  WORK_WITH_ME_DESCRIPTION,
+  WORK_WITH_ME_OG_TITLE,
+  WORK_WITH_ME_PAGE_TITLE,
 } from '@common/core'
 
 type OGContent = {
   'og:title': string
   'og:description': string
   'og:image': string
+  /** Document <title>, when it should differ from the social share title. */
+  title?: string
 }
 
 type DataType = 'marketing' | 'blog' | 'creations'
@@ -66,7 +73,28 @@ const OG_CONTENT: Record<DataType, Record<string, OGContent>> = {
   },
 }
 
+/**
+ * Top-level pages, keyed by their single path segment. Without this, every
+ * one-segment route fell through to the generic site-wide OG tags.
+ */
+const PAGE_OG_CONTENT: Record<string, OGContent> = {
+  [stripLeadingSlash(ROUTES.WORK_WITH_ME.href)]: {
+    title: WORK_WITH_ME_PAGE_TITLE,
+    'og:title': WORK_WITH_ME_OG_TITLE,
+    'og:description': WORK_WITH_ME_DESCRIPTION,
+    'og:image': SITE_OG_IMAGE,
+  },
+}
+
+function stripLeadingSlash(href: string) {
+  return href.replace(/^\//, '')
+}
+
 export function getOgContentFromParts(parts: string[]): OGContent | null {
+  if (parts.length === 1) {
+    return PAGE_OG_CONTENT[parts[0]] ?? null
+  }
+
   if (parts.length < 2) return null
 
   const [section, slug] = parts

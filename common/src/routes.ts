@@ -6,7 +6,7 @@ export const ROUTES = {
   },
   WORK_WITH_ME: {
     href: '/work',
-    title: 'Hire Me',
+    title: "Let's Prototype",
     target: '_self',
   },
   CREATIONS: {
