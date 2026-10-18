@@ -19,7 +19,7 @@ const CURRENT_WORK: Project[] = [
   {
     title: 'Your Own Gallery',
     id: 'your-own-gallery',
-    description: 'Self-hosted photo gallery.',
+    description: 'Self-hosted photo gallery with AI search for text, faces, and pets.',
     lastMeaningfulUpdate: '2026-02',
     images: [],
     links: [{ label: 'GitHub', src: 'https://github.com/TravisBumgarner/your-own-gallery' }],
@@ -27,25 +27,25 @@ const CURRENT_WORK: Project[] = [
     shortDescription: '',
   },
   {
-    title: 'Infinite Adventures',
-    id: 'infinite-adventures',
-    description: 'Tabletop game note taker.',
-    lastMeaningfulUpdate: '2026-02',
+    title: 'Campaign Keep',
+    id: 'campaign-keep',
+    description: 'Everything you need for online tabletop adventures. Character sheet not included.',
+    lastMeaningfulUpdate: '2026-10',
     images: [],
-    links: [{ label: 'GitHub', src: 'https://github.com/TravisBumgarner/infinite-adventures' }],
+    links: [{ label: 'Website', src: 'https://campaignkeep.ing/' }],
     previewImage: { label: 'Preview', src: 'preview.png' },
     shortDescription: '',
   },
   {
-    title: 'Menu Engineering',
-    id: 'menu-engineering',
-    description: 'Optimize restaurant menus.',
+    title: 'Blockmosis',
+    id: 'blockmosis',
+    description: 'Musical puzzle alchemy video game.',
     lastMeaningfulUpdate: '2024-11',
     images: [],
     links: [
       {
-        label: 'GitHub',
-        src: 'https://github.com/TravisBumgarner/menu-engineering',
+        label: 'Steam',
+        src: 'https://store.steampowered.com/app/5034650/Blockmosis/',
       },
     ],
     previewImage: { label: 'Preview', src: 'preview.png' },
@@ -91,8 +91,8 @@ const MiniItemPreview = ({ project }: { project: Project }) => {
 const CurrentWork = () => {
   return (
     <>
-      <Typography variant="h2" sx={{ fontWeight: 500, marginBottom: SPACING.SMALL.PX, fontSize: FONT_SIZES.MEDIUM.PX }}>
-        Work In Progress
+      <Typography variant="h2" sx={{ fontWeight: 500, marginBottom: SPACING.LARGE.PX, fontSize: FONT_SIZES.HUGE_PLUS.PX }}>
+        Current Projects
       </Typography>
       <Box
         sx={{
@@ -114,7 +114,7 @@ const Portfolio = () => {
   return (
     <>
       <CurrentWork />
-      <Typography variant="h2" sx={{ fontWeight: 500, marginBottom: SPACING.SMALL.PX, fontSize: FONT_SIZES.MEDIUM.PX }}>
+      <Typography variant="h2" sx={{ fontWeight: 500, marginBottom: SPACING.LARGE.PX, fontSize: FONT_SIZES.HUGE_PLUS.PX }}>
         Portfolio
       </Typography>
       {Object.values(projects)
