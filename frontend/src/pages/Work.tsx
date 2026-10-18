@@ -2,7 +2,6 @@ import { ROUTES } from '@common/core'
 import { Box, Button, Stack, type SxProps, type Theme, Typography } from '@mui/material'
 import React, { useCallback, useRef } from 'react'
 import projects from '../content/projects'
-import BlurHashImage from '../sharedComponents/BlurHashImage'
 import Contact from '../sharedComponents/ContactForm'
 import ItemPreview from '../sharedComponents/ItemPreview'
 import Link from '../sharedComponents/Link'
@@ -10,15 +9,15 @@ import { SPACING, subtleBackground } from '../styles/consts'
 
 const HOW_IT_WORKS = [
   {
-    title: '1. A 30 minute call',
+    title: '1. 30-minute call',
     body: "You walk me through the idea. I tell you honestly whether I'm the right person for it, and what I think the hard parts are.",
   },
   {
-    title: '2. A written scope',
+    title: '2. Written scope',
     body: 'Within a few days you get a fixed scope, a timeline, and a price. No open-ended hourly billing, no surprises.',
   },
   {
-    title: '3. Something you can use',
+    title: '3. Something tangible',
     body: 'You end up with a real device you can hold, switch on, and try out. You own all resources.',
   },
 ]
@@ -45,17 +44,9 @@ const TESTIMONIALS = [
     role: 'Staff Product Designer',
     href: null as string | null,
   },
-  // Daniel's (CTO) quote from /work is a full-time-hire reference ("an incredible
-  // asset to any engineering team") which fights this page's contract framing.
-  // Reframe it around delivery or leave it on a full-time-focused page.
 ]
 
-/**
- * Three, not nine, and all hardware. The old page put nine image-heavy cards
- * between the hero CTA and the form, and the web apps pulled against the pitch.
- * They still live on /creations.
- * Other hardware candidates: camera-from-scratch, strangerer-things.
- */
+
 const SELECTED_WORK = [
   {
     key: 'painless-prototyping-second-attempt',
@@ -69,18 +60,6 @@ const SELECTED_WORK = [
     key: 'pixels64',
     why: 'Custom KiCad PCB, 3D-printed housing, and an ESP32 running CircuitPython: the full path from schematic to finished device.',
   },
-]
-
-/**
- * Breadth, where SELECTED_WORK is depth. These never got a write-up, so they're
- * thumbnails with a label and nothing to click through to.
- * TODO(travis): confirm the labels. Images live in /snapshot-resources.
- */
-const OTHER_PROTOTYPES = [
-  { src: '/snapshot-resources/snapshot-14.jpg', label: 'Camera built from scratch' },
-  { src: '/snapshot-resources/snapshot-22.jpg', label: 'Button board, v1.0 and v1.1' },
-  { src: '/snapshot-resources/snapshot-43.jpg', label: 'Handheld game board, bring-up' },
-  { src: '/snapshot-resources/snapshot-69.jpg', label: 'Raspberry Pi dashboard' },
 ]
 
 const PLACES_YOU_CAN_FIND_ME = [
@@ -123,7 +102,7 @@ const WorkWithMe = () => {
       <Typography variant="h1" component="h1" gutterBottom sx={{ mt: SPACING.MEDIUM.PX }}>
         I turn early-stage ideas
         <br />
-        into working hardware.
+        into working hardware & software.
       </Typography>
       <Typography>
         Custom electronics, firmware, and enclosures, plus the app that talks to them. I work fast, learn fast, and hand
@@ -146,7 +125,7 @@ const WorkWithMe = () => {
       </Typography>
       <Typography>
         In practice that means schematic and PCB design in KiCad, embedded firmware on ESP32 and Arduino, BLE and Wi-Fi,
-        enclosures in CAD and off the 3D printer, and the companion app or dashboard. A degree in Mechanical Engineering
+        enclosures in CAD and off the 3D printer, and the companion app or dashboard. A degree in mechanical engineering
         sits behind the hardware and ten years of professional software experience behind the code. Every project below
         was researched, designed, and engineered by me.
       </Typography>
@@ -154,7 +133,6 @@ const WorkWithMe = () => {
       <Typography variant="h2" sx={sectionHeadingSX}>
         How This Works
       </Typography>
-      {/* Side by side on desktop so the three steps read as one short process, stacked on small screens. */}
       <Stack direction={{ xs: 'column', md: 'row' }} spacing={SPACING.MEDIUM.PX} alignItems="stretch">
         {HOW_IT_WORKS.map(({ title, body }) => (
           <Box key={title} sx={howItWorksCardSX}>
@@ -214,14 +192,7 @@ const WorkWithMe = () => {
         More About Me
       </Typography>
       <Typography>Here are a few more places to learn about me: {formatLinks(PLACES_YOU_CAN_FIND_ME)}.</Typography>
-      {/*
-        The "Exhibit 1-5" block from /work (Silly Apps, Project Graveyard, Pointless
-        Projects) is deliberately gone. It's charming on the portfolio page and it
-        argues against you on the page where someone decides whether to pay you.
-      */}
-
       <Box ref={letsChatRef} sx={{ mt: SPACING.HUGE.PX }}>
-        {/* The Box owns the section gap here, so the heading doesn't add a second one. */}
         <Typography variant="h2" gutterBottom sx={{ mt: 0 }}>
           Start a Project
         </Typography>
@@ -240,16 +211,8 @@ const sectionHeadingSX: SxProps = {
   mt: SPACING.HUGE.PX,
 }
 
-const prototypeGridSX: SxProps = {
-  display: 'grid',
-  gridTemplateColumns: { xs: 'repeat(2, 1fr)', sm: 'repeat(3, 1fr)', md: 'repeat(5, 1fr)' },
-  gap: SPACING.SMALL.PX,
-  mb: SPACING.MEDIUM.PX,
-}
-
 const howItWorksCardSX: SxProps<Theme> = {
   flex: 1,
-  // Without this, a long body in one card widens it and squeezes the others.
   minWidth: 0,
   padding: SPACING.MEDIUM.PX,
   backgroundColor: ({ palette }) => subtleBackground(palette.mode, 'slightly'),
