@@ -133,7 +133,7 @@ const WorkWithMe = () => {
       <Typography variant="h2" sx={sectionHeadingSX}>
         How This Works
       </Typography>
-      <Stack direction={{ xs: 'column', md: 'row' }} spacing={SPACING.MEDIUM.PX} alignItems="stretch">
+      <Stack direction={{ xs: 'column', md: 'row' }} spacing={SPACING.MEDIUM.PX} sx={{ alignItems: 'stretch' }}>
         {HOW_IT_WORKS.map(({ title, body }) => (
           <Box key={title} sx={howItWorksCardSX}>
             <Typography variant="h3" sx={{ mt: 0 }}>
@@ -161,7 +161,7 @@ const WorkWithMe = () => {
           />
         )
       })}
-      <Link width="100%" type="inlineBlock" href={ROUTES.CREATIONS.href}>
+      <Link sx={{ width: '100%' }} type="inlineBlock" href={ROUTES.CREATIONS.href}>
         See all projects
       </Link>
 

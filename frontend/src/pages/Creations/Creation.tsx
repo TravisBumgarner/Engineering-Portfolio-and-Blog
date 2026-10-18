@@ -44,7 +44,7 @@ const Creation = () => {
         })}
       </time>
       {Description}
-      <Stack direction="row" gap={SPACING.SMALL.PX} flexWrap="wrap">
+      <Stack direction="row" sx={{ gap: SPACING.SMALL.PX, flexWrap: 'wrap' }}>
         {project.links.map((l) => (
           <Link type="inlineBlock" key={l.label + l.src} target="_blank" href={l.src}>
             {l.label}

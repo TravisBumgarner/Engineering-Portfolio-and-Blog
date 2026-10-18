@@ -55,7 +55,7 @@ const SiteTitle = ({ isDesktop }: { isDesktop: boolean }) => {
         justifyContent: 'center',
       }}
     >
-      <Stack direction="row" justifyContent="space-between" alignItems="center" mb={SPACING.TINY.PX}>
+      <Stack direction="row" sx={{ justifyContent: 'space-between', alignItems: 'center', mb: SPACING.TINY.PX }}>
         <Link type="inlineMenu" href="/">
           <Typography variant="h1" sx={{ fontSize: { xs: '1.2rem', sm: '1.5rem', fontWeight: 700 } }}>
             {siteTitle}

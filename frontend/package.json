@@ -17,10 +17,10 @@
     "@emotion/styled": "^11.14.1",
     "@mdx-js/react": "^3.1.1",
     "@mdx-js/rollup": "^3.1.1",
-    "@mui/material": "^7.3.6",
+    "@mui/material": "^9.5.0",
     "blurhash": "^2.0.5",
     "lodash": "^4.17.21",
-    "motion": "^12.23.26",
+    "motion": "^14.3.0",
     "posthog-js": "^1.396.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -30,16 +30,16 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.17.21",
-    "@types/node": "^24.10.4",
+    "@types/node": "^26.6.5",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react-swc": "^4.2.2",
+    "@vitejs/plugin-react-swc": "^4.3.3",
     "canvas": "^3.2.1",
-    "globals": "^16.5.0",
-    "typescript": "~5.9.3",
+    "globals": "^17.13.0",
+    "typescript": "^7.0.2",
     "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4",
-    "vite-plugin-ejs": "^1.7.0",
-    "vite-plugin-static-copy": "^3.1.4"
+    "vite": "^8.3.4",
+    "vite-plugin-ejs": "^2.0.0",
+    "vite-plugin-static-copy": "^4.1.1"
   }
 }
