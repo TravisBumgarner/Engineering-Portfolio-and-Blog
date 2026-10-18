@@ -84,12 +84,6 @@ const PAGE_OG_CONTENT: Record<string, OGContent> = {
     'og:description': WORK_WITH_ME_DESCRIPTION,
     'og:image': SITE_OG_IMAGE,
   },
-  [stripLeadingSlash(ROUTES.WORK_WITH_ME_V2.href)]: {
-    title: WORK_WITH_ME_PAGE_TITLE,
-    'og:title': WORK_WITH_ME_OG_TITLE,
-    'og:description': WORK_WITH_ME_DESCRIPTION,
-    'og:image': SITE_OG_IMAGE,
-  },
 }
 
 function stripLeadingSlash(href: string) {

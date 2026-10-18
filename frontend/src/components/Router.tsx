@@ -33,7 +33,6 @@ const Blog = lazyWithRetry(async () => await import('../pages/Blog'))
 const BlogPost = lazyWithRetry(async () => await import('../pages/Blog/BlogPost'))
 const Creations = lazyWithRetry(async () => await import('../pages/Creations/Creations'))
 const Snapshots = lazyWithRetry(async () => await import('../pages/Snapshots'))
-const WorkWithMeV2 = lazyWithRetry(async () => await import('../pages/Work2'))
 
 const Router = () => (
   <Routes>
@@ -48,7 +47,6 @@ const Router = () => (
     <Route path={ROUTES.MARKETING_TODO.href} element={<Todo />} />
     <Route path={ROUTES.MARKETING_FILM_TRACKER.href} element={<FilmTracker />} />
     <Route path={ROUTES.WORK_WITH_ME.href} element={<WorkWithMe />} />
-    <Route path={ROUTES.WORK_WITH_ME_V2.href} element={<WorkWithMeV2 />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 )

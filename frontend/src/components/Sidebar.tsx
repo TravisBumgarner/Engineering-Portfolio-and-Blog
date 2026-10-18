@@ -27,8 +27,7 @@ const WORK_LINKS = [
   { title: ROUTES.CREATIONS.title, href: ROUTES.CREATIONS.href },
   { title: ROUTES.WORK_WITH_ME.title, href: ROUTES.WORK_WITH_ME.href },
   { title: 'Resume', href: '/travis_bumgarner_resume.pdf', target: '_blank' },
-  { title: 'GitHub', href: 'https://github.com/travisBumgarner/', target: '_blank', icon: 'github' },
-  { title: 'LinkedIn', href: 'https://www.linkedin.com/in/travisbumgarner/', target: '_blank', icon: 'linkedin' },
+  { title: ROUTES.BLOG.title, href: ROUTES.BLOG.href },
 ]
 
 // Home section
@@ -37,18 +36,19 @@ const WORK_LINKS = [
 const HOME_LINK = [{ title: 'Home', href: ROUTES.SNAPSHOTS.href }]
 
 // Creative section
-const CREATIVE_LINKS = [
-  { title: ROUTES.BLOG.title, href: ROUTES.BLOG.href },
-  { title: 'Photography', href: 'https://travisbumgarner.photography', target: '_blank' },
-  { title: 'Creative Podcast', href: 'https://happymaking.art/', target: '_blank' },
-]
+// const CREATIVE_LINKS = [
+//   // { title: 'Creative Podcast', href: 'https://happymaking.art/', target: '_blank' },
+// ]
 
 // Social media section
-const SOCIAL_MEDIA = [
+const INTERNET_PRESENCE = [
+  { title: 'Photography', href: 'https://travisbumgarner.photography', target: '_blank' },
+  { title: 'GitHub', href: 'https://github.com/travisBumgarner/', target: '_blank', icon: 'github' },
+  { title: 'LinkedIn', href: 'https://www.linkedin.com/in/travisbumgarner/', target: '_blank', icon: 'linkedin' },
   { title: 'Bluesky', href: 'https://bsky.app/profile/travisbumgarner.dev', target: '_blank', icon: 'bsky' },
-  { title: 'Instagram', href: 'https://instagram.com/sillysideprojects', target: '_blank', icon: 'instagram' },
-  { title: 'Reddit', href: 'https://www.reddit.com/user/travis_the_maker/', target: '_blank', icon: 'reddit' },
-  { title: 'YouTube', href: 'https://www.youtube.com/@SillySideProjects', target: '_blank', icon: 'youtube' },
+  // { title: 'Instagram', href: 'https://instagram.com/sillysideprojects', target: '_blank', icon: 'instagram' },
+  // { title: 'Reddit', href: 'https://www.reddit.com/user/travis_the_maker/', target: '_blank', icon: 'reddit' },
+  // { title: 'YouTube', href: 'https://www.youtube.com/@SillySideProjects', target: '_blank', icon: 'youtube' },
 ]
 
 // Product names, not the route titles ('Candlelight Marketing Page' etc.), which
@@ -117,9 +117,9 @@ const SidebarContent = ({ onLinkClick }: { onLinkClick?: () => void }) => {
     <Stack direction="column" spacing={SPACING.LARGE.PX}>
       <Section title="" links={HOME_LINK} onLinkClick={onLinkClick} currentPath={currentPath} />
       <Section title="Work" links={WORK_LINKS} onLinkClick={onLinkClick} currentPath={currentPath} />
-      <Section title="Creative" links={CREATIVE_LINKS} onLinkClick={onLinkClick} currentPath={currentPath} />
+      {/* <Section title="Creative" links={CREATIVE_LINKS} onLinkClick={onLinkClick} currentPath={currentPath} /> */}
       <Section title="Marketing Pages" links={MARKETING_PAGES} onLinkClick={onLinkClick} currentPath={currentPath} />
-      <Section title="Socials" links={SOCIAL_MEDIA} onLinkClick={onLinkClick} currentPath={currentPath} />
+      <Section title="Internet Presence" links={INTERNET_PRESENCE} onLinkClick={onLinkClick} currentPath={currentPath} />
     </Stack>
   )
 }
